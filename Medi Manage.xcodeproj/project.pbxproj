@@ -98,10 +98,13 @@
 			isa = PBXGroup;
 			children = (
 				786DF9F91CD214F300DDE769 /* AppDelegate.swift */,
-				786DF9FB1CD214F300DDE769 /* ViewController.swift */,
-				786DF9FD1CD214F300DDE769 /* Main.storyboard */,
+				786DFA2B1CD2285800DDE769 /* Model */,
+				786DFA2C1CD2286000DDE769 /* Fonts */,
+				786DFA2A1CD2283F00DDE769 /* StoryBoards */,
+				786DFA291CD2282700DDE769 /* Views */,
+				786DFA281CD2281E00DDE769 /* Controller */,
+				786DFA271CD227F600DDE769 /* Helper */,
 				786DFA001CD214F300DDE769 /* Assets.xcassets */,
-				786DFA021CD214F300DDE769 /* LaunchScreen.storyboard */,
 				786DFA051CD214F300DDE769 /* Info.plist */,
 			);
 			path = "Medi Manage";
@@ -123,6 +126,51 @@
 				786DFA1B1CD214F300DDE769 /* Info.plist */,
 			);
 			path = "Medi ManageUITests";
+			sourceTree = "<group>";
+		};
+		786DFA271CD227F600DDE769 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		786DFA281CD2281E00DDE769 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				786DF9FB1CD214F300DDE769 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		786DFA291CD2282700DDE769 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		786DFA2A1CD2283F00DDE769 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				786DFA021CD214F300DDE769 /* LaunchScreen.storyboard */,
+				786DF9FD1CD214F300DDE769 /* Main.storyboard */,
+			);
+			name = StoryBoards;
+			sourceTree = "<group>";
+		};
+		786DFA2B1CD2285800DDE769 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		786DFA2C1CD2286000DDE769 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
