@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		783322951CD9FB1B0015CE37 /* login.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783322941CD9FB1B0015CE37 /* login.xib */; };
+		783322971CD9FCD90015CE37 /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783322961CD9FCD90015CE37 /* login.swift */; };
 		786DF9FA1CD214F300DDE769 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786DF9F91CD214F300DDE769 /* AppDelegate.swift */; };
 		786DF9FC1CD214F300DDE769 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786DF9FB1CD214F300DDE769 /* ViewController.swift */; };
 		786DF9FF1CD214F300DDE769 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 786DF9FD1CD214F300DDE769 /* Main.storyboard */; };
@@ -34,6 +36,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		783322941CD9FB1B0015CE37 /* login.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = login.xib; sourceTree = "<group>"; };
+		783322961CD9FCD90015CE37 /* login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
+		783322981CDA068A0015CE37 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Black.ttf"; path = "../../../../Downloads/Lato (1)/Lato-Black.ttf"; sourceTree = "<group>"; };
+		783322991CDA068A0015CE37 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-BlackItalic.ttf"; path = "../../../../Downloads/Lato (1)/Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
+		7833229A1CDA068A0015CE37 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Bold.ttf"; path = "../../../../Downloads/Lato (1)/Lato-Bold.ttf"; sourceTree = "<group>"; };
+		7833229B1CDA068A0015CE37 /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-BoldItalic.ttf"; path = "../../../../Downloads/Lato (1)/Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
+		7833229C1CDA068A0015CE37 /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Hairline.ttf"; path = "../../../../Downloads/Lato (1)/Lato-Hairline.ttf"; sourceTree = "<group>"; };
+		7833229D1CDA068A0015CE37 /* Lato-HairlineItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-HairlineItalic.ttf"; path = "../../../../Downloads/Lato (1)/Lato-HairlineItalic.ttf"; sourceTree = "<group>"; };
+		7833229E1CDA068A0015CE37 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Italic.ttf"; path = "../../../../Downloads/Lato (1)/Lato-Italic.ttf"; sourceTree = "<group>"; };
+		7833229F1CDA068A0015CE37 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Light.ttf"; path = "../../../../Downloads/Lato (1)/Lato-Light.ttf"; sourceTree = "<group>"; };
+		783322A01CDA068A0015CE37 /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-LightItalic.ttf"; path = "../../../../Downloads/Lato (1)/Lato-LightItalic.ttf"; sourceTree = "<group>"; };
+		783322A11CDA068A0015CE37 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Regular.ttf"; path = "../../../../Downloads/Lato (1)/Lato-Regular.ttf"; sourceTree = "<group>"; };
 		786DF9F61CD214F300DDE769 /* Medi Manage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Medi Manage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		786DF9F91CD214F300DDE769 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		786DF9FB1CD214F300DDE769 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +88,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		783322911CD9F1A40015CE37 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				783322941CD9FB1B0015CE37 /* login.xib */,
+				783322961CD9FCD90015CE37 /* login.swift */,
+			);
+			name = login;
+			sourceTree = "<group>";
+		};
 		786DF9ED1CD214F300DDE769 = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +169,7 @@
 		786DFA291CD2282700DDE769 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				783322911CD9F1A40015CE37 /* login */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -169,6 +193,16 @@
 		786DFA2C1CD2286000DDE769 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				783322981CDA068A0015CE37 /* Lato-Black.ttf */,
+				783322991CDA068A0015CE37 /* Lato-BlackItalic.ttf */,
+				7833229A1CDA068A0015CE37 /* Lato-Bold.ttf */,
+				7833229B1CDA068A0015CE37 /* Lato-BoldItalic.ttf */,
+				7833229C1CDA068A0015CE37 /* Lato-Hairline.ttf */,
+				7833229D1CDA068A0015CE37 /* Lato-HairlineItalic.ttf */,
+				7833229E1CDA068A0015CE37 /* Lato-Italic.ttf */,
+				7833229F1CDA068A0015CE37 /* Lato-Light.ttf */,
+				783322A01CDA068A0015CE37 /* Lato-LightItalic.ttf */,
+				783322A11CDA068A0015CE37 /* Lato-Regular.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -280,6 +314,7 @@
 				786DFA041CD214F300DDE769 /* LaunchScreen.storyboard in Resources */,
 				786DFA011CD214F300DDE769 /* Assets.xcassets in Resources */,
 				786DF9FF1CD214F300DDE769 /* Main.storyboard in Resources */,
+				783322951CD9FB1B0015CE37 /* login.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				786DF9FC1CD214F300DDE769 /* ViewController.swift in Sources */,
+				783322971CD9FCD90015CE37 /* login.swift in Sources */,
 				786DF9FA1CD214F300DDE769 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,6 +568,7 @@
 				786DFA201CD214F300DDE769 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		786DFA211CD214F300DDE769 /* Build configuration list for PBXNativeTarget "Medi ManageTests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +577,7 @@
 				786DFA231CD214F300DDE769 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		786DFA241CD214F300DDE769 /* Build configuration list for PBXNativeTarget "Medi ManageUITests" */ = {
 			isa = XCConfigurationList;
@@ -548,6 +586,7 @@
 				786DFA261CD214F300DDE769 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
