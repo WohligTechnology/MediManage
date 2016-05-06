@@ -33,19 +33,19 @@
                     </constraints>
                 </imageView>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile or E-mail ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pvg-8U-IgN">
-                    <rect key="frame" x="26" y="188" width="268" height="44"/>
+                    <rect key="frame" x="26" y="188" width="268" height="50"/>
                     <color key="backgroundColor" white="1" alpha="0.40272090517241377" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="44" id="fJ8-0U-dhB"/>
+                        <constraint firstAttribute="height" constant="50" id="fJ8-0U-dhB"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="903-Zq-XI0">
-                    <rect key="frame" x="26" y="247" width="268" height="44"/>
+                    <rect key="frame" x="26" y="253" width="268" height="50"/>
                     <color key="backgroundColor" white="1" alpha="0.40272090519999998" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="44" id="zOl-Nh-1O1"/>
+                        <constraint firstAttribute="height" constant="50" id="zOl-Nh-1O1"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
@@ -78,7 +78,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxB-cd-Kfn">
-                    <rect key="frame" x="0.0" y="299" width="320" height="38"/>
+                    <rect key="frame" x="0.0" y="311" width="320" height="38"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="38" id="jXQ-GE-fBv"/>
                     </constraints>
@@ -90,10 +90,10 @@
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tXR-Rv-dLl">
-                    <rect key="frame" x="45" y="345" width="231" height="44"/>
+                    <rect key="frame" x="44" y="357" width="232" height="50"/>
                     <color key="backgroundColor" red="0.95686274509803915" green="0.47450980392156861" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="44" id="DrS-NR-Smg"/>
+                        <constraint firstAttribute="height" constant="50" id="DrS-NR-Smg"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                     <state key="normal" title="Log In">
@@ -101,7 +101,7 @@
                     </state>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AKQ-Vx-SyJ">
-                    <rect key="frame" x="68" y="404" width="184" height="25"/>
+                    <rect key="frame" x="68" y="422" width="184" height="25"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New to Medimanage?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeG-FE-VGo">
                             <rect key="frame" x="0.0" y="0.0" width="133" height="17"/>
@@ -134,19 +134,19 @@
             <constraints>
                 <constraint firstItem="pvg-8U-IgN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="26" id="2f1-ql-Vjz"/>
                 <constraint firstItem="nxB-cd-Kfn" firstAttribute="centerX" secondItem="AKQ-Vx-SyJ" secondAttribute="centerX" id="4Sd-WS-ZPc"/>
-                <constraint firstAttribute="trailing" secondItem="903-Zq-XI0" secondAttribute="trailing" constant="26" id="D8f-dc-NR6"/>
+                <constraint firstItem="903-Zq-XI0" firstAttribute="trailing" secondItem="pvg-8U-IgN" secondAttribute="trailing" id="DUF-bZ-HId"/>
                 <constraint firstAttribute="bottom" secondItem="Ubo-eF-5VG" secondAttribute="bottom" id="DaS-36-FPz"/>
                 <constraint firstItem="CGS-AG-yOW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="60" id="DvQ-g4-Bzo"/>
                 <constraint firstAttribute="trailing" secondItem="Ubo-eF-5VG" secondAttribute="trailing" id="I3p-Ne-lWv"/>
+                <constraint firstItem="903-Zq-XI0" firstAttribute="leading" secondItem="pvg-8U-IgN" secondAttribute="leading" id="Ici-7O-7Dp"/>
                 <constraint firstItem="pvg-8U-IgN" firstAttribute="top" secondItem="XQ8-3E-PF6" secondAttribute="bottom" constant="15" id="JvC-Z4-TOt"/>
                 <constraint firstItem="nxB-cd-Kfn" firstAttribute="centerX" secondItem="XQ8-3E-PF6" secondAttribute="centerX" id="M5L-Xi-JLK"/>
                 <constraint firstItem="XQ8-3E-PF6" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="NaG-N7-YNO"/>
-                <constraint firstItem="903-Zq-XI0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="26" id="Pmn-3l-bNu"/>
                 <constraint firstItem="903-Zq-XI0" firstAttribute="top" secondItem="pvg-8U-IgN" secondAttribute="bottom" constant="15" id="QJ2-G2-dag"/>
                 <constraint firstAttribute="trailing" secondItem="pvg-8U-IgN" secondAttribute="trailing" constant="26" id="TPN-7a-2R6"/>
                 <constraint firstItem="Ubo-eF-5VG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="WNP-JI-bP7"/>
                 <constraint firstAttribute="trailing" secondItem="CGS-AG-yOW" secondAttribute="trailing" id="WWG-5H-5Mg"/>
-                <constraint firstItem="tXR-Rv-dLl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="45" id="e4q-1e-faw"/>
+                <constraint firstItem="tXR-Rv-dLl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="44" id="e4q-1e-faw"/>
                 <constraint firstAttribute="trailing" secondItem="tXR-Rv-dLl" secondAttribute="trailing" constant="44" id="ezI-Hj-PBv"/>
                 <constraint firstItem="nxB-cd-Kfn" firstAttribute="trailing" secondItem="CGS-AG-yOW" secondAttribute="trailing" id="fKN-Xs-wah"/>
                 <constraint firstItem="XQ8-3E-PF6" firstAttribute="top" secondItem="CGS-AG-yOW" secondAttribute="bottom" constant="30" id="i4Y-PI-Igg"/>
