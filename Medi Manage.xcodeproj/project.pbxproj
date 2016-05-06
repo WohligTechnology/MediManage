@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		783322951CD9FB1B0015CE37 /* login.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783322941CD9FB1B0015CE37 /* login.xib */; };
 		783322971CD9FCD90015CE37 /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783322961CD9FCD90015CE37 /* login.swift */; };
+		783322A61CDB13CE0015CE37 /* signup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783322A51CDB13CE0015CE37 /* signup.xib */; };
+		783322A81CDB13ED0015CE37 /* signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783322A71CDB13ED0015CE37 /* signup.swift */; };
+		783322AB1CDB37FE0015CE37 /* onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783322AA1CDB37FE0015CE37 /* onboarding.swift */; };
+		783322AD1CDB380C0015CE37 /* onboarding.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783322AC1CDB380C0015CE37 /* onboarding.xib */; };
+		783322B01CDB50D10015CE37 /* landing.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783322AF1CDB50D10015CE37 /* landing.xib */; };
+		783322B21CDB50E50015CE37 /* landing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783322B11CDB50E50015CE37 /* landing.swift */; };
+		783322B51CDB7B4F0015CE37 /* completeProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783322B41CDB7B4F0015CE37 /* completeProfile.swift */; };
+		783322B71CDB7B620015CE37 /* completeProfile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783322B61CDB7B620015CE37 /* completeProfile.xib */; };
 		786DF9FA1CD214F300DDE769 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786DF9F91CD214F300DDE769 /* AppDelegate.swift */; };
 		786DF9FC1CD214F300DDE769 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786DF9FB1CD214F300DDE769 /* ViewController.swift */; };
 		786DF9FF1CD214F300DDE769 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 786DF9FD1CD214F300DDE769 /* Main.storyboard */; };
@@ -48,6 +56,14 @@
 		7833229F1CDA068A0015CE37 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Light.ttf"; path = "../../../../Downloads/Lato (1)/Lato-Light.ttf"; sourceTree = "<group>"; };
 		783322A01CDA068A0015CE37 /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-LightItalic.ttf"; path = "../../../../Downloads/Lato (1)/Lato-LightItalic.ttf"; sourceTree = "<group>"; };
 		783322A11CDA068A0015CE37 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Regular.ttf"; path = "../../../../Downloads/Lato (1)/Lato-Regular.ttf"; sourceTree = "<group>"; };
+		783322A51CDB13CE0015CE37 /* signup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = signup.xib; sourceTree = "<group>"; };
+		783322A71CDB13ED0015CE37 /* signup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signup.swift; sourceTree = "<group>"; };
+		783322AA1CDB37FE0015CE37 /* onboarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = onboarding.swift; sourceTree = "<group>"; };
+		783322AC1CDB380C0015CE37 /* onboarding.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = onboarding.xib; sourceTree = "<group>"; };
+		783322AF1CDB50D10015CE37 /* landing.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = landing.xib; sourceTree = "<group>"; };
+		783322B11CDB50E50015CE37 /* landing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = landing.swift; sourceTree = "<group>"; };
+		783322B41CDB7B4F0015CE37 /* completeProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = completeProfile.swift; sourceTree = "<group>"; };
+		783322B61CDB7B620015CE37 /* completeProfile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = completeProfile.xib; sourceTree = "<group>"; };
 		786DF9F61CD214F300DDE769 /* Medi Manage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Medi Manage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		786DF9F91CD214F300DDE769 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		786DF9FB1CD214F300DDE769 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +111,42 @@
 				783322961CD9FCD90015CE37 /* login.swift */,
 			);
 			name = login;
+			sourceTree = "<group>";
+		};
+		783322A41CDB13860015CE37 /* signup */ = {
+			isa = PBXGroup;
+			children = (
+				783322A51CDB13CE0015CE37 /* signup.xib */,
+				783322A71CDB13ED0015CE37 /* signup.swift */,
+			);
+			name = signup;
+			sourceTree = "<group>";
+		};
+		783322A91CDB30DD0015CE37 /* onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				783322AA1CDB37FE0015CE37 /* onboarding.swift */,
+				783322AC1CDB380C0015CE37 /* onboarding.xib */,
+			);
+			name = onboarding;
+			sourceTree = "<group>";
+		};
+		783322AE1CDB3DC30015CE37 /* landing */ = {
+			isa = PBXGroup;
+			children = (
+				783322AF1CDB50D10015CE37 /* landing.xib */,
+				783322B11CDB50E50015CE37 /* landing.swift */,
+			);
+			name = landing;
+			sourceTree = "<group>";
+		};
+		783322B31CDB75BE0015CE37 /* completeProfile */ = {
+			isa = PBXGroup;
+			children = (
+				783322B41CDB7B4F0015CE37 /* completeProfile.swift */,
+				783322B61CDB7B620015CE37 /* completeProfile.xib */,
+			);
+			name = completeProfile;
 			sourceTree = "<group>";
 		};
 		786DF9ED1CD214F300DDE769 = {
@@ -169,6 +221,10 @@
 		786DFA291CD2282700DDE769 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				783322B31CDB75BE0015CE37 /* completeProfile */,
+				783322AE1CDB3DC30015CE37 /* landing */,
+				783322A91CDB30DD0015CE37 /* onboarding */,
+				783322A41CDB13860015CE37 /* signup */,
 				783322911CD9F1A40015CE37 /* login */,
 			);
 			name = Views;
@@ -311,10 +367,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				783322AD1CDB380C0015CE37 /* onboarding.xib in Resources */,
+				783322B01CDB50D10015CE37 /* landing.xib in Resources */,
 				786DFA041CD214F300DDE769 /* LaunchScreen.storyboard in Resources */,
 				786DFA011CD214F300DDE769 /* Assets.xcassets in Resources */,
 				786DF9FF1CD214F300DDE769 /* Main.storyboard in Resources */,
 				783322951CD9FB1B0015CE37 /* login.xib in Resources */,
+				783322B71CDB7B620015CE37 /* completeProfile.xib in Resources */,
+				783322A61CDB13CE0015CE37 /* signup.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,8 +400,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				786DF9FC1CD214F300DDE769 /* ViewController.swift in Sources */,
+				783322B51CDB7B4F0015CE37 /* completeProfile.swift in Sources */,
+				783322A81CDB13ED0015CE37 /* signup.swift in Sources */,
+				783322AB1CDB37FE0015CE37 /* onboarding.swift in Sources */,
 				783322971CD9FCD90015CE37 /* login.swift in Sources */,
 				786DF9FA1CD214F300DDE769 /* AppDelegate.swift in Sources */,
+				783322B21CDB50E50015CE37 /* landing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Lato-Black.ttf">
+            <string>Lato-Black</string>
+        </mutableArray>
+        <mutableArray key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+            <string>Lato-Bold</string>
+        </mutableArray>
+        <mutableArray key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-bg" translatesAutoresizingMaskIntoConstraints="NO" id="0ac-Gn-rZB">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="7SO-qH-6FU">
+                    <rect key="frame" x="0.0" y="60" width="320" height="61"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="iHD-bt-Vfe"/>
+                        <constraint firstAttribute="height" constant="61" id="wwY-lv-qfS"/>
+                    </constraints>
+                </imageView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Employee ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5DR-Zw-sys">
+                    <rect key="frame" x="26" y="188" width="268" height="44"/>
+                    <color key="backgroundColor" white="1" alpha="0.40272090519999998" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="ipo-1z-deK"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QSx-ct-H4g">
+                    <rect key="frame" x="26" y="247" width="268" height="44"/>
+                    <color key="backgroundColor" white="1" alpha="0.40272090519999998" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="ZJO-BG-Xi0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uA3-m2-gQh">
+                    <rect key="frame" x="113" y="151" width="94" height="22"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGNUP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4h-vj-eIu">
+                            <rect key="frame" x="34" y="0.0" width="60" height="22"/>
+                            <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="16"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-signup" translatesAutoresizingMaskIntoConstraints="NO" id="9fb-Z4-feu">
+                            <rect key="frame" x="0.0" y="0.0" width="32" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="MYg-wV-YMk"/>
+                                <constraint firstAttribute="width" constant="32" id="WJC-Hc-uFt"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="MYg-wV-YMk"/>
+                                </mask>
+                            </variation>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="9fb-Z4-feu" firstAttribute="bottom" secondItem="c4h-vj-eIu" secondAttribute="bottom" id="7IQ-VL-txt"/>
+                        <constraint firstAttribute="trailing" secondItem="c4h-vj-eIu" secondAttribute="trailing" id="8uj-0D-fki"/>
+                        <constraint firstAttribute="bottom" secondItem="9fb-Z4-feu" secondAttribute="bottom" id="9CF-1l-TuA"/>
+                        <constraint firstItem="9fb-Z4-feu" firstAttribute="leading" secondItem="uA3-m2-gQh" secondAttribute="leading" id="ImH-j8-Kmo"/>
+                        <constraint firstItem="c4h-vj-eIu" firstAttribute="top" secondItem="uA3-m2-gQh" secondAttribute="top" id="JjN-LX-7FI"/>
+                        <constraint firstAttribute="height" constant="22" id="KeP-bk-D6b"/>
+                        <constraint firstItem="c4h-vj-eIu" firstAttribute="leading" secondItem="9fb-Z4-feu" secondAttribute="trailing" constant="2" id="Yb6-aL-aXk"/>
+                        <constraint firstItem="9fb-Z4-feu" firstAttribute="top" secondItem="uA3-m2-gQh" secondAttribute="top" id="g0g-8W-P9R"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQs-dZ-4n9">
+                    <rect key="frame" x="45" y="345" width="231" height="44"/>
+                    <color key="backgroundColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="qrK-X5-zRj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
+                    <state key="normal" title="Sign Up">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="05A-hL-lfa">
+                    <rect key="frame" x="80" y="404" width="160" height="25"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already a Member?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E15-JU-XEh">
+                            <rect key="frame" x="0.0" y="0.0" width="119" height="17"/>
+                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                            <color key="textColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78h-Wf-1ao">
+                            <rect key="frame" x="122" y="-5" width="38" height="29"/>
+                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
+                            <state key="normal" title="Log In">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="78h-Wf-1ao" firstAttribute="top" secondItem="05A-hL-lfa" secondAttribute="top" constant="-5" id="DiS-hT-RQb"/>
+                        <constraint firstAttribute="height" constant="25" id="E7H-bU-dzV"/>
+                        <constraint firstItem="E15-JU-XEh" firstAttribute="top" secondItem="05A-hL-lfa" secondAttribute="top" id="FSu-2g-65y"/>
+                        <constraint firstItem="78h-Wf-1ao" firstAttribute="leading" secondItem="E15-JU-XEh" secondAttribute="trailing" constant="3" id="b5L-u3-T4f"/>
+                        <constraint firstItem="E15-JU-XEh" firstAttribute="leading" secondItem="05A-hL-lfa" secondAttribute="leading" id="tMz-7H-i3d"/>
+                        <constraint firstAttribute="trailing" secondItem="78h-Wf-1ao" secondAttribute="trailing" id="uKb-Rk-0Pk"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="05A-hL-lfa" firstAttribute="top" secondItem="JQs-dZ-4n9" secondAttribute="bottom" constant="15" id="6VS-aL-Dne"/>
+                <constraint firstAttribute="bottom" secondItem="0ac-Gn-rZB" secondAttribute="bottom" id="6Z6-3f-En5"/>
+                <constraint firstItem="0ac-Gn-rZB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Atr-pl-lZQ"/>
+                <constraint firstItem="JQs-dZ-4n9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="45" id="G3D-eN-bx0"/>
+                <constraint firstItem="7SO-qH-6FU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="60" id="GH6-oG-SXZ"/>
+                <constraint firstItem="0ac-Gn-rZB" firstAttribute="centerX" secondItem="JQs-dZ-4n9" secondAttribute="centerX" id="PBp-p5-fmQ"/>
+                <constraint firstAttribute="trailing" secondItem="0ac-Gn-rZB" secondAttribute="trailing" id="SeG-Xb-cPa"/>
+                <constraint firstItem="QSx-ct-H4g" firstAttribute="top" secondItem="5DR-Zw-sys" secondAttribute="bottom" constant="15" id="SvR-iX-ddd"/>
+                <constraint firstItem="0ac-Gn-rZB" firstAttribute="leading" secondItem="7SO-qH-6FU" secondAttribute="leading" id="Tff-Ch-MXl"/>
+                <constraint firstItem="5DR-Zw-sys" firstAttribute="top" secondItem="uA3-m2-gQh" secondAttribute="bottom" constant="15" id="TwM-7v-0qH"/>
+                <constraint firstItem="uA3-m2-gQh" firstAttribute="top" secondItem="7SO-qH-6FU" secondAttribute="bottom" constant="30" id="UBp-ez-8lF"/>
+                <constraint firstItem="05A-hL-lfa" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="jpt-sc-mnF"/>
+                <constraint firstItem="0ac-Gn-rZB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rrY-Sk-pcO"/>
+                <constraint firstItem="JQs-dZ-4n9" firstAttribute="top" secondItem="QSx-ct-H4g" secondAttribute="bottom" constant="54" id="uFi-s2-mTL"/>
+                <constraint firstItem="5DR-Zw-sys" firstAttribute="leading" secondItem="QSx-ct-H4g" secondAttribute="leading" id="vaF-8B-ekB"/>
+                <constraint firstItem="uA3-m2-gQh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="vdW-Fp-7y5"/>
+                <constraint firstItem="5DR-Zw-sys" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="26" id="zWC-av-6gZ"/>
+                <constraint firstItem="0ac-Gn-rZB" firstAttribute="centerX" secondItem="QSx-ct-H4g" secondAttribute="centerX" id="zea-6V-HSS"/>
+                <constraint firstItem="0ac-Gn-rZB" firstAttribute="centerX" secondItem="5DR-Zw-sys" secondAttribute="centerX" id="zmZ-0k-5hK"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon-signup" width="74" height="82"/>
+        <image name="login-bg" width="1242" height="2208"/>
+        <image name="logo" width="333" height="218"/>
+    </resources>
+</document>
