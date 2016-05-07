@@ -19,9 +19,14 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="signup" customModule="Medi_Manage" customModuleProvider="target">
+            <connections>
+                <outlet property="dateOfBirth" destination="QSx-ct-H4g" id="yM6-u5-tLv"/>
+                <outlet property="employeeID" destination="5DR-Zw-sys" id="wIc-hb-MVt"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="signup" customModule="Medi_Manage" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -43,6 +48,11 @@
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QSx-ct-H4g">
                     <rect key="frame" x="25" y="253" width="270" height="50"/>
@@ -52,6 +62,11 @@
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uA3-m2-gQh">
                     <rect key="frame" x="113" y="151" width="94" height="22"/>

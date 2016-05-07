@@ -23,7 +23,17 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="completeProfile" customModule="Medi_Manage" customModuleProvider="target">
+            <connections>
+                <outlet property="dateOfBirth" destination="iyf-pN-pZR" id="uwF-XZ-5Ko"/>
+                <outlet property="email" destination="GzS-bR-o7C" id="BQe-Xv-hMn"/>
+                <outlet property="employeeNumber" destination="Byo-Ot-41E" id="bJc-sC-6WC"/>
+                <outlet property="fullName" destination="YrV-IL-y58" id="tf7-hS-sKJ"/>
+                <outlet property="maritalStatus" destination="pe4-36-10D" id="CgU-dM-z4d"/>
+                <outlet property="mobileNumber" destination="aWb-xT-ceH" id="I7Y-G1-uNF"/>
+                <outlet property="password" destination="rh3-OG-6LO" id="0l7-VE-gc2"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -59,12 +69,112 @@
                         <constraint firstItem="MPr-1j-QVc" firstAttribute="leading" secondItem="ogq-na-L0V" secondAttribute="leading" constant="17" id="z7L-qt-icQ"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Byo-Ot-41E" userLabel="Employee Number">
+                    <rect key="frame" x="13" y="99" width="294" height="29"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AKPMHF5632PR" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6XK-BG-Wq3">
+                            <rect key="frame" x="184" y="7" width="102" height="16"/>
+                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="13"/>
+                            <color key="textColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employee Number:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pt4-nV-60y">
+                            <rect key="frame" x="8" y="7" width="101" height="15"/>
+                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                            <color key="textColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="29" id="6wD-KF-OHa"/>
+                        <constraint firstAttribute="trailing" secondItem="6XK-BG-Wq3" secondAttribute="trailing" constant="8" id="O1D-Br-jb4"/>
+                        <constraint firstItem="pt4-nV-60y" firstAttribute="leading" secondItem="Byo-Ot-41E" secondAttribute="leading" constant="8" id="bw8-BK-1lF"/>
+                        <constraint firstItem="pt4-nV-60y" firstAttribute="top" secondItem="Byo-Ot-41E" secondAttribute="top" constant="7" id="pKn-ng-uCx"/>
+                        <constraint firstItem="6XK-BG-Wq3" firstAttribute="top" secondItem="Byo-Ot-41E" secondAttribute="top" constant="7" id="x9y-He-J8e"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iyf-pN-pZR" userLabel="Date of Birth">
+                    <rect key="frame" x="13" y="128" width="294" height="29"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBr-He-bX4">
+                            <rect key="frame" x="8" y="7" width="72" height="15"/>
+                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                            <color key="textColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dec 29, 1980" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wnr-hS-IUt">
+                            <rect key="frame" x="210" y="7" width="76" height="16"/>
+                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="13"/>
+                            <color key="textColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="Wnr-hS-IUt" firstAttribute="top" secondItem="iyf-pN-pZR" secondAttribute="top" constant="7" id="DDx-M5-JXz"/>
+                        <constraint firstAttribute="trailing" secondItem="Wnr-hS-IUt" secondAttribute="trailing" constant="8" id="Ql5-cu-Y2J"/>
+                        <constraint firstAttribute="height" constant="29" id="eyX-Nw-e2s"/>
+                        <constraint firstItem="WBr-He-bX4" firstAttribute="top" secondItem="iyf-pN-pZR" secondAttribute="top" constant="7" id="hte-Pq-m30"/>
+                        <constraint firstItem="WBr-He-bX4" firstAttribute="leading" secondItem="iyf-pN-pZR" secondAttribute="leading" constant="8" id="ub3-w2-DY2"/>
+                    </constraints>
+                </view>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Marital Status" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pe4-36-10D">
+                    <rect key="frame" x="13" y="221" width="294" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Ric-Zx-B8f"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GzS-bR-o7C">
+                    <rect key="frame" x="13" y="265" width="294" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="KXb-wb-CEH"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rh3-OG-6LO">
+                    <rect key="frame" x="13" y="309" width="294" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="eHH-gi-smk"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8G-fA-Yw6">
+                    <rect key="frame" x="44" y="383" width="232" height="50"/>
+                    <color key="backgroundColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="FWG-9W-5iD"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
+                    <state key="normal" title="Submit">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YrV-IL-y58" userLabel="Full name">
-                    <rect key="frame" x="13" y="70" width="294" height="36"/>
+                    <rect key="frame" x="13" y="70" width="294" height="29"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mr. Sudhir Sarnobat" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cp5-GK-myM">
-                            <rect key="frame" x="164" y="7" width="122" height="17"/>
-                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                            <rect key="frame" x="172" y="7" width="114" height="16"/>
+                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="13"/>
                             <color key="textColor" red="0.48627450980392156" green="0.48627450980392156" blue="0.48627450980392156" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -81,107 +191,27 @@
                         <constraint firstItem="vcG-AN-JZ2" firstAttribute="top" secondItem="YrV-IL-y58" secondAttribute="top" constant="7" id="AMH-Ib-h8S"/>
                         <constraint firstItem="Cp5-GK-myM" firstAttribute="top" secondItem="YrV-IL-y58" secondAttribute="top" constant="7" id="QaP-Eg-rXE"/>
                         <constraint firstAttribute="trailing" secondItem="Cp5-GK-myM" secondAttribute="trailing" constant="8" id="i5j-FJ-sCE"/>
-                        <constraint firstAttribute="height" constant="36" id="md3-gu-Skt"/>
+                        <constraint firstAttribute="height" constant="29" id="md3-gu-Skt"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Byo-Ot-41E" userLabel="Employee Number">
-                    <rect key="frame" x="13" y="106" width="294" height="36"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AKPMHF5632PR" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6XK-BG-Wq3">
-                            <rect key="frame" x="176" y="7" width="110" height="17"/>
-                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
-                            <color key="textColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employee Number:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pt4-nV-60y">
-                            <rect key="frame" x="8" y="7" width="101" height="15"/>
-                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
-                            <color key="textColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="36" id="6wD-KF-OHa"/>
-                        <constraint firstAttribute="trailing" secondItem="6XK-BG-Wq3" secondAttribute="trailing" constant="8" id="O1D-Br-jb4"/>
-                        <constraint firstItem="pt4-nV-60y" firstAttribute="leading" secondItem="Byo-Ot-41E" secondAttribute="leading" constant="8" id="bw8-BK-1lF"/>
-                        <constraint firstItem="pt4-nV-60y" firstAttribute="top" secondItem="Byo-Ot-41E" secondAttribute="top" constant="7" id="pKn-ng-uCx"/>
-                        <constraint firstItem="6XK-BG-Wq3" firstAttribute="top" secondItem="Byo-Ot-41E" secondAttribute="top" constant="7" id="x9y-He-J8e"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iyf-pN-pZR" userLabel="Date of Birth">
-                    <rect key="frame" x="13" y="142" width="294" height="36"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBr-He-bX4">
-                            <rect key="frame" x="8" y="7" width="72" height="15"/>
-                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
-                            <color key="textColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dec 29, 1980" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wnr-hS-IUt">
-                            <rect key="frame" x="204" y="7" width="82" height="17"/>
-                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
-                            <color key="textColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstItem="Wnr-hS-IUt" firstAttribute="top" secondItem="iyf-pN-pZR" secondAttribute="top" constant="7" id="DDx-M5-JXz"/>
-                        <constraint firstAttribute="trailing" secondItem="Wnr-hS-IUt" secondAttribute="trailing" constant="8" id="Ql5-cu-Y2J"/>
-                        <constraint firstAttribute="height" constant="36" id="eyX-Nw-e2s"/>
-                        <constraint firstItem="WBr-He-bX4" firstAttribute="top" secondItem="iyf-pN-pZR" secondAttribute="top" constant="7" id="hte-Pq-m30"/>
-                        <constraint firstItem="WBr-He-bX4" firstAttribute="leading" secondItem="iyf-pN-pZR" secondAttribute="leading" constant="8" id="ub3-w2-DY2"/>
-                    </constraints>
-                </view>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Marital Status" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pe4-36-10D">
-                    <rect key="frame" x="13" y="242" width="294" height="44"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="Ric-Zx-B8f"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GzS-bR-o7C">
-                    <rect key="frame" x="13" y="286" width="294" height="44"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="KXb-wb-CEH"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rh3-OG-6LO">
-                    <rect key="frame" x="13" y="330" width="294" height="44"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="eHH-gi-smk"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8G-fA-Yw6">
-                    <rect key="frame" x="44" y="394" width="232" height="50"/>
-                    <color key="backgroundColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="FWG-9W-5iD"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
-                    <state key="normal" title="Submit">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                </button>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aWb-xT-ceH">
-                    <rect key="frame" x="13" y="198" width="294" height="44"/>
+                    <rect key="frame" x="13" y="177" width="294" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="XVU-po-z0F"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <gestureRecognizers/>
             <constraints>
-                <constraint firstItem="b8G-fA-Yw6" firstAttribute="top" secondItem="rh3-OG-6LO" secondAttribute="bottom" constant="20" id="1d5-IB-wSY"/>
+                <constraint firstItem="b8G-fA-Yw6" firstAttribute="top" secondItem="rh3-OG-6LO" secondAttribute="bottom" constant="30" id="1d5-IB-wSY"/>
                 <constraint firstItem="YrV-IL-y58" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="13" id="6kQ-96-pgz"/>
                 <constraint firstItem="pe4-36-10D" firstAttribute="trailing" secondItem="aWb-xT-ceH" secondAttribute="trailing" id="6vA-rQ-1Ex"/>
                 <constraint firstItem="ogq-na-L0V" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="8lf-mv-JZe"/>

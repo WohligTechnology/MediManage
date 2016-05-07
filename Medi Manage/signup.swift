@@ -12,6 +12,8 @@ import UIKit
 
 class signup: UIView {
     
+    @IBOutlet weak var employeeID: UITextField!
+    @IBOutlet weak var dateOfBirth: UITextField!
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
@@ -22,6 +24,13 @@ class signup: UIView {
         loadViewFromNib ()
         
     }
+    
+    func addPadding(width: CGFloat, myView: UITextField) {
+        let paddingView = UIView(frame: CGRectMake(0, 0, width, myView.frame.height))
+        myView.leftView = paddingView
+        myView.leftViewMode = UITextFieldViewMode.Always
+    }
+    
     func loadViewFromNib() {
         let bundle = NSBundle(forClass: self.dynamicType)
         let nib = UINib(nibName: "signup", bundle: bundle)
@@ -29,6 +38,9 @@ class signup: UIView {
         sortnewview.frame = bounds
         sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(sortnewview);
+        
+        addPadding(15, myView: employeeID)
+        addPadding(15, myView: dateOfBirth)
     }
 }
 

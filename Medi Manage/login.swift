@@ -11,6 +11,9 @@ import UIKit
 
 class login: UIView {
     
+    @IBOutlet weak var mobile: UITextField!
+    @IBOutlet weak var password: UITextField!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
@@ -21,6 +24,13 @@ class login: UIView {
         loadViewFromNib ()
         
     }
+    
+    func addPadding(width: CGFloat, myView: UITextField) {
+        let paddingView = UIView(frame: CGRectMake(0, 0, width, myView.frame.height))
+        myView.leftView = paddingView
+        myView.leftViewMode = UITextFieldViewMode.Always
+    }
+    
     func loadViewFromNib() {
         let bundle = NSBundle(forClass: self.dynamicType)
         let nib = UINib(nibName: "login", bundle: bundle)
@@ -28,6 +38,9 @@ class login: UIView {
         sortnewview.frame = bounds
         sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(sortnewview);
+        
+        addPadding(15, myView: mobile)
+        addPadding(15, myView: password)
     }
 }
 

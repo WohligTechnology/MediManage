@@ -13,22 +13,10 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="landing" customModule="Medi_Manage" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="View" customClass="signup" customModule="Medi_Manage" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qaT-V6-fOB" customClass="login" customModule="Medi_Manage" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="qaT-V6-fOB" secondAttribute="trailing" id="5xe-vN-Thk"/>
-                            <constraint firstItem="qaT-V6-fOB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Bk8-nE-was"/>
-                            <constraint firstItem="qaT-V6-fOB" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Y3K-I5-3vL"/>
-                            <constraint firstItem="qaT-V6-fOB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ciS-Pf-bJ4"/>
-                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
