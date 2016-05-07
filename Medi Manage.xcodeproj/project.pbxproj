@@ -116,8 +116,8 @@
 		783322A41CDB13860015CE37 /* signup */ = {
 			isa = PBXGroup;
 			children = (
-				783322A51CDB13CE0015CE37 /* signup.xib */,
 				783322A71CDB13ED0015CE37 /* signup.swift */,
+				783322A51CDB13CE0015CE37 /* signup.xib */,
 			);
 			name = signup;
 			sourceTree = "<group>";
