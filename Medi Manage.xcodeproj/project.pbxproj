@@ -24,6 +24,12 @@
 		786DFA041CD214F300DDE769 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 786DFA021CD214F300DDE769 /* LaunchScreen.storyboard */; };
 		786DFA0F1CD214F300DDE769 /* Medi_ManageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786DFA0E1CD214F300DDE769 /* Medi_ManageTests.swift */; };
 		786DFA1A1CD214F300DDE769 /* Medi_ManageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786DFA191CD214F300DDE769 /* Medi_ManageUITests.swift */; };
+		78B90BD11CE05C7C0022FE7A /* retrieveLogin.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78B90BD01CE05C7C0022FE7A /* retrieveLogin.xib */; };
+		78B90BD31CE05C8D0022FE7A /* retrieveLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B90BD21CE05C8D0022FE7A /* retrieveLogin.swift */; };
+		78B90BD51CE0676E0022FE7A /* generateOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B90BD41CE0676E0022FE7A /* generateOTP.swift */; };
+		78B90BD71CE067810022FE7A /* generateOTP.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78B90BD61CE067810022FE7A /* generateOTP.xib */; };
+		78B90BD91CE067950022FE7A /* enterOTP.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78B90BD81CE067950022FE7A /* enterOTP.xib */; };
+		78B90BDB1CE067DA0022FE7A /* enterOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B90BDA1CE067DA0022FE7A /* enterOTP.swift */; };
 		C2A59E8F1CDDDF700093CFEC /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2A59E8A1CDDDF700093CFEC /* Lato-Black.ttf */; };
 		C2A59E901CDDDF700093CFEC /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2A59E8B1CDDDF700093CFEC /* Lato-Bold.ttf */; };
 		C2A59E911CDDDF700093CFEC /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2A59E8C1CDDDF700093CFEC /* Lato-Hairline.ttf */; };
@@ -72,6 +78,12 @@
 		786DFA151CD214F300DDE769 /* Medi ManageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Medi ManageUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		786DFA191CD214F300DDE769 /* Medi_ManageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medi_ManageUITests.swift; sourceTree = "<group>"; };
 		786DFA1B1CD214F300DDE769 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78B90BD01CE05C7C0022FE7A /* retrieveLogin.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = retrieveLogin.xib; sourceTree = "<group>"; };
+		78B90BD21CE05C8D0022FE7A /* retrieveLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = retrieveLogin.swift; sourceTree = "<group>"; };
+		78B90BD41CE0676E0022FE7A /* generateOTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = generateOTP.swift; sourceTree = "<group>"; };
+		78B90BD61CE067810022FE7A /* generateOTP.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = generateOTP.xib; sourceTree = "<group>"; };
+		78B90BD81CE067950022FE7A /* enterOTP.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = enterOTP.xib; sourceTree = "<group>"; };
+		78B90BDA1CE067DA0022FE7A /* enterOTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enterOTP.swift; sourceTree = "<group>"; };
 		C2A59E8A1CDDDF700093CFEC /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		C2A59E8B1CDDDF700093CFEC /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		C2A59E8C1CDDDF700093CFEC /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Hairline.ttf"; sourceTree = "<group>"; };
@@ -221,6 +233,9 @@
 		786DFA291CD2282700DDE769 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				78B90BCF1CE05C560022FE7A /* enterOTP */,
+				78B90BCE1CE05C4F0022FE7A /* generateOTP */,
+				78B90BCD1CE05C200022FE7A /* retrieveLogin */,
 				783322B31CDB75BE0015CE37 /* completeProfile */,
 				783322AE1CDB3DC30015CE37 /* landing */,
 				783322A91CDB30DD0015CE37 /* onboarding */,
@@ -256,6 +271,33 @@
 				C2A59E8E1CDDDF700093CFEC /* Lato-Regular.ttf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		78B90BCD1CE05C200022FE7A /* retrieveLogin */ = {
+			isa = PBXGroup;
+			children = (
+				78B90BD21CE05C8D0022FE7A /* retrieveLogin.swift */,
+				78B90BD01CE05C7C0022FE7A /* retrieveLogin.xib */,
+			);
+			name = retrieveLogin;
+			sourceTree = "<group>";
+		};
+		78B90BCE1CE05C4F0022FE7A /* generateOTP */ = {
+			isa = PBXGroup;
+			children = (
+				78B90BD41CE0676E0022FE7A /* generateOTP.swift */,
+				78B90BD61CE067810022FE7A /* generateOTP.xib */,
+			);
+			name = generateOTP;
+			sourceTree = "<group>";
+		};
+		78B90BCF1CE05C560022FE7A /* enterOTP */ = {
+			isa = PBXGroup;
+			children = (
+				78B90BDA1CE067DA0022FE7A /* enterOTP.swift */,
+				78B90BD81CE067950022FE7A /* enterOTP.xib */,
+			);
+			name = enterOTP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,12 +410,15 @@
 				C2A59E921CDDDF700093CFEC /* Lato-Light.ttf in Resources */,
 				C2A59E8F1CDDDF700093CFEC /* Lato-Black.ttf in Resources */,
 				783322B01CDB50D10015CE37 /* landing.xib in Resources */,
+				78B90BD71CE067810022FE7A /* generateOTP.xib in Resources */,
 				786DFA041CD214F300DDE769 /* LaunchScreen.storyboard in Resources */,
+				78B90BD11CE05C7C0022FE7A /* retrieveLogin.xib in Resources */,
 				786DFA011CD214F300DDE769 /* Assets.xcassets in Resources */,
 				786DF9FF1CD214F300DDE769 /* Main.storyboard in Resources */,
 				783322951CD9FB1B0015CE37 /* login.xib in Resources */,
 				C2A59E931CDDDF700093CFEC /* Lato-Regular.ttf in Resources */,
 				783322B71CDB7B620015CE37 /* completeProfile.xib in Resources */,
+				78B90BD91CE067950022FE7A /* enterOTP.xib in Resources */,
 				783322A61CDB13CE0015CE37 /* signup.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,6 +449,9 @@
 				783322A81CDB13ED0015CE37 /* signup.swift in Sources */,
 				783322AB1CDB37FE0015CE37 /* onboarding.swift in Sources */,
 				783322971CD9FCD90015CE37 /* login.swift in Sources */,
+				78B90BD31CE05C8D0022FE7A /* retrieveLogin.swift in Sources */,
+				78B90BDB1CE067DA0022FE7A /* enterOTP.swift in Sources */,
+				78B90BD51CE0676E0022FE7A /* generateOTP.swift in Sources */,
 				786DF9FA1CD214F300DDE769 /* AppDelegate.swift in Sources */,
 				783322B21CDB50E50015CE37 /* landing.swift in Sources */,
 			);

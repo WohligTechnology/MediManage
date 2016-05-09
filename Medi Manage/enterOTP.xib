@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Lato-Black.ttf">
+            <string>Lato-Black</string>
+        </mutableArray>
+        <mutableArray key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+            <string>Lato-Bold</string>
+            <string>Lato-Bold</string>
+        </mutableArray>
+        <mutableArray key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="enterOTP" customModule="Medi_Manage" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="6JB-4P-hOf">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-bg" translatesAutoresizingMaskIntoConstraints="NO" id="Ssj-id-eKA">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="yIj-PE-Xvh">
+                    <rect key="frame" x="0.0" y="60" width="320" height="61"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="61" id="LKE-eW-owI"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1iY-xY-UCo">
+                    <rect key="frame" x="15" y="151" width="290" height="22"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-retrieve" translatesAutoresizingMaskIntoConstraints="NO" id="MCX-n2-iMe">
+                            <rect key="frame" x="0.0" y="0.0" width="32" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="32" id="k8p-6I-ub0"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="xYa-S5-3ts"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="xYa-S5-3ts"/>
+                                </mask>
+                            </variation>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RETRIEVE LOGIN ID &amp; PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huu-Zo-8pp">
+                            <rect key="frame" x="34" y="0.0" width="256" height="22"/>
+                            <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="16"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="huu-Zo-8pp" firstAttribute="top" secondItem="1iY-xY-UCo" secondAttribute="top" id="1Wg-nb-fa4"/>
+                        <constraint firstItem="MCX-n2-iMe" firstAttribute="bottom" secondItem="huu-Zo-8pp" secondAttribute="bottom" id="5ld-m5-sZv"/>
+                        <constraint firstItem="MCX-n2-iMe" firstAttribute="top" secondItem="1iY-xY-UCo" secondAttribute="top" id="D3I-4Z-jiH"/>
+                        <constraint firstAttribute="trailing" secondItem="huu-Zo-8pp" secondAttribute="trailing" id="PyQ-Mg-hUP"/>
+                        <constraint firstAttribute="height" constant="22" id="ZRa-bm-VVM"/>
+                        <constraint firstItem="huu-Zo-8pp" firstAttribute="leading" secondItem="MCX-n2-iMe" secondAttribute="trailing" constant="2" id="bze-eZ-rC4"/>
+                        <constraint firstItem="MCX-n2-iMe" firstAttribute="leading" secondItem="1iY-xY-UCo" secondAttribute="leading" id="eUC-J3-cL9"/>
+                        <constraint firstAttribute="bottom" secondItem="MCX-n2-iMe" secondAttribute="bottom" id="r1k-hp-Ahc"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRu-CF-ehk">
+                    <rect key="frame" x="44" y="349" width="232" height="50"/>
+                    <color key="backgroundColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="4vL-tu-6mW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
+                    <state key="normal" title="Submit">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter OTP" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aMF-0Y-f77">
+                    <rect key="frame" x="26" y="245" width="268" height="50"/>
+                    <color key="backgroundColor" white="1" alpha="0.40272090519999998" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="GNn-NZ-EWn"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3r-iI-J3K">
+                    <rect key="frame" x="24" y="216" width="273" height="15"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Give your Mobile Number... ">
+                            <attributes>
+                                <color key="NSColor" red="0.019607843137254902" green="0.45882352941176469" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="12" name="Lato-Bold"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="Get your OTP.  ">
+                            <attributes>
+                                <color key="NSColor" red="0.91764705882352937" green="0.34509803921568627" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="12" name="Lato-Bold"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="SIMPLE!">
+                            <attributes>
+                                <color key="NSColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="12" name="Lato-Bold"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXF-Bj-HIz">
+                    <rect key="frame" x="140" y="407" width="40" height="29"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="tBC-fU-NPU"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
+                    <state key="normal" title="Back">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIa-M8-oek">
+                    <rect key="frame" x="53" y="305" width="126" height="26"/>
+                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
+                    <state key="normal" title="Resend OTP" image="icon-reset">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="yIj-PE-Xvh" firstAttribute="leading" secondItem="6JB-4P-hOf" secondAttribute="leading" id="0JB-7D-SWA"/>
+                <constraint firstItem="1iY-xY-UCo" firstAttribute="centerX" secondItem="6JB-4P-hOf" secondAttribute="centerX" id="6UC-nN-ZUg"/>
+                <constraint firstItem="aMF-0Y-f77" firstAttribute="top" secondItem="f3r-iI-J3K" secondAttribute="bottom" constant="14" id="89P-Qc-Vrt"/>
+                <constraint firstItem="sXF-Bj-HIz" firstAttribute="centerX" secondItem="6JB-4P-hOf" secondAttribute="centerX" id="8Xv-KT-uc0"/>
+                <constraint firstAttribute="trailing" secondItem="yIj-PE-Xvh" secondAttribute="trailing" id="CTj-Dx-DE1"/>
+                <constraint firstItem="yIj-PE-Xvh" firstAttribute="top" secondItem="6JB-4P-hOf" secondAttribute="top" constant="60" id="MFv-n6-Des"/>
+                <constraint firstItem="f3r-iI-J3K" firstAttribute="top" secondItem="huu-Zo-8pp" secondAttribute="bottom" constant="43" id="P63-MB-Qf2"/>
+                <constraint firstItem="Ssj-id-eKA" firstAttribute="leading" secondItem="6JB-4P-hOf" secondAttribute="leading" id="PGZ-VM-76W"/>
+                <constraint firstItem="1iY-xY-UCo" firstAttribute="top" secondItem="yIj-PE-Xvh" secondAttribute="bottom" constant="30" id="SJv-dg-iBl"/>
+                <constraint firstAttribute="trailing" secondItem="aMF-0Y-f77" secondAttribute="trailing" constant="26" id="TJ5-lh-KF3"/>
+                <constraint firstItem="Ssj-id-eKA" firstAttribute="top" secondItem="6JB-4P-hOf" secondAttribute="top" id="XEW-x3-SNS"/>
+                <constraint firstAttribute="trailing" secondItem="IRu-CF-ehk" secondAttribute="trailing" constant="44" id="Yma-bu-3M5"/>
+                <constraint firstAttribute="trailing" secondItem="Ssj-id-eKA" secondAttribute="trailing" id="cXj-SL-gNt"/>
+                <constraint firstItem="sXF-Bj-HIz" firstAttribute="top" secondItem="IRu-CF-ehk" secondAttribute="bottom" constant="8" id="dfw-7g-Rdn"/>
+                <constraint firstAttribute="bottom" secondItem="Ssj-id-eKA" secondAttribute="bottom" id="ePq-kg-eCT"/>
+                <constraint firstItem="f3r-iI-J3K" firstAttribute="centerX" secondItem="6JB-4P-hOf" secondAttribute="centerX" id="ipk-Bp-wF8"/>
+                <constraint firstItem="aMF-0Y-f77" firstAttribute="leading" secondItem="6JB-4P-hOf" secondAttribute="leading" constant="26" id="uWE-wb-jM9"/>
+                <constraint firstItem="IRu-CF-ehk" firstAttribute="leading" secondItem="6JB-4P-hOf" secondAttribute="leading" constant="44" id="wSo-nM-1EP"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon-reset" width="26" height="26"/>
+        <image name="icon-retrieve" width="73" height="69"/>
+        <image name="login-bg" width="1242" height="2208"/>
+        <image name="logo" width="333" height="218"/>
+    </resources>
+</document>
