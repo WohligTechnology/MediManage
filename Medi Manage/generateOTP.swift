@@ -12,6 +12,7 @@ import UIKit
 class generateOTP: UIView {
     
     @IBOutlet weak var mobileNumber: UITextField!
+    @IBOutlet weak var multiColor: UILabel!
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
@@ -37,5 +38,6 @@ class generateOTP: UIView {
         self.addSubview(sortnewview);
         
         addPadding(15, myView: mobileNumber)
+        multiColor.font = UIFont(name: "Lato-Bold", size: 11.0)
     }
 }

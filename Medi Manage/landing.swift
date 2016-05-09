@@ -11,6 +11,7 @@ import UIKit
 
 class landing: UIView {
     
+    @IBOutlet weak var text: UILabel!
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
@@ -28,5 +29,7 @@ class landing: UIView {
         sortnewview.frame = bounds
         sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(sortnewview);
+        
+        text.font = UIFont(name: "Lato-Bold", size: 14.0)
     }
 }

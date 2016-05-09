@@ -233,11 +233,11 @@
 		786DFA291CD2282700DDE769 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				783322AE1CDB3DC30015CE37 /* landing */,
 				78B90BCF1CE05C560022FE7A /* enterOTP */,
 				78B90BCE1CE05C4F0022FE7A /* generateOTP */,
 				78B90BCD1CE05C200022FE7A /* retrieveLogin */,
 				783322B31CDB75BE0015CE37 /* completeProfile */,
-				783322AE1CDB3DC30015CE37 /* landing */,
 				783322A91CDB30DD0015CE37 /* onboarding */,
 				783322A41CDB13860015CE37 /* signup */,
 				783322911CD9F1A40015CE37 /* login */,

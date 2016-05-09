@@ -18,7 +18,14 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="enterOTP" customModule="Medi_Manage" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="enterOTP" customModule="Medi_Manage" customModuleProvider="target">
+            <connections>
+                <outlet property="enterOTP" destination="aMF-0Y-f77" id="EiE-on-eVc"/>
+                <outlet property="multiColor" destination="f3r-iI-J3K" id="sfX-65-gtg"/>
+                <outlet property="resetOTP" destination="eIa-M8-oek" id="nsT-oh-6vl"/>
+                <outlet property="submitOTP" destination="IRu-CF-ehk" id="bZq-IH-JAS"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="6JB-4P-hOf">
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -66,8 +73,8 @@
                         <constraint firstAttribute="bottom" secondItem="MCX-n2-iMe" secondAttribute="bottom" id="r1k-hp-Ahc"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRu-CF-ehk">
-                    <rect key="frame" x="44" y="349" width="232" height="50"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRu-CF-ehk">
+                    <rect key="frame" x="44" y="344" width="232" height="50"/>
                     <color key="backgroundColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="4vL-tu-6mW"/>
@@ -78,7 +85,7 @@
                     </state>
                 </button>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter OTP" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aMF-0Y-f77">
-                    <rect key="frame" x="26" y="245" width="268" height="50"/>
+                    <rect key="frame" x="26" y="244" width="268" height="50"/>
                     <color key="backgroundColor" white="1" alpha="0.40272090519999998" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="GNn-NZ-EWn"/>
@@ -92,31 +99,34 @@
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3r-iI-J3K">
-                    <rect key="frame" x="24" y="216" width="273" height="15"/>
+                    <rect key="frame" x="35" y="216" width="250" height="14"/>
                     <attributedString key="attributedText">
                         <fragment content="Give your Mobile Number... ">
                             <attributes>
                                 <color key="NSColor" red="0.019607843137254902" green="0.45882352941176469" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="12" name="Lato-Bold"/>
+                                <font key="NSFont" size="11" name="Lato-Bold"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                             </attributes>
                         </fragment>
                         <fragment content="Get your OTP.  ">
                             <attributes>
                                 <color key="NSColor" red="0.91764705882352937" green="0.34509803921568627" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="12" name="Lato-Bold"/>
+                                <font key="NSFont" size="11" name="Lato-Bold"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                             </attributes>
                         </fragment>
                         <fragment content="SIMPLE!">
                             <attributes>
                                 <color key="NSColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="12" name="Lato-Bold"/>
+                                <font key="NSFont" size="11" name="Lato-Bold"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                             </attributes>
                         </fragment>
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXF-Bj-HIz">
-                    <rect key="frame" x="140" y="407" width="40" height="29"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXF-Bj-HIz">
+                    <rect key="frame" x="140" y="402" width="40" height="29"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="40" id="tBC-fU-NPU"/>
                     </constraints>
@@ -125,9 +135,14 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIa-M8-oek">
-                    <rect key="frame" x="53" y="305" width="126" height="26"/>
-                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIa-M8-oek">
+                    <rect key="frame" x="100" y="305" width="120" height="28"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.15484913793103447" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="G5j-AW-8U8"/>
+                        <constraint firstAttribute="height" constant="28" id="R05-SJ-Sbl"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="12"/>
                     <state key="normal" title="Resend OTP" image="icon-reset">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
@@ -136,6 +151,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="yIj-PE-Xvh" firstAttribute="leading" secondItem="6JB-4P-hOf" secondAttribute="leading" id="0JB-7D-SWA"/>
+                <constraint firstItem="IRu-CF-ehk" firstAttribute="top" secondItem="eIa-M8-oek" secondAttribute="bottom" constant="11" id="3D5-u8-XSS"/>
                 <constraint firstItem="1iY-xY-UCo" firstAttribute="centerX" secondItem="6JB-4P-hOf" secondAttribute="centerX" id="6UC-nN-ZUg"/>
                 <constraint firstItem="aMF-0Y-f77" firstAttribute="top" secondItem="f3r-iI-J3K" secondAttribute="bottom" constant="14" id="89P-Qc-Vrt"/>
                 <constraint firstItem="sXF-Bj-HIz" firstAttribute="centerX" secondItem="6JB-4P-hOf" secondAttribute="centerX" id="8Xv-KT-uc0"/>
@@ -151,6 +167,8 @@
                 <constraint firstItem="sXF-Bj-HIz" firstAttribute="top" secondItem="IRu-CF-ehk" secondAttribute="bottom" constant="8" id="dfw-7g-Rdn"/>
                 <constraint firstAttribute="bottom" secondItem="Ssj-id-eKA" secondAttribute="bottom" id="ePq-kg-eCT"/>
                 <constraint firstItem="f3r-iI-J3K" firstAttribute="centerX" secondItem="6JB-4P-hOf" secondAttribute="centerX" id="ipk-Bp-wF8"/>
+                <constraint firstItem="eIa-M8-oek" firstAttribute="top" secondItem="aMF-0Y-f77" secondAttribute="bottom" constant="11" id="kMK-Kr-uHY"/>
+                <constraint firstItem="eIa-M8-oek" firstAttribute="centerX" secondItem="6JB-4P-hOf" secondAttribute="centerX" id="t16-LL-vEV"/>
                 <constraint firstItem="aMF-0Y-f77" firstAttribute="leading" secondItem="6JB-4P-hOf" secondAttribute="leading" constant="26" id="uWE-wb-jM9"/>
                 <constraint firstItem="IRu-CF-ehk" firstAttribute="leading" secondItem="6JB-4P-hOf" secondAttribute="leading" constant="44" id="wSo-nM-1EP"/>
             </constraints>
@@ -158,7 +176,7 @@
         </view>
     </objects>
     <resources>
-        <image name="icon-reset" width="26" height="26"/>
+        <image name="icon-reset" width="15" height="10"/>
         <image name="icon-retrieve" width="73" height="69"/>
         <image name="login-bg" width="1242" height="2208"/>
         <image name="logo" width="333" height="218"/>
