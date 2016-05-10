@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3AD3E5281CE1DE1D00900A93 /* enrollmentMembers.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD3E5271CE1DE1D00900A93 /* enrollmentMembers.xib */; };
+		3AD3E52A1CE1F87B00900A93 /* enrollmentMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD3E5291CE1F87B00900A93 /* enrollmentMembers.swift */; };
 		783322951CD9FB1B0015CE37 /* login.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783322941CD9FB1B0015CE37 /* login.xib */; };
 		783322971CD9FCD90015CE37 /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783322961CD9FCD90015CE37 /* login.swift */; };
 		783322A61CDB13CE0015CE37 /* signup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783322A51CDB13CE0015CE37 /* signup.xib */; };
@@ -55,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3AD3E5271CE1DE1D00900A93 /* enrollmentMembers.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = enrollmentMembers.xib; sourceTree = "<group>"; };
+		3AD3E5291CE1F87B00900A93 /* enrollmentMembers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enrollmentMembers.swift; sourceTree = "<group>"; };
 		783322941CD9FB1B0015CE37 /* login.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = login.xib; sourceTree = "<group>"; };
 		783322961CD9FCD90015CE37 /* login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
 		783322A51CDB13CE0015CE37 /* signup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = signup.xib; sourceTree = "<group>"; };
@@ -116,6 +120,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3AD3E5261CE1DDC200900A93 /* enrollmentMembers */ = {
+			isa = PBXGroup;
+			children = (
+				3AD3E5271CE1DE1D00900A93 /* enrollmentMembers.xib */,
+				3AD3E5291CE1F87B00900A93 /* enrollmentMembers.swift */,
+			);
+			name = enrollmentMembers;
+			sourceTree = "<group>";
+		};
 		783322911CD9F1A40015CE37 /* login */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +246,7 @@
 		786DFA291CD2282700DDE769 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3AD3E5261CE1DDC200900A93 /* enrollmentMembers */,
 				783322AE1CDB3DC30015CE37 /* landing */,
 				78B90BCF1CE05C560022FE7A /* enterOTP */,
 				78B90BCE1CE05C4F0022FE7A /* generateOTP */,
@@ -412,6 +426,7 @@
 				783322B01CDB50D10015CE37 /* landing.xib in Resources */,
 				78B90BD71CE067810022FE7A /* generateOTP.xib in Resources */,
 				786DFA041CD214F300DDE769 /* LaunchScreen.storyboard in Resources */,
+				3AD3E5281CE1DE1D00900A93 /* enrollmentMembers.xib in Resources */,
 				78B90BD11CE05C7C0022FE7A /* retrieveLogin.xib in Resources */,
 				786DFA011CD214F300DDE769 /* Assets.xcassets in Resources */,
 				786DF9FF1CD214F300DDE769 /* Main.storyboard in Resources */,
@@ -450,6 +465,7 @@
 				783322AB1CDB37FE0015CE37 /* onboarding.swift in Sources */,
 				783322971CD9FCD90015CE37 /* login.swift in Sources */,
 				78B90BD31CE05C8D0022FE7A /* retrieveLogin.swift in Sources */,
+				3AD3E52A1CE1F87B00900A93 /* enrollmentMembers.swift in Sources */,
 				78B90BDB1CE067DA0022FE7A /* enterOTP.swift in Sources */,
 				78B90BD51CE0676E0022FE7A /* generateOTP.swift in Sources */,
 				786DF9FA1CD214F300DDE769 /* AppDelegate.swift in Sources */,

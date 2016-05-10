@@ -9,10 +9,13 @@
 import Foundation
 import UIKit
 
-class generateOTP: UIView {
+class generateOTP: UIView, UITextViewDelegate {
     
     @IBOutlet weak var mobileNumber: UITextField!
     @IBOutlet weak var multiColor: UILabel!
+    
+    let allowNumbers = 10
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
@@ -39,5 +42,10 @@ class generateOTP: UIView {
         
         addPadding(15, myView: mobileNumber)
         multiColor.font = UIFont(name: "Lato-Bold", size: 11.0)
+        
+//        if (mobileNumber.text?.characters.count > allowNumbers) {
+//            let alert = UIAlertController(title: "", mess)
+//        }
+        
     }
 }
