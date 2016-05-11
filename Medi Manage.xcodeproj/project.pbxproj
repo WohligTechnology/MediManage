@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A01752A1CE3589400832E49 /* insuredMembers.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A0175291CE3589400832E49 /* insuredMembers.xib */; };
+		3A01752C1CE360FF00832E49 /* insuredMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01752B1CE360FF00832E49 /* insuredMembers.swift */; };
 		3A481F351CE3151900BB8A73 /* premiumCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A481F341CE3151900BB8A73 /* premiumCalculation.swift */; };
 		3AD3E5281CE1DE1D00900A93 /* enrollmentMembers.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD3E5271CE1DE1D00900A93 /* enrollmentMembers.xib */; };
 		3AD3E52A1CE1F87B00900A93 /* enrollmentMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD3E5291CE1F87B00900A93 /* enrollmentMembers.swift */; };
@@ -59,6 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A0175291CE3589400832E49 /* insuredMembers.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = insuredMembers.xib; sourceTree = "<group>"; };
+		3A01752B1CE360FF00832E49 /* insuredMembers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = insuredMembers.swift; sourceTree = "<group>"; };
 		3A481F341CE3151900BB8A73 /* premiumCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = premiumCalculation.swift; sourceTree = "<group>"; };
 		3AD3E5271CE1DE1D00900A93 /* enrollmentMembers.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = enrollmentMembers.xib; sourceTree = "<group>"; };
 		3AD3E5291CE1F87B00900A93 /* enrollmentMembers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enrollmentMembers.swift; sourceTree = "<group>"; };
@@ -124,6 +128,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A0175281CE3587900832E49 /* insuredMembers */ = {
+			isa = PBXGroup;
+			children = (
+				3A0175291CE3589400832E49 /* insuredMembers.xib */,
+				3A01752B1CE360FF00832E49 /* insuredMembers.swift */,
+			);
+			name = insuredMembers;
+			sourceTree = "<group>";
+		};
 		3AD3E5261CE1DDC200900A93 /* enrollmentMembers */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +272,7 @@
 		786DFA291CD2282700DDE769 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3A0175281CE3587900832E49 /* insuredMembers */,
 				3AD3E52B1CE209F300900A93 /* premiumCalculation */,
 				3AD3E5261CE1DDC200900A93 /* enrollmentMembers */,
 				783322AE1CDB3DC30015CE37 /* landing */,
@@ -444,6 +458,7 @@
 				3AD3E5281CE1DE1D00900A93 /* enrollmentMembers.xib in Resources */,
 				78B90BD11CE05C7C0022FE7A /* retrieveLogin.xib in Resources */,
 				786DFA011CD214F300DDE769 /* Assets.xcassets in Resources */,
+				3A01752A1CE3589400832E49 /* insuredMembers.xib in Resources */,
 				786DF9FF1CD214F300DDE769 /* Main.storyboard in Resources */,
 				783322951CD9FB1B0015CE37 /* login.xib in Resources */,
 				C2A59E931CDDDF700093CFEC /* Lato-Regular.ttf in Resources */,
@@ -476,6 +491,7 @@
 			files = (
 				786DF9FC1CD214F300DDE769 /* ViewController.swift in Sources */,
 				3A481F351CE3151900BB8A73 /* premiumCalculation.swift in Sources */,
+				3A01752C1CE360FF00832E49 /* insuredMembers.swift in Sources */,
 				783322B51CDB7B4F0015CE37 /* completeProfile.swift in Sources */,
 				783322A81CDB13ED0015CE37 /* signup.swift in Sources */,
 				783322AB1CDB37FE0015CE37 /* onboarding.swift in Sources */,
