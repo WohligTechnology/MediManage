@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3A01752A1CE3589400832E49 /* insuredMembers.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A0175291CE3589400832E49 /* insuredMembers.xib */; };
 		3A01752C1CE360FF00832E49 /* insuredMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01752B1CE360FF00832E49 /* insuredMembers.swift */; };
+		3A01752F1CE364AD00832E49 /* header.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A01752E1CE364AD00832E49 /* header.xib */; };
+		3A0175311CE369AB00832E49 /* header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0175301CE369AB00832E49 /* header.swift */; };
 		3A481F351CE3151900BB8A73 /* premiumCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A481F341CE3151900BB8A73 /* premiumCalculation.swift */; };
 		3AD3E5281CE1DE1D00900A93 /* enrollmentMembers.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD3E5271CE1DE1D00900A93 /* enrollmentMembers.xib */; };
 		3AD3E52A1CE1F87B00900A93 /* enrollmentMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD3E5291CE1F87B00900A93 /* enrollmentMembers.swift */; };
@@ -63,6 +65,8 @@
 /* Begin PBXFileReference section */
 		3A0175291CE3589400832E49 /* insuredMembers.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = insuredMembers.xib; sourceTree = "<group>"; };
 		3A01752B1CE360FF00832E49 /* insuredMembers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = insuredMembers.swift; sourceTree = "<group>"; };
+		3A01752E1CE364AD00832E49 /* header.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = header.xib; sourceTree = "<group>"; };
+		3A0175301CE369AB00832E49 /* header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = header.swift; sourceTree = "<group>"; };
 		3A481F341CE3151900BB8A73 /* premiumCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = premiumCalculation.swift; sourceTree = "<group>"; };
 		3AD3E5271CE1DE1D00900A93 /* enrollmentMembers.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = enrollmentMembers.xib; sourceTree = "<group>"; };
 		3AD3E5291CE1F87B00900A93 /* enrollmentMembers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enrollmentMembers.swift; sourceTree = "<group>"; };
@@ -135,6 +139,15 @@
 				3A01752B1CE360FF00832E49 /* insuredMembers.swift */,
 			);
 			name = insuredMembers;
+			sourceTree = "<group>";
+		};
+		3A01752D1CE3649300832E49 /* header */ = {
+			isa = PBXGroup;
+			children = (
+				3A01752E1CE364AD00832E49 /* header.xib */,
+				3A0175301CE369AB00832E49 /* header.swift */,
+			);
+			name = header;
 			sourceTree = "<group>";
 		};
 		3AD3E5261CE1DDC200900A93 /* enrollmentMembers */ = {
@@ -272,6 +285,7 @@
 		786DFA291CD2282700DDE769 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3A01752D1CE3649300832E49 /* header */,
 				3A0175281CE3587900832E49 /* insuredMembers */,
 				3AD3E52B1CE209F300900A93 /* premiumCalculation */,
 				3AD3E5261CE1DDC200900A93 /* enrollmentMembers */,
@@ -454,6 +468,7 @@
 				783322B01CDB50D10015CE37 /* landing.xib in Resources */,
 				78B90BD71CE067810022FE7A /* generateOTP.xib in Resources */,
 				3AD3E52D1CE20A1900900A93 /* premiumCalculation.xib in Resources */,
+				3A01752F1CE364AD00832E49 /* header.xib in Resources */,
 				786DFA041CD214F300DDE769 /* LaunchScreen.storyboard in Resources */,
 				3AD3E5281CE1DE1D00900A93 /* enrollmentMembers.xib in Resources */,
 				78B90BD11CE05C7C0022FE7A /* retrieveLogin.xib in Resources */,
@@ -493,6 +508,7 @@
 				3A481F351CE3151900BB8A73 /* premiumCalculation.swift in Sources */,
 				3A01752C1CE360FF00832E49 /* insuredMembers.swift in Sources */,
 				783322B51CDB7B4F0015CE37 /* completeProfile.swift in Sources */,
+				3A0175311CE369AB00832E49 /* header.swift in Sources */,
 				783322A81CDB13ED0015CE37 /* signup.swift in Sources */,
 				783322AB1CDB37FE0015CE37 /* onboarding.swift in Sources */,
 				783322971CD9FCD90015CE37 /* login.swift in Sources */,
