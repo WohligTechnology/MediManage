@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A481F351CE3151900BB8A73 /* premiumCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A481F341CE3151900BB8A73 /* premiumCalculation.swift */; };
 		3AD3E5281CE1DE1D00900A93 /* enrollmentMembers.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD3E5271CE1DE1D00900A93 /* enrollmentMembers.xib */; };
 		3AD3E52A1CE1F87B00900A93 /* enrollmentMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD3E5291CE1F87B00900A93 /* enrollmentMembers.swift */; };
 		3AD3E52D1CE20A1900900A93 /* premiumCalculation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD3E52C1CE20A1900900A93 /* premiumCalculation.xib */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A481F341CE3151900BB8A73 /* premiumCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = premiumCalculation.swift; sourceTree = "<group>"; };
 		3AD3E5271CE1DE1D00900A93 /* enrollmentMembers.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = enrollmentMembers.xib; sourceTree = "<group>"; };
 		3AD3E5291CE1F87B00900A93 /* enrollmentMembers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enrollmentMembers.swift; sourceTree = "<group>"; };
 		3AD3E52C1CE20A1900900A93 /* premiumCalculation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = premiumCalculation.xib; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				3AD3E52C1CE20A1900900A93 /* premiumCalculation.xib */,
+				3A481F341CE3151900BB8A73 /* premiumCalculation.swift */,
 			);
 			name = premiumCalculation;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				786DF9FC1CD214F300DDE769 /* ViewController.swift in Sources */,
+				3A481F351CE3151900BB8A73 /* premiumCalculation.swift in Sources */,
 				783322B51CDB7B4F0015CE37 /* completeProfile.swift in Sources */,
 				783322A81CDB13ED0015CE37 /* signup.swift in Sources */,
 				783322AB1CDB37FE0015CE37 /* onboarding.swift in Sources */,
