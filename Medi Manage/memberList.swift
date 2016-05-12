@@ -8,8 +8,9 @@
 
 import UIKit
 
-class memberList: UIView {
+@IBDesignable class memberList: UIView {
     
+    @IBOutlet weak var dummyButton: UIButton!
     @IBOutlet var memberListMainView: UIView!
     
     override init(frame: CGRect) {
@@ -43,8 +44,13 @@ class memberList: UIView {
         self.addSubview(mainheader)
         
         memberListMainView.frame = CGRectMake(0, 90, self.frame.size.width, self.frame.size.height);
+        
+        dummyButton.layer.zPosition = 10000
     }
 
+    @IBAction func premiumcalculationCall(sender: AnyObject) {
+        gMemberListController.performSegueWithIdentifier("premiumcalculation", sender: nil)
+    }
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

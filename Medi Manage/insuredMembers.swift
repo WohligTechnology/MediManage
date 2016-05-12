@@ -8,7 +8,7 @@
 
 import UIKit
 
-class insuredMembers: UIView {
+@IBDesignable class insuredMembers: UIView {
     
     @IBOutlet var insuredMembersMainView: UIView!
     

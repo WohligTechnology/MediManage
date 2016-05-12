@@ -8,7 +8,7 @@
 
 import UIKit
 
-class premiumCalculation: UIView {
+@IBDesignable class premiumCalculation: UIView {
     
     @IBOutlet var premiumCalculationMainView: UIView!
     

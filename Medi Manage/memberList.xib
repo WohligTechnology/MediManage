@@ -40,6 +40,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="memberList" customModule="Medi_Manage" customModuleProvider="target">
             <connections>
+                <outlet property="dummyButton" destination="uLM-2x-71d" id="clS-PZ-rTW"/>
                 <outlet property="memberListMainView" destination="iN0-l3-epB" id="GV8-OB-PM1"/>
             </connections>
         </placeholder>
@@ -48,6 +49,12 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="786"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLM-2x-71d">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="786"/>
+                    <connections>
+                        <action selector="premiumcalculationCall:" destination="-1" eventType="touchUpInside" id="wK7-1b-zyB"/>
+                    </connections>
+                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jTJ-sl-5Xl">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                     <subviews>

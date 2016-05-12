@@ -83,6 +83,9 @@
                     <state key="normal" title="Submit">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="enrollmentmembersCall:" destination="-1" eventType="touchUpInside" id="TTM-oU-mL3"/>
+                    </connections>
                 </button>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter OTP" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aMF-0Y-f77">
                     <rect key="frame" x="26" y="244" width="268" height="50"/>
@@ -98,27 +101,27 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3r-iI-J3K">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3r-iI-J3K">
                     <rect key="frame" x="35" y="216" width="250" height="14"/>
                     <attributedString key="attributedText">
                         <fragment content="Give your Mobile Number... ">
                             <attributes>
                                 <color key="NSColor" red="0.019607843137254902" green="0.45882352941176469" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="11" name="Lato-Bold"/>
+                                <font key="NSFont" metaFont="smallSystem"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                             </attributes>
                         </fragment>
                         <fragment content="Get your OTP.  ">
                             <attributes>
                                 <color key="NSColor" red="0.91764705882352937" green="0.34509803921568627" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="11" name="Lato-Bold"/>
+                                <font key="NSFont" metaFont="smallSystem"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                             </attributes>
                         </fragment>
                         <fragment content="SIMPLE!">
                             <attributes>
                                 <color key="NSColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="11" name="Lato-Bold"/>
+                                <font key="NSFont" metaFont="smallSystem"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                             </attributes>
                         </fragment>

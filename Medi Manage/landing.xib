@@ -36,35 +36,35 @@
                         <fragment content="Get started with ">
                             <attributes>
                                 <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="14" name="Lato-Regular"/>
+                                <font key="NSFont" metaFont="system" size="14"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                             </attributes>
                         </fragment>
                         <fragment content="Sign up">
                             <attributes>
                                 <color key="NSColor" red="0.19215686274509805" green="0.63137254901960782" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="14" name="Lato-Bold"/>
+                                <font key="NSFont" metaFont="system" size="14"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                             </attributes>
                         </fragment>
                         <fragment content=" if you are the first time user or with ">
                             <attributes>
                                 <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="14" name="Lato-Regular"/>
+                                <font key="NSFont" metaFont="system" size="14"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                             </attributes>
                         </fragment>
                         <fragment content="Sign in">
                             <attributes>
                                 <color key="NSColor" red="0.93725490196078431" green="0.38823529411764707" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="14" name="Lato-Bold"/>
+                                <font key="NSFont" metaFont="system" size="14"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                             </attributes>
                         </fragment>
                         <fragment content=" if you are a registered member">
                             <attributes>
                                 <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="14" name="Lato-Regular"/>
+                                <font key="NSFont" metaFont="system" size="14"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                             </attributes>
                         </fragment>

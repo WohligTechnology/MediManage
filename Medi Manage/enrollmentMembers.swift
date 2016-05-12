@@ -8,7 +8,7 @@
 
 import UIKit
 
-class enrollmentMembers: UIView {
+@IBDesignable class enrollmentMembers: UIView {
     
     @IBOutlet var enrollmentMembersMainView: UIView!
     
@@ -76,6 +76,12 @@ class enrollmentMembers: UIView {
         addBottomBorder(UIColor.blackColor(), width: 1, myView: personTwoDOB)
     }
 
+    @IBAction func insuredmembersCall(sender: AnyObject) {
+        gEnrollmentMembersController.performSegueWithIdentifier("memberlist", sender: nil)
+    }
+    @IBAction func insuredmembersCall2(sender: AnyObject) {
+        gEnrollmentMembersController.performSegueWithIdentifier("memberlist", sender: nil)
+    }
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

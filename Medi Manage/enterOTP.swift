@@ -44,4 +44,7 @@ import UIKit
         resetOTP.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.25).CGColor
         multiColor.font = UIFont(name: "Lato-Bold", size: 11.0)
     }
+    @IBAction func enrollmentmembersCall(sender: AnyObject) {
+        gEnterOTPController.performSegueWithIdentifier("enrollementMember", sender: nil)
+    }
 }

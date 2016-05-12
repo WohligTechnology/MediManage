@@ -20,6 +20,9 @@
 		3A677B6B1CE4B90C003B8C2B /* RetrieveLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A677B6A1CE4B90C003B8C2B /* RetrieveLoginController.swift */; };
 		3A677B6D1CE4BBDE003B8C2B /* GenerateOTPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A677B6C1CE4BBDE003B8C2B /* GenerateOTPController.swift */; };
 		3A677B6F1CE4BEC0003B8C2B /* EnterOTPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A677B6E1CE4BEC0003B8C2B /* EnterOTPController.swift */; };
+		3ACFB2A01CE4C369003766D8 /* EnrollmentMembersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFB29F1CE4C369003766D8 /* EnrollmentMembersController.swift */; };
+		3ACFB2A21CE4C3A0003766D8 /* MemberListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFB2A11CE4C3A0003766D8 /* MemberListController.swift */; };
+		3ACFB2A41CE4C410003766D8 /* PremiumCalculationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFB2A31CE4C410003766D8 /* PremiumCalculationController.swift */; };
 		3AD3E5281CE1DE1D00900A93 /* enrollmentMembers.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD3E5271CE1DE1D00900A93 /* enrollmentMembers.xib */; };
 		3AD3E52A1CE1F87B00900A93 /* enrollmentMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD3E5291CE1F87B00900A93 /* enrollmentMembers.swift */; };
 		3AD3E52D1CE20A1900900A93 /* premiumCalculation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD3E52C1CE20A1900900A93 /* premiumCalculation.xib */; };
@@ -86,6 +89,9 @@
 		3A677B6A1CE4B90C003B8C2B /* RetrieveLoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetrieveLoginController.swift; sourceTree = "<group>"; };
 		3A677B6C1CE4BBDE003B8C2B /* GenerateOTPController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateOTPController.swift; sourceTree = "<group>"; };
 		3A677B6E1CE4BEC0003B8C2B /* EnterOTPController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterOTPController.swift; sourceTree = "<group>"; };
+		3ACFB29F1CE4C369003766D8 /* EnrollmentMembersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnrollmentMembersController.swift; sourceTree = "<group>"; };
+		3ACFB2A11CE4C3A0003766D8 /* MemberListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberListController.swift; sourceTree = "<group>"; };
+		3ACFB2A31CE4C410003766D8 /* PremiumCalculationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PremiumCalculationController.swift; sourceTree = "<group>"; };
 		3AD3E5271CE1DE1D00900A93 /* enrollmentMembers.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = enrollmentMembers.xib; sourceTree = "<group>"; };
 		3AD3E5291CE1F87B00900A93 /* enrollmentMembers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enrollmentMembers.swift; sourceTree = "<group>"; };
 		3AD3E52C1CE20A1900900A93 /* premiumCalculation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = premiumCalculation.xib; sourceTree = "<group>"; };
@@ -322,6 +328,9 @@
 				3A677B6A1CE4B90C003B8C2B /* RetrieveLoginController.swift */,
 				3A677B6C1CE4BBDE003B8C2B /* GenerateOTPController.swift */,
 				3A677B6E1CE4BEC0003B8C2B /* EnterOTPController.swift */,
+				3ACFB29F1CE4C369003766D8 /* EnrollmentMembersController.swift */,
+				3ACFB2A11CE4C3A0003766D8 /* MemberListController.swift */,
+				3ACFB2A31CE4C410003766D8 /* PremiumCalculationController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -330,9 +339,9 @@
 			isa = PBXGroup;
 			children = (
 				3AFE389A1CE492FF0062A497 /* insuredMembersAll */,
-				3A1369AC1CE455F100BEE355 /* memberList */,
 				3A01752D1CE3649300832E49 /* header */,
 				3A0175281CE3587900832E49 /* insuredMembers */,
+				3A1369AC1CE455F100BEE355 /* memberList */,
 				3AD3E52B1CE209F300900A93 /* premiumCalculation */,
 				3AD3E5261CE1DDC200900A93 /* enrollmentMembers */,
 				783322AE1CDB3DC30015CE37 /* landing */,
@@ -555,7 +564,10 @@
 				3A677B631CE49F7F003B8C2B /* insuredMembersAll.swift in Sources */,
 				786DF9FC1CD214F300DDE769 /* ViewController.swift in Sources */,
 				3A481F351CE3151900BB8A73 /* premiumCalculation.swift in Sources */,
+				3ACFB2A01CE4C369003766D8 /* EnrollmentMembersController.swift in Sources */,
+				3ACFB2A41CE4C410003766D8 /* PremiumCalculationController.swift in Sources */,
 				3A01752C1CE360FF00832E49 /* insuredMembers.swift in Sources */,
+				3ACFB2A21CE4C3A0003766D8 /* MemberListController.swift in Sources */,
 				3A677B691CE4B539003B8C2B /* CompleteProfileController.swift in Sources */,
 				783322B51CDB7B4F0015CE37 /* completeProfile.swift in Sources */,
 				3A0175311CE369AB00832E49 /* header.swift in Sources */,
