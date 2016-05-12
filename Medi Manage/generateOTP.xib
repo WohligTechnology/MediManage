@@ -80,6 +80,9 @@
                     <state key="normal" title="Generate OTP">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="enterotpCall:" destination="-1" eventType="touchUpInside" id="yXa-FO-ZcL"/>
+                    </connections>
                 </button>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qHT-hX-UHs">
                     <rect key="frame" x="26" y="244" width="268" height="50"/>

@@ -48,4 +48,7 @@ import UIKit
 //        }
         
     }
+    @IBAction func enterotpCall(sender: AnyObject) {
+        gGenerateOTPController.performSegueWithIdentifier("enterotp", sender: nil)
+    }
 }
