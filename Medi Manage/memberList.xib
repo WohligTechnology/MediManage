@@ -38,7 +38,7 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="memberList" customModule="Medi_Manage" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="786"/>
@@ -326,7 +326,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                         <constraint firstAttribute="height" constant="20" id="KiT-t6-zx4"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gd0-7O-0fg">
@@ -357,7 +357,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                         <constraint firstAttribute="height" constant="20" id="9NK-RY-k8f"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EFI-BM-sLt">
@@ -605,7 +605,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                         <constraint firstAttribute="height" constant="20" id="bYW-l9-wpu"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zpg-uL-PEW">
@@ -636,7 +636,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                         <constraint firstAttribute="height" constant="20" id="EAq-zf-z2A"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Mv-SO-fFD">
