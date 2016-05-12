@@ -10,6 +10,8 @@ import UIKit
 
 class premiumCalculation: UIView {
     
+    @IBOutlet var premiumCalculationMainView: UIView!
+    
     @IBOutlet weak var basicPremiumView: UIView!
     @IBOutlet weak var basicPremiumLabel: UILabel!
     @IBOutlet weak var basicPremiumCost: UILabel!
@@ -54,6 +56,15 @@ class premiumCalculation: UIView {
         sortnewview.frame = bounds
         sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(sortnewview)
+        
+        let statusBar = UIView(frame: CGRectMake(0, 0, sortnewview.frame.size.width + 55, 20))
+        statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
+        self.addSubview(statusBar)
+        
+        let mainheader = header(frame: CGRectMake(0, 20, sortnewview.frame.size.width + 55, 70))
+        self.addSubview(mainheader)
+        
+        premiumCalculationMainView.frame = CGRectMake(0, 90, self.frame.size.width, self.frame.size.height);
         
         //add borders
         //addBottomBorder(UIColor.blackColor(), width: 1, myView: basicPremiumView)

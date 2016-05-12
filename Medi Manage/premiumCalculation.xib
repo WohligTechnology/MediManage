@@ -38,6 +38,7 @@
                 <outlet property="netPremiumCost" destination="V2C-8Y-1hO" id="hml-gm-TIX"/>
                 <outlet property="netPremiumLabel" destination="ML5-4Q-lgh" id="eEU-ag-9p6"/>
                 <outlet property="netPremiumView" destination="QcD-vi-qha" id="hdD-fE-4qb"/>
+                <outlet property="premiumCalculationMainView" destination="iN0-l3-epB" id="1mI-mQ-ALl"/>
                 <outlet property="serviceTaxCost" destination="s7d-1F-G6L" id="mOF-DO-lgo"/>
                 <outlet property="serviceTaxLabel" destination="ueP-P1-Y6Z" id="qIj-ki-8Wt"/>
                 <outlet property="serviceTaxView" destination="4EZ-dF-h8M" id="dmS-Rx-k0I"/>
