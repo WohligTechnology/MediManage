@@ -168,6 +168,9 @@
                     <state key="normal" title="Submit">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="retrieveLoginCall:" destination="-1" eventType="touchUpInside" id="8vf-Uu-bZX"/>
+                    </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YrV-IL-y58" userLabel="Full name">
                     <rect key="frame" x="13" y="70" width="294" height="29"/>

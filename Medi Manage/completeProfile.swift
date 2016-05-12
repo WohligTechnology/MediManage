@@ -56,5 +56,8 @@ import UIKit
         addBottomBorder(UIColor.blackColor(), width: 1, myView: password)
     }
     
+    @IBAction func retrieveLoginCall(sender: AnyObject) {
+        gCompleteProfileController.performSegueWithIdentifier("retrieveLogin", sender: nil)
+    }
     
 }
