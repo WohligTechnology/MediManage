@@ -26,7 +26,12 @@ class memberList: UIView {
         let sortnewview = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
         sortnewview.frame = bounds
         sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-        self.addSubview(sortnewview)
+        let scrollView = UIScrollView(frame: CGRectMake(0, 0, self.frame.size.width, self.frame.size.height))
+        scrollView.contentSize.height = 786
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        scrollView.addSubview(sortnewview)
+        self.addSubview(scrollView)
     }
 
     /*
