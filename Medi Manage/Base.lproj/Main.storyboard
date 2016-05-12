@@ -52,6 +52,13 @@
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="login" id="s1I-qw-2n8"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxa-Ut-THh">
+                                <rect key="frame" x="137" y="368" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="0gz-Ph-Qzj" kind="show" identifier="completeProfile" id="paQ-eN-3nA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -60,6 +67,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9Z-0X-rR4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="831" y="224"/>
+        </scene>
+        <!--Complete Profile Controller-->
+        <scene sceneID="xoo-J9-7Uf">
+            <objects>
+                <viewController id="0gz-Ph-Qzj" customClass="CompleteProfileController" customModule="Medi_Manage" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ku2-ch-8MP"/>
+                        <viewControllerLayoutGuide type="bottom" id="k7x-cx-Hy3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mDh-ci-A7w" customClass="completeProfile" customModule="Medi_Manage" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="67M-md-p9M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1209" y="224"/>
         </scene>
     </scenes>
 </document>

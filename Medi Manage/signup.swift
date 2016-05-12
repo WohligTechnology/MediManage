@@ -46,5 +46,8 @@ import UIKit
     @IBAction func loginCall(sender: AnyObject) {
         gSignupController.performSegueWithIdentifier("login", sender: nil)
     }
+    @IBAction func completeProfileCall(sender: AnyObject) {
+        gSignupController.performSegueWithIdentifier("completeProfile", sender: nil)
+    }
 }
 

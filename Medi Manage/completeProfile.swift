@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class completeProfile: UIView {
+@IBDesignable class completeProfile: UIView {
     
     @IBOutlet weak var fullName: UIView!
     @IBOutlet weak var employeeNumber: UIView!
