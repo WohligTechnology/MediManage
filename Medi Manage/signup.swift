@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 
-class signup: UIView {
+@IBDesignable class signup: UIView {
     
     @IBOutlet weak var employeeID: UITextField!
     @IBOutlet weak var dateOfBirth: UITextField!
@@ -41,6 +41,10 @@ class signup: UIView {
         
         addPadding(15, myView: employeeID)
         addPadding(15, myView: dateOfBirth)
+    }
+    
+    @IBAction func loginCall(sender: AnyObject) {
+        gSignupController.performSegueWithIdentifier("login", sender: nil)
     }
 }
 

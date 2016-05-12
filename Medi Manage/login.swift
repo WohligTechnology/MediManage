@@ -9,7 +9,11 @@
 import Foundation
 import UIKit
 
-class login: UIView {
+@IBDesignable class login: UIView {
+    
+    @IBAction func signupCall(sender: AnyObject) {
+        gLoginController.performSegueWithIdentifier("signup", sender: nil)
+    }
     
     @IBOutlet weak var mobile: UITextField!
     @IBOutlet weak var password: UITextField!

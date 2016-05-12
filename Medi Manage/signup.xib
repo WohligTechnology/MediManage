@@ -127,6 +127,9 @@
                             <state key="normal" title="Log In">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <connections>
+                                <action selector="loginCall:" destination="-1" eventType="touchUpInside" id="YdP-zX-ZSe"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>
