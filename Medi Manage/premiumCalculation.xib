@@ -271,12 +271,15 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                     <rect key="frame" x="0.0" y="528" width="320" height="40"/>
                     <color key="backgroundColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="AxK-3d-0jL"/>
+                        <constraint firstAttribute="height" constant="40" id="WJ6-Zl-Kge"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                     <state key="normal" title="Proceed">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="insuredmembersCall:" destination="-1" eventType="touchUpInside" id="DJd-QY-Ffg"/>
+                    </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tv3-aJ-nX4">
                     <rect key="frame" x="20" y="446" width="280" height="40"/>
@@ -287,9 +290,6 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                 <constraint firstAttribute="width" constant="20" id="wbO-fG-ZuD"/>
                             </constraints>
                             <state key="normal" title="Button" image="checkbox_untick"/>
-                            <connections>
-                                <action selector="insuredmembersCall:" destination="-1" eventType="touchUpInside" id="eqh-Cv-Vn8"/>
-                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I have read the Plan Features, Policy Terms &amp; Conditions and Agree to the same." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMU-Mj-HdA">
                             <rect key="frame" x="28" y="-8" width="257" height="56"/>
@@ -313,13 +313,15 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="zs8-7K-W4q" firstAttribute="top" secondItem="dfe-G9-jec" secondAttribute="bottom" constant="15" id="4Kh-Mx-YKf"/>
+                <constraint firstItem="OpO-y0-RIR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="56t-zA-nNr"/>
                 <constraint firstAttribute="trailing" secondItem="nUO-5R-i9z" secondAttribute="trailing" id="623-hc-ZbQ"/>
                 <constraint firstItem="dfe-G9-jec" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="6V7-8Z-IJc"/>
+                <constraint firstAttribute="bottom" secondItem="OpO-y0-RIR" secondAttribute="bottom" id="9bf-Ue-rtZ"/>
                 <constraint firstItem="Wo8-CD-6kx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="AaV-OP-Udj"/>
+                <constraint firstAttribute="trailing" secondItem="OpO-y0-RIR" secondAttribute="trailing" id="FAt-mF-54v"/>
                 <constraint firstItem="eFA-6q-Bm6" firstAttribute="top" secondItem="4EZ-dF-h8M" secondAttribute="bottom" constant="15" id="Hnh-h5-wCR"/>
                 <constraint firstItem="zs8-7K-W4q" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="JN0-or-Jvy"/>
                 <constraint firstItem="QcD-vi-qha" firstAttribute="top" secondItem="zs8-7K-W4q" secondAttribute="bottom" constant="15" id="Jrh-X6-1Rc"/>
-                <constraint firstAttribute="trailing" secondItem="OpO-y0-RIR" secondAttribute="trailing" id="KDF-zu-PDz"/>
                 <constraint firstAttribute="trailing" secondItem="Wo8-CD-6kx" secondAttribute="trailing" constant="15" id="LcM-G7-wPx"/>
                 <constraint firstItem="Wo8-CD-6kx" firstAttribute="top" secondItem="eFA-6q-Bm6" secondAttribute="bottom" constant="50" id="Owi-Pz-YRe"/>
                 <constraint firstItem="4EZ-dF-h8M" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="P1B-Ir-YUa"/>
@@ -329,10 +331,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 <constraint firstItem="dfe-G9-jec" firstAttribute="top" secondItem="nUO-5R-i9z" secondAttribute="bottom" constant="50" id="W9R-uK-Wbz"/>
                 <constraint firstItem="QcD-vi-qha" firstAttribute="leading" secondItem="4EZ-dF-h8M" secondAttribute="leading" id="Wd2-Ai-TKm"/>
                 <constraint firstItem="eFA-6q-Bm6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Zpx-I5-SgH"/>
-                <constraint firstAttribute="bottom" secondItem="OpO-y0-RIR" secondAttribute="bottom" id="dZK-bL-6Pr"/>
                 <constraint firstAttribute="trailing" secondItem="eFA-6q-Bm6" secondAttribute="trailing" constant="20" id="f8p-7K-GcO"/>
-                <constraint firstItem="dfe-G9-jec" firstAttribute="leading" secondItem="zs8-7K-W4q" secondAttribute="leading" id="feu-IC-LM3"/>
-                <constraint firstItem="OpO-y0-RIR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kI9-JJ-sSw"/>
                 <constraint firstItem="Tv3-aJ-nX4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="liF-bq-rhq"/>
                 <constraint firstAttribute="trailing" secondItem="4EZ-dF-h8M" secondAttribute="trailing" constant="20" id="oof-99-Gdo"/>
                 <constraint firstItem="Tv3-aJ-nX4" firstAttribute="top" secondItem="Wo8-CD-6kx" secondAttribute="bottom" constant="20" id="p3u-TB-MsH"/>
@@ -345,11 +344,6 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="feu-IC-LM3"/>
-                </mask>
-            </variation>
             <point key="canvasLocation" x="258" y="398"/>
         </view>
     </objects>

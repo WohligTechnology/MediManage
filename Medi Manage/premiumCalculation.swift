@@ -64,7 +64,7 @@ import UIKit
         let mainheader = header(frame: CGRectMake(0, 20, width, 70))
         self.addSubview(mainheader)
         
-        premiumCalculationMainView.frame = CGRectMake(0, 90, self.frame.size.width, self.frame.size.height);
+        premiumCalculationMainView.frame = CGRectMake(0, 90, self.frame.size.width, self.frame.size.height - 90);
         
         //add borders
         //addBottomBorder(UIColor.blackColor(), width: 1, myView: basicPremiumView)
