@@ -26,6 +26,7 @@
 		3AD3E5281CE1DE1D00900A93 /* enrollmentMembers.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD3E5271CE1DE1D00900A93 /* enrollmentMembers.xib */; };
 		3AD3E52A1CE1F87B00900A93 /* enrollmentMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD3E5291CE1F87B00900A93 /* enrollmentMembers.swift */; };
 		3AD3E52D1CE20A1900900A93 /* premiumCalculation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD3E52C1CE20A1900900A93 /* premiumCalculation.xib */; };
+		3AF76BAE1CE5A6E500ADCAAF /* footer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AF76BAD1CE5A6E500ADCAAF /* footer.xib */; };
 		3AFE38991CE472CE0062A497 /* memberList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE38981CE472CE0062A497 /* memberList.swift */; };
 		3AFE389C1CE4932D0062A497 /* insuredMembersAll.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AFE389B1CE4932D0062A497 /* insuredMembersAll.xib */; };
 		783322951CD9FB1B0015CE37 /* login.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783322941CD9FB1B0015CE37 /* login.xib */; };
@@ -95,6 +96,7 @@
 		3AD3E5271CE1DE1D00900A93 /* enrollmentMembers.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = enrollmentMembers.xib; sourceTree = "<group>"; };
 		3AD3E5291CE1F87B00900A93 /* enrollmentMembers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enrollmentMembers.swift; sourceTree = "<group>"; };
 		3AD3E52C1CE20A1900900A93 /* premiumCalculation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = premiumCalculation.xib; sourceTree = "<group>"; };
+		3AF76BAD1CE5A6E500ADCAAF /* footer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = footer.xib; sourceTree = "<group>"; };
 		3AFE38981CE472CE0062A497 /* memberList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = memberList.swift; sourceTree = "<group>"; };
 		3AFE389B1CE4932D0062A497 /* insuredMembersAll.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = insuredMembersAll.xib; sourceTree = "<group>"; };
 		783322941CD9FB1B0015CE37 /* login.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = login.xib; sourceTree = "<group>"; };
@@ -201,6 +203,14 @@
 				3A481F341CE3151900BB8A73 /* premiumCalculation.swift */,
 			);
 			name = premiumCalculation;
+			sourceTree = "<group>";
+		};
+		3AF76BAC1CE5A6D000ADCAAF /* footer */ = {
+			isa = PBXGroup;
+			children = (
+				3AF76BAD1CE5A6E500ADCAAF /* footer.xib */,
+			);
+			name = footer;
 			sourceTree = "<group>";
 		};
 		3AFE389A1CE492FF0062A497 /* insuredMembersAll */ = {
@@ -338,6 +348,7 @@
 		786DFA291CD2282700DDE769 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3AF76BAC1CE5A6D000ADCAAF /* footer */,
 				3AFE389A1CE492FF0062A497 /* insuredMembersAll */,
 				3A01752D1CE3649300832E49 /* header */,
 				3A0175281CE3587900832E49 /* insuredMembers */,
@@ -525,6 +536,7 @@
 				78B90BD71CE067810022FE7A /* generateOTP.xib in Resources */,
 				3AD3E52D1CE20A1900900A93 /* premiumCalculation.xib in Resources */,
 				3A01752F1CE364AD00832E49 /* header.xib in Resources */,
+				3AF76BAE1CE5A6E500ADCAAF /* footer.xib in Resources */,
 				786DFA041CD214F300DDE769 /* LaunchScreen.storyboard in Resources */,
 				3AD3E5281CE1DE1D00900A93 /* enrollmentMembers.xib in Resources */,
 				78B90BD11CE05C7C0022FE7A /* retrieveLogin.xib in Resources */,

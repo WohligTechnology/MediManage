@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="nEq-5h-AhH">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="60"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nee-WA-WQl">
+                            <rect key="frame" x="0.0" y="0.0" width="79" height="60"/>
+                            <color key="backgroundColor" red="0.24313725490196078" green="0.24313725490196078" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                            <state key="normal" image="footer_one"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEa-Ck-pxs">
+                            <rect key="frame" x="80" y="0.0" width="79" height="60"/>
+                            <color key="backgroundColor" red="0.24313725489999999" green="0.24313725489999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                            <state key="normal" image="footer_two"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMF-KD-3HL">
+                            <rect key="frame" x="160" y="0.0" width="80" height="60"/>
+                            <color key="backgroundColor" red="0.24313725489999999" green="0.24313725489999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                            <state key="normal" image="footer_three"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OP9-JA-ht3">
+                            <rect key="frame" x="241" y="0.0" width="79" height="60"/>
+                            <color key="backgroundColor" red="0.24313725489999999" green="0.24313725489999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                            <state key="normal" image="footer_four"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojs-J8-bvZ">
+                            <rect key="frame" x="321" y="0.0" width="79" height="60"/>
+                            <color key="backgroundColor" red="0.24313725489999999" green="0.24313725489999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                            <state key="normal" image="logo"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T3d-Rh-828">
+                            <rect key="frame" x="401" y="0.0" width="79" height="60"/>
+                            <color key="backgroundColor" red="0.24313725489999999" green="0.24313725489999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                            <state key="normal" image="logo"/>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="nEq-5h-AhH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="P0J-hC-7ts"/>
+                <constraint firstAttribute="trailing" secondItem="nEq-5h-AhH" secondAttribute="trailing" id="bDl-Pm-jTC"/>
+                <constraint firstAttribute="bottom" secondItem="nEq-5h-AhH" secondAttribute="bottom" id="bVo-Nh-AtI"/>
+                <constraint firstItem="nEq-5h-AhH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gHp-dk-qP2"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="317" y="201"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="footer_four" width="151" height="137"/>
+        <image name="footer_one" width="122" height="127"/>
+        <image name="footer_three" width="142" height="153"/>
+        <image name="footer_two" width="121" height="143"/>
+        <image name="logo" width="333" height="218"/>
+    </resources>
+</document>
