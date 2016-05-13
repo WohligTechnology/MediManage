@@ -41,7 +41,7 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojs-J8-bvZ">
                             <rect key="frame" x="321" y="0.0" width="79" height="60"/>
                             <color key="backgroundColor" red="0.24313725489999999" green="0.24313725489999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <inset key="contentEdgeInsets" minX="15" minY="10" maxX="15" maxY="10"/>
+                            <inset key="contentEdgeInsets" minX="16" minY="10" maxX="16" maxY="10"/>
                             <state key="normal" image="footer_five"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T3d-Rh-828">

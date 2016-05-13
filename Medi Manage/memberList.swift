@@ -30,7 +30,7 @@ import UIKit
         sortnewview.frame = bounds
         sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         let scrollView = UIScrollView(frame: CGRectMake(0, 0, self.frame.size.width, self.frame.size.height))
-        scrollView.contentSize.height = 786
+        scrollView.contentSize.height = 876
         scrollView.showsVerticalScrollIndicator = false
         scrollView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         scrollView.addSubview(sortnewview)
