@@ -262,6 +262,25 @@
             </objects>
             <point key="canvasLocation" x="3344" y="224"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="lbr-HL-zhG">
+            <objects>
+                <viewController id="cTe-eZ-3rn" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fme-sh-ngZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="4ii-CL-Ghl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zpA-wp-K3m" customClass="insuredMembers" customModule="Medi_Manage" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZaZ-Hy-CoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3705" y="224"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="PAS-j4-dnW"/>
