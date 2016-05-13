@@ -45,7 +45,7 @@ import UIKit
         sortnewview.frame = bounds
         sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         let scrollView = UIScrollView(frame: CGRectMake(0, 0, self.frame.size.width, self.frame.size.height))
-        scrollView.contentSize.height = 876
+        scrollView.contentSize.height = 856
         scrollView.showsVerticalScrollIndicator = false
         scrollView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         scrollView.addSubview(sortnewview)
@@ -55,10 +55,10 @@ import UIKit
         statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
         self.addSubview(statusBar)
         
-        let mainheader = header(frame: CGRectMake(0, 20, width, 70))
+        let mainheader = header(frame: CGRectMake(0, 20, width, 50))
         self.addSubview(mainheader)
         
-        memberListMainView.frame = CGRectMake(0, 90, self.frame.size.width, self.frame.size.height)
+        memberListMainView.frame = CGRectMake(0, 70, self.frame.size.width, self.frame.size.height)
         
         dummyButton.layer.zPosition = 10000
         

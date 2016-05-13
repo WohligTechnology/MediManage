@@ -58,10 +58,10 @@ import UIKit
         statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
         self.addSubview(statusBar)
         
-        let mainheader = header(frame: CGRectMake(0, 20, width, 70))
+        let mainheader = header(frame: CGRectMake(0, 20, width, 50))
         self.addSubview(mainheader)
         
-        enrollmentMembersMainView.frame = CGRectMake(0, 90, self.frame.size.width, self.frame.size.height - 90);
+        enrollmentMembersMainView.frame = CGRectMake(0, 70, self.frame.size.width, self.frame.size.height - 70);
         
         //add borders
         addBottomBorder(UIColor.blackColor(), width: 1, myView: personOneFirstName)
