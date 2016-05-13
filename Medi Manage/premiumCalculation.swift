@@ -74,6 +74,10 @@ import UIKit
         //addBottomBorder(UIColor.blackColor(), width: 1, myView: totalPremiumView)
     }
 
+    @IBAction func insuredmembersCall(sender: AnyObject) {
+        gPremiumCalculationController.performSegueWithIdentifier("insuredmembers", sender: nil)
+    }
+    
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

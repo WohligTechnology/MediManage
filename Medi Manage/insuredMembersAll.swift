@@ -30,20 +30,20 @@ import UIKit
         sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(sortnewview)
         
-        let statusBar = UIView(frame: CGRectMake(0, 0, sortnewview.frame.size.width + 55, 20))
+        let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
         statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
         self.addSubview(statusBar)
         
-        let mainheader = header(frame: CGRectMake(0, 20, sortnewview.frame.size.width + 55, 70))
+        let mainheader = header(frame: CGRectMake(0, 20, width, 70))
         self.addSubview(mainheader)
         
         let mainfooter = footer(frame: CGRectMake(0, height - 55, width, 55))
         mainfooter.layer.zPosition = 1000
         self.addSubview(mainfooter)
         
-        insuredMembersAllMainView.frame = CGRectMake(0, 90, width, height - 55)
+        insuredMembersAllMainView.frame = CGRectMake(0, 90, self.frame.size.width, self.frame.size.height - 55)
     }
-
+    
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

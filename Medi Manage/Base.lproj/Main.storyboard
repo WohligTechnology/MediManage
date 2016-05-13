@@ -254,6 +254,15 @@
                     <view key="view" contentMode="scaleToFill" id="589-f0-k2b" customClass="premiumCalculation" customModule="Medi_Manage" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BUd-FZ-ZGM">
+                                <rect key="frame" x="137" y="119" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="cTe-eZ-3rn" kind="show" identifier="insuredmembers" id="dUS-S7-jua"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -262,10 +271,10 @@
             </objects>
             <point key="canvasLocation" x="3344" y="224"/>
         </scene>
-        <!--View Controller-->
+        <!--Insured Members Controller-->
         <scene sceneID="lbr-HL-zhG">
             <objects>
-                <viewController id="cTe-eZ-3rn" sceneMemberID="viewController">
+                <viewController id="cTe-eZ-3rn" customClass="InsuredMembersController" customModule="Medi_Manage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fme-sh-ngZ"/>
                         <viewControllerLayoutGuide type="bottom" id="4ii-CL-Ghl"/>

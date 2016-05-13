@@ -287,6 +287,9 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                 <constraint firstAttribute="width" constant="20" id="wbO-fG-ZuD"/>
                             </constraints>
                             <state key="normal" title="Button" image="checkbox_untick"/>
+                            <connections>
+                                <action selector="insuredmembersCall:" destination="-1" eventType="touchUpInside" id="eqh-Cv-Vn8"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I have read the Plan Features, Policy Terms &amp; Conditions and Agree to the same." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMU-Mj-HdA">
                             <rect key="frame" x="28" y="-8" width="257" height="56"/>
