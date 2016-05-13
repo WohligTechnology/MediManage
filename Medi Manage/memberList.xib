@@ -40,8 +40,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="memberList" customModule="Medi_Manage" customModuleProvider="target">
             <connections>
+                <outlet property="dobViewOne" destination="le8-eu-kw0" id="iFZ-Eg-GQm"/>
+                <outlet property="dobViewTwo" destination="Z0x-gi-mQA" id="4t4-AA-o6k"/>
+                <outlet property="domViewOne" destination="GW0-BN-5eB" id="94P-ve-sLt"/>
+                <outlet property="domViewTwo" destination="6uL-UB-u0A" id="8rd-nY-txH"/>
                 <outlet property="dummyButton" destination="uLM-2x-71d" id="clS-PZ-rTW"/>
                 <outlet property="memberListMainView" destination="iN0-l3-epB" id="GV8-OB-PM1"/>
+                <outlet property="nameViewOne" destination="xUt-i3-aLO" id="cJn-nb-EAQ"/>
+                <outlet property="nameViewTwo" destination="OXz-k3-dsL" id="yBV-kH-slh"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
