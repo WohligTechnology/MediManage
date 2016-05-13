@@ -44,12 +44,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igL-XZ-dUI">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                    <connections>
-                        <action selector="insuredmembersCall2:" destination="-1" eventType="touchUpInside" id="vS9-0A-25B"/>
-                    </connections>
-                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUz-hc-Jr2">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                     <subviews>

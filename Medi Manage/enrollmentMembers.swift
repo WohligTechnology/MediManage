@@ -61,7 +61,7 @@ import UIKit
         let mainheader = header(frame: CGRectMake(0, 20, width, 70))
         self.addSubview(mainheader)
         
-        enrollmentMembersMainView.frame = CGRectMake(0, 90, self.frame.size.width, self.frame.size.height);
+        enrollmentMembersMainView.frame = CGRectMake(0, 90, self.frame.size.width, self.frame.size.height - 90);
         
         //add borders
         addBottomBorder(UIColor.blackColor(), width: 1, myView: personOneFirstName)
@@ -77,9 +77,6 @@ import UIKit
     }
 
     @IBAction func insuredmembersCall(sender: AnyObject) {
-        gEnrollmentMembersController.performSegueWithIdentifier("memberlist", sender: nil)
-    }
-    @IBAction func insuredmembersCall2(sender: AnyObject) {
         gEnrollmentMembersController.performSegueWithIdentifier("memberlist", sender: nil)
     }
     /*

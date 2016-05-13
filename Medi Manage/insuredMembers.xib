@@ -34,7 +34,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="insuredMembers" customModule="Medi_Manage" customModuleProvider="target">
             <connections>
+                <outlet property="balanceSIView" destination="oq1-Ye-5UZ" id="z84-Lh-PaD"/>
+                <outlet property="dobView" destination="80N-7z-QWm" id="4uz-iQ-NWI"/>
+                <outlet property="firstNameView" destination="acZ-fK-Wbf" id="QuC-9l-uEj"/>
                 <outlet property="insuredMembersMainView" destination="iN0-l3-epB" id="Sct-I1-2ib"/>
+                <outlet property="lastNameView" destination="60O-OZ-Zeq" id="UGu-mu-ecT"/>
+                <outlet property="middleNameView" destination="4cZ-zY-VrM" id="ePn-6B-C8H"/>
+                <outlet property="sumInsuredView" destination="sEK-kl-5UM" id="z0f-Rd-QWb"/>
+                <outlet property="topupSumInsuredView" destination="YcA-D9-zW9" id="AJh-1V-DKM"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -97,12 +104,22 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangle_white" translatesAutoresizingMaskIntoConstraints="NO" id="xMg-Sz-pvR">
+                            <rect key="frame" x="335" y="15" width="10" height="10"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="10" id="819-cJ-jxE"/>
+                                <constraint firstAttribute="height" constant="10" id="MRp-BP-MpJ"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" red="0.08235294118" green="0.69411764710000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstItem="xMg-Sz-pvR" firstAttribute="top" secondItem="hhx-hR-sly" secondAttribute="top" constant="15" id="DGh-uk-amB"/>
                         <constraint firstItem="sbH-Lp-rNB" firstAttribute="leading" secondItem="hhx-hR-sly" secondAttribute="leading" constant="30" id="IgV-Mh-1oz"/>
+                        <constraint firstAttribute="bottom" secondItem="xMg-Sz-pvR" secondAttribute="bottom" constant="15" id="YrI-aD-Hhh"/>
                         <constraint firstAttribute="bottom" secondItem="sbH-Lp-rNB" secondAttribute="bottom" constant="10" id="geu-3S-tSh"/>
                         <constraint firstAttribute="height" constant="40" id="oyo-VN-Xtz"/>
+                        <constraint firstAttribute="trailing" secondItem="xMg-Sz-pvR" secondAttribute="trailing" constant="30" id="qKf-gn-Dvq"/>
                         <constraint firstItem="sbH-Lp-rNB" firstAttribute="top" secondItem="hhx-hR-sly" secondAttribute="top" constant="9" id="s0V-g3-Fto"/>
                         <constraint firstItem="f4Y-NZ-m1D" firstAttribute="top" secondItem="hhx-hR-sly" secondAttribute="top" constant="11" id="tFG-8d-w3Y"/>
                         <constraint firstItem="f4Y-NZ-m1D" firstAttribute="leading" secondItem="sbH-Lp-rNB" secondAttribute="trailing" constant="2" id="vxg-nx-Mcw"/>
@@ -433,4 +450,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
             <point key="canvasLocation" x="-48.5" y="395.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="triangle_white" width="30" height="26"/>
+    </resources>
 </document>

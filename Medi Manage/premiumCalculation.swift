@@ -42,10 +42,10 @@ import UIKit
         loadViewFromNib ()
     }
     
-    func addBottomBorder(color: UIColor, width: CGFloat, myView: UIView) {
+    func addBottomBorder(color: UIColor, linewidth: CGFloat, myView: UIView) {
         let border = CALayer()
         border.backgroundColor = color.CGColor
-        border.frame = CGRectMake(0, myView.frame.size.height - width, myView.frame.size.width, width)
+        border.frame = CGRectMake(5, myView.frame.size.height, width - 45, linewidth)
         myView.layer.addSublayer(border)
     }
     
@@ -67,11 +67,11 @@ import UIKit
         premiumCalculationMainView.frame = CGRectMake(0, 90, self.frame.size.width, self.frame.size.height - 90);
         
         //add borders
-        //addBottomBorder(UIColor.blackColor(), width: 1, myView: basicPremiumView)
-        //addBottomBorder(UIColor.blackColor(), width: 1, myView: topupPremiumView)
-        //addBottomBorder(UIColor.blackColor(), width: 1, myView: netPremiumView)
-        //addBottomBorder(UIColor.blackColor(), width: 1, myView: serviceTaxView)
-        //addBottomBorder(UIColor.blackColor(), width: 1, myView: totalPremiumView)
+        addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: basicPremiumView)
+        addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: topupPremiumView)
+        addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: netPremiumView)
+        addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: serviceTaxView)
+        addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: totalPremiumView)
     }
 
     @IBAction func insuredmembersCall(sender: AnyObject) {

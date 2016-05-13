@@ -11,6 +11,13 @@ import UIKit
 @IBDesignable class insuredMembers: UIView {
     
     @IBOutlet var insuredMembersMainView: UIView!
+    @IBOutlet weak var firstNameView: UIView!
+    @IBOutlet weak var middleNameView: UIView!
+    @IBOutlet weak var lastNameView: UIView!
+    @IBOutlet weak var dobView: UIView!
+    @IBOutlet weak var sumInsuredView: UIView!
+    @IBOutlet weak var topupSumInsuredView: UIView!
+    @IBOutlet weak var balanceSIView: UIView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,6 +27,13 @@ import UIKit
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         loadViewFromNib ()
+    }
+    
+    func addBottomBorder(color: UIColor, linewidth: CGFloat, myView: UIView) {
+        let border = CALayer()
+        border.backgroundColor = color.CGColor
+        border.frame = CGRectMake(0, myView.frame.size.height + linewidth, width - 40, linewidth)
+        myView.layer.addSublayer(border)
     }
     
     func loadViewFromNib() {
@@ -42,6 +56,15 @@ import UIKit
         self.addSubview(mainfooter)
         
         insuredMembersMainView.frame = CGRectMake(0, 90, self.frame.size.width, self.frame.size.height - 55)
+        
+        // add borders
+        addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: firstNameView)
+        addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: middleNameView)
+        addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: lastNameView)
+        addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: dobView)
+        addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: sumInsuredView)
+        addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: topupSumInsuredView)
+        addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: balanceSIView)
     }
 
     /*
