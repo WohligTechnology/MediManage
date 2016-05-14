@@ -34,14 +34,14 @@ import UIKit
         statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
         self.addSubview(statusBar)
         
-        let mainheader = header(frame: CGRectMake(0, 20, width, 70))
+        let mainheader = header(frame: CGRectMake(0, 20, width, 50))
         self.addSubview(mainheader)
         
         let mainfooter = footer(frame: CGRectMake(0, height - 55, width, 55))
         mainfooter.layer.zPosition = 1000
         self.addSubview(mainfooter)
         
-        insuredMembersAllMainView.frame = CGRectMake(0, 90, self.frame.size.width, self.frame.size.height - 55)
+        insuredMembersAllMainView.frame = CGRectMake(0, 70, self.frame.size.width, self.frame.size.height - 55)
     }
     
     /*

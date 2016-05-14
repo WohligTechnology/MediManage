@@ -30,6 +30,11 @@ import UIKit
         footer.frame = bounds
         footer.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(footer)
+        
+        subHeaderTitle.text = "HELP DESK"
+        
+        //let mainsubHeader = subHeader(frame: CGRectMake(0, 70, width, 50))
+        //self.addSubview(mainsubHeader)
     }
 
     /*
