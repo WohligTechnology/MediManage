@@ -30,6 +30,7 @@
 		3AEEB0101CE705B60085EEF5 /* subHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB00F1CE705B60085EEF5 /* subHeader.swift */; };
 		3AEEB0131CE70F3D0085EEF5 /* helpDesk.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB0121CE70F3D0085EEF5 /* helpDesk.xib */; };
 		3AEEB0151CE731050085EEF5 /* helpDesk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB0141CE731050085EEF5 /* helpDesk.swift */; };
+		3AEEB0171CE7344C0085EEF5 /* HelpDeskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB0161CE7344C0085EEF5 /* HelpDeskController.swift */; };
 		3AF76BAE1CE5A6E500ADCAAF /* footer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AF76BAD1CE5A6E500ADCAAF /* footer.xib */; };
 		3AF76BB01CE5ABC100ADCAAF /* footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF76BAF1CE5ABC100ADCAAF /* footer.swift */; };
 		3AF76BB21CE5BEEA00ADCAAF /* InsuredMembersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF76BB11CE5BEEA00ADCAAF /* InsuredMembersController.swift */; };
@@ -106,6 +107,7 @@
 		3AEEB00F1CE705B60085EEF5 /* subHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = subHeader.swift; sourceTree = "<group>"; };
 		3AEEB0121CE70F3D0085EEF5 /* helpDesk.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = helpDesk.xib; sourceTree = "<group>"; };
 		3AEEB0141CE731050085EEF5 /* helpDesk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = helpDesk.swift; sourceTree = "<group>"; };
+		3AEEB0161CE7344C0085EEF5 /* HelpDeskController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpDeskController.swift; sourceTree = "<group>"; };
 		3AF76BAD1CE5A6E500ADCAAF /* footer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = footer.xib; sourceTree = "<group>"; };
 		3AF76BAF1CE5ABC100ADCAAF /* footer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = footer.swift; sourceTree = "<group>"; };
 		3AF76BB11CE5BEEA00ADCAAF /* InsuredMembersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuredMembersController.swift; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 				3ACFB2A11CE4C3A0003766D8 /* MemberListController.swift */,
 				3ACFB2A31CE4C410003766D8 /* PremiumCalculationController.swift */,
 				3AF76BB11CE5BEEA00ADCAAF /* InsuredMembersController.swift */,
+				3AEEB0161CE7344C0085EEF5 /* HelpDeskController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -633,6 +636,7 @@
 				3AD3E52A1CE1F87B00900A93 /* enrollmentMembers.swift in Sources */,
 				3A677B651CE4B2D3003B8C2B /* LoginController.swift in Sources */,
 				78B90BDB1CE067DA0022FE7A /* enterOTP.swift in Sources */,
+				3AEEB0171CE7344C0085EEF5 /* HelpDeskController.swift in Sources */,
 				78B90BD51CE0676E0022FE7A /* generateOTP.swift in Sources */,
 				3AFE38991CE472CE0062A497 /* memberList.swift in Sources */,
 				3A677B671CE4B384003B8C2B /* SignupController.swift in Sources */,

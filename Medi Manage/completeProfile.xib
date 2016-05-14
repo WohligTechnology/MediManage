@@ -251,6 +251,7 @@
                     <exclude reference="Oqf-ed-H22"/>
                 </mask>
             </variation>
+            <point key="canvasLocation" x="509" y="380"/>
         </view>
     </objects>
     <resources>

@@ -67,6 +67,9 @@ import UIKit
         addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: balanceSIView)
     }
 
+    @IBAction func helpDeskCall(sender: AnyObject) {
+        gInsuredMembersController.performSegueWithIdentifier("helpdesk", sender: nil)
+    }
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

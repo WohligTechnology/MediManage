@@ -22,6 +22,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="helpDesk" customModule="Medi_Manage" customModuleProvider="target">
             <connections>
                 <outlet property="goButton" destination="ulb-P1-6m1" id="6j6-b6-SsN"/>
+                <outlet property="helpDeskMainView" destination="iN0-l3-epB" id="hZG-JM-NCv"/>
                 <outlet property="submitQueryButton" destination="6uv-fV-0yW" id="XNg-hW-0gE"/>
                 <outlet property="typeQuestionField" destination="4Pc-wu-jID" id="nKL-4F-wnc"/>
             </connections>
@@ -112,7 +113,7 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="269" y="338"/>
+            <point key="canvasLocation" x="309" y="338"/>
         </view>
     </objects>
 </document>

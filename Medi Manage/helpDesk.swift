@@ -8,7 +8,9 @@
 
 import UIKit
 
-class helpDesk: UIView {
+@IBDesignable class helpDesk: UIView {
+    
+    @IBOutlet var helpDeskMainView: UIView!
     
     @IBOutlet weak var typeQuestionField: UITextField!
     @IBOutlet weak var goButton: UIButton!
@@ -39,6 +41,23 @@ class helpDesk: UIView {
         helpDesk.frame = bounds
         helpDesk.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(helpDesk)
+        
+        let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
+        statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
+        self.addSubview(statusBar)
+        
+        let mainheader = header(frame: CGRectMake(0, 20, width, 50))
+        self.addSubview(mainheader)
+        
+        let mainsubHeader = subHeader(frame: CGRectMake(0, 70, width, 50))
+        mainsubHeader.subHeaderTitle.text = "HELP DESK"
+        self.addSubview(mainsubHeader)
+        
+        let mainfooter = footer(frame: CGRectMake(0, height - 55, width, 55))
+        mainfooter.layer.zPosition = 1000
+        self.addSubview(mainfooter)
+        
+        helpDeskMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height - 55)
         
         // add borders
         addBottomBorder(UIColor.blackColor(), linewidth: 1, myView: typeQuestionField)

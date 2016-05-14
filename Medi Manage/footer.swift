@@ -29,6 +29,9 @@ import UIKit
         self.addSubview(footer)
     }
 
+    @IBAction func footerHelpDesk(sender: AnyObject) {
+        
+    }
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
