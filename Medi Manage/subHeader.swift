@@ -37,6 +37,9 @@ import UIKit
         //self.addSubview(mainsubHeader)
     }
 
+    @IBAction func backButton(sender: AnyObject) {
+        //gSubHeaderController.navigationController!.popViewControllerAnimated(true)
+    }
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -45,4 +48,20 @@ import UIKit
     }
     */
 
+}
+
+var gSubHeaderController: UIViewController!
+
+class SubHeaderController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        gSubHeaderController = self
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 }
