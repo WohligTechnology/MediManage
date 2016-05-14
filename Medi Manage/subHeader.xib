@@ -10,7 +10,12 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="subHeader" customModule="Medi_Manage" customModuleProvider="target">
+            <connections>
+                <outlet property="subHeaderIcon" destination="SAC-k5-SaH" id="GFW-cT-KAT"/>
+                <outlet property="subHeaderTitle" destination="YEN-Oi-aRl" id="MfA-mw-Wjo"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="400" height="50"/>

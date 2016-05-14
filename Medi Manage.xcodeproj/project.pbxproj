@@ -27,6 +27,7 @@
 		3AD3E52A1CE1F87B00900A93 /* enrollmentMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD3E5291CE1F87B00900A93 /* enrollmentMembers.swift */; };
 		3AD3E52D1CE20A1900900A93 /* premiumCalculation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD3E52C1CE20A1900900A93 /* premiumCalculation.xib */; };
 		3AEEB00E1CE7023E0085EEF5 /* subHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB00D1CE7023E0085EEF5 /* subHeader.xib */; };
+		3AEEB0101CE705B60085EEF5 /* subHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB00F1CE705B60085EEF5 /* subHeader.swift */; };
 		3AF76BAE1CE5A6E500ADCAAF /* footer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AF76BAD1CE5A6E500ADCAAF /* footer.xib */; };
 		3AF76BB01CE5ABC100ADCAAF /* footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF76BAF1CE5ABC100ADCAAF /* footer.swift */; };
 		3AF76BB21CE5BEEA00ADCAAF /* InsuredMembersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF76BB11CE5BEEA00ADCAAF /* InsuredMembersController.swift */; };
@@ -100,6 +101,7 @@
 		3AD3E5291CE1F87B00900A93 /* enrollmentMembers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enrollmentMembers.swift; sourceTree = "<group>"; };
 		3AD3E52C1CE20A1900900A93 /* premiumCalculation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = premiumCalculation.xib; sourceTree = "<group>"; };
 		3AEEB00D1CE7023E0085EEF5 /* subHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = subHeader.xib; sourceTree = "<group>"; };
+		3AEEB00F1CE705B60085EEF5 /* subHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = subHeader.swift; sourceTree = "<group>"; };
 		3AF76BAD1CE5A6E500ADCAAF /* footer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = footer.xib; sourceTree = "<group>"; };
 		3AF76BAF1CE5ABC100ADCAAF /* footer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = footer.swift; sourceTree = "<group>"; };
 		3AF76BB11CE5BEEA00ADCAAF /* InsuredMembersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuredMembersController.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				3AEEB00D1CE7023E0085EEF5 /* subHeader.xib */,
+				3AEEB00F1CE705B60085EEF5 /* subHeader.swift */,
 			);
 			name = subHeader;
 			sourceTree = "<group>";
@@ -605,6 +608,7 @@
 				3A677B6D1CE4BBDE003B8C2B /* GenerateOTPController.swift in Sources */,
 				3A677B6F1CE4BEC0003B8C2B /* EnterOTPController.swift in Sources */,
 				783322A81CDB13ED0015CE37 /* signup.swift in Sources */,
+				3AEEB0101CE705B60085EEF5 /* subHeader.swift in Sources */,
 				783322AB1CDB37FE0015CE37 /* onboarding.swift in Sources */,
 				783322971CD9FCD90015CE37 /* login.swift in Sources */,
 				78B90BD31CE05C8D0022FE7A /* retrieveLogin.swift in Sources */,
