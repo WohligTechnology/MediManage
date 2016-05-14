@@ -19,7 +19,13 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="helpDesk" customModule="Medi_Manage" customModuleProvider="target">
+            <connections>
+                <outlet property="goButton" destination="ulb-P1-6m1" id="6j6-b6-SsN"/>
+                <outlet property="submitQueryButton" destination="6uv-fV-0yW" id="XNg-hW-0gE"/>
+                <outlet property="typeQuestionField" destination="4Pc-wu-jID" id="nKL-4F-wnc"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>

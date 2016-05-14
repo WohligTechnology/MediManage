@@ -29,6 +29,7 @@
 		3AEEB00E1CE7023E0085EEF5 /* subHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB00D1CE7023E0085EEF5 /* subHeader.xib */; };
 		3AEEB0101CE705B60085EEF5 /* subHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB00F1CE705B60085EEF5 /* subHeader.swift */; };
 		3AEEB0131CE70F3D0085EEF5 /* helpDesk.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB0121CE70F3D0085EEF5 /* helpDesk.xib */; };
+		3AEEB0151CE731050085EEF5 /* helpDesk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB0141CE731050085EEF5 /* helpDesk.swift */; };
 		3AF76BAE1CE5A6E500ADCAAF /* footer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AF76BAD1CE5A6E500ADCAAF /* footer.xib */; };
 		3AF76BB01CE5ABC100ADCAAF /* footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF76BAF1CE5ABC100ADCAAF /* footer.swift */; };
 		3AF76BB21CE5BEEA00ADCAAF /* InsuredMembersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF76BB11CE5BEEA00ADCAAF /* InsuredMembersController.swift */; };
@@ -104,6 +105,7 @@
 		3AEEB00D1CE7023E0085EEF5 /* subHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = subHeader.xib; sourceTree = "<group>"; };
 		3AEEB00F1CE705B60085EEF5 /* subHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = subHeader.swift; sourceTree = "<group>"; };
 		3AEEB0121CE70F3D0085EEF5 /* helpDesk.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = helpDesk.xib; sourceTree = "<group>"; };
+		3AEEB0141CE731050085EEF5 /* helpDesk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = helpDesk.swift; sourceTree = "<group>"; };
 		3AF76BAD1CE5A6E500ADCAAF /* footer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = footer.xib; sourceTree = "<group>"; };
 		3AF76BAF1CE5ABC100ADCAAF /* footer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = footer.swift; sourceTree = "<group>"; };
 		3AF76BB11CE5BEEA00ADCAAF /* InsuredMembersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuredMembersController.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				3AEEB0121CE70F3D0085EEF5 /* helpDesk.xib */,
+				3AEEB0141CE731050085EEF5 /* helpDesk.swift */,
 			);
 			name = helpDesk;
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 				786DF9FC1CD214F300DDE769 /* ViewController.swift in Sources */,
 				3A481F351CE3151900BB8A73 /* premiumCalculation.swift in Sources */,
 				3ACFB2A01CE4C369003766D8 /* EnrollmentMembersController.swift in Sources */,
+				3AEEB0151CE731050085EEF5 /* helpDesk.swift in Sources */,
 				3ACFB2A41CE4C410003766D8 /* PremiumCalculationController.swift in Sources */,
 				3A01752C1CE360FF00832E49 /* insuredMembers.swift in Sources */,
 				3ACFB2A21CE4C3A0003766D8 /* MemberListController.swift in Sources */,
