@@ -88,7 +88,7 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="387" y="384"/>
+            <point key="canvasLocation" x="508" y="373"/>
         </view>
     </objects>
     <resources>
