@@ -26,10 +26,10 @@ import UIKit
     func loadViewFromNib() {
         let bundle = NSBundle(forClass: self.dynamicType)
         let nib = UINib(nibName: "subHeader", bundle: bundle)
-        let footer = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
-        footer.frame = bounds
-        footer.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-        self.addSubview(footer)
+        let subHeader = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        subHeader.frame = bounds
+        subHeader.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        self.addSubview(subHeader)
         
         subHeaderTitle.text = "HELP DESK"
         
