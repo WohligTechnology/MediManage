@@ -47,13 +47,13 @@
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mui-pU-atC">
-                    <rect key="frame" x="20" y="251" width="69" height="20"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mui-pU-atC">
+                    <rect key="frame" x="20" y="251" width="97" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="f5R-Tf-rtT"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
-                    <state key="normal" title="Attach File">
+                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
+                    <state key="normal" title=" Attach File" image="attach_clip">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
@@ -91,4 +91,7 @@
             <point key="canvasLocation" x="387" y="384"/>
         </view>
     </objects>
+    <resources>
+        <image name="attach_clip" width="15" height="16"/>
+    </resources>
 </document>
