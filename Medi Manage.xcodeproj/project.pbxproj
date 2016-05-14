@@ -33,6 +33,7 @@
 		3AEEB0171CE7344C0085EEF5 /* HelpDeskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB0161CE7344C0085EEF5 /* HelpDeskController.swift */; };
 		3AEEB01A1CE745F90085EEF5 /* helpDeskFAQ.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB0191CE745F90085EEF5 /* helpDeskFAQ.xib */; };
 		3AEEB01C1CE74C770085EEF5 /* helpDeskFAQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB01B1CE74C770085EEF5 /* helpDeskFAQ.swift */; };
+		3AEEB01F1CE74D820085EEF5 /* helpDeskQuery.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB01E1CE74D820085EEF5 /* helpDeskQuery.xib */; };
 		3AF76BAE1CE5A6E500ADCAAF /* footer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AF76BAD1CE5A6E500ADCAAF /* footer.xib */; };
 		3AF76BB01CE5ABC100ADCAAF /* footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF76BAF1CE5ABC100ADCAAF /* footer.swift */; };
 		3AF76BB21CE5BEEA00ADCAAF /* InsuredMembersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF76BB11CE5BEEA00ADCAAF /* InsuredMembersController.swift */; };
@@ -112,6 +113,7 @@
 		3AEEB0161CE7344C0085EEF5 /* HelpDeskController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpDeskController.swift; sourceTree = "<group>"; };
 		3AEEB0191CE745F90085EEF5 /* helpDeskFAQ.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = helpDeskFAQ.xib; sourceTree = "<group>"; };
 		3AEEB01B1CE74C770085EEF5 /* helpDeskFAQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = helpDeskFAQ.swift; sourceTree = "<group>"; };
+		3AEEB01E1CE74D820085EEF5 /* helpDeskQuery.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = helpDeskQuery.xib; sourceTree = "<group>"; };
 		3AF76BAD1CE5A6E500ADCAAF /* footer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = footer.xib; sourceTree = "<group>"; };
 		3AF76BAF1CE5ABC100ADCAAF /* footer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = footer.swift; sourceTree = "<group>"; };
 		3AF76BB11CE5BEEA00ADCAAF /* InsuredMembersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuredMembersController.swift; sourceTree = "<group>"; };
@@ -248,6 +250,14 @@
 				3AEEB01B1CE74C770085EEF5 /* helpDeskFAQ.swift */,
 			);
 			name = helpDeskFAQ;
+			sourceTree = "<group>";
+		};
+		3AEEB01D1CE74D390085EEF5 /* helpDeskQuery */ = {
+			isa = PBXGroup;
+			children = (
+				3AEEB01E1CE74D820085EEF5 /* helpDeskQuery.xib */,
+			);
+			name = helpDeskQuery;
 			sourceTree = "<group>";
 		};
 		3AF76BAC1CE5A6D000ADCAAF /* footer */ = {
@@ -396,6 +406,7 @@
 		786DFA291CD2282700DDE769 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3AEEB01D1CE74D390085EEF5 /* helpDeskQuery */,
 				3AEEB0181CE745DE0085EEF5 /* helpDeskFAQ */,
 				3AEEB0111CE70F2A0085EEF5 /* helpDesk */,
 				3AEEB00C1CE702290085EEF5 /* subHeader */,
@@ -591,6 +602,7 @@
 				786DFA041CD214F300DDE769 /* LaunchScreen.storyboard in Resources */,
 				3AD3E5281CE1DE1D00900A93 /* enrollmentMembers.xib in Resources */,
 				78B90BD11CE05C7C0022FE7A /* retrieveLogin.xib in Resources */,
+				3AEEB01F1CE74D820085EEF5 /* helpDeskQuery.xib in Resources */,
 				3AFE389C1CE4932D0062A497 /* insuredMembersAll.xib in Resources */,
 				786DFA011CD214F300DDE769 /* Assets.xcassets in Resources */,
 				3A1369AE1CE4566500BEE355 /* memberList.xib in Resources */,
