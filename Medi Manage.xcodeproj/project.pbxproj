@@ -32,6 +32,7 @@
 		3AEEB0151CE731050085EEF5 /* helpDesk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB0141CE731050085EEF5 /* helpDesk.swift */; };
 		3AEEB0171CE7344C0085EEF5 /* HelpDeskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB0161CE7344C0085EEF5 /* HelpDeskController.swift */; };
 		3AEEB01A1CE745F90085EEF5 /* helpDeskFAQ.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB0191CE745F90085EEF5 /* helpDeskFAQ.xib */; };
+		3AEEB01C1CE74C770085EEF5 /* helpDeskFAQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB01B1CE74C770085EEF5 /* helpDeskFAQ.swift */; };
 		3AF76BAE1CE5A6E500ADCAAF /* footer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AF76BAD1CE5A6E500ADCAAF /* footer.xib */; };
 		3AF76BB01CE5ABC100ADCAAF /* footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF76BAF1CE5ABC100ADCAAF /* footer.swift */; };
 		3AF76BB21CE5BEEA00ADCAAF /* InsuredMembersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF76BB11CE5BEEA00ADCAAF /* InsuredMembersController.swift */; };
@@ -110,6 +111,7 @@
 		3AEEB0141CE731050085EEF5 /* helpDesk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = helpDesk.swift; sourceTree = "<group>"; };
 		3AEEB0161CE7344C0085EEF5 /* HelpDeskController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpDeskController.swift; sourceTree = "<group>"; };
 		3AEEB0191CE745F90085EEF5 /* helpDeskFAQ.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = helpDeskFAQ.xib; sourceTree = "<group>"; };
+		3AEEB01B1CE74C770085EEF5 /* helpDeskFAQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = helpDeskFAQ.swift; sourceTree = "<group>"; };
 		3AF76BAD1CE5A6E500ADCAAF /* footer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = footer.xib; sourceTree = "<group>"; };
 		3AF76BAF1CE5ABC100ADCAAF /* footer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = footer.swift; sourceTree = "<group>"; };
 		3AF76BB11CE5BEEA00ADCAAF /* InsuredMembersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuredMembersController.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				3AEEB0191CE745F90085EEF5 /* helpDeskFAQ.xib */,
+				3AEEB01B1CE74C770085EEF5 /* helpDeskFAQ.swift */,
 			);
 			name = helpDeskFAQ;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 			files = (
 				3A677B631CE49F7F003B8C2B /* insuredMembersAll.swift in Sources */,
 				786DF9FC1CD214F300DDE769 /* ViewController.swift in Sources */,
+				3AEEB01C1CE74C770085EEF5 /* helpDeskFAQ.swift in Sources */,
 				3A481F351CE3151900BB8A73 /* premiumCalculation.swift in Sources */,
 				3ACFB2A01CE4C369003766D8 /* EnrollmentMembersController.swift in Sources */,
 				3AEEB0151CE731050085EEF5 /* helpDesk.swift in Sources */,
