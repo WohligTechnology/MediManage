@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="erb-lV-Mte">
+                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="IPi-MP-4kb"/>
+                        <constraint firstAttribute="width" constant="100" id="XgG-pa-eV8"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U24-Ga-HmQ">
+                    <rect key="frame" x="0.0" y="100" width="100" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="brm-33-ISr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="U24-Ga-HmQ" firstAttribute="centerX" secondItem="erb-lV-Mte" secondAttribute="centerX" id="Asz-Nx-BZi"/>
+                <constraint firstItem="erb-lV-Mte" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JBm-w5-DSC"/>
+                <constraint firstAttribute="trailing" secondItem="erb-lV-Mte" secondAttribute="trailing" id="LVN-Ue-nBu"/>
+                <constraint firstItem="erb-lV-Mte" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="MlK-cP-qBO"/>
+                <constraint firstAttribute="bottom" secondItem="U24-Ga-HmQ" secondAttribute="bottom" id="cop-NR-41a"/>
+                <constraint firstItem="U24-Ga-HmQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hhR-ce-qfL"/>
+                <constraint firstAttribute="trailing" secondItem="U24-Ga-HmQ" secondAttribute="trailing" id="tJR-rz-avK"/>
+                <constraint firstItem="U24-Ga-HmQ" firstAttribute="top" secondItem="erb-lV-Mte" secondAttribute="bottom" id="v0a-57-Qlk"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="125" y="134"/>
+        </view>
+    </objects>
+</document>

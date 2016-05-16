@@ -24,6 +24,7 @@
 		3A8EFB531CE9A463004489F3 /* hospitalSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8EFB521CE9A463004489F3 /* hospitalSearch.swift */; };
 		3A8EFB561CE9C3A3004489F3 /* inbox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A8EFB551CE9C3A3004489F3 /* inbox.xib */; };
 		3A8EFB581CE9CA54004489F3 /* inbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8EFB571CE9CA54004489F3 /* inbox.swift */; };
+		3A8EFB5B1CE9D31B004489F3 /* homeMenus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A8EFB5A1CE9D31B004489F3 /* homeMenus.xib */; };
 		3ACFB2A01CE4C369003766D8 /* EnrollmentMembersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFB29F1CE4C369003766D8 /* EnrollmentMembersController.swift */; };
 		3ACFB2A21CE4C3A0003766D8 /* MemberListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFB2A11CE4C3A0003766D8 /* MemberListController.swift */; };
 		3ACFB2A41CE4C410003766D8 /* PremiumCalculationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFB2A31CE4C410003766D8 /* PremiumCalculationController.swift */; };
@@ -111,6 +112,7 @@
 		3A8EFB521CE9A463004489F3 /* hospitalSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hospitalSearch.swift; sourceTree = "<group>"; };
 		3A8EFB551CE9C3A3004489F3 /* inbox.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = inbox.xib; sourceTree = "<group>"; };
 		3A8EFB571CE9CA54004489F3 /* inbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = inbox.swift; sourceTree = "<group>"; };
+		3A8EFB5A1CE9D31B004489F3 /* homeMenus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = homeMenus.xib; sourceTree = "<group>"; };
 		3ACFB29F1CE4C369003766D8 /* EnrollmentMembersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnrollmentMembersController.swift; sourceTree = "<group>"; };
 		3ACFB2A11CE4C3A0003766D8 /* MemberListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberListController.swift; sourceTree = "<group>"; };
 		3ACFB2A31CE4C410003766D8 /* PremiumCalculationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PremiumCalculationController.swift; sourceTree = "<group>"; };
@@ -237,6 +239,14 @@
 				3A8EFB571CE9CA54004489F3 /* inbox.swift */,
 			);
 			name = inbox;
+			sourceTree = "<group>";
+		};
+		3A8EFB591CE9D2D4004489F3 /* homeMenus */ = {
+			isa = PBXGroup;
+			children = (
+				3A8EFB5A1CE9D31B004489F3 /* homeMenus.xib */,
+			);
+			name = homeMenus;
 			sourceTree = "<group>";
 		};
 		3AD3E5261CE1DDC200900A93 /* enrollmentMembers */ = {
@@ -448,6 +458,7 @@
 		786DFA291CD2282700DDE769 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3A8EFB591CE9D2D4004489F3 /* homeMenus */,
 				3A8EFB541CE9C384004489F3 /* inbox */,
 				3A8EFB4F1CE99E89004489F3 /* hospitalSearch */,
 				3AEEB0221CE7513C0085EEF5 /* connect */,
@@ -643,6 +654,7 @@
 				C2A59E8F1CDDDF700093CFEC /* Lato-Black.ttf in Resources */,
 				783322B01CDB50D10015CE37 /* landing.xib in Resources */,
 				3AEEB0241CE7515C0085EEF5 /* connect.xib in Resources */,
+				3A8EFB5B1CE9D31B004489F3 /* homeMenus.xib in Resources */,
 				78B90BD71CE067810022FE7A /* generateOTP.xib in Resources */,
 				3AD3E52D1CE20A1900900A93 /* premiumCalculation.xib in Resources */,
 				3A01752F1CE364AD00832E49 /* header.xib in Resources */,
