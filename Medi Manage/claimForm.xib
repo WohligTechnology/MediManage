@@ -8,18 +8,29 @@
         <mutableArray key="Lato-Bold.ttf">
             <string>Lato-Bold</string>
         </mutableArray>
-        <mutableArray key="Lato-Regular.ttf">
-            <string>Lato-Regular</string>
-            <string>Lato-Regular</string>
-            <string>Lato-Regular</string>
-            <string>Lato-Regular</string>
-            <string>Lato-Regular</string>
-            <string>Lato-Regular</string>
-            <string>Lato-Regular</string>
+        <mutableArray key="Lato-Light.ttf">
+            <string>Lato-Light</string>
+            <string>Lato-Light</string>
+            <string>Lato-Light</string>
+            <string>Lato-Light</string>
+            <string>Lato-Light</string>
+            <string>Lato-Light</string>
+            <string>Lato-Light</string>
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="claimForm" customModule="Medi_Manage" customModuleProvider="target">
+            <connections>
+                <outlet property="claimAmount" destination="80e-xn-Awm" id="hNj-ex-BR4"/>
+                <outlet property="claimFormMainView" destination="iN0-l3-epB" id="uLA-ed-NCt"/>
+                <outlet property="dateOfAdmission" destination="tta-nr-kQE" id="ekq-Uq-KM4"/>
+                <outlet property="dateOfDischarge" destination="bHa-F9-cgH" id="htf-MT-qzK"/>
+                <outlet property="diagnosis" destination="AgW-J2-xop" id="LwX-Yd-RaE"/>
+                <outlet property="hospitalAddress" destination="HjP-vt-657" id="byz-Af-rW5"/>
+                <outlet property="hospitalName" destination="k6F-v5-3JB" id="CrJ-sT-Y0X"/>
+                <outlet property="selectPatient" destination="nEE-j1-cK2" id="n5p-jE-Ccw"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -30,7 +41,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="3Tp-tp-aWr"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
@@ -43,7 +54,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Kxj-rX-2oK"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
@@ -56,7 +67,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="tYQ-Ca-eGH"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
@@ -69,7 +80,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="NWJ-8w-D1N"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
@@ -82,10 +93,12 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="qO6-gm-s1Z"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="_placeholderLabel.textColor" value="YES"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Diagnosis / Ailment" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AgW-J2-xop">
@@ -93,7 +106,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="HHh-8E-RMK"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
@@ -106,7 +119,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="uiC-nX-uqc"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
@@ -155,7 +168,7 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="209" y="342"/>
+            <point key="canvasLocation" x="349" y="347"/>
         </view>
     </objects>
 </document>

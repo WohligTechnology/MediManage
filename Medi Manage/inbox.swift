@@ -8,7 +8,7 @@
 
 import UIKit
 
-class inbox: UIView {
+@IBDesignable class inbox: UIView {
     
     @IBOutlet var inboxMainView: UIView!
     
