@@ -25,6 +25,7 @@
 		3A8EFB561CE9C3A3004489F3 /* inbox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A8EFB551CE9C3A3004489F3 /* inbox.xib */; };
 		3A8EFB581CE9CA54004489F3 /* inbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8EFB571CE9CA54004489F3 /* inbox.swift */; };
 		3A8EFB5B1CE9D31B004489F3 /* homeMenus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A8EFB5A1CE9D31B004489F3 /* homeMenus.xib */; };
+		3A8EFB5D1CE9DE53004489F3 /* homeMenus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8EFB5C1CE9DE53004489F3 /* homeMenus.swift */; };
 		3ACFB2A01CE4C369003766D8 /* EnrollmentMembersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFB29F1CE4C369003766D8 /* EnrollmentMembersController.swift */; };
 		3ACFB2A21CE4C3A0003766D8 /* MemberListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFB2A11CE4C3A0003766D8 /* MemberListController.swift */; };
 		3ACFB2A41CE4C410003766D8 /* PremiumCalculationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFB2A31CE4C410003766D8 /* PremiumCalculationController.swift */; };
@@ -113,6 +114,7 @@
 		3A8EFB551CE9C3A3004489F3 /* inbox.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = inbox.xib; sourceTree = "<group>"; };
 		3A8EFB571CE9CA54004489F3 /* inbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = inbox.swift; sourceTree = "<group>"; };
 		3A8EFB5A1CE9D31B004489F3 /* homeMenus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = homeMenus.xib; sourceTree = "<group>"; };
+		3A8EFB5C1CE9DE53004489F3 /* homeMenus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeMenus.swift; sourceTree = "<group>"; };
 		3ACFB29F1CE4C369003766D8 /* EnrollmentMembersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnrollmentMembersController.swift; sourceTree = "<group>"; };
 		3ACFB2A11CE4C3A0003766D8 /* MemberListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberListController.swift; sourceTree = "<group>"; };
 		3ACFB2A31CE4C410003766D8 /* PremiumCalculationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PremiumCalculationController.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				3A8EFB5A1CE9D31B004489F3 /* homeMenus.xib */,
+				3A8EFB5C1CE9DE53004489F3 /* homeMenus.swift */,
 			);
 			name = homeMenus;
 			sourceTree = "<group>";
@@ -703,6 +706,7 @@
 				3A677B631CE49F7F003B8C2B /* insuredMembersAll.swift in Sources */,
 				786DF9FC1CD214F300DDE769 /* ViewController.swift in Sources */,
 				3AEEB01C1CE74C770085EEF5 /* helpDeskFAQ.swift in Sources */,
+				3A8EFB5D1CE9DE53004489F3 /* homeMenus.swift in Sources */,
 				3A481F351CE3151900BB8A73 /* premiumCalculation.swift in Sources */,
 				3ACFB2A01CE4C369003766D8 /* EnrollmentMembersController.swift in Sources */,
 				3AEEB0151CE731050085EEF5 /* helpDesk.swift in Sources */,
