@@ -29,6 +29,7 @@
 		3A8EFB601CE9E0BA004489F3 /* claimForm.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A8EFB5F1CE9E0BA004489F3 /* claimForm.xib */; };
 		3A8EFB621CE9E742004489F3 /* claimForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8EFB611CE9E742004489F3 /* claimForm.swift */; };
 		3AC43DCF1CE9FC1500ED2523 /* myClaims.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AC43DCE1CE9FC1500ED2523 /* myClaims.xib */; };
+		3AC43DD11CEA00E100ED2523 /* myClaims.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC43DD01CEA00E100ED2523 /* myClaims.swift */; };
 		3ACFB2A01CE4C369003766D8 /* EnrollmentMembersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFB29F1CE4C369003766D8 /* EnrollmentMembersController.swift */; };
 		3ACFB2A21CE4C3A0003766D8 /* MemberListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFB2A11CE4C3A0003766D8 /* MemberListController.swift */; };
 		3ACFB2A41CE4C410003766D8 /* PremiumCalculationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFB2A31CE4C410003766D8 /* PremiumCalculationController.swift */; };
@@ -121,6 +122,7 @@
 		3A8EFB5F1CE9E0BA004489F3 /* claimForm.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = claimForm.xib; sourceTree = "<group>"; };
 		3A8EFB611CE9E742004489F3 /* claimForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = claimForm.swift; sourceTree = "<group>"; };
 		3AC43DCE1CE9FC1500ED2523 /* myClaims.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = myClaims.xib; sourceTree = "<group>"; };
+		3AC43DD01CEA00E100ED2523 /* myClaims.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myClaims.swift; sourceTree = "<group>"; };
 		3ACFB29F1CE4C369003766D8 /* EnrollmentMembersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnrollmentMembersController.swift; sourceTree = "<group>"; };
 		3ACFB2A11CE4C3A0003766D8 /* MemberListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberListController.swift; sourceTree = "<group>"; };
 		3ACFB2A31CE4C410003766D8 /* PremiumCalculationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PremiumCalculationController.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				3AC43DCE1CE9FC1500ED2523 /* myClaims.xib */,
+				3AC43DD01CEA00E100ED2523 /* myClaims.swift */,
 			);
 			name = myClaims;
 			sourceTree = "<group>";
@@ -752,6 +755,7 @@
 				783322971CD9FCD90015CE37 /* login.swift in Sources */,
 				78B90BD31CE05C8D0022FE7A /* retrieveLogin.swift in Sources */,
 				3AEEB0261CE75DEF0085EEF5 /* connect.swift in Sources */,
+				3AC43DD11CEA00E100ED2523 /* myClaims.swift in Sources */,
 				3AF76BB01CE5ABC100ADCAAF /* footer.swift in Sources */,
 				3AEEB0211CE7504B0085EEF5 /* helpDeskQuery.swift in Sources */,
 				3A677B6B1CE4B90C003B8C2B /* RetrieveLoginController.swift in Sources */,
