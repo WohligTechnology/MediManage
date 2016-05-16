@@ -23,6 +23,7 @@
 		3A8EFB511CE99EBA004489F3 /* hospitalSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A8EFB501CE99EBA004489F3 /* hospitalSearch.xib */; };
 		3A8EFB531CE9A463004489F3 /* hospitalSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8EFB521CE9A463004489F3 /* hospitalSearch.swift */; };
 		3A8EFB561CE9C3A3004489F3 /* inbox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A8EFB551CE9C3A3004489F3 /* inbox.xib */; };
+		3A8EFB581CE9CA54004489F3 /* inbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8EFB571CE9CA54004489F3 /* inbox.swift */; };
 		3ACFB2A01CE4C369003766D8 /* EnrollmentMembersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFB29F1CE4C369003766D8 /* EnrollmentMembersController.swift */; };
 		3ACFB2A21CE4C3A0003766D8 /* MemberListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFB2A11CE4C3A0003766D8 /* MemberListController.swift */; };
 		3ACFB2A41CE4C410003766D8 /* PremiumCalculationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFB2A31CE4C410003766D8 /* PremiumCalculationController.swift */; };
@@ -109,6 +110,7 @@
 		3A8EFB501CE99EBA004489F3 /* hospitalSearch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = hospitalSearch.xib; sourceTree = "<group>"; };
 		3A8EFB521CE9A463004489F3 /* hospitalSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hospitalSearch.swift; sourceTree = "<group>"; };
 		3A8EFB551CE9C3A3004489F3 /* inbox.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = inbox.xib; sourceTree = "<group>"; };
+		3A8EFB571CE9CA54004489F3 /* inbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = inbox.swift; sourceTree = "<group>"; };
 		3ACFB29F1CE4C369003766D8 /* EnrollmentMembersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnrollmentMembersController.swift; sourceTree = "<group>"; };
 		3ACFB2A11CE4C3A0003766D8 /* MemberListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberListController.swift; sourceTree = "<group>"; };
 		3ACFB2A31CE4C410003766D8 /* PremiumCalculationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PremiumCalculationController.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				3A8EFB551CE9C3A3004489F3 /* inbox.xib */,
+				3A8EFB571CE9CA54004489F3 /* inbox.swift */,
 			);
 			name = inbox;
 			sourceTree = "<group>";
@@ -712,6 +715,7 @@
 				3A677B651CE4B2D3003B8C2B /* LoginController.swift in Sources */,
 				78B90BDB1CE067DA0022FE7A /* enterOTP.swift in Sources */,
 				3AEEB0171CE7344C0085EEF5 /* HelpDeskController.swift in Sources */,
+				3A8EFB581CE9CA54004489F3 /* inbox.swift in Sources */,
 				3A8EFB531CE9A463004489F3 /* hospitalSearch.swift in Sources */,
 				78B90BD51CE0676E0022FE7A /* generateOTP.swift in Sources */,
 				3AFE38991CE472CE0062A497 /* memberList.swift in Sources */,

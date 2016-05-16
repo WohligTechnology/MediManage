@@ -21,7 +21,11 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="inbox" customModule="Medi_Manage" customModuleProvider="target">
+            <connections>
+                <outlet property="inboxMainView" destination="iN0-l3-epB" id="Jtj-9J-R2l"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -96,6 +100,7 @@
                         <constraint firstItem="g3O-Kc-eJM" firstAttribute="top" secondItem="1yq-Z0-veQ" secondAttribute="top" constant="30" id="Hg8-CU-HkS"/>
                         <constraint firstItem="4a1-QV-HJD" firstAttribute="leading" secondItem="1yq-Z0-veQ" secondAttribute="leading" constant="20" id="T3k-ht-5Jy"/>
                         <constraint firstItem="fuJ-D2-5hx" firstAttribute="leading" secondItem="1yq-Z0-veQ" secondAttribute="leading" constant="20" id="ZOl-WA-n1i"/>
+                        <constraint firstAttribute="height" constant="110" id="b1b-pL-rDN"/>
                         <constraint firstItem="tjs-e6-OIU" firstAttribute="top" secondItem="fuJ-D2-5hx" secondAttribute="bottom" id="s7i-nn-jna"/>
                         <constraint firstItem="4a1-QV-HJD" firstAttribute="top" secondItem="TXK-wf-bZ7" secondAttribute="bottom" id="uia-GP-SW5"/>
                         <constraint firstItem="TXK-wf-bZ7" firstAttribute="top" secondItem="tjs-e6-OIU" secondAttribute="bottom" constant="10" id="wwe-8G-71k"/>
@@ -177,28 +182,30 @@
                     </constraints>
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="inbox_create_icon" translatesAutoresizingMaskIntoConstraints="NO" id="4Y2-Se-0uu">
-                    <rect key="frame" x="240" y="400" width="60" height="60"/>
+                    <rect key="frame" x="250" y="410" width="50" height="50"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="60" id="MSD-s1-Zhv"/>
-                        <constraint firstAttribute="width" constant="60" id="V9J-GH-Qc0"/>
+                        <constraint firstAttribute="width" constant="50" id="23Q-WI-Jnj"/>
+                        <constraint firstAttribute="height" constant="50" id="gb0-l1-wgC"/>
                     </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="1yq-Z0-veQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="29O-Iw-FKg"/>
-                <constraint firstAttribute="bottom" secondItem="4Y2-Se-0uu" secondAttribute="bottom" constant="20" id="AuH-B6-LOx"/>
                 <constraint firstAttribute="trailing" secondItem="1yq-Z0-veQ" secondAttribute="trailing" id="Ejl-4X-LXe"/>
-                <constraint firstAttribute="bottom" secondItem="1yq-Z0-veQ" secondAttribute="bottom" constant="370" id="JZf-xw-wZL"/>
-                <constraint firstAttribute="trailing" secondItem="4Y2-Se-0uu" secondAttribute="trailing" constant="20" id="OrN-G3-KzR"/>
+                <constraint firstItem="1yq-Z0-veQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="IM7-xm-RTV"/>
+                <constraint firstItem="1yq-Z0-veQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="J7z-gj-Mv5"/>
                 <constraint firstItem="zqH-hN-gzs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="P8M-EB-nrF"/>
                 <constraint firstAttribute="trailing" secondItem="zqH-hN-gzs" secondAttribute="trailing" id="PNT-tK-HLB"/>
+                <constraint firstAttribute="bottom" secondItem="4Y2-Se-0uu" secondAttribute="bottom" constant="20" id="U5w-yY-iBc"/>
+                <constraint firstAttribute="trailing" secondItem="4Y2-Se-0uu" secondAttribute="trailing" constant="20" id="cij-Aw-f76"/>
+                <constraint firstAttribute="trailing" secondItem="1yq-Z0-veQ" secondAttribute="trailing" id="fv5-u5-otr"/>
                 <constraint firstItem="1yq-Z0-veQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nr1-TV-lQ1"/>
                 <constraint firstItem="zqH-hN-gzs" firstAttribute="top" secondItem="1yq-Z0-veQ" secondAttribute="bottom" id="udI-dR-duz"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="344" y="418"/>
+            <point key="canvasLocation" x="371" y="416"/>
         </view>
     </objects>
     <resources>
