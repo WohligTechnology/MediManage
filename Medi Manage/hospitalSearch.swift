@@ -1,0 +1,40 @@
+//
+//  hospitalSearch.swift
+//  Medi Manage
+//
+//  Created by Harsh Thakkar on 16/05/16.
+//  Copyright © 2016 Wohlig Technology. All rights reserved.
+//
+
+import UIKit
+
+class hospitalSearch: UIView {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        loadViewFromNib ()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        loadViewFromNib ()
+    }
+    
+    func loadViewFromNib() {
+        let bundle = NSBundle(forClass: self.dynamicType)
+        let nib = UINib(nibName: "hospitalSearch", bundle: bundle)
+        let hospitalSearch = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        hospitalSearch.frame = bounds
+        hospitalSearch.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        self.addSubview(hospitalSearch)
+    }
+
+    /*
+    // Only override drawRect: if you perform custom drawing.
+    // An empty implementation adversely affects performance during animation.
+    override func drawRect(rect: CGRect) {
+        // Drawing code
+    }
+    */
+
+}
