@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="q7a-Rd-acw">
+                    <rect key="frame" x="20" y="155" width="280" height="170"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7oJ-0n-5U4">
+                            <rect key="frame" x="0.0" y="0.0" width="135" height="170"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="call_icon" translatesAutoresizingMaskIntoConstraints="NO" id="8Ub-mY-I3R">
+                                    <rect key="frame" x="5" y="0.0" width="100" height="100"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="100" id="XeX-UP-MkY"/>
+                                        <constraint firstAttribute="width" constant="100" id="iu6-dH-zYZ"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TPA Helpline Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="191-I4-QBN">
+                                    <rect key="frame" x="0.0" y="120" width="135" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="cww-Yd-3c3"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="022 67282929" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bL-Xh-Okv">
+                                    <rect key="frame" x="0.0" y="140" width="135" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="EIV-b1-rq7"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                    <color key="textColor" red="0.36470588240000001" green="0.81960784310000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="191-I4-QBN" secondAttribute="trailing" id="0vd-ac-uXa"/>
+                                <constraint firstItem="1bL-Xh-Okv" firstAttribute="trailing" secondItem="191-I4-QBN" secondAttribute="trailing" id="4Sp-ek-0XV"/>
+                                <constraint firstItem="1bL-Xh-Okv" firstAttribute="leading" secondItem="191-I4-QBN" secondAttribute="leading" id="5yX-zq-K3A"/>
+                                <constraint firstItem="8Ub-mY-I3R" firstAttribute="top" secondItem="7oJ-0n-5U4" secondAttribute="top" id="6tq-iv-lCW"/>
+                                <constraint firstAttribute="trailing" secondItem="8Ub-mY-I3R" secondAttribute="trailing" constant="30" id="RL4-Go-xU4"/>
+                                <constraint firstItem="191-I4-QBN" firstAttribute="leading" secondItem="7oJ-0n-5U4" secondAttribute="leading" id="qeW-n5-8Vr"/>
+                                <constraint firstItem="191-I4-QBN" firstAttribute="top" secondItem="8Ub-mY-I3R" secondAttribute="bottom" constant="20" id="rM8-JC-XeG"/>
+                                <constraint firstItem="1bL-Xh-Okv" firstAttribute="top" secondItem="191-I4-QBN" secondAttribute="bottom" id="uEZ-mv-3Cm"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYh-xg-vQ5">
+                            <rect key="frame" x="145" y="0.0" width="135" height="170"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="call_icon" translatesAutoresizingMaskIntoConstraints="NO" id="W1z-Q7-vAa">
+                                    <rect key="frame" x="18" y="0.0" width="100" height="100"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="100" id="6vZ-rf-hZv"/>
+                                        <constraint firstAttribute="width" constant="100" id="Qyh-Or-KXG"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TPA Helpline Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBH-1j-tTd">
+                                    <rect key="frame" x="0.0" y="120" width="135" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="47X-3c-0mq"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="022 67282929" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ccx-p4-ZEE">
+                                    <rect key="frame" x="0.0" y="140" width="135" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="tNs-K3-FpB"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                    <color key="textColor" red="0.36470588240000001" green="0.81960784310000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="Ccx-p4-ZEE" firstAttribute="top" secondItem="PBH-1j-tTd" secondAttribute="bottom" id="8BN-i6-Fkb"/>
+                                <constraint firstItem="PBH-1j-tTd" firstAttribute="top" secondItem="W1z-Q7-vAa" secondAttribute="bottom" constant="20" id="90F-bp-pIc"/>
+                                <constraint firstItem="W1z-Q7-vAa" firstAttribute="top" secondItem="ZYh-xg-vQ5" secondAttribute="top" id="AB0-jB-5qQ"/>
+                                <constraint firstAttribute="trailing" secondItem="PBH-1j-tTd" secondAttribute="trailing" id="NA7-nq-A8I"/>
+                                <constraint firstItem="W1z-Q7-vAa" firstAttribute="centerX" secondItem="PBH-1j-tTd" secondAttribute="centerX" id="aHw-tk-bgR"/>
+                                <constraint firstItem="Ccx-p4-ZEE" firstAttribute="trailing" secondItem="PBH-1j-tTd" secondAttribute="trailing" id="aSD-qE-sLQ"/>
+                                <constraint firstItem="PBH-1j-tTd" firstAttribute="leading" secondItem="ZYh-xg-vQ5" secondAttribute="leading" id="sdv-s1-pcV"/>
+                                <constraint firstItem="Ccx-p4-ZEE" firstAttribute="leading" secondItem="PBH-1j-tTd" secondAttribute="leading" id="voT-oO-tcc"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="7oJ-0n-5U4" firstAttribute="leading" secondItem="q7a-Rd-acw" secondAttribute="leading" id="6XB-fr-dKA"/>
+                        <constraint firstAttribute="trailing" secondItem="7oJ-0n-5U4" secondAttribute="trailing" id="LXt-1c-IV4"/>
+                        <constraint firstAttribute="height" constant="170" id="clZ-yp-t16"/>
+                        <constraint firstItem="7oJ-0n-5U4" firstAttribute="top" secondItem="q7a-Rd-acw" secondAttribute="top" id="eUj-Gn-ATn"/>
+                        <constraint firstAttribute="bottom" secondItem="7oJ-0n-5U4" secondAttribute="bottom" id="o3f-ft-n2o"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="LXt-1c-IV4"/>
+                        </mask>
+                    </variation>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="q7a-Rd-acw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="YSe-Rg-DHX"/>
+                <constraint firstItem="q7a-Rd-acw" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="hCA-aC-W6u"/>
+                <constraint firstAttribute="trailing" secondItem="q7a-Rd-acw" secondAttribute="trailing" constant="20" id="tif-8y-k1M"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="322" y="358"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="call_icon" width="274" height="274"/>
+    </resources>
+</document>
