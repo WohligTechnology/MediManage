@@ -20,7 +20,7 @@
 		3A677B6B1CE4B90C003B8C2B /* RetrieveLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A677B6A1CE4B90C003B8C2B /* RetrieveLoginController.swift */; };
 		3A677B6D1CE4BBDE003B8C2B /* GenerateOTPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A677B6C1CE4BBDE003B8C2B /* GenerateOTPController.swift */; };
 		3A677B6F1CE4BEC0003B8C2B /* EnterOTPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A677B6E1CE4BEC0003B8C2B /* EnterOTPController.swift */; };
-		3A72C7251CEAE81100B5412E /* mainClaims.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A72C7241CEAE81100B5412E /* mainClaims.xib */; };
+		3A72C7251CEAE81100B5412E /* preAuthorizationOne.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A72C7241CEAE81100B5412E /* preAuthorizationOne.xib */; };
 		3A72C7271CEAEDC400B5412E /* MainClaimsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72C7261CEAEDC400B5412E /* MainClaimsController.swift */; };
 		3A8EFB511CE99EBA004489F3 /* hospitalSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A8EFB501CE99EBA004489F3 /* hospitalSearch.xib */; };
 		3A8EFB531CE9A463004489F3 /* hospitalSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8EFB521CE9A463004489F3 /* hospitalSearch.swift */; };
@@ -115,7 +115,7 @@
 		3A677B6A1CE4B90C003B8C2B /* RetrieveLoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetrieveLoginController.swift; sourceTree = "<group>"; };
 		3A677B6C1CE4BBDE003B8C2B /* GenerateOTPController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateOTPController.swift; sourceTree = "<group>"; };
 		3A677B6E1CE4BEC0003B8C2B /* EnterOTPController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterOTPController.swift; sourceTree = "<group>"; };
-		3A72C7241CEAE81100B5412E /* mainClaims.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = mainClaims.xib; sourceTree = "<group>"; };
+		3A72C7241CEAE81100B5412E /* preAuthorizationOne.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = preAuthorizationOne.xib; sourceTree = "<group>"; };
 		3A72C7261CEAEDC400B5412E /* MainClaimsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainClaimsController.swift; sourceTree = "<group>"; };
 		3A8EFB501CE99EBA004489F3 /* hospitalSearch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = hospitalSearch.xib; sourceTree = "<group>"; };
 		3A8EFB521CE9A463004489F3 /* hospitalSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hospitalSearch.swift; sourceTree = "<group>"; };
@@ -237,12 +237,12 @@
 			name = memberList;
 			sourceTree = "<group>";
 		};
-		3A72C7231CEAE7EA00B5412E /* mainClaims */ = {
+		3A72C7231CEAE7EA00B5412E /* preAuthorizationOne */ = {
 			isa = PBXGroup;
 			children = (
-				3A72C7241CEAE81100B5412E /* mainClaims.xib */,
+				3A72C7241CEAE81100B5412E /* preAuthorizationOne.xib */,
 			);
-			name = mainClaims;
+			name = preAuthorizationOne;
 			sourceTree = "<group>";
 		};
 		3A8EFB4F1CE99E89004489F3 /* hospitalSearch */ = {
@@ -500,7 +500,7 @@
 		786DFA291CD2282700DDE769 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3A72C7231CEAE7EA00B5412E /* mainClaims */,
+				3A72C7231CEAE7EA00B5412E /* preAuthorizationOne */,
 				3AC43DCD1CE9FBFE00ED2523 /* myClaims */,
 				3A8EFB5E1CE9E037004489F3 /* claimForm */,
 				3A8EFB591CE9D2D4004489F3 /* homeMenus */,
@@ -703,7 +703,7 @@
 				78B90BD71CE067810022FE7A /* generateOTP.xib in Resources */,
 				3AD3E52D1CE20A1900900A93 /* premiumCalculation.xib in Resources */,
 				3A01752F1CE364AD00832E49 /* header.xib in Resources */,
-				3A72C7251CEAE81100B5412E /* mainClaims.xib in Resources */,
+				3A72C7251CEAE81100B5412E /* preAuthorizationOne.xib in Resources */,
 				3AF76BAE1CE5A6E500ADCAAF /* footer.xib in Resources */,
 				786DFA041CD214F300DDE769 /* LaunchScreen.storyboard in Resources */,
 				3AD3E5281CE1DE1D00900A93 /* enrollmentMembers.xib in Resources */,
