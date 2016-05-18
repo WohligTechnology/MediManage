@@ -12,6 +12,7 @@
 		3A01752F1CE364AD00832E49 /* header.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A01752E1CE364AD00832E49 /* header.xib */; };
 		3A0175311CE369AB00832E49 /* header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0175301CE369AB00832E49 /* header.swift */; };
 		3A1369AE1CE4566500BEE355 /* memberList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A1369AD1CE4566500BEE355 /* memberList.xib */; };
+		3A1A5AE11CEC988A00AD2564 /* DocumentChecklistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A5AE01CEC988A00AD2564 /* DocumentChecklistController.swift */; };
 		3A481F351CE3151900BB8A73 /* premiumCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A481F341CE3151900BB8A73 /* premiumCalculation.swift */; };
 		3A677B631CE49F7F003B8C2B /* insuredMembersAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A677B621CE49F7F003B8C2B /* insuredMembersAll.swift */; };
 		3A677B651CE4B2D3003B8C2B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A677B641CE4B2D3003B8C2B /* LoginController.swift */; };
@@ -114,6 +115,7 @@
 		3A01752E1CE364AD00832E49 /* header.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = header.xib; sourceTree = "<group>"; };
 		3A0175301CE369AB00832E49 /* header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = header.swift; sourceTree = "<group>"; };
 		3A1369AD1CE4566500BEE355 /* memberList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = memberList.xib; sourceTree = "<group>"; };
+		3A1A5AE01CEC988A00AD2564 /* DocumentChecklistController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentChecklistController.swift; sourceTree = "<group>"; };
 		3A481F341CE3151900BB8A73 /* premiumCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = premiumCalculation.swift; sourceTree = "<group>"; };
 		3A677B621CE49F7F003B8C2B /* insuredMembersAll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = insuredMembersAll.swift; sourceTree = "<group>"; };
 		3A677B641CE4B2D3003B8C2B /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -535,6 +537,7 @@
 				3AF76BB11CE5BEEA00ADCAAF /* InsuredMembersController.swift */,
 				3AEEB0161CE7344C0085EEF5 /* HelpDeskController.swift */,
 				3A72C7261CEAEDC400B5412E /* MainClaimsController.swift */,
+				3A1A5AE01CEC988A00AD2564 /* DocumentChecklistController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -827,6 +830,7 @@
 				3AD3E52A1CE1F87B00900A93 /* enrollmentMembers.swift in Sources */,
 				3A677B651CE4B2D3003B8C2B /* LoginController.swift in Sources */,
 				78B90BDB1CE067DA0022FE7A /* enterOTP.swift in Sources */,
+				3A1A5AE11CEC988A00AD2564 /* DocumentChecklistController.swift in Sources */,
 				3AEEB0171CE7344C0085EEF5 /* HelpDeskController.swift in Sources */,
 				3A8EFB581CE9CA54004489F3 /* inbox.swift in Sources */,
 				3A8EFB531CE9A463004489F3 /* hospitalSearch.swift in Sources */,
