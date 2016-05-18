@@ -26,6 +26,7 @@
 		3A72C72C1CEB454100B5412E /* helplineNumber.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A72C72B1CEB454100B5412E /* helplineNumber.xib */; };
 		3A72C72E1CEB4F7500B5412E /* helplineNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72C72D1CEB4F7500B5412E /* helplineNumber.swift */; };
 		3A8774BC1CEC3783001DB41F /* preAuthorizationTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A8774BB1CEC3783001DB41F /* preAuthorizationTwo.xib */; };
+		3A8774BE1CEC38E6001DB41F /* preAuthorizationTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8774BD1CEC38E6001DB41F /* preAuthorizationTwo.swift */; };
 		3A8EFB511CE99EBA004489F3 /* hospitalSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A8EFB501CE99EBA004489F3 /* hospitalSearch.xib */; };
 		3A8EFB531CE9A463004489F3 /* hospitalSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8EFB521CE9A463004489F3 /* hospitalSearch.swift */; };
 		3A8EFB561CE9C3A3004489F3 /* inbox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A8EFB551CE9C3A3004489F3 /* inbox.xib */; };
@@ -125,6 +126,7 @@
 		3A72C72B1CEB454100B5412E /* helplineNumber.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = helplineNumber.xib; sourceTree = "<group>"; };
 		3A72C72D1CEB4F7500B5412E /* helplineNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = helplineNumber.swift; sourceTree = "<group>"; };
 		3A8774BB1CEC3783001DB41F /* preAuthorizationTwo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = preAuthorizationTwo.xib; sourceTree = "<group>"; };
+		3A8774BD1CEC38E6001DB41F /* preAuthorizationTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = preAuthorizationTwo.swift; sourceTree = "<group>"; };
 		3A8EFB501CE99EBA004489F3 /* hospitalSearch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = hospitalSearch.xib; sourceTree = "<group>"; };
 		3A8EFB521CE9A463004489F3 /* hospitalSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hospitalSearch.swift; sourceTree = "<group>"; };
 		3A8EFB551CE9C3A3004489F3 /* inbox.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = inbox.xib; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				3A8774BB1CEC3783001DB41F /* preAuthorizationTwo.xib */,
+				3A8774BD1CEC38E6001DB41F /* preAuthorizationTwo.swift */,
 			);
 			name = preAuthorizationTwo;
 			sourceTree = "<group>";
@@ -784,6 +787,7 @@
 				3A8EFB5D1CE9DE53004489F3 /* homeMenus.swift in Sources */,
 				3A481F351CE3151900BB8A73 /* premiumCalculation.swift in Sources */,
 				3ACFB2A01CE4C369003766D8 /* EnrollmentMembersController.swift in Sources */,
+				3A8774BE1CEC38E6001DB41F /* preAuthorizationTwo.swift in Sources */,
 				3AEEB0151CE731050085EEF5 /* helpDesk.swift in Sources */,
 				3ACFB2A41CE4C410003766D8 /* PremiumCalculationController.swift in Sources */,
 				3A01752C1CE360FF00832E49 /* insuredMembers.swift in Sources */,

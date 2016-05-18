@@ -19,7 +19,15 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="preAuthorizationTwo" customModule="Medi_Manage" customModuleProvider="target">
+            <connections>
+                <outlet property="dateOfAdmissionView" destination="ZLo-EA-Iqf" id="VSr-G7-VbO"/>
+                <outlet property="patientNameView" destination="lh1-KQ-gj2" id="1l6-sD-TrF"/>
+                <outlet property="preAuthorizationNoView" destination="Ftu-44-kyJ" id="lKh-0P-Nyn"/>
+                <outlet property="preAuthorizationTwoMainView" destination="iN0-l3-epB" id="6Cc-KV-eeh"/>
+                <outlet property="requestedAmountView" destination="dyb-w1-Zda" id="8nK-V6-STw"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
