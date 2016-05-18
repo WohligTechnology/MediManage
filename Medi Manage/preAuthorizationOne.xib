@@ -403,8 +403,8 @@
                             </constraints>
                             <variation key="default">
                                 <mask key="constraints">
-                                    <exclude reference="ebR-HT-eX0"/>
                                     <exclude reference="c93-et-fUw"/>
+                                    <exclude reference="ebR-HT-eX0"/>
                                 </mask>
                             </variation>
                         </view>
@@ -456,8 +456,8 @@
                             </constraints>
                             <variation key="default">
                                 <mask key="constraints">
-                                    <exclude reference="lqr-6A-Y9I"/>
                                     <exclude reference="Gtb-nb-Nq0"/>
+                                    <exclude reference="lqr-6A-Y9I"/>
                                 </mask>
                             </variation>
                         </view>
@@ -509,8 +509,8 @@
                             </constraints>
                             <variation key="default">
                                 <mask key="constraints">
-                                    <exclude reference="hwc-UV-NzG"/>
                                     <exclude reference="RUk-KO-vzC"/>
+                                    <exclude reference="hwc-UV-NzG"/>
                                 </mask>
                             </variation>
                         </view>

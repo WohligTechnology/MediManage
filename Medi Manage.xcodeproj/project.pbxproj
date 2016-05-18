@@ -25,6 +25,7 @@
 		3A72C7291CEB28D600B5412E /* preAuthorizationOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72C7281CEB28D600B5412E /* preAuthorizationOne.swift */; };
 		3A72C72C1CEB454100B5412E /* helplineNumber.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A72C72B1CEB454100B5412E /* helplineNumber.xib */; };
 		3A72C72E1CEB4F7500B5412E /* helplineNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72C72D1CEB4F7500B5412E /* helplineNumber.swift */; };
+		3A8774BC1CEC3783001DB41F /* preAuthorizationTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A8774BB1CEC3783001DB41F /* preAuthorizationTwo.xib */; };
 		3A8EFB511CE99EBA004489F3 /* hospitalSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A8EFB501CE99EBA004489F3 /* hospitalSearch.xib */; };
 		3A8EFB531CE9A463004489F3 /* hospitalSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8EFB521CE9A463004489F3 /* hospitalSearch.swift */; };
 		3A8EFB561CE9C3A3004489F3 /* inbox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A8EFB551CE9C3A3004489F3 /* inbox.xib */; };
@@ -123,6 +124,7 @@
 		3A72C7281CEB28D600B5412E /* preAuthorizationOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = preAuthorizationOne.swift; sourceTree = "<group>"; };
 		3A72C72B1CEB454100B5412E /* helplineNumber.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = helplineNumber.xib; sourceTree = "<group>"; };
 		3A72C72D1CEB4F7500B5412E /* helplineNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = helplineNumber.swift; sourceTree = "<group>"; };
+		3A8774BB1CEC3783001DB41F /* preAuthorizationTwo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = preAuthorizationTwo.xib; sourceTree = "<group>"; };
 		3A8EFB501CE99EBA004489F3 /* hospitalSearch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = hospitalSearch.xib; sourceTree = "<group>"; };
 		3A8EFB521CE9A463004489F3 /* hospitalSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hospitalSearch.swift; sourceTree = "<group>"; };
 		3A8EFB551CE9C3A3004489F3 /* inbox.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = inbox.xib; sourceTree = "<group>"; };
@@ -259,6 +261,14 @@
 				3A72C72D1CEB4F7500B5412E /* helplineNumber.swift */,
 			);
 			name = helplineNumber;
+			sourceTree = "<group>";
+		};
+		3A8774BA1CEC3751001DB41F /* preAuthorizationTwo */ = {
+			isa = PBXGroup;
+			children = (
+				3A8774BB1CEC3783001DB41F /* preAuthorizationTwo.xib */,
+			);
+			name = preAuthorizationTwo;
 			sourceTree = "<group>";
 		};
 		3A8EFB4F1CE99E89004489F3 /* hospitalSearch */ = {
@@ -516,6 +526,7 @@
 		786DFA291CD2282700DDE769 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3A8774BA1CEC3751001DB41F /* preAuthorizationTwo */,
 				3A72C72A1CEB44F600B5412E /* helplineNumber */,
 				3A72C7231CEAE7EA00B5412E /* preAuthorizationOne */,
 				3AC43DCD1CE9FBFE00ED2523 /* myClaims */,
@@ -713,6 +724,7 @@
 				C2A59E901CDDDF700093CFEC /* Lato-Bold.ttf in Resources */,
 				C2A59E911CDDDF700093CFEC /* Lato-Hairline.ttf in Resources */,
 				C2A59E921CDDDF700093CFEC /* Lato-Light.ttf in Resources */,
+				3A8774BC1CEC3783001DB41F /* preAuthorizationTwo.xib in Resources */,
 				C2A59E8F1CDDDF700093CFEC /* Lato-Black.ttf in Resources */,
 				783322B01CDB50D10015CE37 /* landing.xib in Resources */,
 				3AEEB0241CE7515C0085EEF5 /* connect.xib in Resources */,
