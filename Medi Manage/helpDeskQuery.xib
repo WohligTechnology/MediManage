@@ -49,9 +49,6 @@
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mui-pU-atC">
                     <rect key="frame" x="20" y="251" width="97" height="20"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="20" id="f5R-Tf-rtT"/>
-                    </constraints>
                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                     <state key="normal" title=" Attach File" image="attach_clip">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -71,16 +68,16 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="mui-pU-atC" firstAttribute="top" secondItem="PH7-a4-h5o" secondAttribute="bottom" constant="20" id="1yW-Ra-OsL"/>
                 <constraint firstItem="vqg-GM-ij6" firstAttribute="top" secondItem="Mgb-lx-Sjh" secondAttribute="bottom" constant="30" id="5Yn-RP-e08"/>
-                <constraint firstItem="mui-pU-atC" firstAttribute="top" secondItem="PH7-a4-h5o" secondAttribute="bottom" constant="20" id="BVF-Xr-HQO"/>
+                <constraint firstItem="Zl5-Ri-PQd" firstAttribute="top" secondItem="mui-pU-atC" secondAttribute="bottom" constant="25" id="QoG-td-wfy"/>
                 <constraint firstItem="PH7-a4-h5o" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="U9U-3K-oAN"/>
-                <constraint firstItem="Zl5-Ri-PQd" firstAttribute="top" secondItem="mui-pU-atC" secondAttribute="bottom" constant="25" id="W7L-9W-wpr"/>
                 <constraint firstAttribute="trailing" secondItem="Zl5-Ri-PQd" secondAttribute="trailing" constant="20" id="Zgv-lX-tp0"/>
                 <constraint firstAttribute="trailing" secondItem="vqg-GM-ij6" secondAttribute="trailing" constant="20" id="bkE-Ph-OLg"/>
+                <constraint firstItem="mui-pU-atC" firstAttribute="leading" secondItem="Zl5-Ri-PQd" secondAttribute="leading" id="dbe-xX-6I3"/>
                 <constraint firstItem="Mgb-lx-Sjh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="fyA-kr-bnu"/>
                 <constraint firstAttribute="trailing" secondItem="PH7-a4-h5o" secondAttribute="trailing" constant="20" id="jmG-Ec-aTB"/>
                 <constraint firstItem="PH7-a4-h5o" firstAttribute="top" secondItem="vqg-GM-ij6" secondAttribute="bottom" constant="20" id="po3-4w-glG"/>
-                <constraint firstItem="mui-pU-atC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="rix-Y8-iGK"/>
                 <constraint firstItem="vqg-GM-ij6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="s0l-MF-CMq"/>
                 <constraint firstItem="Mgb-lx-Sjh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="uk6-qg-h84"/>
                 <constraint firstAttribute="trailing" secondItem="Mgb-lx-Sjh" secondAttribute="trailing" id="wD6-7n-J5T"/>
