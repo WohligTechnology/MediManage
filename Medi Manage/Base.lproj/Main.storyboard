@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rfz-2B-B0l">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zcf-UU-fHe">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -15,6 +15,10 @@
             <string>Lato-Light</string>
         </mutableArray>
         <mutableArray key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
@@ -806,19 +810,11 @@
                             <constraint firstItem="rA0-gI-cbZ" firstAttribute="leading" secondItem="hkI-HZ-TZl" secondAttribute="leadingMargin" constant="-20" id="BJ8-pt-6XX"/>
                             <constraint firstItem="rA0-gI-cbZ" firstAttribute="top" secondItem="bgn-9O-jAY" secondAttribute="bottom" constant="100" id="JS4-Mn-lEB"/>
                             <constraint firstItem="CfA-PG-TZY" firstAttribute="leading" secondItem="hkI-HZ-TZl" secondAttribute="leadingMargin" constant="-20" id="Kfk-pw-r3d"/>
-                            <constraint firstItem="CfA-PG-TZY" firstAttribute="bottom" secondItem="YSy-5r-Jco" secondAttribute="top" id="Lrh-XS-tFx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rA0-gI-cbZ" secondAttribute="trailing" constant="-20" id="Wza-tf-a87"/>
                             <constraint firstItem="YSy-5r-Jco" firstAttribute="top" secondItem="CfA-PG-TZY" secondAttribute="bottom" constant="55" id="jIE-vg-lHT"/>
-                            <constraint firstItem="rA0-gI-cbZ" firstAttribute="top" secondItem="bgn-9O-jAY" secondAttribute="bottom" id="jiU-ng-eU9"/>
                             <constraint firstItem="CfA-PG-TZY" firstAttribute="top" secondItem="rA0-gI-cbZ" secondAttribute="bottom" id="u7O-cw-ak9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CfA-PG-TZY" secondAttribute="trailing" constant="-20" id="xxb-xt-T8U"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="jiU-ng-eU9"/>
-                                <exclude reference="Lrh-XS-tFx"/>
-                            </mask>
-                        </variation>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -829,6 +825,150 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z5F-3Y-lk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1167" y="794"/>
+        </scene>
+        <!--Hospital Search Result Controller-->
+        <scene sceneID="Ja7-k4-UaN">
+            <objects>
+                <viewController id="zcf-UU-fHe" customClass="HospitalSearchResultController" customModule="Medi_Manage" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CRy-s7-uZq"/>
+                        <viewControllerLayoutGuide type="bottom" id="KXb-m9-L6Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1l6-hp-3Ay">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A6B-0g-zTV">
+                                <rect key="frame" x="0.0" y="100" width="320" height="70"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fM1-he-nxJ">
+                                        <rect key="frame" x="30" y="20" width="260" height="30"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Ok1-aF-qPH">
+                                                <rect key="frame" x="0.0" y="2" width="20" height="26"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="20" id="5pC-xh-CAY"/>
+                                                    <constraint firstAttribute="height" constant="26" id="BLD-hd-P8E"/>
+                                                </constraints>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search by Location, Hospital Name, Zip" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1DM-Vj-Lic">
+                                                <rect key="frame" x="33" y="0.0" width="227" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="qBj-p1-dHZ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderlabel.textcolor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="1WR-6k-yHr"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ok1-aF-qPH" secondAttribute="bottom" constant="2" id="3hq-eG-cSJ"/>
+                                            <constraint firstItem="1DM-Vj-Lic" firstAttribute="leading" secondItem="Ok1-aF-qPH" secondAttribute="trailing" constant="13" id="5zP-3D-wyq"/>
+                                            <constraint firstItem="1DM-Vj-Lic" firstAttribute="top" secondItem="fM1-he-nxJ" secondAttribute="top" id="Sc2-Oi-XD5"/>
+                                            <constraint firstAttribute="bottom" secondItem="1DM-Vj-Lic" secondAttribute="bottom" id="SqZ-Qh-Nod"/>
+                                            <constraint firstAttribute="trailing" secondItem="1DM-Vj-Lic" secondAttribute="trailing" id="cW8-Pe-vGl"/>
+                                            <constraint firstItem="Ok1-aF-qPH" firstAttribute="leading" secondItem="fM1-he-nxJ" secondAttribute="leading" id="ocQ-A7-TIn"/>
+                                            <constraint firstItem="Ok1-aF-qPH" firstAttribute="top" secondItem="fM1-he-nxJ" secondAttribute="top" constant="2" id="pTW-bv-jl2"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="fM1-he-nxJ" firstAttribute="top" secondItem="A6B-0g-zTV" secondAttribute="top" constant="20" id="20n-VC-MW2"/>
+                                    <constraint firstAttribute="height" constant="70" id="8Ez-MH-lGV"/>
+                                    <constraint firstAttribute="trailing" secondItem="fM1-he-nxJ" secondAttribute="trailing" constant="30" id="VEl-Bs-Vdo"/>
+                                    <constraint firstItem="fM1-he-nxJ" firstAttribute="leading" secondItem="A6B-0g-zTV" secondAttribute="leading" constant="30" id="b2k-ZQ-kOI"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Search Results:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srE-gH-JBC">
+                                <rect key="frame" x="16" y="180" width="127" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Gfb-ae-Jad"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="130" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlD-0s-051">
+                                <rect key="frame" x="145" y="180" width="25" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="4xI-6r-dvR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                                <color key="textColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Network Hospitals" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqz-uR-xG7">
+                                <rect key="frame" x="188" y="180" width="116" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="1yo-lM-src"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qqd-Ao-xGU">
+                                <rect key="frame" x="171" y="183" width="15" height="15"/>
+                                <color key="backgroundColor" red="0.36470588240000001" green="0.81960784310000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="I7y-Rf-KdB"/>
+                                    <constraint firstAttribute="width" constant="15" id="Ue1-1q-SwJ"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zMJ-TK-aGw">
+                                <rect key="frame" x="-4" y="210" width="328" height="215"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="80" id="NzD-le-UMl" customClass="hospitalSearchResultUIViewCell" customModule="Medi_Manage" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="328" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NzD-le-UMl" id="aHw-tb-Igb">
+                                            <rect key="frame" x="0.0" y="0.0" width="328" height="79"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eqz-uR-xG7" firstAttribute="top" secondItem="A6B-0g-zTV" secondAttribute="bottom" constant="10" id="Amc-Z0-gwR"/>
+                            <constraint firstItem="zMJ-TK-aGw" firstAttribute="leading" secondItem="1l6-hp-3Ay" secondAttribute="leadingMargin" constant="-20" id="Api-Bw-fYG"/>
+                            <constraint firstItem="srE-gH-JBC" firstAttribute="top" secondItem="A6B-0g-zTV" secondAttribute="bottom" constant="10" id="GiG-bN-gxZ"/>
+                            <constraint firstItem="A6B-0g-zTV" firstAttribute="top" secondItem="CRy-s7-uZq" secondAttribute="bottom" id="KFi-cx-yGE"/>
+                            <constraint firstItem="Qqd-Ao-xGU" firstAttribute="top" secondItem="A6B-0g-zTV" secondAttribute="bottom" constant="13" id="LW5-pM-akn"/>
+                            <constraint firstItem="zMJ-TK-aGw" firstAttribute="top" secondItem="eqz-uR-xG7" secondAttribute="bottom" constant="10" id="O32-cB-9d7"/>
+                            <constraint firstItem="xlD-0s-051" firstAttribute="leading" secondItem="srE-gH-JBC" secondAttribute="trailing" constant="2" id="QPn-Z2-vwL"/>
+                            <constraint firstItem="srE-gH-JBC" firstAttribute="leading" secondItem="1l6-hp-3Ay" secondAttribute="leadingMargin" id="SKG-sR-GqQ"/>
+                            <constraint firstItem="xlD-0s-051" firstAttribute="top" secondItem="A6B-0g-zTV" secondAttribute="bottom" constant="10" id="Ul6-8N-Nxk"/>
+                            <constraint firstItem="eqz-uR-xG7" firstAttribute="trailing" secondItem="1l6-hp-3Ay" secondAttribute="trailingMargin" id="Xlw-5z-lDP"/>
+                            <constraint firstItem="A6B-0g-zTV" firstAttribute="leading" secondItem="1l6-hp-3Ay" secondAttribute="leading" id="aJi-X5-Msy"/>
+                            <constraint firstAttribute="trailing" secondItem="A6B-0g-zTV" secondAttribute="trailing" id="d14-Kz-J89"/>
+                            <constraint firstItem="eqz-uR-xG7" firstAttribute="leading" secondItem="Qqd-Ao-xGU" secondAttribute="trailing" constant="2" id="qwg-ih-2m6"/>
+                            <constraint firstItem="KXb-m9-L6Z" firstAttribute="top" secondItem="zMJ-TK-aGw" secondAttribute="bottom" constant="55" id="sJ9-9j-bSt"/>
+                            <constraint firstItem="A6B-0g-zTV" firstAttribute="top" secondItem="CRy-s7-uZq" secondAttribute="bottom" constant="100" id="wKI-m5-Q9B"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zMJ-TK-aGw" secondAttribute="trailing" constant="-20" id="yiO-IC-DoP"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="KFi-cx-yGE"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="searchBoxView" destination="fM1-he-nxJ" id="M7Y-j5-upo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j0Q-Ed-hZ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1531" y="794"/>
         </scene>
         <!--Help Desk Controller-->
         <scene sceneID="hkv-BM-BAV">
@@ -852,6 +992,7 @@
     </scenes>
     <resources>
         <image name="claim_three" width="110" height="133"/>
+        <image name="search_icon" width="53" height="69"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="s1I-qw-2n8"/>
