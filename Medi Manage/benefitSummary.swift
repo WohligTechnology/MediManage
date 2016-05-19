@@ -46,7 +46,11 @@ import UIKit
         mainfooter.layer.zPosition = 1000
         self.addSubview(mainfooter)
         
-        benefitSummaryMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height - 175)
+        //let scroll = UIScrollView(frame: CGRectMake(0, 0, self.frame.size.width, 1000 - 55))
+        //scroll.backgroundColor = UIColor.blackColor()
+        //scroll.showsVerticalScrollIndicator = false
+        benefitSummaryMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height - 55)
+        //scroll.addSubview(benefitSummaryMainView)
     }
 
     /*
