@@ -39,6 +39,7 @@
 		3A8EFB601CE9E0BA004489F3 /* claimForm.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A8EFB5F1CE9E0BA004489F3 /* claimForm.xib */; };
 		3A8EFB621CE9E742004489F3 /* claimForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8EFB611CE9E742004489F3 /* claimForm.swift */; };
 		3A992F041CED918100D85D8A /* benefitSummary.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A992F031CED918100D85D8A /* benefitSummary.xib */; };
+		3A992F061CED997400D85D8A /* benefitSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A992F051CED997400D85D8A /* benefitSummary.swift */; };
 		3AC43DCF1CE9FC1500ED2523 /* myClaims.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AC43DCE1CE9FC1500ED2523 /* myClaims.xib */; };
 		3AC43DD11CEA00E100ED2523 /* myClaims.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC43DD01CEA00E100ED2523 /* myClaims.swift */; };
 		3ACFB2A01CE4C369003766D8 /* EnrollmentMembersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFB29F1CE4C369003766D8 /* EnrollmentMembersController.swift */; };
@@ -143,6 +144,7 @@
 		3A8EFB5F1CE9E0BA004489F3 /* claimForm.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = claimForm.xib; sourceTree = "<group>"; };
 		3A8EFB611CE9E742004489F3 /* claimForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = claimForm.swift; sourceTree = "<group>"; };
 		3A992F031CED918100D85D8A /* benefitSummary.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = benefitSummary.xib; sourceTree = "<group>"; };
+		3A992F051CED997400D85D8A /* benefitSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = benefitSummary.swift; sourceTree = "<group>"; };
 		3AC43DCE1CE9FC1500ED2523 /* myClaims.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = myClaims.xib; sourceTree = "<group>"; };
 		3AC43DD01CEA00E100ED2523 /* myClaims.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myClaims.swift; sourceTree = "<group>"; };
 		3ACFB29F1CE4C369003766D8 /* EnrollmentMembersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnrollmentMembersController.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				3A992F031CED918100D85D8A /* benefitSummary.xib */,
+				3A992F051CED997400D85D8A /* benefitSummary.swift */,
 			);
 			name = benefitSummary;
 			sourceTree = "<group>";
@@ -830,6 +833,7 @@
 				3A677B6F1CE4BEC0003B8C2B /* EnterOTPController.swift in Sources */,
 				783322A81CDB13ED0015CE37 /* signup.swift in Sources */,
 				3AEEB0101CE705B60085EEF5 /* subHeader.swift in Sources */,
+				3A992F061CED997400D85D8A /* benefitSummary.swift in Sources */,
 				783322AB1CDB37FE0015CE37 /* onboarding.swift in Sources */,
 				783322971CD9FCD90015CE37 /* login.swift in Sources */,
 				3A72C72E1CEB4F7500B5412E /* helplineNumber.swift in Sources */,
