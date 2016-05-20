@@ -78,10 +78,10 @@ import UIKit
         line.layer.zPosition = 0
         preAuthorizationTwoMainView.addSubview(line)
         
-        requestReceivedImage.layer.zPosition = 10000
-        queryImage.layer.zPosition = 10000
-        initialApprovalImage.layer.zPosition = 10000
-        finalApprovalImage.layer.zPosition = 10000
+        requestReceivedImage.layer.zPosition = 10
+        queryImage.layer.zPosition = 10
+        initialApprovalImage.layer.zPosition = 10
+        finalApprovalImage.layer.zPosition = 10
     }
 
     /*

@@ -13,6 +13,9 @@
 		3A0175311CE369AB00832E49 /* header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0175301CE369AB00832E49 /* header.swift */; };
 		3A1369AE1CE4566500BEE355 /* memberList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A1369AD1CE4566500BEE355 /* memberList.xib */; };
 		3A1A5AE11CEC988A00AD2564 /* DocumentChecklistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A5AE01CEC988A00AD2564 /* DocumentChecklistController.swift */; };
+		3A3191181CEF4076001DCBBC /* SplashScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3191171CEF4076001DCBBC /* SplashScreenController.swift */; };
+		3A31911A1CEF40AB001DCBBC /* PageViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3191191CEF40AB001DCBBC /* PageViewerController.swift */; };
+		3A31911D1CEF41D7001DCBBC /* splashScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A31911C1CEF41D7001DCBBC /* splashScreen.xib */; };
 		3A481F351CE3151900BB8A73 /* premiumCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A481F341CE3151900BB8A73 /* premiumCalculation.swift */; };
 		3A677B631CE49F7F003B8C2B /* insuredMembersAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A677B621CE49F7F003B8C2B /* insuredMembersAll.swift */; };
 		3A677B651CE4B2D3003B8C2B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A677B641CE4B2D3003B8C2B /* LoginController.swift */; };
@@ -120,6 +123,9 @@
 		3A0175301CE369AB00832E49 /* header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = header.swift; sourceTree = "<group>"; };
 		3A1369AD1CE4566500BEE355 /* memberList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = memberList.xib; sourceTree = "<group>"; };
 		3A1A5AE01CEC988A00AD2564 /* DocumentChecklistController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentChecklistController.swift; sourceTree = "<group>"; };
+		3A3191171CEF4076001DCBBC /* SplashScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenController.swift; sourceTree = "<group>"; };
+		3A3191191CEF40AB001DCBBC /* PageViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewerController.swift; sourceTree = "<group>"; };
+		3A31911C1CEF41D7001DCBBC /* splashScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = splashScreen.xib; sourceTree = "<group>"; };
 		3A481F341CE3151900BB8A73 /* premiumCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = premiumCalculation.swift; sourceTree = "<group>"; };
 		3A677B621CE49F7F003B8C2B /* insuredMembersAll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = insuredMembersAll.swift; sourceTree = "<group>"; };
 		3A677B641CE4B2D3003B8C2B /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -259,6 +265,14 @@
 				3AFE38981CE472CE0062A497 /* memberList.swift */,
 			);
 			name = memberList;
+			sourceTree = "<group>";
+		};
+		3A31911B1CEF41C0001DCBBC /* splashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				3A31911C1CEF41D7001DCBBC /* splashScreen.xib */,
+			);
+			name = splashScreen;
 			sourceTree = "<group>";
 		};
 		3A72C7231CEAE7EA00B5412E /* preAuthorizationOne */ = {
@@ -557,6 +571,8 @@
 				3A1A5AE01CEC988A00AD2564 /* DocumentChecklistController.swift */,
 				3A992F071CEDD21700D85D8A /* ClaimIntimationController.swift */,
 				3A992F091CEDF25F00D85D8A /* HospitalSearchResultController.swift */,
+				3A3191171CEF4076001DCBBC /* SplashScreenController.swift */,
+				3A3191191CEF40AB001DCBBC /* PageViewerController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -564,6 +580,7 @@
 		786DFA291CD2282700DDE769 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3A31911B1CEF41C0001DCBBC /* splashScreen */,
 				3A992F021CED916300D85D8A /* benefitSummary */,
 				3A8774BF1CEC4165001DB41F /* queryForm */,
 				3A8774BA1CEC3751001DB41F /* preAuthorizationTwo */,
@@ -774,6 +791,7 @@
 				3AD3E52D1CE20A1900900A93 /* premiumCalculation.xib in Resources */,
 				3A01752F1CE364AD00832E49 /* header.xib in Resources */,
 				3A72C7251CEAE81100B5412E /* preAuthorizationOne.xib in Resources */,
+				3A31911D1CEF41D7001DCBBC /* splashScreen.xib in Resources */,
 				3AF76BAE1CE5A6E500ADCAAF /* footer.xib in Resources */,
 				786DFA041CD214F300DDE769 /* LaunchScreen.storyboard in Resources */,
 				3AD3E5281CE1DE1D00900A93 /* enrollmentMembers.xib in Resources */,
@@ -826,6 +844,7 @@
 				3A8EFB5D1CE9DE53004489F3 /* homeMenus.swift in Sources */,
 				3A481F351CE3151900BB8A73 /* premiumCalculation.swift in Sources */,
 				3ACFB2A01CE4C369003766D8 /* EnrollmentMembersController.swift in Sources */,
+				3A3191181CEF4076001DCBBC /* SplashScreenController.swift in Sources */,
 				3A8774BE1CEC38E6001DB41F /* preAuthorizationTwo.swift in Sources */,
 				3AEEB0151CE731050085EEF5 /* helpDesk.swift in Sources */,
 				3ACFB2A41CE4C410003766D8 /* PremiumCalculationController.swift in Sources */,
@@ -833,6 +852,7 @@
 				3ACFB2A21CE4C3A0003766D8 /* MemberListController.swift in Sources */,
 				3A8EFB621CE9E742004489F3 /* claimForm.swift in Sources */,
 				3A677B691CE4B539003B8C2B /* CompleteProfileController.swift in Sources */,
+				3A31911A1CEF40AB001DCBBC /* PageViewerController.swift in Sources */,
 				783322B51CDB7B4F0015CE37 /* completeProfile.swift in Sources */,
 				3A0175311CE369AB00832E49 /* header.swift in Sources */,
 				3A677B6D1CE4BBDE003B8C2B /* GenerateOTPController.swift in Sources */,

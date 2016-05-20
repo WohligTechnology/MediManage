@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tV6-si-7rM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NMF-BA-RYD">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -1118,15 +1118,15 @@
             </objects>
             <point key="canvasLocation" x="1531" y="794"/>
         </scene>
-        <!--View Controller-->
+        <!--Splash Screen Controller-->
         <scene sceneID="vxc-Kb-Cyn">
             <objects>
-                <viewController id="tV6-si-7rM" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="splashScreenStoryBoard" id="tV6-si-7rM" customClass="SplashScreenController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="z2d-aS-mse"/>
                         <viewControllerLayoutGuide type="bottom" id="hQl-X3-VGb"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tge-5n-7Vw" customClass="preAuthorizationTwo" customModule="MediManage" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="tge-5n-7Vw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1136,6 +1136,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IMF-O0-HIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1888" y="794"/>
+        </scene>
+        <!--Page Viewer Controller-->
+        <scene sceneID="4hG-tJ-o9G">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="NMF-BA-RYD" customClass="PageViewerController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4mP-7X-dlr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2240" y="794"/>
         </scene>
         <!--Help Desk Controller-->
         <scene sceneID="hkv-BM-BAV">
