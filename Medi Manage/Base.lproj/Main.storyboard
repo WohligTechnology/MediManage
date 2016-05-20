@@ -48,12 +48,12 @@
         <!--Login Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginController" customModule="Medi_Manage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="View" customClass="login" customModule="Medi_Manage" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="View" customClass="login" customModule="MediManage" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -76,12 +76,12 @@
         <!--Signup Controller-->
         <scene sceneID="Yas-2D-Mnc">
             <objects>
-                <viewController id="PG1-d8-yAc" customClass="SignupController" customModule="Medi_Manage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PG1-d8-yAc" customClass="SignupController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tQO-tL-MVv"/>
                         <viewControllerLayoutGuide type="bottom" id="Dfx-ok-RTa"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nRp-Zb-UaK" customClass="signup" customModule="Medi_Manage" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="nRp-Zb-UaK" customClass="signup" customModule="MediManage" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -111,12 +111,12 @@
         <!--Complete Profile Controller-->
         <scene sceneID="xoo-J9-7Uf">
             <objects>
-                <viewController id="0gz-Ph-Qzj" customClass="CompleteProfileController" customModule="Medi_Manage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0gz-Ph-Qzj" customClass="CompleteProfileController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ku2-ch-8MP"/>
                         <viewControllerLayoutGuide type="bottom" id="k7x-cx-Hy3"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mDh-ci-A7w" customClass="completeProfile" customModule="Medi_Manage" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="mDh-ci-A7w" customClass="completeProfile" customModule="MediManage" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -139,12 +139,12 @@
         <!--Retrieve Login Controller-->
         <scene sceneID="rTg-MV-Mil">
             <objects>
-                <viewController id="hoJ-8d-wib" customClass="RetrieveLoginController" customModule="Medi_Manage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hoJ-8d-wib" customClass="RetrieveLoginController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fT5-XF-q9V"/>
                         <viewControllerLayoutGuide type="bottom" id="kHv-YM-lu7"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="KUg-df-9hQ" customClass="retrieveLogin" customModule="Medi_Manage" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="KUg-df-9hQ" customClass="retrieveLogin" customModule="MediManage" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -174,12 +174,12 @@
         <!--GenerateOTP Controller-->
         <scene sceneID="Exh-M4-Th5">
             <objects>
-                <viewController id="byF-rF-bm6" customClass="GenerateOTPController" customModule="Medi_Manage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="byF-rF-bm6" customClass="GenerateOTPController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YiB-ye-OUd"/>
                         <viewControllerLayoutGuide type="bottom" id="v18-H1-J9J"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="CS6-Vb-ABS" customClass="generateOTP" customModule="Medi_Manage" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="CS6-Vb-ABS" customClass="generateOTP" customModule="MediManage" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -202,12 +202,12 @@
         <!--EnterOTP Controller-->
         <scene sceneID="Ahs-kc-Wh7">
             <objects>
-                <viewController id="1Ua-DA-seN" customClass="EnterOTPController" customModule="Medi_Manage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1Ua-DA-seN" customClass="EnterOTPController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PVb-6e-dhv"/>
                         <viewControllerLayoutGuide type="bottom" id="r50-QP-NRd"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="atN-gy-3f2" customClass="enterOTP" customModule="Medi_Manage" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="atN-gy-3f2" customClass="enterOTP" customModule="MediManage" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -230,12 +230,12 @@
         <!--Enrollment Members Controller-->
         <scene sceneID="D1A-DN-M9H">
             <objects>
-                <viewController id="vmg-Ax-set" customClass="EnrollmentMembersController" customModule="Medi_Manage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vmg-Ax-set" customClass="EnrollmentMembersController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cOK-ET-reB"/>
                         <viewControllerLayoutGuide type="bottom" id="aP0-mu-VS7"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="MG6-Mo-3gO" customClass="enrollmentMembers" customModule="Medi_Manage" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="MG6-Mo-3gO" customClass="enrollmentMembers" customModule="MediManage" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -258,12 +258,12 @@
         <!--Member List Controller-->
         <scene sceneID="bQJ-in-yzm">
             <objects>
-                <viewController id="j9v-TK-IBn" customClass="MemberListController" customModule="Medi_Manage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="j9v-TK-IBn" customClass="MemberListController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mbD-zW-wnn"/>
                         <viewControllerLayoutGuide type="bottom" id="IOy-ZF-fJI"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="EWR-IK-rVl" customClass="memberList" customModule="Medi_Manage" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="EWR-IK-rVl" customClass="memberList" customModule="MediManage" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -286,12 +286,12 @@
         <!--Premium Calculation Controller-->
         <scene sceneID="uXr-YC-cqh">
             <objects>
-                <viewController id="ndg-xE-RRU" customClass="PremiumCalculationController" customModule="Medi_Manage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ndg-xE-RRU" customClass="PremiumCalculationController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Kw7-4l-LkT"/>
                         <viewControllerLayoutGuide type="bottom" id="ieK-yE-ABn"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="589-f0-k2b" customClass="premiumCalculation" customModule="Medi_Manage" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="589-f0-k2b" customClass="premiumCalculation" customModule="MediManage" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -314,12 +314,12 @@
         <!--Insured Members Controller-->
         <scene sceneID="lbr-HL-zhG">
             <objects>
-                <viewController id="cTe-eZ-3rn" customClass="InsuredMembersController" customModule="Medi_Manage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cTe-eZ-3rn" customClass="InsuredMembersController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fme-sh-ngZ"/>
                         <viewControllerLayoutGuide type="bottom" id="4ii-CL-Ghl"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="zpA-wp-K3m" customClass="insuredMembers" customModule="Medi_Manage" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="zpA-wp-K3m" customClass="insuredMembers" customModule="MediManage" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -342,7 +342,7 @@
         <!--Main Claims Controller-->
         <scene sceneID="cnZ-l8-HiF">
             <objects>
-                <viewController id="xMa-F4-Ivl" customClass="MainClaimsController" customModule="Medi_Manage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xMa-F4-Ivl" customClass="MainClaimsController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Z7-O4-tfH"/>
                         <viewControllerLayoutGuide type="bottom" id="vxf-Rx-VbC"/>
@@ -356,7 +356,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="60" id="YSW-kf-Ygl" customClass="mainClaimUIViewCell" customModule="Medi_Manage" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="60" id="YSW-kf-Ygl" customClass="mainClaimUIViewCell" customModule="MediManage" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="326" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YSW-kf-Ygl" id="dwb-TZ-KJ5">
@@ -436,7 +436,7 @@
         <!--Document Checklist Controller-->
         <scene sceneID="aXU-qF-aqe">
             <objects>
-                <viewController id="ONl-FB-A8K" customClass="DocumentChecklistController" customModule="Medi_Manage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ONl-FB-A8K" customClass="DocumentChecklistController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mEL-Rb-cBK"/>
                         <viewControllerLayoutGuide type="bottom" id="Yyw-Wm-zBW"/>
@@ -482,7 +482,7 @@
                                 <rect key="frame" x="-4" y="195" width="328" height="285"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="70" id="PrS-6N-cFu" customClass="documentChecklistUIViewCell" customModule="Medi_Manage" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="70" id="PrS-6N-cFu" customClass="documentChecklistUIViewCell" customModule="MediManage" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="328" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PrS-6N-cFu" id="bc2-Or-qhi">
@@ -561,7 +561,7 @@
         <!--Claim Intimation Controller-->
         <scene sceneID="vxP-hm-Au0">
             <objects>
-                <viewController id="rfz-2B-B0l" customClass="ClaimIntimationController" customModule="Medi_Manage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rfz-2B-B0l" customClass="ClaimIntimationController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bgn-9O-jAY"/>
                         <viewControllerLayoutGuide type="bottom" id="YSy-5r-Jco"/>
@@ -615,7 +615,7 @@
                                 <rect key="frame" x="-4" y="195" width="328" height="230"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="150" id="Lvp-03-8pO" customClass="claimIntimationUIViewCell" customModule="Medi_Manage" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="150" id="Lvp-03-8pO" customClass="claimIntimationUIViewCell" customModule="MediManage" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="328" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lvp-03-8pO" id="OTJ-Dg-ErC">
@@ -834,7 +834,7 @@
         <!--Hospital Search Result Controller-->
         <scene sceneID="Ja7-k4-UaN">
             <objects>
-                <viewController id="zcf-UU-fHe" customClass="HospitalSearchResultController" customModule="Medi_Manage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zcf-UU-fHe" customClass="HospitalSearchResultController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CRy-s7-uZq"/>
                         <viewControllerLayoutGuide type="bottom" id="KXb-m9-L6Z"/>
@@ -929,7 +929,7 @@
                                 <rect key="frame" x="-4" y="210" width="328" height="215"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="125" id="NzD-le-UMl" customClass="hospitalSearchResultUIViewCell" customModule="Medi_Manage" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="125" id="NzD-le-UMl" customClass="hospitalSearchResultUIViewCell" customModule="MediManage" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="328" height="125"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NzD-le-UMl" id="aHw-tb-Igb">
@@ -1121,12 +1121,12 @@
         <!--Help Desk Controller-->
         <scene sceneID="hkv-BM-BAV">
             <objects>
-                <viewController id="WL9-QD-aTf" customClass="HelpDeskController" customModule="Medi_Manage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WL9-QD-aTf" customClass="HelpDeskController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RkX-Ic-5Wq"/>
                         <viewControllerLayoutGuide type="bottom" id="fOC-HF-hVB"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="x9i-OF-UUA" customClass="helpDesk" customModule="Medi_Manage" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="x9i-OF-UUA" customClass="helpDesk" customModule="MediManage" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
