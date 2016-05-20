@@ -68,6 +68,16 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
             //cell.claimIntimationView.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 255/255)
         }
         
+        let line = UIView(frame: CGRectMake(20, 0, 1, cell.hsCallView.frame.size.height))
+        line.backgroundColor = UIColor.lightGrayColor()
+        cell.hsCallView.addSubview(line)
+        let line2 = UIView(frame: CGRectMake(145, 0, 1, cell.hsCallView.frame.size.height))
+        line2.backgroundColor = UIColor.lightGrayColor()
+        cell.hsCallView.addSubview(line2)
+        let line3 = UIView(frame: CGRectMake(280, 0, 1, cell.hsCallView.frame.size.height))
+        line3.backgroundColor = UIColor.lightGrayColor()
+        cell.hsCallView.addSubview(line3)
+        
         return cell
     }
     
@@ -85,4 +95,27 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
 
 // MARK: - TableView Cell Class
 
-class hospitalSearchResultUIViewCell: UITableViewCell {}
+class hospitalSearchResultUIViewCell: UITableViewCell {
+    @IBOutlet weak var hsView: UIView!
+    @IBOutlet weak var hsHospitalName: UILabel!
+    @IBOutlet weak var hsHospitalLocation: UILabel!
+    @IBOutlet weak var hsHospitalNo: UILabel!
+    @IBOutlet weak var hsCallView: UIView!
+}
+
+class drawLine: UIView {
+    override func drawRect(rect: CGRect) {
+        
+        let context = UIGraphicsGetCurrentContext()
+        CGContextSetLineWidth(context, 2.0)
+        CGContextSetStrokeColorWithColor(context, UIColor(red: 57/255, green: 66/255, blue: 106/255, alpha: 255/255).CGColor)
+        //CGContextSetLineDash(context, 0, [7.5], 1)
+        //CGContextSetLineCap(context, kCGLineCapRound)
+        
+        CGContextMoveToPoint(context, 0, 0)
+        CGContextAddLineToPoint(context, 0, 45)
+        
+        CGContextStrokePath(context)
+        
+    }
+}
