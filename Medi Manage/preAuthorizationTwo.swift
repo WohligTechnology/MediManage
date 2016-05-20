@@ -17,6 +17,11 @@ import UIKit
     @IBOutlet weak var dateOfAdmissionView: UIView!
     @IBOutlet weak var requestedAmountView: UIView!
     
+    @IBOutlet weak var requestReceivedImage: UIImageView!
+    @IBOutlet weak var queryImage: UIImageView!
+    @IBOutlet weak var initialApprovalImage: UIImageView!
+    @IBOutlet weak var finalApprovalImage: UIImageView!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
@@ -66,6 +71,16 @@ import UIKit
         addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: preAuthorizationNoView)
         addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: dateOfAdmissionView)
         addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: requestedAmountView)
+        
+        // dotted lines for no use
+        let line = drawDottedLine(frame: CGRectMake(50, 300, 2, height - 300))
+        line.backgroundColor = UIColor.clearColor()
+        self.addSubview(line)
+        
+        requestReceivedImage.layer.zPosition = 10
+        queryImage.layer.zPosition = 10
+        initialApprovalImage.layer.zPosition = 10
+        finalApprovalImage.layer.zPosition = 10
     }
 
     /*
@@ -76,4 +91,18 @@ import UIKit
     }
     */
 
+}
+
+class drawDottedLine: UIView {
+    override func drawRect(rect: CGRect) {
+        let context = UIGraphicsGetCurrentContext() //Initializing the line
+        CGContextSetLineWidth(context, 5.0) //Set the points of the line
+        CGContextSetStrokeColorWithColor(context, mainBlueColor.CGColor) //set colour
+        CGContextSetLineDash(context, 0, [6.5], 1) // if equal lengths: [7.5 pts colored, 7.5 pts empty] else: [1,2] //Set Line dash
+        CGContextSetLineCap(context, CGLineCap(rawValue: 500)!) //line border radius
+        CGContextMoveToPoint(context, 0, 0) //initial point and end point on the x an y axes
+        CGContextAddLineToPoint(context, 0, 1000)
+        CGContextStrokePath(context) //To actually make the line
+    }
+    
 }

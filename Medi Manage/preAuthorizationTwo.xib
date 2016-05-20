@@ -35,9 +35,13 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="preAuthorizationTwo" customModule="MediManage" customModuleProvider="target">
             <connections>
                 <outlet property="dateOfAdmissionView" destination="ZLo-EA-Iqf" id="VSr-G7-VbO"/>
+                <outlet property="finalApprovalImage" destination="p3e-k5-YHW" id="hLE-4R-Hdu"/>
+                <outlet property="initialApprovalImage" destination="ra8-hV-ZJe" id="bse-Nr-ZRB"/>
                 <outlet property="patientNameView" destination="lh1-KQ-gj2" id="1l6-sD-TrF"/>
                 <outlet property="preAuthorizationNoView" destination="Ftu-44-kyJ" id="lKh-0P-Nyn"/>
                 <outlet property="preAuthorizationTwoMainView" destination="iN0-l3-epB" id="6Cc-KV-eeh"/>
+                <outlet property="queryImage" destination="de6-sc-QrX" id="Uai-xn-PP4"/>
+                <outlet property="requestReceivedImage" destination="jyF-BQ-Lr2" id="1L4-Dc-zRj"/>
                 <outlet property="requestedAmountView" destination="dyb-w1-Zda" id="8nK-V6-STw"/>
             </connections>
         </placeholder>
