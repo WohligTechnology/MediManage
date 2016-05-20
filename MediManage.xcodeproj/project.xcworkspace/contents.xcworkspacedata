@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Medi Manage.xcodeproj">
+      location = "self:/Users/wohligtechnology/Documents/xcode/MediManage/MediManage.xcodeproj">
    </FileRef>
 </Workspace>
