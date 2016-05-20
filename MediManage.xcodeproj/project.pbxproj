@@ -1015,6 +1015,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-Manage";
 				PRODUCT_NAME = MediManage;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1027,6 +1028,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-Manage";
 				PRODUCT_NAME = MediManage;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
