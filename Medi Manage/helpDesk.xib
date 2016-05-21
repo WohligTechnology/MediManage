@@ -19,7 +19,7 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="helpDesk" customModule="Medi_Manage" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="helpDesk" customModule="MediManage" customModuleProvider="target">
             <connections>
                 <outlet property="goButton" destination="ulb-P1-6m1" id="6j6-b6-SsN"/>
                 <outlet property="helpDeskMainView" destination="iN0-l3-epB" id="hZG-JM-NCv"/>
@@ -68,6 +68,9 @@
                     <state key="normal" title="Go">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="helpDeskFAQCall:" destination="-1" eventType="touchUpInside" id="YOb-XZ-IHv"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Didn’t find what you were looking for?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljQ-IG-Czg">
                     <rect key="frame" x="0.0" y="262" width="320" height="20"/>

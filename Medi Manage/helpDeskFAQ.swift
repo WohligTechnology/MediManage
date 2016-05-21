@@ -8,8 +8,9 @@
 
 import UIKit
 
-class helpDeskFAQ: UIView {
+@IBDesignable class helpDeskFAQ: UIView {
     
+    @IBOutlet var helpDeskFAQMainView: UIView!
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
@@ -27,6 +28,23 @@ class helpDeskFAQ: UIView {
         helpDeskFAQ.frame = bounds
         helpDeskFAQ.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(helpDeskFAQ)
+        
+        let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
+        statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
+        self.addSubview(statusBar)
+        
+        let mainheader = header(frame: CGRectMake(0, 20, width, 50))
+        self.addSubview(mainheader)
+        
+        let mainfooter = footer(frame: CGRectMake(0, height - 55, width, 55))
+        mainfooter.layer.zPosition = 1000
+        self.addSubview(mainfooter)
+        
+        helpDeskFAQMainView.frame = CGRectMake(0, 70, self.frame.size.width, self.frame.size.height - 175)
+        
+    }
+    @IBAction func helpDeskQueryCall(sender: AnyObject) {
+        gHelpDeskQueryController.performSegueWithIdentifier("helpDeskFAQToelpDeskQuery", sender: nil)
     }
 
     /*

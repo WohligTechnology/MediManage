@@ -1135,7 +1135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IMF-O0-HIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-379" y="224"/>
+            <point key="canvasLocation" x="-479" y="-452"/>
         </scene>
         <!--Page Viewer Controller-->
         <scene sceneID="4hG-tJ-o9G">
@@ -1145,7 +1145,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4mP-7X-dlr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-34" y="224"/>
+            <point key="canvasLocation" x="-106" y="-452"/>
         </scene>
         <!--Help Desk Controller-->
         <scene sceneID="hkv-BM-BAV">
@@ -1158,6 +1158,15 @@
                     <view key="view" contentMode="scaleToFill" id="x9i-OF-UUA" customClass="helpDesk" customModule="MediManage" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NrS-V7-gDG">
+                                <rect key="frame" x="137" y="251" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="peo-2X-GNG" kind="show" identifier="helpDeskToHelpDeskFAQ" id="yFj-hM-Gch"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -1165,6 +1174,82 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acB-RW-ROH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="387" y="816"/>
+        </scene>
+        <!--Help DeskFAQ Controller-->
+        <scene sceneID="8Fv-fP-hi8">
+            <objects>
+                <viewController id="peo-2X-GNG" customClass="HelpDeskFAQController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Pg-bc-fwc"/>
+                        <viewControllerLayoutGuide type="bottom" id="CoY-M6-X0S"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Pjo-1i-5Nh" customClass="helpDeskFAQ" customModule="MediManage" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bah-dz-chG">
+                                <rect key="frame" x="137" y="225" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="oN0-Q9-8IX" kind="show" identifier="helpDeskFAQToelpDeskQuery" id="xns-er-I35"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wg2-Qv-lAZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="784" y="816"/>
+        </scene>
+        <!--Help Desk Query Controller-->
+        <scene sceneID="BBF-QB-d8e">
+            <objects>
+                <viewController id="oN0-Q9-8IX" customClass="HelpDeskQueryController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1E4-Jb-OZN"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Pr-Qy-Kfs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ira-Rd-CX2" customClass="helpDeskQuery" customModule="MediManage" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ron-0k-CVc">
+                                <rect key="frame" x="137" y="196" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="kjT-5A-5E0" kind="show" identifier="helpDeskQueryToConnect" id="f56-ZP-0ma"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1I8-pv-9ZT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1185" y="816"/>
+        </scene>
+        <!--Connect Controller-->
+        <scene sceneID="SR5-cc-YkG">
+            <objects>
+                <viewController id="kjT-5A-5E0" customClass="ConnectController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="knv-0m-Ed2"/>
+                        <viewControllerLayoutGuide type="bottom" id="C47-LC-WBL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ubd-EH-ZzH" customClass="connect" customModule="MediManage" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MOd-cO-fIo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1580" y="816"/>
         </scene>
     </scenes>
     <resources>

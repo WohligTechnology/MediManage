@@ -16,7 +16,11 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="helpDeskFAQ" customModule="Medi_Manage" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="helpDeskFAQ" customModule="MediManage" customModuleProvider="target">
+            <connections>
+                <outlet property="helpDeskFAQMainView" destination="iN0-l3-epB" id="Bnd-98-LG3"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="320" height="214"/>
@@ -34,13 +38,20 @@
                             <color key="textColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="triangle_orange" translatesAutoresizingMaskIntoConstraints="NO" id="D1M-8F-q8a">
-                            <rect key="frame" x="100" y="10" width="10" height="10"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangle_orange" translatesAutoresizingMaskIntoConstraints="NO" id="D1M-8F-q8a">
+                            <rect key="frame" x="98" y="10" width="10" height="10"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="10" id="7Qz-np-NLZ"/>
+                                <constraint firstAttribute="width" constant="10" id="s8d-3m-k4T"/>
+                            </constraints>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstItem="D1M-8F-q8a" firstAttribute="leading" secondItem="PAy-6r-Dsy" secondAttribute="trailing" constant="10" id="374-bU-6We"/>
                         <constraint firstItem="PAy-6r-Dsy" firstAttribute="leading" secondItem="oNy-2w-CNL" secondAttribute="leading" constant="20" id="cYH-WD-Tft"/>
+                        <constraint firstAttribute="bottom" secondItem="D1M-8F-q8a" secondAttribute="bottom" constant="10" id="mKf-7u-GRk"/>
+                        <constraint firstItem="D1M-8F-q8a" firstAttribute="top" secondItem="oNy-2w-CNL" secondAttribute="top" constant="10" id="suM-vM-Ucu"/>
                         <constraint firstAttribute="height" constant="30" id="v4r-hQ-ZOf"/>
                         <constraint firstItem="PAy-6r-Dsy" firstAttribute="top" secondItem="oNy-2w-CNL" secondAttribute="top" constant="5" id="xQg-60-qmv"/>
                         <constraint firstAttribute="bottom" secondItem="PAy-6r-Dsy" secondAttribute="bottom" constant="5" id="yhC-DS-bh5"/>
@@ -88,6 +99,16 @@
                         <constraint firstItem="Fs4-UO-k6K" firstAttribute="top" secondItem="Oir-Ig-eiN" secondAttribute="top" constant="20" id="yqy-gU-fC7"/>
                     </constraints>
                 </view>
+                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jeQ-tP-J6s">
+                    <rect key="frame" x="0.0" y="30" width="320" height="92"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="92" id="T55-SK-Hvl"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="helpDeskQueryCall:" destination="-1" eventType="touchUpInside" id="NzJ-Ab-mEV"/>
+                    </connections>
+                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iha-Vd-knq">
                     <rect key="frame" x="0.0" y="122" width="320" height="92"/>
                     <subviews>
@@ -137,8 +158,12 @@
                 <constraint firstItem="Oir-Ig-eiN" firstAttribute="leading" secondItem="oNy-2w-CNL" secondAttribute="leading" id="7WV-73-1KP"/>
                 <constraint firstAttribute="bottom" secondItem="Oir-Ig-eiN" secondAttribute="bottom" constant="446" id="9hG-Lp-egx"/>
                 <constraint firstAttribute="trailing" secondItem="oNy-2w-CNL" secondAttribute="trailing" id="CDb-qb-3oW"/>
+                <constraint firstAttribute="trailing" secondItem="jeQ-tP-J6s" secondAttribute="trailing" id="E2d-9d-t22"/>
                 <constraint firstItem="iha-Vd-knq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="KbR-j1-hXM"/>
                 <constraint firstItem="oNy-2w-CNL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="PfV-E6-S18"/>
+                <constraint firstItem="jeQ-tP-J6s" firstAttribute="top" secondItem="oNy-2w-CNL" secondAttribute="bottom" id="SMp-3o-e2E"/>
+                <constraint firstItem="jeQ-tP-J6s" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="TCI-Ze-xEl"/>
+                <constraint firstItem="iha-Vd-knq" firstAttribute="top" secondItem="jeQ-tP-J6s" secondAttribute="bottom" id="UT7-Qd-sbv"/>
                 <constraint firstItem="Oir-Ig-eiN" firstAttribute="top" secondItem="oNy-2w-CNL" secondAttribute="bottom" id="bnf-6G-MUh"/>
                 <constraint firstAttribute="trailing" secondItem="iha-Vd-knq" secondAttribute="trailing" id="drh-Zk-GTi"/>
                 <constraint firstItem="iha-Vd-knq" firstAttribute="top" secondItem="Oir-Ig-eiN" secondAttribute="bottom" id="iQB-A0-Dpe"/>

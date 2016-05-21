@@ -63,6 +63,9 @@ import UIKit
         addBottomBorder(UIColor.blackColor(), linewidth: 1, myView: typeQuestionField)
     }
 
+    @IBAction func helpDeskFAQCall(sender: AnyObject) {
+        gHelpDeskController.performSegueWithIdentifier("helpDeskToHelpDeskFAQ", sender: nil)
+    }
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
