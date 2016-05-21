@@ -18,6 +18,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="helpDeskFAQ" customModule="MediManage" customModuleProvider="target">
             <connections>
+                <outlet property="dummyButton" destination="jeQ-tP-J6s" id="GOm-o9-eHX"/>
                 <outlet property="helpDeskFAQMainView" destination="iN0-l3-epB" id="Bnd-98-LG3"/>
             </connections>
         </placeholder>
@@ -99,12 +100,11 @@
                         <constraint firstItem="Fs4-UO-k6K" firstAttribute="top" secondItem="Oir-Ig-eiN" secondAttribute="top" constant="20" id="yqy-gU-fC7"/>
                     </constraints>
                 </view>
-                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jeQ-tP-J6s">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jeQ-tP-J6s">
                     <rect key="frame" x="0.0" y="30" width="320" height="92"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="92" id="T55-SK-Hvl"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
                     <connections>
                         <action selector="helpDeskQueryCall:" destination="-1" eventType="touchUpInside" id="NzJ-Ab-mEV"/>
                     </connections>

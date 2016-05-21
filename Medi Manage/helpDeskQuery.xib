@@ -19,6 +19,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="helpDeskQuery" customModule="MediManage" customModuleProvider="target">
             <connections>
                 <outlet property="helpDeskQueryMainView" destination="iN0-l3-epB" id="VBh-O4-CjW"/>
+                <outlet property="queryTextField" destination="PH7-a4-h5o" id="3Z8-Dq-Hfq"/>
+                <outlet property="subjectTextField" destination="vqg-GM-ij6" id="rmN-HS-8bQ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

@@ -11,6 +11,8 @@ import UIKit
 @IBDesignable class helpDeskQuery: UIView {
     
     @IBOutlet var helpDeskQueryMainView: UIView!
+    @IBOutlet weak var subjectTextField: UITextField!
+    @IBOutlet weak var queryTextField: UITextField!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,6 +22,13 @@ import UIKit
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         loadViewFromNib ()
+    }
+    
+    func addBottomBorder(color: UIColor, linewidth: CGFloat, myView: UIView) {
+        let border = CALayer()
+        border.backgroundColor = color.CGColor
+        border.frame = CGRectMake(-5, myView.frame.size.height - linewidth, width - 30, linewidth)
+        myView.layer.addSublayer(border)
     }
     
     func loadViewFromNib() {
@@ -42,6 +51,10 @@ import UIKit
         self.addSubview(mainfooter)
         
         helpDeskQueryMainView.frame = CGRectMake(0, 70, self.frame.size.width, self.frame.size.height - 175)
+        
+        // add borders
+        addBottomBorder(UIColor.blackColor(), linewidth: 0.5, myView: subjectTextField)
+        addBottomBorder(UIColor.blackColor(), linewidth: 0.5, myView: queryTextField)
         
     }
     @IBAction func connectCall(sender: AnyObject) {

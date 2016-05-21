@@ -10,6 +10,7 @@ import UIKit
 
 @IBDesignable class helpDeskFAQ: UIView {
     
+    @IBOutlet weak var dummyButton: UIButton!
     @IBOutlet var helpDeskFAQMainView: UIView!
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,11 +41,13 @@ import UIKit
         mainfooter.layer.zPosition = 1000
         self.addSubview(mainfooter)
         
+        dummyButton.layer.zPosition = 10000
+        
         helpDeskFAQMainView.frame = CGRectMake(0, 70, self.frame.size.width, self.frame.size.height - 175)
         
     }
     @IBAction func helpDeskQueryCall(sender: AnyObject) {
-        gHelpDeskQueryController.performSegueWithIdentifier("helpDeskFAQToelpDeskQuery", sender: nil)
+        gHelpDeskFAQController.performSegueWithIdentifier("helpDeskFAQToHelpDeskQuery", sender: nil)
     }
 
     /*
