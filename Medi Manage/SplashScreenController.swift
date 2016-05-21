@@ -11,7 +11,6 @@ import UIKit
 class SplashScreenController: UIViewController {
     
     @IBOutlet var splashScreenMainView: UIView!
-    @IBOutlet weak var splashImage: UIImageView!
     
     var backgroundImage: String!
     var pageIndex: Int!
@@ -19,9 +18,12 @@ class SplashScreenController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: backgroundImage)!)
-        splashImage.image = UIImage(named: backgroundImage)
-
+        let image = UIImage(named: backgroundImage)
+        
+        let myimage = UIImageView(frame: CGRectMake(0, 0, width, height))
+        myimage.image = image
+        self.view.addSubview(myimage)
+        
         // Do any additional setup after loading the view.
     }
 

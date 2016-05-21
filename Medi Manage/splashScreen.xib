@@ -7,7 +7,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashScreenController" customModule="MediManage" customModuleProvider="target">
             <connections>
-                <outlet property="splashImage" destination="kcF-SB-DWv" id="Ode-L4-OmK"/>
                 <outlet property="splashScreenMainView" destination="iN0-l3-epB" id="ndG-5G-zYR"/>
             </connections>
         </placeholder>
@@ -15,18 +14,7 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kcF-SB-DWv">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                </imageView>
-            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstAttribute="trailing" secondItem="kcF-SB-DWv" secondAttribute="trailing" id="bYQ-KQ-mME"/>
-                <constraint firstAttribute="bottom" secondItem="kcF-SB-DWv" secondAttribute="bottom" id="fmW-t0-qSg"/>
-                <constraint firstItem="kcF-SB-DWv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qxl-tW-Whn"/>
-                <constraint firstItem="kcF-SB-DWv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="r8h-w0-c2r"/>
-            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="342" y="436"/>

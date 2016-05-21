@@ -71,13 +71,13 @@ class PageViewerController: UIPageViewController, UIPageViewControllerDataSource
         return myVC
     }
     
-    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return image.count
-    }
-    
-    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return 0
-    }
+//    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+//        return image.count
+//    }
+//    
+//    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+//        return 0
+//    }
     
 
     /*
