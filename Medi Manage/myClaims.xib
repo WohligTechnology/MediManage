@@ -13,12 +13,26 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="myClaims" customModule="Medi_Manage" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="myClaims" customModule="MediManage" customModuleProvider="target">
+            <connections>
+                <outlet property="dummyButton" destination="LTh-iI-pwb" id="gh9-7z-upm"/>
+                <outlet property="myClaimsMainView" destination="iN0-l3-epB" id="kWY-9q-bCC"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="450" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTh-iI-pwb">
+                    <rect key="frame" x="0.0" y="0.0" width="450" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="v2b-TB-ZOT"/>
+                    </constraints>
+                    <connections>
+                        <action selector="preAuthOneCall:" destination="-1" eventType="touchUpInside" id="ABs-VZ-KCF"/>
+                    </connections>
+                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Enk-9c-eJk">
                     <rect key="frame" x="0.0" y="0.0" width="450" height="100"/>
                     <subviews>
@@ -137,11 +151,14 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="f2E-yW-bSo" secondAttribute="trailing" id="2GZ-HS-VBF"/>
                 <constraint firstAttribute="trailing" secondItem="Enk-9c-eJk" secondAttribute="trailing" id="5NS-3P-4Lq"/>
+                <constraint firstItem="LTh-iI-pwb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6ha-IC-s6j"/>
+                <constraint firstItem="LTh-iI-pwb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="BqI-Uq-lgb"/>
                 <constraint firstItem="f2E-yW-bSo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="CNq-E4-DqU"/>
                 <constraint firstItem="Enk-9c-eJk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="HqV-mc-iyY"/>
                 <constraint firstItem="Enk-9c-eJk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="INF-dz-lr5"/>
                 <constraint firstItem="f2E-yW-bSo" firstAttribute="top" secondItem="Enk-9c-eJk" secondAttribute="bottom" id="P2n-m5-haH"/>
                 <constraint firstAttribute="bottom" secondItem="Enk-9c-eJk" secondAttribute="bottom" constant="380" id="gg8-h0-1YD"/>
+                <constraint firstAttribute="trailing" secondItem="LTh-iI-pwb" secondAttribute="trailing" id="wRY-T3-znm"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -150,7 +167,7 @@
                     <exclude reference="gg8-h0-1YD"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="345" y="162"/>
+            <point key="canvasLocation" x="481" y="161"/>
         </view>
     </objects>
     <resources>

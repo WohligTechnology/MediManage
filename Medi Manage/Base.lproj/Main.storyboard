@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kjT-5A-5E0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kAO-Eg-RQN">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Lato-Bold.ttf">
@@ -363,6 +364,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="326" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8rW-wh-6Ot">
+                                                    <rect key="frame" x="43" y="0.0" width="275" height="59"/>
+                                                    <connections>
+                                                        <action selector="claimFormCall:" destination="xMa-F4-Ivl" eventType="touchUpInside" id="ffT-R0-qsa"/>
+                                                        <segue destination="E1T-GP-FrN" kind="show" identifier="mainClaimToClaimForm" id="cbR-e7-QAD"/>
+                                                    </connections>
+                                                </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nkf-2o-1nW">
                                                     <rect key="frame" x="13" y="15" width="30" height="30"/>
                                                     <constraints>
@@ -391,8 +399,12 @@
                                             <constraints>
                                                 <constraint firstItem="dF1-gx-oFL" firstAttribute="leading" secondItem="Nkf-2o-1nW" secondAttribute="trailing" constant="15" id="3gd-6Q-JV2"/>
                                                 <constraint firstItem="Nkf-2o-1nW" firstAttribute="top" secondItem="dwb-TZ-KJ5" secondAttribute="topMargin" constant="7" id="5UB-UT-OYs"/>
+                                                <constraint firstItem="8rW-wh-6Ot" firstAttribute="leading" secondItem="Nkf-2o-1nW" secondAttribute="trailing" id="7NF-Dq-Qiw"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="8rW-wh-6Ot" secondAttribute="trailing" id="7ub-w5-nWr"/>
                                                 <constraint firstItem="dF1-gx-oFL" firstAttribute="top" secondItem="dwb-TZ-KJ5" secondAttribute="topMargin" constant="2" id="FuK-TO-7pI"/>
+                                                <constraint firstItem="8rW-wh-6Ot" firstAttribute="top" secondItem="dwb-TZ-KJ5" secondAttribute="topMargin" constant="-8" id="HOi-y5-7aV"/>
                                                 <constraint firstItem="zc0-fQ-9Zr" firstAttribute="top" secondItem="dwb-TZ-KJ5" secondAttribute="topMargin" constant="12" id="Hkm-2g-sVk"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="8rW-wh-6Ot" secondAttribute="bottom" constant="-8" id="Rnm-e3-uyu"/>
                                                 <constraint firstItem="zc0-fQ-9Zr" firstAttribute="leading" secondItem="Nkf-2o-1nW" secondAttribute="trailing" constant="15" id="Rzr-vS-3Br"/>
                                                 <constraint firstItem="Nkf-2o-1nW" firstAttribute="leading" secondItem="dwb-TZ-KJ5" secondAttribute="leadingMargin" constant="5" id="S9m-Ev-9Zh"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Nkf-2o-1nW" secondAttribute="bottom" constant="6" id="ZfG-GY-44O"/>
@@ -431,7 +443,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4XJ-Tj-Ptj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="423" y="1454"/>
+            <point key="canvasLocation" x="387" y="1462"/>
+        </scene>
+        <!--Claim Form Controller-->
+        <scene sceneID="4J3-VK-l5C">
+            <objects>
+                <viewController id="E1T-GP-FrN" customClass="ClaimFormController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1b6-Gc-8qK"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fwa-P6-S8Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GVi-g6-xAi" customClass="claimForm" customModule="MediManage" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vnr-NW-wEa">
+                                <rect key="frame" x="137" y="225" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="ONl-FB-A8K" kind="show" identifier="claimFormToDocumentChecklist" id="eF3-Wt-y75"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BNO-Ft-tcW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="784" y="1462"/>
         </scene>
         <!--Document Checklist Controller-->
         <scene sceneID="aXU-qF-aqe">
@@ -489,6 +529,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGY-og-ZZ8">
+                                                    <rect key="frame" x="45" y="0.0" width="275" height="70"/>
+                                                    <connections>
+                                                        <action selector="myClaimsCall:" destination="ONl-FB-A8K" eventType="touchUpInside" id="r54-nL-z4n"/>
+                                                        <segue destination="kAO-Eg-RQN" kind="show" identifier="dcToMyClaims" id="1z3-Es-8ch"/>
+                                                    </connections>
+                                                </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="claim_three" translatesAutoresizingMaskIntoConstraints="NO" id="pgD-ch-0AK">
                                                     <rect key="frame" x="18" y="10" width="27" height="30"/>
                                                     <constraints>
@@ -518,12 +565,16 @@
                                             <constraints>
                                                 <constraint firstItem="24h-JJ-4d8" firstAttribute="top" secondItem="bc2-Or-qhi" secondAttribute="topMargin" id="1rQ-Vg-hmT"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="s1y-mT-h32" secondAttribute="trailing" constant="50" id="N9F-t3-eT0"/>
+                                                <constraint firstItem="LGY-og-ZZ8" firstAttribute="leading" secondItem="pgD-ch-0AK" secondAttribute="trailing" id="Q7s-pY-vXY"/>
                                                 <constraint firstItem="s1y-mT-h32" firstAttribute="top" secondItem="bc2-Or-qhi" secondAttribute="topMargin" constant="12" id="SgE-KS-oR5"/>
                                                 <constraint firstItem="24h-JJ-4d8" firstAttribute="leading" secondItem="pgD-ch-0AK" secondAttribute="trailing" constant="10" id="WKw-kD-wdq"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="LGY-og-ZZ8" secondAttribute="bottom" constant="-8" id="Xmj-hT-Jc2"/>
                                                 <constraint firstItem="s1y-mT-h32" firstAttribute="leading" secondItem="pgD-ch-0AK" secondAttribute="trailing" constant="10" id="ak8-Uh-TN0"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="24h-JJ-4d8" secondAttribute="trailing" constant="50" id="an8-vk-I9f"/>
                                                 <constraint firstItem="pgD-ch-0AK" firstAttribute="leading" secondItem="bc2-Or-qhi" secondAttribute="leadingMargin" constant="10" id="geO-nE-en2"/>
                                                 <constraint firstItem="pgD-ch-0AK" firstAttribute="top" secondItem="bc2-Or-qhi" secondAttribute="topMargin" constant="2" id="jBX-M7-MYx"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="LGY-og-ZZ8" secondAttribute="trailing" id="o5Z-pf-N7r"/>
+                                                <constraint firstItem="LGY-og-ZZ8" firstAttribute="top" secondItem="bc2-Or-qhi" secondAttribute="topMargin" constant="-8" id="rsk-jr-pyg"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -556,7 +607,88 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RiH-bG-H9y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="784" y="1454"/>
+            <point key="canvasLocation" x="1185" y="1462"/>
+        </scene>
+        <!--My Claim Controller-->
+        <scene sceneID="DT7-P3-dAS">
+            <objects>
+                <viewController id="kAO-Eg-RQN" customClass="MyClaimController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZQT-VV-bRp"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZkJ-tp-4Yv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dkh-U0-dm1" customClass="myClaims" customModule="MediManage" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0f-vp-UnZ">
+                                <rect key="frame" x="137" y="225" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="r6M-mj-iXb" kind="show" identifier="myClaimsToPreAuthOne" id="wgK-eO-Wod">
+                                        <segue key="commit" inheritsFrom="parent" id="u7R-98-SJZ"/>
+                                        <segue key="preview" inheritsFrom="commit" id="OeS-ap-H6a"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c4q-8K-apV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1580" y="1462"/>
+        </scene>
+        <!--Pre Authorization One Controller-->
+        <scene sceneID="2FI-Z6-g2T">
+            <objects>
+                <viewController id="r6M-mj-iXb" customClass="PreAuthorizationOneController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZkZ-qa-Elr"/>
+                        <viewControllerLayoutGuide type="bottom" id="I7M-W4-RHp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tOG-Tx-eeg" customClass="preAuthorizationOne" customModule="MediManage" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujo-5r-EZ2">
+                                <rect key="frame" x="73" y="138" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="7xJ-H7-UQM" kind="show" identifier="preAuthOneToPreAuthTwo" id="QCt-6c-YRM">
+                                        <segue key="commit" inheritsFrom="parent" id="5mr-TS-bLf"/>
+                                        <segue key="preview" inheritsFrom="commit" id="b9l-Q1-UuJ"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kI4-6D-UM8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1953" y="1462"/>
+        </scene>
+        <!--Pre Authorization Two Controller-->
+        <scene sceneID="qok-K9-MCE">
+            <objects>
+                <viewController id="7xJ-H7-UQM" customClass="PreAuthorizationTwoController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="k6y-uA-Pbl"/>
+                        <viewControllerLayoutGuide type="bottom" id="Myw-MA-JzN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MDb-Gu-9nz" customClass="preAuthorizationTwo" customModule="MediManage" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hau-B6-e4G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2327" y="1462"/>
         </scene>
         <!--Claim Intimation Controller-->
         <scene sceneID="vxP-hm-Au0">
@@ -829,7 +961,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z5F-3Y-lk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1179" y="1454"/>
+            <point key="canvasLocation" x="1185" y="2068"/>
         </scene>
         <!--Hospital Search Result Controller-->
         <scene sceneID="Ja7-k4-UaN">
@@ -1116,7 +1248,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j0Q-Ed-hZ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1564" y="1462"/>
+            <point key="canvasLocation" x="1580" y="2068"/>
         </scene>
         <!--Splash Screen Controller-->
         <scene sceneID="vxc-Kb-Cyn">
@@ -1243,6 +1375,15 @@
                     <view key="view" contentMode="scaleToFill" id="ubd-EH-ZzH" customClass="connect" customModule="MediManage" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6TN-41-fig">
+                                <rect key="frame" x="44" y="289" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="xMa-F4-Ivl" kind="show" identifier="connectToMainClaims" id="aDg-wM-GID"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -1261,5 +1402,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="PAS-j4-dnW"/>
+        <segue reference="wgK-eO-Wod"/>
+        <segue reference="QCt-6c-YRM"/>
     </inferredMetricsTieBreakers>
 </document>

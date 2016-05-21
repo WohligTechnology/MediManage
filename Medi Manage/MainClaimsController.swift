@@ -77,6 +77,10 @@ class MainClaimsController: UIViewController, UITableViewDelegate, UITableViewDa
         // sahi hai midhet :)
     }
 
+    @IBAction func claimFormCall(sender: AnyObject) {
+        self.performSegueWithIdentifier("mainClaimToClaimForm", sender: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

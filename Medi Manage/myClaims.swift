@@ -8,7 +8,10 @@
 
 import UIKit
 
-class myClaims: UIView {
+@IBDesignable class myClaims: UIView {
+    
+    @IBOutlet var myClaimsMainView: UIView!
+    @IBOutlet weak var dummyButton: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,8 +30,36 @@ class myClaims: UIView {
         myClaims.frame = bounds
         myClaims.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(myClaims)
+        
+        let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
+        statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
+        self.addSubview(statusBar)
+        
+        let mainheader = header(frame: CGRectMake(0, 20, width, 50))
+        self.addSubview(mainheader)
+        
+        let mainsubHeader = subHeader(frame: CGRectMake(0, 70, width, 50))
+        mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_two")
+        mainsubHeader.subHeaderTitle.text = "MY CLAIMS"
+        self.addSubview(mainsubHeader)
+        
+        let mainfooter = footer(frame: CGRectMake(0, height - 55, width, 55))
+        mainfooter.layer.zPosition = 1000
+        self.addSubview(mainfooter)
+        
+        myClaimsMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height - 175)
+        
+        dummyButton.layer.zPosition = 10000
+        
+//        let repeated = UIView(frame: CGRectMake(0, 320, self.frame.size.width, self.frame.size.height - 175))
+//        repeated.addSubview(myClaimsMainView)
+//        self.addSubview(repeated)
+        
     }
 
+    @IBAction func preAuthOneCall(sender: AnyObject) {
+        gMyClaimController.performSegueWithIdentifier("myClaimsToPreAuthOne", sender: nil)
+    }
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

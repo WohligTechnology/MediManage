@@ -32,6 +32,10 @@
 		3A79A7C21CF0431E008B693B /* HelpDeskFAQController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79A7C11CF0431E008B693B /* HelpDeskFAQController.swift */; };
 		3A79A7C51CF044DF008B693B /* HelpDeskQueryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79A7C41CF044DF008B693B /* HelpDeskQueryController.swift */; };
 		3A79A7C71CF045F0008B693B /* ConnectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79A7C61CF045F0008B693B /* ConnectController.swift */; };
+		3A79A7C91CF06652008B693B /* ClaimFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79A7C81CF06652008B693B /* ClaimFormController.swift */; };
+		3A79A7CB1CF06702008B693B /* MyClaimController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79A7CA1CF06702008B693B /* MyClaimController.swift */; };
+		3A79A7CD1CF06AA0008B693B /* PreAuthorizationOneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79A7CC1CF06AA0008B693B /* PreAuthorizationOneController.swift */; };
+		3A79A7CF1CF06ADC008B693B /* PreAuthorizationTwoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79A7CE1CF06ADC008B693B /* PreAuthorizationTwoController.swift */; };
 		3A8774BC1CEC3783001DB41F /* preAuthorizationTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A8774BB1CEC3783001DB41F /* preAuthorizationTwo.xib */; };
 		3A8774BE1CEC38E6001DB41F /* preAuthorizationTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8774BD1CEC38E6001DB41F /* preAuthorizationTwo.swift */; };
 		3A8774C11CEC41C1001DB41F /* queryForm.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A8774C01CEC41C1001DB41F /* queryForm.xib */; };
@@ -145,6 +149,10 @@
 		3A79A7C11CF0431E008B693B /* HelpDeskFAQController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpDeskFAQController.swift; sourceTree = "<group>"; };
 		3A79A7C41CF044DF008B693B /* HelpDeskQueryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpDeskQueryController.swift; sourceTree = "<group>"; };
 		3A79A7C61CF045F0008B693B /* ConnectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectController.swift; sourceTree = "<group>"; };
+		3A79A7C81CF06652008B693B /* ClaimFormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClaimFormController.swift; sourceTree = "<group>"; };
+		3A79A7CA1CF06702008B693B /* MyClaimController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyClaimController.swift; sourceTree = "<group>"; };
+		3A79A7CC1CF06AA0008B693B /* PreAuthorizationOneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreAuthorizationOneController.swift; sourceTree = "<group>"; };
+		3A79A7CE1CF06ADC008B693B /* PreAuthorizationTwoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreAuthorizationTwoController.swift; sourceTree = "<group>"; };
 		3A8774BB1CEC3783001DB41F /* preAuthorizationTwo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = preAuthorizationTwo.xib; sourceTree = "<group>"; };
 		3A8774BD1CEC38E6001DB41F /* preAuthorizationTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = preAuthorizationTwo.swift; sourceTree = "<group>"; };
 		3A8774C01CEC41C1001DB41F /* queryForm.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = queryForm.xib; sourceTree = "<group>"; };
@@ -582,6 +590,10 @@
 				3A79A7C11CF0431E008B693B /* HelpDeskFAQController.swift */,
 				3A79A7C41CF044DF008B693B /* HelpDeskQueryController.swift */,
 				3A79A7C61CF045F0008B693B /* ConnectController.swift */,
+				3A79A7C81CF06652008B693B /* ClaimFormController.swift */,
+				3A79A7CA1CF06702008B693B /* MyClaimController.swift */,
+				3A79A7CC1CF06AA0008B693B /* PreAuthorizationOneController.swift */,
+				3A79A7CE1CF06ADC008B693B /* PreAuthorizationTwoController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -862,14 +874,17 @@
 				3A79A7C71CF045F0008B693B /* ConnectController.swift in Sources */,
 				3A8EFB621CE9E742004489F3 /* claimForm.swift in Sources */,
 				3A677B691CE4B539003B8C2B /* CompleteProfileController.swift in Sources */,
+				3A79A7C91CF06652008B693B /* ClaimFormController.swift in Sources */,
 				3A31911A1CEF40AB001DCBBC /* PageViewerController.swift in Sources */,
 				783322B51CDB7B4F0015CE37 /* completeProfile.swift in Sources */,
 				3A0175311CE369AB00832E49 /* header.swift in Sources */,
 				3A677B6D1CE4BBDE003B8C2B /* GenerateOTPController.swift in Sources */,
+				3A79A7CD1CF06AA0008B693B /* PreAuthorizationOneController.swift in Sources */,
 				3A677B6F1CE4BEC0003B8C2B /* EnterOTPController.swift in Sources */,
 				783322A81CDB13ED0015CE37 /* signup.swift in Sources */,
 				3AEEB0101CE705B60085EEF5 /* subHeader.swift in Sources */,
 				3A992F061CED997400D85D8A /* benefitSummary.swift in Sources */,
+				3A79A7CB1CF06702008B693B /* MyClaimController.swift in Sources */,
 				783322AB1CDB37FE0015CE37 /* onboarding.swift in Sources */,
 				783322971CD9FCD90015CE37 /* login.swift in Sources */,
 				3A992F0A1CEDF25F00D85D8A /* HospitalSearchResultController.swift in Sources */,
@@ -888,6 +903,7 @@
 				3A1A5AE11CEC988A00AD2564 /* DocumentChecklistController.swift in Sources */,
 				3AEEB0171CE7344C0085EEF5 /* HelpDeskController.swift in Sources */,
 				3A8EFB581CE9CA54004489F3 /* inbox.swift in Sources */,
+				3A79A7CF1CF06ADC008B693B /* PreAuthorizationTwoController.swift in Sources */,
 				3A8EFB531CE9A463004489F3 /* hospitalSearch.swift in Sources */,
 				78B90BD51CE0676E0022FE7A /* generateOTP.swift in Sources */,
 				3AFE38991CE472CE0062A497 /* memberList.swift in Sources */,

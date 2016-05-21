@@ -33,7 +33,7 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="preAuthorizationOne" customModule="Medi_Manage" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="preAuthorizationOne" customModule="MediManage" customModuleProvider="target">
             <connections>
                 <outlet property="patientNameView" destination="V1J-nI-D9P" id="4Nd-pj-1SZ"/>
                 <outlet property="preAuthorizationNoView" destination="MHE-4b-zqB" id="dFl-TU-NYZ"/>
@@ -519,6 +519,16 @@
                         <constraint firstAttribute="height" constant="80" id="xxq-4Z-rYf"/>
                     </constraints>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kk-cD-jLG">
+                    <rect key="frame" x="20" y="134" width="150" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="2cX-nI-ID0"/>
+                        <constraint firstAttribute="width" constant="150" id="Hpn-AK-ULo"/>
+                    </constraints>
+                    <connections>
+                        <action selector="preAuthTwoCall:" destination="-1" eventType="touchUpInside" id="fO3-Qz-nUd"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -528,6 +538,7 @@
                 <constraint firstItem="MHE-4b-zqB" firstAttribute="top" secondItem="V1J-nI-D9P" secondAttribute="bottom" constant="12" id="5S3-of-htX"/>
                 <constraint firstAttribute="trailing" secondItem="MHE-4b-zqB" secondAttribute="trailing" constant="20" id="5hq-jK-qPy"/>
                 <constraint firstItem="bGE-lK-iTF" firstAttribute="top" secondItem="MHE-4b-zqB" secondAttribute="bottom" constant="12" id="9vr-KH-pNA"/>
+                <constraint firstItem="4kk-cD-jLG" firstAttribute="top" secondItem="bGE-lK-iTF" secondAttribute="bottom" constant="30" id="KaS-p1-ENA"/>
                 <constraint firstItem="yU8-O3-aUq" firstAttribute="top" secondItem="bGE-lK-iTF" secondAttribute="bottom" constant="30" id="MHw-Bu-DuM"/>
                 <constraint firstItem="V1J-nI-D9P" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="MRj-sz-hSK"/>
                 <constraint firstItem="eZo-dr-lx6" firstAttribute="leading" secondItem="XQV-Ig-ngu" secondAttribute="leading" id="Ulf-Eu-NT4"/>
@@ -535,6 +546,7 @@
                 <constraint firstItem="yU8-O3-aUq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="VFl-go-Ich"/>
                 <constraint firstItem="7W1-hL-MoK" firstAttribute="top" secondItem="yU8-O3-aUq" secondAttribute="bottom" constant="20" id="ViE-k1-Ob5"/>
                 <constraint firstItem="ag7-52-CKF" firstAttribute="top" secondItem="eZo-dr-lx6" secondAttribute="bottom" id="YBq-Sy-zRJ"/>
+                <constraint firstItem="4kk-cD-jLG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Z2a-YX-hTR"/>
                 <constraint firstItem="XQV-Ig-ngu" firstAttribute="top" secondItem="ag7-52-CKF" secondAttribute="bottom" constant="10" id="a4Z-VJ-szO"/>
                 <constraint firstAttribute="trailing" secondItem="bGE-lK-iTF" secondAttribute="trailing" constant="20" id="e6j-wW-nlq"/>
                 <constraint firstAttribute="trailing" secondItem="V1J-nI-D9P" secondAttribute="trailing" constant="20" id="g80-1g-6UD"/>
@@ -547,7 +559,7 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="490" y="351"/>
+            <point key="canvasLocation" x="-114" y="328"/>
         </view>
     </objects>
     <resources>

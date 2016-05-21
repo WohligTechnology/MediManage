@@ -361,6 +361,16 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfM-vo-llL">
+                    <rect key="frame" x="30" y="372" width="75" height="75"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="75" id="28x-Nr-oEC"/>
+                        <constraint firstAttribute="height" constant="75" id="2mr-iz-kwp"/>
+                    </constraints>
+                    <connections>
+                        <action selector="myClaimsCall:" destination="-1" eventType="touchUpInside" id="Rg0-HW-fuz"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -380,7 +390,9 @@
                 <constraint firstItem="psl-LQ-mDH" firstAttribute="leading" secondItem="i7A-yd-kgT" secondAttribute="trailing" constant="15" id="bga-iE-Evu"/>
                 <constraint firstItem="Ddd-G4-A1K" firstAttribute="top" secondItem="don-oe-UIg" secondAttribute="bottom" constant="10" id="df9-43-vaw"/>
                 <constraint firstItem="DPe-vC-kO6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jvz-Aj-L6h"/>
+                <constraint firstItem="jfM-vo-llL" firstAttribute="top" secondItem="ReP-Xx-Ke3" secondAttribute="bottom" constant="20" id="kHd-a1-c1S"/>
                 <constraint firstAttribute="trailing" secondItem="Ddd-G4-A1K" secondAttribute="trailing" constant="20" id="kRl-gM-OVu"/>
+                <constraint firstItem="jfM-vo-llL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="lBl-Qa-s8a"/>
                 <constraint firstItem="38o-dF-1ne" firstAttribute="top" secondItem="ReP-Xx-Ke3" secondAttribute="bottom" constant="37" id="oYS-AG-DJ1"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

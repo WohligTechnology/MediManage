@@ -74,6 +74,10 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     }
 
+    @IBAction func myClaimsCall(sender: AnyObject) {
+        self.performSegueWithIdentifier("dcToMyClaims", sender: nil)
+    }
+    
     /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

@@ -19,7 +19,7 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="claimForm" customModule="Medi_Manage" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="claimForm" customModule="MediManage" customModuleProvider="target">
             <connections>
                 <outlet property="claimAmount" destination="80e-xn-Awm" id="hNj-ex-BR4"/>
                 <outlet property="claimFormMainView" destination="iN0-l3-epB" id="uLA-ed-NCt"/>
@@ -137,6 +137,9 @@
                     <state key="normal" title="SUBMIT">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="documentChecklistCall:" destination="-1" eventType="touchUpInside" id="gCc-2y-Xn1"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -168,7 +171,7 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="349" y="347"/>
+            <point key="canvasLocation" x="156" y="344"/>
         </view>
     </objects>
 </document>
