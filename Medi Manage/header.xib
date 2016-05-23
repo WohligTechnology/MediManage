@@ -5,14 +5,14 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="header" customModule="Medi_Manage" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="header" customModule="MediManage" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="400" height="50"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hamburger" translatesAutoresizingMaskIntoConstraints="NO" id="MRF-QT-hJv">
-                    <rect key="frame" x="25" y="15" width="30" height="18"/>
+                    <rect key="frame" x="20" y="15" width="30" height="18"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="aT1-WX-tZq"/>
                         <constraint firstAttribute="height" constant="18" id="pVh-tn-AEW"/>
@@ -40,24 +40,16 @@
             </subviews>
             <color key="backgroundColor" red="0.24313725490196078" green="0.24313725490196078" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="MRF-QT-hJv" secondAttribute="bottom" constant="26" id="0oF-Ta-9bN"/>
                 <constraint firstAttribute="trailing" secondItem="pfu-16-XQo" secondAttribute="trailing" constant="20" id="5li-zG-WNt"/>
                 <constraint firstItem="aUs-ES-oOo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="Neo-XY-M5b"/>
-                <constraint firstAttribute="bottom" secondItem="pfu-16-XQo" secondAttribute="bottom" constant="20" id="a4o-JF-SGw"/>
                 <constraint firstItem="pfu-16-XQo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="eB4-gF-7VQ"/>
                 <constraint firstItem="MRF-QT-hJv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="nCu-mn-uFA"/>
                 <constraint firstItem="aUs-ES-oOo" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="nqy-Yh-UKk"/>
-                <constraint firstItem="MRF-QT-hJv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="25" id="pZk-oP-Maq"/>
+                <constraint firstItem="MRF-QT-hJv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="pZk-oP-Maq"/>
                 <constraint firstAttribute="bottom" secondItem="aUs-ES-oOo" secondAttribute="bottom" constant="10" id="qRa-aj-11H"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="0oF-Ta-9bN"/>
-                    <exclude reference="a4o-JF-SGw"/>
-                </mask>
-            </variation>
             <point key="canvasLocation" x="261" y="144"/>
         </view>
     </objects>

@@ -23,8 +23,9 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="completeProfile" customModule="Medi_Manage" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="completeProfile" customModule="MediManage" customModuleProvider="target">
             <connections>
+                <outlet property="completeProfileMainView" destination="iN0-l3-epB" id="DkH-br-tpt"/>
                 <outlet property="dateOfBirth" destination="iyf-pN-pZR" id="uwF-XZ-5Ko"/>
                 <outlet property="email" destination="GzS-bR-o7C" id="BQe-Xv-hMn"/>
                 <outlet property="employeeNumber" destination="Byo-Ot-41E" id="bJc-sC-6WC"/>

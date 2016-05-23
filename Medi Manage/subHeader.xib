@@ -11,7 +11,7 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="subHeader" customModule="Medi_Manage" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="subHeader" customModule="MediManage" customModuleProvider="target">
             <connections>
                 <outlet property="subHeaderIcon" destination="SAC-k5-SaH" id="GFW-cT-KAT"/>
                 <outlet property="subHeaderTitle" destination="YEN-Oi-aRl" id="MfA-mw-Wjo"/>

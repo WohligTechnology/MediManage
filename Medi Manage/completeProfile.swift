@@ -11,6 +11,7 @@ import UIKit
 
 @IBDesignable class completeProfile: UIView {
     
+    @IBOutlet var completeProfileMainView: UIView!
     @IBOutlet weak var fullName: UIView!
     @IBOutlet weak var employeeNumber: UIView!
     @IBOutlet weak var dateOfBirth: UIView!
@@ -44,7 +45,14 @@ import UIKit
         let sortnewview = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
         sortnewview.frame = bounds
         sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-        self.addSubview(sortnewview);
+        self.addSubview(sortnewview)
+        
+        let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
+        //statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
+        statusBar.backgroundColor = UIColor(red: 244/255, green: 121/255, blue: 32/255, alpha: 1)
+        self.addSubview(statusBar)
+        
+        completeProfileMainView.frame = CGRectMake(0, 20, self.frame.size.width, self.frame.size.height)
         
         //add borders
         addBottomBorder(UIColor.blackColor(), linewidth: 1, myView: fullName)
