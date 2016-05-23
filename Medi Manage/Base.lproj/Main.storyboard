@@ -738,6 +738,15 @@
                     <view key="view" contentMode="scaleToFill" id="kX8-Jb-gjH" customClass="helplineNumber" customModule="MediManage" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JvD-LG-l3m">
+                                <rect key="frame" x="53" y="175" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="rfz-2B-B0l" kind="show" id="DXE-6l-h6p"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -780,6 +789,13 @@
                                         <state key="normal" title="Add New Claim">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                    </button>
+                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbr-Wt-2d8">
+                                        <rect key="frame" x="141" y="45" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <segue destination="A4M-Ka-07a" kind="show" id="PJm-C0-xKL"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -1017,7 +1033,63 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z5F-3Y-lk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1185" y="2068"/>
+            <point key="canvasLocation" x="387" y="2047"/>
+        </scene>
+        <!--Benefit Summary Controller-->
+        <scene sceneID="zXY-2C-ZUG">
+            <objects>
+                <viewController id="A4M-Ka-07a" customClass="BenefitSummaryController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I4x-a1-FRl"/>
+                        <viewControllerLayoutGuide type="bottom" id="qto-5L-AaS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="frN-Dm-lmb" customClass="benefitSummary" customModule="MediManage" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wje-zk-EGY">
+                                <rect key="frame" x="137" y="225" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="3eb-do-LtT" kind="show" id="7so-zj-WGL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2rv-Ng-9aE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="784" y="2047"/>
+        </scene>
+        <!--Hospital Search Controller-->
+        <scene sceneID="mQ4-Cc-ecH">
+            <objects>
+                <viewController id="3eb-do-LtT" customClass="HospitalSearchController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q4h-fQ-Xrb"/>
+                        <viewControllerLayoutGuide type="bottom" id="U6D-JU-snr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EOD-7Z-fqI" customClass="hospitalSearch" customModule="MediManage" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbH-eD-HYm">
+                                <rect key="frame" x="137" y="321" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="zcf-UU-fHe" kind="show" id="OAS-We-EY0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sf0-bP-dYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1185" y="2047"/>
         </scene>
         <!--Hospital Search Result Controller-->
         <scene sceneID="Ja7-k4-UaN">
@@ -1270,6 +1342,13 @@
                                     <outlet property="delegate" destination="zcf-UU-fHe" id="fz9-Jx-fkH"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UGT-kq-aIq">
+                                <rect key="frame" x="137" y="35" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="Yob-a2-WNP" kind="show" id="weY-Pc-fhq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1304,7 +1383,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j0Q-Ed-hZ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1580" y="2068"/>
+            <point key="canvasLocation" x="1580" y="2047"/>
+        </scene>
+        <!--Inbox Controller-->
+        <scene sceneID="Eew-Ia-Niw">
+            <objects>
+                <viewController id="Yob-a2-WNP" customClass="InboxController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TwT-fR-gwn"/>
+                        <viewControllerLayoutGuide type="bottom" id="eqO-Sx-m1M"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QpW-pg-pQB" customClass="inbox" customModule="MediManage" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pUe-BV-LL4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1953" y="2047"/>
         </scene>
         <!--Splash Screen Controller-->
         <scene sceneID="vxc-Kb-Cyn">
