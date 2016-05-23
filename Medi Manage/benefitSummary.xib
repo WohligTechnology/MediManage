@@ -28,7 +28,7 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="benefitSummary" customModule="Medi_Manage" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="benefitSummary" customModule="MediManage" customModuleProvider="target">
             <connections>
                 <outlet property="benefitSummaryMainView" destination="iN0-l3-epB" id="9fc-5b-5xU"/>
             </connections>
@@ -104,6 +104,12 @@
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0VM-S0-1rw">
+                            <rect key="frame" x="20" y="10" width="95" height="30"/>
+                            <connections>
+                                <action selector="hospitalSearchCall:" destination="-1" eventType="touchUpInside" id="ITv-Wf-o8I"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -111,7 +117,9 @@
                         <constraint firstAttribute="trailing" secondItem="TGm-Zd-6Xb" secondAttribute="trailing" constant="20" id="1ZW-gW-K66"/>
                         <constraint firstItem="Gqw-g7-Njt" firstAttribute="top" secondItem="pdE-Cm-aqR" secondAttribute="bottom" constant="10" id="1w6-5N-GGv"/>
                         <constraint firstAttribute="trailing" secondItem="j9n-sx-LYG" secondAttribute="trailing" constant="20" id="2xB-ed-voB"/>
+                        <constraint firstItem="0VM-S0-1rw" firstAttribute="centerY" secondItem="pdE-Cm-aqR" secondAttribute="centerY" id="BXf-1X-4Xb"/>
                         <constraint firstItem="j9n-sx-LYG" firstAttribute="top" secondItem="8QZ-h7-Ooi" secondAttribute="bottom" constant="-2" id="DKd-lF-M38"/>
+                        <constraint firstItem="0VM-S0-1rw" firstAttribute="leading" secondItem="pdE-Cm-aqR" secondAttribute="leading" id="ODO-zT-QR5"/>
                         <constraint firstAttribute="trailing" secondItem="Gqw-g7-Njt" secondAttribute="trailing" constant="20" id="OFm-F7-cNv"/>
                         <constraint firstItem="Gqw-g7-Njt" firstAttribute="leading" secondItem="N8G-va-zu5" secondAttribute="leading" constant="20" id="Uq2-CQ-sow"/>
                         <constraint firstItem="UBJ-Aq-IKG" firstAttribute="leading" secondItem="N8G-va-zu5" secondAttribute="leading" constant="20" id="WFV-IJ-LPB"/>
@@ -122,6 +130,7 @@
                         <constraint firstItem="UBJ-Aq-IKG" firstAttribute="top" secondItem="TGm-Zd-6Xb" secondAttribute="bottom" constant="12" id="gqf-hm-Hfy"/>
                         <constraint firstItem="mwL-Vj-N9S" firstAttribute="top" secondItem="UBJ-Aq-IKG" secondAttribute="bottom" constant="-2" id="j99-Ib-uim"/>
                         <constraint firstAttribute="trailing" secondItem="UBJ-Aq-IKG" secondAttribute="trailing" constant="20" id="kAQ-sK-9CK"/>
+                        <constraint firstItem="0VM-S0-1rw" firstAttribute="trailing" secondItem="pdE-Cm-aqR" secondAttribute="trailing" id="kTJ-sB-aaA"/>
                         <constraint firstItem="mwL-Vj-N9S" firstAttribute="top" secondItem="UBJ-Aq-IKG" secondAttribute="bottom" constant="-2" id="lnF-mK-Yuj"/>
                         <constraint firstItem="pdE-Cm-aqR" firstAttribute="top" secondItem="N8G-va-zu5" secondAttribute="top" constant="15" id="nxO-Hm-bHd"/>
                         <constraint firstItem="8QZ-h7-Ooi" firstAttribute="leading" secondItem="N8G-va-zu5" secondAttribute="leading" constant="20" id="nzT-9j-3TV"/>

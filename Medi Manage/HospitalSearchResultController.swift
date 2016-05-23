@@ -90,6 +90,9 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
         border.frame = CGRectMake(5, myView.frame.size.height - linewidth + 2, width - 50, linewidth)
         myView.layer.addSublayer(border)
     }
+    @IBAction func inboxCall(sender: AnyObject) {
+        self.performSegueWithIdentifier("benefitResultsToInbox", sender: nil)
+    }
 
 }
 

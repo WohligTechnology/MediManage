@@ -17,7 +17,7 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="hospitalSearch" customModule="Medi_Manage" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="hospitalSearch" customModule="MediManage" customModuleProvider="target">
             <connections>
                 <outlet property="greenIcon" destination="LMA-OH-Vs8" id="DUl-Ck-4qx"/>
                 <outlet property="hospitalName" destination="zdR-GX-bvc" id="lsX-my-2XK"/>
@@ -83,6 +83,9 @@
                     <state key="normal" title="Search">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="hospitalResultCall:" destination="-1" eventType="touchUpInside" id="jrg-fx-Wli"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

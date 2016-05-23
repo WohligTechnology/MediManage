@@ -53,6 +53,9 @@ import UIKit
         //scroll.addSubview(benefitSummaryMainView)
     }
 
+    @IBAction func hospitalSearchCall(sender: AnyObject) {
+        gBenefitSummaryController.performSegueWithIdentifier("benefitSummaryToHospitalSearch", sender: nil)
+    }
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

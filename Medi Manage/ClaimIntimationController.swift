@@ -81,6 +81,9 @@ class ClaimIntimationController: UIViewController, UITableViewDelegate, UITableV
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     }
 
+    @IBAction func benefitSummaryCall(sender: AnyObject) {
+        self.performSegueWithIdentifier("claimImmitationToBenefitSummary", sender: nil)
+    }
 }
 
 // MARK: - TableView Cell Class

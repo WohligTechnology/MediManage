@@ -15,7 +15,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="myClaims" customModule="MediManage" customModuleProvider="target">
             <connections>
-                <outlet property="dummyButton" destination="LTh-iI-pwb" id="gh9-7z-upm"/>
                 <outlet property="myClaimsMainView" destination="iN0-l3-epB" id="kWY-9q-bCC"/>
             </connections>
         </placeholder>
@@ -24,18 +23,18 @@
             <rect key="frame" x="0.0" y="0.0" width="450" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTh-iI-pwb">
-                    <rect key="frame" x="0.0" y="0.0" width="450" height="100"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="100" id="v2b-TB-ZOT"/>
-                    </constraints>
-                    <connections>
-                        <action selector="preAuthOneCall:" destination="-1" eventType="touchUpInside" id="ABs-VZ-KCF"/>
-                    </connections>
-                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Enk-9c-eJk">
                     <rect key="frame" x="0.0" y="0.0" width="450" height="100"/>
                     <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAX-rl-biu">
+                            <rect key="frame" x="0.0" y="0.0" width="450" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="dEu-Ny-RWR"/>
+                            </constraints>
+                            <connections>
+                                <action selector="preAuthOneCall:" destination="-1" eventType="touchUpInside" id="Hqe-QN-t2v"/>
+                            </connections>
+                        </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pre-Authorizations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkT-Qw-EYn">
                             <rect key="frame" x="20" y="30" width="400" height="20"/>
                             <constraints>
@@ -72,8 +71,10 @@
                     <constraints>
                         <constraint firstItem="YkT-Qw-EYn" firstAttribute="top" secondItem="Enk-9c-eJk" secondAttribute="top" constant="30" id="6D4-sL-Hem"/>
                         <constraint firstItem="v2B-fN-m8w" firstAttribute="leading" secondItem="Enk-9c-eJk" secondAttribute="leading" constant="20" id="9NY-iz-4K7"/>
+                        <constraint firstItem="UAX-rl-biu" firstAttribute="centerX" secondItem="v2B-fN-m8w" secondAttribute="centerX" id="Mvl-ph-Mvx"/>
                         <constraint firstItem="v2B-fN-m8w" firstAttribute="top" secondItem="YkT-Qw-EYn" secondAttribute="bottom" id="Ogi-KR-LQC"/>
                         <constraint firstAttribute="trailing" secondItem="v2B-fN-m8w" secondAttribute="trailing" constant="20" id="PDr-t0-Hff"/>
+                        <constraint firstItem="UAX-rl-biu" firstAttribute="leading" secondItem="Enk-9c-eJk" secondAttribute="leading" id="R2U-8e-Vpp"/>
                         <constraint firstAttribute="bottom" secondItem="NCB-K7-k4S" secondAttribute="bottom" constant="43" id="TxR-cR-gSj"/>
                         <constraint firstAttribute="trailing" secondItem="YkT-Qw-EYn" secondAttribute="trailing" constant="30" id="WR2-Je-hxa"/>
                         <constraint firstItem="NCB-K7-k4S" firstAttribute="top" secondItem="Enk-9c-eJk" secondAttribute="top" constant="45" id="egv-Gu-nhd"/>
@@ -81,6 +82,7 @@
                         <constraint firstAttribute="trailing" secondItem="NCB-K7-k4S" secondAttribute="trailing" constant="20" id="fQM-Ri-7le"/>
                         <constraint firstItem="NCB-K7-k4S" firstAttribute="top" secondItem="Enk-9c-eJk" secondAttribute="top" constant="42" id="l2z-0x-aPV"/>
                         <constraint firstItem="YkT-Qw-EYn" firstAttribute="leading" secondItem="Enk-9c-eJk" secondAttribute="leading" constant="20" id="r2V-Oa-iz3"/>
+                        <constraint firstItem="UAX-rl-biu" firstAttribute="centerY" secondItem="NCB-K7-k4S" secondAttribute="centerY" id="rLh-AJ-ato"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
@@ -151,22 +153,13 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="f2E-yW-bSo" secondAttribute="trailing" id="2GZ-HS-VBF"/>
                 <constraint firstAttribute="trailing" secondItem="Enk-9c-eJk" secondAttribute="trailing" id="5NS-3P-4Lq"/>
-                <constraint firstItem="LTh-iI-pwb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6ha-IC-s6j"/>
-                <constraint firstItem="LTh-iI-pwb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="BqI-Uq-lgb"/>
                 <constraint firstItem="f2E-yW-bSo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="CNq-E4-DqU"/>
                 <constraint firstItem="Enk-9c-eJk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="HqV-mc-iyY"/>
                 <constraint firstItem="Enk-9c-eJk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="INF-dz-lr5"/>
                 <constraint firstItem="f2E-yW-bSo" firstAttribute="top" secondItem="Enk-9c-eJk" secondAttribute="bottom" id="P2n-m5-haH"/>
-                <constraint firstAttribute="bottom" secondItem="Enk-9c-eJk" secondAttribute="bottom" constant="380" id="gg8-h0-1YD"/>
-                <constraint firstAttribute="trailing" secondItem="LTh-iI-pwb" secondAttribute="trailing" id="wRY-T3-znm"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="gg8-h0-1YD"/>
-                </mask>
-            </variation>
             <point key="canvasLocation" x="481" y="161"/>
         </view>
     </objects>

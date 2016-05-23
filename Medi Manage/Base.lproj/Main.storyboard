@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="r6M-mj-iXb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -743,7 +743,7 @@
                                 <rect key="frame" x="53" y="175" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="rfz-2B-B0l" kind="show" id="DXE-6l-h6p"/>
+                                    <segue destination="rfz-2B-B0l" kind="show" identifier="helplineToClaimImmitation" id="DXE-6l-h6p"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -789,12 +789,9 @@
                                         <state key="normal" title="Add New Claim">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                    </button>
-                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbr-Wt-2d8">
-                                        <rect key="frame" x="141" y="45" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
                                         <connections>
-                                            <segue destination="A4M-Ka-07a" kind="show" id="PJm-C0-xKL"/>
+                                            <action selector="benefitSummaryCall:" destination="rfz-2B-B0l" eventType="touchUpInside" id="eqE-Wx-hNg"/>
+                                            <segue destination="A4M-Ka-07a" kind="show" identifier="claimImmitationToBenefitSummary" id="Fd0-Kb-oOf"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1051,7 +1048,7 @@
                                 <rect key="frame" x="137" y="225" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="3eb-do-LtT" kind="show" id="7so-zj-WGL"/>
+                                    <segue destination="3eb-do-LtT" kind="show" identifier="benefitSummaryToHospitalSearch" id="7so-zj-WGL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1079,7 +1076,7 @@
                                 <rect key="frame" x="137" y="321" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="zcf-UU-fHe" kind="show" id="OAS-We-EY0"/>
+                                    <segue destination="zcf-UU-fHe" kind="show" identifier="hospitalSearchToHospitalResult" id="OAS-We-EY0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1306,12 +1303,24 @@
                                                         <constraint firstAttribute="bottom" secondItem="1y0-Dl-6kJ" secondAttribute="bottom" constant="10" id="wQW-yB-cCN"/>
                                                     </constraints>
                                                 </view>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UGT-kq-aIq">
+                                                    <rect key="frame" x="0.0" y="5" width="328" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="70" id="8pA-tQ-Wbc"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="inboxCall:" destination="zcf-UU-fHe" eventType="touchUpInside" id="lOf-T2-HYg"/>
+                                                        <segue destination="Yob-a2-WNP" kind="show" identifier="benefitResultsToInbox" id="weY-Pc-fhq"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="1aR-EN-sDJ" firstAttribute="top" secondItem="UlX-yk-yes" secondAttribute="bottom" constant="4" id="0L1-ja-mw9"/>
                                                 <constraint firstItem="3bJ-RM-sid" firstAttribute="leading" secondItem="aHw-tb-Igb" secondAttribute="leadingMargin" constant="-8" id="99Q-c5-S25"/>
                                                 <constraint firstItem="UlX-yk-yes" firstAttribute="top" secondItem="aHw-tb-Igb" secondAttribute="topMargin" constant="-8" id="9HU-62-4Ni"/>
+                                                <constraint firstItem="UGT-kq-aIq" firstAttribute="top" secondItem="UlX-yk-yes" secondAttribute="bottom" id="9hd-lg-9Xq"/>
                                                 <constraint firstItem="T0E-J2-jHg" firstAttribute="top" secondItem="UlX-yk-yes" secondAttribute="bottom" id="CGl-JW-Yur"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="UGT-kq-aIq" secondAttribute="trailing" constant="-8" id="Dg0-ug-GJO"/>
                                                 <constraint firstItem="UlX-yk-yes" firstAttribute="leading" secondItem="aHw-tb-Igb" secondAttribute="leadingMargin" constant="-8" id="K0q-b2-JL3"/>
                                                 <constraint firstItem="2ci-0h-5kO" firstAttribute="leading" secondItem="aHw-tb-Igb" secondAttribute="leadingMargin" constant="13" id="NJr-XB-GVv"/>
                                                 <constraint firstItem="3bJ-RM-sid" firstAttribute="top" secondItem="T0E-J2-jHg" secondAttribute="bottom" id="Pnj-To-iyq"/>
@@ -1319,6 +1328,7 @@
                                                 <constraint firstItem="T0E-J2-jHg" firstAttribute="leading" secondItem="aHw-tb-Igb" secondAttribute="leadingMargin" constant="-8" id="WVJ-6S-ONw"/>
                                                 <constraint firstItem="2ci-0h-5kO" firstAttribute="top" secondItem="bPn-vk-iQq" secondAttribute="bottom" constant="8" id="YTR-aD-zcU"/>
                                                 <constraint firstItem="1aR-EN-sDJ" firstAttribute="leading" secondItem="bPn-vk-iQq" secondAttribute="trailing" constant="8" id="Zns-ID-xA7"/>
+                                                <constraint firstItem="UGT-kq-aIq" firstAttribute="leading" secondItem="aHw-tb-Igb" secondAttribute="leadingMargin" constant="-8" id="acE-rV-I2O"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="UlX-yk-yes" secondAttribute="trailing" constant="-8" id="gn7-Po-bP0"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="T0E-J2-jHg" secondAttribute="trailing" constant="-8" id="pE9-GA-MG1"/>
                                                 <constraint firstItem="7Rd-U6-ZCr" firstAttribute="top" secondItem="1aR-EN-sDJ" secondAttribute="bottom" constant="1" id="t3A-Uj-6vi"/>
@@ -1342,13 +1352,6 @@
                                     <outlet property="delegate" destination="zcf-UU-fHe" id="fz9-Jx-fkH"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UGT-kq-aIq">
-                                <rect key="frame" x="137" y="35" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="Yob-a2-WNP" kind="show" id="weY-Pc-fhq"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

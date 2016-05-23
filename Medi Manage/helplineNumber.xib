@@ -13,7 +13,7 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="helplineNumber" customModule="Medi_Manage" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="helplineNumber" customModule="MediManage" customModuleProvider="target">
             <connections>
                 <outlet property="helplineNumberMainView" destination="iN0-l3-epB" id="aLP-tm-zEr"/>
             </connections>
@@ -122,11 +122,23 @@
                         </mask>
                     </variation>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6f-E8-UYK">
+                    <rect key="frame" x="20" y="155" width="280" height="170"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="170" id="kBk-Ie-eNr"/>
+                    </constraints>
+                    <connections>
+                        <action selector="claimImmitationCall:" destination="-1" eventType="touchUpInside" id="Yyo-rh-gAR"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="x6f-E8-UYK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="2eO-8Y-TLq"/>
                 <constraint firstItem="q7a-Rd-acw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="YSe-Rg-DHX"/>
                 <constraint firstItem="q7a-Rd-acw" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="hCA-aC-W6u"/>
+                <constraint firstItem="x6f-E8-UYK" firstAttribute="top" secondItem="q7a-Rd-acw" secondAttribute="top" id="oKS-Ke-G8H"/>
+                <constraint firstAttribute="trailing" secondItem="x6f-E8-UYK" secondAttribute="trailing" constant="20" id="sZA-WE-0h8"/>
                 <constraint firstAttribute="trailing" secondItem="q7a-Rd-acw" secondAttribute="trailing" constant="20" id="tif-8y-k1M"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

@@ -67,6 +67,9 @@ import UIKit
         addBottomBorder(UIColor.blackColor(), linewidth: 0.5, myView: hospitalName)
     }
 
+    @IBAction func hospitalResultCall(sender: AnyObject) {
+        gHospitalSearchController.performSegueWithIdentifier("hospitalSearchToHospitalResult", sender: nil)
+    }
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

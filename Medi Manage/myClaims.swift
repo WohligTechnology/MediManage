@@ -11,7 +11,6 @@ import UIKit
 @IBDesignable class myClaims: UIView {
     
     @IBOutlet var myClaimsMainView: UIView!
-    @IBOutlet weak var dummyButton: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,17 +48,15 @@ import UIKit
         
         myClaimsMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height - 175)
         
-        dummyButton.layer.zPosition = 10000
-        
 //        let repeated = UIView(frame: CGRectMake(0, 320, self.frame.size.width, self.frame.size.height - 175))
-//        repeated.addSubview(myClaimsMainView)
+//        myClaimsMainView.addSubview(repeated)
 //        self.addSubview(repeated)
         
     }
-
     @IBAction func preAuthOneCall(sender: AnyObject) {
         gMyClaimController.performSegueWithIdentifier("myClaimsToPreAuthOne", sender: nil)
     }
+    
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
