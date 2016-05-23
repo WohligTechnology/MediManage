@@ -56,6 +56,10 @@ import UIKit
         // add borders
         addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: queryTextfield)
     }
+    
+    @IBAction func helplineCall(sender: AnyObject) {
+        gQueryFormController.performSegueWithIdentifier("queryFormToHelpline", sender: nil)
+    }
 
     /*
     // Only override drawRect: if you perform custom drawing.

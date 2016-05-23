@@ -25,7 +25,7 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="queryForm" customModule="Medi_Manage" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="queryForm" customModule="MediManage" customModuleProvider="target">
             <connections>
                 <outlet property="queryFormMainView" destination="iN0-l3-epB" id="e3f-O6-Wom"/>
                 <outlet property="queryTextfield" destination="aH5-kA-DLf" id="Wnz-Cc-fLh"/>
@@ -163,6 +163,9 @@ YXJlbnRzA
                     <state key="normal" title="Submit">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="helplineCall:" destination="-1" eventType="touchUpInside" id="3wl-WL-Vfm"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -183,7 +186,7 @@ YXJlbnRzA
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="632" y="443"/>
+            <point key="canvasLocation" x="-73" y="385"/>
         </view>
     </objects>
     <resources>

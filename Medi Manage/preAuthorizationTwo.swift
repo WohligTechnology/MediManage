@@ -83,6 +83,9 @@ import UIKit
         initialApprovalImage.layer.zPosition = 10
         finalApprovalImage.layer.zPosition = 10
     }
+    @IBAction func queryFormCall(sender: AnyObject) {
+        gPreAuthorizationTwoController.performSegueWithIdentifier("preAuthoTwoToQueryForm", sender: nil)
+    }
 
     /*
     // Only override drawRect: if you perform custom drawing.

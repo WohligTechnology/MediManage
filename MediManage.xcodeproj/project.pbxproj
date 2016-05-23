@@ -60,6 +60,8 @@
 		3AD3E5281CE1DE1D00900A93 /* enrollmentMembers.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD3E5271CE1DE1D00900A93 /* enrollmentMembers.xib */; };
 		3AD3E52A1CE1F87B00900A93 /* enrollmentMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD3E5291CE1F87B00900A93 /* enrollmentMembers.swift */; };
 		3AD3E52D1CE20A1900900A93 /* premiumCalculation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD3E52C1CE20A1900900A93 /* premiumCalculation.xib */; };
+		3AE7AFE01CF2D0C10047DFB0 /* QueryFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7AFDF1CF2D0C10047DFB0 /* QueryFormController.swift */; };
+		3AE7AFE21CF2D3190047DFB0 /* HelplineNumberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7AFE11CF2D3190047DFB0 /* HelplineNumberController.swift */; };
 		3AEEB00E1CE7023E0085EEF5 /* subHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB00D1CE7023E0085EEF5 /* subHeader.xib */; };
 		3AEEB0101CE705B60085EEF5 /* subHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB00F1CE705B60085EEF5 /* subHeader.swift */; };
 		3AEEB0131CE70F3D0085EEF5 /* helpDesk.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB0121CE70F3D0085EEF5 /* helpDesk.xib */; };
@@ -177,6 +179,8 @@
 		3AD3E5271CE1DE1D00900A93 /* enrollmentMembers.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = enrollmentMembers.xib; sourceTree = "<group>"; };
 		3AD3E5291CE1F87B00900A93 /* enrollmentMembers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enrollmentMembers.swift; sourceTree = "<group>"; };
 		3AD3E52C1CE20A1900900A93 /* premiumCalculation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = premiumCalculation.xib; sourceTree = "<group>"; };
+		3AE7AFDF1CF2D0C10047DFB0 /* QueryFormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryFormController.swift; sourceTree = "<group>"; };
+		3AE7AFE11CF2D3190047DFB0 /* HelplineNumberController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelplineNumberController.swift; sourceTree = "<group>"; };
 		3AEEB00D1CE7023E0085EEF5 /* subHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = subHeader.xib; sourceTree = "<group>"; };
 		3AEEB00F1CE705B60085EEF5 /* subHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = subHeader.swift; sourceTree = "<group>"; };
 		3AEEB0121CE70F3D0085EEF5 /* helpDesk.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = helpDesk.xib; sourceTree = "<group>"; };
@@ -594,6 +598,8 @@
 				3A79A7CA1CF06702008B693B /* MyClaimController.swift */,
 				3A79A7CC1CF06AA0008B693B /* PreAuthorizationOneController.swift */,
 				3A79A7CE1CF06ADC008B693B /* PreAuthorizationTwoController.swift */,
+				3AE7AFDF1CF2D0C10047DFB0 /* QueryFormController.swift */,
+				3AE7AFE11CF2D3190047DFB0 /* HelplineNumberController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -872,6 +878,7 @@
 				3A01752C1CE360FF00832E49 /* insuredMembers.swift in Sources */,
 				3ACFB2A21CE4C3A0003766D8 /* MemberListController.swift in Sources */,
 				3A79A7C71CF045F0008B693B /* ConnectController.swift in Sources */,
+				3AE7AFE21CF2D3190047DFB0 /* HelplineNumberController.swift in Sources */,
 				3A8EFB621CE9E742004489F3 /* claimForm.swift in Sources */,
 				3A677B691CE4B539003B8C2B /* CompleteProfileController.swift in Sources */,
 				3A79A7C91CF06652008B693B /* ClaimFormController.swift in Sources */,
@@ -902,6 +909,7 @@
 				78B90BDB1CE067DA0022FE7A /* enterOTP.swift in Sources */,
 				3A1A5AE11CEC988A00AD2564 /* DocumentChecklistController.swift in Sources */,
 				3AEEB0171CE7344C0085EEF5 /* HelpDeskController.swift in Sources */,
+				3AE7AFE01CF2D0C10047DFB0 /* QueryFormController.swift in Sources */,
 				3A8EFB581CE9CA54004489F3 /* inbox.swift in Sources */,
 				3A79A7CF1CF06ADC008B693B /* PreAuthorizationTwoController.swift in Sources */,
 				3A8EFB531CE9A463004489F3 /* hospitalSearch.swift in Sources */,
