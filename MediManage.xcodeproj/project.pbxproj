@@ -65,6 +65,7 @@
 		3AE7AFE41CF2D8C80047DFB0 /* BenefitSummaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7AFE31CF2D8C80047DFB0 /* BenefitSummaryController.swift */; };
 		3AE7AFE61CF2D9060047DFB0 /* HospitalSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7AFE51CF2D9060047DFB0 /* HospitalSearchController.swift */; };
 		3AE7AFE81CF2D9330047DFB0 /* InboxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7AFE71CF2D9330047DFB0 /* InboxController.swift */; };
+		3AE7AFEA1CF33DD80047DFB0 /* splashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7AFE91CF33DD80047DFB0 /* splashScreen.swift */; };
 		3AEEB00E1CE7023E0085EEF5 /* subHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB00D1CE7023E0085EEF5 /* subHeader.xib */; };
 		3AEEB0101CE705B60085EEF5 /* subHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB00F1CE705B60085EEF5 /* subHeader.swift */; };
 		3AEEB0131CE70F3D0085EEF5 /* helpDesk.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB0121CE70F3D0085EEF5 /* helpDesk.xib */; };
@@ -187,6 +188,7 @@
 		3AE7AFE31CF2D8C80047DFB0 /* BenefitSummaryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BenefitSummaryController.swift; sourceTree = "<group>"; };
 		3AE7AFE51CF2D9060047DFB0 /* HospitalSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalSearchController.swift; sourceTree = "<group>"; };
 		3AE7AFE71CF2D9330047DFB0 /* InboxController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxController.swift; sourceTree = "<group>"; };
+		3AE7AFE91CF33DD80047DFB0 /* splashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = splashScreen.swift; sourceTree = "<group>"; };
 		3AEEB00D1CE7023E0085EEF5 /* subHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = subHeader.xib; sourceTree = "<group>"; };
 		3AEEB00F1CE705B60085EEF5 /* subHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = subHeader.swift; sourceTree = "<group>"; };
 		3AEEB0121CE70F3D0085EEF5 /* helpDesk.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = helpDesk.xib; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				3A31911C1CEF41D7001DCBBC /* splashScreen.xib */,
+				3AE7AFE91CF33DD80047DFB0 /* splashScreen.swift */,
 			);
 			name = splashScreen;
 			sourceTree = "<group>";
@@ -892,6 +895,7 @@
 				3A677B691CE4B539003B8C2B /* CompleteProfileController.swift in Sources */,
 				3A79A7C91CF06652008B693B /* ClaimFormController.swift in Sources */,
 				3A31911A1CEF40AB001DCBBC /* PageViewerController.swift in Sources */,
+				3AE7AFEA1CF33DD80047DFB0 /* splashScreen.swift in Sources */,
 				783322B51CDB7B4F0015CE37 /* completeProfile.swift in Sources */,
 				3A0175311CE369AB00832E49 /* header.swift in Sources */,
 				3A677B6D1CE4BBDE003B8C2B /* GenerateOTPController.swift in Sources */,
