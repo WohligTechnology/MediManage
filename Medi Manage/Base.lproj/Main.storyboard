@@ -1415,7 +1415,7 @@
                         <viewControllerLayoutGuide type="top" id="z2d-aS-mse"/>
                         <viewControllerLayoutGuide type="bottom" id="hQl-X3-VGb"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tge-5n-7Vw">
+                    <view key="view" contentMode="scaleToFill" id="tge-5n-7Vw" customClass="splashScreen" customModule="MediManage" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

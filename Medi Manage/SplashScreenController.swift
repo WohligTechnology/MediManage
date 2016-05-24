@@ -22,7 +22,6 @@ class SplashScreenController: UIViewController {
         myimage.image = image
         self.view.addSubview(myimage)
         
-        
         // Do any additional setup after loading the view.
     }
 
