@@ -8,7 +8,7 @@
 
 import UIKit
 
-class tutorial: UIView {
+@IBDesignable class tutorial: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,7 +28,15 @@ class tutorial: UIView {
         tutorial.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(tutorial)
     }
+    
+    @IBAction func signUpCall(sender: AnyObject) {
+        gTutorialController.performSegueWithIdentifier("tutorialToSignUp", sender: nil)
+    }
 
+    @IBAction func signInCall(sender: AnyObject) {
+        gTutorialController.performSegueWithIdentifier("tutorialToSignIn", sender: nil)
+    }
+    
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

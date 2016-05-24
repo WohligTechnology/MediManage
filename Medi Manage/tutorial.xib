@@ -27,6 +27,9 @@
                             <state key="normal" title="Sign up">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="signUpCall:" destination="-1" eventType="touchUpInside" id="0g0-m6-VU6"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPS-V8-3l1">
                             <rect key="frame" x="207" y="0.0" width="207" height="60"/>
@@ -35,6 +38,9 @@
                             <state key="normal" title="Sign in">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="signInCall:" destination="-1" eventType="touchUpInside" id="oa3-Hf-7wN"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>
