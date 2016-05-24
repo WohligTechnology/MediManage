@@ -32,6 +32,7 @@
 		3A74A7D01CF41FCA00592B3E /* tutorial.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A74A7CF1CF41FCA00592B3E /* tutorial.xib */; };
 		3A74A7D21CF4216500592B3E /* tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A74A7D11CF4216500592B3E /* tutorial.swift */; };
 		3A74A7D41CF422DA00592B3E /* TutorialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A74A7D31CF422DA00592B3E /* TutorialController.swift */; };
+		3A74A7D71CF43BFC00592B3E /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A74A7D61CF43BFC00592B3E /* MainMenuController.swift */; };
 		3A79A7C21CF0431E008B693B /* HelpDeskFAQController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79A7C11CF0431E008B693B /* HelpDeskFAQController.swift */; };
 		3A79A7C51CF044DF008B693B /* HelpDeskQueryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79A7C41CF044DF008B693B /* HelpDeskQueryController.swift */; };
 		3A79A7C71CF045F0008B693B /* ConnectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79A7C61CF045F0008B693B /* ConnectController.swift */; };
@@ -157,6 +158,7 @@
 		3A74A7CF1CF41FCA00592B3E /* tutorial.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tutorial.xib; sourceTree = "<group>"; };
 		3A74A7D11CF4216500592B3E /* tutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tutorial.swift; sourceTree = "<group>"; };
 		3A74A7D31CF422DA00592B3E /* TutorialController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialController.swift; sourceTree = "<group>"; };
+		3A74A7D61CF43BFC00592B3E /* MainMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
 		3A79A7C11CF0431E008B693B /* HelpDeskFAQController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpDeskFAQController.swift; sourceTree = "<group>"; };
 		3A79A7C41CF044DF008B693B /* HelpDeskQueryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpDeskQueryController.swift; sourceTree = "<group>"; };
 		3A79A7C61CF045F0008B693B /* ConnectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectController.swift; sourceTree = "<group>"; };
@@ -625,6 +627,7 @@
 				3AE7AFE51CF2D9060047DFB0 /* HospitalSearchController.swift */,
 				3AE7AFE71CF2D9330047DFB0 /* InboxController.swift */,
 				3A74A7D31CF422DA00592B3E /* TutorialController.swift */,
+				3A74A7D61CF43BFC00592B3E /* MainMenuController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -941,6 +944,7 @@
 				3A8EFB581CE9CA54004489F3 /* inbox.swift in Sources */,
 				3AE7AFE61CF2D9060047DFB0 /* HospitalSearchController.swift in Sources */,
 				3A79A7CF1CF06ADC008B693B /* PreAuthorizationTwoController.swift in Sources */,
+				3A74A7D71CF43BFC00592B3E /* MainMenuController.swift in Sources */,
 				3A8EFB531CE9A463004489F3 /* hospitalSearch.swift in Sources */,
 				78B90BD51CE0676E0022FE7A /* generateOTP.swift in Sources */,
 				3AFE38991CE472CE0062A497 /* memberList.swift in Sources */,

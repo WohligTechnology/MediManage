@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WoX-5m-1V4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8qg-Oc-jM8">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -339,6 +339,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZaZ-Hy-CoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1580" y="180"/>
+        </scene>
+        <!--Main Menu Controller-->
+        <scene sceneID="VD3-34-bgu">
+            <objects>
+                <viewController id="8qg-Oc-jM8" customClass="MainMenuController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6W3-PL-fYg"/>
+                        <viewControllerLayoutGuide type="bottom" id="Eac-hH-KFa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Dz-U6-6kN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l5h-gc-awo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-24" y="1462"/>
         </scene>
         <!--Main Claims Controller-->
         <scene sceneID="cnZ-l8-HiF">
@@ -1238,7 +1257,7 @@
                                                     </constraints>
                                                     <string key="text">Building No. E/5, Highland Park, guru Gobind Singh Road, Jai Shastri Nagar, Mulund Colony, Mulund (West), Mumbai - 400 082-400022</string>
                                                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="12"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bJ-RM-sid">
@@ -1257,7 +1276,7 @@
                                                                 <constraint firstAttribute="height" constant="20" id="dp2-E8-bwb"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25912129" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cl6-ZS-7yF">
@@ -1266,7 +1285,7 @@
                                                                 <constraint firstAttribute="height" constant="20" id="M18-Ol-ngc"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="direction_icon" translatesAutoresizingMaskIntoConstraints="NO" id="1y0-Dl-6kJ">
@@ -1282,7 +1301,7 @@
                                                                 <constraint firstAttribute="height" constant="20" id="OL9-VI-fJz"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -1593,8 +1612,8 @@
         <image name="search_icon" width="53" height="69"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Usm-li-CcL"/>
-        <segue reference="LXm-Lb-FcH"/>
+        <segue reference="Oo4-D3-Nsi"/>
+        <segue reference="PAS-j4-dnW"/>
         <segue reference="wgK-eO-Wod"/>
         <segue reference="QCt-6c-YRM"/>
     </inferredMetricsTieBreakers>

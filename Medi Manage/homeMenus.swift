@@ -10,6 +10,10 @@ import UIKit
 
 class homeMenus: UIView {
     
+    @IBOutlet var homeMenuMainView: UIView!
+    @IBOutlet weak var menuImage: UIImageView!
+    @IBOutlet weak var menuTitle: UILabel!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
