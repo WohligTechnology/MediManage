@@ -30,37 +30,42 @@ class MainMenuController: UIViewController {
         self.view.bounds.origin.y = -70
         self.view.frame.size.height = self.view.frame.size.height - 70
         
-        // 1 2 3 4 5 6
+        // 1
         let insuredMembers = homeMenus(frame: CGRectMake(0, 0, width / 2, self.view.frame.size.height / 3))
         insuredMembers.homeMenuMainView.backgroundColor = UIColor.whiteColor()
         insuredMembers.menuImage.image = UIImage(named: "menu_one")
         insuredMembers.menuTitle.text = "Insured Members"
         self.view.addSubview(insuredMembers)
         
+        // 2
         let claims = homeMenus(frame: CGRectMake(width / 2, 0, width / 2, self.view.frame.size.height / 3))
         claims.homeMenuMainView.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 255/255)
         claims.menuImage.image = UIImage(named: "menu_two")
         claims.menuTitle.text = "Claims"
         self.view.addSubview(claims)
         
+        // 3
         let benefitSummary = homeMenus(frame: CGRectMake(0, self.view.frame.size.height / 3, width / 2, self.view.frame.size.height / 3))
         benefitSummary.homeMenuMainView.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 255/255)
         benefitSummary.menuImage.image = UIImage(named: "menu_three")
         benefitSummary.menuTitle.text = "Benefit Summary"
         self.view.addSubview(benefitSummary)
         
+        // 4
         let helpdesk = homeMenus(frame: CGRectMake(width / 2, self.view.frame.size.height / 3, width / 2, self.view.frame.size.height / 3))
         helpdesk.homeMenuMainView.backgroundColor = UIColor.whiteColor()
         helpdesk.menuImage.image = UIImage(named: "menu_four")
         helpdesk.menuTitle.text = "Helpdesk"
         self.view.addSubview(helpdesk)
         
+        // 5
         let hospitalSearch = homeMenus(frame: CGRectMake(0, self.view.frame.size.height / 1.5, width / 2, self.view.frame.size.height / 3))
         hospitalSearch.homeMenuMainView.backgroundColor = UIColor.whiteColor()
         hospitalSearch.menuImage.image = UIImage(named: "menu_five")
         hospitalSearch.menuTitle.text = "Hospital Search"
         self.view.addSubview(hospitalSearch)
         
+        // 6
         let connect = homeMenus(frame: CGRectMake(width / 2, self.view.frame.size.height / 1.5, width / 2, self.view.frame.size.height / 3))
         connect.homeMenuMainView.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 255/255)
         connect.menuImage.image = UIImage(named: "menu_six")
