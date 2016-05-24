@@ -29,6 +29,7 @@
 		3A72C7291CEB28D600B5412E /* preAuthorizationOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72C7281CEB28D600B5412E /* preAuthorizationOne.swift */; };
 		3A72C72C1CEB454100B5412E /* helplineNumber.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A72C72B1CEB454100B5412E /* helplineNumber.xib */; };
 		3A72C72E1CEB4F7500B5412E /* helplineNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72C72D1CEB4F7500B5412E /* helplineNumber.swift */; };
+		3A74A7D01CF41FCA00592B3E /* tutorial.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A74A7CF1CF41FCA00592B3E /* tutorial.xib */; };
 		3A79A7C21CF0431E008B693B /* HelpDeskFAQController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79A7C11CF0431E008B693B /* HelpDeskFAQController.swift */; };
 		3A79A7C51CF044DF008B693B /* HelpDeskQueryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79A7C41CF044DF008B693B /* HelpDeskQueryController.swift */; };
 		3A79A7C71CF045F0008B693B /* ConnectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79A7C61CF045F0008B693B /* ConnectController.swift */; };
@@ -151,6 +152,7 @@
 		3A72C7281CEB28D600B5412E /* preAuthorizationOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = preAuthorizationOne.swift; sourceTree = "<group>"; };
 		3A72C72B1CEB454100B5412E /* helplineNumber.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = helplineNumber.xib; sourceTree = "<group>"; };
 		3A72C72D1CEB4F7500B5412E /* helplineNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = helplineNumber.swift; sourceTree = "<group>"; };
+		3A74A7CF1CF41FCA00592B3E /* tutorial.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tutorial.xib; sourceTree = "<group>"; };
 		3A79A7C11CF0431E008B693B /* HelpDeskFAQController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpDeskFAQController.swift; sourceTree = "<group>"; };
 		3A79A7C41CF044DF008B693B /* HelpDeskQueryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpDeskQueryController.swift; sourceTree = "<group>"; };
 		3A79A7C61CF045F0008B693B /* ConnectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectController.swift; sourceTree = "<group>"; };
@@ -315,6 +317,14 @@
 				3A72C72D1CEB4F7500B5412E /* helplineNumber.swift */,
 			);
 			name = helplineNumber;
+			sourceTree = "<group>";
+		};
+		3A74A7CE1CF41F6100592B3E /* tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				3A74A7CF1CF41FCA00592B3E /* tutorial.xib */,
+			);
+			name = tutorial;
 			sourceTree = "<group>";
 		};
 		3A8774BA1CEC3751001DB41F /* preAuthorizationTwo */ = {
@@ -616,6 +626,7 @@
 		786DFA291CD2282700DDE769 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3A74A7CE1CF41F6100592B3E /* tutorial */,
 				3A31911B1CEF41C0001DCBBC /* splashScreen */,
 				3A992F021CED916300D85D8A /* benefitSummary */,
 				3A8774BF1CEC4165001DB41F /* queryForm */,
@@ -844,6 +855,7 @@
 				3AC43DCF1CE9FC1500ED2523 /* myClaims.xib in Resources */,
 				3AEEB0131CE70F3D0085EEF5 /* helpDesk.xib in Resources */,
 				783322951CD9FB1B0015CE37 /* login.xib in Resources */,
+				3A74A7D01CF41FCA00592B3E /* tutorial.xib in Resources */,
 				C2A59E931CDDDF700093CFEC /* Lato-Regular.ttf in Resources */,
 				783322B71CDB7B620015CE37 /* completeProfile.xib in Resources */,
 				78B90BD91CE067950022FE7A /* enterOTP.xib in Resources */,
