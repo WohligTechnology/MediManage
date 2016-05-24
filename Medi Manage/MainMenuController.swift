@@ -9,9 +9,10 @@
 import UIKit
 
 var gMainMenuController: UIViewController!
+var storyboard: UIStoryboard? = UIStoryboard(name: "Main", bundle: nil)
 
-class MainMenuController: UIViewController {
-
+class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,6 +37,9 @@ class MainMenuController: UIViewController {
         insuredMembers.menuImage.image = UIImage(named: "menu_one")
         insuredMembers.menuTitle.text = "Insured Members"
         self.view.addSubview(insuredMembers)
+        let insuredMembersTap = UITapGestureRecognizer(target: self, action: Selector("insuredMembersTap:"))
+        insuredMembersTap.delegate = self
+        insuredMembers.addGestureRecognizer(insuredMembersTap)
         
         // 2
         let claims = homeMenus(frame: CGRectMake(width / 2, 0, width / 2, self.view.frame.size.height / 3))
@@ -43,6 +47,9 @@ class MainMenuController: UIViewController {
         claims.menuImage.image = UIImage(named: "menu_two")
         claims.menuTitle.text = "Claims"
         self.view.addSubview(claims)
+        let claimsTap = UITapGestureRecognizer(target: self, action: Selector("claimsTap:"))
+        claimsTap.delegate = self
+        claims.addGestureRecognizer(claimsTap)
         
         // 3
         let benefitSummary = homeMenus(frame: CGRectMake(0, self.view.frame.size.height / 3, width / 2, self.view.frame.size.height / 3))
@@ -50,6 +57,9 @@ class MainMenuController: UIViewController {
         benefitSummary.menuImage.image = UIImage(named: "menu_three")
         benefitSummary.menuTitle.text = "Benefit Summary"
         self.view.addSubview(benefitSummary)
+        let benefitSummaryTap = UITapGestureRecognizer(target: self, action: Selector("benefitSummaryTap:"))
+        benefitSummaryTap.delegate = self
+        benefitSummary.addGestureRecognizer(benefitSummaryTap)
         
         // 4
         let helpdesk = homeMenus(frame: CGRectMake(width / 2, self.view.frame.size.height / 3, width / 2, self.view.frame.size.height / 3))
@@ -57,6 +67,9 @@ class MainMenuController: UIViewController {
         helpdesk.menuImage.image = UIImage(named: "menu_four")
         helpdesk.menuTitle.text = "Helpdesk"
         self.view.addSubview(helpdesk)
+        let helpdeskTap = UITapGestureRecognizer(target: self, action: Selector("helpdeskTap:"))
+        helpdeskTap.delegate = self
+        helpdesk.addGestureRecognizer(helpdeskTap)
         
         // 5
         let hospitalSearch = homeMenus(frame: CGRectMake(0, self.view.frame.size.height / 1.5, width / 2, self.view.frame.size.height / 3))
@@ -64,6 +77,9 @@ class MainMenuController: UIViewController {
         hospitalSearch.menuImage.image = UIImage(named: "menu_five")
         hospitalSearch.menuTitle.text = "Hospital Search"
         self.view.addSubview(hospitalSearch)
+        let hospitalSearchTap = UITapGestureRecognizer(target: self, action: Selector("hospitalSearchTap:"))
+        hospitalSearchTap.delegate = self
+        hospitalSearch.addGestureRecognizer(hospitalSearchTap)
         
         // 6
         let connect = homeMenus(frame: CGRectMake(width / 2, self.view.frame.size.height / 1.5, width / 2, self.view.frame.size.height / 3))
@@ -71,6 +87,9 @@ class MainMenuController: UIViewController {
         connect.menuImage.image = UIImage(named: "menu_six")
         connect.menuTitle.text = "Connect"
         self.view.addSubview(connect)
+        let connectTap = UITapGestureRecognizer(target: self, action: Selector("connectTap:"))
+        connectTap.delegate = self
+        connect.addGestureRecognizer(connectTap)
 
         // Do any additional setup after loading the view.
     }
@@ -80,6 +99,35 @@ class MainMenuController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func insuredMembersTap(sender: UITapGestureRecognizer) {
+        let im: InsuredMembersController = storyboard?.instantiateViewControllerWithIdentifier("insuredMemberIdentifier") as! InsuredMembersController //insuredMemberIdentifier
+        self.presentViewController(im, animated: true, completion: nil)
+    }
+    
+    func claimsTap(sender: UITapGestureRecognizer) {
+        let im: MainClaimsController = storyboard?.instantiateViewControllerWithIdentifier("mainClaimsIdentifier") as! MainClaimsController //mainClaimsIdentifier
+        self.presentViewController(im, animated: true, completion: nil)
+    }
+    
+    func benefitSummaryTap(sender: UITapGestureRecognizer) {
+        let im: BenefitSummaryController = storyboard?.instantiateViewControllerWithIdentifier("benefitSummaryIdentifier") as! BenefitSummaryController //benefitSummaryIdentifier
+        self.presentViewController(im, animated: true, completion: nil)
+    }
+    
+    func helpdeskTap(sender: UITapGestureRecognizer) {
+        let im: HelpDeskController = storyboard?.instantiateViewControllerWithIdentifier("helpdeskIdentifier") as! HelpDeskController //helpdeskIdentifier
+        self.presentViewController(im, animated: true, completion: nil)
+    }
+    
+    func hospitalSearchTap(sender: UITapGestureRecognizer) {
+        let im: HospitalSearchController = storyboard?.instantiateViewControllerWithIdentifier("hospitalSearchIdentifier") as! HospitalSearchController //hospitalSearchIdentifier
+        self.presentViewController(im, animated: true, completion: nil)
+    }
+    
+    func connectTap(sender: UITapGestureRecognizer) {
+        let im: ConnectController = storyboard?.instantiateViewControllerWithIdentifier("connectIdentifier") as! ConnectController //connectIdentifier
+        self.presentViewController(im, animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

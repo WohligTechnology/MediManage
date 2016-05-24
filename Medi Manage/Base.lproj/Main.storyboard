@@ -315,7 +315,7 @@
         <!--Insured Members Controller-->
         <scene sceneID="lbr-HL-zhG">
             <objects>
-                <viewController id="cTe-eZ-3rn" customClass="InsuredMembersController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="insuredMemberIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cTe-eZ-3rn" customClass="InsuredMembersController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fme-sh-ngZ"/>
                         <viewControllerLayoutGuide type="bottom" id="4ii-CL-Ghl"/>
@@ -362,7 +362,7 @@
         <!--Main Claims Controller-->
         <scene sceneID="cnZ-l8-HiF">
             <objects>
-                <viewController id="xMa-F4-Ivl" customClass="MainClaimsController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainClaimsIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xMa-F4-Ivl" customClass="MainClaimsController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Z7-O4-tfH"/>
                         <viewControllerLayoutGuide type="bottom" id="vxf-Rx-VbC"/>
@@ -1054,7 +1054,7 @@
         <!--Benefit Summary Controller-->
         <scene sceneID="zXY-2C-ZUG">
             <objects>
-                <viewController id="A4M-Ka-07a" customClass="BenefitSummaryController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="benefitSummaryIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="A4M-Ka-07a" customClass="BenefitSummaryController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="I4x-a1-FRl"/>
                         <viewControllerLayoutGuide type="bottom" id="qto-5L-AaS"/>
@@ -1082,7 +1082,7 @@
         <!--Hospital Search Controller-->
         <scene sceneID="mQ4-Cc-ecH">
             <objects>
-                <viewController id="3eb-do-LtT" customClass="HospitalSearchController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="hospitalSearchIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3eb-do-LtT" customClass="HospitalSearchController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Q4h-fQ-Xrb"/>
                         <viewControllerLayoutGuide type="bottom" id="U6D-JU-snr"/>
@@ -1493,7 +1493,7 @@
         <!--Help Desk Controller-->
         <scene sceneID="hkv-BM-BAV">
             <objects>
-                <viewController id="WL9-QD-aTf" customClass="HelpDeskController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="helpdeskIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WL9-QD-aTf" customClass="HelpDeskController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RkX-Ic-5Wq"/>
                         <viewControllerLayoutGuide type="bottom" id="fOC-HF-hVB"/>
@@ -1578,7 +1578,7 @@
         <!--Connect Controller-->
         <scene sceneID="SR5-cc-YkG">
             <objects>
-                <viewController id="kjT-5A-5E0" customClass="ConnectController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="connectIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kjT-5A-5E0" customClass="ConnectController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="knv-0m-Ed2"/>
                         <viewControllerLayoutGuide type="bottom" id="C47-LC-WBL"/>
