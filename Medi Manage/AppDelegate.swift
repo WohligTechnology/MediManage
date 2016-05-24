@@ -17,10 +17,32 @@ let mainBlueColor = UIColor(red: 21/255, green: 177/255, blue: 230/255, alpha: 2
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    internal func createMenuView() {
+        
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        var nvc: UINavigationController!
+//        
+//        let leftViewController = storyboard.instantiateViewControllerWithIdentifier("sideMenu") as! MainMenuController
+//        
+//        let mainViewController = storyboard.instantiateViewControllerWithIdentifier("home") as! InsuredMembersController
+//        
+//        nvc = UINavigationController(rootViewController: mainViewController)
+//        
+//        leftViewController.mainViewController = nvc
+//        
+//        let slideMenuController = MainMenuController(mainViewController:nvc, leftMenuViewController: leftViewController)
+//        
+//        self.window?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
+//        self.window?.rootViewController = slideMenuController
+//        self.window?.makeKeyAndVisible()
+        
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        createMenuView()
         
 //        let pageController = UIPageControl.appearance()
 //        pageController.pageIndicatorTintColor = UIColor.lightGrayColor()
