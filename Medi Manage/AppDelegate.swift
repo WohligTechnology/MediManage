@@ -23,15 +23,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //        var nvc: UINavigationController!
 //        
-//        let leftViewController = storyboard.instantiateViewControllerWithIdentifier("sideMenu") as! MainMenuController
+//        let leftViewController = storyboard.instantiateViewControllerWithIdentifier("mainMenuIdentifier") as! MainMenuController
 //        
-//        let mainViewController = storyboard.instantiateViewControllerWithIdentifier("home") as! InsuredMembersController
+//        let mainViewController = storyboard.instantiateViewControllerWithIdentifier("insuredMemberIdentifier") as! InsuredMembersController
 //        
 //        nvc = UINavigationController(rootViewController: mainViewController)
 //        
-//        leftViewController.mainViewController = nvc
+//        leftViewController.insuredMembersController = nvc
 //        
-//        let slideMenuController = MainMenuController(mainViewController:nvc, leftMenuViewController: leftViewController)
+//        let slideMenuController = SlideMenuController(mainViewController:nvc, leftMenuViewController: leftViewController)
 //        
 //        self.window?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
 //        self.window?.rootViewController = slideMenuController

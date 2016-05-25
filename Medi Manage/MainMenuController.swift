@@ -13,6 +13,13 @@ var storyboard: UIStoryboard? = UIStoryboard(name: "Main", bundle: nil)
 
 class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
     
+    var insuredMembersController: UIViewController!
+    var mainClaimsController: UIViewController!
+    var benefitSummaryController: UIViewController!
+    var helpDeskController: UIViewController!
+    var hospitalSearchController: UIViewController!
+    var connectController: UIViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -101,6 +108,8 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
     
     func insuredMembersTap(sender: UITapGestureRecognizer) {
         let im: InsuredMembersController = storyboard?.instantiateViewControllerWithIdentifier("insuredMemberIdentifier") as! InsuredMembersController //insuredMemberIdentifier
+        //self.insuredMembersController = UINavigationController(rootViewController: im)
+        //self.slideMenuController()?.changeMainViewController(self.insuredMembersController, close: true)
         self.presentViewController(im, animated: true, completion: nil)
     }
     

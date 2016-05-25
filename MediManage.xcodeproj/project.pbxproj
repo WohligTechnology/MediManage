@@ -24,6 +24,7 @@
 		3A677B6B1CE4B90C003B8C2B /* RetrieveLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A677B6A1CE4B90C003B8C2B /* RetrieveLoginController.swift */; };
 		3A677B6D1CE4BBDE003B8C2B /* GenerateOTPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A677B6C1CE4BBDE003B8C2B /* GenerateOTPController.swift */; };
 		3A677B6F1CE4BEC0003B8C2B /* EnterOTPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A677B6E1CE4BEC0003B8C2B /* EnterOTPController.swift */; };
+		3A6C4E451CF48B3D0056D46F /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6C4E441CF48B3D0056D46F /* SlideMenuController.swift */; };
 		3A72C7251CEAE81100B5412E /* preAuthorizationOne.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A72C7241CEAE81100B5412E /* preAuthorizationOne.xib */; };
 		3A72C7271CEAEDC400B5412E /* MainClaimsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72C7261CEAEDC400B5412E /* MainClaimsController.swift */; };
 		3A72C7291CEB28D600B5412E /* preAuthorizationOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72C7281CEB28D600B5412E /* preAuthorizationOne.swift */; };
@@ -150,6 +151,7 @@
 		3A677B6A1CE4B90C003B8C2B /* RetrieveLoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetrieveLoginController.swift; sourceTree = "<group>"; };
 		3A677B6C1CE4BBDE003B8C2B /* GenerateOTPController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateOTPController.swift; sourceTree = "<group>"; };
 		3A677B6E1CE4BEC0003B8C2B /* EnterOTPController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterOTPController.swift; sourceTree = "<group>"; };
+		3A6C4E441CF48B3D0056D46F /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
 		3A72C7241CEAE81100B5412E /* preAuthorizationOne.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = preAuthorizationOne.xib; sourceTree = "<group>"; };
 		3A72C7261CEAEDC400B5412E /* MainClaimsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainClaimsController.swift; sourceTree = "<group>"; };
 		3A72C7281CEB28D600B5412E /* preAuthorizationOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = preAuthorizationOne.swift; sourceTree = "<group>"; };
@@ -589,6 +591,7 @@
 		786DFA271CD227F600DDE769 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				3A6C4E441CF48B3D0056D46F /* SlideMenuController.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -911,6 +914,7 @@
 				3AE7AFE21CF2D3190047DFB0 /* HelplineNumberController.swift in Sources */,
 				3A8EFB621CE9E742004489F3 /* claimForm.swift in Sources */,
 				3A677B691CE4B539003B8C2B /* CompleteProfileController.swift in Sources */,
+				3A6C4E451CF48B3D0056D46F /* SlideMenuController.swift in Sources */,
 				3A79A7C91CF06652008B693B /* ClaimFormController.swift in Sources */,
 				3A31911A1CEF40AB001DCBBC /* PageViewerController.swift in Sources */,
 				783322B51CDB7B4F0015CE37 /* completeProfile.swift in Sources */,
