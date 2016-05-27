@@ -84,7 +84,7 @@
                             <color key="textColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangle_blue_down" translatesAutoresizingMaskIntoConstraints="NO" id="bOC-oA-ZZa">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangle_blue_right" translatesAutoresizingMaskIntoConstraints="NO" id="bOC-oA-ZZa">
                             <rect key="frame" x="290" y="35" width="10" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="8bZ-1E-q8w"/>
@@ -126,7 +126,7 @@
                             <color key="textColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangle_blue_down" translatesAutoresizingMaskIntoConstraints="NO" id="MGe-W0-I0j">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangle_blue_right" translatesAutoresizingMaskIntoConstraints="NO" id="MGe-W0-I0j">
                             <rect key="frame" x="290" y="35" width="10" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="10" id="QOK-2z-uxD"/>
@@ -177,7 +177,7 @@
                             <color key="textColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangle_blue_down" translatesAutoresizingMaskIntoConstraints="NO" id="fE4-u9-oig">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangle_blue_right" translatesAutoresizingMaskIntoConstraints="NO" id="fE4-u9-oig">
                             <rect key="frame" x="290" y="35" width="10" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="10" id="o3c-mK-ZSY"/>
@@ -219,7 +219,7 @@
                             <color key="textColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangle_blue_down" translatesAutoresizingMaskIntoConstraints="NO" id="ClB-dJ-Fbc">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangle_blue_right" translatesAutoresizingMaskIntoConstraints="NO" id="ClB-dJ-Fbc">
                             <rect key="frame" x="290" y="35" width="10" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="5hn-Ca-upL"/>
@@ -269,5 +269,6 @@
     </objects>
     <resources>
         <image name="triangle_blue_down" width="38" height="33"/>
+        <image name="triangle_blue_right" width="33" height="38"/>
     </resources>
 </document>

@@ -71,7 +71,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvN-Dk-s74">
-                    <rect key="frame" x="44" y="388" width="232" height="50"/>
+                    <rect key="frame" x="44" y="377" width="232" height="50"/>
                     <color key="backgroundColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="WFF-3H-h8Y"/>
@@ -85,7 +85,7 @@
                     </connections>
                 </button>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qHT-hX-UHs">
-                    <rect key="frame" x="26" y="284" width="268" height="50"/>
+                    <rect key="frame" x="26" y="287" width="268" height="50"/>
                     <color key="backgroundColor" white="1" alpha="0.40272090519999998" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="qKb-Xx-6pD"/>
@@ -98,8 +98,8 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBT-EJ-xaV">
-                    <rect key="frame" x="35" y="216" width="250" height="14"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBT-EJ-xaV">
+                    <rect key="frame" x="26" y="233" width="268" height="14"/>
                     <attributedString key="attributedText">
                         <fragment content="Give your Mobile Number... ">
                             <attributes>
@@ -123,7 +123,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qoy-MA-Wba">
-                    <rect key="frame" x="140" y="446" width="40" height="29"/>
+                    <rect key="frame" x="140" y="437" width="40" height="29"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="40" id="lBz-No-IfN"/>
                     </constraints>
@@ -140,13 +140,13 @@
                 <constraint firstItem="qHT-hX-UHs" firstAttribute="leading" secondItem="PiS-sx-5ey" secondAttribute="leading" constant="26" id="3iJ-ve-CMv"/>
                 <constraint firstItem="D3w-oB-nuq" firstAttribute="leading" secondItem="PiS-sx-5ey" secondAttribute="leading" id="3uO-SQ-LrS"/>
                 <constraint firstAttribute="trailing" secondItem="hvN-Dk-s74" secondAttribute="trailing" constant="44" id="4VQ-Lw-vh4"/>
-                <constraint firstItem="qHT-hX-UHs" firstAttribute="top" secondItem="HBT-EJ-xaV" secondAttribute="bottom" constant="14" id="6b5-KD-KwR"/>
+                <constraint firstItem="qHT-hX-UHs" firstAttribute="top" secondItem="HBT-EJ-xaV" secondAttribute="bottom" constant="40" id="6b5-KD-KwR"/>
                 <constraint firstAttribute="trailing" secondItem="qHT-hX-UHs" secondAttribute="trailing" constant="26" id="E8w-2H-ZST"/>
                 <constraint firstAttribute="bottom" secondItem="D3w-oB-nuq" secondAttribute="bottom" id="Lqp-nZ-YJ7"/>
-                <constraint firstItem="hvN-Dk-s74" firstAttribute="top" secondItem="qHT-hX-UHs" secondAttribute="bottom" constant="54" id="NZk-qA-QA0"/>
+                <constraint firstItem="hvN-Dk-s74" firstAttribute="top" secondItem="qHT-hX-UHs" secondAttribute="bottom" constant="40" id="NZk-qA-QA0"/>
                 <constraint firstAttribute="trailing" secondItem="D3w-oB-nuq" secondAttribute="trailing" id="QdL-do-pau"/>
-                <constraint firstItem="HBT-EJ-xaV" firstAttribute="top" secondItem="Nfw-eO-hvR" secondAttribute="bottom" constant="43" id="S5E-PL-30K"/>
-                <constraint firstItem="Qoy-MA-Wba" firstAttribute="top" secondItem="hvN-Dk-s74" secondAttribute="bottom" constant="8" id="SVY-IX-p6v"/>
+                <constraint firstItem="HBT-EJ-xaV" firstAttribute="top" secondItem="Nfw-eO-hvR" secondAttribute="bottom" constant="20" id="S5E-PL-30K"/>
+                <constraint firstItem="Qoy-MA-Wba" firstAttribute="top" secondItem="hvN-Dk-s74" secondAttribute="bottom" constant="10" id="SVY-IX-p6v"/>
                 <constraint firstItem="CM3-DQ-qmD" firstAttribute="top" secondItem="PiS-sx-5ey" secondAttribute="top" constant="80" id="T0R-jf-fQ8"/>
                 <constraint firstItem="x18-v7-QX1" firstAttribute="top" secondItem="CM3-DQ-qmD" secondAttribute="bottom" constant="50" id="ZL4-AB-To8"/>
                 <constraint firstItem="hvN-Dk-s74" firstAttribute="leading" secondItem="PiS-sx-5ey" secondAttribute="leading" constant="44" id="ik5-mv-lEV"/>
@@ -156,7 +156,7 @@
                 <constraint firstItem="Qoy-MA-Wba" firstAttribute="centerX" secondItem="PiS-sx-5ey" secondAttribute="centerX" id="yLF-1d-SnM"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="115" y="354"/>
+            <point key="canvasLocation" x="228" y="354"/>
         </view>
     </objects>
     <resources>

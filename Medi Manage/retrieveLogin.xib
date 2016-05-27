@@ -116,7 +116,7 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQh-ah-60g">
-                    <rect key="frame" x="54" y="462" width="212" height="25"/>
+                    <rect key="frame" x="54" y="467" width="212" height="25"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have username / Password?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6N-t3-OFX">
                             <rect key="frame" x="0.0" y="0.0" width="171" height="17"/>
@@ -176,7 +176,7 @@
                 <constraint firstAttribute="trailing" secondItem="VUF-gm-5fJ" secondAttribute="trailing" constant="26" id="iwj-sJ-v8c"/>
                 <constraint firstItem="hbu-pb-hoS" firstAttribute="top" secondItem="MKr-9d-Jtt" secondAttribute="top" constant="80" id="meG-ev-XYd"/>
                 <constraint firstItem="vOo-XG-uAC" firstAttribute="width" secondItem="Wch-ue-C2S" secondAttribute="width" id="niX-ue-hN3"/>
-                <constraint firstItem="VQh-ah-60g" firstAttribute="top" secondItem="Wch-ue-C2S" secondAttribute="bottom" constant="15" id="pSe-QX-EWp"/>
+                <constraint firstItem="VQh-ah-60g" firstAttribute="top" secondItem="Wch-ue-C2S" secondAttribute="bottom" constant="20" id="pSe-QX-EWp"/>
                 <constraint firstItem="vOo-XG-uAC" firstAttribute="top" secondItem="Wch-ue-C2S" secondAttribute="top" id="roV-Ax-KR8"/>
                 <constraint firstAttribute="trailing" secondItem="hbu-pb-hoS" secondAttribute="trailing" id="taR-ne-L8b"/>
                 <constraint firstItem="LQW-ci-0YI" firstAttribute="centerX" secondItem="MKr-9d-Jtt" secondAttribute="centerX" id="vGs-3m-Wls"/>
