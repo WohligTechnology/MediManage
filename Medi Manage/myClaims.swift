@@ -38,7 +38,7 @@ import UIKit
         self.addSubview(mainheader)
         
         let mainsubHeader = subHeader(frame: CGRectMake(0, 70, width, 50))
-        mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_two")
+        mainsubHeader.subHeaderIcon.image = UIImage(named: "my_claim_icon")
         mainsubHeader.subHeaderTitle.text = "MY CLAIMS"
         self.addSubview(mainsubHeader)
         

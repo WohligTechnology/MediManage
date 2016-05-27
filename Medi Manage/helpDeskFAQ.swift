@@ -37,13 +37,18 @@ import UIKit
         let mainheader = header(frame: CGRectMake(0, 20, width, 50))
         self.addSubview(mainheader)
         
+        let mainsubHeader = subHeader(frame: CGRectMake(0, 70, width, 50))
+        mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_four")
+        mainsubHeader.subHeaderTitle.text = "HELP DESK"
+        self.addSubview(mainsubHeader)
+        
         let mainfooter = footer(frame: CGRectMake(0, height - 55, width, 55))
         mainfooter.layer.zPosition = 1000
         self.addSubview(mainfooter)
         
         dummyButton.layer.zPosition = 10000
         
-        helpDeskFAQMainView.frame = CGRectMake(0, 70, self.frame.size.width, self.frame.size.height - 175)
+        helpDeskFAQMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height - 175)        
         
     }
     @IBAction func helpDeskQueryCall(sender: AnyObject) {

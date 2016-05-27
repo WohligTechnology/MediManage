@@ -31,7 +31,7 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
         self.view.addSubview(mainheader)
         
         let mainsubHeader = subHeader(frame: CGRectMake(0, 70, width, 50))
-        mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_two")
+        mainsubHeader.subHeaderIcon.image = UIImage(named: "document_checklist")
         mainsubHeader.subHeaderTitle.text = "DOCUMENT CHECKLIST"
         self.view.addSubview(mainsubHeader)
         
