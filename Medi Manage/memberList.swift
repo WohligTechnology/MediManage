@@ -63,12 +63,12 @@ import UIKit
         dummyButton.layer.zPosition = 10000
         
         //add borders
-        addBottomBorder(UIColor.blackColor(), width: 0.5, myView: nameViewOne)
-        addBottomBorder(UIColor.blackColor(), width: 0.5, myView: dobViewOne)
-        addBottomBorder(UIColor.blackColor(), width: 0.5, myView: domViewOne)
-        addBottomBorder(UIColor.blackColor(), width: 0.5, myView: nameViewTwo)
-        addBottomBorder(UIColor.blackColor(), width: 0.5, myView: dobViewTwo)
-        addBottomBorder(UIColor.blackColor(), width: 0.5, myView: domViewTwo)
+        addBottomBorder(UIColor.grayColor(), width: 0.5, myView: nameViewOne)
+        addBottomBorder(UIColor.grayColor(), width: 0.5, myView: dobViewOne)
+        addBottomBorder(UIColor.grayColor(), width: 0.5, myView: domViewOne)
+        addBottomBorder(UIColor.grayColor(), width: 0.5, myView: nameViewTwo)
+        addBottomBorder(UIColor.grayColor(), width: 0.5, myView: dobViewTwo)
+        addBottomBorder(UIColor.grayColor(), width: 0.5, myView: domViewTwo)
     }
 
     @IBAction func premiumcalculationCall(sender: AnyObject) {
