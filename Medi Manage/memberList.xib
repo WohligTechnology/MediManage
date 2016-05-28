@@ -322,15 +322,13 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         </mask>
                     </variation>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04I-lg-1LY">
-                    <rect key="frame" x="20" y="266" width="61" height="15"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit_icon" translatesAutoresizingMaskIntoConstraints="NO" id="UVe-sK-JFs">
+                    <rect key="frame" x="20" y="267" width="10" height="12"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="15" id="J08-BN-30F"/>
+                        <constraint firstAttribute="width" constant="10" id="RRe-o5-D6u"/>
+                        <constraint firstAttribute="height" constant="12" id="xCe-Zd-Lrx"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
-                    <color key="textColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TbP-Ql-CvM">
                     <rect key="frame" x="0.0" y="301" width="375" height="115"/>
                     <subviews>
@@ -703,6 +701,15 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="jmv-8r-Pqs"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04I-lg-1LY">
+                    <rect key="frame" x="33" y="266" width="61" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="J08-BN-30F"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                    <color key="textColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -710,7 +717,6 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 <constraint firstItem="xUt-i3-aLO" firstAttribute="top" secondItem="2tM-dT-SbN" secondAttribute="bottom" constant="20" id="0f9-yT-h5c"/>
                 <constraint firstItem="2ri-fG-8dK" firstAttribute="leading" secondItem="6uL-UB-u0A" secondAttribute="leading" id="18Z-gW-Bk6"/>
                 <constraint firstItem="TbP-Ql-CvM" firstAttribute="top" secondItem="04I-lg-1LY" secondAttribute="bottom" constant="20" id="1BU-tV-lfF"/>
-                <constraint firstItem="04I-lg-1LY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="1gx-vz-DqN"/>
                 <constraint firstAttribute="trailing" secondItem="KOZ-iy-Qr4" secondAttribute="trailing" id="2W7-L8-qbk"/>
                 <constraint firstAttribute="trailing" secondItem="Ra8-hB-3cm" secondAttribute="trailing" id="2iZ-2e-nOv"/>
                 <constraint firstItem="xUt-i3-aLO" firstAttribute="leading" secondItem="le8-eu-kw0" secondAttribute="leading" id="3MP-Ab-4LG"/>
@@ -721,11 +727,11 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 <constraint firstItem="jTJ-sl-5Xl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="EUe-Jn-c6V"/>
                 <constraint firstItem="2ri-fG-8dK" firstAttribute="top" secondItem="6uL-UB-u0A" secondAttribute="bottom" constant="20" id="EnT-KB-A6f"/>
                 <constraint firstItem="le8-eu-kw0" firstAttribute="top" secondItem="xUt-i3-aLO" secondAttribute="bottom" constant="8" symbolic="YES" id="Es0-IG-sjP"/>
-                <constraint firstItem="OXz-k3-dsL" firstAttribute="leading" secondItem="04I-lg-1LY" secondAttribute="leading" id="EtP-iw-Y23"/>
                 <constraint firstItem="fcj-V3-BaF" firstAttribute="leading" secondItem="F7Z-De-Rhn" secondAttribute="leading" id="GVX-iZ-9V4"/>
                 <constraint firstItem="Ra8-hB-3cm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="GaZ-Ou-eap"/>
                 <constraint firstItem="Ra8-hB-3cm" firstAttribute="trailing" secondItem="KOZ-iy-Qr4" secondAttribute="trailing" id="H8g-pu-OVC"/>
                 <constraint firstItem="OXz-k3-dsL" firstAttribute="trailing" secondItem="GW0-BN-5eB" secondAttribute="trailing" id="HNK-Hp-R1U"/>
+                <constraint firstItem="04I-lg-1LY" firstAttribute="leading" secondItem="UVe-sK-JFs" secondAttribute="trailing" constant="3" id="Ipe-Q6-g1I"/>
                 <constraint firstItem="GW0-BN-5eB" firstAttribute="top" secondItem="le8-eu-kw0" secondAttribute="bottom" constant="8" symbolic="YES" id="Ixq-yU-yoD"/>
                 <constraint firstItem="TbP-Ql-CvM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Jus-Ej-kxZ"/>
                 <constraint firstItem="Z0x-gi-mQA" firstAttribute="trailing" secondItem="OXz-k3-dsL" secondAttribute="trailing" id="Mmy-8i-Yd1"/>
@@ -755,9 +761,10 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 <constraint firstItem="6uL-UB-u0A" firstAttribute="leading" secondItem="Z0x-gi-mQA" secondAttribute="leading" id="oD4-oG-02x"/>
                 <constraint firstItem="KOZ-iy-Qr4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="oPd-v1-1hx"/>
                 <constraint firstItem="04I-lg-1LY" firstAttribute="top" secondItem="GW0-BN-5eB" secondAttribute="bottom" constant="20" id="qGp-eI-rGc"/>
-                <constraint firstItem="04I-lg-1LY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="rBe-EF-dp8"/>
                 <constraint firstItem="2tM-dT-SbN" firstAttribute="top" secondItem="jTJ-sl-5Xl" secondAttribute="bottom" id="sXQ-22-yfu"/>
+                <constraint firstItem="UVe-sK-JFs" firstAttribute="top" secondItem="GW0-BN-5eB" secondAttribute="bottom" constant="21" id="szR-J0-b6t"/>
                 <constraint firstItem="2tM-dT-SbN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="tEO-kG-aSP"/>
+                <constraint firstItem="UVe-sK-JFs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="tHA-wc-V1J"/>
                 <constraint firstItem="KOZ-iy-Qr4" firstAttribute="leading" secondItem="fcj-V3-BaF" secondAttribute="leading" id="toK-UU-Fuu"/>
                 <constraint firstItem="2ri-fG-8dK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="uz3-yM-PPX"/>
                 <constraint firstItem="F7Z-De-Rhn" firstAttribute="top" secondItem="04I-lg-1LY" secondAttribute="bottom" constant="134" id="yTI-sY-lR7"/>
@@ -776,6 +783,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
     <resources>
         <image name="dropdown_down_icon" width="50" height="50"/>
         <image name="dropdown_up_icon" width="50" height="50"/>
+        <image name="edit_icon" width="33" height="43"/>
         <image name="triangle_orange" width="32" height="28"/>
     </resources>
 </document>

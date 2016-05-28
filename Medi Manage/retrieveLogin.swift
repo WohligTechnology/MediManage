@@ -35,7 +35,14 @@ import UIKit
         let sortnewview = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
         sortnewview.frame = bounds
         sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-        self.addSubview(sortnewview);
+        self.addSubview(sortnewview)
+        
+        // CALENDER ICON
+        let imageView = UIImageView()
+        let image = UIImage(named: "calender_black_icon")
+        imageView.image = image
+        imageView.frame = CGRect(x: dateOfBirth.frame.size.width + 15, y: 15, width: 20, height: 20)
+        dateOfBirth.addSubview(imageView)
         
         addPadding(15, myView: employeeID)
         addPadding(15, myView: dateOfBirth)

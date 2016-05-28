@@ -267,6 +267,13 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <action selector="insuredmembersCall:" destination="-1" eventType="touchUpInside" id="md4-Ho-8Xd"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_icon" translatesAutoresizingMaskIntoConstraints="NO" id="IsO-wM-aK9">
+                    <rect key="frame" x="201" y="390" width="34" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="34" id="4FN-H8-5lF"/>
+                        <constraint firstAttribute="height" constant="30" id="ocq-tr-iKr"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -279,6 +286,7 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 <constraint firstItem="Cjv-t7-3uL" firstAttribute="leading" secondItem="rqn-Gd-1pP" secondAttribute="leading" id="4dQ-TG-Fnv"/>
                 <constraint firstItem="dhu-AZ-v1Y" firstAttribute="top" secondItem="PFW-TE-DRE" secondAttribute="bottom" constant="28" id="6e0-rU-0q4"/>
                 <constraint firstItem="dhu-AZ-v1Y" firstAttribute="top" secondItem="WCQ-ZV-elK" secondAttribute="bottom" constant="3" id="7T7-Ue-yqy"/>
+                <constraint firstItem="IsO-wM-aK9" firstAttribute="top" secondItem="FZX-o9-QMX" secondAttribute="bottom" constant="15" id="7ZG-gc-w6f"/>
                 <constraint firstAttribute="trailing" secondItem="FZX-o9-QMX" secondAttribute="trailing" constant="35" id="7ak-zM-xe1"/>
                 <constraint firstItem="PFW-TE-DRE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7sq-aC-Tfj"/>
                 <constraint firstItem="tgg-d4-Y6e" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="60" id="9nN-SU-hlz"/>
@@ -292,6 +300,7 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 <constraint firstItem="qON-O6-6m9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="60" id="IKZ-yf-QcU"/>
                 <constraint firstAttribute="trailing" secondItem="HQk-Lw-8sV" secondAttribute="trailing" constant="35" id="INg-tL-Pq3"/>
                 <constraint firstItem="rqn-Gd-1pP" firstAttribute="leading" secondItem="1Te-ni-qCK" secondAttribute="leading" id="IWy-qg-PqK"/>
+                <constraint firstAttribute="trailing" secondItem="IsO-wM-aK9" secondAttribute="trailing" constant="85" id="Jbq-Uo-uGE"/>
                 <constraint firstItem="kEl-eS-V8J" firstAttribute="top" secondItem="aUz-hc-Jr2" secondAttribute="bottom" constant="7" id="JyT-oF-1e9"/>
                 <constraint firstItem="ko9-B2-WyB" firstAttribute="top" secondItem="4fk-mZ-NEc" secondAttribute="bottom" constant="15" id="N2I-07-fZS"/>
                 <constraint firstAttribute="bottom" secondItem="d4W-3M-ltY" secondAttribute="bottom" id="PPc-yR-X2Y"/>
@@ -324,6 +333,7 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
         </view>
     </objects>
     <resources>
+        <image name="add_icon" width="109" height="93"/>
         <image name="arrow_left" width="76" height="52"/>
         <image name="arrow_right" width="76" height="52"/>
         <image name="son_icon" width="358" height="358"/>

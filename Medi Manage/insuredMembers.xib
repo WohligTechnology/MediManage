@@ -443,15 +443,15 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         </mask>
                     </variation>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dx-Fw-AMG">
-                    <rect key="frame" x="87" y="353" width="200" height="40"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dx-Fw-AMG">
+                    <rect key="frame" x="88" y="353" width="200" height="40"/>
                     <color key="backgroundColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="JeK-2v-T4N"/>
                         <constraint firstAttribute="height" constant="40" id="Lfs-7K-eLs"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="18"/>
-                    <state key="normal" title="Download E-card">
+                    <state key="normal" title="   Download E-card" image="download_icon">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -544,6 +544,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
         </view>
     </objects>
     <resources>
+        <image name="download_icon" width="20" height="21"/>
         <image name="triangle_white" width="30" height="26"/>
     </resources>
 </document>

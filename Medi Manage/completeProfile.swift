@@ -52,6 +52,13 @@ import UIKit
         statusBar.backgroundColor = UIColor(red: 244/255, green: 121/255, blue: 32/255, alpha: 1)
         self.addSubview(statusBar)
         
+        // MARITAL STATUS ARROW ICON
+        let imageView = UIImageView()
+        let image = UIImage(named: "triangle_orange")
+        imageView.image = image
+        imageView.frame = CGRect(x: maritalStatus.frame.size.width + 30, y: 20, width: 10, height: 10)
+        maritalStatus.addSubview(imageView)
+        
         completeProfileMainView.frame = CGRectMake(0, 20, self.frame.size.width, self.frame.size.height)
         
         //add borders

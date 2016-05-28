@@ -72,6 +72,28 @@ import UIKit
         addBottomBorder(UIColor.blackColor(), linewidth: 0.5, myView: dateOfDischarge)
         addBottomBorder(UIColor.blackColor(), linewidth: 0.5, myView: diagnosis)
         addBottomBorder(UIColor.blackColor(), linewidth: 0.5, myView: claimAmount)
+        
+        // selectPatient ARROW ICON
+        let simageView = UIImageView()
+        let simage = UIImage(named: "triangle_orange")
+        simageView.image = simage
+        simageView.frame = CGRect(x: selectPatient.frame.size.width + 30, y: 10, width: 10, height: 10)
+        selectPatient.addSubview(simageView)
+        
+        // dateOfAdmission CALENDER ICON
+        let aimageView = UIImageView()
+        let aimage = UIImage(named: "calender_black_icon")
+        aimageView.image = aimage
+        aimageView.frame = CGRect(x: dateOfAdmission.frame.size.width + 30, y: 10, width: 15, height: 15)
+        dateOfAdmission.addSubview(aimageView)
+        
+        // dateOfDischarge CALENDER ICON
+        let dimageView = UIImageView()
+        let dimage = UIImage(named: "calender_black_icon")
+        dimageView.image = dimage
+        dimageView.frame = CGRect(x: dateOfDischarge.frame.size.width + 30, y: 10, width: 15, height: 15)
+        dateOfDischarge.addSubview(dimageView)
+        
     }
 
     @IBAction func documentChecklistCall(sender: AnyObject) {

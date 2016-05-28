@@ -41,6 +41,13 @@ import UIKit
         
         addPadding(15, myView: employeeID)
         addPadding(15, myView: dateOfBirth)
+        
+        // CALENDER ICON
+        let imageView = UIImageView()
+        let image = UIImage(named: "calender_black_icon")
+        imageView.image = image
+        imageView.frame = CGRect(x: dateOfBirth.frame.size.width + 15, y: 15, width: 20, height: 20)
+        dateOfBirth.addSubview(imageView)
     }
     
     @IBAction func loginCall(sender: AnyObject) {
