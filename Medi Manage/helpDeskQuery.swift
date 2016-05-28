@@ -55,7 +55,7 @@ import UIKit
         mainfooter.layer.zPosition = 1000
         self.addSubview(mainfooter)
         
-        helpDeskQueryMainView.frame = CGRectMake(0, 70, self.frame.size.width, self.frame.size.height - 175)
+        helpDeskQueryMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height - 175)
         
         // add borders
         addBottomBorder(UIColor.blackColor(), linewidth: 0.5, myView: subjectTextField)

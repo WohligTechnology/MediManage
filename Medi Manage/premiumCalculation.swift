@@ -32,6 +32,9 @@ import UIKit
     @IBOutlet weak var totalPremiumLabel: UILabel!
     @IBOutlet weak var totalPremiumCost: UILabel!
     
+    @IBOutlet weak var declaration: UILabel!
+    @IBOutlet weak var termsLabel: UILabel!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
@@ -64,7 +67,10 @@ import UIKit
         let mainheader = header(frame: CGRectMake(0, 20, width, 50))
         self.addSubview(mainheader)
         
-        premiumCalculationMainView.frame = CGRectMake(0, 70, self.frame.size.width, self.frame.size.height - 70);
+        premiumCalculationMainView.frame = CGRectMake(0, 70, self.frame.size.width, self.frame.size.height - 70)
+        
+        declaration.font = UIFont(name: "Lato-Light", size: 10.0)
+        termsLabel.font = UIFont(name: "Lato-Light", size: 10.0)
         
         //add borders
         addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: basicPremiumView)

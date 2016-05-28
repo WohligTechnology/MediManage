@@ -33,6 +33,7 @@
                 <outlet property="basicPremiumCost" destination="0U7-nH-Ib9" id="pgD-Yr-0mj"/>
                 <outlet property="basicPremiumLabel" destination="HK5-pQ-4KH" id="jCB-Q9-XE3"/>
                 <outlet property="basicPremiumView" destination="dfe-G9-jec" id="UV4-Ba-QHD"/>
+                <outlet property="declaration" destination="Wo8-CD-6kx" id="L7G-Ck-YOQ"/>
                 <outlet property="netPremiumCost" destination="V2C-8Y-1hO" id="hml-gm-TIX"/>
                 <outlet property="netPremiumLabel" destination="ML5-4Q-lgh" id="eEU-ag-9p6"/>
                 <outlet property="netPremiumView" destination="QcD-vi-qha" id="hdD-fE-4qb"/>
@@ -40,6 +41,7 @@
                 <outlet property="serviceTaxCost" destination="s7d-1F-G6L" id="mOF-DO-lgo"/>
                 <outlet property="serviceTaxLabel" destination="ueP-P1-Y6Z" id="qIj-ki-8Wt"/>
                 <outlet property="serviceTaxView" destination="4EZ-dF-h8M" id="dmS-Rx-k0I"/>
+                <outlet property="termsLabel" destination="BMU-Mj-HdA" id="ufN-I2-XfQ"/>
                 <outlet property="topupPremiumCost" destination="jzc-b0-ZIC" id="tzt-zP-rYH"/>
                 <outlet property="topupPremiumLabel" destination="5y4-lJ-9UV" id="QUy-Sy-agy"/>
                 <outlet property="topupPremiumView" destination="zs8-7K-W4q" id="eDB-Ng-vei"/>

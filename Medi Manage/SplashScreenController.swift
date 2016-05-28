@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SplashScreenController: UIViewController {
+class SplashScreenController: UIViewController, UIGestureRecognizerDelegate {
     
     var backgroundImage: String!
     var pageIndex: Int!
@@ -22,6 +22,15 @@ class SplashScreenController: UIViewController {
         myimage.image = image
         self.view.addSubview(myimage)
         
+        let button = UIButton(frame: CGRectMake(width / 2 - 95, height - 85, 200, 40))
+        button.backgroundColor = UIColor.clearColor()
+        button.layer.zPosition = 10000
+        self.view.addSubview(button)
+        
+        let imageTap = UITapGestureRecognizer(target: self, action: Selector("imageTap:"))
+        imageTap.delegate = self
+        button.addGestureRecognizer(imageTap)
+        
         // Do any additional setup after loading the view.
     }
 
@@ -30,6 +39,10 @@ class SplashScreenController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func imageTap(sender: UITapGestureRecognizer) {
+        let im: TutorialController = storyboard?.instantiateViewControllerWithIdentifier("tutorialIdentifier") as! TutorialController //connectIdentifier
+        self.presentViewController(im, animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

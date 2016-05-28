@@ -39,6 +39,8 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
         mainfooter.layer.zPosition = 1000
         self.view.addSubview(mainfooter)
         
+        dcDesc.font = UIFont(name: "Lato-Light", size: 10.0)
+        
         // Do any additional setup after loading the view.
     }
 
@@ -78,6 +80,7 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
         self.performSegueWithIdentifier("dcToMyClaims", sender: nil)
     }
     
+    @IBOutlet weak var dcDesc: UILabel!
     /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

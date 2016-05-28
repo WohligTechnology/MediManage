@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PageViewerController: UIPageViewController, UIPageViewControllerDataSource {
+class PageViewerController: UIPageViewController, UIPageViewControllerDataSource, UIGestureRecognizerDelegate {
     
     let image = ["splash1", "splash2", "splash3"]
 
@@ -40,6 +40,7 @@ class PageViewerController: UIPageViewController, UIPageViewControllerDataSource
         }
         
         index = index - 1
+        
         return viewControllerAtIndex(index)
     }
     
