@@ -12,11 +12,18 @@ let bounds = UIScreen.mainScreen().bounds
 let width = bounds.size.width
 let height = bounds.size.height
 let mainBlueColor = UIColor(red: 21/255, green: 177/255, blue: 230/255, alpha: 255/255) // #15b1e6
-
+let rest = RestApi()
+struct defaultsKeys {
+    static let token = ""
+    static let keyTwo = "secondStringKey"
+}
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    
+
     
     internal func createMenuView() {
         

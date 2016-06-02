@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 
 @IBDesignable class login: UIView {
     
@@ -45,6 +46,16 @@ import UIKit
         
         addPadding(15, myView: mobile)
         addPadding(15, myView: password)
+    }
+    @IBAction func onLogin(sender: AnyObject) {
+        rest.login(mobile.text!, password: password.text!, completion: {(json:JSON) -> () in
+            if (json == 1){
+                print(json)
+//                Popups.SharedInstance.ShowPopup("Sign Up", message: "Try again later !")
+            }else{
+                print(json)
+            }
+        })
     }
 }
 

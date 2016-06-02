@@ -1,0 +1,33 @@
+PODS:
+  - SwiftHTTP (1.0.5)
+  - SwiftValidator (3.0.1)
+  - SwiftyJSON (2.3.2)
+
+DEPENDENCIES:
+  - SwiftHTTP (~> 1.0.3)
+  - SwiftValidator (from `https://github.com/jpotts18/SwiftValidator.git`, tag `4.0.0`)
+  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
+
+EXTERNAL SOURCES:
+  SwiftValidator:
+    :git: https://github.com/jpotts18/SwiftValidator.git
+    :tag: 4.0.0
+  SwiftyJSON:
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  SwiftValidator:
+    :git: https://github.com/jpotts18/SwiftValidator.git
+    :tag: 4.0.0
+  SwiftyJSON:
+    :commit: 2a5b70f06001316d4fb54501edc70b4084705da0
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+SPEC CHECKSUMS:
+  SwiftHTTP: edb45e72f27d1d95d328d2b2c16a61aa94f1e9f7
+  SwiftValidator: 461a2c00173f001287a8fa1f12704b87ec8a6bc4
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+
+PODFILE CHECKSUM: 1572b31e967f7d33040b305b05875e9cc5325342
+
+COCOAPODS: 1.0.0

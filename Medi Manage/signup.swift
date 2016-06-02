@@ -9,11 +9,33 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
+import SwiftValidator
 
 @IBDesignable class signup: UIView {
     
     @IBOutlet weak var employeeID: UITextField!
     @IBOutlet weak var dateOfBirth: UITextField!
+    let validator = Validator()
+    var dateDob = ""
+    var datePickerView:UIDatePicker = UIDatePicker()
+
+    
+    @IBAction func openDate(sender: UITextField) {
+        datePickerView.datePickerMode = UIDatePickerMode.Date
+        sender.inputView = datePickerView
+        datePickerView.addTarget(self, action: #selector(self.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
+    }
+    func datePickerValueChanged(sender:UIDatePicker) {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "ddMMyyyy"
+        dateDob = dateFormatter.stringFromDate(sender.date)
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
+        dateOfBirth.text = dateFormatter.stringFromDate(sender.date)
+        
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
@@ -48,13 +70,32 @@ import UIKit
         imageView.image = image
         imageView.frame = CGRect(x: dateOfBirth.frame.size.width + 15, y: 15, width: 20, height: 20)
         dateOfBirth.addSubview(imageView)
+        
+        validator.registerField(employeeID, rules: [RequiredRule(), FullNameRule()])
+        
+        //        /imageView
     }
     
     @IBAction func loginCall(sender: AnyObject) {
         gSignupController.performSegueWithIdentifier("login", sender: nil)
     }
     @IBAction func completeProfileCall(sender: AnyObject) {
-        gSignupController.performSegueWithIdentifier("completeProfile", sender: nil)
+//        validator.validate(self)
+//        Popups.SharedInstance.ShowPopup("Title goes here", message: "Message goes here.")
+        rest.findEmployee(employeeID.text!, dob: dateDob, completion: {(json:JSON) -> ()in
+            print(json)
+            if (json == 1){
+                        Popups.SharedInstance.ShowPopup("Sign Up", message: "Try again later !")
+
+            }else if(json["state"] == false){
+                Popups.SharedInstance.ShowPopup("Sign Up", message: String(json["error_message"]))
+
+            }else{
+                
+            }
+        })
+//        gSignupController.performSegueWithIdentifier("completeProfile", sender: nil)
     }
+    
 }
 
