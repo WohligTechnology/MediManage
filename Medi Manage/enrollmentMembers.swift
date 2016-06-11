@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SwiftyJSON
 
-@IBDesignable class enrollmentMembers: UIView {
+@IBDesignable class enrollmentMembers: UIView, enrollmentDelegate {
     
     @IBOutlet var enrollmentMembersMainView: UIView!
     
@@ -23,20 +24,32 @@ import UIKit
     @IBOutlet weak var personTwoLastName: UITextField!
     @IBOutlet weak var personTwoDOB: UITextField!
     
+    
+    var result : String  = ""
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
+        
     }
+    
+  
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         loadViewFromNib ()
+        
+        rest.findEmployeeProfile("Enrollments/IsEnrolled",completion: {(json:JSON) -> ()in
+            print(json)
+        })
+       print(result)
+        
     }
     
     func addPadding(width: CGFloat, myView: UITextField) {
         let paddingView = UIView(frame: CGRectMake(0, 0, width, myView.frame.height))
         myView.leftView = paddingView
         myView.leftViewMode = UITextFieldViewMode.Always
+        
     }
     
     func addBottomBorder(color: UIColor, width: CGFloat, myView: UIView) {
@@ -44,6 +57,8 @@ import UIKit
         border.backgroundColor = color.CGColor
         border.frame = CGRectMake(0, myView.frame.size.height - width, myView.frame.size.width, width)
         myView.layer.addSublayer(border)
+        
+        
     }
     
     func loadViewFromNib() {
@@ -74,6 +89,9 @@ import UIKit
         addBottomBorder(UIColor.blackColor(), width: 1, myView: personTwoMiddleName)
         addBottomBorder(UIColor.blackColor(), width: 1, myView: personTwoLastName)
         addBottomBorder(UIColor.blackColor(), width: 1, myView: personTwoDOB)
+        
+        
+                
     }
 
     @IBAction func insuredmembersCall(sender: AnyObject) {
@@ -87,5 +105,11 @@ import UIKit
         // Drawing code
     }
     */
-
+    
+    func someFunction(result: String) {
+      self.result = result
+    }
+    
 }
+
+

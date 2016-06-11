@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "786DF9F51CD214F300DDE769"
-               BuildableName = "Medi Manage.app"
-               BlueprintName = "Medi Manage"
-               ReferencedContainer = "container:Medi Manage.xcodeproj">
+               BuildableName = "MediManage.app"
+               BlueprintName = "MediManage"
+               ReferencedContainer = "container:MediManage.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,34 +28,14 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "786DFA091CD214F300DDE769"
-               BuildableName = "Medi ManageTests.xctest"
-               BlueprintName = "Medi ManageTests"
-               ReferencedContainer = "container:Medi Manage.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "786DFA141CD214F300DDE769"
-               BuildableName = "Medi ManageUITests.xctest"
-               BlueprintName = "Medi ManageUITests"
-               ReferencedContainer = "container:Medi Manage.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "786DF9F51CD214F300DDE769"
-            BuildableName = "Medi Manage.app"
-            BlueprintName = "Medi Manage"
-            ReferencedContainer = "container:Medi Manage.xcodeproj">
+            BuildableName = "MediManage.app"
+            BlueprintName = "MediManage"
+            ReferencedContainer = "container:MediManage.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "786DF9F51CD214F300DDE769"
-            BuildableName = "Medi Manage.app"
-            BlueprintName = "Medi Manage"
-            ReferencedContainer = "container:Medi Manage.xcodeproj">
+            BuildableName = "MediManage.app"
+            BlueprintName = "MediManage"
+            ReferencedContainer = "container:MediManage.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "786DF9F51CD214F300DDE769"
-            BuildableName = "Medi Manage.app"
-            BlueprintName = "Medi Manage"
-            ReferencedContainer = "container:Medi Manage.xcodeproj">
+            BuildableName = "MediManage.app"
+            BlueprintName = "MediManage"
+            ReferencedContainer = "container:MediManage.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

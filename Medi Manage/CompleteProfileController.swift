@@ -10,11 +10,20 @@ import UIKit
 
 var gCompleteProfileController: UIViewController!
 
+
+
 class CompleteProfileController: UIViewController {
 
+    var stremplyeeFullname :String = ""
+    var intemployeeNo : String = ""
+    var stremplyeeDOB : String = ""
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         gCompleteProfileController = self
+      
+        
         // Do any additional setup after loading the view.
     }
 

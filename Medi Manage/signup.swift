@@ -12,6 +12,7 @@ import UIKit
 import SwiftyJSON
 import SwiftValidator
 
+
 @IBDesignable class signup: UIView {
     
     @IBOutlet weak var employeeID: UITextField!
@@ -19,7 +20,8 @@ import SwiftValidator
     let validator = Validator()
     var dateDob = ""
     var datePickerView:UIDatePicker = UIDatePicker()
-
+    var flag : Bool = false
+    var count : Int = 0
     
     @IBAction func openDate(sender: UITextField) {
         datePickerView.datePickerMode = UIDatePickerMode.Date
@@ -80,22 +82,74 @@ import SwiftValidator
         gSignupController.performSegueWithIdentifier("login", sender: nil)
     }
     @IBAction func completeProfileCall(sender: AnyObject) {
-//        validator.validate(self)
-//        Popups.SharedInstance.ShowPopup("Title goes here", message: "Message goes here.")
+        
+        if(employeeID.text == "" || dateOfBirth.text == "")
+        {
+            Popups.SharedInstance.ShowPopup("Login", message: "Both Fields are Required")
+
+        }
+        else{
+            
         rest.findEmployee(employeeID.text!, dob: dateDob, completion: {(json:JSON) -> ()in
-            print(json)
-            if (json == 1){
-                        Popups.SharedInstance.ShowPopup("Sign Up", message: "Try again later !")
-
-            }else if(json["state"] == false){
-                Popups.SharedInstance.ShowPopup("Sign Up", message: String(json["error_message"]))
-
-            }else{
                 
-            }
-        })
-//        gSignupController.performSegueWithIdentifier("completeProfile", sender: nil)
-    }
-    
+                
+               // switch (String(json["state"])):
+               // case "true" :
+            dispatch_async(dispatch_get_main_queue(),
+                {
+                    let anotherCharacter: String = (String(json["state"]))
+                    switch anotherCharacter {
+                    case "true" :
+                  
+                        let dialog = UIAlertController(title: "Welcome", message: "Procced Now ", preferredStyle: UIAlertControllerStyle.Alert)
+                        
+                    //    Popups.SharedInstance.alertView(dialog, clickedButtonAtIndex: 0)("")
+                        
+                        dialog.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Destructive, handler:{
+                                action in
+                                
+                                EmployeeFullName = String(json["result"]["FullName"])
+                                EmployeeNo = String(json["result"]["EmployeeNumber"])
+                                EmployeeBirthDate = String(json["result"]["DateOfBirth"])
+                                
+                                gSignupController.performSegueWithIdentifier("completeProfile", sender: nil)
+                                
+                            }))
+                         
+                       gSignupController.presentViewController(dialog, animated: true, completion: nil)
+                            
+                      
+                        break
+                    case "false" :
+                        let error_msg : String = String(json["error_message"])
+                       
+                        
+                        
+                   let dialog = UIAlertController(title: "Sign Up", message: error_msg, preferredStyle: UIAlertControllerStyle.Alert)
+                        
+                        dialog.addAction(UIAlertAction(title: "Try Again!!", style: UIAlertActionStyle.Destructive, handler:{
+                            action in
+                           self.employeeID.text = ""
+                            
+                        }))
+                       gSignupController.presentViewController(dialog, animated: true, completion: nil)
+                        
+                        break
+                        
+                    default :
+                        
+                        break
+                    }
+            })
+            
+            
+            
+           
+        
+            
+       })
+       
+        }
+  
 }
-
+}

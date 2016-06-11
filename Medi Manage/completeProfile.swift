@@ -13,21 +13,45 @@ import UIKit
     
     @IBOutlet var completeProfileMainView: UIView!
     @IBOutlet weak var fullName: UIView!
+    @IBOutlet weak var txtFullName: UILabel!
+    @IBOutlet weak var txtEmployeeNo: UILabel!
+    @IBOutlet weak var txtDateofBirth: UILabel!
+
     @IBOutlet weak var employeeNumber: UIView!
     @IBOutlet weak var dateOfBirth: UIView!
-    
     @IBOutlet weak var mobileNumber: UITextField!
     @IBOutlet weak var maritalStatus: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+    
+    
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
+        
+        
+       
+        
+        
+       
+        
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         loadViewFromNib ()
+        
+        
+        txtFullName.text = EmployeeFullName
+        txtDateofBirth.text = EmployeeBirthDate
+        txtEmployeeNo.text = EmployeeNo
+        
+        
+        
+        
         
     }
     
@@ -70,7 +94,11 @@ import UIKit
         addBottomBorder(UIColor.blackColor(), linewidth: 1, myView: maritalStatus)
         addBottomBorder(UIColor.blackColor(), linewidth: 1, myView: email)
         addBottomBorder(UIColor.blackColor(), linewidth: 1, myView: password)
-    }
+       
+      
+        }
+    
+    
     
     @IBAction func retrieveLoginCall(sender: AnyObject) {
         gCompleteProfileController.performSegueWithIdentifier("retrieveLogin", sender: nil)

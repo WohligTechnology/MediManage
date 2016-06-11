@@ -9,8 +9,11 @@
 import Foundation
 import UIKit
 import SwiftyJSON
+import Alamofire
 
 @IBDesignable class login: UIView {
+    
+  
     
     @IBAction func signupCall(sender: AnyObject) {
         gLoginController.performSegueWithIdentifier("signup", sender: nil)
@@ -48,14 +51,52 @@ import SwiftyJSON
         addPadding(15, myView: password)
     }
     @IBAction func onLogin(sender: AnyObject) {
-        rest.login(mobile.text!, password: password.text!, completion: {(json:JSON) -> () in
-            if (json == 1){
-                print(json)
-//                Popups.SharedInstance.ShowPopup("Sign Up", message: "Try again later !")
-            }else{
-                print(json)
-            }
+        
+        if(mobile.text == "" || password.text == "")
+        {
+           Popups.SharedInstance.ShowPopup("Login", message: "Both Fields are Required")
+        }
+        else{
+        rest.loginAlaomFire(mobile.text!, password: password.text!, completion: {(json:JSON) -> () in
+            dispatch_async(dispatch_get_main_queue(),{
+            if(String(json["error"]) != "null")
+            {
+                let stError :String = String(json ["error"])
+                
+                let dialog = UIAlertController(title: "Login", message: stError, preferredStyle: UIAlertControllerStyle.Alert)
+                
+                dialog.addAction(UIAlertAction(title: "Try Again!!", style: UIAlertActionStyle.Destructive, handler:{
+                    action in
+                 self.mobile.text = ""
+                    self.password.text = ""
+                    
+                }))
+                gLoginController.presentViewController(dialog, animated: true, completion: nil)
+                }
+                else
+            {
+              //  Popups.SharedInstance.ShowPopup("Welcome", message: "Login Successfull !")
+                Employee_API_KEY = String(json["access_token"])
+                let dialog = UIAlertController(title: "Welcome", message: "Login Successfull!" ,preferredStyle: UIAlertControllerStyle.Alert)
+                
+                dialog.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Destructive, handler:{
+                    action in
+                    
+                    let vc = gLoginController.storyboard?.instantiateViewControllerWithIdentifier("EnrollmentMember") as! EnrollmentMembersController
+                  
+                  //  vc.RESULT = "Result"
+                    gLoginController.presentViewController(vc, animated: true, completion: nil)
+                    
+                // gLoginController.performSegueWithIdentifier("memberlist", sender: nil)
+                    
+                }))
+                gLoginController.presentViewController(dialog,animated: true, completion: nil)
+                
+                }
+            })
         })
     }
-}
+    }
 
+
+}

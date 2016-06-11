@@ -10,19 +10,28 @@ import UIKit
 
 var gEnrollmentMembersController: UIViewController!
 
+//var viewEnrollmentMember: enrollmentMembers!
+
 class EnrollmentMembersController: UIViewController {
 
+   
+        
+ weak var delegate: enrollmentDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         gEnrollmentMembersController = self
+      
+       delegate!.someFunction("10")
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
 
     /*
     // MARK: - Navigation
@@ -34,4 +43,8 @@ class EnrollmentMembersController: UIViewController {
     }
     */
 
+}
+protocol enrollmentDelegate: class {
+    func someFunction(result: String)
+    
 }

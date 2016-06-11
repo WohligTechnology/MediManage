@@ -8,6 +8,11 @@
 
 import UIKit
 
+var Employee_API_KEY : String = ""
+var EmployeeFullName  : String = ""
+var EmployeeBirthDate : String = ""
+var EmployeeNo : String = "" 
+
 let bounds = UIScreen.mainScreen().bounds
 let width = bounds.size.width
 let height = bounds.size.height
@@ -16,6 +21,7 @@ let rest = RestApi()
 struct defaultsKeys {
     static let token = ""
     static let keyTwo = "secondStringKey"
+    
 }
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

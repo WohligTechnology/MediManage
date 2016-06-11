@@ -44,7 +44,7 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         insuredMembers.menuImage.image = UIImage(named: "menu_one")
         insuredMembers.menuTitle.text = "Insured Members"
         self.view.addSubview(insuredMembers)
-        let insuredMembersTap = UITapGestureRecognizer(target: self, action: Selector("insuredMembersTap:"))
+        let insuredMembersTap = UITapGestureRecognizer(target: self, action: #selector(MainMenuController.insuredMembersTap(_:)))
         insuredMembersTap.delegate = self
         insuredMembers.addGestureRecognizer(insuredMembersTap)
         
@@ -54,7 +54,7 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         claims.menuImage.image = UIImage(named: "menu_two")
         claims.menuTitle.text = "Claims"
         self.view.addSubview(claims)
-        let claimsTap = UITapGestureRecognizer(target: self, action: Selector("claimsTap:"))
+        let claimsTap = UITapGestureRecognizer(target: self, action: #selector(MainMenuController.claimsTap(_:)))
         claimsTap.delegate = self
         claims.addGestureRecognizer(claimsTap)
         
@@ -64,7 +64,7 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         benefitSummary.menuImage.image = UIImage(named: "menu_three")
         benefitSummary.menuTitle.text = "Benefit Summary"
         self.view.addSubview(benefitSummary)
-        let benefitSummaryTap = UITapGestureRecognizer(target: self, action: Selector("benefitSummaryTap:"))
+        let benefitSummaryTap = UITapGestureRecognizer(target: self, action: #selector(MainMenuController.benefitSummaryTap(_:)))
         benefitSummaryTap.delegate = self
         benefitSummary.addGestureRecognizer(benefitSummaryTap)
         
@@ -74,7 +74,7 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         helpdesk.menuImage.image = UIImage(named: "menu_four")
         helpdesk.menuTitle.text = "Helpdesk"
         self.view.addSubview(helpdesk)
-        let helpdeskTap = UITapGestureRecognizer(target: self, action: Selector("helpdeskTap:"))
+        let helpdeskTap = UITapGestureRecognizer(target: self, action: #selector(MainMenuController.helpdeskTap(_:)))
         helpdeskTap.delegate = self
         helpdesk.addGestureRecognizer(helpdeskTap)
         
@@ -84,7 +84,7 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         hospitalSearch.menuImage.image = UIImage(named: "menu_five")
         hospitalSearch.menuTitle.text = "Hospital Search"
         self.view.addSubview(hospitalSearch)
-        let hospitalSearchTap = UITapGestureRecognizer(target: self, action: Selector("hospitalSearchTap:"))
+        let hospitalSearchTap = UITapGestureRecognizer(target: self, action: #selector(MainMenuController.hospitalSearchTap(_:)))
         hospitalSearchTap.delegate = self
         hospitalSearch.addGestureRecognizer(hospitalSearchTap)
         
@@ -94,7 +94,7 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         connect.menuImage.image = UIImage(named: "menu_six")
         connect.menuTitle.text = "Connect"
         self.view.addSubview(connect)
-        let connectTap = UITapGestureRecognizer(target: self, action: Selector("connectTap:"))
+        let connectTap = UITapGestureRecognizer(target: self, action: #selector(MainMenuController.connectTap(_:)))
         connectTap.delegate = self
         connect.addGestureRecognizer(connectTap)
 

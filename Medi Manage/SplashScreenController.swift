@@ -27,7 +27,7 @@ class SplashScreenController: UIViewController, UIGestureRecognizerDelegate {
         button.layer.zPosition = 10000
         self.view.addSubview(button)
         
-        let imageTap = UITapGestureRecognizer(target: self, action: Selector("imageTap:"))
+        let imageTap = UITapGestureRecognizer(target: self, action: #selector(SplashScreenController.imageTap(_:)))
         imageTap.delegate = self
         button.addGestureRecognizer(imageTap)
         
