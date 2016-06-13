@@ -28,6 +28,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="enrollmentMembers" customModule="MediManage" customModuleProvider="target">
             <connections>
                 <outlet property="enrollmentMembersMainView" destination="iN0-l3-epB" id="Jqq-HL-cDx"/>
+                <outlet property="firstMemberIcon" destination="tgg-d4-Y6e" id="WUG-jb-u9h"/>
+                <outlet property="lblFirstMember" destination="qON-O6-6m9" id="Z33-YW-6CX"/>
+                <outlet property="lblSecondMember" destination="dhu-AZ-v1Y" id="cjg-ev-J7J"/>
+                <outlet property="leftArrow" destination="rI0-OL-emN" id="6aq-NO-dmw"/>
                 <outlet property="personOneDOB" destination="rqn-Gd-1pP" id="ZDX-0b-nay"/>
                 <outlet property="personOneDOM" destination="1Te-ni-qCK" id="YYf-ew-qQ9"/>
                 <outlet property="personOneFirstName" destination="x6I-VN-wCK" id="YhG-F4-EOt"/>
@@ -37,6 +41,8 @@
                 <outlet property="personTwoFirstName" destination="4fk-mZ-NEc" id="EvV-bl-zbW"/>
                 <outlet property="personTwoLastName" destination="HQk-Lw-8sV" id="ZFm-JP-3Fo"/>
                 <outlet property="personTwoMiddleName" destination="ko9-B2-WyB" id="vUG-hU-lWx"/>
+                <outlet property="rightArrow" destination="kEl-eS-V8J" id="BNk-Zh-y2w"/>
+                <outlet property="secondMemberIcon" destination="WCQ-ZV-elK" id="M4j-it-Gn9"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

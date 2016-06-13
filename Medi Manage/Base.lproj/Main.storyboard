@@ -250,6 +250,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="EnrollmentMemberUIView" destination="MG6-Mo-3gO" id="OcP-Kr-MW8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MV2-PS-E4L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

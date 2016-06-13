@@ -128,7 +128,7 @@ public class RestApi {
        
         Manager.request(.GET, apiURL+SUBURL ,parameters: nil, headers: header)
             .responseJSON { response in
-                debugPrint(response)
+               // debugPrint(response)
                 json = JSON(data: response.data!)
                 //print(json["access_token"])
                 completion(json)

@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 var gEnrollmentMembersController: UIViewController!
 
 //var viewEnrollmentMember: enrollmentMembers!
@@ -15,14 +16,23 @@ var gEnrollmentMembersController: UIViewController!
 class EnrollmentMembersController: UIViewController {
 
    
+    @IBOutlet weak var EnrollmentMemberUIView: UIView!
+
+ 
+    
+    
+    func saveText(strText: NSString) {
+       
+        // labelText.text=strText
         
- weak var delegate: enrollmentDelegate?
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         gEnrollmentMembersController = self
       
-       delegate!.someFunction("10")
+        
         
         // Do any additional setup after loading the view.
     }
@@ -44,7 +54,4 @@ class EnrollmentMembersController: UIViewController {
     */
 
 }
-protocol enrollmentDelegate: class {
-    func someFunction(result: String)
-    
-}
+

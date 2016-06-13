@@ -9,7 +9,9 @@
 import UIKit
 import SwiftyJSON
 
-@IBDesignable class enrollmentMembers: UIView, enrollmentDelegate {
+
+
+@IBDesignable class enrollmentMembers: UIView{
     
     @IBOutlet var enrollmentMembersMainView: UIView!
     
@@ -24,26 +26,76 @@ import SwiftyJSON
     @IBOutlet weak var personTwoLastName: UITextField!
     @IBOutlet weak var personTwoDOB: UITextField!
     
+    @IBOutlet weak var rightArrow: UIImageView!
+    @IBOutlet weak var leftArrow: UIImageView!
     
-    var result : String  = ""
+    
+    @IBOutlet weak var firstMemberIcon: UIImageView!
+    @IBOutlet weak var secondMemberIcon: UIImageView!
+    
+    @IBOutlet weak var lblFirstMember: UILabel!
+    @IBOutlet weak var lblSecondMember: UILabel!
+    
+    
+    var ArrayState : Int = 0
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
         
     }
     
-  
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         loadViewFromNib ()
         
+        let tapright = UITapGestureRecognizer(target: self, action: Selector("tappedRight"))
+        rightArrow.addGestureRecognizer(tapright)
+        rightArrow.userInteractionEnabled = true
+        
+        let tapleft = UITapGestureRecognizer(target: self, action: Selector("tappedLeft"))
+        leftArrow.addGestureRecognizer(tapleft)
+        leftArrow.userInteractionEnabled = true
+        
+    
+        
+       
         rest.findEmployeeProfile("Enrollments/IsEnrolled",completion: {(json:JSON) -> ()in
             print(json)
+     
+            if(json == true)
+            {
+                
+            }
+            else{
+                
+                rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
+                    print(json)
+                    dispatch_async(dispatch_get_main_queue(),
+                {
+                    if(json["MaritalStatus"]){
+                      self.ArrayState = 2
+                        self.rightArrow.hidden = false
+                        self.leftArrow.hidden = false
+                         self.DisplayEnrollmentsDetails(json)
+                    }
+                    else{
+                         self.DisplayEnrollmentsDetails(json)
+                    }
+                    
+                    })
+                })
+                
+            }
+            
+            
+            
         })
-       print(result)
+      
         
     }
+ 
     
     func addPadding(width: CGFloat, myView: UITextField) {
         let paddingView = UIView(frame: CGRectMake(0, 0, width, myView.frame.height))
@@ -106,10 +158,124 @@ import SwiftyJSON
     }
     */
     
-    func someFunction(result: String) {
-      self.result = result
+
+func DisplayEnrollmentsDetails(json:JSON)
+    {
+      
+    if(String(json["isDataAvailable"]) == "true")
+    {
+        
+   //print(json["result"]["Groups"][0]["Members"][1])
+    //print(json["result"]["Groups"][0]["Members"][1]["FirstName"])
+     if(ArrayState == 0)
+     {
+        firstMemberIcon.image = UIImage(named: "wife_icon")
+        secondMemberIcon.image = UIImage(named: "son_icon")
+      lblFirstMember.text = "Wife"
+      lblSecondMember.text = "Son"
+    personOneFirstName.text = String(json["result"]["Groups"][0]["Members"][1]["FirstName"])
+    personOneMiddleName.text = String(json["result"]["Groups"][0]["Members"][1]["MiddleName"])
+    personOneLastName.text = String(json["result"]["Groups"][0]["Members"][1]["LastName"])
+    personOneDOB.text = String(json["result"]["Groups"][0]["Members"][1]["DateOfBirth"])
+        
+    personTwoFirstName.text = String(json["result"]["Groups"][0]["Members"][2]["FirstName"])
+    personTwoMiddleName.text = String(json["result"]["Groups"][0]["Members"][2]["MiddleName"])
+    personTwoLastName.text = String(json["result"]["Groups"][0]["Members"][2]["LastName"])
+    personTwoDOB.text = String(json["result"]["Groups"][0]["Members"][2]["DateOfBirth"])
+        
+        }
+        if(ArrayState == 1)
+        {
+           // firstMemberIcon.image = UIImage(named: "wife_icon")
+           // secondMemberIcon.image = UIImage(named: "son_icon")
+            lblFirstMember.text = "Son"
+            lblSecondMember.text = "Daughter"
+            
+            personOneFirstName.text = String(json["result"]["Groups"][0]["Members"][2]["FirstName"])
+            personOneMiddleName.text = String(json["result"]["Groups"][0]["Members"][2]["MiddleName"])
+            personOneLastName.text = String(json["result"]["Groups"][0]["Members"][2]["LastName"])
+            personOneDOB.text = String(json["result"]["Groups"][0]["Members"][2]["DateOfBirth"])
+            
+            personTwoFirstName.text = String(json["result"]["Groups"][0]["Members"][3]["FirstName"])
+            personTwoMiddleName.text = String(json["result"]["Groups"][0]["Members"][3]["MiddleName"])
+            personTwoLastName.text = String(json["result"]["Groups"][0]["Members"][3]["LastName"])
+            personTwoDOB.text = String(json["result"]["Groups"][0]["Members"][3]["DateOfBirth"])
+        }
+        
+        if(ArrayState == 2)
+        {
+            lblFirstMember.text = "Mother"
+            lblSecondMember.text = "Father"
+            
+            personOneFirstName.text = String(json["result"]["Groups"][0]["Members"][4]["FirstName"])
+            personOneMiddleName.text = String(json["result"]["Groups"][0]["Members"][4]["MiddleName"])
+            personOneLastName.text = String(json["result"]["Groups"][0]["Members"][4]["LastName"])
+            personOneDOB.text = String(json["result"]["Groups"][0]["Members"][4]["DateOfBirth"])
+            
+            personTwoFirstName.text = String(json["result"]["Groups"][0]["Members"][5]["FirstName"])
+            personTwoMiddleName.text = String(json["result"]["Groups"][0]["Members"][5]["MiddleName"])
+            personTwoLastName.text = String(json["result"]["Groups"][0]["Members"][5]["LastName"])
+            personTwoDOB.text = String(json["result"]["Groups"][0]["Members"][5]["DateOfBirth"])
+        }
+        if(ArrayState == 3)
+        {
+            lblFirstMember.text = "Mother in law"
+            lblSecondMember.text = "Father in law"
+            
+            personOneFirstName.text = String(json["result"]["Groups"][0]["Members"][5]["FirstName"])
+            personOneMiddleName.text = String(json["result"]["Groups"][0]["Members"][5]["MiddleName"])
+            personOneLastName.text = String(json["result"]["Groups"][0]["Members"][5]["LastName"])
+            personOneDOB.text = String(json["result"]["Groups"][0]["Members"][5]["DateOfBirth"])
+            
+            personTwoFirstName.text = String(json["result"]["Groups"][0]["Members"][6]["FirstName"])
+            personTwoMiddleName.text = String(json["result"]["Groups"][0]["Members"][6]["MiddleName"])
+            personTwoLastName.text = String(json["result"]["Groups"][0]["Members"][6]["LastName"])
+            personTwoDOB.text = String(json["result"]["Groups"][0]["Members"][6]["DateOfBirth"])
+        }
+        
+    }
+    else{
+        
+        }
+        
+        
     }
     
+    
+    func tappedLeft()
+    {
+      if(ArrayState != 0)
+      {
+        ArrayState -= 1
+        
+        rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
+            // print(json)
+            dispatch_async(dispatch_get_main_queue(),
+                {
+                    self.DisplayEnrollmentsDetails(json)
+                    
+            })})
+        }
+        
+    }
+    func tappedRight()
+    {
+        if(ArrayState != 3)
+        {
+            
+        ArrayState += 1
+        print(ArrayState)
+        rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
+            // print(json)
+            dispatch_async(dispatch_get_main_queue(),
+                {
+                    self.DisplayEnrollmentsDetails(json)
+                    
+            })})
+        
+    }
+    
+    }
+    
+    
 }
-
-
