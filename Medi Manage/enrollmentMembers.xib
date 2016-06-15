@@ -27,6 +27,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="enrollmentMembers" customModule="MediManage" customModuleProvider="target">
             <connections>
+                <outlet property="dateofMarriage" destination="1Te-ni-qCK" id="zyF-vp-lZk"/>
                 <outlet property="enrollmentMembersMainView" destination="iN0-l3-epB" id="Jqq-HL-cDx"/>
                 <outlet property="firstMemberIcon" destination="tgg-d4-Y6e" id="WUG-jb-u9h"/>
                 <outlet property="lblFirstMember" destination="qON-O6-6m9" id="Z33-YW-6CX"/>

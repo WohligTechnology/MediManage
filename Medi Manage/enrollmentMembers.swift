@@ -29,6 +29,7 @@ import SwiftyJSON
     @IBOutlet weak var rightArrow: UIImageView!
     @IBOutlet weak var leftArrow: UIImageView!
     
+    @IBOutlet weak var dateofMarriage: UITextField!
     
     @IBOutlet weak var firstMemberIcon: UIImageView!
     @IBOutlet weak var secondMemberIcon: UIImageView!
@@ -38,7 +39,20 @@ import SwiftyJSON
     
     
     var ArrayState : Int = 0
+    var dataMemberArray = []
+    var DataMemberKeyPair = [[String: String]]()
     
+    let myArray = [UITextField]()
+
+    //  var ArrayTextField :[UITextField] = [personOneFirstName,personOneMiddleName,personOneLastName]
+    
+    
+   var row1 = [String:String]()
+    var row2 = [String:String]()
+    var row3 = [String:String]()
+    var row4 = [String:String]()
+    var row5 = [String:String]()
+     var row6 = [String:String]()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -46,9 +60,22 @@ import SwiftyJSON
         
     }
     
+    
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         loadViewFromNib ()
+        personOneFirstName.viewWithTag(1)
+        
+        TextFieldChanges(personOneFirstName)
+        TextFieldChanges( personOneMiddleName)
+        TextFieldChanges( personOneLastName)
+        TextFieldChanges( personOneDOB)
+        TextFieldChanges( personOneDOM)
+        TextFieldChanges( personTwoFirstName)
+        TextFieldChanges( personTwoFirstName)
+        TextFieldChanges(personTwoLastName)
+        TextFieldChanges( personTwoDOB)
         
         let tapright = UITapGestureRecognizer(target: self, action: Selector("tappedRight"))
         rightArrow.addGestureRecognizer(tapright)
@@ -63,25 +90,26 @@ import SwiftyJSON
        
         rest.findEmployeeProfile("Enrollments/IsEnrolled",completion: {(json:JSON) -> ()in
             print(json)
-     
-            if(json == true)
+         if(json == true)
             {
                 
             }
             else{
                 
                 rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
-                    print(json)
+                   
                     dispatch_async(dispatch_get_main_queue(),
                 {
                     if(json["MaritalStatus"]){
-                      self.ArrayState = 2
-                        self.rightArrow.hidden = false
+                   
+                        self.ArrayState = 2
+                        self.rightArrow.hidden = true
                         self.leftArrow.hidden = false
-                         self.DisplayEnrollmentsDetails(json)
+                        self.DisplayEnrollmentsDetails(json)
                     }
                     else{
-                         self.DisplayEnrollmentsDetails(json)
+                        
+                        self.DisplayEnrollmentsDetails(json)
                     }
                     
                     })
@@ -95,7 +123,16 @@ import SwiftyJSON
       
         
     }
- 
+
+    
+    
+   func TextFieldChanges(textfield :UITextField )
+   {
+    textfield.addTarget(self, action: "textFieldDidChange" , forControlEvents: UIControlEvents.EditingChanged)
+    
+   }
+    
+    
     
     func addPadding(width: CGFloat, myView: UITextField) {
         let paddingView = UIView(frame: CGRectMake(0, 0, width, myView.frame.height))
@@ -165,73 +202,51 @@ func DisplayEnrollmentsDetails(json:JSON)
     if(String(json["isDataAvailable"]) == "true")
     {
         
-   //print(json["result"]["Groups"][0]["Members"][1])
-    //print(json["result"]["Groups"][0]["Members"][1]["FirstName"])
+   
      if(ArrayState == 0)
      {
         firstMemberIcon.image = UIImage(named: "wife_icon")
         secondMemberIcon.image = UIImage(named: "son_icon")
-      lblFirstMember.text = "Wife"
-      lblSecondMember.text = "Son"
-    personOneFirstName.text = String(json["result"]["Groups"][0]["Members"][1]["FirstName"])
-    personOneMiddleName.text = String(json["result"]["Groups"][0]["Members"][1]["MiddleName"])
-    personOneLastName.text = String(json["result"]["Groups"][0]["Members"][1]["LastName"])
-    personOneDOB.text = String(json["result"]["Groups"][0]["Members"][1]["DateOfBirth"])
+        self.leftArrow.hidden = true
+         self.dateofMarriage.hidden = false
         
-    personTwoFirstName.text = String(json["result"]["Groups"][0]["Members"][2]["FirstName"])
-    personTwoMiddleName.text = String(json["result"]["Groups"][0]["Members"][2]["MiddleName"])
-    personTwoLastName.text = String(json["result"]["Groups"][0]["Members"][2]["LastName"])
-    personTwoDOB.text = String(json["result"]["Groups"][0]["Members"][2]["DateOfBirth"])
+         self.dateofMarriage.text = String(json["result"]["Groups"][0]["Members"][1]["DateOfRelation"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
         
+        GetMemberData(1,key2: 2, json: json)
+        self.rightArrow.hidden = false
         }
         if(ArrayState == 1)
         {
-           // firstMemberIcon.image = UIImage(named: "wife_icon")
-           // secondMemberIcon.image = UIImage(named: "son_icon")
-            lblFirstMember.text = "Son"
-            lblSecondMember.text = "Daughter"
             
-            personOneFirstName.text = String(json["result"]["Groups"][0]["Members"][2]["FirstName"])
-            personOneMiddleName.text = String(json["result"]["Groups"][0]["Members"][2]["MiddleName"])
-            personOneLastName.text = String(json["result"]["Groups"][0]["Members"][2]["LastName"])
-            personOneDOB.text = String(json["result"]["Groups"][0]["Members"][2]["DateOfBirth"])
+            self.leftArrow.hidden = false
+            self.dateofMarriage.hidden = true
+            self.rightArrow.hidden = false
+           
+            GetMemberData(2,key2:3 , json: json)
             
-            personTwoFirstName.text = String(json["result"]["Groups"][0]["Members"][3]["FirstName"])
-            personTwoMiddleName.text = String(json["result"]["Groups"][0]["Members"][3]["MiddleName"])
-            personTwoLastName.text = String(json["result"]["Groups"][0]["Members"][3]["LastName"])
-            personTwoDOB.text = String(json["result"]["Groups"][0]["Members"][3]["DateOfBirth"])
+           
         }
         
         if(ArrayState == 2)
         {
-            lblFirstMember.text = "Mother"
-            lblSecondMember.text = "Father"
+            self.rightArrow.hidden = false
+
+             GetMemberData(5,key2:4 , json: json)
             
-            personOneFirstName.text = String(json["result"]["Groups"][0]["Members"][4]["FirstName"])
-            personOneMiddleName.text = String(json["result"]["Groups"][0]["Members"][4]["MiddleName"])
-            personOneLastName.text = String(json["result"]["Groups"][0]["Members"][4]["LastName"])
-            personOneDOB.text = String(json["result"]["Groups"][0]["Members"][4]["DateOfBirth"])
-            
-            personTwoFirstName.text = String(json["result"]["Groups"][0]["Members"][5]["FirstName"])
-            personTwoMiddleName.text = String(json["result"]["Groups"][0]["Members"][5]["MiddleName"])
-            personTwoLastName.text = String(json["result"]["Groups"][0]["Members"][5]["LastName"])
-            personTwoDOB.text = String(json["result"]["Groups"][0]["Members"][5]["DateOfBirth"])
-        }
+ }
         if(ArrayState == 3)
         {
-            lblFirstMember.text = "Mother in law"
-            lblSecondMember.text = "Father in law"
+          if(String(json["result"]["Groups"][0]["Members"][6]["RelationType"]) == "null")
+            {
+            GetMemberData(6,key2:6 , json: json)
             
-            personOneFirstName.text = String(json["result"]["Groups"][0]["Members"][5]["FirstName"])
-            personOneMiddleName.text = String(json["result"]["Groups"][0]["Members"][5]["MiddleName"])
-            personOneLastName.text = String(json["result"]["Groups"][0]["Members"][5]["LastName"])
-            personOneDOB.text = String(json["result"]["Groups"][0]["Members"][5]["DateOfBirth"])
+          }
+          else{
+            self.rightArrow.hidden = true
             
-            personTwoFirstName.text = String(json["result"]["Groups"][0]["Members"][6]["FirstName"])
-            personTwoMiddleName.text = String(json["result"]["Groups"][0]["Members"][6]["MiddleName"])
-            personTwoLastName.text = String(json["result"]["Groups"][0]["Members"][6]["LastName"])
-            personTwoDOB.text = String(json["result"]["Groups"][0]["Members"][6]["DateOfBirth"])
-        }
+             //GetMemberData(5,key2:6 , json: json)
+            }
+ }
         
     }
     else{
@@ -240,6 +255,9 @@ func DisplayEnrollmentsDetails(json:JSON)
         
         
     }
+    
+    
+    
     
     
     func tappedLeft()
@@ -256,6 +274,9 @@ func DisplayEnrollmentsDetails(json:JSON)
                     
             })})
         }
+     
+        
+        
         
     }
     func tappedRight()
@@ -274,8 +295,131 @@ func DisplayEnrollmentsDetails(json:JSON)
             })})
         
     }
-    
+   
     }
+    
+    func GetMemberData(key1 : Int,key2 : Int,json : JSON) {
+        
+        lblFirstMember.text = String(json["result"]["Groups"][0]["Members"][key1]["RelationType"])
+        personOneFirstName.text = String(json["result"]["Groups"][0]["Members"][key1]["FirstName"])
+        personOneMiddleName.text = String(json["result"]["Groups"][0]["Members"][key1]["MiddleName"])
+        personOneLastName.text = String(json["result"]["Groups"][0]["Members"][key1]["LastName"])
+        personOneDOB.text = String(json["result"]["Groups"][0]["Members"][key1]["DateOfBirth"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
+        
+        
+         lblSecondMember.text = String(json["result"]["Groups"][0]["Members"][key2]["RelationType"])
+        personTwoFirstName.text = String(json["result"]["Groups"][0]["Members"][key2]["FirstName"])
+        personTwoMiddleName.text = String(json["result"]["Groups"][0]["Members"][key2]["MiddleName"])
+        personTwoLastName.text = String(json["result"]["Groups"][0]["Members"][key2]["LastName"])
+        personTwoDOB.text = String(json["result"]["Groups"][0]["Members"][key2]["DateOfBirth"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
+  
+        
+        DataUpdater()
+        
+        
+   }
+    
+    func  DataUpdater()
+    {
+        if(ArrayState == 0)
+        {
+            
+            row1["RelationType"] = lblFirstMember.text
+            row1["FirstName"] = personOneFirstName.text
+            row1["MiddleName"] = personOneMiddleName.text
+            row1["LastName"] = personOneLastName.text
+            row1["DateOfBirth"] = personOneDOB.text
+            row1["DateOfRelation"] = dateofMarriage.text
+            
+            row2["RelationType"] = lblSecondMember.text
+            row2["FirstName"] = personTwoFirstName.text
+            row2["MiddleName"] = personTwoMiddleName.text
+            row2["LastName"] = personTwoLastName.text
+            row2["DateOfBirth"] = personTwoDOB.text
+            row2["DateOfRelation"] = dateofMarriage.text
+         
+           
+      
+        }
+        if(ArrayState == 1)
+        {
+            row2["RelationType"] = lblFirstMember.text
+            row2["FirstName"] = personOneFirstName.text
+            row2["MiddleName"] = personOneMiddleName.text
+            row2["LastName"] = personOneLastName.text
+            row2["DateOfBirth"] = personOneDOB.text
+            row2["DateOfRelation"] = dateofMarriage.text
+            
+            row2["RelationType"] = lblSecondMember.text
+            row2["FirstName"] = personTwoFirstName.text
+            row2["MiddleName"] = personTwoMiddleName.text
+            row2["LastName"] = personTwoLastName.text
+            row2["DateOfBirth"] = personTwoDOB.text
+            row2["DateOfRelation"] = dateofMarriage.text
+        
+        }
+        if(ArrayState == 2)
+        {
+            
+            row3["RelationType"] = lblFirstMember.text
+            row3["FirstName"] = personOneFirstName.text
+            row3["MiddleName"] = personOneMiddleName.text
+            row3["LastName"] = personOneLastName.text
+            row3["DateOfBirth"] = personOneDOB.text
+            row3["DateOfRelation"] = dateofMarriage.text
+            
+            row4["RelationType"] = lblSecondMember.text
+            row4["FirstName"] = personTwoFirstName.text
+            row4["MiddleName"] = personTwoMiddleName.text
+            row4["LastName"] = personTwoLastName.text
+            row4["DateOfBirth"] = personTwoDOB.text
+            row4["DateOfRelation"] = dateofMarriage.text
+
+        
+        }
+        if(ArrayState == 2)
+        {
+            row5["RelationType"] = lblFirstMember.text
+            row5["FirstName"] = personOneFirstName.text
+            row5["MiddleName"] = personOneMiddleName.text
+            row5["LastName"] = personOneLastName.text
+            row5["DateOfBirth"] = personOneDOB.text
+            row5["DateOfRelation"] = dateofMarriage.text
+            
+            row6["RelationType"] = lblSecondMember.text
+            row6["FirstName"] = personTwoFirstName.text
+            row6["MiddleName"] = personTwoMiddleName.text
+            row6["LastName"] = personTwoLastName.text
+            row6["DateOfBirth"] = personTwoDOB.text
+            row6["DateOfRelation"] = dateofMarriage.text
+            
+            
+        }
+        
+        
+    }
+    
+    
+    
+    
+    
+    func textFieldDidChange(textField: UITextField,Hello:String) {
+       
+        if(ArrayState == 0)
+        {
+         row1["FirstName"] = textField.text
+            print(textField)
+        }
+        print(row1)
+    }
+
+    
+    
+    
+    
+    
+    
+    
     
     
 }

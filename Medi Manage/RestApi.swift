@@ -94,8 +94,6 @@ public class RestApi {
                 debugPrint(response)
                 json = JSON(data: response.data!)
                 //print(json["access_token"])
-                
-            
                    completion(json)
                     
                 }
