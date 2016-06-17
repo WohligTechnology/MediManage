@@ -74,8 +74,7 @@ import SwiftValidator
         dateOfBirth.addSubview(imageView)
         
         validator.registerField(employeeID, rules: [RequiredRule(), FullNameRule()])
-        
-        //        /imageView
+       
     }
     
     @IBAction func loginCall(sender: AnyObject) {
@@ -140,15 +139,7 @@ import SwiftValidator
                         
                         break
                     }
-            })
-            
-            
-            
-           
-        
-            
-       })
-       
+            })})   
         }
   
 }

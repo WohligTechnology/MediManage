@@ -27,21 +27,22 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="enrollmentMembers" customModule="MediManage" customModuleProvider="target">
             <connections>
-                <outlet property="dateofMarriage" destination="1Te-ni-qCK" id="zyF-vp-lZk"/>
+                <outlet property="dateofMarriage" destination="1Te-ni-qCK" id="X9r-se-x0y"/>
                 <outlet property="enrollmentMembersMainView" destination="iN0-l3-epB" id="Jqq-HL-cDx"/>
                 <outlet property="firstMemberIcon" destination="tgg-d4-Y6e" id="WUG-jb-u9h"/>
                 <outlet property="lblFirstMember" destination="qON-O6-6m9" id="Z33-YW-6CX"/>
                 <outlet property="lblSecondMember" destination="dhu-AZ-v1Y" id="cjg-ev-J7J"/>
                 <outlet property="leftArrow" destination="rI0-OL-emN" id="6aq-NO-dmw"/>
                 <outlet property="personOneDOB" destination="rqn-Gd-1pP" id="ZDX-0b-nay"/>
-                <outlet property="personOneDOM" destination="1Te-ni-qCK" id="YYf-ew-qQ9"/>
                 <outlet property="personOneFirstName" destination="x6I-VN-wCK" id="YhG-F4-EOt"/>
                 <outlet property="personOneLastName" destination="Cjv-t7-3uL" id="coH-qM-iGQ"/>
                 <outlet property="personOneMiddleName" destination="h5l-DK-SoC" id="hXq-bs-z7m"/>
+                <outlet property="personOneTick" destination="ecy-zV-dfm" id="QLX-RP-oYw"/>
                 <outlet property="personTwoDOB" destination="FZX-o9-QMX" id="El4-mA-xZE"/>
                 <outlet property="personTwoFirstName" destination="4fk-mZ-NEc" id="EvV-bl-zbW"/>
                 <outlet property="personTwoLastName" destination="HQk-Lw-8sV" id="ZFm-JP-3Fo"/>
                 <outlet property="personTwoMiddleName" destination="ko9-B2-WyB" id="vUG-hU-lWx"/>
+                <outlet property="personTwoTick" destination="Sww-H1-2Ob" id="cuX-wh-HNH"/>
                 <outlet property="rightArrow" destination="kEl-eS-V8J" id="BNk-Zh-y2w"/>
                 <outlet property="secondMemberIcon" destination="WCQ-ZV-elK" id="M4j-it-Gn9"/>
             </connections>
@@ -102,6 +103,9 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <constraint firstAttribute="width" secondItem="tgg-d4-Y6e" secondAttribute="height" multiplier="1:1" id="Fqm-7J-Zl9"/>
                         <constraint firstAttribute="height" constant="100" id="xca-9J-W10"/>
                     </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ecy-zV-dfm">
+                    <rect key="frame" x="60" y="70" width="35" height="32"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="son_icon" translatesAutoresizingMaskIntoConstraints="NO" id="WCQ-ZV-elK">
                     <rect key="frame" x="170" y="70" width="100" height="100"/>
@@ -181,6 +185,9 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                             <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="personOneDatePicker:" destination="-1" eventType="editingDidEnd" id="jzj-99-X6t"/>
+                    </connections>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of Marriage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Te-ni-qCK">
                     <rect key="frame" x="35" y="390" width="120" height="30"/>
@@ -194,6 +201,9 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                             <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="dateofMarriage:" destination="-1" eventType="editingDidEnd" id="AXb-wF-Edz"/>
+                    </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Son" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhu-AZ-v1Y">
                     <rect key="frame" x="170" y="173" width="90" height="17"/>
@@ -259,6 +269,9 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                             <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="personTwoDatePicker:" destination="-1" eventType="editingDidEnd" id="uqg-q5-7f7"/>
+                    </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4W-3M-ltY">
                     <rect key="frame" x="0.0" y="518" width="320" height="50"/>
@@ -281,12 +294,19 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <constraint firstAttribute="height" constant="30" id="ocq-tr-iKr"/>
                     </constraints>
                 </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Sww-H1-2Ob">
+                    <rect key="frame" x="170" y="70" width="35" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="35" id="Glv-m6-lQy"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="rqn-Gd-1pP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="35" id="0c6-6b-zuI"/>
                 <constraint firstItem="HQk-Lw-8sV" firstAttribute="top" secondItem="ko9-B2-WyB" secondAttribute="bottom" constant="15" id="19V-TY-wmA"/>
                 <constraint firstItem="x6I-VN-wCK" firstAttribute="leading" secondItem="h5l-DK-SoC" secondAttribute="leading" id="2Ii-a1-8w4"/>
+                <constraint firstItem="ecy-zV-dfm" firstAttribute="leading" secondItem="tgg-d4-Y6e" secondAttribute="leading" id="2Zj-wY-ZcP"/>
                 <constraint firstItem="x6I-VN-wCK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="35" id="2rq-MU-nPR"/>
                 <constraint firstItem="Cjv-t7-3uL" firstAttribute="top" secondItem="h5l-DK-SoC" secondAttribute="bottom" constant="15" id="3K6-t0-ed7"/>
                 <constraint firstItem="h5l-DK-SoC" firstAttribute="top" secondItem="x6I-VN-wCK" secondAttribute="bottom" constant="15" id="4ax-9P-leJ"/>
@@ -304,21 +324,25 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 <constraint firstAttribute="trailing" secondItem="WCQ-ZV-elK" secondAttribute="trailing" constant="50" id="Fta-Pn-Cpl"/>
                 <constraint firstAttribute="trailing" secondItem="PFW-TE-DRE" secondAttribute="trailing" id="G8I-bb-gFn"/>
                 <constraint firstItem="1Te-ni-qCK" firstAttribute="top" secondItem="rqn-Gd-1pP" secondAttribute="bottom" constant="15" id="Hh4-gr-DBW"/>
+                <constraint firstItem="Sww-H1-2Ob" firstAttribute="top" secondItem="WCQ-ZV-elK" secondAttribute="top" id="I9w-Iy-tSx"/>
                 <constraint firstItem="qON-O6-6m9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="60" id="IKZ-yf-QcU"/>
                 <constraint firstAttribute="trailing" secondItem="HQk-Lw-8sV" secondAttribute="trailing" constant="35" id="INg-tL-Pq3"/>
                 <constraint firstItem="rqn-Gd-1pP" firstAttribute="leading" secondItem="1Te-ni-qCK" secondAttribute="leading" id="IWy-qg-PqK"/>
                 <constraint firstAttribute="trailing" secondItem="IsO-wM-aK9" secondAttribute="trailing" constant="85" id="Jbq-Uo-uGE"/>
                 <constraint firstItem="kEl-eS-V8J" firstAttribute="top" secondItem="aUz-hc-Jr2" secondAttribute="bottom" constant="7" id="JyT-oF-1e9"/>
                 <constraint firstItem="ko9-B2-WyB" firstAttribute="top" secondItem="4fk-mZ-NEc" secondAttribute="bottom" constant="15" id="N2I-07-fZS"/>
+                <constraint firstItem="Sww-H1-2Ob" firstAttribute="leading" secondItem="WCQ-ZV-elK" secondAttribute="leading" id="PJl-Rc-jUy"/>
                 <constraint firstAttribute="bottom" secondItem="d4W-3M-ltY" secondAttribute="bottom" id="PPc-yR-X2Y"/>
                 <constraint firstItem="WCQ-ZV-elK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="70" id="Thx-H1-WRK"/>
                 <constraint firstItem="aUz-hc-Jr2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="VNL-Em-fYc"/>
                 <constraint firstItem="h5l-DK-SoC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="35" id="XBh-J4-izc"/>
                 <constraint firstItem="rqn-Gd-1pP" firstAttribute="top" secondItem="Cjv-t7-3uL" secondAttribute="bottom" constant="15" id="Xfs-c4-8pC"/>
                 <constraint firstItem="qON-O6-6m9" firstAttribute="top" secondItem="tgg-d4-Y6e" secondAttribute="bottom" constant="3" id="YSt-pE-Hb3"/>
+                <constraint firstItem="PFW-TE-DRE" firstAttribute="top" secondItem="Sww-H1-2Ob" secondAttribute="bottom" constant="8" symbolic="YES" id="arb-0s-cqL"/>
                 <constraint firstAttribute="trailing" secondItem="ko9-B2-WyB" secondAttribute="trailing" constant="35" id="c2M-z4-qTF"/>
                 <constraint firstItem="tgg-d4-Y6e" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="70" id="cDw-V6-z8T"/>
                 <constraint firstItem="rI0-OL-emN" firstAttribute="top" secondItem="aUz-hc-Jr2" secondAttribute="bottom" constant="7" id="ffL-aW-tLE"/>
+                <constraint firstItem="ecy-zV-dfm" firstAttribute="top" secondItem="tgg-d4-Y6e" secondAttribute="top" id="hVd-eZ-ihq"/>
                 <constraint firstAttribute="trailing" secondItem="aUz-hc-Jr2" secondAttribute="trailing" id="hW5-sl-ycg"/>
                 <constraint firstItem="HQk-Lw-8sV" firstAttribute="leading" secondItem="FZX-o9-QMX" secondAttribute="leading" id="iHJ-Xr-PXb"/>
                 <constraint firstItem="rI0-OL-emN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="ilL-wK-3ct"/>
@@ -329,9 +353,11 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 <constraint firstItem="FZX-o9-QMX" firstAttribute="top" secondItem="HQk-Lw-8sV" secondAttribute="bottom" constant="15" id="mfA-Mt-NtZ"/>
                 <constraint firstItem="PFW-TE-DRE" firstAttribute="top" secondItem="aUz-hc-Jr2" secondAttribute="bottom" id="qWo-K4-Odh"/>
                 <constraint firstItem="h5l-DK-SoC" firstAttribute="leading" secondItem="Cjv-t7-3uL" secondAttribute="leading" id="rE7-3l-VEu"/>
+                <constraint firstItem="PFW-TE-DRE" firstAttribute="top" secondItem="ecy-zV-dfm" secondAttribute="bottom" constant="8" symbolic="YES" id="rsm-JO-Um6"/>
                 <constraint firstItem="d4W-3M-ltY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="v20-vT-zzF"/>
                 <constraint firstItem="4fk-mZ-NEc" firstAttribute="top" secondItem="dhu-AZ-v1Y" secondAttribute="bottom" constant="20" id="vc9-zD-GDV"/>
                 <constraint firstAttribute="trailing" secondItem="kEl-eS-V8J" secondAttribute="trailing" constant="10" id="xC4-Bx-yiu"/>
+                <constraint firstItem="WCQ-ZV-elK" firstAttribute="leading" secondItem="ecy-zV-dfm" secondAttribute="trailing" constant="75" id="xTs-GM-Zus"/>
                 <constraint firstItem="aUz-hc-Jr2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zN7-a8-eNr"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -344,6 +370,7 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
         <image name="arrow_left" width="76" height="52"/>
         <image name="arrow_right" width="76" height="52"/>
         <image name="son_icon" width="358" height="358"/>
+        <image name="tick_icon" width="111" height="111"/>
         <image name="wife_icon" width="358" height="358"/>
     </resources>
 </document>

@@ -14,10 +14,13 @@ import Alamofire
 @IBDesignable class login: UIView {
     
   
+    var TestId = "9920590849"
+    var TestPWD = "75476145"
     
     @IBAction func signupCall(sender: AnyObject) {
         gLoginController.performSegueWithIdentifier("signup", sender: nil)
     }
+    
     
     @IBOutlet weak var mobile: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -30,7 +33,8 @@ import Alamofire
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         loadViewFromNib ()
-        
+        mobile.text = TestId
+        password.text = TestPWD
     }
     
     func addPadding(width: CGFloat, myView: UITextField) {
