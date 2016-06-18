@@ -27,6 +27,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="enrollmentMembers" customModule="MediManage" customModuleProvider="target">
             <connections>
+                <outlet property="addChildrensecond" destination="IsO-wM-aK9" id="dyP-Uz-Y5C"/>
+                <outlet property="addChildrensfirst" destination="Im2-jr-9NC" id="Hoh-H0-wlx"/>
                 <outlet property="dateofMarriage" destination="1Te-ni-qCK" id="X9r-se-x0y"/>
                 <outlet property="enrollmentMembersMainView" destination="iN0-l3-epB" id="Jqq-HL-cDx"/>
                 <outlet property="firstMemberIcon" destination="tgg-d4-Y6e" id="WUG-jb-u9h"/>
@@ -189,7 +191,7 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <action selector="personOneDatePicker:" destination="-1" eventType="editingDidEnd" id="jzj-99-X6t"/>
                     </connections>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of Marriage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Te-ni-qCK">
+                <textField hidden="YES" opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of Marriage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Te-ni-qCK">
                     <rect key="frame" x="35" y="390" width="120" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="g9g-Pi-tYD"/>
@@ -287,8 +289,8 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <action selector="insuredmembersCall:" destination="-1" eventType="touchUpInside" id="md4-Ho-8Xd"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_icon" translatesAutoresizingMaskIntoConstraints="NO" id="IsO-wM-aK9">
-                    <rect key="frame" x="201" y="390" width="34" height="30"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="add_icon" translatesAutoresizingMaskIntoConstraints="NO" id="IsO-wM-aK9">
+                    <rect key="frame" x="203" y="390" width="34" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="34" id="4FN-H8-5lF"/>
                         <constraint firstAttribute="height" constant="30" id="ocq-tr-iKr"/>
@@ -298,6 +300,13 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                     <rect key="frame" x="170" y="70" width="35" height="32"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="35" id="Glv-m6-lQy"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Im2-jr-9NC">
+                    <rect key="frame" x="60" y="390" width="34" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="GLO-BJ-meZ"/>
+                        <constraint firstAttribute="width" constant="34" id="HXg-yT-7uS"/>
                     </constraints>
                 </imageView>
             </subviews>
@@ -335,6 +344,7 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 <constraint firstAttribute="bottom" secondItem="d4W-3M-ltY" secondAttribute="bottom" id="PPc-yR-X2Y"/>
                 <constraint firstItem="WCQ-ZV-elK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="70" id="Thx-H1-WRK"/>
                 <constraint firstItem="aUz-hc-Jr2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="VNL-Em-fYc"/>
+                <constraint firstItem="Im2-jr-9NC" firstAttribute="leading" secondItem="qON-O6-6m9" secondAttribute="leading" id="W6K-bc-6L1"/>
                 <constraint firstItem="h5l-DK-SoC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="35" id="XBh-J4-izc"/>
                 <constraint firstItem="rqn-Gd-1pP" firstAttribute="top" secondItem="Cjv-t7-3uL" secondAttribute="bottom" constant="15" id="Xfs-c4-8pC"/>
                 <constraint firstItem="qON-O6-6m9" firstAttribute="top" secondItem="tgg-d4-Y6e" secondAttribute="bottom" constant="3" id="YSt-pE-Hb3"/>
@@ -343,6 +353,7 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 <constraint firstItem="tgg-d4-Y6e" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="70" id="cDw-V6-z8T"/>
                 <constraint firstItem="rI0-OL-emN" firstAttribute="top" secondItem="aUz-hc-Jr2" secondAttribute="bottom" constant="7" id="ffL-aW-tLE"/>
                 <constraint firstItem="ecy-zV-dfm" firstAttribute="top" secondItem="tgg-d4-Y6e" secondAttribute="top" id="hVd-eZ-ihq"/>
+                <constraint firstItem="Im2-jr-9NC" firstAttribute="top" secondItem="1Te-ni-qCK" secondAttribute="top" id="hW1-6r-cmM"/>
                 <constraint firstAttribute="trailing" secondItem="aUz-hc-Jr2" secondAttribute="trailing" id="hW5-sl-ycg"/>
                 <constraint firstItem="HQk-Lw-8sV" firstAttribute="leading" secondItem="FZX-o9-QMX" secondAttribute="leading" id="iHJ-Xr-PXb"/>
                 <constraint firstItem="rI0-OL-emN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="ilL-wK-3ct"/>
