@@ -16,7 +16,7 @@ import Alamofire
 
 
 
-let adminUrl = "https://testcorp.medimanage.com/api/";
+let adminUrl = "http://testcorp.medimanage.com/api/";
 let apiURL = adminUrl + "v1/";
 
 public class RestApi {
@@ -48,9 +48,10 @@ public class RestApi {
         let params = ["grant_type": "password","username":username, "password":password]
       
      
-       
+      /*  [{"isSelected": "true", "FirstName": "Niruben", "MiddleName": "R", "RelationType": "Wife", "DateOfRelation": "2016-04-01", "SystemIdentifier": "S", "LastName": "Patel", "DateOfBirth": "1975-01-29"},
+        "isSelected": "true", "FirstName": "Ravi", "MiddleName": "R", "RelationType": "Son", "DateOfRelation": "null", "SystemIdentifier": "C", "LastName": "Patel", "DateOfBirth": "1997-10-04"]
       
-        
+        */
       let header = ["Content-Type":"application/x-www-form-urlencoded"]
         
         do {
@@ -117,22 +118,73 @@ public class RestApi {
         return man
     }()
 // ‘Authorization’: ‘Bearer{single space}‘ + api_key
-
+// let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
     public func findEmployeeProfile(SUBURL : String,completion:((JSON) -> Void))
     {
         var json = JSON(1)
         
-        let header = ["Authorization":"Bearer \(Employee_API_KEY)"]
+        let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
        
-        Manager.request(.GET, apiURL+SUBURL ,parameters: nil, headers: header)
+        Manager.request(.GET, apiURL+SUBURL ,parameters: nil, headers: isLoginheader)
             .responseJSON { response in
                // debugPrint(response)
                 json = JSON(data: response.data!)
                 //print(json["access_token"])
                 completion(json)
+                print(json)
                 
         }}
     
     
+    
+    public func AddMembers(SUBURL : String, data : String ,completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
+        
+       // let header = ["Authorization":"Bearer \(Employee_API_KEY)"]
+      
+       
+        
+        
+         let params = ["data": (data)]
+        
+        Manager.request(.POST, apiURL+SUBURL ,parameters: params, headers: isLoginheader)
+            .responseJSON { response in
+                
+                json = JSON(data: response.data!)
+                completion(json)
+                print(json)
+                
+        }}
+   
+     //testcorp.medimanage.com/api/v1/Users/ConfirmOTP/{mobileNo}/{code}
+    
+     //testcorp.medimanage.com/api/v1/Users/ClientSendOTP/{mobileNo}/{password}
+    public func SendOtp(SUBURL :String,mobileno : String, password : String, completion:((JSON) -> Void))
+    {
+            var json = JSON(1)
+        do {
+            let opt = try HTTP.GET(apiURL + SUBURL + "({\(mobileno)}/{\(password)})" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:["header":"application/json"])
+            print(opt)
+            opt.start { response in
+                if let _ = response.error {
+                    completion(json);
+                }
+                else
+                {
+                    json  = JSON(data: response.data)
+                    print(json)
+                    completion(json);
+                }
+            }
+        } catch _ {
+            completion(json);
+        }
+        
+    }
+
 }
+
+
 

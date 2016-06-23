@@ -24,18 +24,12 @@ import UIKit
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
-    
-    
+   
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
         
-        
-       
-        
-        
-       
         
         
     }
@@ -44,15 +38,19 @@ import UIKit
         super.init(coder: aDecoder)
         loadViewFromNib ()
         
+        let cmpr = CompleteProfileController()
         
-        txtFullName.text = EmployeeFullName
-        txtDateofBirth.text = EmployeeBirthDate
-        txtEmployeeNo.text = EmployeeNo
+        print(cmpr.Gender)
+        print(cmpr.Email ,"Hell")
+        txtFullName.text = cmpr.FullName
+        txtDateofBirth.text = cmpr.DateOfBirth
+        txtEmployeeNo.text = cmpr.EmployeeNo
+        maritalStatus.text = cmpr.MaritalStatus
+        email.text = cmpr.Email
         
+
         
-        
-        
-        
+       
     }
     
     func addBottomBorder(color: UIColor, linewidth: CGFloat, myView: UIView) {
@@ -101,7 +99,16 @@ import UIKit
     
     
     @IBAction func retrieveLoginCall(sender: AnyObject) {
-        gCompleteProfileController.performSegueWithIdentifier("retrieveLogin", sender: nil)
-    }
+        
+      let mobileNo = String(mobileNumber.text)
+      let pass = String(password.text)
+        rest.SendOtp("ClientSendOTP/", mobileno: mobileNo, password: pass, completion: {(json) -> () in
+        print(json)
+        })
+           
+       
+      //  gCompleteProfileController.performSegueWithIdentifier("retrieveLogin", sender: nil)
     
+    
+}
 }

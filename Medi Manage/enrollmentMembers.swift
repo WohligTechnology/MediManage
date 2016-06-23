@@ -10,6 +10,7 @@ import UIKit
 import SwiftyJSON
 
 
+
 @IBDesignable class enrollmentMembers: UIView{
     
     @IBOutlet var enrollmentMembersMainView: UIView!
@@ -44,7 +45,7 @@ import SwiftyJSON
     
     @IBOutlet weak var addChildrensecond: UIImageView!
     
-    
+    var hotjson : JSON  = ""
     
    
     var dateDob = ""
@@ -53,10 +54,10 @@ import SwiftyJSON
     
     var childrenSon : Int = 0
     var childDaughter : Int = 0
-    var childrenCapasity : Int = 0
+    var childrenCapacity : Int = 0
     var parentCapasity : Int = 0
     var lawsCapasity : Int = 0
-    var TEXTFIELD = ["FirstName","MiddleName","LastName","DateOfBirth","DateOfRelation","RelationType","isSelected"]
+    var TEXTFIELD = ["FirstName","MiddleName","LastName","DateOfBirth","DateOfRelation","RelationType","isSelected","SystemIdentifier"]
     
     
     
@@ -69,9 +70,10 @@ import SwiftyJSON
     var row7 = [String:String]()
     var row8 = [String:String]()
     
-    
+    var DateTicker = 0
     
      var DataMemberKeyPair = [[String: String]]()
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -80,29 +82,40 @@ import SwiftyJSON
     }
     
     
+   
+    
+  
+    
     
     @IBAction func personOneDatePicker(sender: UITextField) {
         
+         DateTicker = 3
         datePickerView.datePickerMode = UIDatePickerMode.Date
         sender.inputView = datePickerView
-        datePickerView.addTarget(self, action: #selector(self.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
- 
+        datePickerView.addTarget(self , action: #selector(self.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
+       
         
     }
     
     
-    @IBAction func personTwoDatePicker(sender: UITextField) {
-        datePickerView.datePickerMode = UIDatePickerMode.Date
-        sender.inputView = datePickerView
-        datePickerView.addTarget(self, action: #selector(self.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
-    }
-    
-    @IBAction func dateofMarriage(sender: UITextField) {
+    @IBAction func personeTwoDatePicker(sender: UITextField) {
+        DateTicker = 8
         datePickerView.datePickerMode = UIDatePickerMode.Date
         sender.inputView = datePickerView
         datePickerView.addTarget(self, action: #selector(self.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
         
     }
+    
+    
+    @IBAction func DateofMarriage(sender: UITextField) {
+         DateTicker = 4
+        datePickerView.datePickerMode = UIDatePickerMode.Date
+        sender.inputView = datePickerView
+        datePickerView.addTarget(self, action: #selector(self.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
+       
+    }
+  
+   
    
     
     
@@ -113,7 +126,8 @@ import SwiftyJSON
         ApplyChangesTextField()
         tapImageGesture()
        
-       
+      
+    
         
         rest.findEmployeeProfile("Enrollments/IsEnrolled",completion: {(json:JSON) -> ()in
           
@@ -132,12 +146,12 @@ import SwiftyJSON
                         self.leftArrow.hidden = false
                         self.SetMemberData(json)
                         self.DisplayEnrollmentsDetails()
-                         print(json)
+                        // print(json)
                     
                     }
                     else{self.SetMemberData(json)
                          self.DisplayEnrollmentsDetails()
-                        print(json)
+                      //  print(json)
                     }})})}})}
 
     
@@ -163,8 +177,8 @@ import SwiftyJSON
     
     
     
-    
-    
+ //   ["FirstName","MiddleName","LastName","DateOfBirth","DateOfRelation","RelationType","isSelected"]
+     //     0           1          2         3              4                   5             6
     
     /* Selected Person Tick Mark One  */
     
@@ -172,66 +186,69 @@ import SwiftyJSON
     {
         switch ArrayState {
         case 0:
-            if(row1["isSelected"]! == "true")
+            if(DataMemberKeyPair[0]["isSelected"]! == "true")
             {
-            row1["isSelected"] = "false"
+            DataMemberKeyPair[0]["isSelected"] = "false"
              for x in 0..<5 {
-                row1[TEXTFIELD[x]] = ""
+                DataMemberKeyPair[0][TEXTFIELD[x]] = ""
              }
-             DataUpdater1(row1)
+             DataUpdater1(DataMemberKeyPair[0])
              DisableTextField(1,flag: false)
             }
             else{
-                row1["isSelected"] = "true"
-                DataUpdater1(row1)
+                DataMemberKeyPair[0]["isSelected"] = "true"
+                DataUpdater1(DataMemberKeyPair[0])
                 DisableTextField(1,flag: true)
             }
             break
 
         case 1:
-            if(row2["isSelected"]! == "true")
-            {   row2["isSelected"] = "false"
+            if(DataMemberKeyPair[1]["isSelected"]! == "true")
+            {   DataMemberKeyPair[1]["isSelected"] = "false"
                 for x in 0..<5 {
-                    row1[TEXTFIELD[x]] = ""
+                    DataMemberKeyPair[1][TEXTFIELD[x]] = ""
+                    
                 }
-                DataUpdater1(row2)
+                DataUpdater1(DataMemberKeyPair[1])
                 DisableTextField(1,flag: false)
             }
             else{
-                row2["isSelected"] = "true"
-                DataUpdater1(row2)
+                DataMemberKeyPair[1]["isSelected"] = "true"
+                DataUpdater1(DataMemberKeyPair[1])
                 DisableTextField(1,flag: true)
             }
             break
 
         case 2:
-            if(row4["isSelected"]! == "true")
+            if(DataMemberKeyPair[3]["isSelected"]! == "true")
             {
-                row4["isSelected"] = "false"
+                DataMemberKeyPair[3]["isSelected"] = "false"
                 for x in 0..<5 {
-                    row4[TEXTFIELD[x]] = ""
+                    DataMemberKeyPair[3][TEXTFIELD[x]] = ""
+                    
                 }
-                DataUpdater1(row4)
+                
+                DataUpdater1(DataMemberKeyPair[3])
                 DisableTextField(1,flag: false)
             }
             else{
-                row4["isSelected"] = "true"
-                DataUpdater1(row4)
+                DataMemberKeyPair[3]["isSelected"] = "true"
+                DataUpdater1(DataMemberKeyPair[3])
                 DisableTextField(1,flag: true)
             }
             break
         case 3:
-            if(row6["isSelected"]! == "true")
-            {   row6["isSelected"] = "false"
+            if(DataMemberKeyPair[5]["isSelected"]! == "true")
+            {   DataMemberKeyPair[5]["isSelected"] = "false"
                 for x in 0..<5 {
-                    row6[TEXTFIELD[x]] = ""
-                }
-                DataUpdater1(row6)
+                    DataMemberKeyPair[5][TEXTFIELD[x]] = ""
+                  }
+                  DataUpdater1(DataMemberKeyPair[5])
                 DisableTextField(1,flag: false)
             }
             else{
-                row6["isSelected"] = "true"
-                DataUpdater1(row6)
+                DataMemberKeyPair[5]["isSelected"] = "true"
+                DataUpdater1(DataMemberKeyPair[5])
                 DisableTextField(1,flag: true)
             }
             break
@@ -250,73 +267,82 @@ import SwiftyJSON
       
         switch ArrayState {
         case 0:
-            if(row2["isSelected"]! == "true")
+            if(DataMemberKeyPair[1]["isSelected"]! == "true")
             {
-                row2["isSelected"] = "false"
-                
+                DataMemberKeyPair[1]["isSelected"] = "false"
                 for x in 0..<5 {
-                    row2[TEXTFIELD[x]] = ""
+                    DataMemberKeyPair[1][TEXTFIELD[x]] = ""
+                    
                 }
-                DataUpdater2(row2)
+                
+                DataUpdater2(DataMemberKeyPair[1])
                 DisableTextField(2,flag: false)
+                
+                
             }
             else{
-                row2["isSelected"] = "true"
-                DataUpdater2(row2)
+                DataMemberKeyPair[1]["isSelected"] = "true"
+                DataUpdater2(DataMemberKeyPair[1])
                 DisableTextField(2,flag: true)
             }
             
             
             break
         case 1:
-            if(row3["isSelected"]! == "true")
+            if(DataMemberKeyPair[2]["isSelected"]! == "true")
             {
-                row3["isSelected"] = "false"
+                DataMemberKeyPair[2]["isSelected"] = "false"
                 for x in 0..<5 {
-                    row3[TEXTFIELD[x]] = ""
+                    DataMemberKeyPair[2][TEXTFIELD[x]] = ""
+                    
+                    
                 }
-                DataUpdater2(row3)
+               
+                DataUpdater2(DataMemberKeyPair[2])
                 DisableTextField(2,flag: false)
             }
             else{
                
-                row3["isSelected"] = "true"
-                DataUpdater2(row3)
+                DataMemberKeyPair[2]["isSelected"] = "true"
+                DataUpdater2(DataMemberKeyPair[2])
                 DisableTextField(2,flag: true)
             }
             break
             
         case 2:
-            if(row5["isSelected"]! == "true")
-            {   row5["isSelected"] = "false"
+            if(DataMemberKeyPair[4]["isSelected"]! == "true")
+            {   DataMemberKeyPair[4]["isSelected"] = "false"
                 
                 for x in 0..<5 {
-                    row5[TEXTFIELD[x]] = ""
+                    DataMemberKeyPair[4][TEXTFIELD[x]] = ""
+                    
                 }
-                DataUpdater2(row5)
+                DataUpdater2(DataMemberKeyPair[4])
                 DisableTextField(2,flag: false)
             }
             else{
-                row5["isSelected"] = "true"
-                DataUpdater2(row5)
+                DataMemberKeyPair[4]["isSelected"] = "true"
+                DataUpdater2(DataMemberKeyPair[4])
                 DisableTextField(2,flag: true)
             }
 
             break
             
         case 3:
-            if(row7["isSelected"]! == "true")
+            if(DataMemberKeyPair[6]["isSelected"]! == "true")
             {
-                row7["isSelected"] = "false"
+               DataMemberKeyPair[6]["isSelected"] = "false"
                 for x in 0..<5 {
-                    row7[TEXTFIELD[x]] = ""
+                    DataMemberKeyPair[6][TEXTFIELD[x]] = ""
+                    
                 }
-                DataUpdater2(row7)
+                
+                DataUpdater2(DataMemberKeyPair[6])
                 DisableTextField(2,flag: false)
             }
             else{
-                row7["isSelected"] = "true"
-                DataUpdater2(row7)
+                DataMemberKeyPair[6]["isSelected"] = "true"
+                DataUpdater2(DataMemberKeyPair[6])
                 DisableTextField(2,flag: true)
             }
             break
@@ -329,10 +355,7 @@ import SwiftyJSON
         
     }
  
-       func DisableTextField()
-       {
-        
-    }
+    
     
     func DisableTextField(x: Int,flag : Bool )
     {
@@ -342,15 +365,11 @@ import SwiftyJSON
             personOneLastName.userInteractionEnabled = flag
             personOneDOB.userInteractionEnabled = flag
             dateofMarriage.userInteractionEnabled = flag
-            
-            
             if flag {
                 self.personOneTick.hidden = false
-               
             }
             else{
                 self.personOneTick.hidden = true
-                
             }
             
         }
@@ -427,10 +446,70 @@ import SwiftyJSON
                 
     }
 
-    @IBAction func insuredmembersCall(sender: AnyObject) {
-        gEnrollmentMembersController.performSegueWithIdentifier("memberlist", sender: nil)
-    }
+   // ["FirstName","MiddleName","LastName","DateOfBirth","DateOfRelation","RelationType","isSelected"]
     
+    @IBAction func insuredmembersCall(sender: AnyObject) {
+       
+       // print(DataMemberKeyPair)
+        var flagState : Bool = true
+        
+        for x in 0..<DataMemberKeyPair.count{
+        if(DataMemberKeyPair[x][TEXTFIELD[6]] == "true" && DataMemberKeyPair[x][TEXTFIELD[5]] == "Wife")
+        {
+            for y in 0..<5{
+             
+            if(DataMemberKeyPair[x][TEXTFIELD[y]] == "")
+            {
+                flagState = false
+            }
+                
+            }
+        }
+            
+            if(DataMemberKeyPair[x][TEXTFIELD[6]] == "true"){
+            
+                     print(DataMemberKeyPair[x])
+            for y in 0..<4{
+                
+                if(DataMemberKeyPair[x][TEXTFIELD[y]] == "")
+                {
+                    print(DataMemberKeyPair[x][TEXTFIELD[y]])
+                    flagState = false
+                }}
+        
+            }
+        }
+        
+        
+          if(flagState == false)
+          {
+          Popups.SharedInstance.ShowPopup("Alert", message: "Please insert all field")
+          }
+        else
+          {
+            
+            var error : NSError?
+           // print(row1)
+            
+            let jsonData = try! NSJSONSerialization.dataWithJSONObject(DataMemberKeyPair, options: NSJSONWritingOptions.PrettyPrinted)
+        //    let jsonString = NSString(data: jsonData, encoding: NSUTF8StringEncoding)! as String
+            
+           // let obj:JSON[String:AnyObject] = ["adddepends" : jsonString]
+            
+            
+            
+            
+           // print(obj)
+      //   rest.AddMembers("Enrollments/UpdateMobile", data: jsonobj, completion: {(json:JSON) -> ()in})
+            
+              
+ 
+        }
+        }
+    
+        
+        
+        
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -439,7 +518,31 @@ import SwiftyJSON
     }
     */
     
-
+    
+        func JSONStringify(value: AnyObject,prettyPrinted:Bool = false) -> String{
+            
+            let options = prettyPrinted ? NSJSONWritingOptions.PrettyPrinted : NSJSONWritingOptions(rawValue: 0)
+            
+            
+            if NSJSONSerialization.isValidJSONObject(value) {
+                
+                do{
+                    let data = try NSJSONSerialization.dataWithJSONObject(value, options: options)
+                    if let string = NSString(data: data, encoding: NSUTF8StringEncoding) {
+                        return string as String
+                    }
+                }catch {
+                    
+                    print("error")
+                    //Access error here
+                }
+                
+            }
+            return ""
+            
+        }
+    
+   
 func DisplayEnrollmentsDetails()
     {
       
@@ -447,12 +550,13 @@ func DisplayEnrollmentsDetails()
      if(ArrayState == 0)
      {
         
-        firstMemberIcon.image = UIImage(named: "wife_icon")
-        secondMemberIcon.image = UIImage(named: "son_icon")
+      
         self.leftArrow.hidden = true
          self.dateofMarriage.hidden = false
-        DataUpdater1(row1)
-        DataUpdater2(row2)
+        DataUpdater1(DataMemberKeyPair[0])
+        firstMemberIcon.image = UIImage(named: "wife_icon")
+        secondMemberIcon.image = UIImage(named: "son_icon")
+        DataUpdater2(DataMemberKeyPair[1])
         self.rightArrow.hidden = false
         }
         if(ArrayState == 1)
@@ -460,20 +564,26 @@ func DisplayEnrollmentsDetails()
          self.leftArrow.hidden = false
          self.dateofMarriage.hidden = true
          self.rightArrow.hidden = false
-           DataUpdater1(row2)
-           DataUpdater2(row3)
+            firstMemberIcon.image = UIImage(named: "son_icon")
+            secondMemberIcon.image = UIImage(named: "daughter_icon")
+           DataUpdater1(DataMemberKeyPair[1])
+           DataUpdater2(DataMemberKeyPair[2])
         }
         
         if(ArrayState == 2)
         {
-          DataUpdater1(row4)
-          DataUpdater2(row5)
+            firstMemberIcon.image = UIImage(named: "mother_icon")
+            secondMemberIcon.image = UIImage(named: "father_icon")
+          DataUpdater1(DataMemberKeyPair[3])
+          DataUpdater2(DataMemberKeyPair[4])
         }
         if(ArrayState == 3)
         {
         self.rightArrow.hidden = false
-        DataUpdater1(row6)
-        DataUpdater2(row7)
+            firstMemberIcon.image = UIImage(named: "wife_icon")
+            secondMemberIcon.image = UIImage(named: "son_icon")
+        DataUpdater1(DataMemberKeyPair[5])
+        DataUpdater2(DataMemberKeyPair[6])
          }
         
         
@@ -483,15 +593,13 @@ func DisplayEnrollmentsDetails()
     
     func SetMemberData(json : JSON) {
        
-        print(String(json["result"]["PlanMembers"][0]["Allowed"]))
-      
         for x in 0..<13
             {
                
                 if(json["result"]["PlanMembers"][x]["Member"] == "C")
                 {
                     let limit:Int? = Int(String(json["result"]["PlanMembers"][x]["Allowed"]))
-                    childrenCapasity = limit!
+                    childrenCapacity = limit!
                 }
                 if(json["result"]["PlanMembers"][x]["Member"] == "P")
                 {
@@ -516,7 +624,9 @@ func DisplayEnrollmentsDetails()
                 for y in 0..<6{
                       row1[TEXTFIELD[y]] = String(json["result"]["Groups"][0]["Members"][x][TEXTFIELD[y]]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
                 }
+                
                  row1[TEXTFIELD[6]] = "true"
+                 row1[TEXTFIELD[7]] = "S"
           break
                     
           case "Son":
@@ -524,30 +634,35 @@ func DisplayEnrollmentsDetails()
                             row2[TEXTFIELD[y]] = String(json["result"]["Groups"][0]["Members"][x][TEXTFIELD[y]]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
                         }
                         row2[TEXTFIELD[6]] =  "true"
+                        row2[TEXTFIELD[7]] = "C"
           break
           case "Daughter":
                     for y in 0..<6{
                         row3[TEXTFIELD[y]] = String(json["result"]["Groups"][0]["Members"][x][TEXTFIELD[y]]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
                     }
                     row3[TEXTFIELD[6]] =  "true"
+                    row3[TEXTFIELD[7]] = "C"
           break
           case "Mother":
          for y in 0..<6{
                         row4[TEXTFIELD[y]] = String(json["result"]["Groups"][0]["Members"][x][TEXTFIELD[y]]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
                     }
                     row4[TEXTFIELD[6]] =  "true"
+                    row4[TEXTFIELD[7]] = "P"
                     break
          case "Father":
                     for y in 0..<6{
                         row5[TEXTFIELD[y]] = String(json["result"]["Groups"][0]["Members"][x][TEXTFIELD[y]]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
                     }
                     row5[TEXTFIELD[6]] =  "true"
+                    row5[TEXTFIELD[7]] = "P"
                 break
                 case "Mother in law":
                     for y in 0..<6{
                         row6[TEXTFIELD[y]] = String(json["result"]["Groups"][0]["Members"][x][TEXTFIELD[y]]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
                     }
                     row6[TEXTFIELD[6]] =  "true"
+                    row6[TEXTFIELD[7]] = "I"
                 break
                     
                 case "Father in law":
@@ -556,17 +671,26 @@ func DisplayEnrollmentsDetails()
                         row7[TEXTFIELD[y]] = String(json["result"]["Groups"][0]["Members"][x][TEXTFIELD[y]]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
                     }
                     row7[TEXTFIELD[6]] =  "true"
+                    row7[TEXTFIELD[7]] = "I"
                     
                 break
                 default:
-                 print(x)
+               
                     
                     
                 break
    
             }
         }
-      
+      DataMemberKeyPair.append(row1)
+      DataMemberKeyPair.append(row2)
+      DataMemberKeyPair.append(row3)
+      DataMemberKeyPair.append(row4)
+      DataMemberKeyPair.append(row5)
+      DataMemberKeyPair.append(row6)
+      DataMemberKeyPair.append(row7)
+      DataMemberKeyPair.append(row8)
+        
     }
     
   
@@ -707,11 +831,22 @@ func DisplayEnrollmentsDetails()
     
     func AddChildrenfirst()
     {
-        
-        
+        if(DataMemberKeyPair[1]["isSelected"] == "true" || DataMemberKeyPair[2]["isSelected"] == "true")
+        {
+           Popups.SharedInstance.ShowPopup("Alert", message: "Max Children Riched ")
+         }
     }
+    
+        
+        
+        
     func AddChildrensecond()
     {
+        if(DataMemberKeyPair[1]["isSelected"] == "true" || DataMemberKeyPair[2]["isSelected"] == "true")
+        {
+              Popups.SharedInstance.ShowPopup("Alert", message: "Max Children Riched ")
+     
+        }
     }
     
     
@@ -722,22 +857,25 @@ func DisplayEnrollmentsDetails()
     func textFieldDidChange(textField: UITextField) {
         
         var PassTag : Int =  textField.tag
+     
         
         if(ArrayState == 0)
         {
             if(PassTag < 5)
             {
                 
-                row1[TEXTFIELD[PassTag]] = textField.text
-                print(row1[TEXTFIELD[PassTag]])
-                DataUpdaternew(PassTag,textField: textField,row:row1)
+                DataMemberKeyPair[0][TEXTFIELD[PassTag]] = textField.text
+                
+                DataUpdaternew(PassTag,textField: textField,row:DataMemberKeyPair[0])
+                //print(DataMemberKeyPair[0])
                 
             }
             else
             {
                 PassTag = PassTag - 5
-                row2[TEXTFIELD[PassTag]] = textField.text
-                DataUpdaternew(PassTag,textField: textField,row:row2)
+                DataMemberKeyPair[1][TEXTFIELD[PassTag]] = textField.text
+                DataUpdaternew(PassTag,textField: textField,row:DataMemberKeyPair[1])
+            //    print(DataMemberKeyPair[1])
                 
             }
             
@@ -746,26 +884,27 @@ func DisplayEnrollmentsDetails()
         if(ArrayState == 1)
         {
             if(PassTag < 5)
-            {   row2[TEXTFIELD[PassTag]] = textField.text
-                DataUpdaternew(PassTag,textField: textField,row:row2)
+            {   DataMemberKeyPair[1][TEXTFIELD[PassTag]] = textField.text
+                DataUpdaternew(PassTag,textField: textField,row:DataMemberKeyPair[1])
             }
             else
             {   PassTag = PassTag - 5
-                row3[TEXTFIELD[PassTag]] = textField.text
-                DataUpdaternew(PassTag,textField: textField,row:row3)
-            }}
+                DataMemberKeyPair[2][TEXTFIELD[PassTag]] = textField.text
+                DataUpdaternew(PassTag,textField: textField,row:DataMemberKeyPair[2])
+            }
+        }
         if(ArrayState == 2)
         {
             if(PassTag < 5)
         {
-            row4[TEXTFIELD[PassTag]] = textField.text
-            DataUpdaternew(PassTag,textField: textField,row:row4)
+            DataMemberKeyPair[3][TEXTFIELD[PassTag]] = textField.text
+            DataUpdaternew(PassTag,textField: textField,row:DataMemberKeyPair[3])
             
         }
         else
         { PassTag = PassTag - 5
-            row5[TEXTFIELD[PassTag]] = textField.text
-            DataUpdaternew(PassTag,textField: textField,row:row5)
+            DataMemberKeyPair[4][TEXTFIELD[PassTag]] = textField.text
+            DataUpdaternew(PassTag,textField: textField,row:DataMemberKeyPair[4])
             
             }
         }
@@ -774,42 +913,95 @@ func DisplayEnrollmentsDetails()
         {
             if(PassTag < 5)
             {
-                row6[TEXTFIELD[PassTag]] = textField.text
-                DataUpdaternew(PassTag,textField: textField,row:row6)
+                DataMemberKeyPair[5][TEXTFIELD[PassTag]] = textField.text
+                DataUpdaternew(PassTag,textField: textField,row:DataMemberKeyPair[5])
                 
             }
             else
             {
                 PassTag = PassTag - 5
-                row7[TEXTFIELD[PassTag]] = textField.text
-                DataUpdaternew(PassTag,textField: textField,row:row7)
+                DataMemberKeyPair[6][TEXTFIELD[PassTag]] = textField.text
+                DataUpdaternew(PassTag,textField: textField,row:DataMemberKeyPair[6])
                 
             }}}
     
     func datePickerValueChanged(sender:UIDatePicker) {
+       
+        
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "ddMMyyyy"
-        dateDob = dateFormatter.stringFromDate(sender.date)
-        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
-        dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
+        dateFormatter.dateFormat = "yyyy-dd-MM"
         
-        
-        let FieldCase :Int = sender.tag
-        
+        let FieldCase :Int = DateTicker
+       
+       
         switch FieldCase
         {
         case 3:
-            personOneDOB.text = dateFormatter.stringFromDate(sender.date)
+            
+            switch ArrayState
+            {
+               
+            case 0:
+               
+            DataMemberKeyPair[0][TEXTFIELD[3]] = dateFormatter.stringFromDate(sender.date)
+                personOneDOB.text = dateFormatter.stringFromDate(sender.date)
+           
+            print(DataMemberKeyPair[0][TEXTFIELD[3]])
+            break
+            case 1 :
+                DataMemberKeyPair[1][TEXTFIELD[3]] = dateFormatter.stringFromDate(sender.date)
+                personOneDOB.text =  DataMemberKeyPair[1][TEXTFIELD[3]]
+                break
+            case 2 :
+                DataMemberKeyPair[3][TEXTFIELD[3]] = dateFormatter.stringFromDate(sender.date)
+                personOneDOB.text =  DataMemberKeyPair[3][TEXTFIELD[3]]
+                break
+            case 3 :
+                DataMemberKeyPair[5][TEXTFIELD[3]] = dateFormatter.stringFromDate(sender.date)
+                personOneDOB.text = DataMemberKeyPair[5][TEXTFIELD[3]]
+                break
+            default :break
+
+            }
             break
             
         case 4:
-            dateofMarriage.text = dateFormatter.stringFromDate(sender.date)
+            if(ArrayState == 0)
+            {
+                DataMemberKeyPair[0][TEXTFIELD[4]] = dateFormatter.stringFromDate(sender.date)
+                dateofMarriage.text = DataMemberKeyPair[0][TEXTFIELD[4]]
+            }
+            
             break
             
-        case 5:
-            personTwoDOB.text = dateFormatter.stringFromDate(sender.date)
+        case 8:
+            switch ArrayState
+            {
+            case 0:
+                DataMemberKeyPair[1][TEXTFIELD[3]] = dateFormatter.stringFromDate(sender.date)
+                personTwoDOB.text = DataMemberKeyPair[1][TEXTFIELD[3]]
+                break
+            case 1 :
+                DataMemberKeyPair[2][TEXTFIELD[3]] = dateFormatter.stringFromDate(sender.date)
+                personTwoDOB.text = DataMemberKeyPair[2][TEXTFIELD[3]]
+                break
+            case 2 :
+                DataMemberKeyPair[4][TEXTFIELD[3]] = dateFormatter.stringFromDate(sender.date)
+                personTwoDOB.text = DataMemberKeyPair[4][TEXTFIELD[3]]
+                
+                
+                break
+            case 3 :
+                DataMemberKeyPair[6][TEXTFIELD[3]] = dateFormatter.stringFromDate(sender.date)
+                personTwoDOB.text = DataMemberKeyPair[6][TEXTFIELD[3]]
+                break
+            default :break
+                
+            }
+            
             break
         default:
+          
             break
             
         }

@@ -106,12 +106,21 @@ import SwiftValidator
                         
                         dialog.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Destructive, handler:{
                                 action in
-                                
-                                EmployeeFullName = String(json["result"]["FullName"])
-                                EmployeeNo = String(json["result"]["EmployeeNumber"])
-                                EmployeeBirthDate = String(json["result"]["DateOfBirth"])
-                                
-                                gSignupController.performSegueWithIdentifier("completeProfile", sender: nil)
+                            
+                            let VC = storyboard?.instantiateViewControllerWithIdentifier("completeProfile") as! CompleteProfileController
+                            
+                          // VC.
+                          //  self.presentViewController(VC, animated: true , completion: nil)
+                            VC.Gender = "Hello"
+                            VC.FullName = String(json["result"]["FullName"])
+                            VC.EmployeeNo =  String(json["result"]["EmployeeNumber"])
+                            VC.DateOfBirth = String(json["result"]["DateOfBirth"])
+                             VC.Email = String(json["result"]["Email"])
+                              VC.EmployeeID = String(json["result"]["EmployeeID"])
+                              VC.MaritalStatus  = String(json["result"]["MaritalStatus"])
+                            
+                          //  gSignupController.performSegueWithIdentifier("completeProfile", sender: nil)
+                             gSignupController.presentViewController(VC, animated: true , completion: nil)
                                 
                             }))
                          

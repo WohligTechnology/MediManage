@@ -14,9 +14,19 @@ var gCompleteProfileController: UIViewController!
 
 class CompleteProfileController: UIViewController {
 
-    var stremplyeeFullname :String = ""
-    var intemployeeNo : String = ""
-    var stremplyeeDOB : String = ""
+    public  var stremplyeeFullname :String = ""
+    public  var EmployeeNo : String = ""
+    public  var stremplyeeDOB : String = ""
+    public var DateOfBirth : String = ""
+    public var Email : String = ""
+    public var EmployeeID : String = ""
+    public var Password : String = ""
+    public var FullName : String = ""
+    public var FirstName : String = ""
+    public var MiddleName : String = ""
+    public var MaritalStatus : String = ""
+    public var Gender : String = ""
+    public var LastName : String = ""
     
     
     override func viewDidLoad() {

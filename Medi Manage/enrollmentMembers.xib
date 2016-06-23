@@ -57,13 +57,13 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUz-hc-Jr2">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECT YOUR LOVED ONES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONA-Sw-nal">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SELECT YOUR LOVED ONES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONA-Sw-nal">
                             <rect key="frame" x="0.0" y="15" width="320" height="20"/>
                             <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TP4-bp-Zu4">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TP4-bp-Zu4">
                             <rect key="frame" x="0.0" y="35" width="320" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="32" id="opG-n8-8JC"/>
@@ -146,20 +146,6 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Middle Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h5l-DK-SoC">
-                    <rect key="frame" x="35" y="255" width="120" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="NUg-Yu-4Wd"/>
-                        <constraint firstAttribute="width" constant="120" id="d8U-lP-q9e"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="16"/>
-                    <textInputTraits key="textInputTraits"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
-                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </textField>
                 <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cjv-t7-3uL">
                     <rect key="frame" x="35" y="300" width="120" height="30"/>
                     <constraints>
@@ -188,7 +174,7 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="personOneDatePicker:" destination="-1" eventType="editingDidEnd" id="jzj-99-X6t"/>
+                        <action selector="personOneDatePicker:" destination="-1" eventType="touchDown" id="qd0-Oe-15h"/>
                     </connections>
                 </textField>
                 <textField hidden="YES" opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of Marriage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Te-ni-qCK">
@@ -204,7 +190,7 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="dateofMarriage:" destination="-1" eventType="editingDidEnd" id="AXb-wF-Edz"/>
+                        <action selector="DateofMarriage:" destination="-1" eventType="touchDown" id="YhS-xZ-CNG"/>
                     </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Son" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhu-AZ-v1Y">
@@ -272,7 +258,7 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="personTwoDatePicker:" destination="-1" eventType="editingDidEnd" id="uqg-q5-7f7"/>
+                        <action selector="personeTwoDatePicker:" destination="-1" eventType="touchDown" id="hqc-Kt-2oO"/>
                     </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4W-3M-ltY">
@@ -309,6 +295,20 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <constraint firstAttribute="width" constant="34" id="HXg-yT-7uS"/>
                     </constraints>
                 </imageView>
+                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Middle Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h5l-DK-SoC">
+                    <rect key="frame" x="35" y="255" width="120" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="NUg-Yu-4Wd"/>
+                        <constraint firstAttribute="width" constant="120" id="d8U-lP-q9e"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="16"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
