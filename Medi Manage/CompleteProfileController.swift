@@ -14,9 +14,8 @@ var gCompleteProfileController: UIViewController!
 
 class CompleteProfileController: UIViewController {
 
-    public  var stremplyeeFullname :String = ""
-    public  var EmployeeNo : String = ""
-    public  var stremplyeeDOB : String = ""
+   
+    public var EmployeeNo : String = ""
     public var DateOfBirth : String = ""
     public var Email : String = ""
     public var EmployeeID : String = ""
@@ -28,20 +27,28 @@ class CompleteProfileController: UIViewController {
     public var Gender : String = ""
     public var LastName : String = ""
     
+   var MemberDetails = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         gCompleteProfileController = self
-      
         
-        // Do any additional setup after loading the view.
+        MemberDetails.append(EmployeeNo)
+        MemberDetails.append(DateOfBirth)
+        MemberDetails.append(Email)
+        MemberDetails.append(MiddleName)
+        MemberDetails.append(MaritalStatus)
+        MemberDetails.append(Gender)
+        MemberDetails.append(EmployeeID)
+        
+         // Do any additional setup after loading the view.
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation
@@ -53,4 +60,6 @@ class CompleteProfileController: UIViewController {
     }
     */
 
+    
+    
 }

@@ -15,6 +15,9 @@ import SwiftValidator
 
 @IBDesignable class signup: UIView {
     
+    
+    
+    
     @IBOutlet weak var employeeID: UITextField!
     @IBOutlet weak var dateOfBirth: UITextField!
     let validator = Validator()
@@ -22,6 +25,9 @@ import SwiftValidator
     var datePickerView:UIDatePicker = UIDatePicker()
     var flag : Bool = false
     var count : Int = 0
+    
+
+    
     
     @IBAction func openDate(sender: UITextField) {
         datePickerView.datePickerMode = UIDatePickerMode.Date
@@ -111,15 +117,17 @@ import SwiftValidator
                             
                           // VC.
                           //  self.presentViewController(VC, animated: true , completion: nil)
-                            VC.Gender = "Hello"
-                            VC.FullName = String(json["result"]["FullName"])
-                            VC.EmployeeNo =  String(json["result"]["EmployeeNumber"])
-                            VC.DateOfBirth = String(json["result"]["DateOfBirth"])
-                             VC.Email = String(json["result"]["Email"])
-                              VC.EmployeeID = String(json["result"]["EmployeeID"])
-                              VC.MaritalStatus  = String(json["result"]["MaritalStatus"])
+                          
+                            
+                                VC.FullName = String(json["result"]["FullName"])
+                                VC.EmployeeNo =  String(json["result"]["EmployeeNumber"])
+                                VC.DateOfBirth = String(json["result"]["DateOfBirth"])
+                                VC.Email = String(json["result"]["Email"])
+                                VC.EmployeeID = String(json["result"]["EmployeeID"])
+                                VC.MaritalStatus  = String(json["result"]["MaritalStatus"])
                             
                           //  gSignupController.performSegueWithIdentifier("completeProfile", sender: nil)
+                            
                              gSignupController.presentViewController(VC, animated: true , completion: nil)
                                 
                             }))

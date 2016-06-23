@@ -24,7 +24,7 @@ import UIKit
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
-   
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,24 +33,14 @@ import UIKit
         
         
     }
-    
+  
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         loadViewFromNib ()
         
-        let cmpr = CompleteProfileController()
         
-        print(cmpr.Gender)
-        print(cmpr.Email ,"Hell")
-        txtFullName.text = cmpr.FullName
-        txtDateofBirth.text = cmpr.DateOfBirth
-        txtEmployeeNo.text = cmpr.EmployeeNo
-        maritalStatus.text = cmpr.MaritalStatus
-        email.text = cmpr.Email
         
-
         
-       
     }
     
     func addBottomBorder(color: UIColor, linewidth: CGFloat, myView: UIView) {
@@ -87,7 +77,6 @@ import UIKit
         addBottomBorder(UIColor.blackColor(), linewidth: 1, myView: fullName)
         addBottomBorder(UIColor.blackColor(), linewidth: 1, myView: employeeNumber)
         addBottomBorder(UIColor.blackColor(), linewidth: 1, myView: dateOfBirth)
-        
         addBottomBorder(UIColor.blackColor(), linewidth: 1, myView: mobileNumber)
         addBottomBorder(UIColor.blackColor(), linewidth: 1, myView: maritalStatus)
         addBottomBorder(UIColor.blackColor(), linewidth: 1, myView: email)

@@ -487,20 +487,44 @@ import SwiftyJSON
           }
         else
           {
+            var nums = [Int]()
             
-            var error : NSError?
+            for x in 0..<DataMemberKeyPair.count {
+                nums.append(x)
+                
+            }
+            if(DataMemberKeyPair[0]["isSelected"] == "true")
+            {
+                var dict : [String :AnyObject] = [:]
+                
+            dict["Adddependens"] = [DataMemberKeyPair[0],DataMemberKeyPair[1],DataMemberKeyPair[2]]
+            
+          if  let data = try? NSJSONSerialization.dataWithJSONObject(dict, options:NSJSONWritingOptions.PrettyPrinted) as NSData
+          {
+            let jsonString = NSString(data: data, encoding: NSUTF8StringEncoding)! as String
+            print(jsonString)
+            rest.AddMembers("Enrollments/UpdateMobile", data: jsonString, completion: {(json:JSON) -> ()in})
+            
+            }else
+          {
+            print("")
+                }
+            }
+            
+            
+           
            // print(row1)
             
-            let jsonData = try! NSJSONSerialization.dataWithJSONObject(DataMemberKeyPair, options: NSJSONWritingOptions.PrettyPrinted)
-        //    let jsonString = NSString(data: jsonData, encoding: NSUTF8StringEncoding)! as String
+          //  let jsonData = try! NSJSONSerialization.dataWithJSONObject(DataMemberKeyPair, options: NSJSONWritingOptions.PrettyPrinted)
+     // let jsonString = NSString(data: jsonData, encoding: NSUTF8StringEncoding)! as String
             
            // let obj:JSON[String:AnyObject] = ["adddepends" : jsonString]
             
             
             
             
-           // print(obj)
-      //   rest.AddMembers("Enrollments/UpdateMobile", data: jsonobj, completion: {(json:JSON) -> ()in})
+           // print(jsonString)
+            //   rest.AddMembers("Enrollments/UpdateMobile", data: jsonobj, completion: {(json:JSON) -> ()in})
             
               
  

@@ -122,6 +122,7 @@
 		C2A59E911CDDDF700093CFEC /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2A59E8C1CDDDF700093CFEC /* Lato-Hairline.ttf */; };
 		C2A59E921CDDDF700093CFEC /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2A59E8D1CDDDF700093CFEC /* Lato-Light.ttf */; };
 		C2A59E931CDDDF700093CFEC /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2A59E8E1CDDDF700093CFEC /* Lato-Regular.ttf */; };
+		C2B4401F1D1BF5A4003EECDB /* EmployeeGroupDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B4401E1D1BF5A4003EECDB /* EmployeeGroupDTO.swift */; };
 		D8D3151E89FAD52E9DE47D70 /* Pods_MediManageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C42FA52A5495CA29BD934BCF /* Pods_MediManageUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -267,6 +268,7 @@
 		C2A59E8C1CDDDF700093CFEC /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Hairline.ttf"; sourceTree = "<group>"; };
 		C2A59E8D1CDDDF700093CFEC /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
 		C2A59E8E1CDDDF700093CFEC /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		C2B4401E1D1BF5A4003EECDB /* EmployeeGroupDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeGroupDTO.swift; sourceTree = "<group>"; };
 		C42FA52A5495CA29BD934BCF /* Pods_MediManageUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediManageUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D759717CAF6EE7B65953226B /* Pods_MediManage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediManage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA3F8782BBA8201238A606EF /* Pods-MediManageTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediManageTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MediManageTests/Pods-MediManageTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -622,6 +624,7 @@
 		786DF9F81CD214F300DDE769 /* Medi Manage */ = {
 			isa = PBXGroup;
 			children = (
+				C2B4401D1D1BF4B0003EECDB /* DTO */,
 				786DF9F91CD214F300DDE769 /* AppDelegate.swift */,
 				786DFA2B1CD2285800DDE769 /* Model */,
 				786DFA2C1CD2286000DDE769 /* Fonts */,
@@ -795,6 +798,14 @@
 				78B90BD81CE067950022FE7A /* enterOTP.xib */,
 			);
 			name = enterOTP;
+			sourceTree = "<group>";
+		};
+		C2B4401D1D1BF4B0003EECDB /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				C2B4401E1D1BF5A4003EECDB /* EmployeeGroupDTO.swift */,
+			);
+			name = DTO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1129,6 +1140,7 @@
 				3AEEB0101CE705B60085EEF5 /* subHeader.swift in Sources */,
 				3A992F061CED997400D85D8A /* benefitSummary.swift in Sources */,
 				3A79A7CB1CF06702008B693B /* MyClaimController.swift in Sources */,
+				C2B4401F1D1BF5A4003EECDB /* EmployeeGroupDTO.swift in Sources */,
 				783322AB1CDB37FE0015CE37 /* onboarding.swift in Sources */,
 				783322971CD9FCD90015CE37 /* login.swift in Sources */,
 				3A992F0A1CEDF25F00D85D8A /* HospitalSearchResultController.swift in Sources */,
