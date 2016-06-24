@@ -493,8 +493,15 @@ import SwiftyJSON
                 nums.append(x)
                 
             }
+            
+            var empl = EmployeeDTO()
+            empl.Se
+            
             if(DataMemberKeyPair[0]["isSelected"] == "true")
             {
+              
+                
+                
                 var dict : [String :AnyObject] = [:]
                 
             dict["Adddependens"] = [DataMemberKeyPair[0],DataMemberKeyPair[1],DataMemberKeyPair[2]]
