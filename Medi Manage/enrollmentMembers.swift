@@ -494,13 +494,30 @@ import SwiftyJSON
                 
             }
             
-            var empl = EmployeeDTO()
-            empl.Se
+           
             
             if(DataMemberKeyPair[0]["isSelected"] == "true")
             {
-              
+             //["FirstName","MiddleName","LastName","DateOfBirth","DateOfRelation","RelationType","isSelected","SystemIdentifier"]
+                var dataFormatter:NSDateFormatter = NSDateFormatter()
+                dataFormatter.dateFormat = "dd-MM-yyyy 'at' HH:mm a"
                 
+                
+                
+                
+                let membersDTO:MembersDTO = MembersDTO()
+                
+                membersDTO.FirstName = DataMemberKeyPair[0][TEXTFIELD[0]]!
+                membersDTO.MiddleName = DataMemberKeyPair[0][TEXTFIELD[1]]!
+                membersDTO.LastName = DataMemberKeyPair[0][TEXTFIELD[2]]!
+                membersDTO.DateOfRelation = dataFormatter.dateFromString(DataMemberKeyPair[0][TEXTFIELD[4]]!)!
+                
+                membersDTO.RelationType = DataMemberKeyPair[0][TEXTFIELD[5]]!
+                membersDTO.SystemIdentifier = DataMemberKeyPair[0][TEXTFIELD[7]]!
+               
+                             
+                
+                /*
                 
                 var dict : [String :AnyObject] = [:]
                 
@@ -517,7 +534,7 @@ import SwiftyJSON
             print("")
                 }
             }
-            
+            */
             
            
            // print(row1)
@@ -537,7 +554,7 @@ import SwiftyJSON
  
         }
         }
-    
+    }
         
         
         
