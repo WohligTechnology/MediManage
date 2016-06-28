@@ -52,7 +52,7 @@ public class MembersDTO
 {
     public var ID : Int  { get{return self.ID
     } set{} }
-    public var FirstName : String { get{ return self.FirstName} set{} }
+    public var FirstName : String { get{ return self.FirstName  } set{} }
     public var MiddleName : String { get{ return self.MiddleName}  set{} }
     public var LastName  :String { get{ return self.LastName} set{} }
     public var DateOfBirth : NSDate { get{ return self.DateOfBirth } set{}  }

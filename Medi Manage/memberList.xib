@@ -363,8 +363,8 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                 <constraint firstAttribute="bottom" secondItem="Gd0-7O-0fg" secondAttribute="bottom" constant="15" id="wZs-Ej-dRx"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7dl-Nh-NzG">
-                            <rect key="frame" x="25" y="60" width="325" height="40"/>
+                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7dl-Nh-NzG">
+                            <rect key="frame" x="25" y="63" width="325" height="40"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Top Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEU-Sk-SHv">
                                     <rect key="frame" x="20" y="10" width="82" height="20"/>
@@ -777,7 +777,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                     <exclude reference="Zvx-pF-ylB"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="370.5" y="434"/>
+            <point key="canvasLocation" x="663.5" y="416"/>
         </view>
     </objects>
     <resources>

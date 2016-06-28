@@ -10,6 +10,11 @@ import UIKit
 
 @IBDesignable class header: UIView {
     
+    @IBOutlet weak var navigationAction: UIImageView!
+    @IBOutlet weak var setting: UIImageView!
+    
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()

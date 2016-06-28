@@ -12,6 +12,8 @@ import UIKit
     
     @IBOutlet var myClaimsMainView: UIView!
     
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
@@ -20,6 +22,8 @@ import UIKit
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         loadViewFromNib ()
+        
+        
     }
     
     func loadViewFromNib() {

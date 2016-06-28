@@ -468,12 +468,12 @@ import SwiftyJSON
             
             if(DataMemberKeyPair[x][TEXTFIELD[6]] == "true"){
             
-                     print(DataMemberKeyPair[x])
+                   //  print(DataMemberKeyPair[x])
             for y in 0..<4{
                 
                 if(DataMemberKeyPair[x][TEXTFIELD[y]] == "")
                 {
-                    print(DataMemberKeyPair[x][TEXTFIELD[y]])
+                 //   print(DataMemberKeyPair[x][TEXTFIELD[y]])
                     flagState = false
                 }}
         
@@ -499,23 +499,20 @@ import SwiftyJSON
             if(DataMemberKeyPair[0]["isSelected"] == "true")
             {
              //["FirstName","MiddleName","LastName","DateOfBirth","DateOfRelation","RelationType","isSelected","SystemIdentifier"]
-                var dataFormatter:NSDateFormatter = NSDateFormatter()
+                let dataFormatter:NSDateFormatter = NSDateFormatter()
                 dataFormatter.dateFormat = "dd-MM-yyyy 'at' HH:mm a"
-                
-                
-                
-                
-                let membersDTO:MembersDTO = MembersDTO()
+               let membersDTO:MembersDTO = MembersDTO()
                 
                 membersDTO.FirstName = DataMemberKeyPair[0][TEXTFIELD[0]]!
                 membersDTO.MiddleName = DataMemberKeyPair[0][TEXTFIELD[1]]!
                 membersDTO.LastName = DataMemberKeyPair[0][TEXTFIELD[2]]!
-                membersDTO.DateOfRelation = dataFormatter.dateFromString(DataMemberKeyPair[0][TEXTFIELD[4]]!)!
+               // membersDTO.DateOfRelation = dataFormatter.dateFromString(DataMemberKeyPair[0][TEXTFIELD[4]]!)!
                 
                 membersDTO.RelationType = DataMemberKeyPair[0][TEXTFIELD[5]]!
                 membersDTO.SystemIdentifier = DataMemberKeyPair[0][TEXTFIELD[7]]!
                
-                             
+                print(membersDTO.FirstName)
+                
                 
                 /*
                 
