@@ -448,6 +448,7 @@ import SwiftyJSON
 
    // ["FirstName","MiddleName","LastName","DateOfBirth","DateOfRelation","RelationType","isSelected"]
     
+    var jsonString = [NSObject]()
     @IBAction func insuredmembersCall(sender: AnyObject) {
        
        // print(DataMemberKeyPair)
@@ -490,52 +491,35 @@ import SwiftyJSON
             var nums = [Int]()
             
             for x in 0..<DataMemberKeyPair.count {
-                nums.append(x)
-                
-            }
             
-           
-            
-            if(DataMemberKeyPair[0]["isSelected"] == "true")
-            {
-             //["FirstName","MiddleName","LastName","DateOfBirth","DateOfRelation","RelationType","isSelected","SystemIdentifier"]
-                let dataFormatter:NSDateFormatter = NSDateFormatter()
-                dataFormatter.dateFormat = "dd-MM-yyyy 'at' HH:mm a"
-               let membersDTO:MembersDTO = MembersDTO()
-                
-                membersDTO.FirstName = DataMemberKeyPair[0][TEXTFIELD[0]]!
-                membersDTO.MiddleName = DataMemberKeyPair[0][TEXTFIELD[1]]!
-                membersDTO.LastName = DataMemberKeyPair[0][TEXTFIELD[2]]!
-               // membersDTO.DateOfRelation = dataFormatter.dateFromString(DataMemberKeyPair[0][TEXTFIELD[4]]!)!
-                
-                membersDTO.RelationType = DataMemberKeyPair[0][TEXTFIELD[5]]!
-                membersDTO.SystemIdentifier = DataMemberKeyPair[0][TEXTFIELD[7]]!
-               
-                print(membersDTO.FirstName)
                 
                 
-                /*
-                
-                var dict : [String :AnyObject] = [:]
-                
-            dict["Adddependens"] = [DataMemberKeyPair[0],DataMemberKeyPair[1],DataMemberKeyPair[2]]
-            
-          if  let data = try? NSJSONSerialization.dataWithJSONObject(dict, options:NSJSONWritingOptions.PrettyPrinted) as NSData
-          {
-            let jsonString = NSString(data: data, encoding: NSUTF8StringEncoding)! as String
-            print(jsonString)
-            rest.AddMembers("Enrollments/UpdateMobile", data: jsonString, completion: {(json:JSON) -> ()in})
-            
-            }else
-          {
-            print("")
+                if(DataMemberKeyPair[x]["isSelected"] == "true")
+                {
+                    
+                    
+                   
+                    
+                   let jsonData = try! NSJSONSerialization.dataWithJSONObject(DataMemberKeyPair[x], options: NSJSONWritingOptions.PrettyPrinted)
+             jsonString.append(NSString(data: jsonData, encoding: NSUTF8StringEncoding)! as NSObject)
+
+                    
                 }
+                
+
+                
+                
+                
+                
+                
             }
-            */
+            
+            rest.AddMembers("Enrollments/UpdateMobile", data: jsonString, completion: {(json:JSON) -> ()in
+                print(json["state"])
+            })
             
            
-           // print(row1)
-            
+        
           //  let jsonData = try! NSJSONSerialization.dataWithJSONObject(DataMemberKeyPair, options: NSJSONWritingOptions.PrettyPrinted)
      // let jsonString = NSString(data: jsonData, encoding: NSUTF8StringEncoding)! as String
             
@@ -550,7 +534,7 @@ import SwiftyJSON
               
  
         }
-        }
+        
     }
         
         

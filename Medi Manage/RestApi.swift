@@ -137,7 +137,7 @@ public class RestApi {
     
     
     
-    public func AddMembers(SUBURL : String, data : String ,completion:((JSON) -> Void))
+    public func AddMembers(SUBURL : String, data : [NSObject] ,completion:((JSON) -> Void))
     {
         var json = JSON(1)
         let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
@@ -147,16 +147,37 @@ public class RestApi {
        
         
         
-         let params = ["data": (data)]
+         let params = ["data": "\(data)"]
+        print(params)
         
-        Manager.request(.POST, apiURL+SUBURL ,parameters: params, headers: isLoginheader)
-            .responseJSON { response in
-                
-                json = JSON(data: response.data!)
-                completion(json)
-                print(json)
-                
-        }}
+        do {
+            let opt = try HTTP.POST(apiURL+SUBURL , parameters: params, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            print(opt)
+            opt.start { response in
+                if let _ = response.error {
+                    completion(json);
+                }
+                else
+                {
+                    json  = JSON(data: response.data)
+                    print(json)
+                    completion(json);
+                }
+            }
+        } catch _ {
+            completion(json);
+        }
+
+        
+//        Manager.request(.POST, apiURL+SUBURL ,parameters: params, headers: isLoginheader)
+//            .responseJSON { response in
+//                
+//                json = JSON(data: response.data!)
+//                completion(json)
+//                print(json)
+//                
+//        }
+    }
    
      //testcorp.medimanage.com/api/v1/Users/ConfirmOTP/{mobileNo}/{code}
     
