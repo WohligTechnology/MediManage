@@ -508,8 +508,8 @@ import SwiftyJSON
          
             gEnrollmentMembersController.performSegueWithIdentifier("memberlist", sender: nil)
             
-            
             /*
+         
             let members = MembersDTO()
             members.FirstName = String(DataMemberKeyPair[0][TEXTFIELD[0]])
             members.MiddleName = String(DataMemberKeyPair[0][TEXTFIELD[1]])
@@ -528,8 +528,7 @@ import SwiftyJSON
             rest.AddMembers("Enrollments/UpdateMobile", data: [members], completion: {(json:JSON) -> ()in
                 print(json["state"])
             })
-            */
-           
+           */
         
           //  let jsonData = try! NSJSONSerialization.dataWithJSONObject(DataMemberKeyPair, options: NSJSONWritingOptions.PrettyPrinted)
      // let jsonString = NSString(data: jsonData, encoding: NSUTF8StringEncoding)! as String

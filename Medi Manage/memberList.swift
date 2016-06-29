@@ -39,6 +39,13 @@ import SwiftyJSON
     @IBOutlet weak var lblPDOB: UILabel!
     @IBOutlet weak var lblPDOM: UILabel!
     
+    @IBOutlet weak var lblWife: UILabel!
+    @IBOutlet weak var lblSon: UILabel!
+     @IBOutlet weak var lblDaughter: UILabel!
+    @IBOutlet weak var lblFather: UILabel!
+    @IBOutlet weak var lblMother: UILabel!
+    
+    
     
     
     override init(frame: CGRect) {
@@ -47,6 +54,8 @@ import SwiftyJSON
     }
     
    
+    
+    
     var json2 : JSON = nil
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -61,6 +70,7 @@ import SwiftyJSON
         })
         
     }
+    // 1BA1DF
     
     var fullName : String = ""
     var firstname  : String = ""
@@ -68,9 +78,12 @@ import SwiftyJSON
     var DOB : String = ""
     var DOM : String = ""
     func tabwifeclicked() {
+         updateTab()
         
+       UpdateTabs(lblWife, uiview:  tabWife)
         for x in 0..<7
-        {       let currRelation  = String(json2["result"]["Groups"][0]["Members"][x]["RelationType"])
+        {
+            let currRelation  = String(json2["result"]["Groups"][0]["Members"][x]["RelationType"])
             
             switch currRelation{
                 
@@ -82,31 +95,30 @@ import SwiftyJSON
                 DOB = String(json2["result"]["Groups"][0]["Members"][x]["DateOfBirth"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
               
               let DOM = String(json2["result"]["Groups"][0]["Members"][x]["DateOfRelation"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
-              
        
               fullName = firstname + " " + lastName
-              lblName.text = fullName
-              
-              lblDOB.text = DOB
-              lblDOM.text = DOM
-              
+              FirstTabs(fullName,DatofBirth: DOB,Dateofmarriage:DOM)
+            
                 break
             
             default:
             break
             
             }
-                
-            
-        
         }
-    
-        
-        
-        
     }
     
+    
+    
+    
+    
+    
+    
+    
     func tabsonclicked (){
+      updateTab()
+        UpdateTabs(lblSon, uiview: tabSon)
+           // tabSon.backgroundColor =  UIColor(red: 21/255, green: 177/255, blue: 230/255, alpha: 255/255)
         
         for x in 0..<7
         {       let currRelation  = String(json2["result"]["Groups"][0]["Members"][x]["RelationType"])
@@ -115,19 +127,16 @@ import SwiftyJSON
                 
             case "Son":
                 
-                let firstname =   String(json2["result"]["Groups"][0]["Members"][x]["FirstName"])
-                let lastName = String(json2["result"]["Groups"][0]["Members"][x]["LastName"])
+                firstname =   String(json2["result"]["Groups"][0]["Members"][x]["FirstName"])
+                lastName = String(json2["result"]["Groups"][0]["Members"][x]["LastName"])
                 
-                let DOB = String(json2["result"]["Groups"][0]["Members"][x]["DateOfBirth"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
+                DOB = String(json2["result"]["Groups"][0]["Members"][x]["DateOfBirth"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
                 
-                let DOM = String(json2["result"]["Groups"][0]["Members"][x]["DateOfRelation"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
+             DOM = String(json2["result"]["Groups"][0]["Members"][x]["DateOfRelation"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
                 
                 
                 fullName = firstname + " " + lastName
-                lblName.text = fullName
-                
-                lblDOB.text = DOB
-                lblDOM.text = DOM
+          FirstTabs(fullName,DatofBirth: DOB,Dateofmarriage:DOM)
                 
                 break
                 
@@ -145,8 +154,8 @@ import SwiftyJSON
     }
     
     func tabdaughterclicked() {
-        
-        
+       updateTab()
+        UpdateTabs(lblDaughter, uiview: tabDaughter)
         for x in 0..<7
         {       let currRelation  = String(json2["result"]["Groups"][0]["Members"][x]["RelationType"])
             
@@ -163,10 +172,7 @@ import SwiftyJSON
                 
                 
                 fullName = firstname + " " + lastName
-                lblName.text = fullName
-                
-                lblDOB.text = DOB
-                lblDOM.text = DOM
+                 FirstTabs(fullName,DatofBirth: DOB,Dateofmarriage:DOM)
                 
                 break
                 
@@ -180,7 +186,8 @@ import SwiftyJSON
     }
     
     func tabfatherclicked(){
-        
+       updateTab()
+         UpdateTabs(lblFather,uiview: tabFather)
         for x in 0..<7
         {       let currRelation  = String(json2["result"]["Groups"][0]["Members"][x]["RelationType"])
             
@@ -197,10 +204,7 @@ import SwiftyJSON
                 
                 
                 fullName = firstname + " " + lastName
-                lblPName.text = fullName
-                
-                lblPDOB.text = DOB
-                lblPDOM.text = DOM
+                  SecondsTabs(fullName,DatofBirth: DOB,Dateofmarriage:DOM)
                 
                 break
                 
@@ -213,7 +217,8 @@ import SwiftyJSON
     }
     
     func tabmotherclicked() {
-        
+       updateTab()
+        UpdateTabs(lblMother,uiview: tabMother)
         for x in 0..<7
         {       let currRelation  = String(json2["result"]["Groups"][0]["Members"][x]["RelationType"])
             
@@ -230,10 +235,7 @@ import SwiftyJSON
                 
                 
                 fullName = firstname + " " + lastName
-                lblPName.text = fullName
-                
-                lblPDOB.text = DOB
-                lblPDOM.text = DOM
+               SecondsTabs(fullName,DatofBirth: DOB,Dateofmarriage:DOM)
                 
                 break
                 
@@ -245,17 +247,62 @@ import SwiftyJSON
         }
     }
     
-    
-    func fbtnclicked() {
-        
-     }
-    
-    func secbtnclicked(){
+  
+    func updateTab(){
+   
+           tabWife.backgroundColor =  UIColor(red: 21/255, green: 177/255, blue: 230/255, alpha: 255/255)
+         lblWife.textColor  = UIColor.whiteColor()
+      
+        tabSon.backgroundColor    =  UIColor(red: 21/255, green: 177/255, blue: 230/255, alpha: 255/255)
+         lblSon.textColor         = UIColor.whiteColor()
        
+        tabDaughter.backgroundColor   =  UIColor(red: 21/255, green: 177/255, blue: 230/255, alpha: 255/255)
+        lblDaughter.textColor           = UIColor.whiteColor()
+        
+        tabFather.backgroundColor     =  UIColor(red: 21/255, green: 177/255, blue: 230/255, alpha: 255/255)
+          lblFather.textColor   = UIColor.whiteColor()
+        
+           tabMother.backgroundColor   =  UIColor(red: 21/255, green: 177/255, blue: 230/255, alpha: 255/255)
+           lblMother.textColor   = UIColor.whiteColor()
+        
+    
+        
+    }
+
+    func UpdateTabs (label :UILabel ,uiview :UIView)  {
+    
+    label.textColor =    UIColor(red: 21/255, green: 177/255, blue: 230/255, alpha: 255/255)
+    uiview.backgroundColor = UIColor.whiteColor()
     }
     
     
     
+    
+    func fbtnclicked() {
+    gMemberListController.performSegueWithIdentifier("memberlist", sender: nil)
+        
+     }
+    
+    func secbtnclicked(){
+       gMemberListController.performSegueWithIdentifier("memberlist", sender: nil)
+    }
+    
+    func FirstTabs(fullName : String,DatofBirth : String,Dateofmarriage: String)
+    {
+               lblName.text = fullName
+               lblDOB.text = DatofBirth
+               lblDOM.text = Dateofmarriage
+
+    }
+    
+    func SecondsTabs(fullName : String,DatofBirth : String,Dateofmarriage: String)
+    {
+        lblPName.text = fullName
+        lblPDOB.text = DatofBirth
+        lblPDOM.text = Dateofmarriage
+        
+        
+    }
     
     
     

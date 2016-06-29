@@ -48,10 +48,15 @@
                 <outlet property="editDetails" destination="04I-lg-1LY" id="AO5-Wk-4jp"/>
                 <outlet property="lblDOB" destination="1w5-HX-4Nz" id="teY-Ab-g7A"/>
                 <outlet property="lblDOM" destination="oFr-6d-ZUo" id="Hgl-f9-bbd"/>
+                <outlet property="lblDaughter" destination="bYE-1e-A3a" id="2Fy-vd-nLx"/>
+                <outlet property="lblFather" destination="fAJ-gb-3cT" id="19Q-l0-lzM"/>
+                <outlet property="lblMother" destination="0Ut-dT-I8A" id="T9X-Aq-bgh"/>
                 <outlet property="lblName" destination="MRa-RW-n4r" id="Tvp-Uo-kyO"/>
                 <outlet property="lblPDOB" destination="cZK-0W-WnT" id="EmD-0k-Ets"/>
                 <outlet property="lblPDOM" destination="MM7-RJ-NXw" id="tza-Ma-mQB"/>
                 <outlet property="lblPName" destination="18w-OV-mhY" id="4Hc-HR-UUV"/>
+                <outlet property="lblSon" destination="TKf-d1-Kq8" id="IuI-fx-QSK"/>
+                <outlet property="lblWife" destination="nnV-wG-aHF" id="AcM-C4-CKT"/>
                 <outlet property="memberListMainView" destination="iN0-l3-epB" id="GV8-OB-PM1"/>
                 <outlet property="nameViewOne" destination="xUt-i3-aLO" id="cJn-nb-EAQ"/>
                 <outlet property="nameViewTwo" destination="OXz-k3-dsL" id="yBV-kH-slh"/>
@@ -166,7 +171,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                     </constraints>
                                 </imageView>
                             </subviews>
-                            <color key="backgroundColor" red="0.08235294118" green="0.69411764710000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.10588235294117647" green="0.63137254901960782" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="Eld-Ad-Kg0" firstAttribute="leading" secondItem="TKf-d1-Kq8" secondAttribute="trailing" constant="5" id="27Z-aB-vXH"/>
                                 <constraint firstAttribute="height" constant="70" id="IlR-PP-sxT"/>
