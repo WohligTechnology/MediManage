@@ -274,17 +274,20 @@ import SwiftyJSON
     label.textColor =    UIColor(red: 21/255, green: 177/255, blue: 230/255, alpha: 255/255)
     uiview.backgroundColor = UIColor.whiteColor()
     }
-    
-    
-    
-    
+ 
     func fbtnclicked() {
-    gMemberListController.performSegueWithIdentifier("memberlist", sender: nil)
+        let vc = gEnrollmentMembersController.storyboard?.instantiateViewControllerWithIdentifier("EnrollmentMember") as! EnrollmentMembersController
+        
+        //  vc.RESULT = "Result"
+        gMemberListController.presentViewController(vc, animated: true, completion: nil)
         
      }
     
     func secbtnclicked(){
-       gMemberListController.performSegueWithIdentifier("memberlist", sender: nil)
+        let vc = gMemberListController.storyboard?.instantiateViewControllerWithIdentifier("EnrollmentMember") as! EnrollmentMembersController
+        
+        //  vc.RESULT = "Result"
+        gMemberListController.presentViewController(vc, animated: true, completion: nil)
     }
     
     func FirstTabs(fullName : String,DatofBirth : String,Dateofmarriage: String)
