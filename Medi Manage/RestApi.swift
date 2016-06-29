@@ -131,7 +131,7 @@ public class RestApi {
                 json = JSON(data: response.data!)
                 //print(json["access_token"])
                 completion(json)
-                print(json)
+               // print(json)
                 
         }}
     
@@ -148,11 +148,11 @@ public class RestApi {
         
         
          let params = ["data": "\(data)"]
-        print(params)
+       // print(params)
         
         do {
             let opt = try HTTP.POST(apiURL+SUBURL , parameters: params, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
-            print(opt)
+          //  print(opt)
             opt.start { response in
                 if let _ = response.error {
                     completion(json);
@@ -160,7 +160,7 @@ public class RestApi {
                 else
                 {
                     json  = JSON(data: response.data)
-                    print(json)
+                   // print(json)
                     completion(json);
                 }
             }
@@ -187,7 +187,6 @@ public class RestApi {
             var json = JSON(1)
         do {
             let opt = try HTTP.GET(apiURL + SUBURL + "({\(mobileno)}/{\(password)})" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:["header":"application/json"])
-            print(opt)
             opt.start { response in
                 if let _ = response.error {
                     completion(json);
@@ -195,7 +194,6 @@ public class RestApi {
                 else
                 {
                     json  = JSON(data: response.data)
-                    print(json)
                     completion(json);
                 }
             }

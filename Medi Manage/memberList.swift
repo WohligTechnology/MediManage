@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 @IBDesignable class memberList: UIView {
     
@@ -21,15 +22,242 @@ import UIKit
     @IBOutlet weak var domViewTwo: UIView!
     @IBOutlet weak var dobViewTwo: UIView!
     
+    
+    @IBOutlet weak var tabWife: UIView!
+    @IBOutlet weak var tabSon: UIView!
+    @IBOutlet weak var tabDaughter: UIView!
+    @IBOutlet weak var tabFather: UIView!
+    @IBOutlet weak var tabMother: UIView!
+    @IBOutlet weak var editDetails: UILabel!
+    @IBOutlet weak var seceditDetails: UILabel!
+    
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblDOB: UILabel!
+    @IBOutlet weak var lblDOM: UILabel!
+    
+    @IBOutlet weak var lblPName: UILabel!
+    @IBOutlet weak var lblPDOB: UILabel!
+    @IBOutlet weak var lblPDOM: UILabel!
+    
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
     }
     
+   
+    var json2 : JSON = nil
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         loadViewFromNib ()
+        
+       tabGesture()
+       
+        rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
+      
+         self.json2 = json
+            self.tabwifeclicked()
+        })
+        
     }
+    
+    var fullName : String = ""
+    var firstname  : String = ""
+    var lastName : String = ""
+    var DOB : String = ""
+    var DOM : String = ""
+    func tabwifeclicked() {
+        
+        for x in 0..<7
+        {       let currRelation  = String(json2["result"]["Groups"][0]["Members"][x]["RelationType"])
+            
+            switch currRelation{
+                
+            case "Wife":
+            
+            firstname =   String(json2["result"]["Groups"][0]["Members"][x]["FirstName"])
+               lastName = String(json2["result"]["Groups"][0]["Members"][x]["LastName"])
+              
+                DOB = String(json2["result"]["Groups"][0]["Members"][x]["DateOfBirth"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
+              
+              let DOM = String(json2["result"]["Groups"][0]["Members"][x]["DateOfRelation"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
+              
+       
+              fullName = firstname + " " + lastName
+              lblName.text = fullName
+              
+              lblDOB.text = DOB
+              lblDOM.text = DOM
+              
+                break
+            
+            default:
+            break
+            
+            }
+                
+            
+        
+        }
+    
+        
+        
+        
+    }
+    
+    func tabsonclicked (){
+        
+        for x in 0..<7
+        {       let currRelation  = String(json2["result"]["Groups"][0]["Members"][x]["RelationType"])
+            
+            switch currRelation{
+                
+            case "Son":
+                
+                let firstname =   String(json2["result"]["Groups"][0]["Members"][x]["FirstName"])
+                let lastName = String(json2["result"]["Groups"][0]["Members"][x]["LastName"])
+                
+                let DOB = String(json2["result"]["Groups"][0]["Members"][x]["DateOfBirth"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
+                
+                let DOM = String(json2["result"]["Groups"][0]["Members"][x]["DateOfRelation"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
+                
+                
+                fullName = firstname + " " + lastName
+                lblName.text = fullName
+                
+                lblDOB.text = DOB
+                lblDOM.text = DOM
+                
+                break
+                
+            default:
+                break
+                
+            }
+            
+            
+            
+        }
+        
+        
+    
+    }
+    
+    func tabdaughterclicked() {
+        
+        
+        for x in 0..<7
+        {       let currRelation  = String(json2["result"]["Groups"][0]["Members"][x]["RelationType"])
+            
+            switch currRelation{
+                
+            case "Daughter":
+                
+                firstname =   String(json2["result"]["Groups"][0]["Members"][x]["FirstName"])
+                lastName = String(json2["result"]["Groups"][0]["Members"][x]["LastName"])
+                
+                DOB = String(json2["result"]["Groups"][0]["Members"][x]["DateOfBirth"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
+                
+                 DOM = String(json2["result"]["Groups"][0]["Members"][x]["DateOfRelation"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
+                
+                
+                fullName = firstname + " " + lastName
+                lblName.text = fullName
+                
+                lblDOB.text = DOB
+                lblDOM.text = DOM
+                
+                break
+                
+            default:
+                break
+                
+            }
+            
+        }
+        
+    }
+    
+    func tabfatherclicked(){
+        
+        for x in 0..<7
+        {       let currRelation  = String(json2["result"]["Groups"][0]["Members"][x]["RelationType"])
+            
+            switch currRelation{
+                
+            case "Father":
+                
+                firstname =   String(json2["result"]["Groups"][0]["Members"][x]["FirstName"])
+                lastName = String(json2["result"]["Groups"][0]["Members"][x]["LastName"])
+                
+                DOB = String(json2["result"]["Groups"][0]["Members"][x]["DateOfBirth"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
+                
+                DOM = String(json2["result"]["Groups"][0]["Members"][x]["DateOfRelation"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
+                
+                
+                fullName = firstname + " " + lastName
+                lblPName.text = fullName
+                
+                lblPDOB.text = DOB
+                lblPDOM.text = DOM
+                
+                break
+                
+            default:
+                break
+                
+            }
+            
+        }
+    }
+    
+    func tabmotherclicked() {
+        
+        for x in 0..<7
+        {       let currRelation  = String(json2["result"]["Groups"][0]["Members"][x]["RelationType"])
+            
+            switch currRelation{
+                
+            case "Mother":
+                
+                firstname =   String(json2["result"]["Groups"][0]["Members"][x]["FirstName"])
+                lastName = String(json2["result"]["Groups"][0]["Members"][x]["LastName"])
+                
+                DOB = String(json2["result"]["Groups"][0]["Members"][x]["DateOfBirth"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
+                
+                DOM = String(json2["result"]["Groups"][0]["Members"][x]["DateOfRelation"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
+                
+                
+                fullName = firstname + " " + lastName
+                lblPName.text = fullName
+                
+                lblPDOB.text = DOB
+                lblPDOM.text = DOM
+                
+                break
+                
+            default:
+                break
+                
+            }
+            
+        }
+    }
+    
+    
+    func fbtnclicked() {
+        
+     }
+    
+    func secbtnclicked(){
+       
+    }
+    
+    
+    
+    
+    
     
     func addBottomBorder(color: UIColor, width: CGFloat, myView: UIView) {
         let border = CALayer()
@@ -70,6 +298,7 @@ import UIKit
         addBottomBorder(UIColor.grayColor(), width: 0.5, myView: dobViewTwo)
         addBottomBorder(UIColor.grayColor(), width: 0.5, myView: domViewTwo)
     }
+    
 
     @IBAction func premiumcalculationCall(sender: AnyObject) {
         gMemberListController.performSegueWithIdentifier("premiumcalculation", sender: nil)
@@ -81,5 +310,41 @@ import UIKit
         // Drawing code
     }
     */
+ 
+    func tabGesture()  {
+        let fbtnEdit = UITapGestureRecognizer(target: self, action: Selector("fbtnclicked"))
+        editDetails.addGestureRecognizer(fbtnEdit)
+        editDetails.userInteractionEnabled = true
+        
+        let secbtnEdit = UITapGestureRecognizer(target: self, action: Selector("secbtnclicked"))
+       seceditDetails.addGestureRecognizer(secbtnEdit)
+        seceditDetails.userInteractionEnabled = true
 
+        
+        
+        let tabwife = UITapGestureRecognizer(target: self, action: Selector("tabwifeclicked"))
+        tabWife.addGestureRecognizer(tabwife)
+        tabWife.userInteractionEnabled = true
+        
+        let tabson = UITapGestureRecognizer(target: self, action: Selector("tabsonclicked"))
+        tabSon.addGestureRecognizer(tabson)
+        tabSon.userInteractionEnabled = true
+        
+        let tabdaughter = UITapGestureRecognizer(target: self, action: Selector("tabdaughterclicked"))
+        tabDaughter.addGestureRecognizer(tabdaughter)
+        tabDaughter.userInteractionEnabled = true
+        
+        let tabfather = UITapGestureRecognizer(target: self, action: Selector("tabfatherclicked"))
+        tabFather.addGestureRecognizer(tabfather)
+        tabFather.userInteractionEnabled = true
+        
+        let tabmother = UITapGestureRecognizer(target: self, action: Selector("tabmotherclicked"))
+        tabMother.addGestureRecognizer(tabmother)
+        tabMother.userInteractionEnabled = true
+      
+    }
+
+    
+    
 }
+

@@ -497,9 +497,6 @@ import SwiftyJSON
                 if(DataMemberKeyPair[x]["isSelected"] == "true")
                 {
                     
-                    
-                   
-                    
                    let jsonData = try! NSJSONSerialization.dataWithJSONObject(DataMemberKeyPair[x], options: NSJSONWritingOptions.PrettyPrinted)
              jsonString.append(NSString(data: jsonData, encoding: NSUTF8StringEncoding)! as NSObject)
 
@@ -507,17 +504,31 @@ import SwiftyJSON
                 }
                 
 
-                
-                
-                
-                
-                
-            }
+                         }
+         
+            gEnrollmentMembersController.performSegueWithIdentifier("memberlist", sender: nil)
             
-            rest.AddMembers("Enrollments/UpdateMobile", data: jsonString, completion: {(json:JSON) -> ()in
+            
+            /*
+            let members = MembersDTO()
+            members.FirstName = String(DataMemberKeyPair[0][TEXTFIELD[0]])
+            members.MiddleName = String(DataMemberKeyPair[0][TEXTFIELD[1]])
+            members.RelationType = String(DataMemberKeyPair[0][TEXTFIELD[2]])
+            members.LastName = String(DataMemberKeyPair[0][TEXTFIELD[3]])
+            members.SystemIdentifier = String(DataMemberKeyPair[0][TEXTFIELD[4]])
+            members.DateOfRelation = String(DataMemberKeyPair[0]["DateOfRelation"])
+           
+            
+
+           
+            
+            
+            
+            
+            rest.AddMembers("Enrollments/UpdateMobile", data: [members], completion: {(json:JSON) -> ()in
                 print(json["state"])
             })
-            
+            */
            
         
           //  let jsonData = try! NSJSONSerialization.dataWithJSONObject(DataMemberKeyPair, options: NSJSONWritingOptions.PrettyPrinted)
@@ -854,7 +865,7 @@ func DisplayEnrollmentsDetails()
             
         }
     }
-    //["FirstName","MiddleName","LastName","DateOfBirth","DateOfRelation","RelationType","isSelected"]
+  
    
     
     

@@ -48,7 +48,7 @@ public class EmployeeDTO : NSObject
     
 }
 
-public class MembersDTO
+public class MembersDTO : NSObject
 {
     public var ID : Int  { get{return self.ID
     } set{} }
@@ -67,7 +67,7 @@ public class MembersDTO
    // public MemberAddedAt AddedAt { get; set; }
     //public Gender Gender { get; set; }
     public var RelationType : String { get{ return self.RelationType } set{} }
-    public var DateOfRelation : NSDate { get{return self.DateOfRelation } set{} }
+    public var DateOfRelation : String { get{return self.DateOfRelation } set{} }
     public var SystemIdentifier : String { get{return self.SystemIdentifier } set{} }
     public var UHID : String { get{return self.UHID} set{} }
     
