@@ -47,7 +47,10 @@ public class RestApi {
         print(json)
         let params = ["grant_type": "password","username":username, "password":password]
       
-     
+    
+        
+        
+        
       /*  [{"isSelected": "true", "FirstName": "Niruben", "MiddleName": "R", "RelationType": "Wife", "DateOfRelation": "2016-04-01", "SystemIdentifier": "S", "LastName": "Patel", "DateOfBirth": "1975-01-29"},
         "isSelected": "true", "FirstName": "Ravi", "MiddleName": "R", "RelationType": "Son", "DateOfRelation": "null", "SystemIdentifier": "C", "LastName": "Patel", "DateOfBirth": "1997-10-04"]
       

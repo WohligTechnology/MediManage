@@ -40,6 +40,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="memberList" customModule="MediManage" customModuleProvider="target">
             <connections>
+                <outlet property="SumInsuredList" destination="Hqx-ej-b7G" id="9ue-8o-cR3"/>
                 <outlet property="dobViewOne" destination="le8-eu-kw0" id="iFZ-Eg-GQm"/>
                 <outlet property="dobViewTwo" destination="Z0x-gi-mQA" id="4t4-AA-o6k"/>
                 <outlet property="domViewOne" destination="GW0-BN-5eB" id="94P-ve-sLt"/>
@@ -62,6 +63,7 @@
                 <outlet property="nameViewOne" destination="xUt-i3-aLO" id="cJn-nb-EAQ"/>
                 <outlet property="nameViewTwo" destination="OXz-k3-dsL" id="yBV-kH-slh"/>
                 <outlet property="seceditDetails" destination="2ri-fG-8dK" id="mPr-nq-zy2"/>
+                <outlet property="selectTopUP" destination="Mqi-2f-cze" id="xlL-AZ-YCB"/>
                 <outlet property="tabDaughter" destination="SO1-Po-rAq" id="5A3-Fp-gTV"/>
                 <outlet property="tabFather" destination="vRu-8h-ao7" id="U1J-xz-5KI"/>
                 <outlet property="tabMother" destination="y0M-LS-UoN" id="NfX-dF-cB6"/>
@@ -71,7 +73,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="786"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="837"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLM-2x-71d">
@@ -698,7 +700,6 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <constraint firstAttribute="trailing" secondItem="Mqi-2f-cze" secondAttribute="trailing" constant="25" id="2EW-V5-BcZ"/>
                         <constraint firstItem="Mqi-2f-cze" firstAttribute="leading" secondItem="Hqx-ej-b7G" secondAttribute="leading" id="5wM-Sb-f7U"/>
                         <constraint firstAttribute="bottom" secondItem="Mqi-2f-cze" secondAttribute="bottom" constant="15" id="GDE-I1-IQD"/>
-                        <constraint firstItem="Mqi-2f-cze" firstAttribute="top" secondItem="Hqx-ej-b7G" secondAttribute="bottom" constant="5" id="acI-vP-nN1"/>
                         <constraint firstItem="Mqi-2f-cze" firstAttribute="leading" secondItem="KOZ-iy-Qr4" secondAttribute="leading" constant="25" id="f3U-qK-WNY"/>
                         <constraint firstItem="Hqx-ej-b7G" firstAttribute="leading" secondItem="KOZ-iy-Qr4" secondAttribute="leading" constant="25" id="hBD-EC-veg"/>
                         <constraint firstAttribute="height" constant="120" id="jsT-ZI-GsO"/>
@@ -706,14 +707,9 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <constraint firstItem="Mqi-2f-cze" firstAttribute="trailing" secondItem="Hqx-ej-b7G" secondAttribute="trailing" id="xRo-Nw-NOy"/>
                         <constraint firstItem="Hqx-ej-b7G" firstAttribute="top" secondItem="KOZ-iy-Qr4" secondAttribute="top" constant="15" id="xXG-6O-BeQ"/>
                     </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="acI-vP-nN1"/>
-                        </mask>
-                    </variation>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ra8-hB-3cm">
-                    <rect key="frame" x="0.0" y="771" width="375" height="15"/>
+                    <rect key="frame" x="0.0" y="822" width="375" height="15"/>
                     <color key="backgroundColor" red="0.24313725489999999" green="0.24313725489999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="15" id="8ud-T8-bJh"/>
@@ -729,6 +725,10 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                     <color key="textColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vJ-7u-qwP">
+                    <rect key="frame" x="0.0" y="784" width="375" height="30"/>
+                    <state key="normal" title="Button"/>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -739,7 +739,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 <constraint firstAttribute="trailing" secondItem="KOZ-iy-Qr4" secondAttribute="trailing" id="2W7-L8-qbk"/>
                 <constraint firstAttribute="trailing" secondItem="Ra8-hB-3cm" secondAttribute="trailing" id="2iZ-2e-nOv"/>
                 <constraint firstItem="xUt-i3-aLO" firstAttribute="leading" secondItem="le8-eu-kw0" secondAttribute="leading" id="3MP-Ab-4LG"/>
-                <constraint firstItem="Ra8-hB-3cm" firstAttribute="top" secondItem="KOZ-iy-Qr4" secondAttribute="bottom" id="49j-uh-dPA"/>
+                <constraint firstItem="Ra8-hB-3cm" firstAttribute="top" secondItem="KOZ-iy-Qr4" secondAttribute="bottom" constant="51" id="49j-uh-dPA"/>
                 <constraint firstItem="Z0x-gi-mQA" firstAttribute="top" secondItem="OXz-k3-dsL" secondAttribute="bottom" constant="8" symbolic="YES" id="6bL-DL-LOK"/>
                 <constraint firstItem="GW0-BN-5eB" firstAttribute="leading" secondItem="le8-eu-kw0" secondAttribute="leading" id="Df9-fo-ghV"/>
                 <constraint firstItem="6uL-UB-u0A" firstAttribute="trailing" secondItem="Z0x-gi-mQA" secondAttribute="trailing" id="EAN-zE-YA3"/>
@@ -774,7 +774,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 <constraint firstAttribute="trailing" secondItem="F7Z-De-Rhn" secondAttribute="trailing" id="iAF-4p-uvZ"/>
                 <constraint firstItem="OXz-k3-dsL" firstAttribute="top" secondItem="fcj-V3-BaF" secondAttribute="bottom" constant="20" id="iN8-a8-wOf"/>
                 <constraint firstItem="xUt-i3-aLO" firstAttribute="centerX" secondItem="2tM-dT-SbN" secondAttribute="centerX" id="jzJ-wB-ATY"/>
-                <constraint firstItem="Ra8-hB-3cm" firstAttribute="top" secondItem="KOZ-iy-Qr4" secondAttribute="bottom" id="kAj-1Y-dkV"/>
+                <constraint firstItem="Ra8-hB-3cm" firstAttribute="top" secondItem="KOZ-iy-Qr4" secondAttribute="bottom" constant="51" id="kAj-1Y-dkV"/>
                 <constraint firstItem="Z0x-gi-mQA" firstAttribute="leading" secondItem="OXz-k3-dsL" secondAttribute="leading" id="mdn-Ij-w7I"/>
                 <constraint firstItem="le8-eu-kw0" firstAttribute="leading" secondItem="xUt-i3-aLO" secondAttribute="leading" id="nco-HQ-GST"/>
                 <constraint firstItem="6uL-UB-u0A" firstAttribute="leading" secondItem="Z0x-gi-mQA" secondAttribute="leading" id="oD4-oG-02x"/>
@@ -791,12 +791,15 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="1vJ-7u-qwP"/>
+                </mask>
                 <mask key="constraints">
                     <exclude reference="PYm-X9-fya"/>
                     <exclude reference="Zvx-pF-ylB"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="663.5" y="416"/>
+            <point key="canvasLocation" x="663.5" y="441.5"/>
         </view>
     </objects>
     <resources>

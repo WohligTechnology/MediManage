@@ -11,6 +11,10 @@ import SwiftyJSON
 
 @IBDesignable class memberList: UIView {
     
+    
+    
+    
+    
     @IBOutlet weak var dummyButton: UIButton!
     @IBOutlet var memberListMainView: UIView!
     
@@ -47,17 +51,27 @@ import SwiftyJSON
     
     @IBOutlet weak var dropDownList: UIView!
     
+    @IBOutlet weak var SumInsuredList: UIView!
+
+    @IBOutlet weak var selectTopUP: UIView!
+    
+   
+    var SumInsuredValue : Int = 0
+    
     
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
+        
+        
     }
     
    
     
     
     var json2 : JSON = nil
+   
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         loadViewFromNib ()
@@ -65,67 +79,19 @@ import SwiftyJSON
        tabGesture()
        
         rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
-      print(json)
+      //print(json)
          self.json2 = json
+            //print(self.json2["result"]["Groups"][0]["SumInsuredList"][0]["SumInsuredValue"])
+       //let SumInsuredValue = self.json2["result"]["Groups"][0]["SumInsuredList"][0]["SumInsuredValue"]
+            
+          //  print(SumInsuredValue)
             self.tabwifeclicked()
         })
         
+     
         
-        dropDownList.userInteractionEnabled = true
-        
-        
-        
-        
-        
-        
-        //dropDownList.insertSubview(["1000"])
-        
-       /*
-        buttonOne = UIButton(frame: CGRectMake(0, 0, screenWidth, 40))
-        buttonOne.setTitle("Button One", forState: .Normal)
-        buttonOne.setTitleColor(UIColor.blackColor(), forState: .Normal)
-        buttonOne.backgroundColor = UIColor.whiteColor()
-        buttonOne.addTarget(self, action: Selector("buttonOnePressed"), forControlEvents: UIControlEvents.TouchUpInside)
-        buttonOne.userInteractionEnabled = true
-        dropDownView.addSubview(buttonOne)
-        
-        buttonTwo = UIButton(frame: CGRectMake(0, buttonOne.bounds.size.height, screenWidth, 40))
-        buttonTwo.setTitle("Button Two", forState: .Normal)
-        buttonTwo.setTitleColor(UIColor.blackColor(), forState: .Normal)
-        buttonTwo.backgroundColor = UIColor.whiteColor()
-        // Here I just wanted to show you that calling Selector() is not necessary at all
-        buttonTwo.addTarget(self, action: "buttonTwoPressed", forControlEvents: UIControlEvents.TouchUpInside)
-        buttonTwo.userInteractionEnabled = true
-        dropDownView.addSubview(buttonTwo)
-        
-        */
         
     }
-    /*
-     dropDownView.hidden = false
-     
-     dropDownView.userInteractionEnabled = true
-     self.navigationController?.view.insertSubview(self.dropDownView, belowSubview: (self.navigationController?.navigationBar)!)
-     
-     buttonOne = UIButton(frame: CGRectMake(0, 0, screenWidth, 40))
-     buttonOne.setTitle("Button One", forState: .Normal)
-     buttonOne.setTitleColor(UIColor.blackColor(), forState: .Normal)
-     buttonOne.backgroundColor = UIColor.whiteColor()
-     buttonOne.addTarget(self, action: Selector("buttonOnePressed"), forControlEvents: UIControlEvents.TouchUpInside)
-     buttonOne.userInteractionEnabled = true
-     dropDownView.addSubview(buttonOne)
-     
-     buttonTwo = UIButton(frame: CGRectMake(0, buttonOne.bounds.size.height, screenWidth, 40))
-     buttonTwo.setTitle("Button Two", forState: .Normal)
-     buttonTwo.setTitleColor(UIColor.blackColor(), forState: .Normal)
-     buttonTwo.backgroundColor = UIColor.whiteColor()
-     // Here I just wanted to show you that calling Selector() is not necessary at all
-     buttonTwo.addTarget(self, action: "buttonTwoPressed", forControlEvents: UIControlEvents.TouchUpInside)
-     buttonTwo.userInteractionEnabled = true
-     dropDownView.addSubview(buttonTwo)
-     
-     
-     */
     
     
     
@@ -141,7 +107,7 @@ import SwiftyJSON
        UpdateTabs(lblWife, uiview:  tabWife)
         for x in 0..<7
         {
-            let currRelation  = String(json2["result"]["Groups"][0]["Members"][x]["RelationType"])
+            let currRelation  = String(json2["result"]["Groups"][0]["Members"][x][1])
             
             switch currRelation{
                 
@@ -166,8 +132,12 @@ import SwiftyJSON
         }
     }
     
+ 
+    @IBAction func Calculation(sender: AnyObject) {
     
+      print("Hell")
     
+    }
     
     
     
@@ -202,13 +172,8 @@ import SwiftyJSON
                 break
                 
             }
-            
-            
-            
-        }
-        
-        
-    
+          }
+      
     }
     
     func tabdaughterclicked() {
@@ -342,10 +307,9 @@ import SwiftyJSON
      }
     
     func secbtnclicked(){
-        let vc = gMemberListController.storyboard?.instantiateViewControllerWithIdentifier("EnrollmentMember") as! EnrollmentMembersController
+      
+       
         
-        //  vc.RESULT = "Result"
-        gMemberListController.presentViewController(vc, animated: true, completion: nil)
     }
     
     func FirstTabs(fullName : String,DatofBirth : String,Dateofmarriage: String)
@@ -380,7 +344,7 @@ import SwiftyJSON
         sortnewview.frame = bounds
         sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         let scrollView = UIScrollView(frame: CGRectMake(0, 0, self.frame.size.width, self.frame.size.height))
-        scrollView.contentSize.height = 856
+        scrollView.contentSize.height = 1000 //856
         scrollView.showsVerticalScrollIndicator = false
         scrollView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         scrollView.addSubview(sortnewview)
@@ -396,6 +360,19 @@ import SwiftyJSON
         memberListMainView.frame = CGRectMake(0, 70, self.frame.size.width, self.frame.size.height)
         
         dummyButton.layer.zPosition = 10000
+      //  premiumCalculation.layer.zPosition = 10000
+        
+        let calculationButton = UIButton(frame: CGRectMake(0, 850, self.frame.size.width, 40))
+        calculationButton.backgroundColor = UIColor.blackColor()
+        calculationButton.setTitle("Premium Calculation", forState: .Normal)
+        calculationButton.layer.zPosition = 9230
+        
+        
+        let hell = UITapGestureRecognizer(target: self, action: Selector("Premcalculation"))
+        calculationButton.addGestureRecognizer(hell)
+        calculationButton.userInteractionEnabled = true
+        
+        scrollView.addSubview(calculationButton)
         
         //add borders
         addBottomBorder(UIColor.grayColor(), width: 0.5, myView: nameViewOne)
@@ -419,6 +396,13 @@ import SwiftyJSON
     */
  
     func tabGesture()  {
+        
+      //  let calculation = UITapGestureRecognizer(target: self, action: Selector("Premcalculation"))
+      //  premiumCalculation.addGestureRecognizer(calculation)
+        //premiumCalculation.userInteractionEnabled = true
+        
+        
+        
         let fbtnEdit = UITapGestureRecognizer(target: self, action: Selector("fbtnclicked"))
         editDetails.addGestureRecognizer(fbtnEdit)
         editDetails.userInteractionEnabled = true
@@ -454,7 +438,13 @@ import SwiftyJSON
     
     
     
+   func Premcalculation()
+   {
+    
+     gMemberListController.performSegueWithIdentifier("premiumcalculation", sender: nil)
+    }
+    
+    
     
     
 }
-
