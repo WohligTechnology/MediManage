@@ -44,6 +44,7 @@
                 <outlet property="dobViewTwo" destination="Z0x-gi-mQA" id="4t4-AA-o6k"/>
                 <outlet property="domViewOne" destination="GW0-BN-5eB" id="94P-ve-sLt"/>
                 <outlet property="domViewTwo" destination="6uL-UB-u0A" id="8rd-nY-txH"/>
+                <outlet property="dropDownList" destination="hDx-Fo-Ivb" id="lsu-Kp-T9x"/>
                 <outlet property="dummyButton" destination="uLM-2x-71d" id="clS-PZ-rTW"/>
                 <outlet property="editDetails" destination="04I-lg-1LY" id="AO5-Wk-4jp"/>
                 <outlet property="lblDOB" destination="1w5-HX-4Nz" id="teY-Ab-g7A"/>

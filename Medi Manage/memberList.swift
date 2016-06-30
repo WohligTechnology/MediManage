@@ -45,6 +45,7 @@ import SwiftyJSON
     @IBOutlet weak var lblFather: UILabel!
     @IBOutlet weak var lblMother: UILabel!
     
+    @IBOutlet weak var dropDownList: UIView!
     
     
     
@@ -64,13 +65,70 @@ import SwiftyJSON
        tabGesture()
        
         rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
-      
+      print(json)
          self.json2 = json
             self.tabwifeclicked()
         })
         
+        
+        dropDownList.userInteractionEnabled = true
+        
+        
+        
+        
+        
+        
+        //dropDownList.insertSubview(["1000"])
+        
+       /*
+        buttonOne = UIButton(frame: CGRectMake(0, 0, screenWidth, 40))
+        buttonOne.setTitle("Button One", forState: .Normal)
+        buttonOne.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        buttonOne.backgroundColor = UIColor.whiteColor()
+        buttonOne.addTarget(self, action: Selector("buttonOnePressed"), forControlEvents: UIControlEvents.TouchUpInside)
+        buttonOne.userInteractionEnabled = true
+        dropDownView.addSubview(buttonOne)
+        
+        buttonTwo = UIButton(frame: CGRectMake(0, buttonOne.bounds.size.height, screenWidth, 40))
+        buttonTwo.setTitle("Button Two", forState: .Normal)
+        buttonTwo.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        buttonTwo.backgroundColor = UIColor.whiteColor()
+        // Here I just wanted to show you that calling Selector() is not necessary at all
+        buttonTwo.addTarget(self, action: "buttonTwoPressed", forControlEvents: UIControlEvents.TouchUpInside)
+        buttonTwo.userInteractionEnabled = true
+        dropDownView.addSubview(buttonTwo)
+        
+        */
+        
     }
-    // 1BA1DF
+    /*
+     dropDownView.hidden = false
+     
+     dropDownView.userInteractionEnabled = true
+     self.navigationController?.view.insertSubview(self.dropDownView, belowSubview: (self.navigationController?.navigationBar)!)
+     
+     buttonOne = UIButton(frame: CGRectMake(0, 0, screenWidth, 40))
+     buttonOne.setTitle("Button One", forState: .Normal)
+     buttonOne.setTitleColor(UIColor.blackColor(), forState: .Normal)
+     buttonOne.backgroundColor = UIColor.whiteColor()
+     buttonOne.addTarget(self, action: Selector("buttonOnePressed"), forControlEvents: UIControlEvents.TouchUpInside)
+     buttonOne.userInteractionEnabled = true
+     dropDownView.addSubview(buttonOne)
+     
+     buttonTwo = UIButton(frame: CGRectMake(0, buttonOne.bounds.size.height, screenWidth, 40))
+     buttonTwo.setTitle("Button Two", forState: .Normal)
+     buttonTwo.setTitleColor(UIColor.blackColor(), forState: .Normal)
+     buttonTwo.backgroundColor = UIColor.whiteColor()
+     // Here I just wanted to show you that calling Selector() is not necessary at all
+     buttonTwo.addTarget(self, action: "buttonTwoPressed", forControlEvents: UIControlEvents.TouchUpInside)
+     buttonTwo.userInteractionEnabled = true
+     dropDownView.addSubview(buttonTwo)
+     
+     
+     */
+    
+    
+    
     
     var fullName : String = ""
     var firstname  : String = ""
@@ -307,8 +365,7 @@ import SwiftyJSON
         
     }
     
-    
-    
+   
     func addBottomBorder(color: UIColor, width: CGFloat, myView: UIView) {
         let border = CALayer()
         border.backgroundColor = color.CGColor
@@ -394,6 +451,9 @@ import SwiftyJSON
       
     }
 
+    
+    
+    
     
     
 }
