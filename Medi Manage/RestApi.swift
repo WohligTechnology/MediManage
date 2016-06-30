@@ -137,7 +137,7 @@ public class RestApi {
     
     
     
-    public func AddMembers(SUBURL : String, data : [NSObject] ,completion:((JSON) -> Void))
+    public func AddMembers(SUBURL : String, data : JSON ,completion:((JSON) -> Void))
     {
         var json = JSON(1)
         let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
@@ -148,12 +148,14 @@ public class RestApi {
         
         
          let params = ["data": "\(data)"]
-       // print(params)
+        print("add members ......////.........////////")
+        print(params)
         
         do {
             let opt = try HTTP.POST(apiURL+SUBURL , parameters: params, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
           //  print(opt)
             opt.start { response in
+                print(response.error)
                 if let _ = response.error {
                     completion(json);
                 }
