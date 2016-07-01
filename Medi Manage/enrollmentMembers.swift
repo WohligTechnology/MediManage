@@ -57,9 +57,7 @@ import SwiftyJSON
     var childrenCapacity : Int = 0
     var parentCapasity : Int = 0
     var lawsCapasity : Int = 0
-    var TEXTFIELD = ["FirstName","MiddleName","LastName","DateOfBirth","DateOfRelation","RelationType","isSelected","SystemIdentifier","Amount"
-         ,"dorDay","dobDay","NetAmount","TopupNetAmount","IsECardAvailable","Tax","dobMonth","AddedAt","TopupAmount","LastName"
-        ,"UHID","dobYear","ID","TopupTax","dorYear","Status","Exist","dorMonth"]
+    var TEXTFIELD = ["FirstName","MiddleName","LastName","DateOfBirth","DateOfRelation","RelationType","isSelected","SystemIdentifier"]
     
     
     
@@ -505,19 +503,17 @@ import SwiftyJSON
                     let jsonData = try! NSJSONSerialization.dataWithJSONObject(DataMemberKeyPair[x], options: NSJSONWritingOptions.PrettyPrinted)
                     
                     for y in 0..<mainjson["result"]["Groups"][0]["Members"].count{
-//                        print(String(mainjson["result"]["Groups"][0]["Members"][y]["SystemIdentifier"]))
-//                        print(String(DataMemberKeyPair[x]["SystemIdentifier"]!))
                         let a = (String(mainjson["result"]["Groups"][0]["Members"][y]["SystemIdentifier"]) == String(DataMemberKeyPair[x]["SystemIdentifier"]!));
-                        let b = (String(mainjson["result"]["Groups"][0]["Members"][y]["RelationType"]) == String(DataMemberKeyPair[x]["RelationType"]!));
-                        print(a)
-                        print(b)
-                        if( a && b ) {
-                            print("in ininininininininin")
+                        let b = (String(mainjson["result"]["Groups"][0]["Members"][y]["RelationType"]) == String(DataMemberKeyPair[x]["RelationType"]!));                        if( a && b ) {
                             mainjson["result"]["Groups"][0]["Members"][y]["FirstName"] = JSON(DataMemberKeyPair[x]["FirstName"]!)
                             mainjson["result"]["Groups"][0]["Members"][y]["LastName"] = JSON(DataMemberKeyPair[x]["LastName"]!)
                             mainjson["result"]["Groups"][0]["Members"][y]["MiddleName"] = JSON(DataMemberKeyPair[x]["MiddleName"]!)
                             mainjson["result"]["Groups"][0]["Members"][y]["DateOfBirth"] = JSON(DataMemberKeyPair[x]["DateOfBirth"]! + "T00:00:00")
-                            mainjson["result"]["Groups"][0]["Members"][y]["DateOfRelation"] = JSON(DataMemberKeyPair[x]["DateOfRelation"]! + "T00:00:00")
+                            if (JSON(DataMemberKeyPair[x]["DateOfRelation"]!) != "null") {
+                                mainjson["result"]["Groups"][0]["Members"][y]["DateOfRelation"] = JSON(DataMemberKeyPair[x]["DateOfRelation"]! + "T00:00:00")
+                            }
+                            
+                            
                         }
                         
                     }
@@ -527,7 +523,6 @@ import SwiftyJSON
                 }
             }
             
-            //            gEnrollmentMembersController.performSegueWithIdentifier("memberlist", sender: nil)
           var  membersArray = [MembersDTO]()
             
             let members = MembersDTO()
@@ -539,56 +534,15 @@ import SwiftyJSON
             members.DateOfRelation = String(DataMemberKeyPair[0]["DateOfRelation"])
           
             
-            gEnrollmentMembersController.performSegueWithIdentifier("memberlist", sender: nil)
-
-            
-            
-//            print("..........................///////////////")
-         //   print(mainjson["result"]["Groups"][0]["Members"])
-//
-  
-            
-        //    membersArray.append(members)
-         // print(members)
-          //  print(membersArray)
-            
-            /*
- gEnrollmentMembersController.performSegueWithIdentifier("memberlist", sender: nil)
-            
-*/
- /*
+//            gEnrollmentMembersController.performSegueWithIdentifier("memberlist", sender: nil)
+ 
             rest.AddMembers("Enrollments/UpdateMobile", data: mainjson["result"]["Groups"][0]["Members"], completion: {(json:JSON) -> ()in
                 print(json)
             })
-*/
-            
-            
-            //  let jsonData = try! NSJSONSerialization.dataWithJSONObject(DataMemberKeyPair, options: NSJSONWritingOptions.PrettyPrinted)
-            // let jsonString = NSString(data: jsonData, encoding: NSUTF8StringEncoding)! as String
-            
-            // let obj:JSON[String:AnyObject] = ["adddepends" : jsonString]
-            
-            
-            
-            
-            // print(jsonString)
-            //   rest.AddMembers("Enrollments/UpdateMobile", data: jsonobj, completion: {(json:JSON) -> ()in})
-            
-            
-            
+
         }
         
     }
-    
-    
-    
-    /*
-     // Only override drawRect: if you perform custom drawing.
-     // An empty implementation adversely affects performance during animation.
-     override func drawRect(rect: CGRect) {
-     // Drawing code
-     }
-     */
     
     
     func JSONStringify(value: AnyObject,prettyPrinted:Bool = false) -> String{
