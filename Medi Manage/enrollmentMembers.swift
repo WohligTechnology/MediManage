@@ -141,7 +141,6 @@ import SwiftyJSON
                     dispatch_async(dispatch_get_main_queue(),
                         
                         {
-                            print(json)
                             self.mainjson = json
                             
                             if(json["MaritalStatus"]){
@@ -534,10 +533,13 @@ import SwiftyJSON
             members.DateOfRelation = String(DataMemberKeyPair[0]["DateOfRelation"])
           
             
-//            gEnrollmentMembersController.performSegueWithIdentifier("memberlist", sender: nil)
  
             rest.AddMembers("Enrollments/UpdateMobile", data: mainjson["result"]["Groups"][0]["Members"], completion: {(json:JSON) -> ()in
-                print(json)
+                if(json["state"] == true){
+                    dispatch_async(dispatch_get_main_queue()) {
+                   gEnrollmentMembersController.performSegueWithIdentifier("memberlist", sender: nil)
+                        }
+                }
             })
 
         }
@@ -972,7 +974,6 @@ import SwiftyJSON
                 DataMemberKeyPair[0][TEXTFIELD[3]] = dateFormatter.stringFromDate(sender.date)
                 personOneDOB.text = dateFormatter.stringFromDate(sender.date)
                 
-                print(DataMemberKeyPair[0][TEXTFIELD[3]])
                 break
             case 1 :
                 DataMemberKeyPair[1][TEXTFIELD[3]] = dateFormatter.stringFromDate(sender.date)
