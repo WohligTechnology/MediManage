@@ -538,10 +538,15 @@ import SwiftyJSON
 //            print("..........................///////////////")
             print(mainjson["result"]["Groups"][0]["Members"])
 //
+ 
+            gEnrollmentMembersController.performSegueWithIdentifier("memberlist", sender: nil)
+            
+/*
             rest.AddMembers("Enrollments/UpdateMobile", data: mainjson["result"]["Groups"][0]["Members"], completion: {(json:JSON) -> ()in
                 print(json)
             })
-//
+*/
+            
             
             //  let jsonData = try! NSJSONSerialization.dataWithJSONObject(DataMemberKeyPair, options: NSJSONWritingOptions.PrettyPrinted)
             // let jsonString = NSString(data: jsonData, encoding: NSUTF8StringEncoding)! as String

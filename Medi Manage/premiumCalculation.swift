@@ -35,15 +35,21 @@ import UIKit
     @IBOutlet weak var declaration: UILabel!
     @IBOutlet weak var termsLabel: UILabel!
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
     }
     
+    
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         loadViewFromNib ()
     }
+    
+    
+    
     
     func addBottomBorder(color: UIColor, linewidth: CGFloat, myView: UIView) {
         let border = CALayer()
@@ -51,6 +57,7 @@ import UIKit
         border.frame = CGRectMake(5, myView.frame.size.height, width - 45, linewidth)
         myView.layer.addSublayer(border)
     }
+    
     
     func loadViewFromNib() {
         let bundle = NSBundle(forClass: self.dynamicType)
@@ -80,9 +87,14 @@ import UIKit
         addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: totalPremiumView)
     }
 
+    
+    
+    
     @IBAction func insuredmembersCall(sender: AnyObject) {
         gPremiumCalculationController.performSegueWithIdentifier("insuredmembers", sender: nil)
     }
+    
+    
     
     /*
     // Only override drawRect: if you perform custom drawing.

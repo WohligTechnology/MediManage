@@ -117,6 +117,7 @@
 		78B90BD91CE067950022FE7A /* enterOTP.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78B90BD81CE067950022FE7A /* enterOTP.xib */; };
 		78B90BDB1CE067DA0022FE7A /* enterOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B90BDA1CE067DA0022FE7A /* enterOTP.swift */; };
 		C2382C201D0AA43D00DC0073 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2382C1F1D0AA43D00DC0073 /* Alamofire.framework */; };
+		C2A584601D262EAE00F6E0D5 /* EnumSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A5845F1D262EAE00F6E0D5 /* EnumSets.swift */; };
 		C2A59E8F1CDDDF700093CFEC /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2A59E8A1CDDDF700093CFEC /* Lato-Black.ttf */; };
 		C2A59E901CDDDF700093CFEC /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2A59E8B1CDDDF700093CFEC /* Lato-Bold.ttf */; };
 		C2A59E911CDDDF700093CFEC /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2A59E8C1CDDDF700093CFEC /* Lato-Hairline.ttf */; };
@@ -283,6 +284,7 @@
 		78B90BDA1CE067DA0022FE7A /* enterOTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enterOTP.swift; sourceTree = "<group>"; };
 		B1823BFAEEEE1367D0B19089 /* Pods-MediManageUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediManageUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MediManageUITests/Pods-MediManageUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C2382C1F1D0AA43D00DC0073 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		C2A5845F1D262EAE00F6E0D5 /* EnumSets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumSets.swift; sourceTree = "<group>"; };
 		C2A59E8A1CDDDF700093CFEC /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		C2A59E8B1CDDDF700093CFEC /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		C2A59E8C1CDDDF700093CFEC /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Hairline.ttf"; sourceTree = "<group>"; };
@@ -864,6 +866,7 @@
 				C2DCB0EF1D1D4A71004FD787 /* SIParameters.swift */,
 				C2DCB0F11D1D4C42004FD787 /* ResetPasswordDTO.swift */,
 				C2DCB0F31D1D4CF1004FD787 /* GroupTopupSiDTO.swift */,
+				C2A5845F1D262EAE00F6E0D5 /* EnumSets.swift */,
 			);
 			name = DTO;
 			sourceTree = "<group>";
@@ -1186,6 +1189,7 @@
 				C2DCB0EC1D1D4100004FD787 /* RequestDTO.swift in Sources */,
 				3ACFB2A21CE4C3A0003766D8 /* MemberListController.swift in Sources */,
 				3A79A7C71CF045F0008B693B /* ConnectController.swift in Sources */,
+				C2A584601D262EAE00F6E0D5 /* EnumSets.swift in Sources */,
 				3AE7AFE21CF2D3190047DFB0 /* HelplineNumberController.swift in Sources */,
 				3A8EFB621CE9E742004489F3 /* claimForm.swift in Sources */,
 				3A677B691CE4B539003B8C2B /* CompleteProfileController.swift in Sources */,

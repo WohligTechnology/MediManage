@@ -63,9 +63,7 @@ import SwiftyJSON
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
-        
-        
-    }
+ }
     
    
     
@@ -81,10 +79,9 @@ import SwiftyJSON
         rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
       //print(json)
          self.json2 = json
-            //print(self.json2["result"]["Groups"][0]["SumInsuredList"][0]["SumInsuredValue"])
-       //let SumInsuredValue = self.json2["result"]["Groups"][0]["SumInsuredList"][0]["SumInsuredValue"]
-            
-          //  print(SumInsuredValue)
+      
+        let insuredValue =  self.json2["result"]["Groups"][0]["SumInsuredList"][0]["SumInsuredValue"]
+            print(insuredValue)
             self.tabwifeclicked()
         })
         
@@ -92,9 +89,6 @@ import SwiftyJSON
         
         
     }
-    
-    
-    
     
     var fullName : String = ""
     var firstname  : String = ""
@@ -119,12 +113,9 @@ import SwiftyJSON
                 DOB = String(json2["result"]["Groups"][0]["Members"][x]["DateOfBirth"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
               
               let DOM = String(json2["result"]["Groups"][0]["Members"][x]["DateOfRelation"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
-       
-              fullName = firstname + " " + lastName
-              FirstTabs(fullName,DatofBirth: DOB,Dateofmarriage:DOM)
-            
+                fullName = firstname + " " + lastName
+                FirstTabs(fullName,DatofBirth: DOB,Dateofmarriage:DOM)
                 break
-            
             default:
             break
             
@@ -134,20 +125,13 @@ import SwiftyJSON
     
  
     @IBAction func Calculation(sender: AnyObject) {
-    
-      print("Hell")
-    
+        
     }
-    
-    
-    
-    
     
     func tabsonclicked (){
       updateTab()
         UpdateTabs(lblSon, uiview: tabSon)
-           // tabSon.backgroundColor =  UIColor(red: 21/255, green: 177/255, blue: 230/255, alpha: 255/255)
-        
+    
         for x in 0..<7
         {       let currRelation  = String(json2["result"]["Groups"][0]["Members"][x]["RelationType"])
             
@@ -157,9 +141,7 @@ import SwiftyJSON
                 
                 firstname =   String(json2["result"]["Groups"][0]["Members"][x]["FirstName"])
                 lastName = String(json2["result"]["Groups"][0]["Members"][x]["LastName"])
-                
                 DOB = String(json2["result"]["Groups"][0]["Members"][x]["DateOfBirth"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
-                
              DOM = String(json2["result"]["Groups"][0]["Members"][x]["DateOfRelation"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
                 
                 
@@ -185,16 +167,13 @@ import SwiftyJSON
             switch currRelation{
                 
             case "Daughter":
-                
                 firstname =   String(json2["result"]["Groups"][0]["Members"][x]["FirstName"])
                 lastName = String(json2["result"]["Groups"][0]["Members"][x]["LastName"])
-                
+            
                 DOB = String(json2["result"]["Groups"][0]["Members"][x]["DateOfBirth"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
                 
                  DOM = String(json2["result"]["Groups"][0]["Members"][x]["DateOfRelation"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
-                
-                
-                fullName = firstname + " " + lastName
+               fullName = firstname + " " + lastName
                  FirstTabs(fullName,DatofBirth: DOB,Dateofmarriage:DOM)
                 
                 break
@@ -401,18 +380,12 @@ import SwiftyJSON
       //  premiumCalculation.addGestureRecognizer(calculation)
         //premiumCalculation.userInteractionEnabled = true
         
-        
-        
         let fbtnEdit = UITapGestureRecognizer(target: self, action: Selector("fbtnclicked"))
         editDetails.addGestureRecognizer(fbtnEdit)
         editDetails.userInteractionEnabled = true
-        
         let secbtnEdit = UITapGestureRecognizer(target: self, action: Selector("secbtnclicked"))
        seceditDetails.addGestureRecognizer(secbtnEdit)
         seceditDetails.userInteractionEnabled = true
-
-        
-        
         let tabwife = UITapGestureRecognizer(target: self, action: Selector("tabwifeclicked"))
         tabWife.addGestureRecognizer(tabwife)
         tabWife.userInteractionEnabled = true
@@ -440,8 +413,7 @@ import SwiftyJSON
     
    func Premcalculation()
    {
-    
-     gMemberListController.performSegueWithIdentifier("premiumcalculation", sender: nil)
+    gMemberListController.performSegueWithIdentifier("premiumcalculation", sender: nil)
     }
     
     
