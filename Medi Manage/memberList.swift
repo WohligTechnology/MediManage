@@ -63,6 +63,7 @@ import SwiftyJSON
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
+        
  }
     
    
@@ -85,7 +86,7 @@ import SwiftyJSON
             self.tabwifeclicked()
         })
         
-     
+        
         
         
     }
@@ -286,7 +287,7 @@ import SwiftyJSON
      }
     
     func secbtnclicked(){
-      
+        
        
         
     }

@@ -57,7 +57,9 @@ import SwiftyJSON
     var childrenCapacity : Int = 0
     var parentCapasity : Int = 0
     var lawsCapasity : Int = 0
-    var TEXTFIELD = ["FirstName","MiddleName","LastName","DateOfBirth","DateOfRelation","RelationType","isSelected","SystemIdentifier"]
+    var TEXTFIELD = ["FirstName","MiddleName","LastName","DateOfBirth","DateOfRelation","RelationType","isSelected","SystemIdentifier","Amount"
+         ,"dorDay","dobDay","NetAmount","TopupNetAmount","IsECardAvailable","Tax","dobMonth","AddedAt","TopupAmount","LastName"
+        ,"UHID","dobYear","ID","TopupTax","dorYear","Status","Exist","dorMonth"]
     
     
     
@@ -526,7 +528,7 @@ import SwiftyJSON
             }
             
             //            gEnrollmentMembersController.performSegueWithIdentifier("memberlist", sender: nil)
-
+          var  membersArray = [MembersDTO]()
             
             let members = MembersDTO()
             members.FirstName = String(DataMemberKeyPair[0][TEXTFIELD[0]])
@@ -535,13 +537,26 @@ import SwiftyJSON
             members.LastName = String(DataMemberKeyPair[0][TEXTFIELD[3]])
             members.SystemIdentifier = String(DataMemberKeyPair[0][TEXTFIELD[4]])
             members.DateOfRelation = String(DataMemberKeyPair[0]["DateOfRelation"])
-//            print("..........................///////////////")
-            print(mainjson["result"]["Groups"][0]["Members"])
-//
- 
-            gEnrollmentMembersController.performSegueWithIdentifier("memberlist", sender: nil)
+          
             
-/*
+            gEnrollmentMembersController.performSegueWithIdentifier("memberlist", sender: nil)
+
+            
+            
+//            print("..........................///////////////")
+         //   print(mainjson["result"]["Groups"][0]["Members"])
+//
+  
+            
+        //    membersArray.append(members)
+         // print(members)
+          //  print(membersArray)
+            
+            /*
+ gEnrollmentMembersController.performSegueWithIdentifier("memberlist", sender: nil)
+            
+*/
+ /*
             rest.AddMembers("Enrollments/UpdateMobile", data: mainjson["result"]["Groups"][0]["Members"], completion: {(json:JSON) -> ()in
                 print(json)
             })

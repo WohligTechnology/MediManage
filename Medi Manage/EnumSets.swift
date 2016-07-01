@@ -7,7 +7,3 @@
 //
 
 import Foundation
-
-public enum Gender: Int {
-    case Male = 1, Female,Others
-}

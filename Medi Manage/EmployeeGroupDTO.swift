@@ -9,15 +9,9 @@
 import Foundation
 import UIKit
 
- enum Gender : Int {
-  case Male = 1
-    case  Female = 2
-    case  Others = 3
-
-
+public enum Gender: Int {
+    case Male = 1, Female,Others
 }
-
-
 
 
 public class EmployeeDTO : NSObject
@@ -55,36 +49,36 @@ public class EmployeeDTO : NSObject
     
 }
 
-public class MembersDTO : NSObject
+public class MembersDTO
 {
-    public var ID : Int?
-    public var FirstName : String?
-    public var MiddleName : String?
-    public var LastName  :String?
-    public var DateOfBirth : NSDate?
+    public var ID : Int = 0
+    public var FirstName : String = ""
+    public var MiddleName : String = ""
+    public var LastName  :String = ""
+    public var DateOfBirth =  NSDate()
     
-    public var dobDay : Int?
-    public var dobMonth : Int?
-    public var dobYear : Int?
-    public var dorDay : Int?
-    public var dorMonth : Int?
-    public var dorYear : Int?
-    public var Exist : String?
-   // public var InsuredStatus :Status?  
-   //  public MemberAddedAt AddedAt { get; set; }
-    public var Gender : Gender?
-    public var RelationType : String?
-    public var DateOfRelation : String?
-    public var SystemIdentifier : String?
-    public var UHID : String?
+    public var dobDay : Int = 0
+    public var dobMonth : Int = 0
+    public var dobYear : Int = 0
+    public var dorDay : Int = 0
+    public var dorMonth : Int = 0
+    public var dorYear : Int = 0
+    public var Exist : String = ""
+    public var InsuredStatus :Int = 0
+    public var MemberAddedAt : Int = 0
+    public var Gender : Int = 0
+    public var RelationType : String = ""
+    public var DateOfRelation : String = ""
+    public var SystemIdentifier : String = ""
+    public var UHID : String = ""
     
-    public var Amount : Double?
-    public var Tax : Double?
-    public var NetAmount : Double?
+    public var Amount : Double = 0
+    public var Tax : Double = 0
+    public var NetAmount : Double = 0
     
-    public var TopupAmount : Double?
-    public var TopupTax : Double?
-    public var TopupNetAmount : Double?
+    public var TopupAmount : Double = 0
+    public var TopupTax : Double = 0
+    public var TopupNetAmount : Double = 0
     
 }
 
