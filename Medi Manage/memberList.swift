@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-@IBDesignable class memberList: UIView {
+@IBDesignable class memberList: UIView ,UIActionSheetDelegate{
     
     
     
@@ -85,7 +85,6 @@ import SwiftyJSON
             print(insuredValue)
             self.tabwifeclicked()
         })
-        
         
         
         
@@ -288,6 +287,7 @@ import SwiftyJSON
     
     func secbtnclicked(){
         
+      
        
         
     }
@@ -410,14 +410,35 @@ import SwiftyJSON
     }
 
     
-    
-    
    func Premcalculation()
    {
-    gMemberListController.performSegueWithIdentifier("premiumcalculation", sender: nil)
+ 
+    let myActionSheet = UIActionSheet()
+    myActionSheet.addButtonWithTitle("Save")
+    myActionSheet.addButtonWithTitle("Cancel")
+    myActionSheet.showInView(gMemberListController.view)
+    
+  //  gMemberListController.performSegueWithIdentifier("premiumcalculation", sender: nil)
+   
     }
     
-    
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int)
+    {
+        print("\(buttonIndex)")
+        switch (buttonIndex){
+            
+        case 0:
+            print("Cancel")
+        case 1:
+            print("Save")
+        case 2:
+            print("Delete")
+        default:
+            print("Default")
+         
+            
+        }
+    }
     
     
 }
