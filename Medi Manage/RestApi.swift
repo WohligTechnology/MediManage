@@ -138,18 +138,38 @@ public class RestApi {
                 
         }}
     
+    public func GetProfile(data : JSON, completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        
+        let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
+        
+        do {
+            let opt = try HTTP.GET(apiURL+"Users/Profile" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            opt.start { response in
+                if let _ = response.error {
+                    completion(json);
+                }
+                else
+                {
+                    json  = JSON(data: response.data)
+                    completion(json);
+                }
+            }
+        } catch _ {
+            completion(json);
+        }
+    }
     
-    
-    public func AddMembers(SUBURL : String, data : JSON ,completion:((JSON) -> Void))
+    public func UpdateProfile(data : JSON ,completion:((JSON) -> Void))
     {
         var json = JSON(1)
         let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
         
          let params = ["data": "\(data)"]
         do {
-            let opt = try HTTP.POST(apiURL+SUBURL , parameters: params, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            let opt = try HTTP.POST(apiURL+"Users/UpdateProfile" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
             opt.start { response in
-                print(response.error)
                 if let _ = response.error {
                     completion(json);
                 }
@@ -163,20 +183,34 @@ public class RestApi {
             completion(json);
         }
 
-        
-//        Manager.request(.POST, apiURL+SUBURL ,parameters: params, headers: isLoginheader)
-//            .responseJSON { response in
-//                
-//                json = JSON(data: response.data!)
-//                completion(json)
-//                print(json)
-//                
-//        }
     }
-   
-     //testcorp.medimanage.com/api/v1/Users/ConfirmOTP/{mobileNo}/{code}
     
-     //testcorp.medimanage.com/api/v1/Users/ClientSendOTP/{mobileNo}/{password}
+    
+    public func ResetPassword(data : JSON ,completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
+        
+        let params = ["data": "\(data)"]
+        do {
+            let opt = try HTTP.POST(apiURL+"Users/ResetPassword" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            opt.start { response in
+                if let _ = response.error {
+                    completion(json);
+                }
+                else
+                {
+                    json  = JSON(data: response.data)
+                    completion(json);
+                }
+            }
+        } catch _ {
+            completion(json);
+        }
+        
+    }
+    
+   
     public func SendOtp(SUBURL :String,mobileno : String, password : String, completion:((JSON) -> Void))
     {
             var json = JSON(1)
