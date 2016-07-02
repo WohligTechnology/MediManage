@@ -1,24 +1,23 @@
 //
-//  InsuredMembersController.swift
-//  Medi Manage
+//  MemberListTableController.swift
+//  MediManage
 //
-//  Created by Harsh Thakkar on 13/05/16.
+//  Created by Harsh Thakkar on 02/07/16.
 //  Copyright © 2016 Wohlig Technology. All rights reserved.
 //
 
 import UIKit
 
-var gInsuredMembersController: UIViewController!
+var gMemberListTableController: UIViewController!
 
-class InsuredMembersController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MemberListTableController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let relations = ["Self", "Mother", "Father"]
+    let members = ["Wife", "Father", "Son", "Daughter"]
     var selectedIndexPath: NSIndexPath?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        gInsuredMembersController = self
-        // Do any additional setup after loading the view.
+        gMemberListTableController = self
         
         let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
         statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
@@ -30,6 +29,7 @@ class InsuredMembersController: UIViewController, UITableViewDelegate, UITableVi
         let mainfooter = footer(frame: CGRectMake(0, height - 55, width, 55))
         mainfooter.layer.zPosition = 1000
         self.view.addSubview(mainfooter)
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,7 +42,7 @@ class InsuredMembersController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return relations.count
+        return members.count
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -65,34 +65,34 @@ class InsuredMembersController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        (cell as! InsuredMemberCell).watchFrameChanges()
+        (cell as! MemberListCell).watchFrameChanges()
     }
     
     func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        (cell as! InsuredMemberCell).ignoreFrameChanges()
+        (cell as! MemberListCell).ignoreFrameChanges()
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        if indexPath.row == 0 {
-//            return InsuredMemberCell.expandedHeight
-//        }
+        //        if indexPath.row == 0 {
+        //            return InsuredMemberCell.expandedHeight
+        //        }
         if indexPath == selectedIndexPath {
-            return InsuredMemberCell.expandedHeight
+            return MemberListCell.expandedHeight
         } else {
-            return InsuredMemberCell.defaultHeight
+            return MemberListCell.defaultHeight
         }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("insuredcell", forIndexPath: indexPath) as! InsuredMemberCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("membercell", forIndexPath: indexPath) as! MemberListCell
         
         cell.selectionStyle = .None
         
-        cell.relationTitle.text = relations[indexPath.item]
+        cell.memberName.text = members[indexPath.item]
         
         return cell
     }
-
+    
     /*
     // MARK: - Navigation
 
@@ -105,29 +105,25 @@ class InsuredMembersController: UIViewController, UITableViewDelegate, UITableVi
 
 }
 
-class InsuredMemberCell: UITableViewCell {
+class MemberListCell: UITableViewCell {
     
-    @IBOutlet weak var firstNameView: UIView!
-    @IBOutlet weak var middleNameView: UIView!
-    @IBOutlet weak var lastNameView: UIView!
+    @IBOutlet weak var nameView: UIView!
     @IBOutlet weak var dobView: UIView!
-    @IBOutlet weak var sumView: UIView!
-    @IBOutlet weak var topupSumView: UIView!
-    @IBOutlet weak var balanceView: UIView!
+    @IBOutlet weak var domView: UIView!
+    @IBOutlet weak var editIcon: UIImageView!
+    @IBOutlet weak var editText: UILabel!
     
-    @IBOutlet weak var relationTitle: UILabel!
+    @IBOutlet weak var memberName: UILabel!
     
-    class var expandedHeight: CGFloat { get { return 350 } }
+    class var expandedHeight: CGFloat { get { return 300 } }
     class var defaultHeight: CGFloat { get { return 40 } }
     
     func checkHeight() {
-        firstNameView.hidden = (frame.size.height < InsuredMemberCell.expandedHeight)
-        middleNameView.hidden = (frame.size.height < InsuredMemberCell.expandedHeight)
-        lastNameView.hidden = (frame.size.height < InsuredMemberCell.expandedHeight)
-        dobView.hidden = (frame.size.height < InsuredMemberCell.expandedHeight)
-        sumView.hidden = (frame.size.height < InsuredMemberCell.expandedHeight)
-        topupSumView.hidden = (frame.size.height < InsuredMemberCell.expandedHeight)
-        balanceView.hidden = (frame.size.height < InsuredMemberCell.expandedHeight)
+        nameView.hidden = (frame.size.height < MemberListCell.expandedHeight)
+        dobView.hidden = (frame.size.height < MemberListCell.expandedHeight)
+        domView.hidden = (frame.size.height < MemberListCell.expandedHeight)
+        editIcon.hidden = (frame.size.height < MemberListCell.expandedHeight)
+        editText.hidden = (frame.size.height < MemberListCell.expandedHeight)
     }
     
     func watchFrameChanges() {
