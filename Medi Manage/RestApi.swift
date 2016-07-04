@@ -186,6 +186,31 @@ public class RestApi {
     }
     
     
+    public func AddMembers(data : JSON ,completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
+        
+        let params = ["data": "\(data)"]
+        do {
+            let opt = try HTTP.POST(apiURL+"Enrollments/UpdateMobile" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            opt.start { response in
+                if let _ = response.error {
+                    completion(json);
+                }
+                else
+                {
+                    json  = JSON(data: response.data)
+                    completion(json);
+                }
+            }
+        } catch _ {
+            completion(json);
+        }
+        
+    }
+    
+    
     public func ResetPassword(data : JSON ,completion:((JSON) -> Void))
     {
         var json = JSON(1)
@@ -210,6 +235,226 @@ public class RestApi {
         
     }
     
+    
+    public func EnrolledName(data : JSON ,completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
+        
+        do {
+            let opt = try HTTP.GET(apiURL+"Enrollments/Name" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            opt.start { response in
+                if let _ = response.error {
+                    completion(json);
+                }
+                else
+                {
+                    json  = JSON(data: response.data)
+                    completion(json);
+                }
+            }
+        } catch _ {
+            completion(json);
+        }
+        
+    }
+
+    
+    public func ConnectSection(data : JSON ,completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
+        
+        do {
+            let opt = try HTTP.GET(apiURL+"Enrollments/ConnectSection" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            opt.start { response in
+                if let _ = response.error {
+                    completion(json);
+                }
+                else
+                {
+                    json  = JSON(data: response.data)
+                    completion(json);
+                }
+            }
+        } catch _ {
+            completion(json);
+        }
+        
+    }
+
+    
+    public func DashboardDetails(data : JSON ,completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
+        
+        do {
+            let opt = try HTTP.GET(apiURL+"Enrollments/DashboardDetails" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            opt.start { response in
+                if let _ = response.error {
+                    completion(json);
+                }
+                else
+                {
+                    json  = JSON(data: response.data)
+                    completion(json);
+                }
+            }
+        } catch _ {
+            completion(json);
+        }
+        
+    }
+    
+    public func HospitalSearch(data : JSON ,completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
+        
+        do {
+            let opt = try HTTP.GET(apiURL+"Enrollments/DashboardDetails" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            opt.start { response in
+                if let _ = response.error {
+                    completion(json);
+                }
+                else
+                {
+                    json  = JSON(data: response.data)
+                    completion(json);
+                }
+            }
+        } catch _ {
+            completion(json);
+        }
+        
+    }
+    
+    public func ClaimForm(data : JSON ,completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
+        
+        let params = ["data": "\(data)"]
+
+        
+        do {
+            let opt = try HTTP.GET(apiURL+"Hospitals/Search" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            opt.start { response in
+                if let _ = response.error {
+                    completion(json);
+                }
+                else
+                {
+                    json  = JSON(data: response.data)
+                    completion(json);
+                }
+            }
+        } catch _ {
+            completion(json);
+        }
+        
+    }
+    
+    public func BenefitSummery(data : JSON ,completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
+        
+        
+        do {
+            let opt = try HTTP.GET(apiURL+"Enrollments/BenefitSummery" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            opt.start { response in
+                if let _ = response.error {
+                    completion(json);
+                }
+                else
+                {
+                    json  = JSON(data: response.data)
+                    completion(json);
+                }
+            }
+        } catch _ {
+            completion(json);
+        }
+        
+    }
+
+    
+    public func FaqCategories(data : JSON ,completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
+        
+        do {
+            let opt = try HTTP.GET(apiURL+"FAQ/Categories" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            opt.start { response in
+                if let _ = response.error {
+                    completion(json);
+                }
+                else
+                {
+                    json  = JSON(data: response.data)
+                    completion(json);
+                }
+            }
+        } catch _ {
+            completion(json);
+        }
+        
+    }
+
+    
+    public func FaqDetails(data : JSON ,completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
+        
+        let params = ["data": "\(data)"]
+        
+        do {
+            let opt = try HTTP.GET(apiURL+"FAQ/Categories" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            opt.start { response in
+                if let _ = response.error {
+                    completion(json);
+                }
+                else
+                {
+                    json  = JSON(data: response.data)
+                    completion(json);
+                }
+            }
+        } catch _ {
+            completion(json);
+        }
+        
+    }
+        
+    public func SubmitQuery(data : JSON ,completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
+        
+        let params = ["data": "\(data)"]
+        do {
+            let opt = try HTTP.POST(apiURL+"FAQ/SendQuery" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            opt.start { response in
+                if let _ = response.error {
+                    completion(json);
+                }
+                else
+                {
+                    json  = JSON(data: response.data)
+                    completion(json);
+                }
+            }
+        } catch _ {
+            completion(json);
+        }
+        
+    }
+    
+
    
     public func SendOtp(SUBURL :String,mobileno : String, password : String, completion:((JSON) -> Void))
     {

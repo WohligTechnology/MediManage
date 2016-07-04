@@ -12,14 +12,10 @@ var gMainClaimsController: UIViewController!
 
 class MainClaimsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let label1 = ["My Claims", "Claim Form", "Document Checklist",
-                  "Claim Intimation", "Claim Process"]
+    let label1 = ["Claim Form", "Document Checklist"]
     let label2 = ["Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit."]
-    let image = ["claim_one", "claim_two", "claim_three", "claim_four", "claim_five"]
+    let image = ["claim_two", "claim_three"]
     
     @IBOutlet var mainClaimsMainView: UIView!
     @IBOutlet weak var mainTableView: UITableView!
@@ -52,7 +48,7 @@ class MainClaimsController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 2
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

@@ -534,7 +534,7 @@ import SwiftyJSON
           
             
  
-            rest.AddMembers("Enrollments/UpdateMobile", data: mainjson["result"]["Groups"][0]["Members"], completion: {(json:JSON) -> ()in
+            rest.AddMembers(mainjson["result"]["Groups"][0]["Members"], completion: {(json:JSON) -> ()in
                 if(json["state"] == true){
                     dispatch_async(dispatch_get_main_queue()) {
                    gEnrollmentMembersController.performSegueWithIdentifier("memberlist", sender: nil)
