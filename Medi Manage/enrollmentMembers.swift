@@ -139,8 +139,9 @@ import SwiftyJSON
             else{
                 rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
                     dispatch_async(dispatch_get_main_queue(),
-                        
+
                         {
+                            print(json)
                             self.mainjson = json
                             
                             if(json["MaritalStatus"]){
@@ -156,7 +157,8 @@ import SwiftyJSON
                                 self.SetMemberData(json)
                                 self.DisplayEnrollmentsDetails()
                                 //  print(json)
-                            }})})}})}
+                            }})})
+            }})}
     
     
     func EnableAllRow()

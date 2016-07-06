@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </mutableArray>
+        <mutableArray key="Lato-Light.ttf">
+            <string>Lato-Light</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2X3-cH-ua6">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADDED MEMBER LIST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hvc-rI-kYs">
+                            <rect key="frame" x="0.0" y="12" width="375" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="gmp-aU-clk"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Yw-YN-49O">
+                            <rect key="frame" x="0.0" y="35" width="375" height="33"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="33" id="tpr-wK-E5M"/>
+                            </constraints>
+                            <string key="text" base64-UTF8="YES">
+TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2NpbmcgZWxpdC4gA1N1
+c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
+</string>
+                            <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="12"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="23i-0k-x2I"/>
+                        <constraint firstAttribute="trailing" secondItem="Hvc-rI-kYs" secondAttribute="trailing" id="ARs-Te-JNH"/>
+                        <constraint firstItem="Hvc-rI-kYs" firstAttribute="leading" secondItem="2X3-cH-ua6" secondAttribute="leading" id="ATe-0P-63p"/>
+                        <constraint firstItem="1Yw-YN-49O" firstAttribute="top" secondItem="Hvc-rI-kYs" secondAttribute="bottom" constant="2" id="GOa-gZ-vno"/>
+                        <constraint firstAttribute="trailing" secondItem="1Yw-YN-49O" secondAttribute="trailing" id="PRD-kd-nf6"/>
+                        <constraint firstItem="1Yw-YN-49O" firstAttribute="leading" secondItem="2X3-cH-ua6" secondAttribute="leading" id="dj1-Je-lFN"/>
+                        <constraint firstItem="Hvc-rI-kYs" firstAttribute="top" secondItem="2X3-cH-ua6" secondAttribute="top" constant="12" id="peS-Hg-g41"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="2X3-cH-ua6" secondAttribute="trailing" id="DAH-XW-TKF"/>
+                <constraint firstItem="2X3-cH-ua6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="H6o-UN-8e0"/>
+                <constraint firstItem="2X3-cH-ua6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="VR8-4N-wxx"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="386.5" y="180"/>
+        </view>
+    </objects>
+</document>

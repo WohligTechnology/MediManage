@@ -11,7 +11,7 @@ import UIKit
 var Employee_API_KEY : String = ""
 var EmployeeFullName  : String = ""
 var EmployeeBirthDate : String = ""
-var EmployeeNo : String = "" 
+var EmployeeNo : String = ""
 
 let bounds = UIScreen.mainScreen().bounds
 let width = bounds.size.width
