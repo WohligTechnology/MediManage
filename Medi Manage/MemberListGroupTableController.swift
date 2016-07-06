@@ -11,7 +11,7 @@ import SwiftyJSON
 
 var gMemberListGroupTableController: UIViewController!
 
-class MemberListGroupTableController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MemberListGroupTableController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource {
     
     var members : JSON = ""
     var selectedIndexPath: NSIndexPath?
@@ -54,7 +54,7 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(memcount)
 
-        return memcount
+        return 3
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -79,7 +79,13 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
     func memberClicked(sender: UIGestureRecognizer){
 //        print(sender.view.data)
     }
-    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell",forIndexPath:indexPath) as! memberCollectionCell
+        return cell
+    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let memlabel = UILabel()
@@ -89,27 +95,28 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
         tableView.contentSize.height += 30
         
         let memberInGroup = self.members["result"]["Groups"][indexPath.item]
-        for item in 0..<memberInGroup["Members"].count {
-            print("in member")
-            print(item)
-            if String(memberInGroup["Members"][item]["RelationType"]) != "Self" {
-                let relationtab = relationView(frame: CGRectMake(0, 20, width, 50))
-                
-                relationtab.memberLabel.text = String(memberInGroup["Members"][item]["RelationType"])
-                relationtab.data = memberInGroup["Members"][item]
-                cell.memberGroup.addArrangedSubview(relationtab)
-                injson = memberInGroup["Members"][item]
-                
-                let memclick = UITapGestureRecognizer(target: self, action: #selector(self.memberClicked))
-                relationtab.data = injson
-                relationtab.addGestureRecognizer(memclick)
-                
-//                relationtab.addTarget(self, action: #selector(self.textFieldDidChange(_:)) , forControlEvents: UIControlEvents.EditingChanged)
-
-            }
-            
         
-        }        
+//        for item in 0..<memberInGroup["Members"].count {
+//            print("in member")
+//            print(item)
+//            if String(memberInGroup["Members"][item]["RelationType"]) != "Self" {
+//                let relationtab = relationView(frame: CGRectMake(0, 20, width, 50))
+//                
+//                relationtab.memberLabel.text = String(memberInGroup["Members"][item]["RelationType"])
+//                relationtab.data = memberInGroup["Members"][item]
+//                cell.memberGroup.addArrangedSubview(relationtab)
+//                injson = memberInGroup["Members"][item]
+//                
+//                let memclick = UITapGestureRecognizer(target: self, action: #selector(self.memberClicked))
+//                relationtab.data = injson
+//                relationtab.addGestureRecognizer(memclick)
+//                
+////                relationtab.addTarget(self, action: #selector(self.textFieldDidChange(_:)) , forControlEvents: UIControlEvents.EditingChanged)
+//
+//            }
+//            
+//        
+//        }        
         return cell
     }
     
@@ -123,6 +130,10 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
     }
     */
 
+}
+
+class memberCollectionCell: UICollectionViewCell {
+    
 }
 
 class MemberListGroupCell: UITableViewCell {
