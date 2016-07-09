@@ -196,7 +196,7 @@ public class RestApi {
         let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         
         do {
-            let opt = try HTTP.POST(apiURL+"Enrollments/Confirm" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            let opt = try HTTP.GET(apiURL+"Enrollments/Confirm" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
             opt.start { response in
                 if let _ = response.error {
                     completion(json);
@@ -417,7 +417,7 @@ public class RestApi {
     }
 
     
-    public func FaqCategories(data : JSON ,completion:((JSON) -> Void))
+    public func FaqCategories(completion:((JSON) -> Void))
     {
         var json = JSON(1)
         let token = defaultToken.stringForKey("access_token")
@@ -442,17 +442,19 @@ public class RestApi {
     }
 
     
-    public func FaqDetails(data : JSON ,completion:((JSON) -> Void))
+    public func FaqDetails(completion:((JSON) -> Void))
     {
         var json = JSON(1)
         let token = defaultToken.stringForKey("access_token")
         let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         
-        let params = ["data": "\(data)"]
+//        let params = ["data": "\(data)"]
+        print(categoryId)
         
         do {
-            let opt = try HTTP.GET(apiURL+"FAQ/Categories" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            let opt = try HTTP.GET(apiURL+"FAQ/Details/\(categoryId)" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
             opt.start { response in
+                print(response.error)
                 if let _ = response.error {
                     completion(json);
                 }

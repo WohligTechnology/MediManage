@@ -54,7 +54,7 @@ import UIKit
     }
 
     @IBAction func hospitalSearchCall(sender: AnyObject) {
-        gBenefitSummaryController.performSegueWithIdentifier("benefitSummaryToHospitalSearch", sender: nil)
+//        gBenefitSummaryController.performSegueWithIdentifier("benefitSummaryToHospitalSearch", sender: nil)
     }
     /*
     // Only override drawRect: if you perform custom drawing.

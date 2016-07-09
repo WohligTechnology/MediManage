@@ -7,14 +7,19 @@
 //
 
 import UIKit
+import SwiftyJSON
 
-@IBDesignable class helpDesk: UIView {
+@IBDesignable class helpDesk: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
     @IBOutlet var helpDeskMainView: UIView!
+    
+    let pickerView = UIPickerView()
     
     @IBOutlet weak var typeQuestionField: UITextField!
     @IBOutlet weak var goButton: UIButton!
     @IBOutlet weak var submitQueryButton: UIButton!
+    
+    var categories : JSON = ""
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -59,10 +64,62 @@ import UIKit
         
         helpDeskMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height - 55)
         
+        //get faq data
+        rest.FaqCategories({(json:JSON) -> () in
+//            gHelpDeskQueryController.s
+            if json["state"] {
+                self.categories = json["result"]
+            }
+            })
+        
+        // dropdown list
+        pickerView.delegate = self
+        typeQuestionField.inputView = pickerView
+        typeQuestionField.delegate = self
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.Default
+        toolBar.translucent = true
+        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "donePicker")
+        
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        
+//        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: "donePicker")
+        
+        toolBar.setItems([spaceButton, doneButton], animated: false)
+        toolBar.userInteractionEnabled = true
+        
+        typeQuestionField.inputAccessoryView = toolBar
+        
         // add borders
         addBottomBorder(UIColor.blackColor(), linewidth: 1, myView: typeQuestionField)
     }
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return categories.count
+    }
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return categories[row]["CategoryName"].stringValue
+    }
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        typeQuestionField.text = categories[row]["CategoryName"].stringValue
+        categoryId = categories[row]["ID"].stringValue
+    }
+    func donePicker(){
+        typeQuestionField.resignFirstResponder()
+    }
 
+    func textFieldDidEndEditing(textField: UITextField) {
+        textField.resignFirstResponder()
+    }
+    @IBAction func selectCategory(sender: AnyObject) {
+        
+        
+    }
     @IBAction func helpDeskFAQCall(sender: AnyObject) {
         gHelpDeskController.performSegueWithIdentifier("helpDeskToHelpDeskFAQ", sender: nil)
     }

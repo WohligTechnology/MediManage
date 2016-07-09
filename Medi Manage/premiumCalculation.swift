@@ -134,9 +134,11 @@ import SwiftyJSON
     
     
     @IBAction func insuredmembersCall(sender: AnyObject) {
-        rest.premiumConfirm({(json:JSON) -> ()in
-            print(json)
+        if terms {
+            rest.premiumConfirm({(json:JSON) -> ()in
+                print(json)
             })
+        }
 //        gPremiumCalculationController.performSegueWithIdentifier("insuredmembers", sender: nil)
     }
     

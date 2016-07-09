@@ -24,7 +24,7 @@
                 <outlet property="goButton" destination="ulb-P1-6m1" id="6j6-b6-SsN"/>
                 <outlet property="helpDeskMainView" destination="iN0-l3-epB" id="hZG-JM-NCv"/>
                 <outlet property="submitQueryButton" destination="6uv-fV-0yW" id="XNg-hW-0gE"/>
-                <outlet property="typeQuestionField" destination="4Pc-wu-jID" id="nKL-4F-wnc"/>
+                <outlet property="typeQuestionField" destination="4Pc-wu-jID" id="4bx-wI-sgD"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

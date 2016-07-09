@@ -505,7 +505,8 @@ import SwiftyJSON
                     
                     for y in 0..<mainjson["result"]["Groups"][0]["Members"].count{
                         let a = (String(mainjson["result"]["Groups"][0]["Members"][y]["SystemIdentifier"]) == String(DataMemberKeyPair[x]["SystemIdentifier"]!));
-                        let b = (String(mainjson["result"]["Groups"][0]["Members"][y]["RelationType"]) == String(DataMemberKeyPair[x]["RelationType"]!));                        if( a && b ) {
+                        let b = (String(mainjson["result"]["Groups"][0]["Members"][y]["RelationType"]) == String(DataMemberKeyPair[x]["RelationType"]!));
+                        if( a && b ) {
                             mainjson["result"]["Groups"][0]["Members"][y]["FirstName"] = JSON(DataMemberKeyPair[x]["FirstName"]!)
                             mainjson["result"]["Groups"][0]["Members"][y]["LastName"] = JSON(DataMemberKeyPair[x]["LastName"]!)
                             mainjson["result"]["Groups"][0]["Members"][y]["MiddleName"] = JSON(DataMemberKeyPair[x]["MiddleName"]!)
