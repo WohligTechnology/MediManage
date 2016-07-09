@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 @IBDesignable class premiumCalculation: UIView {
     
@@ -35,7 +36,14 @@ import UIKit
     @IBOutlet weak var declaration: UILabel!
     @IBOutlet weak var termsLabel: UILabel!
     
+    @IBOutlet weak var termsCheckbox: UIButton!
     
+    var BasicPremium : Int64 = 0
+    var TopupPremium : Int64 = 0
+    var Subtotal : Int64 = 0
+    var Tax : Int64 = 0
+    var TotalPremium : Int64 = 0
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
@@ -78,6 +86,33 @@ import UIKit
         
         declaration.font = UIFont(name: "Lato-Light", size: 10.0)
         termsLabel.font = UIFont(name: "Lato-Light", size: 10.0)
+        rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
+            dispatch_async(dispatch_get_main_queue(),{
+                for x in 0..<json["result"]["Groups"].count{
+                    self.BasicPremium = self.BasicPremium + json["result"]["Groups"][x]["Amount"].int64Value
+                    self.TopupPremium = self.TopupPremium + json["result"]["Groups"][x]["TopupAmount"].int64Value
+                    self.Subtotal = json["result"]["Groups"][x]["Amount"].int64Value + json["result"]["Groups"][x]["TopupAmount"].int64Value
+                    self.Tax = json["result"]["Groups"][x]["Tax"].int64Value + json["result"]["Groups"][x]["TopupTax"].int64Value
+                    self.TotalPremium = json["result"]["Groups"][x]["NetAmount"].int64Value + json["result"]["Groups"][x]["TopupNetAmount"].int64Value
+                    
+                    for y in 0..<json["result"]["Groups"][x]["Members"].count{
+                        self.BasicPremium = self.BasicPremium + json["result"]["Groups"][x]["Members"][y]["Amount"].int64Value
+                        self.TopupPremium = self.TopupPremium + json["result"]["Groups"][x]["Members"][y]["TopupAmount"].int64Value
+                        self.Subtotal = json["result"]["Groups"][x]["Members"][y]["Amount"].int64Value + json["result"]["Groups"][x]["Members"][y]["TopupAmount"].int64Value
+                        self.Tax = json["result"]["Groups"][x]["Members"][y]["Tax"].int64Value + json["result"]["Groups"][x]["Members"][y]["TopupTax"].int64Value
+                        self.TotalPremium = json["result"]["Groups"][x]["Members"][y]["NetAmount"].int64Value + json["result"]["Groups"][x]["Members"][y]["TopupNetAmount"].int64Value
+                    }
+
+                }
+                
+                self.basicPremiumCost.text = String(self.BasicPremium)
+                self.totalPremiumCost.text = String(self.TopupPremium)
+                self.netPremiumCost.text = String(self.Subtotal)
+                self.serviceTaxCost.text = String(self.Tax)
+                self.topupPremiumCost.text = String(self.TotalPremium)
+                
+                })
+        })
         
         //add borders
         addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: basicPremiumView)
@@ -87,11 +122,22 @@ import UIKit
         addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: totalPremiumView)
     }
 
-    
+    var terms = false
+    @IBAction func termsClick(sender: AnyObject) {
+        terms = !terms
+        if terms {
+            self.termsCheckbox.backgroundColor = UIColor.orangeColor()
+        }else{
+            self.termsCheckbox.backgroundColor = nil
+        }
+    }
     
     
     @IBAction func insuredmembersCall(sender: AnyObject) {
-        gPremiumCalculationController.performSegueWithIdentifier("insuredmembers", sender: nil)
+        rest.premiumConfirm({(json:JSON) -> ()in
+            print(json)
+            })
+//        gPremiumCalculationController.performSegueWithIdentifier("insuredmembers", sender: nil)
     }
     
     

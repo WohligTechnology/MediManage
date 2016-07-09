@@ -41,6 +41,7 @@
                 <outlet property="serviceTaxCost" destination="s7d-1F-G6L" id="mOF-DO-lgo"/>
                 <outlet property="serviceTaxLabel" destination="ueP-P1-Y6Z" id="qIj-ki-8Wt"/>
                 <outlet property="serviceTaxView" destination="4EZ-dF-h8M" id="dmS-Rx-k0I"/>
+                <outlet property="termsCheckbox" destination="bwr-Id-rIg" id="9dg-eQ-zbQ"/>
                 <outlet property="termsLabel" destination="BMU-Mj-HdA" id="ufN-I2-XfQ"/>
                 <outlet property="topupPremiumCost" destination="jzc-b0-ZIC" id="tzt-zP-rYH"/>
                 <outlet property="topupPremiumLabel" destination="5y4-lJ-9UV" id="QUy-Sy-agy"/>
@@ -298,6 +299,9 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                 <constraint firstAttribute="width" constant="20" id="wbO-fG-ZuD"/>
                             </constraints>
                             <state key="normal" title="Button" image="checkbox_untick"/>
+                            <connections>
+                                <action selector="termsClick:" destination="-1" eventType="touchUpInside" id="KUh-Ra-l1j"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMU-Mj-HdA">
                             <rect key="frame" x="28" y="-8" width="257" height="56"/>

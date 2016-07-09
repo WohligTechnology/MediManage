@@ -81,6 +81,8 @@ import Alamofire
             {
               //  Popups.SharedInstance.ShowPopup("Welcome", message: "Login Successfull !")
                 Employee_API_KEY = String(json["access_token"])
+                let def = NSUserDefaults.standardUserDefaults()
+                def.setObject(Employee_API_KEY, forKey: "access_token")
                 let dialog = UIAlertController(title: "Welcome", message: "Login Successfull!" ,preferredStyle: UIAlertControllerStyle.Alert)
                 
                 dialog.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Destructive, handler:{

@@ -18,6 +18,7 @@ import Alamofire
 
 let adminUrl = "http://testcorp.medimanage.com/api/";
 let apiURL = adminUrl + "v1/";
+let defaultToken = NSUserDefaults.standardUserDefaults()
 
 public class RestApi {
         public func findEmployee(empno:String, dob:String, completion:((JSON) -> Void))  {
@@ -120,13 +121,14 @@ public class RestApi {
         )
         return man
     }()
-// ‘Authorization’: ‘Bearer{single space}‘ + api_key
-// let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
+    
     public func findEmployeeProfile(SUBURL : String,completion:((JSON) -> Void))
     {
         var json = JSON(1)
-        
-        let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
+        let token = defaultToken.stringForKey("access_token")
+        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
+        print("authentication")
+        print(isLoginheader)
        
         Manager.request(.GET, apiURL+SUBURL ,parameters: nil, headers: isLoginheader)
             .responseJSON { response in
@@ -142,7 +144,8 @@ public class RestApi {
     {
         var json = JSON(1)
         
-        let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
+        let token = defaultToken.stringForKey("access_token")
+        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         
         do {
             let opt = try HTTP.GET(apiURL+"Users/Profile" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
@@ -164,7 +167,8 @@ public class RestApi {
     public func UpdateProfile(data : JSON ,completion:((JSON) -> Void))
     {
         var json = JSON(1)
-        let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
+        let token = defaultToken.stringForKey("access_token")
+        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         
          let params = ["data": "\(data)"]
         do {
@@ -185,11 +189,36 @@ public class RestApi {
 
     }
     
+    public func premiumConfirm(completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        let token = defaultToken.stringForKey("access_token")
+        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
+        
+        do {
+            let opt = try HTTP.POST(apiURL+"Enrollments/Confirm" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            opt.start { response in
+                if let _ = response.error {
+                    completion(json);
+                }
+                else
+                {
+                    json  = JSON(data: response.data)
+                    completion(json);
+                }
+            }
+        } catch _ {
+            completion(json);
+        }
+        
+    }
+    
     
     public func AddMembers(data : JSON ,completion:((JSON) -> Void))
     {
         var json = JSON(1)
-        let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
+        let token = defaultToken.stringForKey("access_token")
+        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         
         let params = ["data": "\(data)"]
         do {
@@ -214,7 +243,8 @@ public class RestApi {
     public func ResetPassword(data : JSON ,completion:((JSON) -> Void))
     {
         var json = JSON(1)
-        let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
+        let token = defaultToken.stringForKey("access_token")
+        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         
         let params = ["data": "\(data)"]
         do {
@@ -239,7 +269,8 @@ public class RestApi {
     public func EnrolledName(data : JSON ,completion:((JSON) -> Void))
     {
         var json = JSON(1)
-        let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
+        let token = defaultToken.stringForKey("access_token")
+        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         
         do {
             let opt = try HTTP.GET(apiURL+"Enrollments/Name" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
@@ -263,7 +294,8 @@ public class RestApi {
     public func ConnectSection(data : JSON ,completion:((JSON) -> Void))
     {
         var json = JSON(1)
-        let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
+        let token = defaultToken.stringForKey("access_token")
+        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         
         do {
             let opt = try HTTP.GET(apiURL+"Enrollments/ConnectSection" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
@@ -287,7 +319,8 @@ public class RestApi {
     public func DashboardDetails(data : JSON ,completion:((JSON) -> Void))
     {
         var json = JSON(1)
-        let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
+        let token = defaultToken.stringForKey("access_token")
+        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         
         do {
             let opt = try HTTP.GET(apiURL+"Enrollments/DashboardDetails" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
@@ -310,7 +343,8 @@ public class RestApi {
     public func HospitalSearch(data : JSON ,completion:((JSON) -> Void))
     {
         var json = JSON(1)
-        let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
+        let token = defaultToken.stringForKey("access_token")
+        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         
         do {
             let opt = try HTTP.GET(apiURL+"Enrollments/DashboardDetails" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
@@ -333,7 +367,8 @@ public class RestApi {
     public func ClaimForm(data : JSON ,completion:((JSON) -> Void))
     {
         var json = JSON(1)
-        let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
+        let token = defaultToken.stringForKey("access_token")
+        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         
         let params = ["data": "\(data)"]
 
@@ -359,7 +394,8 @@ public class RestApi {
     public func BenefitSummery(data : JSON ,completion:((JSON) -> Void))
     {
         var json = JSON(1)
-        let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
+        let token = defaultToken.stringForKey("access_token")
+        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         
         
         do {
@@ -384,7 +420,8 @@ public class RestApi {
     public func FaqCategories(data : JSON ,completion:((JSON) -> Void))
     {
         var json = JSON(1)
-        let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
+        let token = defaultToken.stringForKey("access_token")
+        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         
         do {
             let opt = try HTTP.GET(apiURL+"FAQ/Categories" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
@@ -408,7 +445,8 @@ public class RestApi {
     public func FaqDetails(data : JSON ,completion:((JSON) -> Void))
     {
         var json = JSON(1)
-        let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
+        let token = defaultToken.stringForKey("access_token")
+        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         
         let params = ["data": "\(data)"]
         
@@ -433,7 +471,8 @@ public class RestApi {
     public func SubmitQuery(data : JSON ,completion:((JSON) -> Void))
     {
         var json = JSON(1)
-        let isLoginheader = ["Authorization":"Bearer \(Employee_API_KEY)"]
+        let token = defaultToken.stringForKey("access_token")
+        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         
         let params = ["data": "\(data)"]
         do {
