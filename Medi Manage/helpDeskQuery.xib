@@ -7,7 +7,6 @@
     <customFonts key="customFonts">
         <mutableArray key="Lato-Bold.ttf">
             <string>Lato-Bold</string>
-            <string>Lato-Bold</string>
         </mutableArray>
         <mutableArray key="Lato-Light.ttf">
             <string>Lato-Light</string>
@@ -65,13 +64,6 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mui-pU-atC">
-                    <rect key="frame" x="20" y="251" width="87" height="17"/>
-                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
-                    <state key="normal" title=" Attach File" image="attach_clip">
-                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zl5-Ri-PQd">
                     <rect key="frame" x="20" y="293" width="280" height="40"/>
                     <color key="backgroundColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -89,13 +81,11 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="mui-pU-atC" firstAttribute="top" secondItem="PH7-a4-h5o" secondAttribute="bottom" constant="20" id="1yW-Ra-OsL"/>
+                <constraint firstItem="Zl5-Ri-PQd" firstAttribute="top" secondItem="PH7-a4-h5o" secondAttribute="bottom" constant="62" id="5Ev-1Y-hey"/>
                 <constraint firstItem="vqg-GM-ij6" firstAttribute="top" secondItem="Mgb-lx-Sjh" secondAttribute="bottom" constant="30" id="5Yn-RP-e08"/>
-                <constraint firstItem="Zl5-Ri-PQd" firstAttribute="top" secondItem="mui-pU-atC" secondAttribute="bottom" constant="25" id="QoG-td-wfy"/>
                 <constraint firstItem="PH7-a4-h5o" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="U9U-3K-oAN"/>
                 <constraint firstAttribute="trailing" secondItem="Zl5-Ri-PQd" secondAttribute="trailing" constant="20" id="Zgv-lX-tp0"/>
                 <constraint firstAttribute="trailing" secondItem="vqg-GM-ij6" secondAttribute="trailing" constant="20" id="bkE-Ph-OLg"/>
-                <constraint firstItem="mui-pU-atC" firstAttribute="leading" secondItem="Zl5-Ri-PQd" secondAttribute="leading" id="dbe-xX-6I3"/>
                 <constraint firstItem="Mgb-lx-Sjh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="fyA-kr-bnu"/>
                 <constraint firstAttribute="trailing" secondItem="PH7-a4-h5o" secondAttribute="trailing" constant="20" id="jmG-Ec-aTB"/>
                 <constraint firstItem="PH7-a4-h5o" firstAttribute="top" secondItem="vqg-GM-ij6" secondAttribute="bottom" constant="20" id="po3-4w-glG"/>
@@ -109,7 +99,4 @@
             <point key="canvasLocation" x="508" y="373"/>
         </view>
     </objects>
-    <resources>
-        <image name="attach_clip" width="15" height="16"/>
-    </resources>
 </document>

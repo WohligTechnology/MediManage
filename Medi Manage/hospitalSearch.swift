@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 @IBDesignable class hospitalSearch: UIView {
     
@@ -68,7 +69,11 @@ import UIKit
     }
 
     @IBAction func hospitalResultCall(sender: AnyObject) {
-        gHospitalSearchController.performSegueWithIdentifier("hospitalSearchToHospitalResult", sender: nil)
+        let hptl = self.yourLocation.text! + " " + self.hospitalName.text!
+        rest.Hospital(hptl, completion: {(json:JSON) -> () in
+            print(json)
+        })
+//        gHospitalSearchController.performSegueWithIdentifier("hospitalSearchToHospitalResult", sender: nil)
     }
     /*
     // Only override drawRect: if you perform custom drawing.

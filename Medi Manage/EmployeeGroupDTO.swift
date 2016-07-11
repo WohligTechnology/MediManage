@@ -82,5 +82,12 @@ public class MembersDTO
     
 }
 
+public class SendQueryDTO
+{
+    public var To : String = ""
+    public var Subject : String = ""
+    public var Body : String = ""
+}
+
  
 

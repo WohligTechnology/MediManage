@@ -53,7 +53,7 @@ import SwiftyJSON
             print(json)
         })
         
-        helpDeskFAQMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height - 175)        
+//        helpDeskFAQMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height - 175)        
         
     }
     @IBAction func helpDeskQueryCall(sender: AnyObject) {

@@ -121,7 +121,12 @@ import SwiftyJSON
         
     }
     @IBAction func helpDeskFAQCall(sender: AnyObject) {
+        print("submit clicked")
         gHelpDeskController.performSegueWithIdentifier("helpDeskToHelpDeskFAQ", sender: nil)
+    }
+    @IBAction func submitQry(sender: AnyObject) {
+        gHelpDeskController.performSegueWithIdentifier("sendquery", sender: nil)
+        
     }
     /*
     // Only override drawRect: if you perform custom drawing.

@@ -56,7 +56,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LMA-OH-Vs8">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hospital_icon" translatesAutoresizingMaskIntoConstraints="NO" id="LMA-OH-Vs8">
                     <rect key="frame" x="30" y="180" width="20" height="20"/>
                     <color key="backgroundColor" red="0.36470588235294116" green="0.81960784313725488" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -117,4 +117,7 @@
             <point key="canvasLocation" x="317" y="393"/>
         </view>
     </objects>
+    <resources>
+        <image name="hospital_icon" width="37" height="50"/>
+    </resources>
 </document>

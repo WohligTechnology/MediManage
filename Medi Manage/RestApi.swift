@@ -364,17 +364,14 @@ public class RestApi {
         
     }
     
-    public func ClaimForm(data : JSON ,completion:((JSON) -> Void))
+    public func Hospital(data : String ,completion:((JSON) -> Void))
     {
         var json = JSON(1)
         let token = defaultToken.stringForKey("access_token")
         let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         
-        let params = ["data": "\(data)"]
-
-        
         do {
-            let opt = try HTTP.GET(apiURL+"Hospitals/Search" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            let opt = try HTTP.GET(apiURL+"Hospitals/Search/\(data)" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
             opt.start { response in
                 if let _ = response.error {
                     completion(json);
@@ -469,16 +466,44 @@ public class RestApi {
         }
         
     }
-        
-    public func SubmitQuery(data : JSON ,completion:((JSON) -> Void))
+    
+    
+    public func SendQuery(data: JSON, completion:((JSON) -> Void))
     {
         var json = JSON(1)
         let token = defaultToken.stringForKey("access_token")
         let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         
-        let params = ["data": "\(data)"]
+                let params = ["data": "\(data)"]
+        print(params)
+        
         do {
             let opt = try HTTP.POST(apiURL+"FAQ/SendQuery" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            opt.start { response in
+                print(response.error)
+                if let _ = response.error {
+                    completion(json);
+                }
+                else
+                {
+                    json  = JSON(data: response.data)
+                    completion(json);
+                }
+            }
+        } catch _ {
+            completion(json);
+        }
+        
+    }
+        
+    public func ConnectDetails(completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        let token = defaultToken.stringForKey("access_token")
+        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
+        
+        do {
+            let opt = try HTTP.GET(apiURL+"Enrollments/ConnectDetails" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
             opt.start { response in
                 if let _ = response.error {
                     completion(json);

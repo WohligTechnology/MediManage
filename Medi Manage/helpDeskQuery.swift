@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 @IBDesignable class helpDeskQuery: UIView {
     
     @IBOutlet var helpDeskQueryMainView: UIView!
     @IBOutlet weak var subjectTextField: UITextField!
     @IBOutlet weak var queryTextField: UITextField!
+    var to = ""
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -55,6 +57,11 @@ import UIKit
         mainfooter.layer.zPosition = 1000
         self.addSubview(mainfooter)
         
+        //Connection Details
+        rest.ConnectDetails({(json:JSON) -> ()  in
+            self.to = json["result"]["QueriesEmail"].stringValue
+        })
+        
         helpDeskQueryMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height - 175)
         
         // add borders
@@ -63,7 +70,15 @@ import UIKit
         
     }
     @IBAction func connectCall(sender: AnyObject) {
-        gHelpDeskQueryController.performSegueWithIdentifier("helpDeskQueryToConnect", sender: nil)
+        
+        if self.subjectTextField.text != "" && self.queryTextField.text != "" {
+            let params = "{\"To\":\"jagruti@wohlig.com\",\"Subject\":\(self.subjectTextField.text! as String),\"Body\":\(self.queryTextField.text! as String)}"
+            print(String(params))
+            rest.SendQuery(JSON(params), completion: {(json:JSON) -> () in
+                print(json)
+            })
+        }
+//        gHelpDeskQueryController.performSegueWithIdentifier("helpDeskQueryToConnect", sender: nil)
     }
 
     /*

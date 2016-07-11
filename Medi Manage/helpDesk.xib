@@ -96,6 +96,9 @@
                     <state key="normal" title="Submit Query">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="submitQry:" destination="-1" eventType="touchUpInside" id="VlY-Y7-SPF"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

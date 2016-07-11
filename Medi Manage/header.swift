@@ -10,7 +10,6 @@ import UIKit
 
 @IBDesignable class header: UIView {
     
-    @IBOutlet weak var navigationAction: UIImageView!
     @IBOutlet weak var setting: UIImageView!
     
     
@@ -34,6 +33,10 @@ import UIKit
         self.addSubview(sortnewview)
     }
 
+    @IBAction func hambergerClick(sender: AnyObject) {
+//        let vc = storyboard!.instantiateViewControllerWithIdentifier("MainMenuController") as! UIViewController
+//        self.presentViewController(vc, animated: true, completion: nil)
+    }
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
