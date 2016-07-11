@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class myClaims: UIView {
+class myClaims: UIView {
     
     @IBOutlet var myClaimsMainView: UIView!
     

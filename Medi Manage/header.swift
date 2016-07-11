@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class header: UIView {
+class header: UIView {
     
     @IBOutlet weak var setting: UIImageView!
     

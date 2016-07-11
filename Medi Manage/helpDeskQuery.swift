@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-@IBDesignable class helpDeskQuery: UIView {
+class helpDeskQuery: UIView {
     
     @IBOutlet var helpDeskQueryMainView: UIView!
     @IBOutlet weak var subjectTextField: UITextField!

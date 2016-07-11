@@ -11,7 +11,7 @@ import UIKit
 import SwiftyJSON
 import Alamofire
 
-@IBDesignable class login: UIView {
+class login: UIView {
     
     var TestId = "9920590849"
     var TestPWD = "75476145"

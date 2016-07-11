@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class claimForm: UIView {
+class claimForm: UIView {
     
     @IBOutlet var claimFormMainView: UIView!
     

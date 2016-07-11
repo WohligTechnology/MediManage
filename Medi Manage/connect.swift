@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class connect: UIView {
+class connect: UIView {
     
     @IBOutlet var connectMainView: UIView!
     

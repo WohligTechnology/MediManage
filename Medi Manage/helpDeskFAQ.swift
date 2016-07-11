@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-@IBDesignable class helpDeskFAQ: UIView {
+class helpDeskFAQ: UIView {
     
     @IBOutlet weak var dummyButton: UIButton!
     @IBOutlet var helpDeskFAQMainView: UIView!

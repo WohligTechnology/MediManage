@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class queryForm: UIView {
+class queryForm: UIView {
     
     @IBOutlet var queryFormMainView: UIView!
     

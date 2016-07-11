@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class preAuthorizationOne: UIView {
+class preAuthorizationOne: UIView {
     
     @IBOutlet var preAuthorizationOneMainView: UIView!
     @IBOutlet weak var patientNameView: UIView!

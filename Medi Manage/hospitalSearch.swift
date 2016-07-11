@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-@IBDesignable class hospitalSearch: UIView {
+class hospitalSearch: UIView {
     
     @IBOutlet var hospitalSearchMainView: UIView!
     @IBOutlet weak var yourLocation: UITextField!

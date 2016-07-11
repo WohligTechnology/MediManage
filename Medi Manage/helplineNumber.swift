@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class helplineNumber: UIView {
+class helplineNumber: UIView {
     
     @IBOutlet var helplineNumberMainView: UIView!
     

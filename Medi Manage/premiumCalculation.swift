@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-@IBDesignable class premiumCalculation: UIView {
+class premiumCalculation: UIView {
     
     @IBOutlet var premiumCalculationMainView: UIView!
     

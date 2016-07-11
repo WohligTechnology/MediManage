@@ -3,7 +3,7 @@
 import UIKit
 import SwiftyJSON
 
-@IBDesignable class relationView: UIView {
+class relationView: UIView {
     
     @IBOutlet weak var memberLabel: UILabel!
     var data : JSON = ""

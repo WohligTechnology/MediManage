@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-@IBDesignable class completeProfile: UIView {
+class completeProfile: UIView {
     
     @IBOutlet var completeProfileMainView: UIView!
     @IBOutlet weak var fullName: UIView!

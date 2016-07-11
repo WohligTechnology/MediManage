@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class preAuthorizationTwo: UIView {
+class preAuthorizationTwo: UIView {
     
     @IBOutlet var preAuthorizationTwoMainView: UIView!
     

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-@IBDesignable class generateOTP: UIView, UITextViewDelegate {
+class generateOTP: UIView, UITextViewDelegate {
     
     @IBOutlet weak var mobileNumber: UITextField!
     @IBOutlet weak var multiColor: UILabel!

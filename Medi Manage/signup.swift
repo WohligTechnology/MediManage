@@ -13,10 +13,7 @@ import SwiftyJSON
 import SwiftValidator
 
 
-@IBDesignable class signup: UIView {
-    
-    
-    
+class signup: UIView {
     
     @IBOutlet weak var employeeID: UITextField!
     @IBOutlet weak var dateOfBirth: UITextField!
@@ -25,9 +22,6 @@ import SwiftValidator
     var datePickerView:UIDatePicker = UIDatePicker()
     var flag : Bool = false
     var count : Int = 0
-    
-
-    
     
     @IBAction func openDate(sender: UITextField) {
         datePickerView.datePickerMode = UIDatePickerMode.Date

@@ -9,9 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-
-
-@IBDesignable class enrollmentMembers: UIView{
+class enrollmentMembers: UIView{
     
     @IBOutlet var enrollmentMembersMainView: UIView!
     

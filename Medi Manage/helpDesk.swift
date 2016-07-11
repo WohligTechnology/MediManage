@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-@IBDesignable class helpDesk: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
+class helpDesk: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
     @IBOutlet var helpDeskMainView: UIView!
     

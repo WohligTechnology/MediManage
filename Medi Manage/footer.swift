@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class footer: UIView {
+class footer: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

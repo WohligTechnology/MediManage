@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class benefitSummary: UIView {
+class benefitSummary: UIView {
     
     @IBOutlet var benefitSummaryMainView: UIView!
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class tutorial: UIView {
+class tutorial: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

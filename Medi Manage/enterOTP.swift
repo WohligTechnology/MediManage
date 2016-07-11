@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-@IBDesignable class enterOTP: UIView {
+class enterOTP: UIView {
     
     @IBOutlet weak var enterOTP: UITextField!
     @IBOutlet weak var resetOTP: UIButton!

@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class subHeader: UIView {
+class subHeader: UIView {
     
     @IBOutlet weak var subHeaderTitle: UILabel!
     @IBOutlet weak var subHeaderIcon: UIImageView!

@@ -9,11 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-@IBDesignable class memberList: UIView ,UIActionSheetDelegate{
-    
-    
-    
-    
+class memberList: UIView ,UIActionSheetDelegate{
     
     @IBOutlet weak var dummyButton: UIButton!
     @IBOutlet var memberListMainView: UIView!

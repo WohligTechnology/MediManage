@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-@IBDesignable class pickDate: UIView {
+class pickDate: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
