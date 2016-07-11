@@ -37,11 +37,7 @@ import UIKit
         let mainheader = header(frame: CGRectMake(0, 20, width, 50))
         self.addSubview(mainheader)
         
-        let mainfooter = footer(frame: CGRectMake(0, height - 55, width, 55))
-        mainfooter.layer.zPosition = 1000
-        self.addSubview(mainfooter)
-        
-        insuredMembersAllMainView.frame = CGRectMake(0, 70, self.frame.size.width, self.frame.size.height - 55)
+        insuredMembersAllMainView.frame = CGRectMake(0, 70, self.frame.size.width, self.frame.size.height)
     }
     
     /*

@@ -58,11 +58,7 @@ import SwiftyJSON
         mainsubHeader.subHeaderTitle.text = "HELP DESK"
         self.addSubview(mainsubHeader)
         
-        let mainfooter = footer(frame: CGRectMake(0, height - 55, width, 55))
-        mainfooter.layer.zPosition = 1000
-        self.addSubview(mainfooter)
-        
-        helpDeskMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height - 55)
+        helpDeskMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height)
         
         //get faq data
         rest.FaqCategories({(json:JSON) -> () in

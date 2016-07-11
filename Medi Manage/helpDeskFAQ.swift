@@ -43,10 +43,6 @@ import SwiftyJSON
         mainsubHeader.subHeaderTitle.text = "HELP DESK"
         self.addSubview(mainsubHeader)
         
-        let mainfooter = footer(frame: CGRectMake(0, height - 55, width, 55))
-        mainfooter.layer.zPosition = 1000
-        self.addSubview(mainfooter)
-        
         dummyButton.layer.zPosition = 10000
         print(categoryId)
         rest.FaqDetails({(json:JSON) -> ()in

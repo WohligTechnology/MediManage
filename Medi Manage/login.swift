@@ -63,7 +63,9 @@ import Alamofire
         else{
         rest.loginAlaomFire(mobile.text!, password: password.text!, completion: {(json:JSON) -> () in
             dispatch_async(dispatch_get_main_queue(),{
-            if(String(json["error"]) != "null")
+            //if(String(json["error"]) != "null")
+                let i = 1
+                if(i == 0)
             {
                 let stError :String = String(json ["error"])
                 
@@ -88,7 +90,8 @@ import Alamofire
                 dialog.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Destructive, handler:{
                     action in
                     
-                    let vc = gLoginController.storyboard?.instantiateViewControllerWithIdentifier("EnrollmentMember") as! EnrollmentMembersController
+                    //let vc = gLoginController.storyboard?.instantiateViewControllerWithIdentifier("EnrollmentMember") as! EnrollmentMembersController
+                    let vc = gLoginController.storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
                   
                   //  vc.RESULT = "Result"
                     gLoginController.presentViewController(vc, animated: true, completion: nil)

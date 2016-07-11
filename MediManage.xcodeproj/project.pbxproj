@@ -59,6 +59,7 @@
 		3A992F081CEDD21700D85D8A /* ClaimIntimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A992F071CEDD21700D85D8A /* ClaimIntimationController.swift */; };
 		3A992F0A1CEDF25F00D85D8A /* HospitalSearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A992F091CEDF25F00D85D8A /* HospitalSearchResultController.swift */; };
 		3ABD66C71D279DB9003462CB /* MemberListGroupTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABD66C61D279DB9003462CB /* MemberListGroupTableController.swift */; };
+		3AC258401D33782D00384031 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC2583F1D33782D00384031 /* TabBarController.swift */; };
 		3AC43DCF1CE9FC1500ED2523 /* myClaims.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AC43DCE1CE9FC1500ED2523 /* myClaims.xib */; };
 		3AC43DD11CEA00E100ED2523 /* myClaims.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC43DD01CEA00E100ED2523 /* myClaims.swift */; };
 		3ACFB2A01CE4C369003766D8 /* EnrollmentMembersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFB29F1CE4C369003766D8 /* EnrollmentMembersController.swift */; };
@@ -223,6 +224,7 @@
 		3A992F071CEDD21700D85D8A /* ClaimIntimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClaimIntimationController.swift; sourceTree = "<group>"; };
 		3A992F091CEDF25F00D85D8A /* HospitalSearchResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalSearchResultController.swift; sourceTree = "<group>"; };
 		3ABD66C61D279DB9003462CB /* MemberListGroupTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberListGroupTableController.swift; sourceTree = "<group>"; };
+		3AC2583F1D33782D00384031 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		3AC43DCE1CE9FC1500ED2523 /* myClaims.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = myClaims.xib; sourceTree = "<group>"; };
 		3AC43DD01CEA00E100ED2523 /* myClaims.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myClaims.swift; sourceTree = "<group>"; };
 		3ACFB29F1CE4C369003766D8 /* EnrollmentMembersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnrollmentMembersController.swift; sourceTree = "<group>"; };
@@ -752,6 +754,7 @@
 				3A74A7D31CF422DA00592B3E /* TutorialController.swift */,
 				3A74A7D61CF43BFC00592B3E /* MainMenuController.swift */,
 				3ABD66C61D279DB9003462CB /* MemberListGroupTableController.swift */,
+				3AC2583F1D33782D00384031 /* TabBarController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1276,6 +1279,7 @@
 				C2DCB0DA1D1D178B004FD787 /* ClientPolicyDTOClient.swift in Sources */,
 				C2DCB0EE1D1D4603004FD787 /* TicketDataDTO.swift in Sources */,
 				3A79A7CF1CF06ADC008B693B /* PreAuthorizationTwoController.swift in Sources */,
+				3AC258401D33782D00384031 /* TabBarController.swift in Sources */,
 				C2DCB0CE1D1CF497004FD787 /* ClaimDTO.swift in Sources */,
 				3A74A7D71CF43BFC00592B3E /* MainMenuController.swift in Sources */,
 				3A8EFB531CE9A463004489F3 /* hospitalSearch.swift in Sources */,

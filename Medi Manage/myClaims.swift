@@ -46,11 +46,7 @@ import UIKit
         mainsubHeader.subHeaderTitle.text = "MY CLAIMS"
         self.addSubview(mainsubHeader)
         
-        let mainfooter = footer(frame: CGRectMake(0, height - 55, width, 55))
-        mainfooter.layer.zPosition = 1000
-        self.addSubview(mainfooter)
-        
-        myClaimsMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height - 175)
+        myClaimsMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height - 125)
         
 //        let repeated = UIView(frame: CGRectMake(0, 320, self.frame.size.width, self.frame.size.height - 175))
 //        myClaimsMainView.addSubview(repeated)

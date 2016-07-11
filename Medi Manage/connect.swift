@@ -42,11 +42,7 @@ import UIKit
         mainsubHeader.subHeaderTitle.text = "CONNECT"
         self.addSubview(mainsubHeader)
         
-        let mainfooter = footer(frame: CGRectMake(0, height - 55, width, 55))
-        mainfooter.layer.zPosition = 1000
-        self.addSubview(mainfooter)
-        
-        connectMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height - 175)
+        connectMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height - 125)
         
     }
     

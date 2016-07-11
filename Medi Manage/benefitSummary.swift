@@ -42,14 +42,10 @@ import UIKit
         mainsubHeader.subHeaderTitle.text = "BENEFIT SUMMARY"
         self.addSubview(mainsubHeader)
         
-        let mainfooter = footer(frame: CGRectMake(0, height - 55, width, 55))
-        mainfooter.layer.zPosition = 1000
-        self.addSubview(mainfooter)
-        
         //let scroll = UIScrollView(frame: CGRectMake(0, 0, self.frame.size.width, 1000 - 55))
         //scroll.backgroundColor = UIColor.blackColor()
         //scroll.showsVerticalScrollIndicator = false
-        benefitSummaryMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height - 55)
+        benefitSummaryMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height)
         //scroll.addSubview(benefitSummaryMainView)
     }
 

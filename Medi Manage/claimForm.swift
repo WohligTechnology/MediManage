@@ -58,11 +58,7 @@ import UIKit
         mainsubHeader.subHeaderTitle.text = "CLAIM FORM"
         self.addSubview(mainsubHeader)
         
-        let mainfooter = footer(frame: CGRectMake(0, height - 55, width, 55))
-        mainfooter.layer.zPosition = 1000
-        self.addSubview(mainfooter)
-        
-        claimFormMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height - 55)
+        claimFormMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height)
         
         // add borders
         addBottomBorder(UIColor.blackColor(), linewidth: 0.5, myView: selectPatient)

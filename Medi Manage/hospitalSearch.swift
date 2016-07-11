@@ -54,11 +54,7 @@ import SwiftyJSON
         mainsubHeader.subHeaderTitle.text = "HOSPITAL SEARCH"
         self.addSubview(mainsubHeader)
         
-        let mainfooter = footer(frame: CGRectMake(0, height - 55, width, 55))
-        mainfooter.layer.zPosition = 1000
-        self.addSubview(mainfooter)
-        
-        hospitalSearchMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height - 55)
+        hospitalSearchMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height)
         
         greenIcon.layer.cornerRadius = 2
         greenIcon.clipsToBounds = true

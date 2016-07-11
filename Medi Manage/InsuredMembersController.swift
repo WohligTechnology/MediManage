@@ -26,10 +26,6 @@ class InsuredMembersController: UIViewController, UITableViewDelegate, UITableVi
         
         let mainheader = header(frame: CGRectMake(0, 20, width, 50))
         self.view.addSubview(mainheader)
-        
-        let mainfooter = footer(frame: CGRectMake(0, height - 55, width, 55))
-        mainfooter.layer.zPosition = 1000
-        self.view.addSubview(mainfooter)
     }
 
     override func didReceiveMemoryWarning() {

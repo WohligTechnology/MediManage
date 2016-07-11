@@ -47,11 +47,7 @@ import UIKit
         let mainheader = header(frame: CGRectMake(0, 20, width, 50))
         self.addSubview(mainheader)
         
-        let mainfooter = footer(frame: CGRectMake(0, height - 55, width, 55))
-        mainfooter.layer.zPosition = 1000
-        self.addSubview(mainfooter)
-        
-        queryFormMainView.frame = CGRectMake(0, 70, self.frame.size.width, self.frame.size.height - 175)
+        queryFormMainView.frame = CGRectMake(0, 70, self.frame.size.width, self.frame.size.height - 125)
         
         // add borders
         addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: queryTextfield)
