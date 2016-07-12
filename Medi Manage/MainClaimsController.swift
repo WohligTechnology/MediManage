@@ -71,11 +71,9 @@ class MainClaimsController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // sahi hai midhet :)
+        print("demo")
     }
 
-    @IBAction func claimFormCall(sender: AnyObject) {
-        self.performSegueWithIdentifier("mainClaimToClaimForm", sender: nil)
-    }
     
     /*
     // MARK: - Navigation

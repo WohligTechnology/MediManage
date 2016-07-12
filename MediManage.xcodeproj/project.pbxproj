@@ -152,6 +152,14 @@
 		FCB801721D2BB62B00F9226F /* relationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB801711D2BB62B00F9226F /* relationView.xib */; };
 		FCB801741D2BB67100F9226F /* relationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB801731D2BB67100F9226F /* relationView.swift */; };
 		FCBE27F51D33E436004654E0 /* Discharge Summary.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FCBE27F41D33E436004654E0 /* Discharge Summary.pdf */; };
+		FCE15CD21D34D6E2009B49E2 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE15CD11D34D6E2009B49E2 /* PDFViewController.swift */; };
+		FCE15CDA1D34DF54009B49E2 /* Doctor's Prescription.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FCE15CD31D34DF54009B49E2 /* Doctor's Prescription.pdf */; };
+		FCE15CDB1D34DF54009B49E2 /* Laboratory Payment Receipt.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FCE15CD41D34DF54009B49E2 /* Laboratory Payment Receipt.pdf */; };
+		FCE15CDC1D34DF54009B49E2 /* Laboratory Report.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FCE15CD51D34DF54009B49E2 /* Laboratory Report.pdf */; };
+		FCE15CDD1D34DF54009B49E2 /* Main Hospital Bill.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FCE15CD61D34DF54009B49E2 /* Main Hospital Bill.pdf */; };
+		FCE15CDE1D34DF54009B49E2 /* Medicine Bill.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FCE15CD71D34DF54009B49E2 /* Medicine Bill.pdf */; };
+		FCE15CDF1D34DF54009B49E2 /* Pre Numbered Cash Paid Receipt.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FCE15CD81D34DF54009B49E2 /* Pre Numbered Cash Paid Receipt.pdf */; };
+		FCE15CE01D34DF54009B49E2 /* X-Ray Report.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FCE15CD91D34DF54009B49E2 /* X-Ray Report.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -329,6 +337,14 @@
 		FCB801711D2BB62B00F9226F /* relationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = relationView.xib; sourceTree = "<group>"; };
 		FCB801731D2BB67100F9226F /* relationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = relationView.swift; sourceTree = "<group>"; };
 		FCBE27F41D33E436004654E0 /* Discharge Summary.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Discharge Summary.pdf"; sourceTree = "<group>"; };
+		FCE15CD11D34D6E2009B49E2 /* PDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
+		FCE15CD31D34DF54009B49E2 /* Doctor's Prescription.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Doctor's Prescription.pdf"; sourceTree = "<group>"; };
+		FCE15CD41D34DF54009B49E2 /* Laboratory Payment Receipt.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Laboratory Payment Receipt.pdf"; sourceTree = "<group>"; };
+		FCE15CD51D34DF54009B49E2 /* Laboratory Report.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Laboratory Report.pdf"; sourceTree = "<group>"; };
+		FCE15CD61D34DF54009B49E2 /* Main Hospital Bill.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Main Hospital Bill.pdf"; sourceTree = "<group>"; };
+		FCE15CD71D34DF54009B49E2 /* Medicine Bill.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Medicine Bill.pdf"; sourceTree = "<group>"; };
+		FCE15CD81D34DF54009B49E2 /* Pre Numbered Cash Paid Receipt.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Pre Numbered Cash Paid Receipt.pdf"; sourceTree = "<group>"; };
+		FCE15CD91D34DF54009B49E2 /* X-Ray Report.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "X-Ray Report.pdf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -758,6 +774,7 @@
 				3A74A7D61CF43BFC00592B3E /* MainMenuController.swift */,
 				3ABD66C61D279DB9003462CB /* MemberListGroupTableController.swift */,
 				3AC2583F1D33782D00384031 /* TabBarController.swift */,
+				FCE15CD11D34D6E2009B49E2 /* PDFViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -912,6 +929,13 @@
 			isa = PBXGroup;
 			children = (
 				FCBE27F41D33E436004654E0 /* Discharge Summary.pdf */,
+				FCE15CD31D34DF54009B49E2 /* Doctor's Prescription.pdf */,
+				FCE15CD41D34DF54009B49E2 /* Laboratory Payment Receipt.pdf */,
+				FCE15CD51D34DF54009B49E2 /* Laboratory Report.pdf */,
+				FCE15CD61D34DF54009B49E2 /* Main Hospital Bill.pdf */,
+				FCE15CD71D34DF54009B49E2 /* Medicine Bill.pdf */,
+				FCE15CD81D34DF54009B49E2 /* Pre Numbered Cash Paid Receipt.pdf */,
+				FCE15CD91D34DF54009B49E2 /* X-Ray Report.pdf */,
 			);
 			name = PDFs;
 			sourceTree = "<group>";
@@ -1032,6 +1056,7 @@
 				3A8EFB511CE99EBA004489F3 /* hospitalSearch.xib in Resources */,
 				783322AD1CDB380C0015CE37 /* onboarding.xib in Resources */,
 				3A8EFB561CE9C3A3004489F3 /* inbox.xib in Resources */,
+				FCE15CDB1D34DF54009B49E2 /* Laboratory Payment Receipt.pdf in Resources */,
 				C2A59E901CDDDF700093CFEC /* Lato-Bold.ttf in Resources */,
 				C2A59E911CDDDF700093CFEC /* Lato-Hairline.ttf in Resources */,
 				C2A59E921CDDDF700093CFEC /* Lato-Light.ttf in Resources */,
@@ -1048,7 +1073,9 @@
 				78B90BD71CE067810022FE7A /* generateOTP.xib in Resources */,
 				3AD3E52D1CE20A1900900A93 /* premiumCalculation.xib in Resources */,
 				3A01752F1CE364AD00832E49 /* header.xib in Resources */,
+				FCE15CDE1D34DF54009B49E2 /* Medicine Bill.pdf in Resources */,
 				3A72C7251CEAE81100B5412E /* preAuthorizationOne.xib in Resources */,
+				FCE15CDF1D34DF54009B49E2 /* Pre Numbered Cash Paid Receipt.pdf in Resources */,
 				3A31911D1CEF41D7001DCBBC /* splashScreen.xib in Resources */,
 				3AF76BAE1CE5A6E500ADCAAF /* footer.xib in Resources */,
 				786DFA041CD214F300DDE769 /* LaunchScreen.storyboard in Resources */,
@@ -1057,6 +1084,7 @@
 				3AEEB01F1CE74D820085EEF5 /* helpDeskQuery.xib in Resources */,
 				3AFE389C1CE4932D0062A497 /* insuredMembersAll.xib in Resources */,
 				786DFA011CD214F300DDE769 /* Assets.xcassets in Resources */,
+				FCE15CE01D34DF54009B49E2 /* X-Ray Report.pdf in Resources */,
 				3A1369AE1CE4566500BEE355 /* memberList.xib in Resources */,
 				3A01752A1CE3589400832E49 /* insuredMembers.xib in Resources */,
 				3AEEB00E1CE7023E0085EEF5 /* subHeader.xib in Resources */,
@@ -1065,12 +1093,15 @@
 				3A8EFB601CE9E0BA004489F3 /* claimForm.xib in Resources */,
 				3AC43DCF1CE9FC1500ED2523 /* myClaims.xib in Resources */,
 				3AEEB0131CE70F3D0085EEF5 /* helpDesk.xib in Resources */,
+				FCE15CDA1D34DF54009B49E2 /* Doctor's Prescription.pdf in Resources */,
 				783322951CD9FB1B0015CE37 /* login.xib in Resources */,
 				3A74A7D01CF41FCA00592B3E /* tutorial.xib in Resources */,
 				C2A59E931CDDDF700093CFEC /* Lato-Regular.ttf in Resources */,
 				783322B71CDB7B620015CE37 /* completeProfile.xib in Resources */,
+				FCE15CDD1D34DF54009B49E2 /* Main Hospital Bill.pdf in Resources */,
 				78B90BD91CE067950022FE7A /* enterOTP.xib in Resources */,
 				3AEEB01A1CE745F90085EEF5 /* helpDeskFAQ.xib in Resources */,
+				FCE15CDC1D34DF54009B49E2 /* Laboratory Report.pdf in Resources */,
 				3A992F041CED918100D85D8A /* benefitSummary.xib in Resources */,
 				783322A61CDB13CE0015CE37 /* signup.xib in Resources */,
 			);
@@ -1240,6 +1271,7 @@
 				3ABD66C71D279DB9003462CB /* MemberListGroupTableController.swift in Sources */,
 				C2A584601D262EAE00F6E0D5 /* EnumSets.swift in Sources */,
 				3AE7AFE21CF2D3190047DFB0 /* HelplineNumberController.swift in Sources */,
+				FCE15CD21D34D6E2009B49E2 /* PDFViewController.swift in Sources */,
 				3A8EFB621CE9E742004489F3 /* claimForm.swift in Sources */,
 				3A677B691CE4B539003B8C2B /* CompleteProfileController.swift in Sources */,
 				3A6C4E451CF48B3D0056D46F /* SlideMenuController.swift in Sources */,

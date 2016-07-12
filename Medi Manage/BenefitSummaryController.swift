@@ -71,7 +71,7 @@ class BenefitSummaryController: UIViewController, UITableViewDataSource, UITabBa
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-                let pdfLoc = NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource("Discharge Summary", ofType:"pdf")!) //replace PDF_file with your pdf die name
+                let pdfLoc = NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource("Discharge Summary", ofType:"pdf")!)
         let request = NSURLRequest(URL: pdfLoc);
         self.webViewpdf.loadRequest(request);
     }

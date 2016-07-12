@@ -12,13 +12,37 @@ var gDocumentChecklistController: UIViewController!
 
 class DocumentChecklistController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let image = ["claim_three", "claim_three", "claim_three", "claim_three"]
-    let titleMain = ["Claim Form signed by employee", "Claim Form signed by employee",
-                     "Claim Form signed by employee", "Claim Form signed by employee"]
+    let image = ["claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three"]
+    let pdfs = ["CLAIM FORM SIGNED BY EMPLOYEE",
+                     "Discharge Summary",
+                     "Doctor's Prescription",
+                     "Main Hospital Bill",
+                     "Laboratory Payment Receipt",
+                     "Laboratory Report",
+                     "X-Ray Report",
+                     "Medicine Bill",
+                     "PHOTO ID PROOF AND ADDRESS PROOF OF PATIENT",
+                     "Pre Numbered Cash Paid Receipt"]
+    let titleMain = ["CLAIM FORM SIGNED BY EMPLOYEE",
+                     "DISCHARGE CARD",
+                     "LETTER OF 1ST CONSULTATION AND ADVICE FOR HOSPITALIZATION",
+                     "PROPER HOSPITAL BILLS WITH RECEIPTS DULY STAMPED & SIGNED",
+                     "MEDICINE BILLS WITH DOCTOR’S PRESCRIPTIONS FOR THE SAME",
+                     "INVESTIGATION REPORTS, BILL RECEIPTS &ADVICE LETTER FOR ALL THE TESTS PERFORMED",
+                     "CONSULTATION RECEIPTS",
+                     "CERTIFIED INDOOR CASE PAPER (ICP)",
+                     "PHOTO ID PROOF AND ADDRESS PROOF OF PATIENT",
+                     "CANCELLED CHEQUE FOR CLAIM DISBURSEMENT:"]
     let desc = ["(All details must be filled in & should be signed by The EMPLOYEE only)",
-                "(All details must be filled in & should be signed by The EMPLOYEE only)",
-                "(All details must be filled in & should be signed by The EMPLOYEE only)",
-                "(All details must be filled in & should be signed by The EMPLOYEE only)"]
+                "(Contains Date of Admission & discharge, patient’s condition while getting hospitalized,brief diagnosis & treatment administered at hospital& doctors advice on discharge)",
+                "(This is the letter of your doctor advise you to get hospitalized for medical treatment of disease ora Surgical Procedure. It should be on the doctor letterhead along with the date of Consultation)",
+                "(This is most important document & in absence of it, no payment can be made. The bill should be detailed with the Registration No. of the hospital. The receipt for the payments made should be Pre-numbered and preferably Pre-printed)",
+                "(Each medicine bill must have date & patient’s name along with Doctor Prescription)",
+                "(For all the tests conducted, the same MUST be advised by the doctor. A receipt of payment should be produced & the reportshould be submitted. Please do not send any X-Ray films. Only report by competent doctor is good enough for claim processing)",
+                "(This is the proof of payment made to doctor for consultations. Please insist on consultation paper with date & receipt of Consultation charges paid every time you visit)",
+                "(The treatment details of the patient maintained by the Hospital for the records)",
+                "(Reimbursement claim amount which is above Rs. 1 lakh, please submit Photo ID proof & address proof of patient)",
+                "(Cancelled cheque)"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +76,7 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
     // MARK: - UITableView Methods
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return desc.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -74,20 +98,24 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    }
+        
+        self.performSegueWithIdentifier("viewPDF", sender: self)
 
-    @IBAction func myClaimsCall(sender: AnyObject) {
-        self.performSegueWithIdentifier("dcToMyClaims", sender: nil)
     }
     
     @IBOutlet weak var dcDesc: UILabel!
-    /*
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    @IBOutlet weak var documentTable: UITableView!
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if(segue.identifier == "viewPDF"){
+            let indexPaths = self.documentTable!.indexPathForSelectedRow
+            pdfname = pdfs[(indexPaths?.item)!]
+            let vc = segue.destinationViewController as! PDFViewController
+            vc.title = self.pdfs[(indexPaths?.row)!]
+            
+        }
     }
-    */
+    
 
 }
 
