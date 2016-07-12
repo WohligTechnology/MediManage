@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="crn-Bn-ORl">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -8,6 +8,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
             <string>Lato-Bold</string>
             <string>Lato-Bold</string>
             <string>Lato-Bold</string>
@@ -89,6 +90,14 @@
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -118,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="387" y="-452"/>
+            <point key="canvasLocation" x="-1868" y="151"/>
         </scene>
         <!--Signup Controller-->
         <scene sceneID="Yas-2D-Mnc">
@@ -153,7 +162,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9Z-0X-rR4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="808" y="-480"/>
+            <point key="canvasLocation" x="-1450" y="-476"/>
         </scene>
         <!--Complete Profile Controller-->
         <scene sceneID="xoo-J9-7Uf">
@@ -181,7 +190,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="67M-md-p9M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1185" y="-487"/>
+            <point key="canvasLocation" x="-1062" y="-476"/>
         </scene>
         <!--Retrieve Login Controller-->
         <scene sceneID="rTg-MV-Mil">
@@ -216,7 +225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yVI-Vg-TYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1580" y="-452"/>
+            <point key="canvasLocation" x="-1062" y="116"/>
         </scene>
         <!--GenerateOTP Controller-->
         <scene sceneID="Exh-M4-Th5">
@@ -244,7 +253,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YdL-NB-sw9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1983" y="-452"/>
+            <point key="canvasLocation" x="-671" y="116"/>
         </scene>
         <!--EnterOTP Controller-->
         <scene sceneID="Ahs-kc-Wh7">
@@ -272,7 +281,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pHq-dy-qGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2381" y="-452"/>
+            <point key="canvasLocation" x="-671" y="789"/>
         </scene>
         <!--Enrollment Members Controller-->
         <scene sceneID="D1A-DN-M9H">
@@ -303,7 +312,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MV2-PS-E4L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1392" y="187"/>
+            <point key="canvasLocation" x="-1656" y="1521"/>
         </scene>
         <!--Member List Table Controller-->
         <scene sceneID="ErO-d8-i1w">
@@ -656,7 +665,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W4c-ln-nHP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2995" y="-520"/>
+            <point key="canvasLocation" x="4815" y="-364"/>
         </scene>
         <!--Premium Calculation Controller-->
         <scene sceneID="uXr-YC-cqh">
@@ -684,7 +693,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nwy-16-pWp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2264" y="151"/>
+            <point key="canvasLocation" x="-1656" y="2824"/>
         </scene>
         <!--Insured Members Controller-->
         <scene sceneID="lbr-HL-zhG">
@@ -1140,7 +1149,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZaZ-Hy-CoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2652" y="179"/>
+            <point key="canvasLocation" x="-1230" y="2824"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ejb-Nu-v4p">
@@ -1191,7 +1200,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NWW-fv-FRk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3447" y="253"/>
+            <point key="canvasLocation" x="4539" y="361"/>
         </scene>
         <!--Main Menu Controller-->
         <scene sceneID="VD3-34-bgu">
@@ -1210,7 +1219,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l5h-gc-awo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-24" y="1462"/>
+            <point key="canvasLocation" x="-2434" y="176"/>
         </scene>
         <!--Main Claims Controller-->
         <scene sceneID="cnZ-l8-HiF">
@@ -1233,7 +1242,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                         <rect key="frame" x="0.0" y="28" width="326" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YSW-kf-Ygl" id="dwb-TZ-KJ5">
-                                            <rect key="frame" x="0.0" y="0.0" width="326" height="73"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="326" height="73.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8rW-wh-6Ot">
@@ -1311,6 +1320,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                     <connections>
                         <outlet property="mainClaimsMainView" destination="IZ3-Hc-IkU" id="RAq-R7-9kD"/>
                         <outlet property="mainTableView" destination="Y6D-Pf-4Kl" id="QLz-zz-Lww"/>
+                        <segue destination="ONl-FB-A8K" kind="show" identifier="documentChecklist" id="wvp-ws-K50"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4XJ-Tj-Ptj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1340,7 +1350,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BNO-Ft-tcW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3322" y="-496"/>
+            <point key="canvasLocation" x="4414" y="-388"/>
         </scene>
         <!--Document Checklist Controller-->
         <scene sceneID="aXU-qF-aqe">
@@ -1351,7 +1361,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <viewControllerLayoutGuide type="bottom" id="Yyw-Wm-zBW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Fom-Uq-lQc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8X-de-LBf">
@@ -1409,7 +1419,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MUk-6G-wR1">
-                                <rect key="frame" x="-4" y="195" width="328" height="285"/>
+                                <rect key="frame" x="-4" y="195" width="328" height="236"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="75" id="PrS-6N-cFu" customClass="documentChecklistUIViewCell" customModule="MediManage" customModuleProvider="target">
@@ -1530,7 +1540,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4q-8K-apV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4322" y="624"/>
+            <point key="canvasLocation" x="5414" y="732"/>
         </scene>
         <!--Pre Authorization One Controller-->
         <scene sceneID="2FI-Z6-g2T">
@@ -1561,7 +1571,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kI4-6D-UM8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4681" y="624"/>
+            <point key="canvasLocation" x="5773" y="732"/>
         </scene>
         <!--Pre Authorization Two Controller-->
         <scene sceneID="qok-K9-MCE">
@@ -1589,7 +1599,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hau-B6-e4G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5055" y="624"/>
+            <point key="canvasLocation" x="6147" y="732"/>
         </scene>
         <!--Query Form Controller-->
         <scene sceneID="8eY-qL-Wci">
@@ -1617,7 +1627,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jxB-ul-5e6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2971" y="1194"/>
+            <point key="canvasLocation" x="4063" y="1302"/>
         </scene>
         <!--Helpline Number Controller-->
         <scene sceneID="YNC-4i-MW0">
@@ -1645,7 +1655,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ns8-23-bBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3338" y="1194"/>
+            <point key="canvasLocation" x="4430" y="1302"/>
         </scene>
         <!--Claim Intimation Controller-->
         <scene sceneID="vxP-hm-Au0">
@@ -1921,7 +1931,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z5F-3Y-lk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3713" y="1194"/>
+            <point key="canvasLocation" x="4805" y="1302"/>
         </scene>
         <!--Benefit Summary Controller-->
         <scene sceneID="zXY-2C-ZUG">
@@ -1931,23 +1941,202 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <viewControllerLayoutGuide type="top" id="I4x-a1-FRl"/>
                         <viewControllerLayoutGuide type="bottom" id="qto-5L-AaS"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="frN-Dm-lmb" customClass="benefitSummary" customModule="MediManage" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="frN-Dm-lmb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wje-zk-EGY">
-                                <rect key="frame" x="137" y="225" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5OJ-TM-9Sz">
+                                <rect key="frame" x="-4" y="120" width="328" height="199"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Benefits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Vr-vw-ebr">
+                                        <rect key="frame" x="20" y="15" width="95" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="Hmx-DB-F4i"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                        <color key="textColor" red="0.08235294118" green="0.69411764710000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Single Point of Contact:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6n-Bq-ojj">
+                                        <rect key="frame" x="20" y="45" width="288" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="6yU-xz-u0W"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                                        <color key="textColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medimanage Insurance Broking Pvt. Ltd.," lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3QN-2Q-OD7">
+                                        <rect key="frame" x="20" y="63" width="288" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="Sw4-D8-ZF2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Insurer:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jc6-7R-XJ6">
+                                        <rect key="frame" x="20" y="95" width="288" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="iWg-zf-JUu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                                        <color key="textColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The New India Asurance Company Ltd.," lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gzq-PG-DyW">
+                                        <rect key="frame" x="20" y="113" width="288" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="2tW-am-iA9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of TPA:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVf-UU-e1v">
+                                        <rect key="frame" x="20" y="145" width="288" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="4JZ-3N-S4f"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                                        <color key="textColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medi Assist India TPA Pvt. Ltd.," lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWi-3o-9vZ">
+                                        <rect key="frame" x="20" y="163" width="288" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="jFt-o8-QfU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMU-mq-gCo">
+                                        <rect key="frame" x="20" y="10" width="95" height="30"/>
+                                    </button>
+                                    <webView contentMode="scaleToFill" fixedFrame="YES" paginationMode="leftToRight" translatesAutoresizingMaskIntoConstraints="NO" id="FqK-aD-SsI">
+                                        <rect key="frame" x="31" y="95" width="240" height="128"/>
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                    </webView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="QWi-3o-9vZ" secondAttribute="trailing" constant="20" id="1H4-KU-1ej"/>
+                                    <constraint firstItem="3QN-2Q-OD7" firstAttribute="top" secondItem="Y6n-Bq-ojj" secondAttribute="bottom" constant="-2" id="5wq-6M-iTF"/>
+                                    <constraint firstItem="QWi-3o-9vZ" firstAttribute="top" secondItem="MVf-UU-e1v" secondAttribute="bottom" constant="-2" id="8Pe-zr-Wdq"/>
+                                    <constraint firstItem="3QN-2Q-OD7" firstAttribute="leading" secondItem="5OJ-TM-9Sz" secondAttribute="leading" constant="20" id="A5Y-Wx-Bgh"/>
+                                    <constraint firstAttribute="trailing" secondItem="MVf-UU-e1v" secondAttribute="trailing" constant="20" id="A7z-xV-m5l"/>
+                                    <constraint firstItem="Gzq-PG-DyW" firstAttribute="top" secondItem="jc6-7R-XJ6" secondAttribute="bottom" constant="-2" id="DaU-xp-6lF"/>
+                                    <constraint firstItem="oMU-mq-gCo" firstAttribute="centerY" secondItem="9Vr-vw-ebr" secondAttribute="centerY" id="Dgk-3U-Muj"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gzq-PG-DyW" secondAttribute="trailing" constant="20" id="FDn-1f-kGY"/>
+                                    <constraint firstItem="Y6n-Bq-ojj" firstAttribute="leading" secondItem="5OJ-TM-9Sz" secondAttribute="leading" constant="20" id="HDh-w5-eRg"/>
+                                    <constraint firstItem="QWi-3o-9vZ" firstAttribute="leading" secondItem="5OJ-TM-9Sz" secondAttribute="leading" constant="20" id="KG8-uX-g97"/>
+                                    <constraint firstItem="Gzq-PG-DyW" firstAttribute="top" secondItem="jc6-7R-XJ6" secondAttribute="bottom" constant="-2" id="NQR-RB-oO5"/>
+                                    <constraint firstItem="QWi-3o-9vZ" firstAttribute="top" secondItem="MVf-UU-e1v" secondAttribute="bottom" constant="-2" id="Oi7-EF-AbS"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y6n-Bq-ojj" secondAttribute="trailing" constant="20" id="QkL-zU-rqx"/>
+                                    <constraint firstItem="Gzq-PG-DyW" firstAttribute="leading" secondItem="5OJ-TM-9Sz" secondAttribute="leading" constant="20" id="SVD-42-egS"/>
+                                    <constraint firstItem="Y6n-Bq-ojj" firstAttribute="top" secondItem="9Vr-vw-ebr" secondAttribute="bottom" constant="10" id="Vpp-aB-6Bn"/>
+                                    <constraint firstAttribute="trailing" secondItem="jc6-7R-XJ6" secondAttribute="trailing" constant="20" id="WPK-P8-irt"/>
+                                    <constraint firstItem="9Vr-vw-ebr" firstAttribute="leading" secondItem="5OJ-TM-9Sz" secondAttribute="leading" constant="20" id="WkI-sa-0Dp"/>
+                                    <constraint firstAttribute="trailing" secondItem="3QN-2Q-OD7" secondAttribute="trailing" constant="20" id="Xdu-4f-1k8"/>
+                                    <constraint firstAttribute="height" constant="199" id="Xfd-y6-SJ6"/>
+                                    <constraint firstItem="jc6-7R-XJ6" firstAttribute="leading" secondItem="5OJ-TM-9Sz" secondAttribute="leading" constant="20" id="cSJ-te-UaK"/>
+                                    <constraint firstItem="9Vr-vw-ebr" firstAttribute="top" secondItem="5OJ-TM-9Sz" secondAttribute="top" constant="15" id="ekI-Mo-gwS"/>
+                                    <constraint firstItem="MVf-UU-e1v" firstAttribute="top" secondItem="Gzq-PG-DyW" secondAttribute="bottom" constant="12" id="h3n-7u-kqB"/>
+                                    <constraint firstItem="oMU-mq-gCo" firstAttribute="leading" secondItem="9Vr-vw-ebr" secondAttribute="leading" id="lgG-Rh-mRG"/>
+                                    <constraint firstItem="MVf-UU-e1v" firstAttribute="leading" secondItem="5OJ-TM-9Sz" secondAttribute="leading" constant="20" id="m38-K5-yj1"/>
+                                    <constraint firstItem="Y6n-Bq-ojj" firstAttribute="leading" secondItem="5OJ-TM-9Sz" secondAttribute="leading" constant="20" id="n2b-q4-BXm"/>
+                                    <constraint firstItem="oMU-mq-gCo" firstAttribute="trailing" secondItem="9Vr-vw-ebr" secondAttribute="trailing" id="oub-Rp-5tH"/>
+                                    <constraint firstItem="QWi-3o-9vZ" firstAttribute="top" secondItem="MVf-UU-e1v" secondAttribute="bottom" constant="-2" id="qTx-O9-U0i"/>
+                                    <constraint firstItem="jc6-7R-XJ6" firstAttribute="top" secondItem="3QN-2Q-OD7" secondAttribute="bottom" constant="12" id="uqg-FC-Nn2"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salient Features:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Otj-sv-XPa">
+                                <rect key="frame" x="16" y="329" width="105" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="RUn-Hm-qAJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tta-IW-eM1">
+                                <rect key="frame" x="-4" y="359" width="328" height="72"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="62" id="Qm7-kY-sAF" customClass="benefitTableCell" customModule="MediManage" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="328" height="62"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qm7-kY-sAF" id="RMt-Ea-FhX">
+                                            <rect key="frame" x="0.0" y="0.0" width="328" height="62"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange_tick" translatesAutoresizingMaskIntoConstraints="NO" id="q0i-Y3-3hN">
+                                                    <rect key="frame" x="18" y="18" width="12" height="10"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="12" id="dEI-k7-g5I"/>
+                                                        <constraint firstAttribute="height" constant="10" id="vSe-dx-NAr"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VL8-wa-rJl">
+                                                    <rect key="frame" x="40" y="13" width="270" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="34" id="oMC-LY-Xpw"/>
+                                                    </constraints>
+                                                    <string key="text" base64-UTF8="YES">
+TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2NpbmcgZWxpdC4gA05h
+bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
+</string>
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="VL8-wa-rJl" firstAttribute="trailing" secondItem="RMt-Ea-FhX" secondAttribute="trailingMargin" constant="-10" id="Fpa-tn-Fzy"/>
+                                                <constraint firstItem="VL8-wa-rJl" firstAttribute="top" secondItem="RMt-Ea-FhX" secondAttribute="topMargin" constant="5" id="FsE-Cq-ysn"/>
+                                                <constraint firstItem="q0i-Y3-3hN" firstAttribute="leading" secondItem="RMt-Ea-FhX" secondAttribute="leadingMargin" constant="10" id="JAe-aE-aoP"/>
+                                                <constraint firstItem="q0i-Y3-3hN" firstAttribute="top" secondItem="RMt-Ea-FhX" secondAttribute="topMargin" constant="10" id="Orp-OA-3rc"/>
+                                                <constraint firstItem="VL8-wa-rJl" firstAttribute="leading" secondItem="q0i-Y3-3hN" secondAttribute="trailing" constant="10" id="j05-WY-8a3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="summaryText" destination="VL8-wa-rJl" id="gvY-Tz-y5D"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="A4M-Ka-07a" id="26i-EO-csc"/>
+                                    <outlet property="delegate" destination="A4M-Ka-07a" id="pdt-7A-YZg"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tta-IW-eM1" firstAttribute="leading" secondItem="frN-Dm-lmb" secondAttribute="leadingMargin" constant="-20" id="6X6-K1-DpE"/>
+                            <constraint firstItem="5OJ-TM-9Sz" firstAttribute="top" secondItem="I4x-a1-FRl" secondAttribute="bottom" constant="100" id="J3V-OA-k7f"/>
+                            <constraint firstItem="tta-IW-eM1" firstAttribute="top" secondItem="Otj-sv-XPa" secondAttribute="bottom" constant="10" id="LUh-Bh-Fno"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5OJ-TM-9Sz" secondAttribute="trailing" constant="-20" id="MUc-n3-lzM"/>
+                            <constraint firstItem="5OJ-TM-9Sz" firstAttribute="leading" secondItem="frN-Dm-lmb" secondAttribute="leadingMargin" constant="-20" id="N6o-lR-9Gw"/>
+                            <constraint firstItem="tta-IW-eM1" firstAttribute="trailing" secondItem="frN-Dm-lmb" secondAttribute="trailingMargin" constant="20" id="TY5-pW-pPU"/>
+                            <constraint firstItem="qto-5L-AaS" firstAttribute="top" secondItem="tta-IW-eM1" secondAttribute="bottom" id="fV6-WM-lOl"/>
+                            <constraint firstItem="Otj-sv-XPa" firstAttribute="top" secondItem="5OJ-TM-9Sz" secondAttribute="bottom" constant="10" id="qOg-Op-o4J"/>
+                            <constraint firstItem="Otj-sv-XPa" firstAttribute="leading" secondItem="frN-Dm-lmb" secondAttribute="leadingMargin" id="uWO-rt-drG"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="footer_tab_three" id="TCx-Xv-ocL"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="TPA" destination="QWi-3o-9vZ" id="zf5-zX-v6U"/>
+                        <outlet property="insurer" destination="Gzq-PG-DyW" id="0V1-wd-Exw"/>
+                        <outlet property="singlePointContact" destination="3QN-2Q-OD7" id="qSU-Lr-nIt"/>
+                        <outlet property="summaryTable" destination="tta-IW-eM1" id="vxN-pF-OlU"/>
+                        <outlet property="webViewpdf" destination="FqK-aD-SsI" id="CqP-f7-6QB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2rv-Ng-9aE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3035" y="160"/>
+            <point key="canvasLocation" x="-391" y="1503"/>
         </scene>
         <!--HOSPITAL SEARCH-->
         <scene sceneID="mQ4-Cc-ecH">
@@ -1976,7 +2165,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sf0-bP-dYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1185" y="2047"/>
+            <point key="canvasLocation" x="-1176" y="1503"/>
         </scene>
         <!--Hospital Search Result Controller-->
         <scene sceneID="Ja7-k4-UaN">
@@ -2275,7 +2464,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j0Q-Ed-hZ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1580" y="2047"/>
+            <point key="canvasLocation" x="-1176" y="2123"/>
         </scene>
         <!--Inbox Controller-->
         <scene sceneID="Eew-Ia-Niw">
@@ -2294,7 +2483,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pUe-BV-LL4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4691" y="60"/>
+            <point key="canvasLocation" x="5783" y="168"/>
         </scene>
         <!--Splash Screen Controller-->
         <scene sceneID="vxc-Kb-Cyn">
@@ -2313,7 +2502,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IMF-O0-HIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-857" y="-480"/>
+            <point key="canvasLocation" x="-2765" y="-494"/>
         </scene>
         <!--Page Viewer Controller-->
         <scene sceneID="4hG-tJ-o9G">
@@ -2323,7 +2512,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4mP-7X-dlr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-435" y="-464"/>
+            <point key="canvasLocation" x="-2279" y="-494"/>
         </scene>
         <!--Tutorial Controller-->
         <scene sceneID="dUa-zI-cRa">
@@ -2358,7 +2547,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C93-Sw-3tW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-72" y="-464"/>
+            <point key="canvasLocation" x="-1918" y="-494"/>
         </scene>
         <!--Help Desk Controller-->
         <scene sceneID="hkv-BM-BAV">
@@ -2371,26 +2560,18 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                     <view key="view" contentMode="scaleToFill" id="x9i-OF-UUA" customClass="helpDesk" customModule="MediManage" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NrS-V7-gDG">
-                                <rect key="frame" x="137" y="251" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="peo-2X-GNG" kind="show" identifier="helpDeskToHelpDeskFAQ" id="yFj-hM-Gch"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="footer_tab_four" id="XZC-kA-4gw"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <segue destination="oN0-Q9-8IX" kind="show" identifier="sendquery" id="rje-S6-j45"/>
+                        <segue destination="peo-2X-GNG" kind="show" identifier="helpDeskToHelpDeskFAQ" id="8yk-Gk-CkR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acB-RW-ROH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="387" y="808"/>
+            <point key="canvasLocation" x="7" y="1496"/>
         </scene>
         <!--Help DeskFAQ Controller-->
         <scene sceneID="8Fv-fP-hi8">
@@ -2405,7 +2586,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bah-dz-chG">
-                                <rect key="frame" x="137" y="201" width="46" height="30"/>
+                                <rect key="frame" x="137" y="200" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="168" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ieg-QM-CDH">
@@ -2416,7 +2597,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                         <rect key="frame" x="0.0" y="28" width="328" height="168"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mzg-9Q-uP1" id="BvK-ka-JyQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="328" height="167"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="328" height="167.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPg-zG-hgy">
@@ -2498,7 +2679,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wg2-Qv-lAZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="784" y="816"/>
+            <point key="canvasLocation" x="7" y="2642"/>
         </scene>
         <!--Help Desk Query Controller-->
         <scene sceneID="BBF-QB-d8e">
@@ -2515,18 +2696,16 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ron-0k-CVc">
                                 <rect key="frame" x="137" y="196" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="kjT-5A-5E0" kind="show" identifier="helpDeskQueryToConnect" id="f56-ZP-0ma"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1I8-pv-9ZT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1185" y="816"/>
+            <point key="canvasLocation" x="7" y="2082"/>
         </scene>
         <!--CONNECT-->
         <scene sceneID="SR5-cc-YkG">
@@ -2543,9 +2722,6 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6TN-41-fig">
                                 <rect key="frame" x="44" y="289" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="xMa-F4-Ivl" kind="show" identifier="connectToMainClaims" id="aDg-wM-GID"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2555,7 +2731,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MOd-cO-fIo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1580" y="816"/>
+            <point key="canvasLocation" x="-762" y="1503"/>
         </scene>
         <!--Member List Group Table Controller-->
         <scene sceneID="gr7-Ij-iRd">
@@ -2944,7 +3120,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VfG-lo-faf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1892" y="160"/>
+            <point key="canvasLocation" x="-1656" y="2204"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Lef-QB-KJs">
@@ -2966,7 +3142,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kLD-P0-FCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="536" y="143"/>
+            <point key="canvasLocation" x="-300" y="789"/>
         </scene>
     </scenes>
     <resources>
@@ -2983,17 +3159,16 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
         <image name="footer_tab_three" width="28" height="30"/>
         <image name="footer_tab_two" width="26" height="30"/>
         <image name="hospital_icon" width="37" height="50"/>
+        <image name="orange_tick" width="39" height="38"/>
         <image name="search_icon" width="53" height="69"/>
         <image name="triangle_blue_right" width="33" height="38"/>
         <image name="triangle_orange" width="32" height="28"/>
         <image name="triangle_white" width="30" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="J3E-UK-ylc"/>
-        <segue reference="Oo4-D3-Nsi"/>
-        <segue reference="s1I-qw-2n8"/>
-        <segue reference="aDg-wM-GID"/>
         <segue reference="wgK-eO-Wod"/>
         <segue reference="QCt-6c-YRM"/>
+        <segue reference="Usm-li-CcL"/>
+        <segue reference="LXm-Lb-FcH"/>
     </inferredMetricsTieBreakers>
 </document>

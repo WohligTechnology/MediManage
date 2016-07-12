@@ -388,7 +388,7 @@ public class RestApi {
         
     }
     
-    public func BenefitSummery(data : JSON ,completion:((JSON) -> Void))
+    public func BenefitSummery(completion:((JSON) -> Void))
     {
         var json = JSON(1)
         let token = defaultToken.stringForKey("access_token")
@@ -396,7 +396,7 @@ public class RestApi {
         
         
         do {
-            let opt = try HTTP.GET(apiURL+"Enrollments/BenefitSummery" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            let opt = try HTTP.GET(apiURL+"Enrollments/MobileBenefitSummery" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
             opt.start { response in
                 if let _ = response.error {
                     completion(json);

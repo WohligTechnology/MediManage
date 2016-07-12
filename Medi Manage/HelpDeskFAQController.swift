@@ -105,8 +105,16 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! quecell
         
         cell.selectionStyle = .None
-        cell.questionlbl.text = self.queans[indexPath.item]["Question"].stringValue.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
-        cell.answerlbl.text = self.queans[indexPath.item]["Answer"].stringValue
+        cell.questionlbl.text = (self.queans[indexPath.item]["Question"].stringValue.stringByRemovingPercentEncoding)! as String
+        let ans = (self.queans[indexPath.item]["Answer"].stringValue.stringByRemovingPercentEncoding)
+        do {
+            let str = try NSAttributedString(data: ans!.dataUsingEncoding(NSUnicodeStringEncoding, allowLossyConversion: true)!, options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType], documentAttributes: nil)
+            cell.answerlbl.attributedText = str
+        } catch {
+            print(error)
+        }
+
+
         return cell
     }
 

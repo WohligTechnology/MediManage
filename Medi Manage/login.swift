@@ -13,8 +13,8 @@ import Alamofire
 
 class login: UIView {
     
-    var TestId = "9920590849"
-    var TestPWD = "75476145"
+    var TestId = "Test7_19901122"
+    var TestPWD = "123456"
 
   
        @IBAction func signupCall(sender: AnyObject) {

@@ -46,7 +46,6 @@ class helpDeskFAQ: UIView {
         dummyButton.layer.zPosition = 10000
         print(categoryId)
         rest.FaqDetails({(json:JSON) -> ()in
-            print(json)
         })
         
 //        helpDeskFAQMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height - 175)        

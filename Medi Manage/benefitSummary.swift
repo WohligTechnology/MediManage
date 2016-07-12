@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class benefitSummary: UIView {
     
     @IBOutlet var benefitSummaryMainView: UIView!
     
+    @IBOutlet weak var summarylbl: UILabel!
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
@@ -30,23 +32,14 @@ class benefitSummary: UIView {
         benefitSummary.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(benefitSummary)
         
-        let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
-        statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
-        self.addSubview(statusBar)
         
-        let mainheader = header(frame: CGRectMake(0, 20, width, 50))
-        self.addSubview(mainheader)
         
-        let mainsubHeader = subHeader(frame: CGRectMake(0, 70, width, 50))
-        mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_three")
-        mainsubHeader.subHeaderTitle.text = "BENEFIT SUMMARY"
-        self.addSubview(mainsubHeader)
-        
-        //let scroll = UIScrollView(frame: CGRectMake(0, 0, self.frame.size.width, 1000 - 55))
-        //scroll.backgroundColor = UIColor.blackColor()
-        //scroll.showsVerticalScrollIndicator = false
-        benefitSummaryMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height)
-        //scroll.addSubview(benefitSummaryMainView)
+//        
+//        let scroll = UIScrollView(frame: CGRectMake(0, 0, self.frame.size.width, 1000 - 55))
+//        scroll.backgroundColor = UIColor.blackColor()
+//        scroll.showsVerticalScrollIndicator = false
+//        benefitSummaryMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height)
+//        scroll.addSubview(benefitSummaryMainView)
     }
 
     @IBAction func hospitalSearchCall(sender: AnyObject) {

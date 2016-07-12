@@ -151,6 +151,7 @@
 		FCB8016F1D2B7FB200F9226F /* memberListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8016E1D2B7FB200F9226F /* memberListHeader.swift */; };
 		FCB801721D2BB62B00F9226F /* relationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB801711D2BB62B00F9226F /* relationView.xib */; };
 		FCB801741D2BB67100F9226F /* relationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB801731D2BB67100F9226F /* relationView.swift */; };
+		FCBE27F51D33E436004654E0 /* Discharge Summary.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FCBE27F41D33E436004654E0 /* Discharge Summary.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -235,7 +236,7 @@
 		3AD3E52C1CE20A1900900A93 /* premiumCalculation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = premiumCalculation.xib; sourceTree = "<group>"; };
 		3AE7AFDF1CF2D0C10047DFB0 /* QueryFormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryFormController.swift; sourceTree = "<group>"; };
 		3AE7AFE11CF2D3190047DFB0 /* HelplineNumberController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelplineNumberController.swift; sourceTree = "<group>"; };
-		3AE7AFE31CF2D8C80047DFB0 /* BenefitSummaryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BenefitSummaryController.swift; sourceTree = "<group>"; };
+		3AE7AFE31CF2D8C80047DFB0 /* BenefitSummaryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BenefitSummaryController.swift; path = "Medi Manage/BenefitSummaryController.swift"; sourceTree = SOURCE_ROOT; };
 		3AE7AFE51CF2D9060047DFB0 /* HospitalSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalSearchController.swift; sourceTree = "<group>"; };
 		3AE7AFE71CF2D9330047DFB0 /* InboxController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxController.swift; sourceTree = "<group>"; };
 		3AEEB00D1CE7023E0085EEF5 /* subHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = subHeader.xib; sourceTree = "<group>"; };
@@ -327,6 +328,7 @@
 		FCB8016E1D2B7FB200F9226F /* memberListHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = memberListHeader.swift; sourceTree = "<group>"; };
 		FCB801711D2BB62B00F9226F /* relationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = relationView.xib; sourceTree = "<group>"; };
 		FCB801731D2BB67100F9226F /* relationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = relationView.swift; sourceTree = "<group>"; };
+		FCBE27F41D33E436004654E0 /* Discharge Summary.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Discharge Summary.pdf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -678,6 +680,7 @@
 		786DF9F81CD214F300DDE769 /* Medi Manage */ = {
 			isa = PBXGroup;
 			children = (
+				FCBE27F11D33E39E004654E0 /* PDFs */,
 				C2B4401D1D1BF4B0003EECDB /* DTO */,
 				786DF9F91CD214F300DDE769 /* AppDelegate.swift */,
 				786DFA2B1CD2285800DDE769 /* Model */,
@@ -905,6 +908,14 @@
 			name = relationView;
 			sourceTree = "<group>";
 		};
+		FCBE27F11D33E39E004654E0 /* PDFs */ = {
+			isa = PBXGroup;
+			children = (
+				FCBE27F41D33E436004654E0 /* Discharge Summary.pdf */,
+			);
+			name = PDFs;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1031,6 +1042,7 @@
 				43D6FF431CFEE486008361B2 /* pickDate.xib in Resources */,
 				FCB801721D2BB62B00F9226F /* relationView.xib in Resources */,
 				3AEEB0241CE7515C0085EEF5 /* connect.xib in Resources */,
+				FCBE27F51D33E436004654E0 /* Discharge Summary.pdf in Resources */,
 				3A8774C11CEC41C1001DB41F /* queryForm.xib in Resources */,
 				3A8EFB5B1CE9D31B004489F3 /* homeMenus.xib in Resources */,
 				78B90BD71CE067810022FE7A /* generateOTP.xib in Resources */,
