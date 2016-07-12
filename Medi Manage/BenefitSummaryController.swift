@@ -39,6 +39,8 @@ class BenefitSummaryController: UIViewController, UITableViewDataSource, UITabBa
             self.singlePointContact.text = json["result"]["SinglePointofContact"].stringValue
             self.insurer.text = json["result"]["NameOfInsurer"].stringValue
             self.TPA.text = json["result"]["NameOfTPA"].stringValue
+            self.summaryTable.estimatedRowHeight = 80
+            self.summaryTable.rowHeight = UITableViewAutomaticDimension
             self.summaryTable.reloadData()
             
         })

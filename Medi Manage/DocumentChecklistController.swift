@@ -64,6 +64,9 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
         self.view.addSubview(mainfooter)
         
         dcDesc.font = UIFont(name: "Lato-Light", size: 10.0)
+//        self.dcDesc.estimate
+        self.documentTable.estimatedRowHeight = 80
+        self.documentTable.rowHeight = UITableViewAutomaticDimension
         
         // Do any additional setup after loading the view.
     }
