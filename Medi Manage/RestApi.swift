@@ -140,7 +140,7 @@ public class RestApi {
                 
         }}
     
-    public func GetProfile(data : JSON, completion:((JSON) -> Void))
+    public func GetProfile(completion:((JSON) -> Void))
     {
         var json = JSON(1)
         

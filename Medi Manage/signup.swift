@@ -13,7 +13,7 @@ import SwiftyJSON
 import SwiftValidator
 
 
-class signup: UIView {
+class signup: UIView, UITextFieldDelegate {
     
     @IBOutlet weak var employeeID: UITextField!
     @IBOutlet weak var dateOfBirth: UITextField!
@@ -26,6 +26,7 @@ class signup: UIView {
     @IBAction func openDate(sender: UITextField) {
         datePickerView.datePickerMode = UIDatePickerMode.Date
         sender.inputView = datePickerView
+        
         datePickerView.addTarget(self, action: #selector(self.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
     }
     func datePickerValueChanged(sender:UIDatePicker) {
@@ -73,8 +74,32 @@ class signup: UIView {
         imageView.frame = CGRect(x: dateOfBirth.frame.size.width + 15, y: 15, width: 20, height: 20)
         dateOfBirth.addSubview(imageView)
         
+        // dropdown list
+//        datePickerView.delegate
+//        datePickerView.delegate = self
+        dateOfBirth.inputView = datePickerView
+        dateOfBirth.delegate = self
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.Default
+        toolBar.translucent = true
+        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "donePicker")
+        
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        
+        toolBar.setItems([spaceButton, doneButton], animated: false)
+        toolBar.userInteractionEnabled = true
+        
+        dateOfBirth.inputAccessoryView = toolBar
+
+        
         validator.registerField(employeeID, rules: [RequiredRule(), FullNameRule()])
        
+    }
+    func donePicker(){
+        dateOfBirth.resignFirstResponder()
     }
     
     @IBAction func loginCall(sender: AnyObject) {

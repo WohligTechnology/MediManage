@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="crn-Bn-ORl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xMa-F4-Ivl">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -127,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1868" y="151"/>
+            <point key="canvasLocation" x="-1868" y="184"/>
         </scene>
         <!--Signup Controller-->
         <scene sceneID="Yas-2D-Mnc">
@@ -190,7 +190,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="67M-md-p9M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1062" y="-476"/>
+            <point key="canvasLocation" x="-1048" y="-457"/>
         </scene>
         <!--Retrieve Login Controller-->
         <scene sceneID="rTg-MV-Mil">
@@ -1230,11 +1230,11 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <viewControllerLayoutGuide type="bottom" id="vxf-Rx-VbC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IZ3-Hc-IkU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Y6D-Pf-4Kl">
-                                <rect key="frame" x="-4" y="100" width="326" height="281"/>
+                                <rect key="frame" x="-4" y="100" width="326" height="330"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1358,7 +1358,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <viewControllerLayoutGuide type="bottom" id="Yyw-Wm-zBW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Fom-Uq-lQc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8X-de-LBf">
@@ -1416,7 +1416,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MUk-6G-wR1">
-                                <rect key="frame" x="-4" y="195" width="328" height="236"/>
+                                <rect key="frame" x="-4" y="195" width="328" height="285"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="85" id="PrS-6N-cFu" customClass="documentChecklistUIViewCell" customModule="MediManage" customModuleProvider="target">
@@ -1510,7 +1510,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <viewControllerLayoutGuide type="bottom" id="EBu-DH-PxI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="oOc-jl-nLT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c3H-ab-2g0">
@@ -3179,9 +3179,9 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
         <image name="triangle_white" width="30" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Usm-li-CcL"/>
-        <segue reference="LXm-Lb-FcH"/>
-        <segue reference="wgK-eO-Wod"/>
+        <segue reference="Oo4-D3-Nsi"/>
+        <segue reference="s1I-qw-2n8"/>
         <segue reference="QCt-6c-YRM"/>
+        <segue reference="wgK-eO-Wod"/>
     </inferredMetricsTieBreakers>
 </document>
