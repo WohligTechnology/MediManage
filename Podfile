@@ -10,15 +10,8 @@ target 'MediManage' do
     git: ’https://github.com/SwiftyJSON/SwiftyJSON.git'
     pod 'SwiftHTTP', '~> 1.0.3'
     pod 'SwiftValidator', :git => 'https://github.com/jpotts18/SwiftValidator.git', :tag => '4.0.0'
-     pod 'Alamofire', '~> 3.4'
-    target 'MediManageTests' do
-        inherit! :search_paths
-        # Pods for testing
-    end
-    
-    target 'MediManageUITests' do
-        inherit! :search_paths
-        # Pods for testing
-    end
-       
+    pod 'Alamofire', '~> 3.4'
+    pod 'SwiftSpinner'
+
+
 end

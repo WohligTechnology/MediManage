@@ -6,58 +6,38 @@
 	<dict>
 		<key>Alamofire.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-MediManage.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
-		<key>Pods-MediManageTests.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
-		</dict>
-		<key>Pods-MediManageUITests.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>SwiftHTTP.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>5</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftSpinner.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>SwiftValidator.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>6</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>7</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0F322F92AAA135110DF2A2C188EED388</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>11A08F88B52AE7F0B72F8679D22E33AF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>49F785B0EC4B463B624D29947FCE516A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6053D9DE9BF9ADC3B05F8D9510A1FF1B</key>
+		<key>6CFB5ED9A2960CC040F601C8D58F5C24</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,12 +47,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E239B5D3BEA98328604A3D5ABD5E9B15</key>
+		<key>7B9A677C1772366CE299BD2E0522E9DC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F11307B88D0EBF57DD0B21B8C265175D</key>
+		<key>93FA9C8143F9265B72747A0C99320DC5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AEC539221543B733030535C39B2F3C5B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E9BE5F277FDAD79B39D0BAA0BABEB8EE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
