@@ -154,27 +154,31 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
       
         }
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
+        if pickerView == maritalPickerView{
+            return 1
+        }else{
+            return 2
+        }
     }
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == maritalPickerView{
             return status.count
         }else{
-            return codes.count
+            return countryCodes[component].count
         }
     }
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == maritalPickerView{
             return status[row]
         }else{
-            return codes[row]
+            return countryCodes[0][row]
         }
     }
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == maritalPickerView {
             maritalStatus.text = status[row]
         }else{
-            countryCode.text = codes[row]
+            countryCode.text = countryCodes[1][row]
         }
     }
     func donePicker(){

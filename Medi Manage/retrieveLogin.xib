@@ -20,8 +20,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="retrieveLogin" customModule="MediManage" customModuleProvider="target">
             <connections>
-                <outlet property="dateOfBirth" destination="BZO-Gj-rN1" id="yb3-8n-oyQ"/>
-                <outlet property="employeeID" destination="VUF-gm-5fJ" id="iZs-7Y-Ncm"/>
+                <outlet property="mobileNo" destination="VUF-gm-5fJ" id="xNG-z0-HjT"/>
+                <outlet property="password" destination="BZO-Gj-rN1" id="ZvI-82-FoQ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

@@ -47,27 +47,35 @@ class enterOTP: UIView {
     }
     
     @IBAction func resendOTP(sender: AnyObject) {
-        rest.SendOtp(forgotMobileNumber, countrycode: forgotCountryCode, completion: {(json:JSON) -> () in
-            print("resend otp")
-            print(json)
-        })
+        if OTPStatus == 1 {
+            rest.ClientSendOTP(forgotMobileNumber, password: profilePassword, completion: {(json:JSON) -> () in
+                print(json)
+            })
+        }else{
+            rest.SendOtp(forgotMobileNumber, countrycode: forgotCountryCode, completion: {(json:JSON) -> () in
+                print("resend otp")
+                print(json)
+            })
+        }
+        
     }
     
     @IBAction func enrollmentmembersCall(sender: AnyObject) {
-        if OTPStatus == 1 {
-            isVarifiedToEdit = true
-
-        gEnterOTPController.performSegueWithIdentifier("otpdonetoprofile", sender: nil)
-        }else{
-            rest.ConfirmOtp(String(UTF8String: self.enterOTP.text!)!, completion: {(json:JSON) -> () in
-                dispatch_sync(dispatch_get_main_queue()){
+        
+        rest.ConfirmOtp(String(UTF8String: self.enterOTP.text!)!, completion: {(json:JSON) -> () in
+            dispatch_sync(dispatch_get_main_queue()){
                 if json["state"] {
-                    let vc = gEnterOTPController.storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
-                    gEnterOTPController.presentViewController(vc, animated: true, completion: nil)
+                    if OTPStatus == 1 {
+                        isVarifiedToEdit = true
+                        
+                        gEnterOTPController.performSegueWithIdentifier("otpdonetoprofile", sender: nil)
+                    }else{
+                        let vc = gEnterOTPController.storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
+                        gEnterOTPController.presentViewController(vc, animated: true, completion: nil)
+                    }
                 }
-                }
-            })
-        }
+            }
+        })
     }
     
     @IBAction func otpBack(sender: AnyObject) {
@@ -75,7 +83,7 @@ class enterOTP: UIView {
             
             gEnterOTPController.performSegueWithIdentifier("otpdonetoprofile", sender: nil)
         }else if OTPStatus == 2{
-        gEnterOTPController.performSegueWithIdentifier("otpback", sender: nil)
+            gEnterOTPController.performSegueWithIdentifier("otpback", sender: nil)
         }
     }
 }

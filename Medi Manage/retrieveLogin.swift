@@ -8,11 +8,12 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 
 class retrieveLogin: UIView {
     
-    @IBOutlet weak var employeeID: UITextField!
-    @IBOutlet weak var dateOfBirth: UITextField!
+    @IBOutlet weak var mobileNo: UITextField!
+    @IBOutlet weak var password: UITextField!
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
@@ -38,21 +39,24 @@ class retrieveLogin: UIView {
         self.addSubview(sortnewview)
         
         // CALENDER ICON
-        let imageView = UIImageView()
-        let image = UIImage(named: "calender_black_icon")
-        imageView.image = image
-        imageView.frame = CGRect(x: dateOfBirth.frame.size.width + 15, y: 15, width: 20, height: 20)
-        dateOfBirth.addSubview(imageView)
         
-        addPadding(15, myView: employeeID)
-        addPadding(15, myView: dateOfBirth)
+        addPadding(15, myView: mobileNo)
+        addPadding(15, myView: password)
     }
     @IBAction func loginCall(sender: AnyObject) {
         gRetrieveLoginController.performSegueWithIdentifier("toeditprofile", sender: nil)
     }
     @IBAction func generateotpcall(sender: AnyObject) {
         OTPStatus = 1
-
-        gRetrieveLoginController.performSegueWithIdentifier("ProfileOTP", sender: nil)
+        forgotMobileNumber = String(self.mobileNo.text!)
+        profilePassword = String(self.password.text!)
+        rest.ClientSendOTP(String(self.mobileNo.text!), password: String(self.password.text!), completion: {(json:JSON) -> () in
+            dispatch_sync(dispatch_get_main_queue()){
+            print(json)
+            if json["state"] {
+                gRetrieveLoginController.performSegueWithIdentifier("ProfileOTP", sender: nil)
+            }
+            }
+        })
     }
 }

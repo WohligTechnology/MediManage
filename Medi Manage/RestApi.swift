@@ -538,6 +538,34 @@ public class RestApi {
     }
     
     
+    public func ClientSendOTP(mobileno : String!, password : String!, completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        
+        let token = defaultToken.stringForKey("access_token")
+        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
+        print(apiURL + "Users/ClientSendOTP/\(mobileno)/\(password)")
+        do {
+            let opt = try HTTP.GET(apiURL + "Users/ClientSendOTP/\(mobileno)/\(password)" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            
+            opt.start { response in
+                if let _ = response.error {
+                    completion(json);
+                }
+                else
+                {
+                    json  = JSON(data: response.data)
+                    completion(json);
+                }
+            }
+        } catch _ {
+            print("out side ")
+            completion(json);
+        }
+        
+    }
+    
+    
     public func ConfirmOtp(code : String!, completion:((JSON) -> Void))
     {
         var json = JSON(1)
