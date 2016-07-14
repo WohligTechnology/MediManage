@@ -33,6 +33,7 @@ class BenefitSummaryController: UIViewController, UITableViewDataSource, UITabBa
         mainsubHeader.subHeaderTitle.text = "BENEFIT SUMMARY"
         self.view.addSubview(mainsubHeader)
         gBenefitSummaryController = self
+        self.displayNavBarActivity()
         rest.BenefitSummery({(json:JSON) -> () in
             print(json["result"]["SalientFeatures"])
             self.myBenefits = json["result"]

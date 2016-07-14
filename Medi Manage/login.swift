@@ -14,6 +14,7 @@ import Alamofire
 class login: UIView {
     
     var TestId = "Test7_19901122"
+    //mobile no 7208372744
     var TestPWD = "123456"
 
   
@@ -22,8 +23,12 @@ class login: UIView {
     }
     
     
+    @IBAction func retrieveLogin(sender: AnyObject) {
+        gLoginController.performSegueWithIdentifier("requestOTP", sender: nil)
+    }
     @IBOutlet weak var mobile: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var Loader: UIActivityIndicatorView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

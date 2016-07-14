@@ -14,11 +14,13 @@
         </mutableArray>
         <mutableArray key="Lato-Regular.ttf">
             <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
         </mutableArray>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="generateOTP" customModule="MediManage" customModuleProvider="target">
             <connections>
+                <outlet property="countryCode" destination="YX2-rZ-N2E" id="QtW-KY-5N8"/>
                 <outlet property="mobileNumber" destination="qHT-hX-UHs" id="xVd-Yc-hP6"/>
                 <outlet property="multiColor" destination="HBT-EJ-xaV" id="OUm-U4-NYu"/>
             </connections>
@@ -71,7 +73,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvN-Dk-s74">
-                    <rect key="frame" x="44" y="372" width="232" height="50"/>
+                    <rect key="frame" x="44" y="412" width="232" height="50"/>
                     <color key="backgroundColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="WFF-3H-h8Y"/>
@@ -123,7 +125,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qoy-MA-Wba">
-                    <rect key="frame" x="140" y="432" width="40" height="29"/>
+                    <rect key="frame" x="140" y="472" width="40" height="29"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="40" id="lBz-No-IfN"/>
                     </constraints>
@@ -132,6 +134,20 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Country Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YX2-rZ-N2E">
+                    <rect key="frame" x="26" y="346" width="268" height="50"/>
+                    <color key="backgroundColor" white="1" alpha="0.40272090519999998" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="gKE-CU-miy"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -141,16 +157,19 @@
                 <constraint firstItem="D3w-oB-nuq" firstAttribute="leading" secondItem="PiS-sx-5ey" secondAttribute="leading" id="3uO-SQ-LrS"/>
                 <constraint firstAttribute="trailing" secondItem="hvN-Dk-s74" secondAttribute="trailing" constant="44" id="4VQ-Lw-vh4"/>
                 <constraint firstItem="qHT-hX-UHs" firstAttribute="top" secondItem="HBT-EJ-xaV" secondAttribute="bottom" constant="15" id="6b5-KD-KwR"/>
+                <constraint firstItem="YX2-rZ-N2E" firstAttribute="leading" secondItem="qHT-hX-UHs" secondAttribute="leading" id="6th-4f-Oyj"/>
                 <constraint firstAttribute="trailing" secondItem="qHT-hX-UHs" secondAttribute="trailing" constant="26" id="E8w-2H-ZST"/>
                 <constraint firstAttribute="bottom" secondItem="D3w-oB-nuq" secondAttribute="bottom" id="Lqp-nZ-YJ7"/>
-                <constraint firstItem="hvN-Dk-s74" firstAttribute="top" secondItem="qHT-hX-UHs" secondAttribute="bottom" constant="40" id="NZk-qA-QA0"/>
                 <constraint firstAttribute="trailing" secondItem="D3w-oB-nuq" secondAttribute="trailing" id="QdL-do-pau"/>
                 <constraint firstItem="HBT-EJ-xaV" firstAttribute="top" secondItem="Nfw-eO-hvR" secondAttribute="bottom" constant="40" id="S5E-PL-30K"/>
                 <constraint firstItem="Qoy-MA-Wba" firstAttribute="top" secondItem="hvN-Dk-s74" secondAttribute="bottom" constant="10" id="SVY-IX-p6v"/>
                 <constraint firstItem="CM3-DQ-qmD" firstAttribute="top" secondItem="PiS-sx-5ey" secondAttribute="top" constant="80" id="T0R-jf-fQ8"/>
                 <constraint firstItem="x18-v7-QX1" firstAttribute="top" secondItem="CM3-DQ-qmD" secondAttribute="bottom" constant="50" id="ZL4-AB-To8"/>
                 <constraint firstItem="hvN-Dk-s74" firstAttribute="leading" secondItem="PiS-sx-5ey" secondAttribute="leading" constant="44" id="ik5-mv-lEV"/>
+                <constraint firstItem="YX2-rZ-N2E" firstAttribute="top" secondItem="qHT-hX-UHs" secondAttribute="bottom" constant="14" id="lqj-WX-0ZI"/>
                 <constraint firstAttribute="trailing" secondItem="CM3-DQ-qmD" secondAttribute="trailing" id="r2a-LX-Zyj"/>
+                <constraint firstItem="YX2-rZ-N2E" firstAttribute="trailing" secondItem="qHT-hX-UHs" secondAttribute="trailing" id="sOv-Su-naJ"/>
+                <constraint firstItem="hvN-Dk-s74" firstAttribute="top" secondItem="YX2-rZ-N2E" secondAttribute="bottom" constant="16" id="stA-z8-Bpm"/>
                 <constraint firstItem="D3w-oB-nuq" firstAttribute="top" secondItem="PiS-sx-5ey" secondAttribute="top" id="wMb-zi-iY2"/>
                 <constraint firstItem="CM3-DQ-qmD" firstAttribute="leading" secondItem="PiS-sx-5ey" secondAttribute="leading" id="xpN-64-TDk"/>
                 <constraint firstItem="Qoy-MA-Wba" firstAttribute="centerX" secondItem="PiS-sx-5ey" secondAttribute="centerX" id="yLF-1d-SnM"/>

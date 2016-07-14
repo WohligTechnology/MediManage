@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 
 class enterOTP: UIView {
     
@@ -44,7 +45,37 @@ class enterOTP: UIView {
         resetOTP.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.25).CGColor
         multiColor.font = UIFont(name: "Lato-Bold", size: 11.0)
     }
+    
+    @IBAction func resendOTP(sender: AnyObject) {
+        rest.SendOtp(forgotMobileNumber, countrycode: forgotCountryCode, completion: {(json:JSON) -> () in
+            print("resend otp")
+            print(json)
+        })
+    }
+    
     @IBAction func enrollmentmembersCall(sender: AnyObject) {
-        gEnterOTPController.performSegueWithIdentifier("enrollementMember", sender: nil)
+        if OTPStatus == 1 {
+            isVarifiedToEdit = true
+
+        gEnterOTPController.performSegueWithIdentifier("otpdonetoprofile", sender: nil)
+        }else{
+            rest.ConfirmOtp(String(UTF8String: self.enterOTP.text!)!, completion: {(json:JSON) -> () in
+                dispatch_sync(dispatch_get_main_queue()){
+                if json["state"] {
+                    let vc = gEnterOTPController.storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
+                    gEnterOTPController.presentViewController(vc, animated: true, completion: nil)
+                }
+                }
+            })
+        }
+    }
+    
+    @IBAction func otpBack(sender: AnyObject) {
+        if OTPStatus == 1 {
+            
+            gEnterOTPController.performSegueWithIdentifier("otpdonetoprofile", sender: nil)
+        }else if OTPStatus == 2{
+        gEnterOTPController.performSegueWithIdentifier("otpback", sender: nil)
+        }
     }
 }

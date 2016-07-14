@@ -137,6 +137,9 @@
                     <state key="normal" title="Back">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="otpBack:" destination="-1" eventType="touchUpInside" id="5in-Go-S2j"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIa-M8-oek">
                     <rect key="frame" x="100" y="343" width="120" height="28"/>
@@ -149,6 +152,9 @@
                     <state key="normal" title="Resend OTP" image="icon-reset">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="resendOTP:" destination="-1" eventType="touchUpInside" id="BfM-Cm-Zli"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

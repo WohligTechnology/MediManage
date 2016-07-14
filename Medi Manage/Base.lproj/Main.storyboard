@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xMa-F4-Ivl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="A4M-Ka-07a">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -124,6 +124,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <segue destination="byF-rF-bm6" kind="show" identifier="requestOTP" id="2ZW-OI-RRj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -173,24 +176,18 @@
                         <viewControllerLayoutGuide type="bottom" id="k7x-cx-Hy3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mDh-ci-A7w" customClass="completeProfile" customModule="MediManage" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q1L-Cx-ENw">
-                                <rect key="frame" x="137" y="395" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="hoJ-8d-wib" kind="show" identifier="retrieveLogin" id="wCg-Oo-rqh"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="hoJ-8d-wib" kind="show" identifier="requestOTP" id="uIz-o6-828"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="67M-md-p9M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1048" y="-457"/>
+            <point key="canvasLocation" x="-1048" y="-476"/>
         </scene>
         <!--Retrieve Login Controller-->
         <scene sceneID="rTg-MV-Mil">
@@ -201,31 +198,19 @@
                         <viewControllerLayoutGuide type="bottom" id="kHv-YM-lu7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KUg-df-9hQ" customClass="retrieveLogin" customModule="MediManage" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDO-o9-QQ7">
-                                <rect key="frame" x="224" y="419" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="retrieveProfileToLogin" id="PAS-j4-dnW"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKh-AH-94u">
-                                <rect key="frame" x="78" y="370" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="byF-rF-bm6" kind="show" identifier="generateotp" id="d8J-3w-SrK"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="0gz-Ph-Qzj" kind="show" identifier="toeditprofile" id="urc-lb-xCt"/>
+                        <segue destination="1Ua-DA-seN" kind="show" identifier="ProfileOTP" id="rkO-mx-6RX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yVI-Vg-TYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1062" y="116"/>
+            <point key="canvasLocation" x="-663" y="-476"/>
         </scene>
         <!--GenerateOTP Controller-->
         <scene sceneID="Exh-M4-Th5">
@@ -236,24 +221,18 @@
                         <viewControllerLayoutGuide type="bottom" id="v18-H1-J9J"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="CS6-Vb-ABS" customClass="generateOTP" customModule="MediManage" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBQ-2F-JZu">
-                                <rect key="frame" x="137" y="359" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="1Ua-DA-seN" kind="show" identifier="enterotp" id="rhB-Cb-D2V"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="1Ua-DA-seN" kind="show" identifier="toOTPPage" id="ATe-en-caw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YdL-NB-sw9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-671" y="116"/>
+            <point key="canvasLocation" x="-1224" y="266"/>
         </scene>
         <!--EnterOTP Controller-->
         <scene sceneID="Ahs-kc-Wh7">
@@ -264,24 +243,19 @@
                         <viewControllerLayoutGuide type="bottom" id="r50-QP-NRd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="atN-gy-3f2" customClass="enterOTP" customModule="MediManage" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDE-aA-ctG">
-                                <rect key="frame" x="137" y="357" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="crn-Bn-ORl" kind="show" identifier="enrollementMember" id="BJn-bS-hy2"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="byF-rF-bm6" kind="show" identifier="otpback" id="EUu-gW-ibJ"/>
+                        <segue destination="0gz-Ph-Qzj" kind="show" identifier="otpdonetoprofile" id="Eiz-Hr-JbP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pHq-dy-qGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-671" y="789"/>
+            <point key="canvasLocation" x="-663" y="272"/>
         </scene>
         <!--Enrollment Members Controller-->
         <scene sceneID="D1A-DN-M9H">
@@ -1230,11 +1204,11 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <viewControllerLayoutGuide type="bottom" id="vxf-Rx-VbC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IZ3-Hc-IkU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Y6D-Pf-4Kl">
-                                <rect key="frame" x="-4" y="100" width="326" height="330"/>
+                                <rect key="frame" x="-4" y="100" width="326" height="281"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1358,7 +1332,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <viewControllerLayoutGuide type="bottom" id="Yyw-Wm-zBW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Fom-Uq-lQc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8X-de-LBf">
@@ -1416,7 +1390,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MUk-6G-wR1">
-                                <rect key="frame" x="-4" y="195" width="328" height="285"/>
+                                <rect key="frame" x="-4" y="195" width="328" height="236"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="85" id="PrS-6N-cFu" customClass="documentChecklistUIViewCell" customModule="MediManage" customModuleProvider="target">
@@ -1510,15 +1484,21 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <viewControllerLayoutGuide type="bottom" id="EBu-DH-PxI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="oOc-jl-nLT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c3H-ab-2g0">
-                                <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c3H-ab-2g0">
+                                <rect key="frame" x="0.0" y="20" width="320" height="362"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="c3H-ab-2g0" firstAttribute="leading" secondItem="oOc-jl-nLT" secondAttribute="leading" id="0zw-oQ-Nld"/>
+                            <constraint firstItem="EBu-DH-PxI" firstAttribute="top" secondItem="c3H-ab-2g0" secondAttribute="bottom" constant="49" id="R4b-JZ-k1n"/>
+                            <constraint firstItem="c3H-ab-2g0" firstAttribute="top" secondItem="561-iO-PQl" secondAttribute="bottom" constant="20" id="ai5-TN-d19"/>
+                            <constraint firstAttribute="trailing" secondItem="c3H-ab-2g0" secondAttribute="trailing" id="dZs-PU-x1t"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
@@ -3155,7 +3135,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kLD-P0-FCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-300" y="789"/>
+            <point key="canvasLocation" x="-98" y="741"/>
         </scene>
     </scenes>
     <resources>
@@ -3179,9 +3159,12 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
         <image name="triangle_white" width="30" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Oo4-D3-Nsi"/>
-        <segue reference="s1I-qw-2n8"/>
         <segue reference="QCt-6c-YRM"/>
         <segue reference="wgK-eO-Wod"/>
+        <segue reference="Usm-li-CcL"/>
+        <segue reference="LXm-Lb-FcH"/>
+        <segue reference="2ZW-OI-RRj"/>
+        <segue reference="ATe-en-caw"/>
+        <segue reference="Eiz-Hr-JbP"/>
     </inferredMetricsTieBreakers>
 </document>

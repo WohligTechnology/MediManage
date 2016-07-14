@@ -23,10 +23,14 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
     @IBOutlet weak var mobileNumber: UITextField!
     @IBOutlet weak var maritalStatus: UITextField!
     @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var countryCode: UITextField!
+    @IBOutlet weak var profileButton: UIButton!
     var status = ["Married","Single"]
+    var codes = ["91","92","93","94"]
+    var userDetail : JSON = ""
     
-    let pickerView = UIPickerView()
+    let maritalPickerView = UIPickerView()
+    let codePickerView = UIPickerView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -63,28 +67,69 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
         let imageView = UIImageView()
         let image = UIImage(named: "triangle_orange")
         imageView.image = image
+        
+        let imageView1 = UIImageView()
+        let image1 = UIImage(named: "triangle_orange")
+        imageView1.image = image1
+        
         imageView.frame = CGRect(x: maritalStatus.frame.size.width + 30, y: 20, width: 10, height: 10)
         maritalStatus.addSubview(imageView)
         
+        imageView1.frame = CGRect(x: countryCode.frame.size.width + 30, y: 20, width: 10, height: 10)
+        countryCode.addSubview(imageView1)
+        
         rest.GetProfile({(json:JSON) -> () in
+            dispatch_async(dispatch_get_main_queue(),{
+                self.userDetail = json["result"]
+
             self.txtFullName.text = json["result"]["FullName"].stringValue
             self.txtEmployeeNo.text = json["result"]["EmployeeNumber"].stringValue
             self.txtDateofBirth.text = json["result"]["DateOfBirth"].stringValue
             self.mobileNumber.text = json["result"]["MobileNo"].stringValue
             self.email.text = json["result"]["Email"].stringValue
+            self.maritalStatus.text = json["result"]["MaritalStatus"].stringValue
+            self.countryCode.text = json["result"]["CountryCode"].stringValue
+            if json["result"]["MaritalStatus"].stringValue == "Married"
+                {
+                    self.maritalPickerView.selectRow(0, inComponent: 0, animated: true)
+                }else{
+                    self.maritalPickerView.selectRow(1, inComponent: 0, animated: true)
+                }
+            })
         })
         
+        if isVarifiedToEdit
+            {
+                self.profileButton.setTitle("Submit", forState: .Normal)
+                self.mobileNumber.enabled = true
+                self.maritalStatus.enabled = true
+                self.email.enabled = true
+                self.countryCode.enabled = true
+            }else{
+                self.profileButton.setTitle("Edit", forState: .Normal)
+            
+                self.mobileNumber.enabled = false
+                self.maritalStatus.enabled = false
+                self.email.enabled = false
+            self.countryCode.enabled = false
+            }
+        
         // dropdown list
-        pickerView.delegate = self
-        maritalStatus.inputView = pickerView
+        maritalPickerView.delegate = self
+        maritalStatus.inputView = maritalPickerView
         maritalStatus.delegate = self
+        
+        codePickerView.delegate = self
+        countryCode.inputView = codePickerView
+        countryCode.delegate = self
+        
         let toolBar = UIToolbar()
         toolBar.barStyle = UIBarStyle.Default
         toolBar.translucent = true
         toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
         toolBar.sizeToFit()
         
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "donePicker")
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(completeProfile.donePicker))
         
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
         
@@ -92,6 +137,7 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
         toolBar.userInteractionEnabled = true
         
         maritalStatus.inputAccessoryView = toolBar
+        countryCode.inputAccessoryView = toolBar
 
         
         completeProfileMainView.frame = CGRectMake(0, 20, self.frame.size.width, self.frame.size.height)
@@ -103,7 +149,7 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
         addBottomBorder(UIColor.blackColor(), linewidth: 1, myView: mobileNumber)
         addBottomBorder(UIColor.blackColor(), linewidth: 1, myView: maritalStatus)
         addBottomBorder(UIColor.blackColor(), linewidth: 1, myView: email)
-        addBottomBorder(UIColor.blackColor(), linewidth: 1, myView: password)
+        addBottomBorder(UIColor.blackColor(), linewidth: 1, myView: countryCode)
        
       
         }
@@ -111,15 +157,28 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
         return 1
     }
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return status.count
+        if pickerView == maritalPickerView{
+            return status.count
+        }else{
+            return codes.count
+        }
     }
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return status[row]
+        if pickerView == maritalPickerView{
+            return status[row]
+        }else{
+            return codes[row]
+        }
     }
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        maritalStatus.text = status[row]
+        if pickerView == maritalPickerView {
+            maritalStatus.text = status[row]
+        }else{
+            countryCode.text = codes[row]
+        }
     }
     func donePicker(){
+        countryCode.resignFirstResponder()
         maritalStatus.resignFirstResponder()
     }
     
@@ -129,14 +188,20 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
     
     
     @IBAction func retrieveLoginCall(sender: AnyObject) {
-        
-      let mobileNo = String(mobileNumber.text)
-      let pass = String(password.text)
-        rest.SendOtp("ClientSendOTP/", mobileno: mobileNo, password: pass, completion: {(json) -> () in
-        print(json)
-        })
        
-      //  gCompleteProfileController.performSegueWithIdentifier("retrieveLogin", sender: nil)
+        if profileButton.titleLabel?.text == "Submit" {
+            self.userDetail["CountryCode"].stringValue = self.countryCode.text! as String
+            self.userDetail["MobileNo"].stringValue = self.mobileNumber.text! as String
+            self.userDetail["MaritalStatus"].stringValue = self.maritalStatus.text! as String
+            self.userDetail["Email"].stringValue = self.email.text! as String
+            print(self.userDetail)
+            rest.UpdateProfile(self.userDetail, completion: {(json:JSON) -> () in
+                print(json)
+            })
+            
+        }else{
+            gCompleteProfileController.performSegueWithIdentifier("requestOTP", sender: nil)
+        }
     
     
 }

@@ -12,6 +12,8 @@ var gRetrieveLoginController: UIViewController!
 
 class RetrieveLoginController: UIViewController {
 
+    @IBOutlet weak var mobiletxt: UITextField!
+    @IBOutlet weak var passwordtxt: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         gRetrieveLoginController = self
@@ -24,7 +26,15 @@ class RetrieveLoginController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func GenerateOTP(sender: AnyObject) {
+        isVarifiedToEdit = true
+        print(isVarifiedToEdit)
+        self.performSegueWithIdentifier("toeditprofile", sender: nil)
+    }
 
+    @IBAction func BackBtn(sender: AnyObject) {
+        self.performSegueWithIdentifier("toeditprofile", sender: nil)
+    }
     /*
     // MARK: - Navigation
 

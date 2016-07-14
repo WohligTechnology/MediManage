@@ -16,7 +16,7 @@ class TutorialController: UIViewController {
         super.viewDidLoad()
         
         gTutorialController = self
-        
+        self.displayNavBarActivity()
         // Do any additional setup after loading the view.
     }
 

@@ -137,13 +137,13 @@ class signup: UIView, UITextFieldDelegate {
                           // VC.
                           //  self.presentViewController(VC, animated: true , completion: nil)
                           
-                            
-                                VC.FullName = String(json["result"]["FullName"])
-                                VC.EmployeeNo =  String(json["result"]["EmployeeNumber"])
-                                VC.DateOfBirth = String(json["result"]["DateOfBirth"])
-                                VC.Email = String(json["result"]["Email"])
-                                VC.EmployeeID = String(json["result"]["EmployeeID"])
-                                VC.MaritalStatus  = String(json["result"]["MaritalStatus"])
+//                            
+//                                VC.FullName = String(json["result"]["FullName"])
+//                                VC.EmployeeNo =  String(json["result"]["EmployeeNumber"])
+//                                VC.DateOfBirth = String(json["result"]["DateOfBirth"])
+//                                VC.Email = String(json["result"]["Email"])
+//                                VC.EmployeeID = String(json["result"]["EmployeeID"])
+//                                VC.MaritalStatus  = String(json["result"]["MaritalStatus"])
                             
                           //  gSignupController.performSegueWithIdentifier("completeProfile", sender: nil)
                             

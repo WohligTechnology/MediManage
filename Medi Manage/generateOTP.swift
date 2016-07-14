@@ -8,11 +8,13 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 
 class generateOTP: UIView, UITextViewDelegate {
     
     @IBOutlet weak var mobileNumber: UITextField!
     @IBOutlet weak var multiColor: UILabel!
+    @IBOutlet weak var countryCode: UITextField!
     
     let allowNumbers = 10
     
@@ -43,12 +45,20 @@ class generateOTP: UIView, UITextViewDelegate {
         addPadding(15, myView: mobileNumber)
         multiColor.font = UIFont(name: "Lato-Bold", size: 11.0)
         
-//        if (mobileNumber.text?.characters.count > allowNumbers) {
-//            let alert = UIAlertController(title: "", mess)
-//        }
-        
     }
+    
     @IBAction func enterotpCall(sender: AnyObject) {
-        gGenerateOTPController.performSegueWithIdentifier("enterotp", sender: nil)
+        
+        OTPStatus = 2
+        forgotMobileNumber? = String(UTF8String: self.mobileNumber.text!)!
+        forgotCountryCode? = String(UTF8String: self.countryCode.text!)!
+
+        rest.SendOtp(String(UTF8String: self.mobileNumber.text!)!, countrycode: String(UTF8String: self.countryCode.text!)!, completion: {(json:JSON) -> () in
+            dispatch_async(dispatch_get_main_queue()){
+                if json["state"]{
+                    gGenerateOTPController.performSegueWithIdentifier("toOTPPage", sender: nil)
+                }
+            }
+        })
     }
 }

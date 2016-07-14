@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-@IBDesignable class retrieveLogin: UIView {
+class retrieveLogin: UIView {
     
     @IBOutlet weak var employeeID: UITextField!
     @IBOutlet weak var dateOfBirth: UITextField!
@@ -48,9 +48,11 @@ import UIKit
         addPadding(15, myView: dateOfBirth)
     }
     @IBAction func loginCall(sender: AnyObject) {
-        gRetrieveLoginController.performSegueWithIdentifier("retrieveProfileToLogin", sender: nil)
+        gRetrieveLoginController.performSegueWithIdentifier("toeditprofile", sender: nil)
     }
     @IBAction func generateotpcall(sender: AnyObject) {
-        gRetrieveLoginController.performSegueWithIdentifier("generateotp", sender: nil)
+        OTPStatus = 1
+
+        gRetrieveLoginController.performSegueWithIdentifier("ProfileOTP", sender: nil)
     }
 }

@@ -20,6 +20,10 @@ let mainBlueColor = UIColor(red: 21/255, green: 177/255, blue: 230/255, alpha: 2
 let rest = RestApi()
 var categoryId : String = ""
 var pdfname : String = ""
+var isVarifiedToEdit : BooleanType = false
+var forgotMobileNumber : String! = ""
+var forgotCountryCode : String! = ""
+var OTPStatus = 0 // 1 : from profile 2: forgot passwordSendOtp
 struct defaultsKeys {
     static let token = ""
     static let keyTwo = "secondStringKey"
@@ -92,5 +96,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+extension UIViewController {
+    func displayNavBarActivity() {
+        let indicator = UIActivityIndicatorView(activityIndicatorStyle: .White)
+        indicator.startAnimating()
+        let item = UIBarButtonItem(customView: indicator)
+        
+        self.navigationItem.leftBarButtonItem = item
+    }
+    
+    func dismissNavBarActivity() {
+        self.navigationItem.leftBarButtonItem = nil
+    }
 }
 

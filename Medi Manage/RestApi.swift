@@ -47,16 +47,7 @@ public class RestApi {
         var json = JSON(1);
         print(json)
         let params = ["grant_type": "password","username":username, "password":password]
-      
-    
-        
-        
-        
-      /*  [{"isSelected": "true", "FirstName": "Niruben", "MiddleName": "R", "RelationType": "Wife", "DateOfRelation": "2016-04-01", "SystemIdentifier": "S", "LastName": "Patel", "DateOfBirth": "1975-01-29"},
-        "isSelected": "true", "FirstName": "Ravi", "MiddleName": "R", "RelationType": "Son", "DateOfRelation": "null", "SystemIdentifier": "C", "LastName": "Patel", "DateOfBirth": "1997-10-04"]
-      
-        */
-      let header = ["Content-Type":"application/x-www-form-urlencoded"]
+            let header = ["Content-Type":"application/x-www-form-urlencoded"]
         
         do {
             let opt = try HTTP.POST(adminUrl + "token", parameters: params, requestSerializer: JSONParameterSerializer(), headers:header)
@@ -171,6 +162,7 @@ public class RestApi {
         let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         
          let params = ["data": "\(data)"]
+        print(params)
         do {
             let opt = try HTTP.POST(apiURL+"Users/UpdateProfile" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
             opt.start { response in
@@ -522,11 +514,36 @@ public class RestApi {
     
 
    
-    public func SendOtp(SUBURL :String,mobileno : String, password : String, completion:((JSON) -> Void))
+    public func SendOtp(mobileno : String!, countrycode : String!, completion:((JSON) -> Void))
     {
             var json = JSON(1)
         do {
-            let opt = try HTTP.GET(apiURL + SUBURL + "({\(mobileno)}/{\(password)})" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:["header":"application/json"])
+            let opt = try HTTP.GET(apiURL + "Users/SendOTP/\(countrycode)/\(mobileno)" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:["header":"application/json"])
+            
+            opt.start { response in
+                if let _ = response.error {
+                    completion(json);
+                }
+                else
+                {
+                    json  = JSON(data: response.data)
+                    completion(json);
+                }
+            }
+        } catch _ {
+            print("out side ")
+            completion(json);
+        }
+        
+    }
+    
+    
+    public func ConfirmOtp(code : String!, completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        print(apiURL + "Users/ConfirmOTP/\(forgotMobileNumber!)/\(code)")
+        do {
+            let opt = try HTTP.GET(apiURL + "Users/ConfirmOTP/\(forgotMobileNumber)/\(code)" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers: nil)
             opt.start { response in
                 if let _ = response.error {
                     completion(json);

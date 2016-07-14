@@ -28,13 +28,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="completeProfile" customModule="MediManage" customModuleProvider="target">
             <connections>
                 <outlet property="completeProfileMainView" destination="iN0-l3-epB" id="DkH-br-tpt"/>
+                <outlet property="countryCode" destination="aWb-xT-ceH" id="EmS-VG-c4a"/>
                 <outlet property="dateOfBirth" destination="iyf-pN-pZR" id="uwF-XZ-5Ko"/>
-                <outlet property="email" destination="GzS-bR-o7C" id="BQe-Xv-hMn"/>
+                <outlet property="email" destination="rh3-OG-6LO" id="BVa-iD-Muh"/>
                 <outlet property="employeeNumber" destination="Byo-Ot-41E" id="bJc-sC-6WC"/>
                 <outlet property="fullName" destination="YrV-IL-y58" id="tf7-hS-sKJ"/>
-                <outlet property="maritalStatus" destination="pe4-36-10D" id="CgU-dM-z4d"/>
-                <outlet property="mobileNumber" destination="aWb-xT-ceH" id="I7Y-G1-uNF"/>
-                <outlet property="password" destination="rh3-OG-6LO" id="0l7-VE-gc2"/>
+                <outlet property="maritalStatus" destination="GzS-bR-o7C" id="wNz-d0-b3h"/>
+                <outlet property="mobileNumber" destination="pe4-36-10D" id="ySI-Kn-iqw"/>
+                <outlet property="profileButton" destination="b8G-fA-Yw6" id="cpv-QM-HE6"/>
                 <outlet property="txtDateofBirth" destination="Wnr-hS-IUt" id="qeW-GQ-WuB"/>
                 <outlet property="txtEmployeeNo" destination="6XK-BG-Wq3" id="nIM-q2-pHE"/>
                 <outlet property="txtFullName" destination="Cp5-GK-myM" id="HXv-Rs-9ov"/>
@@ -125,7 +126,7 @@
                         <constraint firstItem="WBr-He-bX4" firstAttribute="leading" secondItem="iyf-pN-pZR" secondAttribute="leading" constant="8" id="ub3-w2-DY2"/>
                     </constraints>
                 </view>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Marital Status" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pe4-36-10D">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pe4-36-10D">
                     <rect key="frame" x="20" y="241" width="280" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="Ric-Zx-B8f"/>
@@ -138,7 +139,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GzS-bR-o7C">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Marital Status" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GzS-bR-o7C">
                     <rect key="frame" x="20" y="295" width="280" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="KXb-wb-CEH"/>
@@ -190,7 +191,7 @@
                         <constraint firstAttribute="height" constant="29" id="md3-gu-Skt"/>
                     </constraints>
                 </view>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aWb-xT-ceH">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Country Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aWb-xT-ceH">
                     <rect key="frame" x="20" y="187" width="280" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="XVU-po-z0F"/>
@@ -203,8 +204,8 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rh3-OG-6LO">
-                    <rect key="frame" x="20" y="347" width="280" height="44"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rh3-OG-6LO">
+                    <rect key="frame" x="20" y="349" width="280" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="eHH-gi-smk"/>
                     </constraints>
