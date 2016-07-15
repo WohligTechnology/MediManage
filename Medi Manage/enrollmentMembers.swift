@@ -44,7 +44,8 @@ class enrollmentMembers: UIView{
     @IBOutlet weak var addChildrensecond: UIImageView!
     
     var hotjson : JSON  = ""
-    
+    var memberjson : JSON = [["LastName":"","Gender":"1","SystemIdentifier":"E"],["LastName":"","Gender":"1","SystemIdentifier":"E"]]
+    var newjson : JSON = ["LastName":"","Gender":"1","SystemIdentifier":"E"]
     
     var dateDob = ""
     var datePickerView:UIDatePicker = UIDatePicker()
@@ -124,22 +125,24 @@ class enrollmentMembers: UIView{
         EnableAllRow()
         ApplyChangesTextField()
         tapImageGesture()
+        print("???????????????????????????????????")
+        print(memberjson[0])
+        memberjson.arrayObject?.append(newjson.object)
         
-        
+                print(memberjson)
         
         
         rest.findEmployeeProfile("Enrollments/IsEnrolled",completion: {(json:JSON) -> ()in
             
-            if(json == true)
-            {
-                
-            }
-            else{
+//            if(json == true)
+//            {
+//                
+//            }
+//            else{
                 rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
                     dispatch_async(dispatch_get_main_queue(),
 
                         {
-                            print(json)
                             self.mainjson = json
                             
                             if(json["MaritalStatus"]){
@@ -156,7 +159,8 @@ class enrollmentMembers: UIView{
                                 self.DisplayEnrollmentsDetails()
                                 //  print(json)
                             }})})
-            }})}
+//            }
+        })}
     
     
     func EnableAllRow()
@@ -432,7 +436,7 @@ class enrollmentMembers: UIView{
         let mainheader = header(frame: CGRectMake(0, 20, width, 50))
         self.addSubview(mainheader)
         
-        enrollmentMembersMainView.frame = CGRectMake(0, 70, self.frame.size.width, self.frame.size.height - 70);
+//        enrollmentMembersMainView.frame = CGRectMake(0, 70, self.frame.size.width, self.frame.size.height - 70);
         
         //add borders
         addBottomBorder(UIColor.blackColor(), width: 1, myView: personOneFirstName)

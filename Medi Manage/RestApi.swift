@@ -113,23 +113,45 @@ public class RestApi {
         return man
     }()
     
+//    public func findEmployeeProfile(SUBURL : String,completion:((JSON) -> Void))
+//    {
+//        var json = JSON(1)
+//        let token = defaultToken.stringForKey("access_token")
+//        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]       
+//        Manager.request(.GET, apiURL+SUBURL ,parameters: nil, headers: isLoginheader)
+//            .responseJSON { response in
+////                print(response)
+//               // debugPrint(response)
+//                json = JSON(data: response.data!)
+//                //print(json["access_token"])
+//                completion(json)
+//               // print(json)
+//                
+//        }}
+    
     public func findEmployeeProfile(SUBURL : String,completion:((JSON) -> Void))
     {
         var json = JSON(1)
+        
         let token = defaultToken.stringForKey("access_token")
         let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
-        print("authentication")
-        print(isLoginheader)
-       
-        Manager.request(.GET, apiURL+SUBURL ,parameters: nil, headers: isLoginheader)
-            .responseJSON { response in
-               // debugPrint(response)
-                json = JSON(data: response.data!)
-                //print(json["access_token"])
-                completion(json)
-               // print(json)
-                
-        }}
+        
+        do {
+            let opt = try HTTP.GET(apiURL+SUBURL , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            opt.start { response in
+                if let _ = response.error {
+                    completion(json);
+                }
+                else
+                {
+                    json  = JSON(data: response.data)
+                    completion(json);
+                }
+            }
+        } catch _ {
+            completion(json);
+        }
+    }
     
     public func GetProfile(completion:((JSON) -> Void))
     {

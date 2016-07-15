@@ -145,6 +145,8 @@
 		C2DCB0F01D1D4A71004FD787 /* SIParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DCB0EF1D1D4A71004FD787 /* SIParameters.swift */; };
 		C2DCB0F21D1D4C42004FD787 /* ResetPasswordDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DCB0F11D1D4C42004FD787 /* ResetPasswordDTO.swift */; };
 		C2DCB0F41D1D4CF1004FD787 /* GroupTopupSiDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DCB0F31D1D4CF1004FD787 /* GroupTopupSiDTO.swift */; };
+		FC3C2EBB1D37C7DB000DAD18 /* enrollmentMembersRenew.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC3C2EBA1D37C7DB000DAD18 /* enrollmentMembersRenew.xib */; };
+		FC3C2EBD1D37C80E000DAD18 /* enrollmentMembersRenew.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3C2EBC1D37C80E000DAD18 /* enrollmentMembersRenew.swift */; };
 		FCB8016D1D2B7EF200F9226F /* memberListHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB8016C1D2B7EF200F9226F /* memberListHeader.xib */; };
 		FCB8016F1D2B7FB200F9226F /* memberListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8016E1D2B7FB200F9226F /* memberListHeader.swift */; };
 		FCB801721D2BB62B00F9226F /* relationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB801711D2BB62B00F9226F /* relationView.xib */; };
@@ -326,6 +328,8 @@
 		C42FA52A5495CA29BD934BCF /* Pods_MediManageUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediManageUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D759717CAF6EE7B65953226B /* Pods_MediManage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediManage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAE1C269713C6CE4FA8D118 /* Pods-MediManage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediManage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MediManage/Pods-MediManage.debug.xcconfig"; sourceTree = "<group>"; };
+		FC3C2EBA1D37C7DB000DAD18 /* enrollmentMembersRenew.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = enrollmentMembersRenew.xib; sourceTree = "<group>"; };
+		FC3C2EBC1D37C80E000DAD18 /* enrollmentMembersRenew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enrollmentMembersRenew.swift; sourceTree = "<group>"; };
 		FCB8016C1D2B7EF200F9226F /* memberListHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = memberListHeader.xib; sourceTree = "<group>"; };
 		FCB8016E1D2B7FB200F9226F /* memberListHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = memberListHeader.swift; sourceTree = "<group>"; };
 		FCB801711D2BB62B00F9226F /* relationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = relationView.xib; sourceTree = "<group>"; };
@@ -805,6 +809,7 @@
 				783322911CD9F1A40015CE37 /* login */,
 				FCB801701D2B7FC400F9226F /* memberListHeader */,
 				FCB801751D2BB6E400F9226F /* relationView */,
+				FC3C2EBE1D37C81F000DAD18 /* enrollmentMembersRenew */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -893,6 +898,15 @@
 				C2A5845F1D262EAE00F6E0D5 /* EnumSets.swift */,
 			);
 			name = DTO;
+			sourceTree = "<group>";
+		};
+		FC3C2EBE1D37C81F000DAD18 /* enrollmentMembersRenew */ = {
+			isa = PBXGroup;
+			children = (
+				FC3C2EBA1D37C7DB000DAD18 /* enrollmentMembersRenew.xib */,
+				FC3C2EBC1D37C80E000DAD18 /* enrollmentMembersRenew.swift */,
+			);
+			name = enrollmentMembersRenew;
 			sourceTree = "<group>";
 		};
 		FCB801701D2B7FC400F9226F /* memberListHeader */ = {
@@ -1039,6 +1053,7 @@
 				3A8EFB511CE99EBA004489F3 /* hospitalSearch.xib in Resources */,
 				783322AD1CDB380C0015CE37 /* onboarding.xib in Resources */,
 				3A8EFB561CE9C3A3004489F3 /* inbox.xib in Resources */,
+				FC3C2EBB1D37C7DB000DAD18 /* enrollmentMembersRenew.xib in Resources */,
 				FCE15CDB1D34DF54009B49E2 /* Laboratory Payment Receipt.pdf in Resources */,
 				C2A59E901CDDDF700093CFEC /* Lato-Bold.ttf in Resources */,
 				C2A59E911CDDDF700093CFEC /* Lato-Hairline.ttf in Resources */,
@@ -1162,6 +1177,7 @@
 				3A677B631CE49F7F003B8C2B /* insuredMembersAll.swift in Sources */,
 				786DF9FC1CD214F300DDE769 /* ViewController.swift in Sources */,
 				43D6FF471CFEE7C2008361B2 /* pickDate.swift in Sources */,
+				FC3C2EBD1D37C80E000DAD18 /* enrollmentMembersRenew.swift in Sources */,
 				3AEEB01C1CE74C770085EEF5 /* helpDeskFAQ.swift in Sources */,
 				3A8EFB5D1CE9DE53004489F3 /* homeMenus.swift in Sources */,
 				3A481F351CE3151900BB8A73 /* premiumCalculation.swift in Sources */,
