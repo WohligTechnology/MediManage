@@ -3014,8 +3014,9 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="efB-XB-JTc">
                                                     <rect key="frame" x="3" y="8" width="322" height="58"/>
                                                     <color key="backgroundColor" red="0.98697105932906559" green="0.9995610626019632" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="oW1-wo-RR1">
-                                                        <size key="itemSize" width="50" height="50"/>
+                                                    <inset key="scrollIndicatorInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="82" id="oW1-wo-RR1">
+                                                        <size key="itemSize" width="90" height="50"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -3091,6 +3092,9 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="collectionView" destination="efB-XB-JTc" id="BtP-bt-3RQ"/>
+                                            <outlet property="doblbl" destination="Kz3-JT-QT7" id="LuN-F6-W4G"/>
+                                            <outlet property="domlbl" destination="MAU-Qn-sEr" id="yXl-aB-fYi"/>
+                                            <outlet property="namelbl" destination="NsT-oN-pfF" id="8YX-Pg-JqE"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -3118,7 +3122,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VfG-lo-faf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1656" y="2204"/>
+            <point key="canvasLocation" x="-1656" y="2203"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Lef-QB-KJs">

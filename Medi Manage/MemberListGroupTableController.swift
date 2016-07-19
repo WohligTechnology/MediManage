@@ -13,12 +13,15 @@ var gMemberListGroupTableController: UIViewController!
 
 class MemberListGroupTableController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var members : JSON = ""
+    var members : JSON = []
     var selectedIndexPath: NSIndexPath?
     var memcount = 0
     var storedOffsets = [Int: CGFloat]()
-
-
+    var celltable : UITableViewCell?
+    var tableindexpath: NSIndexPath!
+    
+    
+    
     @IBOutlet weak var ListTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,14 +40,15 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
         
         rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
             dispatch_async(dispatch_get_main_queue(),{
-                self.members = json["result"]["Groups"]
-                self.memcount = json["result"]["Groups"].count
+                self.members.arrayObject?.append(json["result"]["Groups"][0].object)
+                self.members.arrayObject?.append(json["result"]["Groups"][0].object)
+                self.memcount = self.members.count
                 self.ListTableView.reloadData()
             })
         })
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -57,9 +61,10 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        celltable = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! MemberListGroupCell
+        //        cell.namelbl
         
-        return cell
+        return celltable!
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -67,7 +72,9 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
         guard let tableViewCell = cell as? MemberListGroupCell else { return }
         
         tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
+        tableViewCell.tag = indexPath.row
         tableViewCell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
+        //        tableViewCell.namelbl.text = collectionvi
     }
     
     func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -76,32 +83,50 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
         
         storedOffsets[indexPath.row] = tableViewCell.collectionViewOffset
     }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableindexpath = indexPath
+        
+    }
     
 }
+
+
 extension MemberListGroupTableController: UICollectionViewDelegate, UICollectionViewDataSource{
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return members[collectionView.tag]["Members"].count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as membercollectioncell
         
-//        cell.backgroundColor = UIColor.blueColor()
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! membercollectioncell
         
-        
+        cell.namelbl.text = members[collectionView.tag]["Members"][indexPath.row]["RelationType"].stringValue
+        //        cell.namelbl.text = String(collectionView.tag)
+        cell.layer.borderWidth = 0.5
+        cell.frame.size.width = 90
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        print("Collection view at row \(collectionView.tag) selected index path \(indexPath)")
+        
+        let tableindexpath = NSIndexPath(forRow: collectionView.tag, inSection: 0)
+        
+        let cell = ListTableView.cellForRowAtIndexPath(tableindexpath) as! MemberListGroupCell
+        cell.namelbl?.text = members[collectionView.tag]["Members"][indexPath.row]["FirstName"].stringValue
+        cell.doblbl?.text = members[collectionView.tag]["Members"][indexPath.row]["DateOfBirth"].stringValue
+        cell.domlbl?.text = members[collectionView.tag]["Members"][indexPath.row]["DateOfRelation"].stringValue
+        
     }
 }
 
 
 class MemberListGroupCell: UITableViewCell {
     @IBOutlet private weak var collectionView: UICollectionView!
-
-
+    @IBOutlet weak var namelbl: UILabel!
+    @IBOutlet weak var doblbl: UILabel!
+    @IBOutlet weak var domlbl: UILabel!
+    
 }
 
 extension MemberListGroupCell {
@@ -114,7 +139,7 @@ extension MemberListGroupCell {
         collectionView.reloadData()
     }
     
-//    @IBOutlet weak var lbl: UILabel!
+    //    @IBOutlet weak var lbl: UILabel!
     var collectionViewOffset: CGFloat {
         set {
             collectionView.contentOffset.x = newValue
@@ -125,8 +150,9 @@ extension MemberListGroupCell {
         }
     }
     
-
+    
 }
+
 class membercollectioncell: UICollectionViewCell {
     
     @IBOutlet weak var namelbl: UILabel!

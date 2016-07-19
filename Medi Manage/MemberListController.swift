@@ -1,4 +1,4 @@
-//
+	//
 //  MemberListController.swift
 //  Medi Manage
 //
@@ -16,7 +16,7 @@ class MemberListController: UIViewController {
         super.viewDidLoad()
         gMemberListController = self
         // Do any additional setup after loading the view.
-    }
+    }   
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
