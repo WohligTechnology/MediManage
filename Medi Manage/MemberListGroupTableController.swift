@@ -11,11 +11,13 @@ import SwiftyJSON
 
 var gMemberListGroupTableController: UIViewController!
 
-class MemberListGroupTableController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource {
+class MemberListGroupTableController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var members : JSON = ""
     var selectedIndexPath: NSIndexPath?
     var memcount = 0
+    var storedOffsets = [Int: CGFloat]()
+
 
     @IBOutlet weak var ListTableView: UITableView!
     override func viewDidLoad() {
@@ -35,15 +37,12 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
         
         rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
             dispatch_async(dispatch_get_main_queue(),{
-                self.members = json
-                self.memcount = self.members["result"]["Groups"].count
+                self.members = json["result"]["Groups"]
+                self.memcount = json["result"]["Groups"].count
                 self.ListTableView.reloadData()
             })
         })
         
-        
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,122 +52,83 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(memcount)
-
-        return 3
-    }
-    
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        (cell as! MemberListGroupCell).watchFrameChanges()
-    }
-    
-    func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        (cell as! MemberListGroupCell).ignoreFrameChanges()
-    }
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        //        if indexPath.row == 0 {
-        //            return InsuredMemberCell.expandedHeight
-        //        }
-        if indexPath == selectedIndexPath {
-            return MemberListGroupCell.expandedHeight
-        } else {
-            return MemberListGroupCell.defaultHeight
-        }
-    }
-    var injson : JSON = ""
-    func memberClicked(sender: UIGestureRecognizer){
-//        print(sender.view.data)
-    }
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
-    }
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell",forIndexPath:indexPath) as! memberCollectionCell
-        return cell
+        return memcount
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let memlabel = UILabel()
-        memlabel.text = "demo"
-        let cell = tableView.dequeueReusableCellWithIdentifier("membergroupcell", forIndexPath: indexPath) as! MemberListGroupCell
-        cell.selectionStyle = .None
-        tableView.contentSize.height += 30
         
-        let memberInGroup = self.members["result"]["Groups"][indexPath.item]
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         
-//        for item in 0..<memberInGroup["Members"].count {
-//            print("in member")
-//            print(item)
-//            if String(memberInGroup["Members"][item]["RelationType"]) != "Self" {
-//                let relationtab = relationView(frame: CGRectMake(0, 20, width, 50))
-//                
-//                relationtab.memberLabel.text = String(memberInGroup["Members"][item]["RelationType"])
-//                relationtab.data = memberInGroup["Members"][item]
-//                cell.memberGroup.addArrangedSubview(relationtab)
-//                injson = memberInGroup["Members"][item]
-//                
-//                let memclick = UITapGestureRecognizer(target: self, action: #selector(self.memberClicked))
-//                relationtab.data = injson
-//                relationtab.addGestureRecognizer(memclick)
-//                
-////                relationtab.addTarget(self, action: #selector(self.textFieldDidChange(_:)) , forControlEvents: UIControlEvents.EditingChanged)
-//
-//            }
-//            
-//        
-//        }        
         return cell
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        guard let tableViewCell = cell as? MemberListGroupCell else { return }
+        
+        tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
+        tableViewCell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
     }
-    */
-
-}
-
-class memberCollectionCell: UICollectionViewCell {
+    
+    func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        guard let tableViewCell = cell as? MemberListGroupCell else { return }
+        
+        storedOffsets[indexPath.row] = tableViewCell.collectionViewOffset
+    }
     
 }
+extension MemberListGroupTableController: UICollectionViewDelegate, UICollectionViewDataSource{
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return members[collectionView.tag]["Members"].count
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as membercollectioncell
+        
+//        cell.backgroundColor = UIColor.blueColor()
+        
+        
+        return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        print("Collection view at row \(collectionView.tag) selected index path \(indexPath)")
+    }
+}
+
 
 class MemberListGroupCell: UITableViewCell {
-    
-    
-    //@IBOutlet weak var memberName: UILabel!
-    
-    class var expandedHeight: CGFloat { get { return 350 } }
-    class var defaultHeight: CGFloat { get { return 350 } }
-    
-    @IBOutlet weak var memberGroup: UIStackView!
-    @IBOutlet weak var memberName: UILabel!
-    @IBOutlet weak var memberDob: UILabel!
-    @IBOutlet weak var memberDom: UILabel!
-    @IBOutlet weak var memberView: UIView!
-    func checkHeight() {
-        //nameView.hidden = (frame.size.height < MemberListCell.expandedHeight)
-        //dobView.hidden = (frame.size.height < MemberListCell.expandedHeight)
-        //domView.hidden = (frame.size.height < MemberListCell.expandedHeight)
-//        editIcon.hidden = (frame.size.height < MemberListCell.expandedHeight)
-//        editText.hidden = (frame.size.height < MemberListCell.expandedHeight)
+    @IBOutlet private weak var collectionView: UICollectionView!
+
+
+}
+
+extension MemberListGroupCell {
+    func setCollectionViewDataSourceDelegate<D: protocol<UICollectionViewDataSource, UICollectionViewDelegate>>(dataSourceDelegate: D, forRow row: Int) {
+        
+        collectionView.delegate = dataSourceDelegate
+        collectionView.dataSource = dataSourceDelegate
+        collectionView.tag = row
+        collectionView.setContentOffset(collectionView.contentOffset, animated:false) // Stops collection view if it was scrolling.
+        collectionView.reloadData()
     }
     
-    func watchFrameChanges() {
-        addObserver(self, forKeyPath: "frame", options: .New, context: nil)
-        checkHeight()
-    }
-    
-    func ignoreFrameChanges() {
-        //removeObserver(self, forKeyPath: "frame")
-    }
-    
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        if keyPath == "frame" {
-            checkHeight()
+//    @IBOutlet weak var lbl: UILabel!
+    var collectionViewOffset: CGFloat {
+        set {
+            collectionView.contentOffset.x = newValue
+        }
+        
+        get {
+            return collectionView.contentOffset.x
         }
     }
+    
+
+}
+class membercollectioncell: UICollectionViewCell {
+    
+    @IBOutlet weak var namelbl: UILabel!
+    
 }
