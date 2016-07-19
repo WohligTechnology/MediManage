@@ -1,4 +1,3 @@
-//
 //  enrollmentMembers.swift
 //  Medi Manage
 //
@@ -19,7 +18,9 @@ class enrollmentMembersRenew: UIView{
                              ["ID":0,"Gender":1,"SystemIdentifier":"I","RelationType":"Father in law"],
                              ["ID":0,"Gender":2,"SystemIdentifier":"I","RelationType":"Mother in law"],]
     
-    var newjson : JSON = [["LastName":"","Gender":"1","SystemIdentifier":"E"],["LastName":"","Gender":"1","SystemIdentifier":"E"]]
+    var newJsonSun : JSON = ["ID":0,"LastName":"","Gender":"1","SystemIdentifier":"C","RelationType":"Sun"]
+    var newJsonDaughter : JSON = ["ID":0,"LastName":"","Gender":"2","SystemIdentifier":"C","RelationType":"Daughter"]
+
     var leftMember : JSON = ""
     var rightMember : JSON = ""
     var apiProjectJson : JSON = [[]]
@@ -119,10 +120,39 @@ class enrollmentMembersRenew: UIView{
         
         
         enrollmentMembersMainView.frame = CGRectMake(0, 70, self.frame.size.width, self.frame.size.height - 70);
+        
+        addBottomBorder(UIColor.blackColor(), width: 1, myView: leftFirstName)
+        addBottomBorder(UIColor.blackColor(), width: 1, myView: leftMiddelName)
+        addBottomBorder(UIColor.blackColor(), width: 1, myView: leftLastName)
+        addBottomBorder(UIColor.blackColor(), width: 1, myView: leftDOB)
+        addBottomBorder(UIColor.blackColor(), width: 1, myView: leftDOM)
+        
+        addBottomBorder(UIColor.blackColor(), width: 1, myView: rightFirstName)
+        addBottomBorder(UIColor.blackColor(), width: 1, myView: rightMiddelName)
+        addBottomBorder(UIColor.blackColor(), width: 1, myView: rightLastName)
+        addBottomBorder(UIColor.blackColor(), width: 1, myView: rightDOB)
+        addBottomBorder(UIColor.blackColor(), width: 1, myView: rightDOM)
+    }
+    
+    func addBottomBorder(color: UIColor, width: CGFloat, myView: UIView) {
+        let border = CALayer()
+        border.backgroundColor = color.CGColor
+        border.frame = CGRectMake(0, myView.frame.size.height - width, myView.frame.size.width, width)
+        myView.layer.addSublayer(border)
+        
+        
     }
     
     @IBAction func rightAddMoreClick(sender: AnyObject) {
-        
+        updateJson()
+        addMemberToJson(self.memberjson[page+1]["SystemIdentifier"].stringValue, relation: self.memberjson[page+1]["RelationType"].stringValue)
+        rightActionFunction()
+    }
+    
+    @IBAction func leftAddMoreClick(sender: AnyObject) {
+        updateJson()
+        addMemberToJson(self.memberjson[page]["SystemIdentifier"].stringValue, relation: self.memberjson[page]["RelationType"].stringValue)
+//        leftActionFunction()
     }
     
     func updateJson() {
@@ -139,24 +169,33 @@ class enrollmentMembersRenew: UIView{
         self.memberjson[page+1]["DateOfRelation"].stringValue = self.rightDOM.text!
 
     }
-    var afterArray : JSON = [[]]
+    var afterArray : JSON = []
     
-    func addMemberToJson(relation : String) {
+    func addMemberToJson(identifier : String, relation : String) {
         var checkrelation = false
-        for x in 0...self.memberjson.count {
-            if self.memberjson[x]["SystemIdentifier"].stringValue == relation {
+        afterArray = []
+        for x in 0..<self.memberjson.count {
+            if (self.memberjson[x]["SystemIdentifier"].stringValue == identifier && self.memberjson[x]["RelationType"].stringValue == relation) {
+
                 if !checkrelation {
                     checkrelation = true
                     afterArray.arrayObject?.append(self.memberjson[x].object)
+                    if relation == "Daughter" {
+                        afterArray.arrayObject?.append(newJsonDaughter.object)
+                    }else{
+                        afterArray.arrayObject?.append(newJsonSun.object)
+
+                    }
+                }else{
+                    afterArray.arrayObject?.append(self.memberjson[x].object)
                 }
-                
+            }else{
+                afterArray.arrayObject?.append(self.memberjson[x].object)
             }
-            
         }
-    }
-    
-    @IBAction func leftAddMoreClick(sender: AnyObject) {
-        
+        self.memberjson = afterArray
+//        page = 0
+        assignMembers()
     }
     
     func datePickerValueChanged(sender: UIDatePicker) {
@@ -212,7 +251,8 @@ class enrollmentMembersRenew: UIView{
         datePickerView.addTarget(self , action: #selector(self.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
     }
     
-    @IBAction func rightActionArrow(sender: AnyObject) {
+    func rightActionFunction() {
+        updateJson()
         self.leftArrow.hidden = false
         page = page + 2
         if (page + 1 == self.memberjson.count || page + 2 == self.memberjson.count) {
@@ -223,8 +263,8 @@ class enrollmentMembersRenew: UIView{
             self.rightArrow.hidden = false
         }
         if page + 1 == self.memberjson.count {
-            self.enrollmentMembersMainView.viewWithTag(2)?.hidden = true
-            for x in 8...12 {
+            self.enrollmentMembersMainView.viewWithTag(22)?.hidden = true
+            for x in 11...17 {
                 let txtfield = self.enrollmentMembersMainView.viewWithTag(x) as? UITextField
                 txtfield?.hidden = true
             }
@@ -232,9 +272,14 @@ class enrollmentMembersRenew: UIView{
         
     }
     
-    @IBAction func leftActionArrow(sender: AnyObject) {
-        self.enrollmentMembersMainView.viewWithTag(2)?.hidden = false
-        for x in 8...12 {
+    @IBAction func rightActionArrow(sender: AnyObject) {
+        rightActionFunction()
+    }
+    
+    func leftActionFunction() {
+        updateJson()
+        self.enrollmentMembersMainView.viewWithTag(22)?.hidden = false
+        for x in 11...17 {
             let txtfield = self.enrollmentMembersMainView.viewWithTag(x) as? UITextField
             txtfield?.hidden = false
         }
@@ -247,8 +292,11 @@ class enrollmentMembersRenew: UIView{
             self.leftArrow.hidden = false
             assignMembers()
         }
-        
 
+    }
+    
+    @IBAction func leftActionArrow(sender: AnyObject) {
+       leftActionFunction()
     }
     
     
@@ -256,10 +304,22 @@ class enrollmentMembersRenew: UIView{
         if self.rightTick.hidden {
             self.rightTick.hidden = false
             memberjson[page+1]["ActiveState"] = true
+            (self.enrollmentMembersMainView.viewWithTag(16) as? UIButton)?.enabled = true
+
+            for x in 11...15 {
+                let txtfield = self.enrollmentMembersMainView.viewWithTag(x) as? UITextField
+                txtfield?.enabled = true
+            }
 
         }else{
             self.rightTick.hidden = true
             memberjson[page+1]["ActiveState"] = false
+            (self.enrollmentMembersMainView.viewWithTag(16) as? UIButton)?.enabled = false
+
+            for x in 11...15 {
+                let txtfield = self.enrollmentMembersMainView.viewWithTag(x) as? UITextField
+                txtfield?.enabled = false
+            }
 
         }
         
@@ -268,15 +328,24 @@ class enrollmentMembersRenew: UIView{
         if self.leftTick.hidden {
             self.leftTick.hidden = false
             memberjson[page]["ActiveState"] = true
+            (self.enrollmentMembersMainView.viewWithTag(6) as? UIButton)?.enabled = true
+            for x in 1...5 {
+                let txtfield = self.enrollmentMembersMainView.viewWithTag(x) as? UITextField
+                txtfield?.enabled = true
+            }
         }else{
             self.leftTick.hidden = true
             memberjson[page]["ActiveState"] = false
+            (self.enrollmentMembersMainView.viewWithTag(6) as? UIButton)?.enabled = false
+
+            for x in 1...5 {
+                let txtfield = self.enrollmentMembersMainView.viewWithTag(x) as? UITextField
+                txtfield?.enabled = false
+            }
         }
     }
     
     func assignMembers() {
-//        self.leftMember = self.memberjson[page]
-//        self.rightMember = self.memberjson[page + 1]
         assignText()
     }
     
@@ -313,8 +382,18 @@ class enrollmentMembersRenew: UIView{
         
         if self.memberjson[page]["ActiveState"] {
             self.leftTick.hidden = false
+            (self.enrollmentMembersMainView.viewWithTag(6) as? UIButton)?.enabled = true
+            for x in 1...5 {
+                let txtfield = self.enrollmentMembersMainView.viewWithTag(x) as? UITextField
+                txtfield?.enabled = true
+            }
         }else{
             self.leftTick.hidden = true
+            (self.enrollmentMembersMainView.viewWithTag(6) as? UIButton)?.enabled = false
+            for x in 1...5 {
+                let txtfield = self.enrollmentMembersMainView.viewWithTag(x) as? UITextField
+                txtfield?.enabled = false
+            }
         }
         self.leftMemberName.text = self.memberjson[page]["RelationType"].stringValue
         self.leftFirstName.text = self.memberjson[page]["FirstName"].stringValue
@@ -354,8 +433,20 @@ class enrollmentMembersRenew: UIView{
         }
         if self.memberjson[page+1]["ActiveState"] {
             self.rightTick.hidden = false
+            (self.enrollmentMembersMainView.viewWithTag(16) as? UIButton)?.enabled = true
+            
+            for x in 11...15 {
+                let txtfield = self.enrollmentMembersMainView.viewWithTag(x) as? UITextField
+                txtfield?.enabled = true
+            }
         }else{
             self.rightTick.hidden = true
+            (self.enrollmentMembersMainView.viewWithTag(16) as? UIButton)?.enabled = false
+            
+            for x in 11...15 {
+                let txtfield = self.enrollmentMembersMainView.viewWithTag(x) as? UITextField
+                txtfield?.enabled = false
+            }
         }
         self.rightMemberName.text = self.memberjson[page+1]["RelationType"].stringValue
         self.rightFirstName.text = self.memberjson[page+1]["FirstName"].stringValue
@@ -363,6 +454,10 @@ class enrollmentMembersRenew: UIView{
         self.rightLastName.text = self.memberjson[page+1]["LastName"].stringValue
         self.rightDOB.text = self.memberjson[page+1]["DateOfBirth"].stringValue
         self.rightDOM.text = self.memberjson[page+1]["DateOfRelation"].stringValue
+        
+        
+//        selectpleft()
+//        selectpright()
         
     }
     

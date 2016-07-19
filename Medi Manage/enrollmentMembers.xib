@@ -212,10 +212,10 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <constraint firstAttribute="width" constant="120" id="XfH-iL-t0F"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="16"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
-                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="value" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
@@ -229,7 +229,7 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                     <textInputTraits key="textInputTraits"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
-                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="value" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>

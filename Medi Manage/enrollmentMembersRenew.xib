@@ -124,27 +124,27 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <constraint firstItem="A0x-Z6-H47" firstAttribute="top" secondItem="SkU-jf-QBZ" secondAttribute="top" constant="8" id="zTq-Np-vAo"/>
                     </constraints>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wife_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Uft-re-WWJ">
+                <imageView userInteractionEnabled="NO" tag="21" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wife_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Uft-re-WWJ">
                     <rect key="frame" x="60" y="70" width="100" height="100"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="O95-pO-USB"/>
                         <constraint firstAttribute="width" secondItem="Uft-re-WWJ" secondAttribute="height" multiplier="1:1" id="WxS-4X-Ewb"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick_icon" translatesAutoresizingMaskIntoConstraints="NO" id="KOt-bf-LSR">
+                <imageView userInteractionEnabled="NO" tag="21" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick_icon" translatesAutoresizingMaskIntoConstraints="NO" id="KOt-bf-LSR">
                     <rect key="frame" x="60" y="70" width="35" height="32"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="35" id="rJ6-9r-uI6"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="son_icon" translatesAutoresizingMaskIntoConstraints="NO" id="qrx-XE-e5g">
+                <imageView userInteractionEnabled="NO" tag="22" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="son_icon" translatesAutoresizingMaskIntoConstraints="NO" id="qrx-XE-e5g">
                     <rect key="frame" x="170" y="70" width="100" height="100"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="Nrj-hC-vO5"/>
                         <constraint firstAttribute="width" constant="100" id="OEN-QF-kbU"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wife" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCG-EX-Fv3">
+                <label opaque="NO" userInteractionEnabled="NO" tag="21" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wife" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCG-EX-Fv3">
                     <rect key="frame" x="60" y="173" width="90" height="17"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="90" id="SIj-mB-b7B"/>
@@ -153,7 +153,7 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CiM-wH-GgS">
+                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CiM-wH-GgS">
                     <rect key="frame" x="35" y="210" width="120" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="0Ff-6g-PqA"/>
@@ -167,7 +167,7 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="seE-cc-5EZ">
+                <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="seE-cc-5EZ">
                     <rect key="frame" x="35" y="300" width="120" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="120" id="TaH-wz-9ng"/>
@@ -181,7 +181,7 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RK7-eR-3f3">
+                <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RK7-eR-3f3">
                     <rect key="frame" x="35" y="345" width="120" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="M6D-3Q-UHR"/>
@@ -198,7 +198,7 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <action selector="leftDOBClick:" destination="-1" eventType="editingDidBegin" id="uB6-oh-ysK"/>
                     </connections>
                 </textField>
-                <textField hidden="YES" opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of Marriage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ueQ-zm-1gX">
+                <textField hidden="YES" opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of Marriage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ueQ-zm-1gX">
                     <rect key="frame" x="35" y="390" width="120" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Hkb-Ai-QGa"/>
@@ -214,7 +214,7 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <action selector="leftDOMClick:" destination="-1" eventType="editingDidBegin" id="ZYs-Ue-WdA"/>
                     </connections>
                 </textField>
-                <textField hidden="YES" opaque="NO" clipsSubviews="YES" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of Marriage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cEf-OI-3qv">
+                <textField hidden="YES" opaque="NO" clipsSubviews="YES" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of Marriage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cEf-OI-3qv">
                     <rect key="frame" x="165" y="390" width="121" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="mPu-tx-tq0"/>
@@ -230,21 +230,21 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <action selector="rightDOMClick:" destination="-1" eventType="editingDidBegin" id="bnN-sp-JH6"/>
                     </connections>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YZh-hP-i96">
+                <textField opaque="NO" clipsSubviews="YES" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" disabledBackground="add_icon" translatesAutoresizingMaskIntoConstraints="NO" id="YZh-hP-i96">
                     <rect key="frame" x="165" y="210" width="120" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="9i6-fN-jBQ"/>
                         <constraint firstAttribute="width" constant="120" id="CB1-3L-B8U"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="16"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                             <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Middle Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tUg-Qp-RDz">
+                <textField opaque="NO" clipsSubviews="YES" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Middle Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tUg-Qp-RDz">
                     <rect key="frame" x="165" y="255" width="120" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="120" id="WHS-ce-a6y"/>
@@ -258,7 +258,7 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nmT-ST-3TL">
+                <textField opaque="NO" clipsSubviews="YES" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nmT-ST-3TL">
                     <rect key="frame" x="165" y="300" width="120" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="RD2-sg-vIW"/>
@@ -272,7 +272,7 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ta-5p-3Hp">
+                <textField opaque="NO" clipsSubviews="YES" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ta-5p-3Hp">
                     <rect key="frame" x="165" y="345" width="120" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="I5q-cK-vbW"/>
@@ -289,13 +289,13 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <action selector="rightDOBClick:" destination="-1" eventType="editingDidBegin" id="3V3-oK-EnZ"/>
                     </connections>
                 </textField>
-                <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick_icon" translatesAutoresizingMaskIntoConstraints="NO" id="mqL-Ka-8Xe">
+                <imageView userInteractionEnabled="NO" tag="22" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick_icon" translatesAutoresizingMaskIntoConstraints="NO" id="mqL-Ka-8Xe">
                     <rect key="frame" x="170" y="70" width="35" height="32"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="35" id="lC6-Pz-tUj"/>
                     </constraints>
                 </imageView>
-                <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Middle Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="acK-Hn-psl">
+                <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Middle Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="acK-Hn-psl">
                     <rect key="frame" x="35" y="255" width="120" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="CRa-fg-h0N"/>
@@ -320,7 +320,7 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFl-ci-nAd">
+                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFl-ci-nAd">
                     <rect key="frame" x="60" y="390" width="34" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="34" id="j74-Gv-1Tj"/>
@@ -331,7 +331,7 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <action selector="leftAddMoreClick:" destination="-1" eventType="touchUpInside" id="i64-mc-TLZ"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Son" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Myd-Cx-pbN">
+                <label opaque="NO" userInteractionEnabled="NO" tag="22" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Son" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Myd-Cx-pbN">
                     <rect key="frame" x="170" y="173" width="90" height="17"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="90" id="Do9-73-NFB"/>
@@ -340,7 +340,7 @@ cGVuZGlzc2UgA3RpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mqc-tf-Rad">
+                <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mqc-tf-Rad">
                     <rect key="frame" x="201" y="390" width="34" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="2lh-0H-CRy"/>
