@@ -239,6 +239,7 @@ public class RestApi {
         do {
             let opt = try HTTP.POST(apiURL+"Enrollments/UpdateMobile" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
             opt.start { response in
+//                print(response.error)
                 if let _ = response.error {
                     completion(json);
                 }
