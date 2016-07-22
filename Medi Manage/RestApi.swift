@@ -134,6 +134,7 @@ public class RestApi {
         var json = JSON(1)
         
         let token = defaultToken.stringForKey("access_token")
+        print(token)
         let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         
         do {
