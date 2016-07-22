@@ -94,7 +94,7 @@ class enrollmentMembersRenew: UIView{
         leftIcon.userInteractionEnabled = true
         rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
             dispatch_sync(dispatch_get_main_queue()){
-                print(json["result"]["Groups"][0]["Members"])
+//                print(json["result"]["Groups"][0]["Members"])
                 
                 for x in 0..<self.memberjson.count{
                     for y in 0..<json["result"]["Groups"].count{
@@ -113,7 +113,7 @@ class enrollmentMembersRenew: UIView{
                         }
                     }
                 }
-                print(self.memberjson)
+//                print(self.memberjson)
                 self.assignMembers()
             }
         })
@@ -231,7 +231,7 @@ class enrollmentMembersRenew: UIView{
     
     @IBAction func leftDOMClick(sender: AnyObject) {
         datetype = 2
-        print("left click")
+//        print("left click")
         datePickerView.datePickerMode = UIDatePickerMode.Date
         leftDOM.inputView = datePickerView
         datePickerView.addTarget(self , action: #selector(self.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
@@ -454,11 +454,40 @@ class enrollmentMembersRenew: UIView{
         self.rightLastName.text = self.memberjson[page+1]["LastName"].stringValue
         self.rightDOB.text = self.memberjson[page+1]["DateOfBirth"].stringValue
         self.rightDOM.text = self.memberjson[page+1]["DateOfRelation"].stringValue
-        
-        
-//        selectpleft()
-//        selectpright()
+                
+    }
+    
+    //FINAL PROCESS SUBMIT MEMBERS
+    @IBAction func submitMembers(sender: AnyObject) {
+        updateJson()
+        var msg = ""
+        var finaljson :JSON = []
+        var status = true
+
+        for x in 0..<memberjson.count {
+            if memberjson[x]["ActiveState"] {
+                for (key, itm) in memberjson[x] {
+                    if itm == "" && status {
+                        if memberjson[x]["SystemIdentifier"] != "C" || key != "DateOfRelation"{
+                            status = false
+                            msg = "Please Enter " + key + " of " + memberjson[x]["RelationType"].stringValue
+                        }
+                        
+                    }
+                }
+                finaljson.arrayObject?.append(memberjson[x].object)
+            }
+        }
+        if !status {
+            Popups.SharedInstance.ShowPopup("Validation", message: msg)
+        }else{
+            rest.AddMembers(finaljson, completion: {(json:JSON) -> ()in
+                print("in result")
+            print(json)
+            })
+        }
         
     }
+    
     
 }
