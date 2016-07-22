@@ -9,6 +9,8 @@
 import UIKit
 import SwiftyJSON
 
+var expandedHeight: CGFloat!
+
 var gHelpDeskFAQController: UIViewController!
 
 class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -17,6 +19,7 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
     var selectedIndexPath: NSIndexPath?
 
     @IBOutlet weak var helpFaqTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
@@ -45,7 +48,8 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
             
         })
         gHelpDeskFAQController = self
-        
+        helpFaqTable.rowHeight = UITableViewAutomaticDimension
+        expandedHeight = helpFaqTable.rowHeight
         // Do any additional setup after loading the view.
     }
 
@@ -64,6 +68,7 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
         let previousIndexPath = selectedIndexPath
         if indexPath == selectedIndexPath {
             selectedIndexPath = nil
@@ -105,16 +110,26 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! quecell
         
         cell.selectionStyle = .None
-        cell.questionlbl.text = (self.queans[indexPath.item]["Question"].stringValue.stringByRemovingPercentEncoding)! as String
-        let ans = (self.queans[indexPath.item]["Answer"].stringValue.stringByRemovingPercentEncoding)
+        let ques = (self.queans[indexPath.item]["Question"].stringValue.stringByRemovingPercentEncoding)!
         do {
-            let str = try NSAttributedString(data: ans!.dataUsingEncoding(NSUnicodeStringEncoding, allowLossyConversion: true)!, options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType], documentAttributes: nil)
-            cell.answerlbl.attributedText = str
+            let str = try NSMutableAttributedString(data: ques.dataUsingEncoding(NSUnicodeStringEncoding, allowLossyConversion: true)!, options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType], documentAttributes: nil)
+            str.addAttributes([NSForegroundColorAttributeName: UIColor(red: 244/255, green: 121/255, blue: 32/255, alpha: 1), NSFontAttributeName: UIFont(name: "Lato-Regular", size: 14)!], range: NSRange(location: 0, length: str.length))
+            cell.questionlbl.attributedText = str
+
         } catch {
             print(error)
         }
-
-
+        
+        let ans = (self.queans[indexPath.item]["Answer"].stringValue.stringByRemovingPercentEncoding)
+        do {
+            let str = try NSMutableAttributedString(data: ans!.dataUsingEncoding(NSUnicodeStringEncoding, allowLossyConversion: true)!, options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType], documentAttributes: nil)
+            str.addAttributes([NSForegroundColorAttributeName: UIColor.blackColor(), NSFontAttributeName: UIFont(name: "Lato-Regular", size: 12)!], range: NSRange(location: 0, length: str.length))
+            cell.answerlbl.attributedText = str
+            cell.answerlbl.hidden = true
+        } catch {
+            print(error)
+        }
+        
         return cell
     }
 
@@ -125,7 +140,7 @@ class quecell: UITableViewCell {
     @IBOutlet weak var questionlbl: UILabel!
     @IBOutlet weak var answerlbl: UILabel!
 
-    class var expandedHeight: CGFloat { get { return 150 } }
+    class var expandedHeight: CGFloat { get { return 200} }
     class var defaultHeight: CGFloat { get { return 90 } }
     
     func checkHeight() {
