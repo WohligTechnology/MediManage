@@ -15,6 +15,13 @@ class PDFViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(pdfname)
+        
+        let navigationLogo = UIImage(named: "logo_small")
+        let navigationImageView = UIImageView(image: navigationLogo)
+        self.navigationItem.titleView = navigationImageView
+        self.navigationController?.navigationBar.barTintColor = UIColor.blackColor()
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        
         let pdfLoc = NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource(pdfname, ofType:"pdf")!)
         let request = NSURLRequest(URL: pdfLoc);
         self.webViewpdf.loadRequest(request);

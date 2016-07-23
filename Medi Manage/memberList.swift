@@ -277,7 +277,7 @@ class memberList: UIView ,UIActionSheetDelegate{
         let vc = gEnrollmentMembersController.storyboard?.instantiateViewControllerWithIdentifier("EnrollmentMember") as! EnrollmentMembersController
         
         //  vc.RESULT = "Result"
-        gMemberListController.presentViewController(vc, animated: true, completion: nil)
+        gMemberListGroupTableController.presentViewController(vc, animated: true, completion: nil)
         
      }
     
@@ -361,7 +361,7 @@ class memberList: UIView ,UIActionSheetDelegate{
     
 
     @IBAction func premiumcalculationCall(sender: AnyObject) {
-        gMemberListController.performSegueWithIdentifier("premiumcalculation", sender: nil)
+        gMemberListGroupTableController.performSegueWithIdentifier("premiumcalculation", sender: nil)
     }
     /*
     // Only override drawRect: if you perform custom drawing.
@@ -412,7 +412,7 @@ class memberList: UIView ,UIActionSheetDelegate{
     let myActionSheet = UIActionSheet()
     myActionSheet.addButtonWithTitle("Save")
     myActionSheet.addButtonWithTitle("Cancel")
-    myActionSheet.showInView(gMemberListController.view)
+    myActionSheet.showInView(gMemberListGroupTableController.view)
     
   //  gMemberListController.performSegueWithIdentifier("premiumcalculation", sender: nil)
    

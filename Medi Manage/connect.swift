@@ -30,14 +30,7 @@ class connect: UIView {
         connect.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(connect)
         
-        let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
-        statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
-        self.addSubview(statusBar)
-        
-        let mainheader = header(frame: CGRectMake(0, 20, width, 50))
-        self.addSubview(mainheader)
-        
-        let mainsubHeader = subHeader(frame: CGRectMake(0, 70, width, 50))
+        let mainsubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_four")
         mainsubHeader.subHeaderTitle.text = "CONNECT"
         self.addSubview(mainsubHeader)

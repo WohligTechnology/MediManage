@@ -31,27 +31,27 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
         super.viewDidLoad()
         gMemberListGroupTableController = self
         
-        let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
-        statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
-        self.view.addSubview(statusBar)
         
-        let mainheader = header(frame: CGRectMake(0, 20, width, 50))
-        self.view.addSubview(mainheader)
-        
-        let mainfooter = footer(frame: CGRectMake(0, height - 55, width, 55))
-        mainfooter.layer.zPosition = 1000
-        self.view.addSubview(mainfooter)
+//        
+//        let navigationLogo = UIImage(named: "logo_small")
+//        let navigationImageView = UIImageView(image: navigationLogo)
+//        self.navigationItem.titleView = navigationImageView
+//        let infoImage = UIImage(named: "settings")
+//        let imgWidth = 25
+//        let imgHeight = 25
+//        let button:UIButton = UIButton(frame: CGRect(x: 0,y: 0,width: imgWidth, height: imgHeight))
+//        button.setBackgroundImage(infoImage, forState: .Normal)
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+//        self.navigationController?.navigationBar.barTintColor = UIColor.blackColor()
+//        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+
         
         gListTableView = ListTableView
 
         
         rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
             dispatch_async(dispatch_get_main_queue(),{
-                self.members.arrayObject?.append(json["result"]["Groups"][0].object)
-                self.members.arrayObject?.append(json["result"]["Groups"][0].object)
-                var a = json["result"]["Groups"][0]["SumInsuredList"][0]
-                self.members[0]["SumInsuredList"].arrayObject?.append(a.object)
-                self.members[0]["SumInsuredList"][0]["TopupList"][1]["PolicyTSI"] = 90
+                self.members = json["result"]["Groups"]
                 self.memcount = self.members.count
                 cnt = self.members.count
                 self.ListTableView.reloadData()

@@ -11,16 +11,22 @@ import UIKit
 class PageViewerController: UIPageViewController, UIPageViewControllerDataSource, UIGestureRecognizerDelegate {
     
     let image = ["splash1", "splash2", "splash3"]
-
+    var enrollmentMembersController: UIViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let myVC = viewControllerAtIndex(0) as! SplashScreenController
-        let viewControllers = [myVC]
+        let token = defaultToken.stringForKey("access_token")
+//        if token != "" {            
+//            let enrollmentMembersController = storyboard!.instantiateViewControllerWithIdentifier("EnrollmentMembers") as! EnrollmentMembersController
+//            self.enrollmentMembersController = UINavigationController(rootViewController: enrollmentMembersController)
+//        }else{
+            let myVC = viewControllerAtIndex(0) as! SplashScreenController
+            let viewControllers = [myVC]
+            setViewControllers(viewControllers, direction: .Forward, animated: true, completion: nil)
+//        }
         
         dataSource = self
-        
-        setViewControllers(viewControllers, direction: .Forward, animated: true, completion: nil)
+
 
         // Do any additional setup after loading the view.
     }

@@ -54,8 +54,6 @@
 		3A8EFB5D1CE9DE53004489F3 /* homeMenus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8EFB5C1CE9DE53004489F3 /* homeMenus.swift */; };
 		3A8EFB601CE9E0BA004489F3 /* claimForm.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A8EFB5F1CE9E0BA004489F3 /* claimForm.xib */; };
 		3A8EFB621CE9E742004489F3 /* claimForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8EFB611CE9E742004489F3 /* claimForm.swift */; };
-		3A992F041CED918100D85D8A /* benefitSummary.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A992F031CED918100D85D8A /* benefitSummary.xib */; };
-		3A992F061CED997400D85D8A /* benefitSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A992F051CED997400D85D8A /* benefitSummary.swift */; };
 		3A992F081CEDD21700D85D8A /* ClaimIntimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A992F071CEDD21700D85D8A /* ClaimIntimationController.swift */; };
 		3A992F0A1CEDF25F00D85D8A /* HospitalSearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A992F091CEDF25F00D85D8A /* HospitalSearchResultController.swift */; };
 		3ABD66C71D279DB9003462CB /* MemberListGroupTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABD66C61D279DB9003462CB /* MemberListGroupTableController.swift */; };
@@ -63,10 +61,7 @@
 		3AC43DCF1CE9FC1500ED2523 /* myClaims.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AC43DCE1CE9FC1500ED2523 /* myClaims.xib */; };
 		3AC43DD11CEA00E100ED2523 /* myClaims.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC43DD01CEA00E100ED2523 /* myClaims.swift */; };
 		3ACFB2A01CE4C369003766D8 /* EnrollmentMembersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFB29F1CE4C369003766D8 /* EnrollmentMembersController.swift */; };
-		3ACFB2A21CE4C3A0003766D8 /* MemberListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFB2A11CE4C3A0003766D8 /* MemberListController.swift */; };
 		3ACFB2A41CE4C410003766D8 /* PremiumCalculationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFB2A31CE4C410003766D8 /* PremiumCalculationController.swift */; };
-		3AD3E5281CE1DE1D00900A93 /* enrollmentMembers.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD3E5271CE1DE1D00900A93 /* enrollmentMembers.xib */; };
-		3AD3E52A1CE1F87B00900A93 /* enrollmentMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD3E5291CE1F87B00900A93 /* enrollmentMembers.swift */; };
 		3AD3E52D1CE20A1900900A93 /* premiumCalculation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD3E52C1CE20A1900900A93 /* premiumCalculation.xib */; };
 		3AE7AFE01CF2D0C10047DFB0 /* QueryFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7AFDF1CF2D0C10047DFB0 /* QueryFormController.swift */; };
 		3AE7AFE21CF2D3190047DFB0 /* HelplineNumberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7AFE11CF2D3190047DFB0 /* HelplineNumberController.swift */; };
@@ -227,8 +222,6 @@
 		3A8EFB5C1CE9DE53004489F3 /* homeMenus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeMenus.swift; sourceTree = "<group>"; };
 		3A8EFB5F1CE9E0BA004489F3 /* claimForm.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = claimForm.xib; sourceTree = "<group>"; };
 		3A8EFB611CE9E742004489F3 /* claimForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = claimForm.swift; sourceTree = "<group>"; };
-		3A992F031CED918100D85D8A /* benefitSummary.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = benefitSummary.xib; sourceTree = "<group>"; };
-		3A992F051CED997400D85D8A /* benefitSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = benefitSummary.swift; sourceTree = "<group>"; };
 		3A992F071CEDD21700D85D8A /* ClaimIntimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClaimIntimationController.swift; sourceTree = "<group>"; };
 		3A992F091CEDF25F00D85D8A /* HospitalSearchResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalSearchResultController.swift; sourceTree = "<group>"; };
 		3ABD66C61D279DB9003462CB /* MemberListGroupTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberListGroupTableController.swift; sourceTree = "<group>"; };
@@ -236,10 +229,7 @@
 		3AC43DCE1CE9FC1500ED2523 /* myClaims.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = myClaims.xib; sourceTree = "<group>"; };
 		3AC43DD01CEA00E100ED2523 /* myClaims.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myClaims.swift; sourceTree = "<group>"; };
 		3ACFB29F1CE4C369003766D8 /* EnrollmentMembersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnrollmentMembersController.swift; sourceTree = "<group>"; };
-		3ACFB2A11CE4C3A0003766D8 /* MemberListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberListController.swift; sourceTree = "<group>"; };
 		3ACFB2A31CE4C410003766D8 /* PremiumCalculationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PremiumCalculationController.swift; sourceTree = "<group>"; };
-		3AD3E5271CE1DE1D00900A93 /* enrollmentMembers.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = enrollmentMembers.xib; sourceTree = "<group>"; };
-		3AD3E5291CE1F87B00900A93 /* enrollmentMembers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enrollmentMembers.swift; sourceTree = "<group>"; };
 		3AD3E52C1CE20A1900900A93 /* premiumCalculation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = premiumCalculation.xib; sourceTree = "<group>"; };
 		3AE7AFDF1CF2D0C10047DFB0 /* QueryFormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryFormController.swift; sourceTree = "<group>"; };
 		3AE7AFE11CF2D3190047DFB0 /* HelplineNumberController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelplineNumberController.swift; sourceTree = "<group>"; };
@@ -498,15 +488,6 @@
 			name = claimForm;
 			sourceTree = "<group>";
 		};
-		3A992F021CED916300D85D8A /* benefitSummary */ = {
-			isa = PBXGroup;
-			children = (
-				3A992F031CED918100D85D8A /* benefitSummary.xib */,
-				3A992F051CED997400D85D8A /* benefitSummary.swift */,
-			);
-			name = benefitSummary;
-			sourceTree = "<group>";
-		};
 		3AC43DCD1CE9FBFE00ED2523 /* myClaims */ = {
 			isa = PBXGroup;
 			children = (
@@ -514,15 +495,6 @@
 				3AC43DD01CEA00E100ED2523 /* myClaims.swift */,
 			);
 			name = myClaims;
-			sourceTree = "<group>";
-		};
-		3AD3E5261CE1DDC200900A93 /* enrollmentMembers */ = {
-			isa = PBXGroup;
-			children = (
-				3AD3E5271CE1DE1D00900A93 /* enrollmentMembers.xib */,
-				3AD3E5291CE1F87B00900A93 /* enrollmentMembers.swift */,
-			);
-			name = enrollmentMembers;
 			sourceTree = "<group>";
 		};
 		3AD3E52B1CE209F300900A93 /* premiumCalculation */ = {
@@ -740,7 +712,6 @@
 				3A677B6C1CE4BBDE003B8C2B /* GenerateOTPController.swift */,
 				3A677B6E1CE4BEC0003B8C2B /* EnterOTPController.swift */,
 				3ACFB29F1CE4C369003766D8 /* EnrollmentMembersController.swift */,
-				3ACFB2A11CE4C3A0003766D8 /* MemberListController.swift */,
 				3ACFB2A31CE4C410003766D8 /* PremiumCalculationController.swift */,
 				3AF76BB11CE5BEEA00ADCAAF /* InsuredMembersController.swift */,
 				3AEEB0161CE7344C0085EEF5 /* HelpDeskController.swift */,
@@ -777,7 +748,6 @@
 				43D6FF411CFEE44C008361B2 /* pickDate */,
 				3A74A7CE1CF41F6100592B3E /* tutorial */,
 				3A31911B1CEF41C0001DCBBC /* splashScreen */,
-				3A992F021CED916300D85D8A /* benefitSummary */,
 				3A8774BF1CEC4165001DB41F /* queryForm */,
 				3A8774BA1CEC3751001DB41F /* preAuthorizationTwo */,
 				3A72C72A1CEB44F600B5412E /* helplineNumber */,
@@ -798,7 +768,6 @@
 				3A0175281CE3587900832E49 /* insuredMembers */,
 				3A1369AC1CE455F100BEE355 /* memberList */,
 				3AD3E52B1CE209F300900A93 /* premiumCalculation */,
-				3AD3E5261CE1DDC200900A93 /* enrollmentMembers */,
 				783322AE1CDB3DC30015CE37 /* landing */,
 				78B90BCF1CE05C560022FE7A /* enterOTP */,
 				78B90BCE1CE05C4F0022FE7A /* generateOTP */,
@@ -1077,7 +1046,6 @@
 				3A31911D1CEF41D7001DCBBC /* splashScreen.xib in Resources */,
 				3AF76BAE1CE5A6E500ADCAAF /* footer.xib in Resources */,
 				786DFA041CD214F300DDE769 /* LaunchScreen.storyboard in Resources */,
-				3AD3E5281CE1DE1D00900A93 /* enrollmentMembers.xib in Resources */,
 				78B90BD11CE05C7C0022FE7A /* retrieveLogin.xib in Resources */,
 				3AEEB01F1CE74D820085EEF5 /* helpDeskQuery.xib in Resources */,
 				3AFE389C1CE4932D0062A497 /* insuredMembersAll.xib in Resources */,
@@ -1100,7 +1068,6 @@
 				78B90BD91CE067950022FE7A /* enterOTP.xib in Resources */,
 				3AEEB01A1CE745F90085EEF5 /* helpDeskFAQ.xib in Resources */,
 				FCE15CDC1D34DF54009B49E2 /* Laboratory Report.pdf in Resources */,
-				3A992F041CED918100D85D8A /* benefitSummary.xib in Resources */,
 				783322A61CDB13CE0015CE37 /* signup.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1190,7 +1157,6 @@
 				3A01752C1CE360FF00832E49 /* insuredMembers.swift in Sources */,
 				C2DCB0DE1D1D1DAF004FD787 /* EmailDTO.swift in Sources */,
 				C2DCB0EC1D1D4100004FD787 /* RequestDTO.swift in Sources */,
-				3ACFB2A21CE4C3A0003766D8 /* MemberListController.swift in Sources */,
 				3A79A7C71CF045F0008B693B /* ConnectController.swift in Sources */,
 				3ABD66C71D279DB9003462CB /* MemberListGroupTableController.swift in Sources */,
 				C2A584601D262EAE00F6E0D5 /* EnumSets.swift in Sources */,
@@ -1215,7 +1181,6 @@
 				439CE6431D000B2E00FA1B26 /* Popups.swift in Sources */,
 				783322A81CDB13ED0015CE37 /* signup.swift in Sources */,
 				3AEEB0101CE705B60085EEF5 /* subHeader.swift in Sources */,
-				3A992F061CED997400D85D8A /* benefitSummary.swift in Sources */,
 				C2DCB0D01D1CFFDD004FD787 /* EmployeeChanageRequestDTO.swift in Sources */,
 				C2DCB0D81D1D144E004FD787 /* ClientConnectDTO.swift in Sources */,
 				3A79A7CB1CF06702008B693B /* MyClaimController.swift in Sources */,
@@ -1235,7 +1200,6 @@
 				3AEEB0211CE7504B0085EEF5 /* helpDeskQuery.swift in Sources */,
 				C2DCB0DC1D1D1CDB004FD787 /* ConnectDetailsDTO.swift in Sources */,
 				3A677B6B1CE4B90C003B8C2B /* RetrieveLoginController.swift in Sources */,
-				3AD3E52A1CE1F87B00900A93 /* enrollmentMembers.swift in Sources */,
 				3A677B651CE4B2D3003B8C2B /* LoginController.swift in Sources */,
 				78B90BDB1CE067DA0022FE7A /* enterOTP.swift in Sources */,
 				3A1A5AE11CEC988A00AD2564 /* DocumentChecklistController.swift in Sources */,

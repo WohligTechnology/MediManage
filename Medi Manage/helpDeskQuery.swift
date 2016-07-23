@@ -41,14 +41,9 @@ class helpDeskQuery: UIView {
         helpDeskQuery.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(helpDeskQuery)
         
-        let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
-        statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
-        self.addSubview(statusBar)
         
-        let mainheader = header(frame: CGRectMake(0, 20, width, 50))
-        self.addSubview(mainheader)
         
-        let mainsubHeader = subHeader(frame: CGRectMake(0, 70, width, 50))
+        let mainsubHeader = subHeader(frame: CGRectMake(0, 0, width, 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_four")
         mainsubHeader.subHeaderTitle.text = "HELP DESK"
         self.addSubview(mainsubHeader)
@@ -58,7 +53,7 @@ class helpDeskQuery: UIView {
             self.to = json["result"]["QueriesEmail"].stringValue
         })
         
-        helpDeskQueryMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height - 125)
+        helpDeskQueryMainView.frame = CGRectMake(0, 70, self.frame.size.width, self.frame.size.height - 75)
         
         // add borders
         addBottomBorder(UIColor.blackColor(), linewidth: 0.5, myView: subjectTextField)
@@ -72,7 +67,16 @@ class helpDeskQuery: UIView {
             print(String(params))
             rest.SendQuery(JSON(params), completion: {(json:JSON) -> () in
                 print(json)
+                if json["state"] {
+                    Popups.SharedInstance.ShowPopup("Validation", message: "Query submited sucessfully")
+                }else{
+                    Popups.SharedInstance.ShowPopup("Validation", message: "Can not send Query")
+                }
+                
             })
+        }else{
+            Popups.SharedInstance.ShowPopup("Validation", message: "Enter all Fields.")
+
         }
 //        gHelpDeskQueryController.performSegueWithIdentifier("helpDeskQueryToConnect", sender: nil)
     }

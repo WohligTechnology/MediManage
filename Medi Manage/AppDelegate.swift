@@ -100,18 +100,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
-extension UIViewController {
-    func displayNavBarActivity() {
-        let indicator = UIActivityIndicatorView(activityIndicatorStyle: .White)
-        indicator.startAnimating()
-        let item = UIBarButtonItem(customView: indicator)
-        
-        self.navigationItem.leftBarButtonItem = item
-    }
-    
-    func dismissNavBarActivity() {
-        self.navigationItem.leftBarButtonItem = nil
-    }
-}
+//
+//extension UIViewController {
+//    func displayNavBarActivity() {
+//        let indicator = UIActivityIndicatorView(activityIndicatorStyle: .White)
+//        indicator.startAnimating()
+//        let item = UIBarButtonItem(customView: indicator)
+//        
+//        self.navigationItem.leftBarButtonItem = item
+//    }
+//    
+//    func dismissNavBarActivity() {
+//        self.navigationItem.leftBarButtonItem = nil
+//    }
+//}
 

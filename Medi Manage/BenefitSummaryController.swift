@@ -21,19 +21,27 @@ class BenefitSummaryController: UIViewController, UITableViewDataSource, UITabBa
     var myBenefits : JSON = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
-        statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
-        self.view.addSubview(statusBar)
         
-        let mainheader = header(frame: CGRectMake(0, 20, width, 50))
-        self.view.addSubview(mainheader)
+        let navigationLogo = UIImage(named: "logo_small")
+        let navigationImageView = UIImageView(image: navigationLogo)
+        self.navigationItem.titleView = navigationImageView
+        let infoImage = UIImage(named: "settings")
+        let imgWidth = 25
+        let imgHeight = 25
+        let button:UIButton = UIButton(frame: CGRect(x: 0,y: 0,width: imgWidth, height: imgHeight))
+        button.setBackgroundImage(infoImage, forState: .Normal)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+        self.navigationController?.navigationBar.barTintColor = UIColor.blackColor()
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
-        let mainsubHeader = subHeader(frame: CGRectMake(0, 70, width, 50))
+        let mainsubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_three")
         mainsubHeader.subHeaderTitle.text = "BENEFIT SUMMARY"
         self.view.addSubview(mainsubHeader)
+        
         gBenefitSummaryController = self
-        self.displayNavBarActivity()
+        
+        
         rest.BenefitSummery({(json:JSON) -> () in
             print(json["result"]["SalientFeatures"])
             self.myBenefits = json["result"]
@@ -74,9 +82,9 @@ class BenefitSummaryController: UIViewController, UITableViewDataSource, UITabBa
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-                let pdfLoc = NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource("Discharge Summary", ofType:"pdf")!)
-        let request = NSURLRequest(URL: pdfLoc);
-        self.webViewpdf.loadRequest(request);
+//                let pdfLoc = NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource("Discharge Summary", ofType:"pdf")!)
+//        let request = NSURLRequest(URL: pdfLoc);
+//        self.webViewpdf.loadRequest(request);
     }
     
     

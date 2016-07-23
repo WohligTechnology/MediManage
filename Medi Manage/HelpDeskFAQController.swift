@@ -22,12 +22,19 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let navigationLogo = UIImage(named: "logo_small")
+        let navigationImageView = UIImageView(image: navigationLogo)
+        self.navigationItem.titleView = navigationImageView
+        self.navigationController?.navigationBar.barTintColor = UIColor.blackColor()
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        
         let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
         statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
         self.view.addSubview(statusBar)
         
-        let mainheader = header(frame: CGRectMake(0, 20, width, 50))
-        self.view.addSubview(mainheader)
+//        let mainheader = header(frame: CGRectMake(0, 20, width, 50))
+//        self.view.addSubview(mainheader)
         
         let mainsubHeader = subHeader(frame: CGRectMake(0, 70, width, 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_four")

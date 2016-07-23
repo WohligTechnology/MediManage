@@ -77,14 +77,6 @@ class enrollmentMembersRenew: UIView{
         sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(sortnewview);
         
-        let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
-        statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
-        self.addSubview(statusBar)
-        
-        let mainheader = header(frame: CGRectMake(0, 20, width, 50))
-        self.addSubview(mainheader)
-        self.leftArrow.hidden = true
-        
         let selectSecondPerson =  UITapGestureRecognizer(target: self, action: #selector(enrollmentMembersRenew.selectpright))
         self.rightIcon.addGestureRecognizer(selectSecondPerson)
         rightIcon.userInteractionEnabled = true
@@ -92,6 +84,7 @@ class enrollmentMembersRenew: UIView{
         let selectFirstPerson =  UITapGestureRecognizer(target: self, action: #selector(enrollmentMembersRenew.selectpleft))
         self.leftIcon.addGestureRecognizer(selectFirstPerson)
         leftIcon.userInteractionEnabled = true
+        
         rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
             dispatch_sync(dispatch_get_main_queue()){
 //                print(json["result"]["Groups"][0]["Members"])
@@ -119,7 +112,7 @@ class enrollmentMembersRenew: UIView{
         })
         
         
-        enrollmentMembersMainView.frame = CGRectMake(0, 70, self.frame.size.width, self.frame.size.height - 70);
+        enrollmentMembersMainView.frame = CGRectMake(0, 60, self.frame.size.width, self.frame.size.height - 60);
         
         addBottomBorder(UIColor.blackColor(), width: 1, myView: leftFirstName)
         addBottomBorder(UIColor.blackColor(), width: 1, myView: leftMiddelName)
@@ -483,6 +476,8 @@ class enrollmentMembersRenew: UIView{
         }else{
             rest.AddMembers(finaljson, completion: {(json:JSON) -> ()in
                 print("in result")
+                gEnrollmentMembersController.performSegueWithIdentifier("memberlist", sender: nil)
+
             print(json)
             })
         }

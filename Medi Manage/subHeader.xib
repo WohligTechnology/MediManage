@@ -37,29 +37,15 @@
                         <constraint firstAttribute="width" secondItem="SAC-k5-SaH" secondAttribute="height" multiplier="1:1" id="kY3-ks-KJu"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRR-zk-ld0">
-                    <rect key="frame" x="20" y="18" width="24" height="14"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="14" id="F2S-W1-ihj"/>
-                        <constraint firstAttribute="width" constant="24" id="M6q-2n-BF1"/>
-                    </constraints>
-                    <state key="normal" image="back_icon"/>
-                    <connections>
-                        <action selector="backButton:" destination="-1" eventType="touchUpInside" id="Ilm-rO-dHm"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="SAC-k5-SaH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="BqU-1B-ksf"/>
-                <constraint firstItem="bRR-zk-ld0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="18" id="Js6-Rv-EFb"/>
                 <constraint firstItem="YEN-Oi-aRl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="LNo-wj-ceK"/>
-                <constraint firstItem="bRR-zk-ld0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="NYa-7m-0uO"/>
                 <constraint firstItem="YEN-Oi-aRl" firstAttribute="leading" secondItem="SAC-k5-SaH" secondAttribute="trailing" constant="10" id="RCz-v2-ihI"/>
                 <constraint firstAttribute="bottom" secondItem="YEN-Oi-aRl" secondAttribute="bottom" constant="15" id="fok-9X-7cx"/>
                 <constraint firstAttribute="trailing" secondItem="YEN-Oi-aRl" secondAttribute="trailing" constant="20" id="qOR-9h-FZ5"/>
                 <constraint firstAttribute="bottom" secondItem="SAC-k5-SaH" secondAttribute="bottom" constant="10" id="s71-PU-JuD"/>
-                <constraint firstAttribute="bottom" secondItem="bRR-zk-ld0" secondAttribute="bottom" constant="18" id="wMS-3C-xbn"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -67,7 +53,6 @@
         </view>
     </objects>
     <resources>
-        <image name="back_icon" width="88" height="46"/>
         <image name="footer_four" width="151" height="137"/>
     </resources>
 </document>

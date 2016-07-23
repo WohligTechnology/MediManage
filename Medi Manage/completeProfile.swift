@@ -192,6 +192,7 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
     
     
     @IBAction func retrieveLoginCall(sender: AnyObject) {
+
        
         if profileButton.titleLabel?.text == "Submit" {
             self.userDetail["CountryCode"].stringValue = self.countryCode.text! as String
@@ -200,7 +201,7 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
             self.userDetail["Email"].stringValue = self.email.text! as String
             print(self.userDetail)
             rest.UpdateProfile(self.userDetail, completion: {(json:JSON) -> () in
-                print(json)
+                Popups.SharedInstance.ShowPopup("Validation", message: "Profile is updated.")
             })
             
         }else{
