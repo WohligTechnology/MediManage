@@ -207,7 +207,7 @@ class enrollmentMembersRenew: UIView{
             rightDOB.text = dateToSave
             break
         case 4:
-            leftDOM.text = dateToSave
+            rightDOM.text = dateToSave
             break
         default:
             break

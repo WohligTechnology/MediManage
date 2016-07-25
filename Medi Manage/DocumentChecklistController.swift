@@ -13,7 +13,7 @@ var gDocumentChecklistController: UIViewController!
 class DocumentChecklistController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let image = ["claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three"]
-    let pdfs = ["CLAIM FORM SIGNED BY EMPLOYEE",
+    let pdfs = ["Discharge Summary",
                      "Discharge Summary",
                      "Doctor's Prescription",
                      "Main Hospital Bill",

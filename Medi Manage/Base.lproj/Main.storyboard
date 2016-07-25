@@ -1331,8 +1331,8 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z8X-de-LBf">
-                                <rect key="frame" x="-4" y="95" width="328" height="100"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8X-de-LBf">
+                                <rect key="frame" x="-4" y="104" width="328" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOCUMENT CHECKLIST FOR REIMBURSEMENT CLAIM" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sq9-ZP-jg2">
                                         <rect key="frame" x="20" y="20" width="288" height="40"/>
@@ -1385,8 +1385,8 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                     <constraint firstItem="4L6-o1-Nlz" firstAttribute="leading" secondItem="z8X-de-LBf" secondAttribute="leading" constant="20" id="t2e-ni-lCW"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MUk-6G-wR1">
-                                <rect key="frame" x="-4" y="195" width="328" height="236"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MUk-6G-wR1">
+                                <rect key="frame" x="-4" y="204" width="328" height="227"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="85" id="PrS-6N-cFu" customClass="documentChecklistUIViewCell" customModule="MediManage" customModuleProvider="target">
@@ -1457,7 +1457,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                             <constraint firstItem="MUk-6G-wR1" firstAttribute="bottom" secondItem="Yyw-Wm-zBW" secondAttribute="top" id="Nz9-yO-6aZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="z8X-de-LBf" secondAttribute="trailing" constant="-20" id="OpL-3t-reS"/>
                             <constraint firstItem="MUk-6G-wR1" firstAttribute="top" secondItem="z8X-de-LBf" secondAttribute="bottom" id="wmr-tP-NfM"/>
-                            <constraint firstItem="z8X-de-LBf" firstAttribute="top" secondItem="mEL-Rb-cBK" secondAttribute="bottom" constant="95" id="wtQ-Oc-mQU"/>
+                            <constraint firstItem="z8X-de-LBf" firstAttribute="top" secondItem="mEL-Rb-cBK" secondAttribute="bottom" constant="60" id="wtQ-Oc-mQU"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -2578,8 +2578,8 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                                 <rect key="frame" x="137" y="201" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="168" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ieg-QM-CDH">
-                                <rect key="frame" x="-4" y="97" width="328" height="283"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="168" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ieg-QM-CDH">
+                                <rect key="frame" x="-4" y="84" width="328" height="296"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="168" id="Mzg-9Q-uP1" customClass="quecell" customModule="MediManage" customModuleProvider="target">
@@ -2642,7 +2642,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Ieg-QM-CDH" firstAttribute="top" secondItem="7Pg-bc-fwc" secondAttribute="bottom" constant="97" id="Bgr-n8-t6j"/>
+                            <constraint firstItem="Ieg-QM-CDH" firstAttribute="top" secondItem="7Pg-bc-fwc" secondAttribute="bottom" constant="40" id="Bgr-n8-t6j"/>
                             <constraint firstItem="Bah-dz-chG" firstAttribute="centerY" secondItem="Pjo-1i-5Nh" secondAttribute="centerY" id="HES-Pd-a2x"/>
                             <constraint firstItem="Ieg-QM-CDH" firstAttribute="centerX" secondItem="Bah-dz-chG" secondAttribute="centerX" id="YEH-SD-z0H"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ieg-QM-CDH" secondAttribute="trailing" constant="-20" id="ptQ-oi-3ch"/>
@@ -2684,7 +2684,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1I8-pv-9ZT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="659" y="2780"/>
+            <point key="canvasLocation" x="655" y="2782"/>
         </scene>
         <!--Connect Controller-->
         <scene sceneID="SR5-cc-YkG">
@@ -2724,8 +2724,8 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ImJ-YF-Tet">
-                                <rect key="frame" x="-4" y="70" width="328" height="80"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ImJ-YF-Tet">
+                                <rect key="frame" x="-4" y="64" width="328" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADDED MEMBER LIST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwE-SO-EIE">
                                         <rect key="frame" x="0.0" y="12" width="328" height="21"/>
@@ -2761,8 +2761,8 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                     <constraint firstItem="iwE-SO-EIE" firstAttribute="top" secondItem="ImJ-YF-Tet" secondAttribute="top" constant="12" id="iUh-Kb-dtV"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="354" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="u1M-RS-Usu">
-                                <rect key="frame" x="-4" y="150" width="328" height="369"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="354" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="u1M-RS-Usu">
+                                <rect key="frame" x="-4" y="144" width="328" height="375"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fg8-Na-Yx2">
                                     <rect key="frame" x="0.0" y="382" width="328" height="40"/>
@@ -2983,11 +2983,10 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                                         <constraint firstItem="zdc-HP-rH2" firstAttribute="leading" secondItem="7zB-4w-5ef" secondAttribute="leading" constant="25" id="zMt-C8-zth"/>
                                                     </constraints>
                                                 </view>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="efB-XB-JTc">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="efB-XB-JTc">
                                                     <rect key="frame" x="3" y="8" width="322" height="58"/>
                                                     <color key="backgroundColor" red="0.98697105932906559" green="0.9995610626019632" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <inset key="scrollIndicatorInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="82" id="oW1-wo-RR1">
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="oW1-wo-RR1">
                                                         <size key="itemSize" width="90" height="50"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -3021,6 +3020,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             </view>
                                                             <color key="backgroundColor" red="0.10980392160000001" green="0.5568627451" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                                             <constraints>
                                                                 <constraint firstItem="lrh-cd-mkj" firstAttribute="leading" secondItem="ZD5-GG-sYz" secondAttribute="trailing" constant="5" id="M6B-NC-wJz"/>
                                                                 <constraint firstItem="lrh-cd-mkj" firstAttribute="centerY" secondItem="LIX-HB-0iF" secondAttribute="centerY" id="Zcw-vQ-WDu"/>
@@ -3082,7 +3082,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <constraints>
                             <constraint firstItem="ImJ-YF-Tet" firstAttribute="leading" secondItem="9bI-ds-17b" secondAttribute="leadingMargin" constant="-20" id="3C6-gY-5k4"/>
                             <constraint firstItem="u1M-RS-Usu" firstAttribute="top" secondItem="ImJ-YF-Tet" secondAttribute="bottom" id="EbL-BI-H6A"/>
-                            <constraint firstItem="ImJ-YF-Tet" firstAttribute="top" secondItem="xOC-OY-WOd" secondAttribute="bottom" constant="50" id="FVI-6l-oaY"/>
+                            <constraint firstItem="ImJ-YF-Tet" firstAttribute="top" secondItem="xOC-OY-WOd" secondAttribute="bottom" id="FVI-6l-oaY"/>
                             <constraint firstItem="u1M-RS-Usu" firstAttribute="leading" secondItem="9bI-ds-17b" secondAttribute="leadingMargin" constant="-20" id="J0W-ei-eVg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ImJ-YF-Tet" secondAttribute="trailing" constant="-20" id="R4a-4a-VZL"/>
                             <constraint firstItem="hUB-MS-xsX" firstAttribute="top" secondItem="u1M-RS-Usu" secondAttribute="bottom" id="X9n-jn-bTT"/>
@@ -3101,7 +3101,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
         <!--Tab Bar Controller-->
         <scene sceneID="Lef-QB-KJs">
             <objects>
-                <tabBarController storyboardIdentifier="tabbar" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="crn-Bn-ORl" customClass="TabBarController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabbar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="crn-Bn-ORl" customClass="TabBarController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="lsY-9F-LDr">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="49"/>

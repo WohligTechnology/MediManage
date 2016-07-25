@@ -164,9 +164,15 @@ extension MemberListGroupTableController: UICollectionViewDelegate, UICollection
         
         cell.namelbl.text = members[collectionView.tag]["Members"][indexPath.row]["RelationType"].stringValue
         //        cell.namelbl.text = String(collectionView.tag)
-        cell.layer.borderWidth = 0.5
-        cell.frame.size.width = 90
+//        cell.layer.borderWidth = 0.5
+//        cell.frame.size.width = 90
         return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                               sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let height = 80
+        return CGSizeMake(collectionView.bounds.size.width / 2, CGFloat(height))
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
