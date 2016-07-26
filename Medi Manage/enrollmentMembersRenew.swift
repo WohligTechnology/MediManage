@@ -20,7 +20,9 @@ class enrollmentMembersRenew: UIView{
     
     var newJsonSun : JSON = ["ID":0,"LastName":"","Gender":"1","SystemIdentifier":"C","RelationType":"Sun"]
     var newJsonDaughter : JSON = ["ID":0,"LastName":"","Gender":"2","SystemIdentifier":"C","RelationType":"Daughter"]
-
+    var prePlanMembers : JSON = ["C":0,"P":0,"I":0]
+    var calculatedPlanMember : JSON = ["C":0,"P":0,"I":0]
+    
     var leftMember : JSON = ""
     var rightMember : JSON = ""
     var apiProjectJson : JSON = [[]]
@@ -29,7 +31,7 @@ class enrollmentMembersRenew: UIView{
     var wholeJson: JSON = ""
     var freezeleft = false
     var freezeright = false
-
+    
     
     //OUTLATES
     
@@ -93,7 +95,7 @@ class enrollmentMembersRenew: UIView{
         
         //HIDE LEFT ARROW INITIALLY
         self.leftArrow.hidden = true
-
+        
         
         rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
             dispatch_sync(dispatch_get_main_queue()){
@@ -118,8 +120,28 @@ class enrollmentMembersRenew: UIView{
                         }
                     }
                 }
-//                print(self.memberjson)
-//                self.checkEP()
+                for x in 0..<self.wholeJson["PlanMembers"].count {
+                    switch self.wholeJson["PlanMembers"][x]["Member"] {
+                    case "C":
+                        if self.wholeJson["PlanMembers"][x]["Allowed"] > self.prePlanMembers["C"] {
+                            self.prePlanMembers["C"] = self.wholeJson["PlanMembers"][x]["Allowed"]
+                        }
+                        break
+                    case "P":
+                        if self.wholeJson["PlanMembers"][x]["Allowed"] > self.prePlanMembers["P"] {
+                            self.prePlanMembers["P"] = self.wholeJson["PlanMembers"][x]["Allowed"]
+                        }
+                        break
+                    case "I":
+                        if self.wholeJson["PlanMembers"][x]["Allowed"] > self.prePlanMembers["I"] {
+                            self.prePlanMembers["I"] = self.wholeJson["PlanMembers"][x]["Allowed"]
+                        }
+                        break
+                    default:
+                        break
+                    }
+                    
+                }
                 self.assignMembers()
             }
         })
@@ -145,29 +167,22 @@ class enrollmentMembersRenew: UIView{
         border.backgroundColor = color.CGColor
         border.frame = CGRectMake(0, myView.frame.size.height - width, myView.frame.size.width, width)
         myView.layer.addSublayer(border)
-        
-        
     }
     
     //FUNCTION WHICH CHECKS ENROLLMENT PERIOD
-    //jagruti
     func checkEP() {
-        if self.wholeJson["IsInEnrollmentPeriod"] {
+        if !self.wholeJson["IsInEnrollmentPeriod"] {
             switch (self.memberjson[page]["Status"], self.memberjson[page]["AddedAt"]) {
             case (1,1):
-//                print("1,1")
                 self.freezeMembers("L")
                 break
             case (1,2):
-//                print("1,2")
                 self.unfreezeMembers("L")
                 break
             case (2,1):
-//                print("2,1")
                 self.freezeMembers("L")
                 break
             case (2,2):
-//                print("2,2")
                 self.unfreezeMembers("L")
                 break
             default:
@@ -219,15 +234,25 @@ class enrollmentMembersRenew: UIView{
     }
     
     @IBAction func rightAddMoreClick(sender: AnyObject) {
-        updateJson()
-        addMemberToJson(self.memberjson[page+1]["SystemIdentifier"].stringValue, relation: self.memberjson[page+1]["RelationType"].stringValue)
-        rightActionFunction()
+        if checkAllowedMembers() {
+            updateJson()
+            addMemberToJson(self.memberjson[page+1]["SystemIdentifier"].stringValue, relation: self.memberjson[page+1]["RelationType"].stringValue)
+            rightActionFunction()
+        }else{
+            Popups.SharedInstance.ShowPopup("Allowed Members", message: msgAllowed)
+        }
+        
     }
     
     @IBAction func leftAddMoreClick(sender: AnyObject) {
-        updateJson()
-        addMemberToJson(self.memberjson[page]["SystemIdentifier"].stringValue, relation: self.memberjson[page]["RelationType"].stringValue)
-//        leftActionFunction()
+        if checkAllowedMembers() {
+            updateJson()
+            addMemberToJson(self.memberjson[page]["SystemIdentifier"].stringValue, relation: self.memberjson[page]["RelationType"].stringValue)
+            leftActionFunction()
+        }else{
+            Popups.SharedInstance.ShowPopup("Allowed Members", message: msgAllowed)
+        }
+        
     }
     
     func updateJson() {
@@ -242,16 +267,58 @@ class enrollmentMembersRenew: UIView{
         self.memberjson[page+1]["LastName"].stringValue = self.rightLastName.text!
         self.memberjson[page+1]["DateOfBirth"].stringValue = self.rightDOB.text!
         self.memberjson[page+1]["DateOfRelation"].stringValue = self.rightDOM.text!
-
+        
     }
     var afterArray : JSON = []
+    
+    func countMember() {
+        calculatedPlanMember = ["C":0,"P":0,"I":0]
+        for x in 0..<self.memberjson.count {
+            if self.memberjson[x]["ActiveState"] {
+                switch self.memberjson[x]["SystemIdentifier"] {
+                case "C":
+                    self.calculatedPlanMember["C"].int64Value = self.calculatedPlanMember["C"].int64Value+1
+                    break
+                case "P":
+                    self.calculatedPlanMember["P"].int64Value = self.calculatedPlanMember["P"].int64Value+1
+                    break
+                case "I":
+                    self.calculatedPlanMember["I"].int64Value = self.calculatedPlanMember["I"].int64Value+1
+                    break
+                default:
+                    break
+                }
+            }
+            
+        }
+    }
+    
+    var msgAllowed = ""
+    
+    func checkAllowedMembers() -> Bool {
+        countMember()
+        var check = false
+        if self.calculatedPlanMember["C"].int64Value >= self.prePlanMembers["C"].int64Value {
+            check = false
+            msgAllowed = "You can Add Maximum  \(self.prePlanMembers["C"])  Childrens."
+        }else if self.calculatedPlanMember["P"].int64Value > self.prePlanMembers["P"].int64Value {
+            check = false
+            msgAllowed = "You can Add Maximum  \(self.prePlanMembers["P"])  Parents."
+        }else if self.calculatedPlanMember["I"].int64Value > self.prePlanMembers["I"].int64Value {
+            check = false
+            msgAllowed = "You can Add Maximum  \(self.prePlanMembers["I"])  Parents In Law."
+        }else{
+            check = true
+        }
+        return check
+    }
     
     func addMemberToJson(identifier : String, relation : String) {
         var checkrelation = false
         afterArray = []
         for x in 0..<self.memberjson.count {
             if (self.memberjson[x]["SystemIdentifier"].stringValue == identifier && self.memberjson[x]["RelationType"].stringValue == relation) {
-
+                
                 if !checkrelation {
                     checkrelation = true
                     afterArray.arrayObject?.append(self.memberjson[x].object)
@@ -268,7 +335,6 @@ class enrollmentMembersRenew: UIView{
             }
         }
         self.memberjson = afterArray
-//        page = 0
         assignMembers()
     }
     
@@ -305,7 +371,7 @@ class enrollmentMembersRenew: UIView{
     
     @IBAction func leftDOMClick(sender: AnyObject) {
         datetype = 2
-//        print("left click")
+        //        print("left click")
         datePickerView.datePickerMode = UIDatePickerMode.Date
         leftDOM.inputView = datePickerView
         datePickerView.addTarget(self , action: #selector(self.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
@@ -366,43 +432,43 @@ class enrollmentMembersRenew: UIView{
             self.leftArrow.hidden = false
             assignMembers()
         }
-
+        
     }
     
     @IBAction func leftActionArrow(sender: AnyObject) {
-       leftActionFunction()
+        leftActionFunction()
     }
     
     
     func selectpright() {
         if !freezeright {
-           
-        if self.rightTick.hidden {
-            self.rightTick.hidden = false
-            memberjson[page+1]["ActiveState"] = true
-            editRightMember(true)
-
-        }else{
-            self.rightTick.hidden = true
-            memberjson[page+1]["ActiveState"] = false
-            editRightMember(false)
-
-        }
+            
+            if self.rightTick.hidden {
+                self.rightTick.hidden = false
+                memberjson[page+1]["ActiveState"] = true
+                editRightMember(true)
+                
+            }else{
+                self.rightTick.hidden = true
+                memberjson[page+1]["ActiveState"] = false
+                editRightMember(false)
+                
+            }
         }
         
     }
     func selectpleft() {
         if !freezeleft {
             
-        if self.leftTick.hidden {
-            self.leftTick.hidden = false
-            memberjson[page]["ActiveState"] = true
-            editLeftMember(true)
-        }else{
-            self.leftTick.hidden = true
-            memberjson[page]["ActiveState"] = false
-            editLeftMember(false)
-        }
+            if self.leftTick.hidden {
+                self.leftTick.hidden = false
+                memberjson[page]["ActiveState"] = true
+                editLeftMember(true)
+            }else{
+                self.leftTick.hidden = true
+                memberjson[page]["ActiveState"] = false
+                editLeftMember(false)
+            }
         }
     }
     
@@ -460,12 +526,9 @@ class enrollmentMembersRenew: UIView{
         if self.memberjson[page]["ActiveState"] {
             self.leftTick.hidden = false
             checkEP()
-//            editLeftMember(true)
         }else{
             self.leftTick.hidden = true
             checkEP()
-            //jagruti
-//            editLeftMember(false)
         }
         self.leftMemberName.text = self.memberjson[page]["RelationType"].stringValue
         self.leftFirstName.text = self.memberjson[page]["FirstName"].stringValue
@@ -506,11 +569,9 @@ class enrollmentMembersRenew: UIView{
         if self.memberjson[page+1]["ActiveState"] {
             self.rightTick.hidden = false
             checkEP()
-//            editRightMember(true)
         }else{
             self.rightTick.hidden = true
             checkEP()
-//            editRightMember(false)
         }
         self.rightMemberName.text = self.memberjson[page+1]["RelationType"].stringValue
         self.rightFirstName.text = self.memberjson[page+1]["FirstName"].stringValue
@@ -518,7 +579,7 @@ class enrollmentMembersRenew: UIView{
         self.rightLastName.text = self.memberjson[page+1]["LastName"].stringValue
         self.rightDOB.text = self.memberjson[page+1]["DateOfBirth"].stringValue
         self.rightDOM.text = self.memberjson[page+1]["DateOfRelation"].stringValue
-                
+        
     }
     
     //FINAL PROCESS SUBMIT MEMBERS
@@ -527,30 +588,56 @@ class enrollmentMembersRenew: UIView{
         var msg = ""
         var finaljson :JSON = []
         var status = true
-
-        for x in 0..<memberjson.count {
-            if memberjson[x]["ActiveState"] {
-                for (key, itm) in memberjson[x] {
-                    if itm == "" && status {
-                        if memberjson[x]["SystemIdentifier"] != "C" || key != "DateOfRelation"{
-                            status = false
-                            msg = "Please Enter " + key + " of " + memberjson[x]["RelationType"].stringValue
+        if checkAllowedMembers(){
+            for x in 0..<memberjson.count {
+                if self.wholeJson["IsInEnrollmentPeriod"] {
+                    if memberjson[x]["ActiveState"] {
+                        for (key, itm) in memberjson[x] {
+                            if itm == "" && status {
+                                if memberjson[x]["SystemIdentifier"] != "C" || key != "DateOfRelation"{
+                                    status = false
+                                    msg = "Please Enter " + key + " of " + memberjson[x]["RelationType"].stringValue
+                                }
+                                
+                            }
+                        }
+                        finaljson.arrayObject?.append(memberjson[x].object)
+                    }
+                }else{
+                    if (memberjson[x]["Status"] == 1 && memberjson[x]["AddedAt"] == 2) || (memberjson[x]["Status"] == 2 && memberjson[x]["AddedAt"] == 2){
+                        if memberjson[x]["ActiveState"] {
+                            for (key, itm) in memberjson[x] {
+                                if itm == "" && status {
+                                    if memberjson[x]["SystemIdentifier"] != "C" || key != "DateOfRelation"{
+                                        status = false
+                                        msg = "Please Enter " + key + " of " + memberjson[x]["RelationType"].stringValue
+                                    }
+                                    
+                                }
+                            }
+                            finaljson.arrayObject?.append(memberjson[x].object)
+                        }
+                    }
+                }
+            }
+            if !status {
+                Popups.SharedInstance.ShowPopup("Validation", message: msg)
+            }else{
+                rest.AddMembers(finaljson, completion: {(json:JSON) -> ()in
+                    dispatch_sync(dispatch_get_main_queue()){
+                        print("in result")
+                        print(json)
+                        if json["state"] {
+                            gEnrollmentMembersController.performSegueWithIdentifier("memberlist", sender: nil)
+                        }else{
+                            Popups.SharedInstance.ShowPopup("Select Members", message: "Some Error Occured.")
                         }
                         
                     }
-                }
-                finaljson.arrayObject?.append(memberjson[x].object)
+                })
             }
-        }
-        if !status {
-            Popups.SharedInstance.ShowPopup("Validation", message: msg)
         }else{
-            rest.AddMembers(finaljson, completion: {(json:JSON) -> ()in
-                print("in result")
-                gEnrollmentMembersController.performSegueWithIdentifier("memberlist", sender: nil)
-
-            print(json)
-            })
+            Popups.SharedInstance.ShowPopup("Allowed Members", message: msgAllowed)
         }
         
     }
