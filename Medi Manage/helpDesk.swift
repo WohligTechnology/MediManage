@@ -55,11 +55,11 @@ class helpDesk: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextFiel
         
         //get faq data
         rest.FaqCategories({(json:JSON) -> () in
-//            gHelpDeskQueryController.s
+            //            gHelpDeskQueryController.s
             if json["state"] {
                 self.categories = json["result"]
             }
-            })
+        })
         
         // dropdown list
         pickerView.delegate = self
@@ -99,7 +99,7 @@ class helpDesk: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextFiel
     func donePicker(){
         typeQuestionField.resignFirstResponder()
     }
-
+    
     func textFieldDidEndEditing(textField: UITextField) {
         textField.resignFirstResponder()
     }
@@ -109,18 +109,15 @@ class helpDesk: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextFiel
     }
     @IBAction func helpDeskFAQCall(sender: AnyObject) {
         print("submit clicked")
-        gHelpDeskController.performSegueWithIdentifier("helpDeskToHelpDeskFAQ", sender: nil)
+        if typeQuestionField.text == "" {
+            Popups.SharedInstance.ShowPopup("Category", message: "Please Select Category.")
+            
+        }else{
+            gHelpDeskController.performSegueWithIdentifier("helpDeskToHelpDeskFAQ", sender: nil)
+        }
     }
     @IBAction func submitQry(sender: AnyObject) {
         gHelpDeskController.performSegueWithIdentifier("sendquery", sender: nil)
-        
     }
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
-
+    
 }

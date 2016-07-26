@@ -14,15 +14,15 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
     
     let image = ["claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three"]
     let pdfs = ["Discharge Summary",
-                     "Discharge Summary",
-                     "Doctor's Prescription",
-                     "Main Hospital Bill",
-                     "Laboratory Payment Receipt",
-                     "Laboratory Report",
-                     "X-Ray Report",
-                     "Medicine Bill",
-                     "PHOTO ID PROOF AND ADDRESS PROOF OF PATIENT",
-                     "Pre Numbered Cash Paid Receipt"]
+                "Discharge Summary",
+                "Doctor's Prescription",
+                "Main Hospital Bill",
+                "Laboratory Payment Receipt",
+                "Laboratory Report",
+                "X-Ray Report",
+                "Medicine Bill",
+                "PHOTO ID PROOF AND ADDRESS PROOF OF PATIENT",
+                "Pre Numbered Cash Paid Receipt"]
     let titleMain = ["CLAIM FORM SIGNED BY EMPLOYEE",
                      "DISCHARGE CARD",
                      "LETTER OF 1ST CONSULTATION AND ADVICE FOR HOSPITALIZATION",
@@ -53,14 +53,8 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
         self.navigationController?.navigationBar.barTintColor = UIColor.blackColor()
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
-        let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
-        statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
-        self.view.addSubview(statusBar)
         
-        let mainheader = header(frame: CGRectMake(0, 20, width, 50))
-        self.view.addSubview(mainheader)
-        
-        let mainsubHeader = subHeader(frame: CGRectMake(0, 70, width, 50))
+        let mainsubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "document_checklist")
         mainsubHeader.subHeaderTitle.text = "DOCUMENT CHECKLIST"
         self.view.addSubview(mainsubHeader)
@@ -70,13 +64,13 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
         self.view.addSubview(mainfooter)
         
         dcDesc.font = UIFont(name: "Lato-Light", size: 10.0)
-//        self.dcDesc.estimate
+        //        self.dcDesc.estimate
         self.documentTable.estimatedRowHeight = 80
         self.documentTable.rowHeight = UITableViewAutomaticDimension
         
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -109,7 +103,7 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         self.performSegueWithIdentifier("viewPDF", sender: self)
-
+        
     }
     
     @IBOutlet weak var dcDesc: UILabel!
@@ -125,7 +119,7 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
         }
     }
     
-
+    
 }
 
 // MARK: - TableView Cell Class

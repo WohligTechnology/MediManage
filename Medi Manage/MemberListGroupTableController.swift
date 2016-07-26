@@ -177,9 +177,12 @@ extension MemberListGroupTableController: UICollectionViewDelegate, UICollection
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
+//        let cell1 = collectionView.cellForRowAtIndexPath(indexPath.row) as! membercollectioncell
         let tableindexpath = NSIndexPath(forRow: collectionView.tag, inSection: 0)
         
         let cell = ListTableView.cellForRowAtIndexPath(tableindexpath) as! MemberListGroupCell
+//        cell.backgroundColor = UIColor.magentaColor()
+
         cell.namelbl?.text = members[collectionView.tag]["Members"][indexPath.row]["FirstName"].stringValue
         cell.doblbl?.text = members[collectionView.tag]["Members"][indexPath.row]["DateOfBirth"].stringValue
         cell.domlbl?.text = members[collectionView.tag]["Members"][indexPath.row]["DateOfRelation"].stringValue

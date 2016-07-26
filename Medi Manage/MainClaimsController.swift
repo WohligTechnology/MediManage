@@ -11,7 +11,7 @@ import UIKit
 var gMainClaimsController: UIViewController!
 
 class MainClaimsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     let label1 = ["Claim Form", "Document Checklist"]
     let label2 = ["Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit."]
@@ -44,7 +44,7 @@ class MainClaimsController: UIViewController, UITableViewDelegate, UITableViewDa
         self.view.addSubview(mainsubHeader)
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -68,26 +68,12 @@ class MainClaimsController: UIViewController, UITableViewDelegate, UITableViewDa
         if(indexPath.item % 2 != 0) {
             cell.claimView.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 255/255)
         }
-        
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        // sahi hai midhet :)
         print("demo")
     }
-
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 class mainClaimUIViewCell: UITableViewCell {
