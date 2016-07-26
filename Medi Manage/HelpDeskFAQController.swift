@@ -14,10 +14,10 @@ var expandedHeight: CGFloat!
 var gHelpDeskFAQController: UIViewController!
 
 class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     var queans : JSON = ""
     var selectedIndexPath: NSIndexPath?
-
+    
     @IBOutlet weak var helpFaqTable: UITableView!
     
     override func viewDidLoad() {
@@ -29,13 +29,6 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
         self.navigationController?.navigationBar.barTintColor = UIColor.blackColor()
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
-        let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
-        statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
-        self.view.addSubview(statusBar)
-        
-//        let mainheader = header(frame: CGRectMake(0, 20, width, 50))
-//        self.view.addSubview(mainheader)
-        
         let mainsubHeader = subHeader(frame: CGRectMake(0, 70, width, 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_four")
         mainsubHeader.subHeaderTitle.text = "HELP DESK"
@@ -45,10 +38,11 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
         mainfooter.layer.zPosition = 1000
         self.view.addSubview(mainfooter)
         
-//        dummyButton.layer.zPosition = 10000
+        //        dummyButton.layer.zPosition = 10000
+        print("out of the function")
         print(categoryId)
         rest.FaqDetails({(json:JSON) -> ()in
-//            print(json)
+            print("in side function")
             self.queans = json["result"]["list"]
             print(self.queans.count)
             self.helpFaqTable.reloadData()
@@ -59,7 +53,7 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
         expandedHeight = helpFaqTable.rowHeight
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -122,7 +116,7 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
             let str = try NSMutableAttributedString(data: ques.dataUsingEncoding(NSUnicodeStringEncoding, allowLossyConversion: true)!, options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType], documentAttributes: nil)
             str.addAttributes([NSForegroundColorAttributeName: UIColor(red: 244/255, green: 121/255, blue: 32/255, alpha: 1), NSFontAttributeName: UIFont(name: "Lato-Regular", size: 14)!], range: NSRange(location: 0, length: str.length))
             cell.questionlbl.attributedText = str
-
+            
         } catch {
             print(error)
         }
@@ -139,21 +133,21 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
         
         return cell
     }
-
+    
 }
 
 class quecell: UITableViewCell {
     
     @IBOutlet weak var questionlbl: UILabel!
     @IBOutlet weak var answerlbl: UILabel!
-
+    
     class var expandedHeight: CGFloat { get { return 200} }
     class var defaultHeight: CGFloat { get { return 90 } }
     
     func checkHeight() {
         answerlbl.hidden = (frame.size.height < quecell.expandedHeight)
     }
-
+    
     func watchFrameChanges() {
         addObserver(self, forKeyPath: "frame", options: .New, context: nil)
         checkHeight()

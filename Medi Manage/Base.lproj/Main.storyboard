@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NMF-BA-RYD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="crn-Bn-ORl">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -1534,7 +1534,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4q-8K-apV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5414" y="732"/>
+            <point key="canvasLocation" x="4546" y="956"/>
         </scene>
         <!--Pre Authorization One Controller-->
         <scene sceneID="2FI-Z6-g2T">
@@ -1565,7 +1565,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kI4-6D-UM8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5773" y="732"/>
+            <point key="canvasLocation" x="4905" y="956"/>
         </scene>
         <!--Pre Authorization Two Controller-->
         <scene sceneID="qok-K9-MCE">
@@ -1593,7 +1593,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hau-B6-e4G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6147" y="732"/>
+            <point key="canvasLocation" x="5279" y="956"/>
         </scene>
         <!--Query Form Controller-->
         <scene sceneID="8eY-qL-Wci">
@@ -1621,7 +1621,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jxB-ul-5e6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8935" y="1302"/>
+            <point key="canvasLocation" x="4539" y="1646"/>
         </scene>
         <!--Helpline Number Controller-->
         <scene sceneID="YNC-4i-MW0">
@@ -1649,7 +1649,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ns8-23-bBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9302" y="1302"/>
+            <point key="canvasLocation" x="4906" y="1646"/>
         </scene>
         <!--Claim Intimation Controller-->
         <scene sceneID="vxP-hm-Au0">
@@ -1925,7 +1925,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z5F-3Y-lk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9677" y="1302"/>
+            <point key="canvasLocation" x="5321" y="1646"/>
         </scene>
         <!--Benefit Summary Controller-->
         <scene sceneID="zXY-2C-ZUG">
@@ -2472,7 +2472,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pUe-BV-LL4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5783" y="168"/>
+            <point key="canvasLocation" x="4915" y="392"/>
         </scene>
         <!--Splash Screen Controller-->
         <scene sceneID="vxc-Kb-Cyn">
@@ -3263,12 +3263,12 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
         <image name="triangle_white" width="30" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wgK-eO-Wod"/>
-        <segue reference="QCt-6c-YRM"/>
-        <segue reference="urc-lb-xCt"/>
-        <segue reference="LXm-Lb-FcH"/>
+        <segue reference="paQ-eN-3nA"/>
         <segue reference="Usm-li-CcL"/>
+        <segue reference="s1I-qw-2n8"/>
         <segue reference="2ZW-OI-RRj"/>
         <segue reference="ATe-en-caw"/>
+        <segue reference="wgK-eO-Wod"/>
+        <segue reference="QCt-6c-YRM"/>
     </inferredMetricsTieBreakers>
 </document>

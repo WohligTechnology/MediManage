@@ -26,6 +26,10 @@ class enrollmentMembersRenew: UIView{
     var apiProjectJson : JSON = [[]]
     var DateTicker = 0
     var page = 0
+    var wholeJson: JSON = ""
+    var freezeleft = false
+    var freezeright = false
+
     
     //OUTLATES
     
@@ -77,17 +81,25 @@ class enrollmentMembersRenew: UIView{
         sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(sortnewview);
         
+        //RIGHT PERSON ICON CLICK
         let selectSecondPerson =  UITapGestureRecognizer(target: self, action: #selector(enrollmentMembersRenew.selectpright))
         self.rightIcon.addGestureRecognizer(selectSecondPerson)
         rightIcon.userInteractionEnabled = true
         
+        //LEFT PERSON ICON CLICK
         let selectFirstPerson =  UITapGestureRecognizer(target: self, action: #selector(enrollmentMembersRenew.selectpleft))
         self.leftIcon.addGestureRecognizer(selectFirstPerson)
         leftIcon.userInteractionEnabled = true
         
+        //HIDE LEFT ARROW INITIALLY
+        self.leftArrow.hidden = true
+
+        
         rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
             dispatch_sync(dispatch_get_main_queue()){
-//                print(json["result"]["Groups"][0]["Members"])
+                print(json["result"])
+                
+                self.wholeJson = json["result"]
                 
                 for x in 0..<self.memberjson.count{
                     for y in 0..<json["result"]["Groups"].count{
@@ -107,6 +119,7 @@ class enrollmentMembersRenew: UIView{
                     }
                 }
 //                print(self.memberjson)
+//                self.checkEP()
                 self.assignMembers()
             }
         })
@@ -134,6 +147,75 @@ class enrollmentMembersRenew: UIView{
         myView.layer.addSublayer(border)
         
         
+    }
+    
+    //FUNCTION WHICH CHECKS ENROLLMENT PERIOD
+    //jagruti
+    func checkEP() {
+        if self.wholeJson["IsInEnrollmentPeriod"] {
+            switch (self.memberjson[page]["Status"], self.memberjson[page]["AddedAt"]) {
+            case (1,1):
+//                print("1,1")
+                self.freezeMembers("L")
+                break
+            case (1,2):
+//                print("1,2")
+                self.unfreezeMembers("L")
+                break
+            case (2,1):
+//                print("2,1")
+                self.freezeMembers("L")
+                break
+            case (2,2):
+//                print("2,2")
+                self.unfreezeMembers("L")
+                break
+            default:
+                self.unfreezeMembers("L")
+                break
+            }
+            
+            switch (self.memberjson[page+1]["Status"], self.memberjson[page+1]["AddedAt"]) {
+            case (1,1):
+                self.freezeMembers("R")
+                break
+            case (1,2):
+                self.unfreezeMembers("R")
+                break
+            case (2,1):
+                self.freezeMembers("R")
+                break
+            case (2,2):
+                self.unfreezeMembers("R")
+                break
+            default:
+                self.unfreezeMembers("R")
+                break
+            }
+        }
+    }
+    
+    // FREEZE LEFT MEMBER
+    func freezeMembers(position: String) {
+        if position == "L" {
+            self.freezeleft = true
+            self.editLeftMember(false)
+        }else{
+            self.freezeright = true
+            self.editRightMember(false)
+            
+        }
+    }
+    
+    // UNFREEZE MEMBERS
+    func unfreezeMembers(position: String) {
+        if position == "L" {
+            self.freezeleft = false
+            self.editLeftMember(true)
+        }else{
+            self.freezeright = false
+            self.editRightMember(true)
+        }
     }
     
     @IBAction func rightAddMoreClick(sender: AnyObject) {
@@ -177,7 +259,6 @@ class enrollmentMembersRenew: UIView{
                         afterArray.arrayObject?.append(newJsonDaughter.object)
                     }else{
                         afterArray.arrayObject?.append(newJsonSun.object)
-
                     }
                 }else{
                     afterArray.arrayObject?.append(self.memberjson[x].object)
@@ -294,52 +375,55 @@ class enrollmentMembersRenew: UIView{
     
     
     func selectpright() {
+        if !freezeright {
+           
         if self.rightTick.hidden {
             self.rightTick.hidden = false
             memberjson[page+1]["ActiveState"] = true
-            (self.enrollmentMembersMainView.viewWithTag(16) as? UIButton)?.enabled = true
-
-            for x in 11...15 {
-                let txtfield = self.enrollmentMembersMainView.viewWithTag(x) as? UITextField
-                txtfield?.enabled = true
-            }
+            editRightMember(true)
 
         }else{
             self.rightTick.hidden = true
             memberjson[page+1]["ActiveState"] = false
-            (self.enrollmentMembersMainView.viewWithTag(16) as? UIButton)?.enabled = false
+            editRightMember(false)
 
-            for x in 11...15 {
-                let txtfield = self.enrollmentMembersMainView.viewWithTag(x) as? UITextField
-                txtfield?.enabled = false
-            }
-
+        }
         }
         
     }
     func selectpleft() {
+        if !freezeleft {
+            
         if self.leftTick.hidden {
             self.leftTick.hidden = false
             memberjson[page]["ActiveState"] = true
-            (self.enrollmentMembersMainView.viewWithTag(6) as? UIButton)?.enabled = true
-            for x in 1...5 {
-                let txtfield = self.enrollmentMembersMainView.viewWithTag(x) as? UITextField
-                txtfield?.enabled = true
-            }
+            editLeftMember(true)
         }else{
             self.leftTick.hidden = true
             memberjson[page]["ActiveState"] = false
-            (self.enrollmentMembersMainView.viewWithTag(6) as? UIButton)?.enabled = false
-
-            for x in 1...5 {
-                let txtfield = self.enrollmentMembersMainView.viewWithTag(x) as? UITextField
-                txtfield?.enabled = false
-            }
+            editLeftMember(false)
+        }
         }
     }
     
     func assignMembers() {
         assignText()
+    }
+    
+    func editLeftMember(state : Bool) {
+        (self.enrollmentMembersMainView.viewWithTag(6) as? UIButton)?.enabled = state
+        for x in 1...5 {
+            let txtfield = self.enrollmentMembersMainView.viewWithTag(x) as? UITextField
+            txtfield?.enabled = state
+        }
+    }
+    
+    func editRightMember(state : Bool) {
+        (self.enrollmentMembersMainView.viewWithTag(16) as? UIButton)?.enabled = state
+        for x in 11...15 {
+            let txtfield = self.enrollmentMembersMainView.viewWithTag(x) as? UITextField
+            txtfield?.enabled = state
+        }
     }
     
     func assignText() {
@@ -375,18 +459,13 @@ class enrollmentMembersRenew: UIView{
         
         if self.memberjson[page]["ActiveState"] {
             self.leftTick.hidden = false
-            (self.enrollmentMembersMainView.viewWithTag(6) as? UIButton)?.enabled = true
-            for x in 1...5 {
-                let txtfield = self.enrollmentMembersMainView.viewWithTag(x) as? UITextField
-                txtfield?.enabled = true
-            }
+            checkEP()
+//            editLeftMember(true)
         }else{
             self.leftTick.hidden = true
-            (self.enrollmentMembersMainView.viewWithTag(6) as? UIButton)?.enabled = false
-            for x in 1...5 {
-                let txtfield = self.enrollmentMembersMainView.viewWithTag(x) as? UITextField
-                txtfield?.enabled = false
-            }
+            checkEP()
+            //jagruti
+//            editLeftMember(false)
         }
         self.leftMemberName.text = self.memberjson[page]["RelationType"].stringValue
         self.leftFirstName.text = self.memberjson[page]["FirstName"].stringValue
@@ -426,20 +505,12 @@ class enrollmentMembersRenew: UIView{
         }
         if self.memberjson[page+1]["ActiveState"] {
             self.rightTick.hidden = false
-            (self.enrollmentMembersMainView.viewWithTag(16) as? UIButton)?.enabled = true
-            
-            for x in 11...15 {
-                let txtfield = self.enrollmentMembersMainView.viewWithTag(x) as? UITextField
-                txtfield?.enabled = true
-            }
+            checkEP()
+//            editRightMember(true)
         }else{
             self.rightTick.hidden = true
-            (self.enrollmentMembersMainView.viewWithTag(16) as? UIButton)?.enabled = false
-            
-            for x in 11...15 {
-                let txtfield = self.enrollmentMembersMainView.viewWithTag(x) as? UITextField
-                txtfield?.enabled = false
-            }
+            checkEP()
+//            editRightMember(false)
         }
         self.rightMemberName.text = self.memberjson[page+1]["RelationType"].stringValue
         self.rightFirstName.text = self.memberjson[page+1]["FirstName"].stringValue

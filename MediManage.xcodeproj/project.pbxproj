@@ -73,8 +73,6 @@
 		3AEEB0131CE70F3D0085EEF5 /* helpDesk.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB0121CE70F3D0085EEF5 /* helpDesk.xib */; };
 		3AEEB0151CE731050085EEF5 /* helpDesk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB0141CE731050085EEF5 /* helpDesk.swift */; };
 		3AEEB0171CE7344C0085EEF5 /* HelpDeskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB0161CE7344C0085EEF5 /* HelpDeskController.swift */; };
-		3AEEB01A1CE745F90085EEF5 /* helpDeskFAQ.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB0191CE745F90085EEF5 /* helpDeskFAQ.xib */; };
-		3AEEB01C1CE74C770085EEF5 /* helpDeskFAQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB01B1CE74C770085EEF5 /* helpDeskFAQ.swift */; };
 		3AEEB01F1CE74D820085EEF5 /* helpDeskQuery.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB01E1CE74D820085EEF5 /* helpDeskQuery.xib */; };
 		3AEEB0211CE7504B0085EEF5 /* helpDeskQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB0201CE7504B0085EEF5 /* helpDeskQuery.swift */; };
 		3AEEB0241CE7515C0085EEF5 /* connect.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB0231CE7515C0085EEF5 /* connect.xib */; };
@@ -241,8 +239,6 @@
 		3AEEB0121CE70F3D0085EEF5 /* helpDesk.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = helpDesk.xib; sourceTree = "<group>"; };
 		3AEEB0141CE731050085EEF5 /* helpDesk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = helpDesk.swift; sourceTree = "<group>"; };
 		3AEEB0161CE7344C0085EEF5 /* HelpDeskController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpDeskController.swift; sourceTree = "<group>"; };
-		3AEEB0191CE745F90085EEF5 /* helpDeskFAQ.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = helpDeskFAQ.xib; sourceTree = "<group>"; };
-		3AEEB01B1CE74C770085EEF5 /* helpDeskFAQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = helpDeskFAQ.swift; sourceTree = "<group>"; };
 		3AEEB01E1CE74D820085EEF5 /* helpDeskQuery.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = helpDeskQuery.xib; sourceTree = "<group>"; };
 		3AEEB0201CE7504B0085EEF5 /* helpDeskQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = helpDeskQuery.swift; sourceTree = "<group>"; };
 		3AEEB0231CE7515C0085EEF5 /* connect.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = connect.xib; sourceTree = "<group>"; };
@@ -524,15 +520,6 @@
 			name = helpDesk;
 			sourceTree = "<group>";
 		};
-		3AEEB0181CE745DE0085EEF5 /* helpDeskFAQ */ = {
-			isa = PBXGroup;
-			children = (
-				3AEEB0191CE745F90085EEF5 /* helpDeskFAQ.xib */,
-				3AEEB01B1CE74C770085EEF5 /* helpDeskFAQ.swift */,
-			);
-			name = helpDeskFAQ;
-			sourceTree = "<group>";
-		};
 		3AEEB01D1CE74D390085EEF5 /* helpDeskQuery */ = {
 			isa = PBXGroup;
 			children = (
@@ -759,7 +746,6 @@
 				3A8EFB4F1CE99E89004489F3 /* hospitalSearch */,
 				3AEEB0221CE7513C0085EEF5 /* connect */,
 				3AEEB01D1CE74D390085EEF5 /* helpDeskQuery */,
-				3AEEB0181CE745DE0085EEF5 /* helpDeskFAQ */,
 				3AEEB0111CE70F2A0085EEF5 /* helpDesk */,
 				3AEEB00C1CE702290085EEF5 /* subHeader */,
 				3AF76BAC1CE5A6D000ADCAAF /* footer */,
@@ -1066,7 +1052,6 @@
 				783322B71CDB7B620015CE37 /* completeProfile.xib in Resources */,
 				FCE15CDD1D34DF54009B49E2 /* Main Hospital Bill.pdf in Resources */,
 				78B90BD91CE067950022FE7A /* enterOTP.xib in Resources */,
-				3AEEB01A1CE745F90085EEF5 /* helpDeskFAQ.xib in Resources */,
 				FCE15CDC1D34DF54009B49E2 /* Laboratory Report.pdf in Resources */,
 				783322A61CDB13CE0015CE37 /* signup.xib in Resources */,
 			);
@@ -1145,7 +1130,6 @@
 				786DF9FC1CD214F300DDE769 /* ViewController.swift in Sources */,
 				43D6FF471CFEE7C2008361B2 /* pickDate.swift in Sources */,
 				FC3C2EBD1D37C80E000DAD18 /* enrollmentMembersRenew.swift in Sources */,
-				3AEEB01C1CE74C770085EEF5 /* helpDeskFAQ.swift in Sources */,
 				3A8EFB5D1CE9DE53004489F3 /* homeMenus.swift in Sources */,
 				3A481F351CE3151900BB8A73 /* premiumCalculation.swift in Sources */,
 				C2DCB0F21D1D4C42004FD787 /* ResetPasswordDTO.swift in Sources */,
