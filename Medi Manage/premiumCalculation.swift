@@ -137,9 +137,17 @@ class premiumCalculation: UIView {
         if terms {
             rest.premiumConfirm({(json:JSON) -> ()in
                 print(json)
+                if json["state"] {
+                    gPremiumCalculationController.performSegueWithIdentifier("insuredmembers", sender: nil)
+                }else{
+                    Popups.SharedInstance.ShowPopup("Premium Calculation", message: "Some error occured")
+
+                }
             })
+        }else{
+            Popups.SharedInstance.ShowPopup("Allowed Members", message: "Please check the Terms and Conditions")
+
         }
-//        gPremiumCalculationController.performSegueWithIdentifier("insuredmembers", sender: nil)
     }
     
     

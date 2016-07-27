@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HRj-QJ-lx8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="crn-Bn-ORl">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -664,7 +664,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nwy-16-pWp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1160" y="3582"/>
+            <point key="canvasLocation" x="-1160" y="3538"/>
         </scene>
         <!--Insured Members Controller-->
         <scene sceneID="lbr-HL-zhG">
@@ -675,7 +675,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <viewControllerLayoutGuide type="bottom" id="4ii-CL-Ghl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zpA-wp-K3m">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UTX-Du-RsE">
@@ -716,7 +716,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="340" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KKn-CH-J23">
-                                <rect key="frame" x="-4" y="155" width="328" height="364"/>
+                                <rect key="frame" x="-4" y="155" width="328" height="413"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="insuredcell" rowHeight="340" id="m5Q-WZ-ZcZ" customClass="InsuredMemberCell" customModule="MediManage" customModuleProvider="target">
@@ -1116,11 +1116,11 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                             <constraint firstItem="UTX-Du-RsE" firstAttribute="top" secondItem="Fme-sh-ngZ" secondAttribute="bottom" constant="50" id="zru-IA-1qY"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZaZ-Hy-CoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-711" y="3582"/>
+            <point key="canvasLocation" x="-759" y="3538"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ejb-Nu-v4p">
@@ -2168,8 +2168,8 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                         <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A6B-0g-zTV">
-                                <rect key="frame" x="0.0" y="100" width="320" height="70"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A6B-0g-zTV">
+                                <rect key="frame" x="0.0" y="84" width="320" height="70"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fM1-he-nxJ">
                                         <rect key="frame" x="30" y="20" width="260" height="30"/>
@@ -2215,8 +2215,8 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                                     <constraint firstItem="fM1-he-nxJ" firstAttribute="leading" secondItem="A6B-0g-zTV" secondAttribute="leading" constant="30" id="b2k-ZQ-kOI"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Total Search Results:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srE-gH-JBC">
-                                <rect key="frame" x="16" y="180" width="127" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Search Results:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srE-gH-JBC">
+                                <rect key="frame" x="16" y="164" width="127" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Gfb-ae-Jad"/>
                                 </constraints>
@@ -2224,8 +2224,8 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="130" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlD-0s-051">
-                                <rect key="frame" x="145" y="180" width="25" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="130" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlD-0s-051">
+                                <rect key="frame" x="145" y="164" width="25" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="4xI-6r-dvR"/>
                                 </constraints>
@@ -2233,8 +2233,8 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                                 <color key="textColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Network Hospitals" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqz-uR-xG7">
-                                <rect key="frame" x="188" y="180" width="116" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Network Hospitals" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqz-uR-xG7">
+                                <rect key="frame" x="188" y="164" width="116" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="1yo-lM-src"/>
                                 </constraints>
@@ -2242,16 +2242,16 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qqd-Ao-xGU">
-                                <rect key="frame" x="171" y="183" width="15" height="15"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qqd-Ao-xGU">
+                                <rect key="frame" x="171" y="167" width="15" height="15"/>
                                 <color key="backgroundColor" red="0.36470588240000001" green="0.81960784310000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="I7y-Rf-KdB"/>
                                     <constraint firstAttribute="width" constant="15" id="Ue1-1q-SwJ"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="125" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zMJ-TK-aGw">
-                                <rect key="frame" x="-4" y="210" width="328" height="166"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="125" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zMJ-TK-aGw">
+                                <rect key="frame" x="-4" y="194" width="328" height="182"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="125" id="NzD-le-UMl" customClass="hospitalSearchResultUIViewCell" customModule="MediManage" customModuleProvider="target">
@@ -2436,7 +2436,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                             <constraint firstAttribute="trailing" secondItem="A6B-0g-zTV" secondAttribute="trailing" id="d14-Kz-J89"/>
                             <constraint firstItem="eqz-uR-xG7" firstAttribute="leading" secondItem="Qqd-Ao-xGU" secondAttribute="trailing" constant="2" id="qwg-ih-2m6"/>
                             <constraint firstItem="KXb-m9-L6Z" firstAttribute="top" secondItem="zMJ-TK-aGw" secondAttribute="bottom" constant="55" id="sJ9-9j-bSt"/>
-                            <constraint firstItem="A6B-0g-zTV" firstAttribute="top" secondItem="CRy-s7-uZq" secondAttribute="bottom" constant="100" id="wKI-m5-Q9B"/>
+                            <constraint firstItem="A6B-0g-zTV" firstAttribute="top" secondItem="CRy-s7-uZq" secondAttribute="bottom" constant="40" id="wKI-m5-Q9B"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zMJ-TK-aGw" secondAttribute="trailing" constant="-20" id="yiO-IC-DoP"/>
                         </constraints>
                         <variation key="default">
@@ -2448,7 +2448,9 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="hoscount" destination="xlD-0s-051" id="mM6-Vm-LCl"/>
                         <outlet property="searchBoxView" destination="fM1-he-nxJ" id="M7Y-j5-upo"/>
+                        <outlet property="searchTable" destination="zMJ-TK-aGw" id="7uW-Z7-thW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j0Q-Ed-hZ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2777,7 +2779,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                     </state>
                                     <connections>
                                         <action selector="benefitSummaryCall:" destination="rfz-2B-B0l" eventType="touchUpInside" id="FfR-s3-n7k"/>
-                                        <segue destination="ndg-xE-RRU" kind="show" id="DfH-Km-zCk"/>
+                                        <action selector="submitSumInsuredAndTopUp:" destination="HRj-QJ-lx8" eventType="touchUpInside" id="s2B-rO-Wva"/>
                                     </connections>
                                 </button>
                                 <prototypes>
@@ -3093,11 +3095,12 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="ListTableView" destination="u1M-RS-Usu" id="Xbp-Rz-IlN"/>
+                        <segue destination="ndg-xE-RRU" kind="show" identifier="toPremiumWay" id="GVf-Oi-643"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VfG-lo-faf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1160" y="2943"/>
+            <point key="canvasLocation" x="-1160" y="2910"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Lef-QB-KJs">

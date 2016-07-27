@@ -234,12 +234,13 @@ public class RestApi {
         var json = JSON(1)
         let token = defaultToken.stringForKey("access_token")
         let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
+        print(isLoginheader)
         
         let params = ["data": "\(data)"]
         do {
             let opt = try HTTP.POST(apiURL+"Enrollments/UpdateMobile" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
             opt.start { response in
-//                print(response.error)
+                print(response.error)
                 if let _ = response.error {
                     completion(json);
                 }
@@ -255,6 +256,59 @@ public class RestApi {
         
     }
     
+    public func ChangeSI(data : JSON ,completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        let token = defaultToken.stringForKey("access_token")
+        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
+        
+        let params = ["data": "\(data)"]
+        print(params)
+        do {
+            let opt = try HTTP.POST(apiURL+"Enrollments/ChangeSIMobile" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            opt.start { response in
+                //                print(response.error)
+                if let _ = response.error {
+                    completion(json);
+                }
+                else
+                {
+                    json  = JSON(data: response.data)
+                    completion(json);
+                }
+            }
+        } catch _ {
+            completion(json);
+        }
+        
+    }
+    
+    public func ChangeTU(data : JSON ,completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        let token = defaultToken.stringForKey("access_token")
+        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
+        
+        let params = ["data": "\(data)"]
+        print(params)
+        do {
+            let opt = try HTTP.POST(apiURL+"Enrollments/ChangeTopupMobile" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            opt.start { response in
+                //                print(response.error)
+                if let _ = response.error {
+                    completion(json);
+                }
+                else
+                {
+                    json  = JSON(data: response.data)
+                    completion(json);
+                }
+            }
+        } catch _ {
+            completion(json);
+        }
+        
+    }
     
     public func ResetPassword(data : JSON ,completion:((JSON) -> Void))
     {

@@ -52,6 +52,7 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
         
         rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
             dispatch_async(dispatch_get_main_queue(),{
+                print(json)
                 self.result = json["result"]
                 self.members = json["result"]["Groups"]
                 self.memcount = self.members.count
@@ -109,6 +110,44 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
         tableindexpath = indexPath
     }
     
+    // SUBMIT INSURED MEMBER LIST
+    func convap (text : String) -> String {
+        return text.stringByReplacingOccurrencesOfString("+", withString: "%2B")
+    }
+    
+    
+    @IBAction func submitSumInsuredAndTopUp(sender: AnyObject) {
+//        var insuredJSON : JSON = ["PlanComposition":"","GroupComposition":"","SumInsuredValue":0,"TopupSumInsuredValue":0,"GroupType":0,"RelationType":""]
+        var SI : JSON = []
+        var TU : JSON = []
+        for x in 0..<self.members.count {
+            SI.arrayObject?.append(["PlanComposition":"\(result["PlanComposition"])",
+                "GroupComposition":"\(members[x]["GroupComposition"])",
+                "SumInsuredValue":"\(members[x]["SelectedSumInsuredValue"])",
+                "TopupSumInsuredValue":0,
+                "GroupType":"\(members[x]["GroupType"])",
+                "RelationType":""])
+            TU.arrayObject?.append(["PlanComposition":"\(convap(result["PlanComposition"].stringValue))",
+                "GroupComposition":"\(convap(members[x]["GroupComposition"].stringValue))",
+                "SumInsuredValue":0,
+                "TopupSumInsuredValue":"\(members[x]["SelectedTopupValue"])",
+                "GroupType":"\(members[x]["GroupType"])",
+                "RelationType":""])
+        }
+        print(SI)
+        rest.ChangeSI(SI, completion: {(json:JSON) -> ()in
+            print("si send")
+            print(json)
+            print(TU)
+            rest.ChangeTU(TU, completion: {(json:JSON) -> ()in
+                print("tu send")
+                print(json)
+                self.performSegueWithIdentifier("toPremiumWay", sender: self)
+            })
+        })
+        
+        
+    }
     
 }
 
@@ -153,9 +192,11 @@ extension MemberListGroupTableController: UIPickerViewDataSource, UIPickerViewDe
             selectedIndex = row
             pickerView.reloadAllComponents()
             cell.sumInsured.text = members[pickerView.tag]["SumInsuredList"][row]["SumInsuredValue"].stringValue
+            members[pickerView.tag]["SelectedSumInsuredValue"].stringValue = members[pickerView.tag]["SumInsuredList"][row]["SumInsuredValue"].stringValue
             
         }else{
             cell.topUp.text = members[pickerView.tag]["SumInsuredList"][selectedIndex]["TopupList"][row]["SumInsuredValue"].stringValue
+            members[pickerView.tag]["SelectedTopupValue"].stringValue = members[pickerView.tag]["SumInsuredList"][selectedIndex]["TopupList"][row]["SumInsuredValue"].stringValue
         }
     }
     

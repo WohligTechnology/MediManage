@@ -58,11 +58,14 @@ class hospitalSearch: UIView {
     }
 
     @IBAction func hospitalResultCall(sender: AnyObject) {
-        let hptl = self.yourLocation.text! + " " + self.hospitalName.text!
-        rest.Hospital(hptl, completion: {(json:JSON) -> () in
-            print(json)
-        })
-//        gHospitalSearchController.performSegueWithIdentifier("hospitalSearchToHospitalResult", sender: nil)
+        if self.yourLocation.text != "" && self.hospitalName.text != ""{
+            hospitalSearchText = self.yourLocation.text! + "%20" + self.hospitalName.text!
+            
+            gHospitalSearchController.performSegueWithIdentifier("hospitalSearchToHospitalResult", sender: nil)
+        }else{
+            Popups.SharedInstance.ShowPopup("Hospital Search", message: "Mention Hospital Location & Name")
+        }
+        
     }
     /*
     // Only override drawRect: if you perform custom drawing.

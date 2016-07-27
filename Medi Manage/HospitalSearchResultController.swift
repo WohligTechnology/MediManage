@@ -7,24 +7,21 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 var gHospitalSearchResultController: UIViewController!
 
 class HospitalSearchResultController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var searchBoxView: UIView!
+    var hospitals : JSON = ""
     
+    @IBOutlet weak var searchTable: UITableView!
+    @IBOutlet weak var hoscount: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
-        statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
-        self.view.addSubview(statusBar)
-        
-        let mainheader = header(frame: CGRectMake(0, 20, width, 50))
-        self.view.addSubview(mainheader)
-        
-        let mainsubHeader = subHeader(frame: CGRectMake(0, 70, width, 50))
+        let mainsubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_five")
         mainsubHeader.subHeaderTitle.text = "HOSPITAL SEARCH"
         self.view.addSubview(mainsubHeader)
@@ -35,6 +32,13 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
         
         // add borders
         addBottomBorder(UIColor.blackColor(), linewidth: 0.5, myView: searchBoxView)
+        
+        rest.Hospital(hospitalSearchText, completion: {(json:JSON) -> () in
+            print(json)
+            self.hospitals = json["result"]["Results"]
+            self.hoscount.text = json["result"]["Count"].stringValue
+            self.searchTable.reloadData()
+        })
 
         // Do any additional setup after loading the view.
     }
@@ -45,24 +49,19 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.hospitals.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! hospitalSearchResultUIViewCell
-        //cell.indexNo.text = indexNo[indexPath.item]
-        //cell.dateOfIntimation.text = dateOfIntimation[indexPath.item]
-        //cell.patientName.text = patientName[indexPath.item]
-        //cell.hospitalName.text = hospitalName[indexPath.item]
-        //cell.doa.text = doa[indexPath.item]
-        //cell.dod.text = dod[indexPath.item]
-        //cell.diagnosis.text = diagnosis[indexPath.item]
-        //cell.claimAmount.text = claimAmount[indexPath.item]
         cell.selectionStyle = .None
         
         //tableView.scrollEnabled = false
         tableView.showsVerticalScrollIndicator = false
+        cell.hsHospitalName.text = hospitals[indexPath.row]["Name"].stringValue
+        cell.hsHospitalLocation.text = hospitals[indexPath.row]["Address"].stringValue
+        cell.hsHospitalNo.text = hospitals[indexPath.row]["Phone"].stringValue
         
         if(indexPath.item % 2 != 0) {
             //cell.claimIntimationView.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 255/255)

@@ -24,6 +24,7 @@ var isVarifiedToEdit : BooleanType = false
 var forgotMobileNumber : String! = ""
 var forgotCountryCode : String! = ""
 var profilePassword : String! = ""
+var hospitalSearchText : String! = ""
 var OTPStatus = 0 // 1 : from profile 2: forgot passwordSendOtp
 var selectedIndex = 0
 struct defaultsKeys {

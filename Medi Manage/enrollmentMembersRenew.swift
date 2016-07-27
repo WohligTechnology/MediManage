@@ -623,6 +623,7 @@ class enrollmentMembersRenew: UIView{
             if !status {
                 Popups.SharedInstance.ShowPopup("Validation", message: msg)
             }else{
+                print(finaljson)
                 rest.AddMembers(finaljson, completion: {(json:JSON) -> ()in
                     dispatch_sync(dispatch_get_main_queue()){
                         print("in result")
