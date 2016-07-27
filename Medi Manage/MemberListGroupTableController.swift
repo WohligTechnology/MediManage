@@ -24,6 +24,7 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
     
     var insured = UIPickerView()
     var topup = UIPickerView()
+    var result : JSON = []
     
     
     @IBOutlet weak var ListTableView: UITableView!
@@ -51,6 +52,7 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
         
         rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
             dispatch_async(dispatch_get_main_queue(),{
+                self.result = json["result"]
                 self.members = json["result"]["Groups"]
                 self.memcount = self.members.count
                 cnt = self.members.count
@@ -84,7 +86,15 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
         tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
         tableViewCell.setpickerViewDataSourceDelegate(self, forRow: indexPath.row)
         tableViewCell.tag = indexPath.row
-        
+        tableViewCell.namelbl.text = members[0]["Members"][0]["FirstName"].stringValue
+        tableViewCell.doblbl.text = members[0]["Members"][0]["DateOfBirth"].stringValue
+        tableViewCell.domlbl.text = members[0]["Members"][0]["DateOfRelation"].stringValue
+        tableViewCell.sumInsured.text = members[indexPath.row]["SelectedSumInsuredValue"].stringValue
+        tableViewCell.topUp.text = members[indexPath.row]["SelectedTopupValue"].stringValue
+        if !result["IsInEnrollmentPeriod"] {
+            tableViewCell.sumInsured.enabled = false
+            tableViewCell.topUp.enabled = false
+        }
         
     }
     
@@ -177,7 +187,10 @@ extension MemberListGroupTableController: UICollectionViewDelegate, UICollection
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-//        let cell1 = collectionView.cellForRowAtIndexPath(indexPath.row) as! membercollectioncell
+//        collectionView.reloadData()
+//        let cello = collectionView.cellForItemAtIndexPath(indexPath)
+//        cello!.backgroundColor = UIColor(red: 102/256, green: 255/256, blue: 255/256, alpha: 0.66)
+        
         let tableindexpath = NSIndexPath(forRow: collectionView.tag, inSection: 0)
         
         let cell = ListTableView.cellForRowAtIndexPath(tableindexpath) as! MemberListGroupCell
@@ -188,6 +201,10 @@ extension MemberListGroupTableController: UICollectionViewDelegate, UICollection
         cell.domlbl?.text = members[collectionView.tag]["Members"][indexPath.row]["DateOfRelation"].stringValue
         
     }
+//    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+//        let cello:UICollectionViewCell = collectionView.cellForItemAtIndexPath(indexPath)!
+//        cello.contentView.backgroundColor = UIColor.clearColor()
+//    }
 }
 
 var toolBar = UIToolbar()
@@ -238,15 +255,10 @@ extension MemberListGroupCell {
         toolBar.setItems([spaceButton, doneButton], animated: false)
         toolBar.userInteractionEnabled = true
         
-        
-//        insured.delegate = self
         self.sumInsured.inputView = insured
-//        self.sumInsured.delegate = MemberListGroupTableController!
         self.sumInsured.inputAccessoryView = toolBar
-//
-//        topup.delegate = self
+
         self.topUp.inputView = topup
-//        self.topUp.delegate = gMemberListGroupTableController
         self.topUp.inputAccessoryView = toolBar
     }
     func donePicker(sender: UIBarButtonItem){

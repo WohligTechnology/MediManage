@@ -17,7 +17,6 @@ class BenefitSummaryController: UIViewController, UITableViewDataSource, UITabBa
     @IBOutlet weak var insurer: UILabel!
     @IBOutlet weak var TPA: UILabel!
     @IBOutlet weak var summaryTable: UITableView!
-    @IBOutlet weak var webViewpdf: UIWebView!
     var myBenefits : JSON = ""
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +42,8 @@ class BenefitSummaryController: UIViewController, UITableViewDataSource, UITabBa
         
         
         rest.BenefitSummery({(json:JSON) -> () in
-            print(json["result"]["SalientFeatures"])
+            dispatch_async(dispatch_get_main_queue(),{
+
             self.myBenefits = json["result"]
             self.singlePointContact.text = json["result"]["SinglePointofContact"].stringValue
             self.insurer.text = json["result"]["NameOfInsurer"].stringValue
@@ -51,15 +51,14 @@ class BenefitSummaryController: UIViewController, UITableViewDataSource, UITabBa
             self.summaryTable.estimatedRowHeight = 80
             self.summaryTable.rowHeight = UITableViewAutomaticDimension
             self.summaryTable.reloadData()
+            })
             
         })
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -82,9 +81,7 @@ class BenefitSummaryController: UIViewController, UITableViewDataSource, UITabBa
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//                let pdfLoc = NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource("Discharge Summary", ofType:"pdf")!)
-//        let request = NSURLRequest(URL: pdfLoc);
-//        self.webViewpdf.loadRequest(request);
+                
     }
     
     
