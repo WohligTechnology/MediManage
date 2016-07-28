@@ -23,20 +23,8 @@ class MainClaimsController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         gMainClaimsController = self
-        // Do any additional setup after loading the view.
         
-        
-        let navigationLogo = UIImage(named: "logo_small")
-        let navigationImageView = UIImageView(image: navigationLogo)
-        self.navigationItem.titleView = navigationImageView
-        let infoImage = UIImage(named: "settings")
-        let imgWidth = 25
-        let imgHeight = 25
-        let button:UIButton = UIButton(frame: CGRect(x: 0,y: 0,width: imgWidth, height: imgHeight))
-        button.setBackgroundImage(infoImage, forState: .Normal)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
-        self.navigationController?.navigationBar.barTintColor = UIColor.blackColor()
-        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        navshow()
         
         let mainsubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_two")

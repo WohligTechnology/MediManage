@@ -88,28 +88,39 @@ class premiumCalculation: UIView {
         termsLabel.font = UIFont(name: "Lato-Light", size: 10.0)
         rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
             dispatch_async(dispatch_get_main_queue(),{
+                print(json)
                 for x in 0..<json["result"]["Groups"].count{
                     self.BasicPremium = self.BasicPremium + json["result"]["Groups"][x]["Amount"].int64Value
+                    
                     self.TopupPremium = self.TopupPremium + json["result"]["Groups"][x]["TopupAmount"].int64Value
-                    self.Subtotal = json["result"]["Groups"][x]["Amount"].int64Value + json["result"]["Groups"][x]["TopupAmount"].int64Value
-                    self.Tax = json["result"]["Groups"][x]["Tax"].int64Value + json["result"]["Groups"][x]["TopupTax"].int64Value
-                    self.TotalPremium = json["result"]["Groups"][x]["NetAmount"].int64Value + json["result"]["Groups"][x]["TopupNetAmount"].int64Value
+                    
+                    self.Subtotal = self.Subtotal + json["result"]["Groups"][x]["Amount"].int64Value + json["result"]["Groups"][x]["TopupAmount"].int64Value
+                    
+                    self.Tax = self.Tax + json["result"]["Groups"][x]["Tax"].int64Value + json["result"]["Groups"][x]["TopupTax"].int64Value
+                    
+                    self.TotalPremium = self.TotalPremium + json["result"]["Groups"][x]["NetAmount"].int64Value + json["result"]["Groups"][x]["TopupNetAmount"].int64Value
                     
                     for y in 0..<json["result"]["Groups"][x]["Members"].count{
+                        
                         self.BasicPremium = self.BasicPremium + json["result"]["Groups"][x]["Members"][y]["Amount"].int64Value
+                        
                         self.TopupPremium = self.TopupPremium + json["result"]["Groups"][x]["Members"][y]["TopupAmount"].int64Value
-                        self.Subtotal = json["result"]["Groups"][x]["Members"][y]["Amount"].int64Value + json["result"]["Groups"][x]["Members"][y]["TopupAmount"].int64Value
-                        self.Tax = json["result"]["Groups"][x]["Members"][y]["Tax"].int64Value + json["result"]["Groups"][x]["Members"][y]["TopupTax"].int64Value
-                        self.TotalPremium = json["result"]["Groups"][x]["Members"][y]["NetAmount"].int64Value + json["result"]["Groups"][x]["Members"][y]["TopupNetAmount"].int64Value
+                        
+                        self.Subtotal = self.Subtotal + json["result"]["Groups"][x]["Members"][y]["Amount"].int64Value + json["result"]["Groups"][x]["Members"][y]["TopupAmount"].int64Value
+                        
+                        self.Tax = self.Tax + json["result"]["Groups"][x]["Members"][y]["Tax"].int64Value + json["result"]["Groups"][x]["Members"][y]["TopupTax"].int64Value
+                        
+                        self.TotalPremium = self.TotalPremium + json["result"]["Groups"][x]["Members"][y]["NetAmount"].int64Value + json["result"]["Groups"][x]["Members"][y]["TopupNetAmount"].int64Value
+                        
                     }
-
+                    
                 }
                 
                 self.basicPremiumCost.text = String(self.BasicPremium)
-                self.totalPremiumCost.text = String(self.TopupPremium)
+                self.topupPremiumCost.text = String(self.TopupPremium)
                 self.netPremiumCost.text = String(self.Subtotal)
                 self.serviceTaxCost.text = String(self.Tax)
-                self.topupPremiumCost.text = String(self.TotalPremium)
+                self.totalPremiumCost.text = String(self.TotalPremium)
                 
                 })
         })

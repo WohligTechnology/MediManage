@@ -13,6 +13,7 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("in tab")
         // Do any additional setup after loading the view.
     }
 

@@ -64,6 +64,35 @@ class Popups: NSObject {
         alert.addButtonWithTitle("Ok")
         alert.show()
     }
+    func showalt(sender: UIViewController) {
+        let actionSheetControllerIOS8: UIAlertController = UIAlertController(title: "Settings", message: nil, preferredStyle: .ActionSheet)
+        
+        // CANCEL BUTTON
+        let cancelActionButton: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in}
+        actionSheetControllerIOS8.addAction(cancelActionButton)
+        
+        // CHANGEPASSWORD BUTTON
+        let changePasswordActionButton: UIAlertAction = UIAlertAction(title: "Change Password", style: .Default){ action -> Void in}
+        actionSheetControllerIOS8.addAction(changePasswordActionButton)
+        
+        // EDIT PROFILE BUTTON
+        let editProfileActionButton: UIAlertAction = UIAlertAction(title: "Edit Profile", style: .Default){ action -> Void in
+            
+            let passcodemodal = storyboard?.instantiateViewControllerWithIdentifier("completeProfile") as! CompleteProfileController
+            
+            sender.presentViewController(passcodemodal, animated: true, completion: nil)
+
+        }
+        actionSheetControllerIOS8.addAction(editProfileActionButton)
+        
+        // LOGOUT BUTTON
+        let logoutActionButton: UIAlertAction = UIAlertAction(title: "Logout", style: .Destructive){ action -> Void in}
+        actionSheetControllerIOS8.addAction(logoutActionButton)
+        
+        // PRESENT VIEW SENDER
+        sender.presentViewController(actionSheetControllerIOS8, animated: true, completion: nil)
+    }
+
 }
 
 extension Popups: UIAlertViewDelegate {

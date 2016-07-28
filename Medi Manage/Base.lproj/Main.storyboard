@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="crn-Bn-ORl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cTe-eZ-3rn">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -168,7 +168,7 @@
         <!--Complete Profile Controller-->
         <scene sceneID="xoo-J9-7Uf">
             <objects>
-                <viewController storyboardIdentifier="completeProfile" id="0gz-Ph-Qzj" customClass="CompleteProfileController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="completeProfile" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0gz-Ph-Qzj" customClass="CompleteProfileController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ku2-ch-8MP"/>
                         <viewControllerLayoutGuide type="bottom" id="k7x-cx-Hy3"/>
@@ -675,7 +675,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <viewControllerLayoutGuide type="bottom" id="4ii-CL-Ghl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zpA-wp-K3m">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UTX-Du-RsE">
@@ -1116,7 +1116,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                             <constraint firstItem="UTX-Du-RsE" firstAttribute="top" secondItem="Fme-sh-ngZ" secondAttribute="bottom" constant="50" id="zru-IA-1qY"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZaZ-Hy-CoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2174,20 +2174,21 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fM1-he-nxJ">
                                         <rect key="frame" x="30" y="20" width="260" height="30"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Ok1-aF-qPH">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNz-YS-2ZT">
                                                 <rect key="frame" x="0.0" y="2" width="20" height="26"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="20" id="5pC-xh-CAY"/>
-                                                    <constraint firstAttribute="height" constant="26" id="BLD-hd-P8E"/>
+                                                    <constraint firstAttribute="height" constant="26" id="63H-yG-Yid"/>
+                                                    <constraint firstAttribute="width" constant="20" id="pri-Kg-yQ8"/>
                                                 </constraints>
-                                            </imageView>
+                                                <state key="normal" image="search_icon"/>
+                                                <connections>
+                                                    <action selector="searchButton:" destination="zcf-UU-fHe" eventType="touchUpInside" id="Bpg-0Q-jsu"/>
+                                                </connections>
+                                            </button>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search by Location, Hospital Name, Zip" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1DM-Vj-Lic">
-                                                <rect key="frame" x="33" y="0.0" width="227" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="qBj-p1-dHZ"/>
-                                                </constraints>
+                                                <rect key="frame" x="33" y="0.0" width="227" height="31"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="webSearch" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                                                         <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -2197,13 +2198,13 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="1WR-6k-yHr"/>
-                                            <constraint firstAttribute="bottom" secondItem="Ok1-aF-qPH" secondAttribute="bottom" constant="2" id="3hq-eG-cSJ"/>
-                                            <constraint firstItem="1DM-Vj-Lic" firstAttribute="leading" secondItem="Ok1-aF-qPH" secondAttribute="trailing" constant="13" id="5zP-3D-wyq"/>
-                                            <constraint firstItem="1DM-Vj-Lic" firstAttribute="top" secondItem="fM1-he-nxJ" secondAttribute="top" id="Sc2-Oi-XD5"/>
-                                            <constraint firstAttribute="bottom" secondItem="1DM-Vj-Lic" secondAttribute="bottom" id="SqZ-Qh-Nod"/>
-                                            <constraint firstAttribute="trailing" secondItem="1DM-Vj-Lic" secondAttribute="trailing" id="cW8-Pe-vGl"/>
-                                            <constraint firstItem="Ok1-aF-qPH" firstAttribute="leading" secondItem="fM1-he-nxJ" secondAttribute="leading" id="ocQ-A7-TIn"/>
-                                            <constraint firstItem="Ok1-aF-qPH" firstAttribute="top" secondItem="fM1-he-nxJ" secondAttribute="top" constant="2" id="pTW-bv-jl2"/>
+                                            <constraint firstAttribute="bottom" secondItem="KNz-YS-2ZT" secondAttribute="bottom" constant="2" id="AF9-e6-e8y"/>
+                                            <constraint firstAttribute="trailing" secondItem="1DM-Vj-Lic" secondAttribute="trailing" id="T6R-NX-Xm7"/>
+                                            <constraint firstItem="1DM-Vj-Lic" firstAttribute="top" secondItem="fM1-he-nxJ" secondAttribute="top" id="ZTe-Eq-M2r"/>
+                                            <constraint firstItem="1DM-Vj-Lic" firstAttribute="centerY" secondItem="KNz-YS-2ZT" secondAttribute="centerY" id="cBO-fg-ZXI"/>
+                                            <constraint firstItem="KNz-YS-2ZT" firstAttribute="leading" secondItem="fM1-he-nxJ" secondAttribute="leading" id="fgI-D5-SvA"/>
+                                            <constraint firstItem="KNz-YS-2ZT" firstAttribute="top" secondItem="fM1-he-nxJ" secondAttribute="top" constant="2" id="foa-T8-GWY"/>
+                                            <constraint firstItem="1DM-Vj-Lic" firstAttribute="leading" secondItem="KNz-YS-2ZT" secondAttribute="trailing" constant="13" id="jp0-9Y-QEX"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -2451,6 +2452,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                         <outlet property="hoscount" destination="xlD-0s-051" id="mM6-Vm-LCl"/>
                         <outlet property="searchBoxView" destination="fM1-he-nxJ" id="M7Y-j5-upo"/>
                         <outlet property="searchTable" destination="zMJ-TK-aGw" id="7uW-Z7-thW"/>
+                        <outlet property="searchText" destination="1DM-Vj-Lic" id="R9k-03-bux"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j0Q-Ed-hZ7" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -98,21 +98,55 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
 
 }
 //
-//extension UIViewController {
-//    func displayNavBarActivity() {
-//        let indicator = UIActivityIndicatorView(activityIndicatorStyle: .White)
-//        indicator.startAnimating()
-//        let item = UIBarButtonItem(customView: indicator)
-//        
-//        self.navigationItem.leftBarButtonItem = item
-//    }
-//    
-//    func dismissNavBarActivity() {
-//        self.navigationItem.leftBarButtonItem = nil
-//    }
-//}
+extension UIViewController {
+    
+    func navshow() {
+        let navigationLogo = UIImage(named: "logo_small")
+        let navigationImageView = UIImageView(image: navigationLogo)
+        self.navigationItem.titleView = navigationImageView
+        let infoImage = UIImage(named: "settings")
+        let imgWidth = 25
+        let imgHeight = 25
+        let button:UIButton = UIButton(frame: CGRect(x: 0,y: 0,width: imgWidth, height: imgHeight))
+        button.setBackgroundImage(infoImage, forState: .Normal)
+        button.addTarget(self, action: #selector(UIViewController.rightNavItemEditClick(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+        self.navigationController?.navigationBar.barTintColor = UIColor.blackColor()
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+    }
+    func rightNavItemEditClick(sender:UIButton!) {
+        
+//        Popups.SharedInstance.showalt(self)
+        let actionSheetControllerIOS8: UIAlertController = UIAlertController(title: "Settings", message: nil, preferredStyle: .ActionSheet)
+        
+        // CANCEL BUTTON
+        let cancelActionButton: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in}
+        actionSheetControllerIOS8.addAction(cancelActionButton)
+        
+        // CHANGEPASSWORD BUTTON
+        let changePasswordActionButton: UIAlertAction = UIAlertAction(title: "Change Password", style: .Default){ action -> Void in}
+        actionSheetControllerIOS8.addAction(changePasswordActionButton)
+        
+        // EDIT PROFILE BUTTON
+        let editProfileActionButton: UIAlertAction = UIAlertAction(title: "Edit Profile", style: .Default){ action -> Void in
+            
+            let passcodemodal = self.storyboard?.instantiateViewControllerWithIdentifier("completeProfile") as! CompleteProfileController
+            
+            self.presentViewController(passcodemodal, animated: true, completion: nil)
+            
+        }
+        actionSheetControllerIOS8.addAction(editProfileActionButton)
+        
+        // LOGOUT BUTTON
+        let logoutActionButton: UIAlertAction = UIAlertAction(title: "Logout", style: .Destructive){ action -> Void in}
+        actionSheetControllerIOS8.addAction(logoutActionButton)
+        
+        // PRESENT VIEW SENDER
+        self.presentViewController(actionSheetControllerIOS8, animated: true, completion: nil)
+    }
+}
 

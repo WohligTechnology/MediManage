@@ -11,41 +11,63 @@ import SwiftyJSON
 
 var gHospitalSearchResultController: UIViewController!
 
-class HospitalSearchResultController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HospitalSearchResultController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
     @IBOutlet weak var searchBoxView: UIView!
     var hospitals : JSON = ""
     
+    @IBOutlet weak var searchText: UITextField!
     @IBOutlet weak var searchTable: UITableView!
     @IBOutlet weak var hoscount: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navshow()
+        
         let mainsubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_five")
         mainsubHeader.subHeaderTitle.text = "HOSPITAL SEARCH"
         self.view.addSubview(mainsubHeader)
-        
-        let mainfooter = footer(frame: CGRectMake(0, height - 55, width, 55))
-        mainfooter.layer.zPosition = 1000
-        self.view.addSubview(mainfooter)
+        searchText.delegate = self
         
         // add borders
         addBottomBorder(UIColor.blackColor(), linewidth: 0.5, myView: searchBoxView)
-        
+        loadTable()
+    }
+    
+    func loadTable() {
         rest.Hospital(hospitalSearchText, completion: {(json:JSON) -> () in
-            print(json)
+            dispatch_async(dispatch_get_main_queue(),{
+                print(json)
             self.hospitals = json["result"]["Results"]
             self.hoscount.text = json["result"]["Count"].stringValue
             self.searchTable.reloadData()
+            })
         })
-
-        // Do any additional setup after loading the view.
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        searchCalled()
+        searchText.resignFirstResponder()
+        return true
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func searchButton(sender: AnyObject) {
+        searchCalled()
+    }
+    
+    func searchCalled() {
+        if self.searchText.text == "" {
+            Popups.SharedInstance.ShowPopup("Hospital Search", message: "Please Enter Location & Name of Hospital")
+        }else{
+            hospitalSearchText = self.searchText.text
+            loadTable()
+        }
+
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -89,9 +111,9 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
         border.frame = CGRectMake(5, myView.frame.size.height - linewidth + 2, width - 50, linewidth)
         myView.layer.addSublayer(border)
     }
-    @IBAction func inboxCall(sender: AnyObject) {
-        self.performSegueWithIdentifier("benefitResultsToInbox", sender: nil)
-    }
+//    @IBAction func inboxCall(sender: AnyObject) {
+//        self.performSegueWithIdentifier("benefitResultsToInbox", sender: nil)
+//    }
 
 }
 

@@ -47,11 +47,7 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let navigationLogo = UIImage(named: "logo_small")
-        let navigationImageView = UIImageView(image: navigationLogo)
-        self.navigationItem.titleView = navigationImageView
-        self.navigationController?.navigationBar.barTintColor = UIColor.blackColor()
-        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        navshow()
         
         
         let mainsubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
@@ -59,9 +55,6 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
         mainsubHeader.subHeaderTitle.text = "DOCUMENT CHECKLIST"
         self.view.addSubview(mainsubHeader)
         
-        let mainfooter = footer(frame: CGRectMake(0, height - 55, width, 55))
-        mainfooter.layer.zPosition = 1000
-        self.view.addSubview(mainfooter)
         
         dcDesc.font = UIFont(name: "Lato-Light", size: 10.0)
         //        self.dcDesc.estimate

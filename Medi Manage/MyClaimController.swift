@@ -17,12 +17,7 @@ class MyClaimController: UIViewController {
         
         gMyClaimController = self
         
-        let navigationLogo = UIImage(named: "logo_small")
-        let navigationImageView = UIImageView(image: navigationLogo)
-        self.navigationItem.titleView = navigationImageView
-        self.navigationController?.navigationBar.barTintColor = UIColor.blackColor()
-        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-
+        navshow()
         // Do any additional setup after loading the view.
     }
 

@@ -32,21 +32,7 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
         super.viewDidLoad()
         gMemberListGroupTableController = self
         
-        
-//        
-//        let navigationLogo = UIImage(named: "logo_small")
-//        let navigationImageView = UIImageView(image: navigationLogo)
-//        self.navigationItem.titleView = navigationImageView
-//        let infoImage = UIImage(named: "settings")
-//        let imgWidth = 25
-//        let imgHeight = 25
-//        let button:UIButton = UIButton(frame: CGRect(x: 0,y: 0,width: imgWidth, height: imgHeight))
-//        button.setBackgroundImage(infoImage, forState: .Normal)
-//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
-//        self.navigationController?.navigationBar.barTintColor = UIColor.blackColor()
-//        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-
-        
+        navshow()
         gListTableView = ListTableView
 
         
@@ -127,9 +113,9 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
                 "TopupSumInsuredValue":0,
                 "GroupType":"\(members[x]["GroupType"])",
                 "RelationType":""])
-            TU.arrayObject?.append(["PlanComposition":"\(convap(result["PlanComposition"].stringValue))",
-                "GroupComposition":"\(convap(members[x]["GroupComposition"].stringValue))",
-                "SumInsuredValue":0,
+            TU.arrayObject?.append(["PlanComposition":"\(result["PlanComposition"])",
+                "GroupComposition":"\(members[x]["GroupComposition"])",
+                "SumInsuredValue":"\(members[x]["SelectedSumInsuredValue"])",
                 "TopupSumInsuredValue":"\(members[x]["SelectedTopupValue"])",
                 "GroupType":"\(members[x]["GroupType"])",
                 "RelationType":""])
@@ -142,7 +128,9 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
             rest.ChangeTU(TU, completion: {(json:JSON) -> ()in
                 print("tu send")
                 print(json)
+                if json["state"] {
                 self.performSegueWithIdentifier("toPremiumWay", sender: self)
+                }
             })
         })
         

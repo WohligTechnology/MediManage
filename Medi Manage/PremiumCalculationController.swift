@@ -15,6 +15,7 @@ class PremiumCalculationController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         gPremiumCalculationController = self
+        navshow()
         // Do any additional setup after loading the view.
     }
 

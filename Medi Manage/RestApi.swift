@@ -419,6 +419,7 @@ public class RestApi {
         do {
             let opt = try HTTP.GET(apiURL+"Enrollments/DashboardDetails" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
             opt.start { response in
+                print(response.error)
                 if let _ = response.error {
                     completion(json);
                 }

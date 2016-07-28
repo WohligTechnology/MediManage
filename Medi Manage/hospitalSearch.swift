@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class hospitalSearch: UIView {
+class hospitalSearch: UIView, UITextFieldDelegate {
     
     @IBOutlet var hospitalSearchMainView: UIView!
     @IBOutlet weak var yourLocation: UITextField!
@@ -42,6 +42,9 @@ class hospitalSearch: UIView {
         hospitalSearch.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(hospitalSearch)
         
+        self.yourLocation.delegate = self
+        self.hospitalName.delegate = self
+        
         let mainsubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_five")
         mainsubHeader.subHeaderTitle.text = "HOSPITAL SEARCH"
@@ -57,7 +60,15 @@ class hospitalSearch: UIView {
         addBottomBorder(UIColor.blackColor(), linewidth: 0.5, myView: hospitalName)
     }
 
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        yourLocation.resignFirstResponder()
+        hospitalName.resignFirstResponder()
+        return true;
+    }
+
+    
     @IBAction func hospitalResultCall(sender: AnyObject) {
+        
         if self.yourLocation.text != "" && self.hospitalName.text != ""{
             hospitalSearchText = self.yourLocation.text! + "%20" + self.hospitalName.text!
             
@@ -67,12 +78,4 @@ class hospitalSearch: UIView {
         }
         
     }
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
-
 }

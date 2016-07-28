@@ -19,13 +19,7 @@ class InsuredMembersController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         gInsuredMembersController = self
         // Do any additional setup after loading the view.
-        
-        let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
-        statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
-        self.view.addSubview(statusBar)
-        
-        let mainheader = header(frame: CGRectMake(0, 20, width, 50))
-        self.view.addSubview(mainheader)
+        navshow()
     }
 
     override func didReceiveMemoryWarning() {

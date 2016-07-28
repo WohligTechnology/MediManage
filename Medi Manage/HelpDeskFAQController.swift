@@ -23,20 +23,13 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let navigationLogo = UIImage(named: "logo_small")
-        let navigationImageView = UIImageView(image: navigationLogo)
-        self.navigationItem.titleView = navigationImageView
-        self.navigationController?.navigationBar.barTintColor = UIColor.blackColor()
-        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        navshow()
         
         let mainsubHeader = subHeader(frame: CGRectMake(0, 70, width, 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_four")
         mainsubHeader.subHeaderTitle.text = "HELP DESK"
         self.view.addSubview(mainsubHeader)
         
-        let mainfooter = footer(frame: CGRectMake(0, height - 55, width, 55))
-        mainfooter.layer.zPosition = 1000
-        self.view.addSubview(mainfooter)
         
         //        dummyButton.layer.zPosition = 10000
         print("out of the function")
@@ -57,6 +50,11 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+//        self.rel
+        self.reloadInputViews()
     }
     
     
