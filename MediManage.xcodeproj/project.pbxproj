@@ -136,6 +136,11 @@
 		C2DCB0F01D1D4A71004FD787 /* SIParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DCB0EF1D1D4A71004FD787 /* SIParameters.swift */; };
 		C2DCB0F21D1D4C42004FD787 /* ResetPasswordDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DCB0F11D1D4C42004FD787 /* ResetPasswordDTO.swift */; };
 		C2DCB0F41D1D4CF1004FD787 /* GroupTopupSiDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DCB0F31D1D4CF1004FD787 /* GroupTopupSiDTO.swift */; };
+		FC32D4511D4B7ECF00918852 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC32D4501D4B7ECF00918852 /* Layout.swift */; };
+		FC32D4541D4B823A00918852 /* member.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC32D4531D4B823A00918852 /* member.swift */; };
+		FC32D4561D4B824F00918852 /* member.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC32D4551D4B824F00918852 /* member.xib */; };
+		FC32D4581D4B89A000918852 /* insuredHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC32D4571D4B89A000918852 /* insuredHeader.xib */; };
+		FC32D45A1D4B89AF00918852 /* insuredHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC32D4591D4B89AF00918852 /* insuredHeader.swift */; };
 		FC3C2EBB1D37C7DB000DAD18 /* enrollmentMembersRenew.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC3C2EBA1D37C7DB000DAD18 /* enrollmentMembersRenew.xib */; };
 		FC3C2EBD1D37C80E000DAD18 /* enrollmentMembersRenew.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3C2EBC1D37C80E000DAD18 /* enrollmentMembersRenew.swift */; };
 		FCB8016D1D2B7EF200F9226F /* memberListHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB8016C1D2B7EF200F9226F /* memberListHeader.xib */; };
@@ -310,6 +315,11 @@
 		C42FA52A5495CA29BD934BCF /* Pods_MediManageUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediManageUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D759717CAF6EE7B65953226B /* Pods_MediManage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediManage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAE1C269713C6CE4FA8D118 /* Pods-MediManage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediManage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MediManage/Pods-MediManage.debug.xcconfig"; sourceTree = "<group>"; };
+		FC32D4501D4B7ECF00918852 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		FC32D4531D4B823A00918852 /* member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = member.swift; sourceTree = "<group>"; };
+		FC32D4551D4B824F00918852 /* member.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = member.xib; sourceTree = "<group>"; };
+		FC32D4571D4B89A000918852 /* insuredHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = insuredHeader.xib; sourceTree = "<group>"; };
+		FC32D4591D4B89AF00918852 /* insuredHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = insuredHeader.swift; sourceTree = "<group>"; };
 		FC3C2EBA1D37C7DB000DAD18 /* enrollmentMembersRenew.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = enrollmentMembersRenew.xib; sourceTree = "<group>"; };
 		FC3C2EBC1D37C80E000DAD18 /* enrollmentMembersRenew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enrollmentMembersRenew.swift; sourceTree = "<group>"; };
 		FCB8016C1D2B7EF200F9226F /* memberListHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = memberListHeader.xib; sourceTree = "<group>"; };
@@ -539,6 +549,8 @@
 			children = (
 				3AFE389B1CE4932D0062A497 /* insuredMembersAll.xib */,
 				3A677B621CE49F7F003B8C2B /* insuredMembersAll.swift */,
+				FC32D4571D4B89A000918852 /* insuredHeader.xib */,
+				FC32D4591D4B89AF00918852 /* insuredHeader.swift */,
 			);
 			name = insuredMembersAll;
 			sourceTree = "<group>";
@@ -671,6 +683,7 @@
 			isa = PBXGroup;
 			children = (
 				3A6C4E441CF48B3D0056D46F /* SlideMenuController.swift */,
+				FC32D4501D4B7ECF00918852 /* Layout.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -719,6 +732,7 @@
 		786DFA291CD2282700DDE769 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FC32D4521D4B822500918852 /* member */,
 				43D6FF411CFEE44C008361B2 /* pickDate */,
 				3A74A7CE1CF41F6100592B3E /* tutorial */,
 				3A31911B1CEF41C0001DCBBC /* splashScreen */,
@@ -839,6 +853,15 @@
 				C2A5845F1D262EAE00F6E0D5 /* EnumSets.swift */,
 			);
 			name = DTO;
+			sourceTree = "<group>";
+		};
+		FC32D4521D4B822500918852 /* member */ = {
+			isa = PBXGroup;
+			children = (
+				FC32D4531D4B823A00918852 /* member.swift */,
+				FC32D4551D4B824F00918852 /* member.xib */,
+			);
+			name = member;
 			sourceTree = "<group>";
 		};
 		FC3C2EBE1D37C81F000DAD18 /* enrollmentMembersRenew */ = {
@@ -1000,6 +1023,7 @@
 				C2A59E911CDDDF700093CFEC /* Lato-Hairline.ttf in Resources */,
 				C2A59E921CDDDF700093CFEC /* Lato-Light.ttf in Resources */,
 				FCB8016D1D2B7EF200F9226F /* memberListHeader.xib in Resources */,
+				FC32D4581D4B89A000918852 /* insuredHeader.xib in Resources */,
 				3A8774BC1CEC3783001DB41F /* preAuthorizationTwo.xib in Resources */,
 				C2A59E8F1CDDDF700093CFEC /* Lato-Black.ttf in Resources */,
 				783322B01CDB50D10015CE37 /* landing.xib in Resources */,
@@ -1023,6 +1047,7 @@
 				3AFE389C1CE4932D0062A497 /* insuredMembersAll.xib in Resources */,
 				786DFA011CD214F300DDE769 /* Assets.xcassets in Resources */,
 				FCE15CE01D34DF54009B49E2 /* X-Ray Report.pdf in Resources */,
+				FC32D4561D4B824F00918852 /* member.xib in Resources */,
 				3A1369AE1CE4566500BEE355 /* memberList.xib in Resources */,
 				3AEEB00E1CE7023E0085EEF5 /* subHeader.xib in Resources */,
 				3A72C72C1CEB454100B5412E /* helplineNumber.xib in Resources */,
@@ -1144,6 +1169,7 @@
 				3A0175311CE369AB00832E49 /* header.swift in Sources */,
 				3A677B6D1CE4BBDE003B8C2B /* GenerateOTPController.swift in Sources */,
 				3AE7AFE41CF2D8C80047DFB0 /* BenefitSummaryController.swift in Sources */,
+				FC32D4511D4B7ECF00918852 /* Layout.swift in Sources */,
 				3A79A7CD1CF06AA0008B693B /* PreAuthorizationOneController.swift in Sources */,
 				3A677B6F1CE4BEC0003B8C2B /* EnterOTPController.swift in Sources */,
 				439CE6431D000B2E00FA1B26 /* Popups.swift in Sources */,
@@ -1175,6 +1201,7 @@
 				3AEEB0171CE7344C0085EEF5 /* HelpDeskController.swift in Sources */,
 				3AE7AFE01CF2D0C10047DFB0 /* QueryFormController.swift in Sources */,
 				3A8EFB581CE9CA54004489F3 /* inbox.swift in Sources */,
+				FC32D4541D4B823A00918852 /* member.swift in Sources */,
 				3AE7AFE61CF2D9060047DFB0 /* HospitalSearchController.swift in Sources */,
 				C2DCB0DA1D1D178B004FD787 /* ClientPolicyDTOClient.swift in Sources */,
 				C2DCB0EE1D1D4603004FD787 /* TicketDataDTO.swift in Sources */,
@@ -1198,6 +1225,7 @@
 				783322B21CDB50E50015CE37 /* landing.swift in Sources */,
 				3A72C7291CEB28D600B5412E /* preAuthorizationOne.swift in Sources */,
 				C2DCB0E81D1D3E3D004FD787 /* PaymentDetailsDTO.swift in Sources */,
+				FC32D45A1D4B89AF00918852 /* insuredHeader.swift in Sources */,
 				3A79A7C51CF044DF008B693B /* HelpDeskQueryController.swift in Sources */,
 				3A72C7271CEAEDC400B5412E /* MainClaimsController.swift in Sources */,
 				C2DCB0D61D1D12C3004FD787 /* ClaimIntimationDTO.swift in Sources */,

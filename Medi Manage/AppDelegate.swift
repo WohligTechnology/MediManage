@@ -13,6 +13,10 @@ var EmployeeFullName  : String = ""
 var EmployeeBirthDate : String = ""
 var EmployeeNo : String = ""
 
+var widthGlo = bounds.size.width
+var heightGlo = bounds.size.height
+
+
 let bounds = UIScreen.mainScreen().bounds
 let width = bounds.size.width
 let height = bounds.size.height
