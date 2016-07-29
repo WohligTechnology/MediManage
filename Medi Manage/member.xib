@@ -23,7 +23,14 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="member" customModule="MediManage" customModuleProvider="target">
+            <connections>
+                <outlet property="dob" destination="H3d-He-5jI" id="dZM-Ho-lZr"/>
+                <outlet property="firstName" destination="X9J-Ih-2zT" id="cmM-9i-slx"/>
+                <outlet property="lastname" destination="udW-qH-17l" id="q7z-5Z-ttB"/>
+                <outlet property="middleName" destination="Pe0-IO-suw" id="4pA-zf-iYF"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="320" height="163"/>

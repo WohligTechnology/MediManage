@@ -24,26 +24,37 @@ class InsuredMembersController: UIViewController {
         gInsuredMembersController = self
         self.verticalLayout = VerticalLayout(width: self.view.frame.width);
         self.scrollView.insertSubview(self.verticalLayout, atIndex: 0)
-        rest.DashboardDetails({(json:JSON) -> ()in
+        
+        
+        
+        
+        
+        rest.DashboardDetails({(json:JSON) -> () in
             print(json)
-            
-            for x in 0..<json["result"]["Groups"].count {
-                
-                let groupView = insuredMembersAll(frame: CGRect(x: 0, y: 0, width: widthGlo, height: 120))
-                
-                self.verticalLayout.addSubview(groupView);
-                
-                for y in 0..<json["result"]["Groups"][x]["Members"].count {
-                    let membersView = insuredMembersAll(frame: CGRect(x: 0, y: 0, width: widthGlo, height: 163))
-                    self.verticalLayout.addSubview(membersView);
+            dispatch_async(dispatch_get_main_queue(), {
+                for x in 0..<json["result"]["Groups"].count {
+                    let groupView = insuredMembersAll(frame: CGRect(x: 0, y: 0, width: widthGlo, height: 120))
+                    self.verticalLayout.addSubview(groupView);
+                    
+                    groupView.totalSum.text = json["result"]["Groups"][x]["NetAmount"].stringValue;
+                    groupView.topupSum.text = json["result"]["Groups"][x]["TopupAmount"].stringValue;
+                    groupView.balance.text = json["result"]["Groups"][x]["TopupNetAmount"].stringValue;
+                    
+                    for y in 0..<json["result"]["Groups"][x]["Members"].count {
+                        let membersView = member(frame: CGRect(x: 0, y: 0, width: widthGlo, height: 163))
+                        membersView.dob.text = json["result"]["Groups"][x]["Members"][y]["DateOfBirth"].stringValue;
+                        membersView.firstName.text = json["result"]["Groups"][x]["Members"][y]["FirstName"].stringValue;
+                        membersView.middleName.text = json["result"]["Groups"][x]["Members"][y]["MiddleName"].stringValue;
+                        membersView.lastname.text = json["result"]["Groups"][x]["Members"][y]["LastName"].stringValue;
+                        
+                        
+                        self.verticalLayout.addSubview(membersView);
+                    }
                 }
-                
-            }
+            });
             
 //            self.verticalLayout.addSubview();
-            
             self.verticalLayout.layoutSubviews()
-
         })
         
         // Do any additional setup after loading the view.

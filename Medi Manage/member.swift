@@ -3,6 +3,14 @@ import UIKit
 
 class member: UIView {
     
+    @IBOutlet weak var firstName: UILabel!
+    @IBOutlet weak var middleName: UILabel!
+    
+    @IBOutlet weak var lastname: UILabel!
+    
+    @IBOutlet weak var dob: UILabel!
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
