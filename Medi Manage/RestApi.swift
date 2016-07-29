@@ -387,7 +387,7 @@ public class RestApi {
     }
 
     
-    public func DashboardDetails(data : JSON ,completion:((JSON) -> Void))
+    public func DashboardDetails(completion:((JSON) -> Void))
     {
         var json = JSON(1)
         let token = defaultToken.stringForKey("access_token")

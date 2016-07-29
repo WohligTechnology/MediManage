@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 var gInsuredMembersController: UIViewController!
 
@@ -18,6 +19,10 @@ class InsuredMembersController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         gInsuredMembersController = self
+        rest.DashboardDetails({(json:JSON) -> ()in
+            print(json)
+        })
+        
         // Do any additional setup after loading the view.
         navshow()
     }
