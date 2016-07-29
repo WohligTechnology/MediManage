@@ -142,7 +142,13 @@ extension UIViewController {
         actionSheetControllerIOS8.addAction(editProfileActionButton)
         
         // LOGOUT BUTTON
-        let logoutActionButton: UIAlertAction = UIAlertAction(title: "Logout", style: .Destructive){ action -> Void in}
+        let logoutActionButton: UIAlertAction = UIAlertAction(title: "Logout", style: .Destructive){ action -> Void in
+            defaultToken.removeObjectForKey("access_token")
+            let passcodemodal = self.storyboard?.instantiateViewControllerWithIdentifier("loginc") as! LoginController
+            
+            self.presentViewController(passcodemodal, animated: true, completion: nil)
+            
+        }
         actionSheetControllerIOS8.addAction(logoutActionButton)
         
         // PRESENT VIEW SENDER

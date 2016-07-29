@@ -83,6 +83,12 @@ class enrollmentMembersRenew: UIView{
         sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(sortnewview);
         
+        
+        
+
+        
+        
+        
         //RIGHT PERSON ICON CLICK
         let selectSecondPerson =  UITapGestureRecognizer(target: self, action: #selector(enrollmentMembersRenew.selectpright))
         self.rightIcon.addGestureRecognizer(selectSecondPerson)

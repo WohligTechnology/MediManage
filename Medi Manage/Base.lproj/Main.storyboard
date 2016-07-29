@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cTe-eZ-3rn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NMF-BA-RYD">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -102,7 +102,7 @@
         <!--Login Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -2252,7 +2252,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="125" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zMJ-TK-aGw">
-                                <rect key="frame" x="-4" y="194" width="328" height="182"/>
+                                <rect key="frame" x="-4" y="194" width="328" height="237"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="125" id="NzD-le-UMl" customClass="hospitalSearchResultUIViewCell" customModule="MediManage" customModuleProvider="target">
@@ -2436,7 +2436,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                             <constraint firstItem="A6B-0g-zTV" firstAttribute="leading" secondItem="1l6-hp-3Ay" secondAttribute="leading" id="aJi-X5-Msy"/>
                             <constraint firstAttribute="trailing" secondItem="A6B-0g-zTV" secondAttribute="trailing" id="d14-Kz-J89"/>
                             <constraint firstItem="eqz-uR-xG7" firstAttribute="leading" secondItem="Qqd-Ao-xGU" secondAttribute="trailing" constant="2" id="qwg-ih-2m6"/>
-                            <constraint firstItem="KXb-m9-L6Z" firstAttribute="top" secondItem="zMJ-TK-aGw" secondAttribute="bottom" constant="55" id="sJ9-9j-bSt"/>
+                            <constraint firstItem="KXb-m9-L6Z" firstAttribute="top" secondItem="zMJ-TK-aGw" secondAttribute="bottom" id="sJ9-9j-bSt"/>
                             <constraint firstItem="A6B-0g-zTV" firstAttribute="top" secondItem="CRy-s7-uZq" secondAttribute="bottom" constant="40" id="wKI-m5-Q9B"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zMJ-TK-aGw" secondAttribute="trailing" constant="-20" id="yiO-IC-DoP"/>
                         </constraints>
@@ -3270,7 +3270,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="paQ-eN-3nA"/>
-        <segue reference="Usm-li-CcL"/>
+        <segue reference="Oo4-D3-Nsi"/>
         <segue reference="s1I-qw-2n8"/>
         <segue reference="2ZW-OI-RRj"/>
         <segue reference="ATe-en-caw"/>

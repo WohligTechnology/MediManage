@@ -16,21 +16,33 @@ class PageViewerController: UIPageViewController, UIPageViewControllerDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         let token = defaultToken.stringForKey("access_token")
-//        if token != "" {            
-//            let enrollmentMembersController = storyboard!.instantiateViewControllerWithIdentifier("EnrollmentMembers") as! EnrollmentMembersController
-//            self.enrollmentMembersController = UINavigationController(rootViewController: enrollmentMembersController)
-//        }else{
-            let myVC = viewControllerAtIndex(0) as! SplashScreenController
+        let splashscrn = defaultToken.stringForKey("onSplashScreen")
+        
+        if token != nil {
+            let myVC = viewControllerAtIndex(-1) as! TabBarController
             let viewControllers = [myVC]
             setViewControllers(viewControllers, direction: .Forward, animated: true, completion: nil)
-//        }
+            
+        }else{
+            if splashscrn != nil {
+                let myVC = viewControllerAtIndex(-2) as! LoginController
+                let viewControllers = [myVC]
+                setViewControllers(viewControllers, direction: .Forward, animated: true, completion: nil)
+            }else{
+                defaultToken.setObject(true, forKey: "onSplashScreen")
+                let myVC = viewControllerAtIndex(0) as! SplashScreenController
+                let viewControllers = [myVC]
+                setViewControllers(viewControllers, direction: .Forward, animated: true, completion: nil)
+            }
+        }
+        
         
         dataSource = self
-
-
+        
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -71,30 +83,19 @@ class PageViewerController: UIPageViewController, UIPageViewControllerDataSource
         if((self.image.count == 0) || (index >= self.image.count)) {
             return SplashScreenController()
         }
+        switch index {
+        case -1:
+            let myVC = storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
+            return myVC
+        case -2:
+            let myVC = storyboard?.instantiateViewControllerWithIdentifier("loginc") as! LoginController
+            return myVC
+        default:
+            let myVC = storyboard?.instantiateViewControllerWithIdentifier("splashScreenStoryBoard") as! SplashScreenController
+            myVC.backgroundImage = image[index]
+            myVC.pageIndex = index
+            return myVC
+        }
         
-        let myVC = storyboard?.instantiateViewControllerWithIdentifier("splashScreenStoryBoard") as! SplashScreenController
-        myVC.backgroundImage = image[index]
-        myVC.pageIndex = index
-        return myVC
     }
-    
-//    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-//        return image.count
-//    }
-//    
-//    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-//        return 0
-//    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

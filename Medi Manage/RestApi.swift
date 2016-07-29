@@ -132,10 +132,11 @@ public class RestApi {
     public func findEmployeeProfile(SUBURL : String,completion:((JSON) -> Void))
     {
         var json = JSON(1)
-        
+        var isLoginheader = [String:String]()
         let token = defaultToken.stringForKey("access_token")
-        print(token)
-        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
+        if token != nil {
+             isLoginheader = ["Authorization":"Bearer \(token! as String)"]
+        }
         
         do {
             let opt = try HTTP.GET(apiURL+SUBURL , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
