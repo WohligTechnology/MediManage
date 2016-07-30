@@ -45,7 +45,6 @@ public class RestApi {
     }
     public func login(username:String, password:String, completion:((JSON) -> Void))  {
         var json = JSON(1);
-        print(json)
         let params = ["grant_type": "password","username":username, "password":password]
             let header = ["Content-Type":"application/x-www-form-urlencoded"]
         
@@ -65,7 +64,7 @@ public class RestApi {
                 {
                     json  = JSON(data: response.data)
                     let defaults = NSUserDefaults.standardUserDefaults()
-                    
+                    print(json["access_token"])
                     defaults.setValue(String(json["access_token"]), forKey: defaultsKeys.token)
                    // setBool(true, forKey: "loadingOAuthToken")
                     completion(json);
@@ -391,6 +390,7 @@ public class RestApi {
     {
         var json = JSON(1)
         let token = defaultToken.stringForKey("access_token")
+        print(token)
         let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         
         do {
@@ -666,6 +666,70 @@ public class RestApi {
             completion(json);
         }
         
+    }
+    
+    public func DownloadECard(ecard : String!, completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        print(apiURL + "Users/ConfirmOTP/\(ecard)")
+        do {
+            let opt = try HTTP.GET(apiURL + "Ecard/\(ecard)" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers: nil)
+            opt.start { response in
+                if let _ = response.error {
+                    completion(json);
+                }
+                else
+                {
+                    json  = JSON(data: response.data)
+                    completion(json);
+                }
+            }
+        } catch _ {
+            completion(json);
+        }
+    }
+    
+    public func isEnrolled(ecard : String!, completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        do {
+            let opt = try HTTP.GET(apiURL + "Enrollment/IsEnrolled" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers: nil)
+            opt.start { response in
+                if let _ = response.error {
+                    completion(json);
+                }
+                else
+                {
+                    json  = JSON(data: response.data)
+                    completion(json);
+                }
+            }
+        } catch _ {
+            completion(json);
+        }
+    }
+    
+    public func changePassword(cp: String, np: String, cnp: String, completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        
+        let token = defaultToken.stringForKey("access_token")
+        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
+        do {
+            let opt = try HTTP.GET(apiURL + "Users/ChangePassword/\(cp)/\(np)/\(cnp)" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers: isLoginheader)
+            opt.start { response in
+                if let _ = response.error {
+                    completion(json);
+                }
+                else
+                {
+                    json  = JSON(data: response.data)
+                    completion(json);
+                }
+            }
+        } catch _ {
+            completion(json);
+        }
     }
 
 }

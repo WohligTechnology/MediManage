@@ -143,6 +143,7 @@
 		FC32D45A1D4B89AF00918852 /* insuredHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC32D4591D4B89AF00918852 /* insuredHeader.swift */; };
 		FC3C2EBB1D37C7DB000DAD18 /* enrollmentMembersRenew.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC3C2EBA1D37C7DB000DAD18 /* enrollmentMembersRenew.xib */; };
 		FC3C2EBD1D37C80E000DAD18 /* enrollmentMembersRenew.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3C2EBC1D37C80E000DAD18 /* enrollmentMembersRenew.swift */; };
+		FC9EA1C41D4CC94600B828AF /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9EA1C31D4CC94600B828AF /* ChangePassword.swift */; };
 		FCB8016D1D2B7EF200F9226F /* memberListHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB8016C1D2B7EF200F9226F /* memberListHeader.xib */; };
 		FCB8016F1D2B7FB200F9226F /* memberListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8016E1D2B7FB200F9226F /* memberListHeader.swift */; };
 		FCB801721D2BB62B00F9226F /* relationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB801711D2BB62B00F9226F /* relationView.xib */; };
@@ -322,6 +323,7 @@
 		FC32D4591D4B89AF00918852 /* insuredHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = insuredHeader.swift; sourceTree = "<group>"; };
 		FC3C2EBA1D37C7DB000DAD18 /* enrollmentMembersRenew.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = enrollmentMembersRenew.xib; sourceTree = "<group>"; };
 		FC3C2EBC1D37C80E000DAD18 /* enrollmentMembersRenew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enrollmentMembersRenew.swift; sourceTree = "<group>"; };
+		FC9EA1C31D4CC94600B828AF /* ChangePassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
 		FCB8016C1D2B7EF200F9226F /* memberListHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = memberListHeader.xib; sourceTree = "<group>"; };
 		FCB8016E1D2B7FB200F9226F /* memberListHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = memberListHeader.swift; sourceTree = "<group>"; };
 		FCB801711D2BB62B00F9226F /* relationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = relationView.xib; sourceTree = "<group>"; };
@@ -725,6 +727,7 @@
 				3ABD66C61D279DB9003462CB /* MemberListGroupTableController.swift */,
 				3AC2583F1D33782D00384031 /* TabBarController.swift */,
 				FCE15CD11D34D6E2009B49E2 /* PDFViewController.swift */,
+				FC9EA1C31D4CC94600B828AF /* ChangePassword.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1163,6 +1166,7 @@
 				FCB801741D2BB67100F9226F /* relationView.swift in Sources */,
 				783322B51CDB7B4F0015CE37 /* completeProfile.swift in Sources */,
 				C2DCB0EA1D1D3F82004FD787 /* FAQDTO.swift in Sources */,
+				FC9EA1C41D4CC94600B828AF /* ChangePassword.swift in Sources */,
 				C2DCB0F41D1D4CF1004FD787 /* GroupTopupSiDTO.swift in Sources */,
 				C2DCB0E41D1D3A53004FD787 /* EmployeePATClaimsDTO.swift in Sources */,
 				C2DCB0E61D1D3C58004FD787 /* EmployeeSearchDTO.swift in Sources */,

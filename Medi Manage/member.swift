@@ -10,6 +10,7 @@ class member: UIView {
     
     @IBOutlet weak var dob: UILabel!
     
+    @IBOutlet weak var relation: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

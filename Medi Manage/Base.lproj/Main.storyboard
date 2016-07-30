@@ -18,8 +18,13 @@
             <string>Lato-Bold</string>
             <string>Lato-Bold</string>
             <string>Lato-Bold</string>
+            <string>Lato-Bold</string>
+            <string>Lato-Bold</string>
         </mutableArray>
         <mutableArray key="Lato-Light.ttf">
+            <string>Lato-Light</string>
+            <string>Lato-Light</string>
+            <string>Lato-Light</string>
             <string>Lato-Light</string>
             <string>Lato-Light</string>
             <string>Lato-Light</string>
@@ -656,11 +661,11 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <viewControllerLayoutGuide type="bottom" id="4ii-CL-Ghl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zpA-wp-K3m">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qFa-Qz-nbu">
-                                <rect key="frame" x="-4" y="64" width="328" height="455"/>
+                                <rect key="frame" x="-4" y="64" width="328" height="367"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -671,7 +676,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                             <constraint firstItem="qFa-Qz-nbu" firstAttribute="leading" secondItem="zpA-wp-K3m" secondAttribute="leadingMargin" constant="-20" id="ktf-Df-fEH"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="scrollView" destination="qFa-Qz-nbu" id="zwl-JE-zpL"/>
                     </connections>
@@ -2662,6 +2667,132 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
             </objects>
             <point key="canvasLocation" x="-1160" y="2910"/>
         </scene>
+        <!--Change Password-->
+        <scene sceneID="ZV3-31-Y0W">
+            <objects>
+                <viewController storyboardIdentifier="changePass" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2HE-uH-d1r" customClass="ChangePassword" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3yJ-y9-YFc"/>
+                        <viewControllerLayoutGuide type="bottom" id="YNL-oe-EcH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WLt-zC-xSZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jlf-da-QcW">
+                                <rect key="frame" x="0.0" y="20" width="320" height="50"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-white" translatesAutoresizingMaskIntoConstraints="NO" id="BxF-pZ-arf">
+                                        <rect key="frame" x="17" y="7" width="30" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="ObD-Y1-KyS"/>
+                                            <constraint firstAttribute="width" constant="30" id="bR3-Cg-2c4"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Your Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u50-Wi-GZD">
+                                        <rect key="frame" x="62" y="0.0" width="258" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="jBQ-4d-MC7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="u50-Wi-GZD" firstAttribute="top" secondItem="Jlf-da-QcW" secondAttribute="top" id="03a-8R-sZ4"/>
+                                    <constraint firstItem="BxF-pZ-arf" firstAttribute="top" secondItem="Jlf-da-QcW" secondAttribute="top" constant="7" id="9hn-cR-bxR"/>
+                                    <constraint firstItem="BxF-pZ-arf" firstAttribute="leading" secondItem="Jlf-da-QcW" secondAttribute="leading" constant="17" id="HKT-01-ffF"/>
+                                    <constraint firstAttribute="height" constant="50" id="X8o-Aa-2u8"/>
+                                    <constraint firstAttribute="trailing" secondItem="u50-Wi-GZD" secondAttribute="trailing" id="aX6-yF-Eip"/>
+                                    <constraint firstItem="u50-Wi-GZD" firstAttribute="leading" secondItem="BxF-pZ-arf" secondAttribute="trailing" constant="15" id="cRD-Ka-kQM"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HpH-NZ-J17">
+                                <rect key="frame" x="20" y="151" width="280" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="RYq-NQ-scx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Current Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Edq-29-6Sk">
+                                <rect key="frame" x="20" y="99" width="280" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Kto-rg-jQI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o5q-pU-wAe">
+                                <rect key="frame" x="20" y="203" width="280" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="BYS-pC-fIr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMV-eL-GRl">
+                                <rect key="frame" x="20" y="272" width="280" height="50"/>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Nuk-Co-OyR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="Submit:" destination="2HE-uH-d1r" eventType="touchUpInside" id="Zm3-8e-G49"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HpH-NZ-J17" firstAttribute="top" secondItem="Edq-29-6Sk" secondAttribute="bottom" constant="8" symbolic="YES" id="5mY-1H-7mf"/>
+                            <constraint firstAttribute="trailing" secondItem="Jlf-da-QcW" secondAttribute="trailing" id="AU6-tX-D2K"/>
+                            <constraint firstItem="o5q-pU-wAe" firstAttribute="top" secondItem="HpH-NZ-J17" secondAttribute="bottom" constant="8" symbolic="YES" id="Him-fA-DVA"/>
+                            <constraint firstItem="HMV-eL-GRl" firstAttribute="top" secondItem="o5q-pU-wAe" secondAttribute="bottom" constant="25" id="Inm-8L-mty"/>
+                            <constraint firstItem="HMV-eL-GRl" firstAttribute="trailing" secondItem="o5q-pU-wAe" secondAttribute="trailing" id="Nlf-Ya-dE0"/>
+                            <constraint firstItem="o5q-pU-wAe" firstAttribute="trailing" secondItem="HpH-NZ-J17" secondAttribute="trailing" id="OtQ-7G-ppz"/>
+                            <constraint firstItem="Jlf-da-QcW" firstAttribute="top" secondItem="3yJ-y9-YFc" secondAttribute="bottom" id="TrG-d0-ogH"/>
+                            <constraint firstItem="o5q-pU-wAe" firstAttribute="leading" secondItem="HpH-NZ-J17" secondAttribute="leading" id="bsY-sg-0cU"/>
+                            <constraint firstItem="Jlf-da-QcW" firstAttribute="leading" secondItem="WLt-zC-xSZ" secondAttribute="leading" id="hP7-56-Tqn"/>
+                            <constraint firstItem="o5q-pU-wAe" firstAttribute="leading" secondItem="Edq-29-6Sk" secondAttribute="leading" id="hsS-0h-aHd"/>
+                            <constraint firstItem="HMV-eL-GRl" firstAttribute="leading" secondItem="o5q-pU-wAe" secondAttribute="leading" id="j2b-h6-s3d"/>
+                            <constraint firstItem="o5q-pU-wAe" firstAttribute="leading" secondItem="WLt-zC-xSZ" secondAttribute="leadingMargin" constant="4" id="pYP-Hs-04a"/>
+                            <constraint firstItem="Edq-29-6Sk" firstAttribute="top" secondItem="Jlf-da-QcW" secondAttribute="bottom" constant="29" id="tbO-4Z-DcX"/>
+                            <constraint firstItem="o5q-pU-wAe" firstAttribute="trailing" secondItem="Edq-29-6Sk" secondAttribute="trailing" id="ufU-f6-9zh"/>
+                            <constraint firstItem="o5q-pU-wAe" firstAttribute="centerX" secondItem="Jlf-da-QcW" secondAttribute="centerX" id="xxT-08-fhq"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="confPassword" destination="o5q-pU-wAe" id="sVt-Fu-OpR"/>
+                        <outlet property="currentPassword" destination="Edq-29-6Sk" id="rsC-e7-DTd"/>
+                        <outlet property="newPassword" destination="HpH-NZ-J17" id="mWL-pb-Gpw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q51-bh-vWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-213" y="-23"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Lef-QB-KJs">
             <objects>
@@ -2819,6 +2950,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
         <image name="footer_tab_three" width="28" height="30"/>
         <image name="footer_tab_two" width="26" height="30"/>
         <image name="hospital_icon" width="37" height="50"/>
+        <image name="logo-white" width="107" height="70"/>
         <image name="orange_tick" width="39" height="38"/>
         <image name="search_icon" width="53" height="69"/>
         <image name="triangle_blue_right" width="33" height="38"/>

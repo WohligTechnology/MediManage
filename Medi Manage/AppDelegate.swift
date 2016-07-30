@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 var Employee_API_KEY : String = ""
 var EmployeeFullName  : String = ""
@@ -122,6 +123,19 @@ extension UIViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor.blackColor()
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
     }
+    
+    func checkSession() {
+        rest.Hospital("mumbai%20fortis", completion: {(json:JSON) ->() in
+            print(")))))))))))))))))))))))))))))))))))")
+            print(json)
+            if json == 1{
+                let passcodemodal = self.storyboard?.instantiateViewControllerWithIdentifier("loginc") as! LoginController
+                
+                self.presentViewController(passcodemodal, animated: true, completion: nil)
+            }
+        })
+    }
+    
     func rightNavItemEditClick(sender:UIButton!) {
         
 //        Popups.SharedInstance.showalt(self)
@@ -132,7 +146,12 @@ extension UIViewController {
         actionSheetControllerIOS8.addAction(cancelActionButton)
         
         // CHANGEPASSWORD BUTTON
-        let changePasswordActionButton: UIAlertAction = UIAlertAction(title: "Change Password", style: .Default){ action -> Void in}
+        let changePasswordActionButton: UIAlertAction = UIAlertAction(title: "Change Password", style: .Default){ action -> Void in
+            let passcodemodal = self.storyboard?.instantiateViewControllerWithIdentifier("changePass") as! ChangePassword
+            
+            self.presentViewController(passcodemodal, animated: true, completion: nil)
+
+        }
         actionSheetControllerIOS8.addAction(changePasswordActionButton)
         
         // EDIT PROFILE BUTTON
@@ -158,5 +177,26 @@ extension UIViewController {
         // PRESENT VIEW SENDER
         self.presentViewController(actionSheetControllerIOS8, animated: true, completion: nil)
     }
+//    class func load(URL: NSURL) {
+//        let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
+//        let session = NSURLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
+//        let request = NSMutableURLRequest(URL: URL)
+//        request.HTTPMethod = "GET"
+//        let task = session.dataTaskWithRequest(request, completionHandler: { (data: NSData!, response: NSURLResponse!, error: NSError!) -> Void in
+//            if (error == nil) {
+//                // Success
+//                let statusCode = (response as NSHTTPURLResponse).statusCode
+//                println("Success: \(statusCode)")
+//                
+//                // This is your file-variable:
+//                // data
+//            }
+//            else {
+//                // Failure
+//                println("Faulure: %@", error.localizedDescription);
+//            }
+//        })
+//        task.resume()
+//    }
 }
 

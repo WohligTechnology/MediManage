@@ -68,6 +68,7 @@ class login: UIView {
         else{
         rest.loginAlaomFire(mobile.text!, password: password.text!, completion: {(json:JSON) -> () in
             dispatch_async(dispatch_get_main_queue(),{
+                print(json)
             //if(String(json["error"]) != "null")
                 let i = 1
                 if(i == 0)
