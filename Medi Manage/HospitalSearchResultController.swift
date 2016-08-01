@@ -24,6 +24,8 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
         
         navshow()
         
+        LoadingOverlay.shared.showOverlay(self.view)
+        
         let mainsubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_five")
         mainsubHeader.subHeaderTitle.text = "HOSPITAL SEARCH"
@@ -38,6 +40,7 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
     func loadTable() {
         rest.Hospital(hospitalSearchText, completion: {(json:JSON) -> () in
             dispatch_async(dispatch_get_main_queue(),{
+                LoadingOverlay.shared.hideOverlayView()
                 print(json)
             self.hospitals = json["result"]["Results"]
             self.hoscount.text = json["result"]["Count"].stringValue
@@ -65,6 +68,7 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
             Popups.SharedInstance.ShowPopup("Hospital Search", message: "Please Enter Location & Name of Hospital")
         }else{
             hospitalSearchText = self.searchText.text
+            LoadingOverlay.shared.showOverlay(self.view)
             loadTable()
         }
 

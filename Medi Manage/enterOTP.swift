@@ -61,9 +61,10 @@ class enterOTP: UIView {
     }
     
     @IBAction func enrollmentmembersCall(sender: AnyObject) {
-        
+        LoadingOverlay.shared.showOverlay(gEnterOTPController.view)
         rest.ConfirmOtp(String(UTF8String: self.enterOTP.text!)!, completion: {(json:JSON) -> () in
             dispatch_sync(dispatch_get_main_queue()){
+                LoadingOverlay.shared.hideOverlayView()
                 if json["state"] {
                     if OTPStatus == 1 {
                         isVarifiedToEdit = true

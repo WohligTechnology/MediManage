@@ -24,6 +24,7 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         
         navshow()
+        LoadingOverlay.shared.showOverlay(self.view)
         
         let mainsubHeader = subHeader(frame: CGRectMake(0, 70, width, 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_four")
@@ -39,7 +40,7 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
             self.queans = json["result"]["list"]
             print(self.queans.count)
             self.helpFaqTable.reloadData()
-            
+            LoadingOverlay.shared.hideOverlayView()
         })
         gHelpDeskFAQController = self
         helpFaqTable.rowHeight = UITableViewAutomaticDimension

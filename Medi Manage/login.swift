@@ -16,9 +16,9 @@ class login: UIView {
     var TestId = "Test7_19901122"
     //mobile no 7208372744
     var TestPWD = "123456"
-
-  
-       @IBAction func signupCall(sender: AnyObject) {
+    
+    
+    @IBAction func signupCall(sender: AnyObject) {
         gLoginController.performSegueWithIdentifier("signup", sender: nil)
     }
     
@@ -60,58 +60,60 @@ class login: UIView {
         addPadding(15, myView: password)
     }
     @IBAction func onLogin(sender: AnyObject) {
-        
         if(mobile.text == "" || password.text == "")
         {
-           Popups.SharedInstance.ShowPopup("Login", message: "Both Fields are Required")
+            Popups.SharedInstance.ShowPopup("Login", message: "Both Fields are Required")
         }
         else{
-        rest.loginAlaomFire(mobile.text!, password: password.text!, completion: {(json:JSON) -> () in
-            dispatch_async(dispatch_get_main_queue(),{
-                print(json)
-            //if(String(json["error"]) != "null")
-                let i = 1
-                if(i == 0)
-            {
-                let stError :String = String(json ["error"])
-                
-                let dialog = UIAlertController(title: "Login", message: stError, preferredStyle: UIAlertControllerStyle.Alert)
-                
-                dialog.addAction(UIAlertAction(title: "Try Again!!", style: UIAlertActionStyle.Destructive, handler:{
-                    action in
-                 self.mobile.text = ""
-                    self.password.text = ""
-                    
-                }))
-                gLoginController.presentViewController(dialog, animated: true, completion: nil)
-                }
-                else
-            {
-              //  Popups.SharedInstance.ShowPopup("Welcome", message: "Login Successfull !")
-                Employee_API_KEY = String(json["access_token"])
-                let def = NSUserDefaults.standardUserDefaults()
-                def.setObject(Employee_API_KEY, forKey: "access_token")
-                let dialog = UIAlertController(title: "Welcome", message: "Login Successfull!" ,preferredStyle: UIAlertControllerStyle.Alert)
-                
-                dialog.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Destructive, handler:{
-                    action in
-                    
-                    //let vc = gLoginController.storyboard?.instantiateViewControllerWithIdentifier("EnrollmentMember") as! EnrollmentMembersController
-                    let vc = gLoginController.storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
-                  
-                  //  vc.RESULT = "Result"
-                    gLoginController.presentViewController(vc, animated: true, completion: nil)
-                    
-                // gLoginController.performSegueWithIdentifier("memberlist", sender: nil)
-                    
-                }))
-                gLoginController.presentViewController(dialog,animated: true, completion: nil)
-                
-                }
+            LoadingOverlay.shared.showOverlay(gLoginController.view)
+            
+            rest.loginAlaomFire(mobile.text!, password: password.text!, completion: {(json:JSON) -> () in
+                dispatch_async(dispatch_get_main_queue(),{
+                    print(json)
+                    //if(String(json["error"]) != "null")
+                    LoadingOverlay.shared.hideOverlayView()
+                    let i = 1
+                    if(i == 0)
+                    {
+                        let stError :String = String(json ["error"])
+                        
+                        let dialog = UIAlertController(title: "Login", message: stError, preferredStyle: UIAlertControllerStyle.Alert)
+                        
+                        dialog.addAction(UIAlertAction(title: "Try Again!!", style: UIAlertActionStyle.Destructive, handler:{
+                            action in
+                            self.mobile.text = ""
+                            self.password.text = ""
+                            
+                        }))
+                        gLoginController.presentViewController(dialog, animated: true, completion: nil)
+                    }
+                    else
+                    {
+                        //  Popups.SharedInstance.ShowPopup("Welcome", message: "Login Successfull !")
+                        Employee_API_KEY = String(json["access_token"])
+                        let def = NSUserDefaults.standardUserDefaults()
+                        def.setObject(Employee_API_KEY, forKey: "access_token")
+                        let dialog = UIAlertController(title: "Welcome", message: "Login Successfull!" ,preferredStyle: UIAlertControllerStyle.Alert)
+                        
+                        dialog.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Destructive, handler:{
+                            action in
+                            
+                            //let vc = gLoginController.storyboard?.instantiateViewControllerWithIdentifier("EnrollmentMember") as! EnrollmentMembersController
+                            let vc = gLoginController.storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
+                            
+                            //  vc.RESULT = "Result"
+                            gLoginController.presentViewController(vc, animated: true, completion: nil)
+                            
+                            // gLoginController.performSegueWithIdentifier("memberlist", sender: nil)
+                            
+                        }))
+                        gLoginController.presentViewController(dialog,animated: true, completion: nil)
+                        
+                    }
+                })
             })
-        })
+        }
     }
-    }
-
-
+    
+    
 }

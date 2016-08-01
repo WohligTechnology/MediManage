@@ -98,13 +98,14 @@ class generateOTP: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextF
     }
     
     @IBAction func enterotpCall(sender: AnyObject) {
-        
+        LoadingOverlay.shared.showOverlay(gGenerateOTPController.view)
         OTPStatus = 2
         forgotMobileNumber? = String(UTF8String: self.mobileNumber.text!)!
         forgotCountryCode? = String(UTF8String: self.countryCode.text!)!
 
         rest.SendOtp(String(UTF8String: self.mobileNumber.text!)!, countrycode: String(UTF8String: self.countryCode.text!)!, completion: {(json:JSON) -> () in
             dispatch_async(dispatch_get_main_queue()){
+                LoadingOverlay.shared.hideOverlayView()
                 if json["state"]{
                     gGenerateOTPController.performSegueWithIdentifier("toOTPPage", sender: nil)
                 }

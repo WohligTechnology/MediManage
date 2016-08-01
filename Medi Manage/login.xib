@@ -22,7 +22,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="login" customModule="MediManage" customModuleProvider="target">
             <connections>
-                <outlet property="Loader" destination="3S0-75-ySO" id="JIL-pn-NTQ"/>
                 <outlet property="mobile" destination="pvg-8U-IgN" id="HNR-iy-IPu"/>
                 <outlet property="password" destination="903-Zq-XI0" id="jXg-JQ-7LW"/>
             </connections>
@@ -154,9 +153,6 @@
                         <constraint firstItem="9hG-kN-U5r" firstAttribute="top" secondItem="AKQ-Vx-SyJ" secondAttribute="top" constant="-5" id="qQG-ax-ovd"/>
                     </constraints>
                 </view>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="3S0-75-ySO">
-                    <rect key="frame" x="150" y="274" width="20" height="20"/>
-                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -174,8 +170,6 @@
                 <constraint firstAttribute="trailing" secondItem="pvg-8U-IgN" secondAttribute="trailing" constant="26" id="TPN-7a-2R6"/>
                 <constraint firstItem="Ubo-eF-5VG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="WNP-JI-bP7"/>
                 <constraint firstAttribute="trailing" secondItem="CGS-AG-yOW" secondAttribute="trailing" id="WWG-5H-5Mg"/>
-                <constraint firstItem="3S0-75-ySO" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="XvH-sM-ais"/>
-                <constraint firstItem="3S0-75-ySO" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ZQd-Lp-ZNz"/>
                 <constraint firstItem="tXR-Rv-dLl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="44" id="e4q-1e-faw"/>
                 <constraint firstAttribute="trailing" secondItem="tXR-Rv-dLl" secondAttribute="trailing" constant="44" id="ezI-Hj-PBv"/>
                 <constraint firstItem="nxB-cd-Kfn" firstAttribute="trailing" secondItem="CGS-AG-yOW" secondAttribute="trailing" id="fKN-Xs-wah"/>

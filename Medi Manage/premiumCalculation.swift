@@ -82,6 +82,8 @@ class premiumCalculation: UIView {
         let mainheader = header(frame: CGRectMake(0, 20, width, 50))
         self.addSubview(mainheader)
         
+        LoadingOverlay.shared.showOverlay(gPremiumCalculationController.view)
+        
         premiumCalculationMainView.frame = CGRectMake(0, 70, self.frame.size.width, self.frame.size.height - 70)
         
         declaration.font = UIFont(name: "Lato-Light", size: 10.0)
@@ -115,6 +117,7 @@ class premiumCalculation: UIView {
                     }
                     
                 }
+                LoadingOverlay.shared.hideOverlayView()
                 
                 self.basicPremiumCost.text = String(self.BasicPremium)
                 self.topupPremiumCost.text = String(self.TopupPremium)

@@ -11,15 +11,26 @@ import SwiftyJSON
 class enrollmentMembersRenew: UIView{
     
     var memberjson : JSON = [["ID":0,"Gender":2,"SystemIdentifier":"S","RelationType":"Wife"],
-                             ["ID":0,"Gender":1,"SystemIdentifier":"C","RelationType":"Sun"],
+                             ["ID":0,"Gender":1,"SystemIdentifier":"C","RelationType":"Son"],
                              ["ID":0,"Gender":2,"SystemIdentifier":"C","RelationType":"Daughter"],
                              ["ID":0,"Gender":1,"SystemIdentifier":"P","RelationType":"Father"],
                              ["ID":0,"Gender":2,"SystemIdentifier":"P","RelationType":"Mother"],
                              ["ID":0,"Gender":1,"SystemIdentifier":"I","RelationType":"Father in law"],
                              ["ID":0,"Gender":2,"SystemIdentifier":"I","RelationType":"Mother in law"],]
     
-    var newJsonSun : JSON = ["ID":0,"LastName":"","Gender":"1","SystemIdentifier":"C","RelationType":"Sun"]
+//    var memberjson : JSON = [["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":2,"SystemIdentifier":"S","RelationType":"Wife"],
+//                             ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":1,"SystemIdentifier":"C","RelationType":"Son"],
+//                             ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":2,"SystemIdentifier":"C","RelationType":"Daughter"],
+//                             ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":1,"SystemIdentifier":"P","RelationType":"Father"],
+//                             ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":2,"SystemIdentifier":"P","RelationType":"Mother"],
+//                             ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":1,"SystemIdentifier":"I","RelationType":"Father in law"],
+//                             ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":2,"SystemIdentifier":"I","RelationType":"Mother in law"],]
+    
+    var newJsonSun : JSON = ["ID":0,"LastName":"","Gender":"1","SystemIdentifier":"C","RelationType":"Son"]
     var newJsonDaughter : JSON = ["ID":0,"LastName":"","Gender":"2","SystemIdentifier":"C","RelationType":"Daughter"]
+    
+//    var newJsonSun : JSON = ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"LastName":"","Gender":"1","SystemIdentifier":"C","RelationType":"Son"]
+//    var newJsonDaughter : JSON = ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"LastName":"","Gender":"2","SystemIdentifier":"C","RelationType":"Daughter"]
     var prePlanMembers : JSON = ["C":0,"P":0,"I":0]
     var calculatedPlanMember : JSON = ["C":0,"P":0,"I":0]
     
@@ -83,12 +94,6 @@ class enrollmentMembersRenew: UIView{
         sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(sortnewview);
         
-        
-        
-
-        
-        
-        
         //RIGHT PERSON ICON CLICK
         let selectSecondPerson =  UITapGestureRecognizer(target: self, action: #selector(enrollmentMembersRenew.selectpright))
         self.rightIcon.addGestureRecognizer(selectSecondPerson)
@@ -108,7 +113,7 @@ class enrollmentMembersRenew: UIView{
                 print(json["result"])
                 
                 self.wholeJson = json["result"]
-                
+                LoadingOverlay.shared.hideOverlayView()
                 for x in 0..<self.memberjson.count{
                     for y in 0..<json["result"]["Groups"].count{
                         for z in 0..<json["result"]["Groups"][y]["Members"].count{
@@ -119,7 +124,7 @@ class enrollmentMembersRenew: UIView{
                                 self.memberjson[x] = json["result"]["Groups"][y]["Members"][z]
                                 self.memberjson[x]["ActiveState"] = true
                             }else{
-                                if self.memberjson[x]["ActiveState"] != true{
+                                if self.memberjson[x]["ActiveState"] != true {
                                     self.memberjson[x]["ActiveState"] = false
                                 }
                             }
@@ -150,6 +155,7 @@ class enrollmentMembersRenew: UIView{
                 }
                 self.assignMembers()
             }
+            
         })
         
         
@@ -351,16 +357,16 @@ class enrollmentMembersRenew: UIView{
         let dateToSave = dateFormatter.stringFromDate(sender.date)
         switch datetype {
         case 1:
-            leftDOB.text = dateToSave
+            leftDOB.text = dateToSave + "T00:00:00"
             break
         case 2:
-            leftDOM.text = dateToSave
+            leftDOM.text = dateToSave + "T00:00:00"
             break
         case 3:
-            rightDOB.text = dateToSave
+            rightDOB.text = dateToSave + "T00:00:00"
             break
         case 4:
-            rightDOM.text = dateToSave
+            rightDOM.text = dateToSave + "T00:00:00"
             break
         default:
             break
@@ -599,13 +605,16 @@ class enrollmentMembersRenew: UIView{
                 if self.wholeJson["IsInEnrollmentPeriod"] {
                     if memberjson[x]["ActiveState"] {
                         for (key, itm) in memberjson[x] {
-                            if itm == "" && status {
-                                if memberjson[x]["SystemIdentifier"] != "C" || key != "DateOfRelation"{
-                                    status = false
-                                    msg = "Please Enter " + key + " of " + memberjson[x]["RelationType"].stringValue
+                            if key == "FirstName" || key == "MiddleName" || key == "LastName" || key == "DateOfRelation" || key == "DateOfBirth" {
+                                if itm == "" && status {
+                                    if memberjson[x]["SystemIdentifier"] != "C" || key != "DateOfRelation"{
+                                        status = false
+                                        msg = "Please Enter " + key + " of " + memberjson[x]["RelationType"].stringValue
+                                    }
+                                    
                                 }
-                                
                             }
+                            
                         }
                         finaljson.arrayObject?.append(memberjson[x].object)
                     }
@@ -613,12 +622,13 @@ class enrollmentMembersRenew: UIView{
                     if (memberjson[x]["Status"] == 1 && memberjson[x]["AddedAt"] == 2) || (memberjson[x]["Status"] == 2 && memberjson[x]["AddedAt"] == 2){
                         if memberjson[x]["ActiveState"] {
                             for (key, itm) in memberjson[x] {
-                                if itm == "" && status {
-                                    if memberjson[x]["SystemIdentifier"] != "C" || key != "DateOfRelation"{
-                                        status = false
-                                        msg = "Please Enter " + key + " of " + memberjson[x]["RelationType"].stringValue
+                                if key == "FirstName" || key == "MiddleName" || key == "LastName" || key == "DateOfRelation" || key == "DateOfBirth" {
+                                    if itm == "" && status {
+                                        if memberjson[x]["SystemIdentifier"] != "C" || key != "DateOfRelation"{
+                                            status = false
+                                            msg = "Please Enter " + key + " of " + memberjson[x]["RelationType"].stringValue
+                                        }
                                     }
-                                    
                                 }
                             }
                             finaljson.arrayObject?.append(memberjson[x].object)
@@ -632,14 +642,16 @@ class enrollmentMembersRenew: UIView{
                 print(finaljson)
                 rest.AddMembers(finaljson, completion: {(json:JSON) -> ()in
                     dispatch_sync(dispatch_get_main_queue()){
-                        print("in result")
-                        print(json)
                         if json["state"] {
                             gEnrollmentMembersController.performSegueWithIdentifier("memberlist", sender: nil)
                         }else{
-                            Popups.SharedInstance.ShowPopup("Select Members", message: "Some Error Occured.")
+                            if json["error_message"] != "" {
+                                Popups.SharedInstance.ShowPopup("Select Members", message: json["error_message"].stringValue)
+                            }else{
+                                Popups.SharedInstance.ShowPopup("Select Members", message: "Some Error Occured.")
+
+                            }
                         }
-                        
                     }
                 })
             }

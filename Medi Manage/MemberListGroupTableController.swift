@@ -35,7 +35,7 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
         navshow()
         gListTableView = ListTableView
 
-        
+        LoadingOverlay.shared.showOverlay(self.view)
         rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
             dispatch_async(dispatch_get_main_queue(),{
                 print(json)
@@ -44,6 +44,7 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
                 self.memcount = self.members.count
                 cnt = self.members.count
                 self.ListTableView.reloadData()
+                LoadingOverlay.shared.hideOverlayView()
             })
         })
         // dropdown list

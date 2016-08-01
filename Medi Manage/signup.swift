@@ -75,8 +75,8 @@ class signup: UIView, UITextFieldDelegate {
         dateOfBirth.addSubview(imageView)
         
         // dropdown list
-//        datePickerView.delegate
-//        datePickerView.delegate = self
+        //        datePickerView.delegate
+        //        datePickerView.delegate = self
         dateOfBirth.inputView = datePickerView
         dateOfBirth.delegate = self
         let toolBar = UIToolbar()
@@ -93,10 +93,10 @@ class signup: UIView, UITextFieldDelegate {
         toolBar.userInteractionEnabled = true
         
         dateOfBirth.inputAccessoryView = toolBar
-
+        
         
         validator.registerField(employeeID, rules: [RequiredRule(), FullNameRule()])
-       
+        
     }
     func donePicker(){
         dateOfBirth.resignFirstResponder()
@@ -110,73 +110,57 @@ class signup: UIView, UITextFieldDelegate {
         if(employeeID.text == "" || dateOfBirth.text == "")
         {
             Popups.SharedInstance.ShowPopup("Login", message: "Both Fields are Required")
-
+            
         }
         else{
+            LoadingOverlay.shared.showOverlay(gSignupController.view)
             
-        rest.findEmployee(employeeID.text!, dob: dateDob, completion: {(json:JSON) -> ()in
-                
-                
-               // switch (String(json["state"])):
-               // case "true" :
-            dispatch_async(dispatch_get_main_queue(),
-                {
-                    let anotherCharacter: String = (String(json["state"]))
-                    switch anotherCharacter {
-                    case "true" :
-                  
-                        let dialog = UIAlertController(title: "Welcome", message: "Procced Now ", preferredStyle: UIAlertControllerStyle.Alert)
-                        
-                    //    Popups.SharedInstance.alertView(dialog, clickedButtonAtIndex: 0)("")
-                        
-                        dialog.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Destructive, handler:{
+            rest.findEmployee(employeeID.text!, dob: dateDob, completion: {(json:JSON) -> ()in
+                dispatch_async(dispatch_get_main_queue(),
+                    {
+                        LoadingOverlay.shared.hideOverlayView()
+                        let anotherCharacter: String = (String(json["state"]))
+                        switch anotherCharacter {
+                        case "true" :
+                            
+                            let dialog = UIAlertController(title: "Welcome", message: "Procced Now ", preferredStyle: UIAlertControllerStyle.Alert)
+                            
+                            
+                            dialog.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Destructive, handler:{
                                 action in
-                            
-                            let VC = storyboard?.instantiateViewControllerWithIdentifier("completeProfile") as! CompleteProfileController
-                            
-                          // VC.
-                          //  self.presentViewController(VC, animated: true , completion: nil)
-                          
-//                            
-//                                VC.FullName = String(json["result"]["FullName"])
-//                                VC.EmployeeNo =  String(json["result"]["EmployeeNumber"])
-//                                VC.DateOfBirth = String(json["result"]["DateOfBirth"])
-//                                VC.Email = String(json["result"]["Email"])
-//                                VC.EmployeeID = String(json["result"]["EmployeeID"])
-//                                VC.MaritalStatus  = String(json["result"]["MaritalStatus"])
-                            
-                          //  gSignupController.performSegueWithIdentifier("completeProfile", sender: nil)
-                            
-                             gSignupController.presentViewController(VC, animated: true , completion: nil)
+                                
+                                let VC = storyboard?.instantiateViewControllerWithIdentifier("completeProfile") as! CompleteProfileController
+                                
+                                gSignupController.presentViewController(VC, animated: true , completion: nil)
                                 
                             }))
-                         
-                       gSignupController.presentViewController(dialog, animated: true, completion: nil)
                             
-                      
-                        break
-                    case "false" :
-                        let error_msg : String = String(json["error_message"])
-                       
-                        
-                        
-                   let dialog = UIAlertController(title: "Sign Up", message: error_msg, preferredStyle: UIAlertControllerStyle.Alert)
-                        
-                        dialog.addAction(UIAlertAction(title: "Try Again!!", style: UIAlertActionStyle.Destructive, handler:{
-                            action in
-                           self.employeeID.text = ""
+                            gSignupController.presentViewController(dialog, animated: true, completion: nil)
                             
-                        }))
-                       gSignupController.presentViewController(dialog, animated: true, completion: nil)
-                        
-                        break
-                        
-                    default :
-                        
-                        break
-                    }
-            })})   
+                            
+                            break
+                        case "false" :
+                            let error_msg : String = String(json["error_message"])
+                            
+                            
+                            
+                            let dialog = UIAlertController(title: "Sign Up", message: error_msg, preferredStyle: UIAlertControllerStyle.Alert)
+                            
+                            dialog.addAction(UIAlertAction(title: "Try Again!!", style: UIAlertActionStyle.Destructive, handler:{
+                                action in
+                                self.employeeID.text = ""
+                                
+                            }))
+                            gSignupController.presentViewController(dialog, animated: true, completion: nil)
+                            
+                            break
+                            
+                        default :
+                            
+                            break
+                        }
+                })})   
         }
-  
-}
+        
+    }
 }

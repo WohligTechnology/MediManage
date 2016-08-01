@@ -25,9 +25,11 @@ class EnrollmentMembersController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         gEnrollmentMembersController = self
+        LoadingOverlay.shared.showOverlay(self.view)
+
         
 //        let passcodemodal = storyboard?.instantiateViewControllerWithIdentifier("insuredMemberIdentifier") as! InsuredMembersController
-//        
+
 //        gEnrollmentMembersController.presentViewController(passcodemodal, animated: true, completion: nil)
         
         navshow()
