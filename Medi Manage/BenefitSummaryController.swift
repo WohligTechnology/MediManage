@@ -12,7 +12,7 @@ import SwiftyJSON
 var gBenefitSummaryController: UIViewController!
 
 class BenefitSummaryController: UIViewController, UITableViewDataSource, UITabBarDelegate {
-
+    
     @IBOutlet weak var singlePointContact: UILabel!
     @IBOutlet weak var insurer: UILabel!
     @IBOutlet weak var TPA: UILabel!
@@ -27,28 +27,37 @@ class BenefitSummaryController: UIViewController, UITableViewDataSource, UITabBa
         mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_three")
         mainsubHeader.subHeaderTitle.text = "BENEFIT SUMMARY"
         self.view.addSubview(mainsubHeader)
+        selectedViewController = false
         
         gBenefitSummaryController = self
         
         LoadingOverlay.shared.showOverlay(self.view)
-
+        
         rest.BenefitSummery({(json:JSON) -> () in
             dispatch_async(dispatch_get_main_queue(),{
-                
-            self.myBenefits = json["result"]
-            self.singlePointContact.text = json["result"]["SinglePointofContact"].stringValue
-            self.insurer.text = json["result"]["NameOfInsurer"].stringValue
-            self.TPA.text = json["result"]["NameOfTPA"].stringValue
-            self.summaryTable.estimatedRowHeight = 80
-            self.summaryTable.rowHeight = UITableViewAutomaticDimension
-            self.summaryTable.reloadData()
-            LoadingOverlay.shared.hideOverlayView()
+                if json == 401 {
+                    self.redirectToHome()
+                }else{
+                    self.myBenefits = json["result"]
+                    self.singlePointContact.text = json["result"]["SinglePointofContact"].stringValue
+                    self.insurer.text = json["result"]["NameOfInsurer"].stringValue
+                    self.TPA.text = json["result"]["NameOfTPA"].stringValue
+                    self.summaryTable.estimatedRowHeight = 80
+                    self.summaryTable.rowHeight = UITableViewAutomaticDimension
+                    self.summaryTable.reloadData()
+                    LoadingOverlay.shared.hideOverlayView()
+                }
             })
             
         })
-
+        
     }
-
+    
+    override func viewWillAppear(animated: Bool) {
+        selectedViewController = false
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -63,8 +72,8 @@ class BenefitSummaryController: UIViewController, UITableViewDataSource, UITabBa
         
         if indexPath.row % 2 == 0 {
             cell.backgroundColor = UIColor(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0, alpha: 1)
-           
-        
+            
+            
         } else if indexPath.row % 2 == 1 {
             cell.backgroundColor = UIColor.whiteColor()
         }
@@ -73,7 +82,7 @@ class BenefitSummaryController: UIViewController, UITableViewDataSource, UITabBa
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-                
+        
     }
     
     

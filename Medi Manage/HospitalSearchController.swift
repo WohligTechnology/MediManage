@@ -16,7 +16,12 @@ class HospitalSearchController: UIViewController {
         super.viewDidLoad()
         
         gHospitalSearchController = self
+        selectedViewController = false
         navshow()
+        
+    }
+    override func viewWillAppear(animated: Bool) {
+        selectedViewController = false
         
     }
 

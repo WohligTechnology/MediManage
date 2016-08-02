@@ -91,6 +91,9 @@ class premiumCalculation: UIView {
         rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
             dispatch_async(dispatch_get_main_queue(),{
                 print(json)
+                if json == 401 {
+                    gPremiumCalculationController.redirectToHome()
+                }else{
                 for x in 0..<json["result"]["Groups"].count{
                     self.BasicPremium = self.BasicPremium + json["result"]["Groups"][x]["Amount"].int64Value
                     
@@ -124,7 +127,7 @@ class premiumCalculation: UIView {
                 self.netPremiumCost.text = String(self.Subtotal)
                 self.serviceTaxCost.text = String(self.Tax)
                 self.totalPremiumCost.text = String(self.TotalPremium)
-                
+                }
                 })
         })
         
@@ -151,11 +154,15 @@ class premiumCalculation: UIView {
         if terms {
             rest.premiumConfirm({(json:JSON) -> ()in
                 print(json)
+                if json == 401 {
+                    gPremiumCalculationController.redirectToHome()
+                }else{
                 if json["state"] {
                     gPremiumCalculationController.performSegueWithIdentifier("insuredmembers", sender: nil)
                 }else{
                     Popups.SharedInstance.ShowPopup("Premium Calculation", message: "Some error occured")
 
+                }
                 }
             })
         }else{

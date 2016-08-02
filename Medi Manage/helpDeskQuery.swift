@@ -50,7 +50,11 @@ class helpDeskQuery: UIView {
         
         //Connection Details
         rest.ConnectDetails({(json:JSON) -> ()  in
+            if json == 401 {
+                gHelpDeskQueryController.redirectToHome()
+            }else{
             self.to = json["result"]["QueriesEmail"].stringValue
+            }
         })
         
         helpDeskQueryMainView.frame = CGRectMake(0, 70, self.frame.size.width, self.frame.size.height - 75)
@@ -66,13 +70,15 @@ class helpDeskQuery: UIView {
             let params = "{\"To\":\"jagruti@wohlig.com\",\"Subject\":\(self.subjectTextField.text! as String),\"Body\":\(self.queryTextField.text! as String)}"
             print(String(params))
             rest.SendQuery(JSON(params), completion: {(json:JSON) -> () in
-                print(json)
+                if json == 401 {
+                    gHelpDeskQueryController.redirectToHome()
+                }else{
                 if json["state"] {
                     Popups.SharedInstance.ShowPopup("Validation", message: "Query submited sucessfully")
                 }else{
                     Popups.SharedInstance.ShowPopup("Validation", message: "Can not send Query")
                 }
-                
+            }
             })
         }else{
             Popups.SharedInstance.ShowPopup("Validation", message: "Enter all Fields.")

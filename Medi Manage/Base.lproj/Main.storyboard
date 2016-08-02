@@ -20,8 +20,10 @@
             <string>Lato-Bold</string>
             <string>Lato-Bold</string>
             <string>Lato-Bold</string>
+            <string>Lato-Bold</string>
         </mutableArray>
         <mutableArray key="Lato-Light.ttf">
+            <string>Lato-Light</string>
             <string>Lato-Light</string>
             <string>Lato-Light</string>
             <string>Lato-Light</string>
@@ -265,6 +267,7 @@
                     <connections>
                         <outlet property="EnrollmentMemberUIView" destination="MG6-Mo-3gO" id="OcP-Kr-MW8"/>
                         <segue destination="HRj-QJ-lx8" kind="show" identifier="memberlist" id="Ldc-7O-mS6"/>
+                        <segue destination="cTe-eZ-3rn" kind="show" identifier="isEnrolledTrue" id="8ZQ-nc-jHt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MV2-PS-E4L" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -667,13 +670,53 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qFa-Qz-nbu">
                                 <rect key="frame" x="-4" y="64" width="328" height="367"/>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w1g-BN-Mo3">
+                                <rect key="frame" x="0.0" y="64" width="328" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADDED MEMBER LIST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUA-pg-fqP">
+                                        <rect key="frame" x="0.0" y="12" width="328" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="dvL-Et-Odq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIW-zt-1Ei">
+                                        <rect key="frame" x="0.0" y="35" width="328" height="33"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="33" id="tdz-fe-tAP"/>
+                                        </constraints>
+                                        <string key="text" base64-UTF8="YES">
+TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2NpbmcgZWxpdC4gA1N1
+c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
+</string>
+                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="sUA-pg-fqP" secondAttribute="trailing" id="3dq-KX-GQX"/>
+                                    <constraint firstAttribute="height" constant="80" id="40M-cc-Sf9"/>
+                                    <constraint firstItem="jIW-zt-1Ei" firstAttribute="top" secondItem="sUA-pg-fqP" secondAttribute="bottom" constant="2" id="9zL-UG-YI1"/>
+                                    <constraint firstAttribute="trailing" secondItem="jIW-zt-1Ei" secondAttribute="trailing" id="W91-tn-xoQ"/>
+                                    <constraint firstItem="sUA-pg-fqP" firstAttribute="leading" secondItem="w1g-BN-Mo3" secondAttribute="leading" id="a2J-pz-Dhz"/>
+                                    <constraint firstItem="sUA-pg-fqP" firstAttribute="top" secondItem="w1g-BN-Mo3" secondAttribute="top" constant="12" id="gew-fh-Tqf"/>
+                                    <constraint firstItem="jIW-zt-1Ei" firstAttribute="leading" secondItem="w1g-BN-Mo3" secondAttribute="leading" id="sck-up-Nvv"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="qFa-Qz-nbu" secondAttribute="trailing" constant="-20" id="23b-Qm-Ig7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="w1g-BN-Mo3" secondAttribute="trailing" constant="-24" id="HHI-qK-Ymx"/>
                             <constraint firstItem="4ii-CL-Ghl" firstAttribute="top" secondItem="qFa-Qz-nbu" secondAttribute="bottom" id="OIh-O1-rZL"/>
                             <constraint firstItem="qFa-Qz-nbu" firstAttribute="top" secondItem="Fme-sh-ngZ" secondAttribute="bottom" id="gy3-yD-LCD"/>
+                            <constraint firstItem="w1g-BN-Mo3" firstAttribute="top" secondItem="qFa-Qz-nbu" secondAttribute="top" id="jWg-pl-dDR"/>
                             <constraint firstItem="qFa-Qz-nbu" firstAttribute="leading" secondItem="zpA-wp-K3m" secondAttribute="leadingMargin" constant="-20" id="ktf-Df-fEH"/>
+                            <constraint firstItem="w1g-BN-Mo3" firstAttribute="leading" secondItem="zpA-wp-K3m" secondAttribute="leading" id="uOr-Bw-cY7"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -683,7 +726,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZaZ-Hy-CoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-759" y="3538"/>
+            <point key="canvasLocation" x="-1585" y="2403"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ejb-Nu-v4p">
@@ -2665,7 +2708,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VfG-lo-faf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1160" y="2910"/>
+            <point key="canvasLocation" x="-1160" y="2944"/>
         </scene>
         <!--Change Password-->
         <scene sceneID="ZV3-31-Y0W">
@@ -2957,12 +3000,13 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
         <image name="triangle_orange" width="32" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="paQ-eN-3nA"/>
-        <segue reference="Oo4-D3-Nsi"/>
+        <segue reference="QCt-6c-YRM"/>
+        <segue reference="wgK-eO-Wod"/>
         <segue reference="s1I-qw-2n8"/>
+        <segue reference="Oo4-D3-Nsi"/>
+        <segue reference="paQ-eN-3nA"/>
         <segue reference="2ZW-OI-RRj"/>
         <segue reference="ATe-en-caw"/>
-        <segue reference="wgK-eO-Wod"/>
-        <segue reference="QCt-6c-YRM"/>
+        <segue reference="8ZQ-nc-jHt"/>
     </inferredMetricsTieBreakers>
 </document>

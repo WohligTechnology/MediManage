@@ -15,8 +15,13 @@ class PremiumCalculationController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         gPremiumCalculationController = self
+        selectedViewController = false
         navshow()
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(animated: Bool) {
+        selectedViewController = false
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -19,6 +19,10 @@ class QueryFormController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(animated: Bool) {
+        selectedViewController = false
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -24,6 +24,7 @@ class InsuredMembersController: UIViewController {
         gInsuredMembersController = self
         self.verticalLayout = VerticalLayout(width: self.view.frame.width);
         self.scrollView.insertSubview(self.verticalLayout, atIndex: 0)
+        selectedViewController = true
         
 //        checkSession()
         
@@ -96,8 +97,11 @@ class InsuredMembersController: UIViewController {
         rest.DashboardDetails({(json:JSON) -> () in
             print(json)
             dispatch_async(dispatch_get_main_queue(), {
+                if json == 401 {
+                    self.redirectToHome()
+                }else{
                 for x in 0..<json["result"]["Groups"].count {
-                    let groupView = insuredMembersAll(frame: CGRect(x: 0, y: 0, width: widthGlo, height: 120))
+                    let groupView = insuredMembersAll(frame: CGRect(x: 0, y: 15, width: widthGlo, height: 120))
                     self.verticalLayout.addSubview(groupView);
                     
                     groupView.totalSum.text = json["result"]["Groups"][x]["NetAmount"].stringValue;
@@ -114,14 +118,21 @@ class InsuredMembersController: UIViewController {
                         self.verticalLayout.addSubview(membersView);
                     }
                 }
+            }
             });
             
 //            self.verticalLayout.addSubview();
             self.verticalLayout.layoutSubviews()
         })
+        scrollView.addSubview(verticalLayout)
         
         // Do any additional setup after loading the view.
         navshow()
+        self.navigationItem.setHidesBackButton(true, animated:true);
+    }
+    override func viewWillAppear(animated: Bool) {
+        selectedViewController = true
+        
     }
 
     override func didReceiveMemoryWarning() {

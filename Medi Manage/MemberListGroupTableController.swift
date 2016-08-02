@@ -34,10 +34,14 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
         
         navshow()
         gListTableView = ListTableView
+        selectedViewController = false
 
         LoadingOverlay.shared.showOverlay(self.view)
         rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
             dispatch_async(dispatch_get_main_queue(),{
+                if json == 401 {
+                    self.redirectToHome()
+                }else{
                 print(json)
                 self.result = json["result"]
                 self.members = json["result"]["Groups"]
@@ -45,9 +49,14 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
                 cnt = self.members.count
                 self.ListTableView.reloadData()
                 LoadingOverlay.shared.hideOverlayView()
+                }
             })
         })
         // dropdown list
+        
+    }
+    override func viewWillAppear(animated: Bool) {
+        selectedViewController = false
         
     }
     
@@ -123,16 +132,15 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
         }
         print(SI)
         rest.ChangeSI(SI, completion: {(json:JSON) -> ()in
-            print("si send")
-            print(json)
-            print(TU)
+            if json == 401 {
+                self.redirectToHome()
+            }else{
             rest.ChangeTU(TU, completion: {(json:JSON) -> ()in
-                print("tu send")
-                print(json)
                 if json["state"] {
                 self.performSegueWithIdentifier("toPremiumWay", sender: self)
                 }
             })
+        }
         })
         
         

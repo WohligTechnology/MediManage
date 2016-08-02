@@ -80,6 +80,9 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
         
         rest.GetProfile({(json:JSON) -> () in
             dispatch_async(dispatch_get_main_queue(),{
+                if json == 401 {
+                    gCompleteProfileController.redirectToHome()
+                }else{
                 self.userDetail = json["result"]
 
             self.txtFullName.text = json["result"]["FullName"].stringValue
@@ -95,6 +98,7 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
                 }else{
                     self.maritalPickerView.selectRow(1, inComponent: 0, animated: true)
                 }
+            }
             })
         })
         
@@ -201,7 +205,11 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
             self.userDetail["Email"].stringValue = self.email.text! as String
             print(self.userDetail)
             rest.UpdateProfile(self.userDetail, completion: {(json:JSON) -> () in
+                if json == 401 {
+                    gCompleteProfileController.redirectToHome()
+                }else{
                 Popups.SharedInstance.ShowPopup("Validation", message: "Profile is updated.")
+                }
             })
             
         }else{

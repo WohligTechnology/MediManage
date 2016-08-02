@@ -23,13 +23,17 @@ class MainClaimsController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         gMainClaimsController = self
-        
+        selectedViewController = false
         navshow()
         
         let mainsubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_two")
         mainsubHeader.subHeaderTitle.text = "CLAIMS"
         self.view.addSubview(mainsubHeader)
+        
+    }
+    override func viewWillAppear(animated: Bool) {
+        selectedViewController = false
         
     }
     

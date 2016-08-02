@@ -25,6 +25,7 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
         
         navshow()
         LoadingOverlay.shared.showOverlay(self.view)
+        selectedViewController = false
         
         let mainsubHeader = subHeader(frame: CGRectMake(0, 70, width, 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_four")
@@ -36,11 +37,13 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
         print("out of the function")
         print(categoryId)
         rest.FaqDetails({(json:JSON) -> ()in
-            print("in side function")
-            self.queans = json["result"]["list"]
-            print(self.queans.count)
-            self.helpFaqTable.reloadData()
-            LoadingOverlay.shared.hideOverlayView()
+            if json == 401 {
+                gHelpDeskFAQController.redirectToHome()
+            }else{
+                self.queans = json["result"]["list"]
+                self.helpFaqTable.reloadData()
+                LoadingOverlay.shared.hideOverlayView()
+            }
         })
         gHelpDeskFAQController = self
         helpFaqTable.rowHeight = UITableViewAutomaticDimension
@@ -48,16 +51,17 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        selectedViewController = false
+        self.reloadInputViews()
+        
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override func viewWillAppear(animated: Bool) {
-//        self.rel
-        self.reloadInputViews()
-    }
-    
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1

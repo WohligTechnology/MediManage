@@ -7,8 +7,7 @@
 
 import UIKit
 import SwiftyJSON
-
-class enrollmentMembersRenew: UIView{
+class enrollmentMembersRenew: UIView, UITextFieldDelegate{
     
     var memberjson : JSON = [["ID":0,"Gender":2,"SystemIdentifier":"S","RelationType":"Wife"],
                              ["ID":0,"Gender":1,"SystemIdentifier":"C","RelationType":"Son"],
@@ -18,19 +17,19 @@ class enrollmentMembersRenew: UIView{
                              ["ID":0,"Gender":1,"SystemIdentifier":"I","RelationType":"Father in law"],
                              ["ID":0,"Gender":2,"SystemIdentifier":"I","RelationType":"Mother in law"],]
     
-//    var memberjson : JSON = [["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":2,"SystemIdentifier":"S","RelationType":"Wife"],
-//                             ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":1,"SystemIdentifier":"C","RelationType":"Son"],
-//                             ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":2,"SystemIdentifier":"C","RelationType":"Daughter"],
-//                             ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":1,"SystemIdentifier":"P","RelationType":"Father"],
-//                             ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":2,"SystemIdentifier":"P","RelationType":"Mother"],
-//                             ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":1,"SystemIdentifier":"I","RelationType":"Father in law"],
-//                             ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":2,"SystemIdentifier":"I","RelationType":"Mother in law"],]
+    //    var memberjson : JSON = [["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":2,"SystemIdentifier":"S","RelationType":"Wife"],
+    //                             ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":1,"SystemIdentifier":"C","RelationType":"Son"],
+    //                             ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":2,"SystemIdentifier":"C","RelationType":"Daughter"],
+    //                             ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":1,"SystemIdentifier":"P","RelationType":"Father"],
+    //                             ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":2,"SystemIdentifier":"P","RelationType":"Mother"],
+    //                             ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":1,"SystemIdentifier":"I","RelationType":"Father in law"],
+    //                             ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":2,"SystemIdentifier":"I","RelationType":"Mother in law"],]
     
     var newJsonSun : JSON = ["ID":0,"LastName":"","Gender":"1","SystemIdentifier":"C","RelationType":"Son"]
     var newJsonDaughter : JSON = ["ID":0,"LastName":"","Gender":"2","SystemIdentifier":"C","RelationType":"Daughter"]
     
-//    var newJsonSun : JSON = ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"LastName":"","Gender":"1","SystemIdentifier":"C","RelationType":"Son"]
-//    var newJsonDaughter : JSON = ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"LastName":"","Gender":"2","SystemIdentifier":"C","RelationType":"Daughter"]
+    //    var newJsonSun : JSON = ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"LastName":"","Gender":"1","SystemIdentifier":"C","RelationType":"Son"]
+    //    var newJsonDaughter : JSON = ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"LastName":"","Gender":"2","SystemIdentifier":"C","RelationType":"Daughter"]
     var prePlanMembers : JSON = ["C":0,"P":0,"I":0]
     var calculatedPlanMember : JSON = ["C":0,"P":0,"I":0]
     
@@ -107,56 +106,85 @@ class enrollmentMembersRenew: UIView{
         //HIDE LEFT ARROW INITIALLY
         self.leftArrow.hidden = true
         
+        // TOOL BAR FOR KEYBOARD
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.Default
+        toolBar.translucent = true
+        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolBar.sizeToFit()
         
-        rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
-            dispatch_sync(dispatch_get_main_queue()){
-                print(json["result"])
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "donePicker")
+        
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        
+        toolBar.setItems([spaceButton, doneButton], animated: false)
+        toolBar.userInteractionEnabled = true
+
+        
+        // CHECK IF ENROLLMENT PERIOD IS TRUE THEN REDIRECT TO INSURED MEMBER PAGE
+        rest.isEnrolled({(json:JSON) ->() in
+            if json == 401 {
+                gEnrollmentMembersController.redirectToHome()
+            }else{
+            if json && !isAddMember {
+                gEnrollmentMembersController.performSegueWithIdentifier("isEnrolledTrue", sender: nil)
+            }else{
                 
-                self.wholeJson = json["result"]
-                LoadingOverlay.shared.hideOverlayView()
-                for x in 0..<self.memberjson.count{
-                    for y in 0..<json["result"]["Groups"].count{
-                        for z in 0..<json["result"]["Groups"][y]["Members"].count{
-                            let a = String(self.memberjson[x]["SystemIdentifier"]) == String(json["result"]["Groups"][y]["Members"][z]["SystemIdentifier"])
-                            let b = self.memberjson[x]["Gender"] == json["result"]["Groups"][y]["Members"][z]["Gender"]
-                            
-                            if a && b {
-                                self.memberjson[x] = json["result"]["Groups"][y]["Members"][z]
-                                self.memberjson[x]["ActiveState"] = true
-                            }else{
-                                if self.memberjson[x]["ActiveState"] != true {
-                                    self.memberjson[x]["ActiveState"] = false
+                isAddMember = false
+                rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
+                    dispatch_sync(dispatch_get_main_queue()){
+                        print(json["result"])
+                        
+                        self.wholeJson = json["result"]
+                        LoadingOverlay.shared.hideOverlayView()
+                        for x in 0..<self.memberjson.count{
+                            for y in 0..<json["result"]["Groups"].count{
+                                for z in 0..<json["result"]["Groups"][y]["Members"].count{
+                                    let a = String(self.memberjson[x]["SystemIdentifier"]) == String(json["result"]["Groups"][y]["Members"][z]["SystemIdentifier"])
+                                    let b = self.memberjson[x]["Gender"] == json["result"]["Groups"][y]["Members"][z]["Gender"]
+                                    
+                                    if a && b {
+                                        self.memberjson[x] = json["result"]["Groups"][y]["Members"][z]
+                                        self.memberjson[x]["ActiveState"] = true
+                                    }else{
+                                        if self.memberjson[x]["ActiveState"] != true {
+                                            self.memberjson[x]["ActiveState"] = false
+                                        }
+                                    }
                                 }
                             }
                         }
-                    }
-                }
-                for x in 0..<self.wholeJson["PlanMembers"].count {
-                    switch self.wholeJson["PlanMembers"][x]["Member"] {
-                    case "C":
-                        if self.wholeJson["PlanMembers"][x]["Allowed"] > self.prePlanMembers["C"] {
-                            self.prePlanMembers["C"] = self.wholeJson["PlanMembers"][x]["Allowed"]
+                        for x in 0..<self.wholeJson["PlanMembers"].count {
+                            switch self.wholeJson["PlanMembers"][x]["Member"] {
+                            case "C":
+                                if self.wholeJson["PlanMembers"][x]["Allowed"] > self.prePlanMembers["C"] {
+                                    self.prePlanMembers["C"] = self.wholeJson["PlanMembers"][x]["Allowed"]
+                                }
+                                break
+                            case "P":
+                                if self.wholeJson["PlanMembers"][x]["Allowed"] > self.prePlanMembers["P"] {
+                                    self.prePlanMembers["P"] = self.wholeJson["PlanMembers"][x]["Allowed"]
+                                }
+                                break
+                            case "I":
+                                if self.wholeJson["PlanMembers"][x]["Allowed"] > self.prePlanMembers["I"] {
+                                    self.prePlanMembers["I"] = self.wholeJson["PlanMembers"][x]["Allowed"]
+                                }
+                                break
+                            default:
+                                break
+                            }
+                            
                         }
-                        break
-                    case "P":
-                        if self.wholeJson["PlanMembers"][x]["Allowed"] > self.prePlanMembers["P"] {
-                            self.prePlanMembers["P"] = self.wholeJson["PlanMembers"][x]["Allowed"]
-                        }
-                        break
-                    case "I":
-                        if self.wholeJson["PlanMembers"][x]["Allowed"] > self.prePlanMembers["I"] {
-                            self.prePlanMembers["I"] = self.wholeJson["PlanMembers"][x]["Allowed"]
-                        }
-                        break
-                    default:
-                        break
+                        self.assignMembers()
                     }
                     
-                }
-                self.assignMembers()
+                })
+
             }
-            
+        }
         })
+        
         
         
         enrollmentMembersMainView.frame = CGRectMake(0, 60, self.frame.size.width, self.frame.size.height - 60);
@@ -179,6 +207,13 @@ class enrollmentMembersRenew: UIView{
         border.backgroundColor = color.CGColor
         border.frame = CGRectMake(0, myView.frame.size.height - width, myView.frame.size.width, width)
         myView.layer.addSublayer(border)
+    }
+    
+    func donePicker(){
+        leftDOB.resignFirstResponder()
+        leftDOM.resignFirstResponder()
+        rightDOB.resignFirstResponder()
+        rightDOM.resignFirstResponder()
     }
     
     //FUNCTION WHICH CHECKS ENROLLMENT PERIOD
@@ -373,19 +408,51 @@ class enrollmentMembersRenew: UIView{
         }
         
     }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     @IBAction func leftDOBClick(sender: AnyObject) {
         datetype = 1
         datePickerView.datePickerMode = UIDatePickerMode.Date
         leftDOB.inputView = datePickerView
+        // TOOL BAR FOR KEYBOARD
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.Default
+        toolBar.translucent = true
+        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(enrollmentMembersRenew.donePicker))
+        
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        
+        toolBar.setItems([spaceButton, doneButton], animated: false)
+        toolBar.userInteractionEnabled = true
+        leftDOB.inputAccessoryView = toolBar
+
         datePickerView.addTarget(self , action: #selector(self.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
     }
     
     @IBAction func leftDOMClick(sender: AnyObject) {
         datetype = 2
-        //        print("left click")
         datePickerView.datePickerMode = UIDatePickerMode.Date
         leftDOM.inputView = datePickerView
+        // TOOL BAR FOR KEYBOARD
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.Default
+        toolBar.translucent = true
+        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(enrollmentMembersRenew.donePicker))
+        
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        
+        toolBar.setItems([spaceButton, doneButton], animated: false)
+        toolBar.userInteractionEnabled = true
+        leftDOM.inputAccessoryView = toolBar
         datePickerView.addTarget(self , action: #selector(self.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
     }
     
@@ -393,6 +460,20 @@ class enrollmentMembersRenew: UIView{
         datetype = 3
         datePickerView.datePickerMode = UIDatePickerMode.Date
         rightDOB.inputView = datePickerView
+        // TOOL BAR FOR KEYBOARD
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.Default
+        toolBar.translucent = true
+        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(enrollmentMembersRenew.donePicker))
+        
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        
+        toolBar.setItems([spaceButton, doneButton], animated: false)
+        toolBar.userInteractionEnabled = true
+        rightDOB.inputAccessoryView = toolBar
         datePickerView.addTarget(self , action: #selector(self.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
     }
     
@@ -400,6 +481,20 @@ class enrollmentMembersRenew: UIView{
         datetype = 4
         datePickerView.datePickerMode = UIDatePickerMode.Date
         rightDOM.inputView = datePickerView
+        // TOOL BAR FOR KEYBOARD
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.Default
+        toolBar.translucent = true
+        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(enrollmentMembersRenew.donePicker))
+        
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        
+        toolBar.setItems([spaceButton, doneButton], animated: false)
+        toolBar.userInteractionEnabled = true
+        rightDOM.inputAccessoryView = toolBar
         datePickerView.addTarget(self , action: #selector(self.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
     }
     
@@ -511,7 +606,7 @@ class enrollmentMembersRenew: UIView{
             self.leftDOM.hidden = false
             self.leftAddMore.hidden = true
             break
-        case "Sun":
+        case "Son":
             self.leftIcon.image = UIImage(named: "son_icon")
             self.leftDOM.hidden = true
             self.leftAddMore.hidden = false
@@ -642,6 +737,9 @@ class enrollmentMembersRenew: UIView{
                 print(finaljson)
                 rest.AddMembers(finaljson, completion: {(json:JSON) -> ()in
                     dispatch_sync(dispatch_get_main_queue()){
+                        if json == 401 {
+                            gEnrollmentMembersController.redirectToHome()
+                        }else{
                         if json["state"] {
                             gEnrollmentMembersController.performSegueWithIdentifier("memberlist", sender: nil)
                         }else{
@@ -649,9 +747,10 @@ class enrollmentMembersRenew: UIView{
                                 Popups.SharedInstance.ShowPopup("Select Members", message: json["error_message"].stringValue)
                             }else{
                                 Popups.SharedInstance.ShowPopup("Select Members", message: "Some Error Occured.")
-
+                                
                             }
                         }
+                    }
                     }
                 })
             }

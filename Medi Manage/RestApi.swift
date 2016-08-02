@@ -141,7 +141,13 @@ public class RestApi {
             let opt = try HTTP.GET(apiURL+SUBURL , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
             opt.start { response in
                 if let _ = response.error {
-                    completion(json);
+                    let nsError = response.error! as NSError
+                    if nsError.code == 401 {
+                        json = JSON(nsError.code)
+                        completion(json)
+                    }else{
+                        completion(json);
+                    }
                 }
                 else
                 {
@@ -165,7 +171,13 @@ public class RestApi {
             let opt = try HTTP.GET(apiURL+"Users/Profile" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
             opt.start { response in
                 if let _ = response.error {
-                    completion(json);
+                    let nsError = response.error! as NSError
+                    if nsError.code == 401 {
+                        json = JSON(nsError.code)
+                        completion(json)
+                    }else{
+                        completion(json);
+                    }
                 }
                 else
                 {
@@ -190,7 +202,13 @@ public class RestApi {
             let opt = try HTTP.POST(apiURL+"Users/UpdateProfile" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
             opt.start { response in
                 if let _ = response.error {
-                    completion(json);
+                    let nsError = response.error! as NSError
+                    if nsError.code == 401 {
+                        json = JSON(nsError.code)
+                        completion(json)
+                    }else{
+                        completion(json);
+                    }
                 }
                 else
                 {
@@ -214,7 +232,13 @@ public class RestApi {
             let opt = try HTTP.GET(apiURL+"Enrollments/Confirm" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
             opt.start { response in
                 if let _ = response.error {
-                    completion(json);
+                    let nsError = response.error! as NSError
+                    if nsError.code == 401 {
+                        json = JSON(nsError.code)
+                        completion(json)
+                    }else{
+                        completion(json);
+                    }
                 }
                 else
                 {
@@ -242,7 +266,13 @@ public class RestApi {
             opt.start { response in
                 print(response.error)
                 if let _ = response.error {
-                    completion(json);
+                    let nsError = response.error! as NSError
+                    if nsError.code == 401 {
+                        json = JSON(nsError.code)
+                        completion(json)
+                    }else{
+                        completion(json);
+                    }
                 }
                 else
                 {
@@ -269,7 +299,13 @@ public class RestApi {
             opt.start { response in
                 //                print(response.error)
                 if let _ = response.error {
-                    completion(json);
+                    let nsError = response.error! as NSError
+                    if nsError.code == 401 {
+                        json = JSON(nsError.code)
+                        completion(json)
+                    }else{
+                        completion(json);
+                    }
                 }
                 else
                 {
@@ -296,7 +332,13 @@ public class RestApi {
             opt.start { response in
                 //                print(response.error)
                 if let _ = response.error {
-                    completion(json);
+                    let nsError = response.error! as NSError
+                    if nsError.code == 401 {
+                        json = JSON(nsError.code)
+                        completion(json)
+                    }else{
+                        completion(json);
+                    }
                 }
                 else
                 {
@@ -321,7 +363,13 @@ public class RestApi {
             let opt = try HTTP.POST(apiURL+"Users/ResetPassword" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
             opt.start { response in
                 if let _ = response.error {
-                    completion(json);
+                    let nsError = response.error! as NSError
+                    if nsError.code == 401 {
+                        json = JSON(nsError.code)
+                        completion(json)
+                    }else{
+                        completion(json);
+                    }
                 }
                 else
                 {
@@ -346,7 +394,13 @@ public class RestApi {
             let opt = try HTTP.GET(apiURL+"Enrollments/Name" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
             opt.start { response in
                 if let _ = response.error {
-                    completion(json);
+                    let nsError = response.error! as NSError
+                    if nsError.code == 401 {
+                        json = JSON(nsError.code)
+                        completion(json)
+                    }else{
+                        completion(json);
+                    }
                 }
                 else
                 {
@@ -371,7 +425,13 @@ public class RestApi {
             let opt = try HTTP.GET(apiURL+"Enrollments/ConnectSection" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
             opt.start { response in
                 if let _ = response.error {
-                    completion(json);
+                    let nsError = response.error! as NSError
+                    if nsError.code == 401 {
+                        json = JSON(nsError.code)
+                        completion(json)
+                    }else{
+                        completion(json);
+                    }
                 }
                 else
                 {
@@ -397,7 +457,13 @@ public class RestApi {
             let opt = try HTTP.GET(apiURL+"Enrollments/DashboardDetails" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
             opt.start { response in
                 if let _ = response.error {
-                    completion(json);
+                    let nsError = response.error! as NSError
+                    if nsError.code == 401 {
+                        json = JSON(nsError.code)
+                        completion(json)
+                    }else{
+                        completion(json);
+                    }
                 }
                 else
                 {
@@ -422,7 +488,13 @@ public class RestApi {
             opt.start { response in
                 print(response.error)
                 if let _ = response.error {
-                    completion(json);
+                    let nsError = response.error! as NSError
+                    if nsError.code == 401 {
+                        json = JSON(nsError.code)
+                        completion(json)
+                    }else{
+                        completion(json);
+                    }
                 }
                 else
                 {
@@ -446,7 +518,13 @@ public class RestApi {
             let opt = try HTTP.GET(apiURL+"Hospitals/Search/\(data)" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
             opt.start { response in
                 if let _ = response.error {
-                    completion(json);
+                    let nsError = response.error! as NSError
+                    if nsError.code == 401 {
+                        json = JSON(nsError.code)
+                        completion(json)
+                    }else{
+                        completion(json);
+                    }
                 }
                 else
                 {
@@ -471,7 +549,13 @@ public class RestApi {
             let opt = try HTTP.GET(apiURL+"Enrollments/MobileBenefitSummery" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
             opt.start { response in
                 if let _ = response.error {
-                    completion(json);
+                    let nsError = response.error! as NSError
+                    if nsError.code == 401 {
+                        json = JSON(nsError.code)
+                        completion(json)
+                    }else{
+                        completion(json);
+                    }
                 }
                 else
                 {
@@ -496,7 +580,13 @@ public class RestApi {
             let opt = try HTTP.GET(apiURL+"FAQ/Categories" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
             opt.start { response in
                 if let _ = response.error {
-                    completion(json);
+                    let nsError = response.error! as NSError
+                    if nsError.code == 401 {
+                        json = JSON(nsError.code)
+                        completion(json)
+                    }else{
+                        completion(json);
+                    }
                 }
                 else
                 {
@@ -525,7 +615,13 @@ public class RestApi {
             opt.start { response in
                 print(response.error)
                 if let _ = response.error {
-                    completion(json);
+                    let nsError = response.error! as NSError
+                    if nsError.code == 401 {
+                        json = JSON(nsError.code)
+                        completion(json)
+                    }else{
+                        completion(json);
+                    }
                 }
                 else
                 {
@@ -554,7 +650,13 @@ public class RestApi {
             opt.start { response in
                 print(response.error)
                 if let _ = response.error {
-                    completion(json);
+                    let nsError = response.error! as NSError
+                    if nsError.code == 401 {
+                        json = JSON(nsError.code)
+                        completion(json)
+                    }else{
+                        completion(json);
+                    }
                 }
                 else
                 {
@@ -578,7 +680,13 @@ public class RestApi {
             let opt = try HTTP.GET(apiURL+"Enrollments/ConnectDetails" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
             opt.start { response in
                 if let _ = response.error {
-                    completion(json);
+                    let nsError = response.error! as NSError
+                    if nsError.code == 401 {
+                        json = JSON(nsError.code)
+                        completion(json)
+                    }else{
+                        completion(json);
+                    }
                 }
                 else
                 {
@@ -630,7 +738,13 @@ public class RestApi {
             
             opt.start { response in
                 if let _ = response.error {
-                    completion(json);
+                    let nsError = response.error! as NSError
+                    if nsError.code == 401 {
+                        json = JSON(nsError.code)
+                        completion(json)
+                    }else{
+                        completion(json);
+                    }
                 }
                 else
                 {
@@ -689,14 +803,24 @@ public class RestApi {
         }
     }
     
-    public func isEnrolled(ecard : String!, completion:((JSON) -> Void))
+    public func isEnrolled(completion:((JSON) -> Void))
     {
         var json = JSON(1)
-        do {
-            let opt = try HTTP.GET(apiURL + "Enrollment/IsEnrolled" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers: nil)
+        
+        let token = defaultToken.stringForKey("access_token")
+        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
+                do {
+            let opt = try HTTP.GET(apiURL + "Enrollments/IsEnrolled" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers: isLoginheader)
             opt.start { response in
+                
                 if let _ = response.error {
-                    completion(json);
+                    let nsError = response.error! as NSError
+                    if nsError.code == 401 {
+                        json = JSON(nsError.code)
+                        completion(json)
+                    }else{
+                        completion(json);
+                    }
                 }
                 else
                 {
@@ -719,7 +843,13 @@ public class RestApi {
             let opt = try HTTP.GET(apiURL + "Users/ChangePassword/\(cp)/\(np)/\(cnp)" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers: isLoginheader)
             opt.start { response in
                 if let _ = response.error {
-                    completion(json);
+                    let nsError = response.error! as NSError
+                    if nsError.code == 401 {
+                        json = JSON(nsError.code)
+                        completion(json)
+                    }else{
+                        completion(json);
+                    }
                 }
                 else
                 {

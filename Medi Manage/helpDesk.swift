@@ -47,7 +47,6 @@ class helpDesk: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextFiel
         helpDesk.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(helpDesk)
         
-        LoadingOverlay.shared.showOverlay(gHelpDeskController.view)
         
         let mainsubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
         mainsubHeader.subHeaderTitle.text = "HELP DESK"
@@ -57,11 +56,17 @@ class helpDesk: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextFiel
         
         //get faq data
         rest.FaqCategories({(json:JSON) -> () in
-            //            gHelpDeskQueryController.s
-            if json["state"] {
-                self.categories = json["result"]
+            dispatch_sync(dispatch_get_main_queue()){
+                if json == 401 {
+                    gHelpDeskController.redirectToHome()
+                }else{
+                    print("in faq faq faq")
+                    LoadingOverlay.shared.hideOverlayView()
+                    if json["state"] {
+                        self.categories = json["result"]
+                    }
+                }
             }
-            LoadingOverlay.shared.hideOverlayView()
         })
         
         // dropdown list

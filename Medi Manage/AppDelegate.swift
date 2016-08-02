@@ -32,6 +32,8 @@ var profilePassword : String! = ""
 var hospitalSearchText : String! = ""
 var OTPStatus = 0 // 1 : from profile 2: forgot passwordSendOtp
 var selectedIndex = 0
+var selectedViewController : Bool = false
+var isAddMember : Bool = false
 struct defaultsKeys {
     static let token = ""
     static let keyTwo = "secondStringKey"
@@ -126,8 +128,6 @@ extension UIViewController {
     
     func checkSession() {
         rest.Hospital("mumbai%20fortis", completion: {(json:JSON) ->() in
-            print(")))))))))))))))))))))))))))))))))))")
-            print(json)
             if json == 1{
                 let passcodemodal = self.storyboard?.instantiateViewControllerWithIdentifier("loginc") as! LoginController
                 
@@ -136,10 +136,18 @@ extension UIViewController {
         })
     }
     
+    func redirectToHome() {
+        let passcodemodal = self.storyboard?.instantiateViewControllerWithIdentifier("loginc") as! LoginController
+        
+        self.presentViewController(passcodemodal, animated: true, completion: nil)
+    }
+    
     func rightNavItemEditClick(sender:UIButton!) {
         
-//        Popups.SharedInstance.showalt(self)
-        let actionSheetControllerIOS8: UIAlertController = UIAlertController(title: "Settings", message: nil, preferredStyle: .ActionSheet)
+        print(selectedViewController)
+       
+        
+        let actionSheetControllerIOS8: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
         
         // CANCEL BUTTON
         let cancelActionButton: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in}
@@ -164,6 +172,17 @@ extension UIViewController {
         }
         actionSheetControllerIOS8.addAction(editProfileActionButton)
         
+        if selectedViewController {
+            let editProfileActionButton: UIAlertAction = UIAlertAction(title: "Add Members", style: .Default){ action -> Void in
+                isAddMember = true
+                let passcodemodal = self.storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
+                
+                self.presentViewController(passcodemodal, animated: true, completion: nil)
+                
+            }
+            actionSheetControllerIOS8.addAction(editProfileActionButton)
+        }
+        
         // LOGOUT BUTTON
         let logoutActionButton: UIAlertAction = UIAlertAction(title: "Logout", style: .Destructive){ action -> Void in
             defaultToken.removeObjectForKey("access_token")
@@ -177,28 +196,4 @@ extension UIViewController {
         // PRESENT VIEW SENDER
         self.presentViewController(actionSheetControllerIOS8, animated: true, completion: nil)
     }
-//    class func load(URL: NSURL) {
-//        let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
-//        let session = NSURLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
-//        let request = NSMutableURLRequest(URL: URL)
-//        request.HTTPMethod = "GET"
-//        let task = session.dataTaskWithRequest(request, completionHandler: { (data: NSData!, response: NSURLResponse!, error: NSError!) -> Void in
-//            if (error == nil) {
-//                // Success
-//                let statusCode = (response as NSHTTPURLResponse).statusCode
-//                println("Success: \(statusCode)")
-//                
-//                // This is your file-variable:
-//                // data
-//            }
-//            else {
-//                // Failure
-//                println("Faulure: %@", error.localizedDescription);
-//            }
-//        })
-//        task.resume()
-//    }
 }
-
-
-

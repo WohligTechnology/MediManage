@@ -48,7 +48,7 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
         super.viewDidLoad()
         
         navshow()
-        
+        selectedViewController = false
         
         let mainsubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "document_checklist")
@@ -62,6 +62,11 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
         self.documentTable.rowHeight = UITableViewAutomaticDimension
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        selectedViewController = false
+        
     }
     
     override func didReceiveMemoryWarning() {

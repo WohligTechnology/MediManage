@@ -43,11 +43,15 @@ class ChangePassword: UIViewController, UITextFieldDelegate {
 
             rest.changePassword(self.currentPassword.text!, np: self.newPassword.text!, cnp: self.confPassword.text!, completion: {(json:JSON) ->() in
                 print(json)
+                if json == 401 {
+                    self.redirectToHome()
+                }else{
                 if json["state"] {
                     self.dismissViewControllerAnimated(true, completion: nil)
                 }else{
                     Popups.SharedInstance.ShowPopup("Change Password", message: json["error_message"].stringValue)
                 }
+            }
             })
         }else{
             Popups.SharedInstance.ShowPopup("Change Password", message: "Please Enter All Fields.")

@@ -23,7 +23,8 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
         super.viewDidLoad()
         
         navshow()
-        
+        selectedViewController = false
+
         LoadingOverlay.shared.showOverlay(self.view)
         
         let mainsubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
@@ -37,14 +38,22 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
         loadTable()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        selectedViewController = false
+        
+    }
+    
     func loadTable() {
         rest.Hospital(hospitalSearchText, completion: {(json:JSON) -> () in
             dispatch_async(dispatch_get_main_queue(),{
+                if json == 401 {
+                    self.redirectToHome()
+                }else{
                 LoadingOverlay.shared.hideOverlayView()
-                print(json)
             self.hospitals = json["result"]["Results"]
             self.hoscount.text = json["result"]["Count"].stringValue
             self.searchTable.reloadData()
+            }
             })
         })
     }

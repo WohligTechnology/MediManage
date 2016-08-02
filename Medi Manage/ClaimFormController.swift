@@ -16,8 +16,13 @@ class ClaimFormController: UIViewController {
         super.viewDidLoad()
         
         gClaimFormController = self
+        selectedViewController = false
 
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(animated: Bool) {
+        selectedViewController = false
+        
     }
 
     override func didReceiveMemoryWarning() {

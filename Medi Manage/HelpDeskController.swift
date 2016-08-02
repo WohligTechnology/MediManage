@@ -19,8 +19,15 @@ class HelpDeskController: UIViewController {
         //statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
         statusBar.backgroundColor = UIColor(red: 244/255, green: 121/255, blue: 32/255, alpha: 1)
         self.view.addSubview(statusBar)
+        LoadingOverlay.shared.showOverlay(gHelpDeskController.view)
+        selectedViewController = false
+
         navshow()
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(animated: Bool) {
+        selectedViewController = false
+        
     }
 
     override func didReceiveMemoryWarning() {
