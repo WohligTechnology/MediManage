@@ -30,9 +30,11 @@ public class LoadingOverlay{
     var overlayView = UIView()
     var activityIndicator = UIActivityIndicatorView()
     
+    
     class var shared: LoadingOverlay {
         struct Static {
             static let instance: LoadingOverlay = LoadingOverlay()
+            
         }
         return Static.instance
     }
@@ -45,12 +47,21 @@ public class LoadingOverlay{
         overlayView.clipsToBounds = true
         overlayView.layer.cornerRadius = 10
         
+        let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurView = UIVisualEffectView(effect: darkBlur)
+        blurView.frame.size.height = view.frame.height
+        blurView.frame.size.width = view.frame.width
+//        blurView.layer.zPosition = -1
+        blurView.userInteractionEnabled = false
+        blurView.addSubview(overlayView)
+//        view.addSubview(blurView)
+        
         activityIndicator.frame = CGRectMake(0, 0, 40, 40)
         activityIndicator.activityIndicatorViewStyle = .WhiteLarge
         activityIndicator.center = CGPointMake(overlayView.bounds.width / 2, overlayView.bounds.height / 2)
         
         overlayView.addSubview(activityIndicator)
-        view.addSubview(overlayView)
+        view.addSubview(blurView)
         
         activityIndicator.startAnimating()
     }

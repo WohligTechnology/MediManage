@@ -24,6 +24,9 @@ class helpDesk: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextFiel
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
+//        if((gHelpDeskFAQController) != nil) {
+//            gHelpDeskFAQController.dismissViewControllerAnimated(false, completion: nil)
+//        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -121,6 +124,8 @@ class helpDesk: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextFiel
             Popups.SharedInstance.ShowPopup("Category", message: "Please Select Category.")
             
         }else{
+           
+
             gHelpDeskController.performSegueWithIdentifier("helpDeskToHelpDeskFAQ", sender: nil)
         }
     }

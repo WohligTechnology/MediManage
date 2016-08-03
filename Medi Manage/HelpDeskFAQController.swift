@@ -27,34 +27,40 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
 //        LoadingOverlay.shared.showOverlay(self.view)
         selectedViewController = false
         
+            }
+    func loadnow() {
         let mainsubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_four")
         mainsubHeader.subHeaderTitle.text = "HELP DESK"
         self.view.addSubview(mainsubHeader)
         
         
-        //        dummyButton.layer.zPosition = 10000
         rest.FaqDetails({(json:JSON) -> ()in
             if json == 401 {
                 gHelpDeskFAQController.redirectToHome()
             }else{
                 self.queans = json["result"]["list"]
                 self.helpFaqTable.reloadData()
-//                LoadingOverlay.shared.hideOverlayView()
+                //                LoadingOverlay.shared.hideOverlayView()
             }
         })
         gHelpDeskFAQController = self
         helpFaqTable.rowHeight = UITableViewAutomaticDimension
         expandedHeight = helpFaqTable.rowHeight
         helpFaqTable.reloadData();
-        // Do any additional setup after loading the view.
+
     }
     
     override func viewWillAppear(animated: Bool) {
         selectedViewController = false
+        self.loadnow()
         self.reloadInputViews()
         
         
+    }
+    override func viewWillDisappear(animated: Bool) {
+        helpFaqTable.delegate = nil
+        helpFaqTable.dataSource = nil
     }
     
     override func didReceiveMemoryWarning() {
@@ -135,7 +141,6 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
         
         return cell
     }
-    
 }
 
 class quecell: UITableViewCell {
