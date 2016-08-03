@@ -25,6 +25,8 @@ class InsuredMembersController: UIViewController {
         self.verticalLayout = VerticalLayout(width: self.view.frame.width);
         self.scrollView.insertSubview(self.verticalLayout, atIndex: 0)
         selectedViewController = true
+        let temp = UIView(frame: CGRect(x: 0, y: 0, width: widthGlo + 8, height: 15))
+        self.verticalLayout.addSubview(temp);
         
 //        checkSession()
         
@@ -101,7 +103,7 @@ class InsuredMembersController: UIViewController {
                     self.redirectToHome()
                 }else{
                 for x in 0..<json["result"]["Groups"].count {
-                    let groupView = insuredMembersAll(frame: CGRect(x: 0, y: 15, width: widthGlo, height: 120))
+                    let groupView = insuredMembersAll(frame: CGRect(x: 0, y: 0, width: widthGlo + 5 , height: 120))
                     self.verticalLayout.addSubview(groupView);
                     
                     groupView.totalSum.text = json["result"]["Groups"][x]["NetAmount"].stringValue;
@@ -116,15 +118,18 @@ class InsuredMembersController: UIViewController {
                         membersView.lastname.text = json["result"]["Groups"][x]["Members"][y]["LastName"].stringValue;
                         membersView.relation.text = json["result"]["Groups"][x]["Members"][y]["RelationType"].stringValue;
                         self.verticalLayout.addSubview(membersView);
+                        print(self.verticalLayout.frame.height);
                     }
                 }
+                    self.verticalLayout.layoutSubviews()
+
+                    self.scrollView.contentSize = CGSize(width: self.verticalLayout.frame.width, height: self.verticalLayout.frame.height )
             }
             });
             
 //            self.verticalLayout.addSubview();
             self.verticalLayout.layoutSubviews()
         })
-        scrollView.addSubview(verticalLayout)
         
         // Do any additional setup after loading the view.
         navshow()

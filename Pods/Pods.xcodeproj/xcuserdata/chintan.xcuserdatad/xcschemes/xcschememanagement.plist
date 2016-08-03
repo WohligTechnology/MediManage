@@ -29,6 +29,11 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+		<key>SwiftSpinner.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
 		<key>SwiftValidator.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -62,12 +67,37 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>6CFB5ED9A2960CC040F601C8D58F5C24</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>7B9A677C1772366CE299BD2E0522E9DC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>93FA9C8143F9265B72747A0C99320DC5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AEC539221543B733030535C39B2F3C5B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>E239B5D3BEA98328604A3D5ABD5E9B15</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E9BE5F277FDAD79B39D0BAA0BABEB8EE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -24,7 +24,7 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         
         navshow()
-        LoadingOverlay.shared.showOverlay(self.view)
+//        LoadingOverlay.shared.showOverlay(self.view)
         selectedViewController = false
         
         let mainsubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
@@ -40,12 +40,13 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
             }else{
                 self.queans = json["result"]["list"]
                 self.helpFaqTable.reloadData()
-                LoadingOverlay.shared.hideOverlayView()
+//                LoadingOverlay.shared.hideOverlayView()
             }
         })
         gHelpDeskFAQController = self
         helpFaqTable.rowHeight = UITableViewAutomaticDimension
         expandedHeight = helpFaqTable.rowHeight
+        helpFaqTable.reloadData();
         // Do any additional setup after loading the view.
     }
     
