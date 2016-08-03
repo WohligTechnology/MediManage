@@ -27,15 +27,13 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
         LoadingOverlay.shared.showOverlay(self.view)
         selectedViewController = false
         
-        let mainsubHeader = subHeader(frame: CGRectMake(0, 70, width, 50))
+        let mainsubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_four")
         mainsubHeader.subHeaderTitle.text = "HELP DESK"
         self.view.addSubview(mainsubHeader)
         
         
         //        dummyButton.layer.zPosition = 10000
-        print("out of the function")
-        print(categoryId)
         rest.FaqDetails({(json:JSON) -> ()in
             if json == 401 {
                 gHelpDeskFAQController.redirectToHome()

@@ -16,8 +16,11 @@ class TutorialController: UIViewController {
         super.viewDidLoad()
         
         gTutorialController = self
-//        self.displayNavBarActivity()
-        // Do any additional setup after loading the view.
+        print("in tutorial")
+//        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("pageViewCtlr") as! PageViewerController
+//        self.presentViewController(vc, animated: true, completion: nil)
+//        self.presentViewController(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+        self.performSegueWithIdentifier("goToPage", sender: nil)
     }
 
     override func didReceiveMemoryWarning() {

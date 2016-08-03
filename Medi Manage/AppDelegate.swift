@@ -75,6 +75,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         createMenuView()
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let token = defaultToken.stringForKey("access_token")
+        let splashscrn = defaultToken.stringForKey("onSplashScreen")
+        
+        if token != nil {
+            let exampleViewController: TabBarController = mainStoryboard.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
+            self.window?.rootViewController = exampleViewController
+            
+        }else{
+            if splashscrn != nil {
+                let exampleViewController: LoginController = mainStoryboard.instantiateViewControllerWithIdentifier("loginc") as! LoginController
+                self.window?.rootViewController = exampleViewController
+            }else{
+                let exampleViewController: PageViewerController = mainStoryboard.instantiateViewControllerWithIdentifier("pageViewCtlr") as! PageViewerController
+                self.window?.rootViewController = exampleViewController
+            }
+        }
+        
+        
+        
+        self.window?.makeKeyAndVisible()
+        
         
 //        let pageController = UIPageControl.appearance()
 //        pageController.pageIndicatorTintColor = UIColor.lightGrayColor()

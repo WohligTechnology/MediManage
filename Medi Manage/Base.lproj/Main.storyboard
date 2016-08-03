@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NMF-BA-RYD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WoX-5m-1V4">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -151,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9Z-0X-rR4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1450" y="-476"/>
+            <point key="canvasLocation" x="-1452" y="-470"/>
         </scene>
         <!--Complete Profile Controller-->
         <scene sceneID="xoo-J9-7Uf">
@@ -2106,12 +2106,12 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
         <!--Page Viewer Controller-->
         <scene sceneID="4hG-tJ-o9G">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="NMF-BA-RYD" customClass="PageViewerController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="pageViewCtlr" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="NMF-BA-RYD" customClass="PageViewerController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4mP-7X-dlr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2279" y="-494"/>
+            <point key="canvasLocation" x="-2335" y="-494"/>
         </scene>
         <!--Tutorial Controller-->
         <scene sceneID="dUa-zI-cRa">
@@ -2143,6 +2143,9 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <segue destination="NMF-BA-RYD" kind="show" identifier="goToPage" id="Nzx-5a-4Sl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C93-Sw-3tW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3002,8 +3005,8 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
     <inferredMetricsTieBreakers>
         <segue reference="QCt-6c-YRM"/>
         <segue reference="wgK-eO-Wod"/>
-        <segue reference="s1I-qw-2n8"/>
-        <segue reference="Oo4-D3-Nsi"/>
+        <segue reference="LXm-Lb-FcH"/>
+        <segue reference="Usm-li-CcL"/>
         <segue reference="paQ-eN-3nA"/>
         <segue reference="2ZW-OI-RRj"/>
         <segue reference="ATe-en-caw"/>

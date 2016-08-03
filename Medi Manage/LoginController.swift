@@ -16,7 +16,6 @@ class LoginController: UIViewController {
         super.viewDidLoad()
         
         gLoginController = self
-
         // Do any additional setup after loading the view.
     }
 
