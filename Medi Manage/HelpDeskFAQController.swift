@@ -24,10 +24,11 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         
         navshow()
-//        LoadingOverlay.shared.showOverlay(self.view)
+        //        LoadingOverlay.shared.showOverlay(self.view)
         selectedViewController = false
-        
-            }
+        addObserver(self, forKeyPath: "frame", options: .New, context: nil)
+    }
+    
     func loadnow() {
         let mainsubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_four")
@@ -48,7 +49,7 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
         helpFaqTable.rowHeight = UITableViewAutomaticDimension
         expandedHeight = helpFaqTable.rowHeight
         helpFaqTable.reloadData();
-
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -59,8 +60,7 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
     override func viewWillDisappear(animated: Bool) {
-        helpFaqTable.delegate = nil
-        helpFaqTable.dataSource = nil
+        removeObserver(self, forKeyPath: "frame")
     }
     
     override func didReceiveMemoryWarning() {
@@ -156,7 +156,7 @@ class quecell: UITableViewCell {
     }
     
     func watchFrameChanges() {
-        addObserver(self, forKeyPath: "frame", options: .New, context: nil)
+        //addObserver(self, forKeyPath: "frame", options: .New, context: nil)
         checkHeight()
     }
     
