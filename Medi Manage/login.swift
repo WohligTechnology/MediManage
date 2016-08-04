@@ -38,6 +38,8 @@ class login: UIView, UITextFieldDelegate {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         loadViewFromNib ()
+        mobile.delegate = self
+        password.delegate = self
         mobile.text = TestId
         password.text = TestPWD
     }

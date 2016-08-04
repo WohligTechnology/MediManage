@@ -63,6 +63,9 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
         statusBar.backgroundColor = UIColor(red: 244/255, green: 121/255, blue: 32/255, alpha: 1)
         self.addSubview(statusBar)
         
+        mobileNumber.delegate = self
+        email.delegate = self
+        
         // MARITAL STATUS ARROW ICON
         let imageView = UIImageView()
         let image = UIImage(named: "triangle_orange")
@@ -157,6 +160,16 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
        
       
         }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        mobileNumber.resignFirstResponder()
+        email.resignFirstResponder()
+        return true
+    }
+    
+//    @IBAction func closeMe(sender: AnyObject) {
+//        dismiss
+//    }
+    
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         if pickerView == maritalPickerView{
             return 1

@@ -65,13 +65,29 @@
                                 <constraint firstAttribute="height" constant="36" id="RoK-xC-XZV"/>
                             </constraints>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jkm-gu-iK7">
+                            <rect key="frame" x="265" y="13" width="48" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="6NP-co-FDb"/>
+                                <constraint firstAttribute="width" constant="48" id="BxG-Bm-GH7"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                            <state key="normal" title="X">
+                                <color key="titleColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="closeMe:" destination="-1" eventType="touchUpInside" id="icG-Lm-a1l"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.95686274509803915" green="0.47450980392156861" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstItem="Jkm-gu-iK7" firstAttribute="top" secondItem="ogq-na-L0V" secondAttribute="top" constant="13" id="5mz-4g-HpC"/>
                         <constraint firstAttribute="trailing" secondItem="nuL-Uk-tJ9" secondAttribute="trailing" id="HKD-sZ-feG"/>
                         <constraint firstItem="nuL-Uk-tJ9" firstAttribute="top" secondItem="ogq-na-L0V" secondAttribute="top" id="Lfd-91-32q"/>
                         <constraint firstAttribute="height" constant="50" id="UgG-Ut-Jkl"/>
                         <constraint firstItem="nuL-Uk-tJ9" firstAttribute="leading" secondItem="MPr-1j-QVc" secondAttribute="trailing" constant="15" id="ZsM-8y-K6i"/>
+                        <constraint firstAttribute="trailing" secondItem="Jkm-gu-iK7" secondAttribute="trailing" constant="7" id="qpM-VS-M2I"/>
                         <constraint firstItem="MPr-1j-QVc" firstAttribute="top" secondItem="ogq-na-L0V" secondAttribute="top" constant="7" id="r0J-Z4-6d9"/>
                         <constraint firstItem="MPr-1j-QVc" firstAttribute="leading" secondItem="ogq-na-L0V" secondAttribute="leading" constant="17" id="z7L-qt-icQ"/>
                     </constraints>
@@ -132,7 +148,7 @@
                         <constraint firstAttribute="height" constant="44" id="Ric-Zx-B8f"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="16"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                             <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -210,7 +226,7 @@
                         <constraint firstAttribute="height" constant="44" id="eHH-gi-smk"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="16"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                             <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

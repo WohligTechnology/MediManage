@@ -31,6 +31,10 @@ class ChangePassword: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func closeMe(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         currentPassword.resignFirstResponder()
         newPassword.resignFirstResponder()

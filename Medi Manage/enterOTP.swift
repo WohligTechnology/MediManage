@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SwiftyJSON
 
-class enterOTP: UIView {
+class enterOTP: UIView, UITextFieldDelegate {
     
     @IBOutlet weak var enterOTP: UITextField!
     @IBOutlet weak var resetOTP: UIButton!
@@ -40,10 +40,17 @@ class enterOTP: UIView {
         sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(sortnewview);
         
+        enterOTP.delegate = self
+        
         addPadding(15, myView: enterOTP)
         resetOTP.layer.borderWidth = 1
         resetOTP.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.25).CGColor
         multiColor.font = UIFont(name: "Lato-Bold", size: 11.0)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        enterOTP.resignFirstResponder()
+        return true
     }
     
     @IBAction func resendOTP(sender: AnyObject) {

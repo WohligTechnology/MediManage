@@ -52,6 +52,7 @@ class generateOTP: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextF
         
         addPadding(15, myView: mobileNumber)
         multiColor.font = UIFont(name: "Lato-Bold", size: 11.0)
+        mobileNumber.delegate = self
         
         // dropdown list
         
@@ -74,6 +75,11 @@ class generateOTP: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextF
         
         countryCode.inputAccessoryView = toolBar
         
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        mobileNumber.resignFirstResponder()
+        return true
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {

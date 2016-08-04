@@ -2744,12 +2744,28 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvy-5b-nJd">
+                                        <rect key="frame" x="265" y="13" width="48" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="uFB-Hm-XD9"/>
+                                            <constraint firstAttribute="width" constant="48" id="y6c-bk-aXh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <state key="normal" title="X">
+                                            <color key="titleColor" red="0.98697105929999995" green="0.99956106259999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closeMe:" destination="2HE-uH-d1r" eventType="touchUpInside" id="xIN-qA-qY7"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="vvy-5b-nJd" firstAttribute="top" secondItem="Jlf-da-QcW" secondAttribute="top" constant="13" id="01y-r3-z5b"/>
                                     <constraint firstItem="u50-Wi-GZD" firstAttribute="top" secondItem="Jlf-da-QcW" secondAttribute="top" id="03a-8R-sZ4"/>
                                     <constraint firstItem="BxF-pZ-arf" firstAttribute="top" secondItem="Jlf-da-QcW" secondAttribute="top" constant="7" id="9hn-cR-bxR"/>
                                     <constraint firstItem="BxF-pZ-arf" firstAttribute="leading" secondItem="Jlf-da-QcW" secondAttribute="leading" constant="17" id="HKT-01-ffF"/>
+                                    <constraint firstAttribute="trailing" secondItem="vvy-5b-nJd" secondAttribute="trailing" constant="7" id="K0d-Rh-vSG"/>
                                     <constraint firstAttribute="height" constant="50" id="X8o-Aa-2u8"/>
                                     <constraint firstAttribute="trailing" secondItem="u50-Wi-GZD" secondAttribute="trailing" id="aX6-yF-Eip"/>
                                     <constraint firstItem="u50-Wi-GZD" firstAttribute="leading" secondItem="BxF-pZ-arf" secondAttribute="trailing" constant="15" id="cRD-Ka-kQM"/>
@@ -2761,7 +2777,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                     <constraint firstAttribute="height" constant="44" id="RYq-NQ-scx"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                                         <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -2774,7 +2790,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                     <constraint firstAttribute="height" constant="44" id="Kto-rg-jQI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                                         <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -2787,7 +2803,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                     <constraint firstAttribute="height" constant="44" id="BYS-pC-fIr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                                         <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
