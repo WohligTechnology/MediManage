@@ -108,9 +108,9 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         
         // TOOL BAR FOR KEYBOARD
         let toolBar = UIToolbar()
-        toolBar.barStyle = UIBarStyle.Default
-        toolBar.translucent = true
-        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolBar.barStyle = UIBarStyle.Black
+        toolBar.tintColor = UIColor.whiteColor()
+        toolBar.backgroundColor = UIColor.blackColor()
         toolBar.sizeToFit()
         
         let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "donePicker")
@@ -419,9 +419,10 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         leftDOB.inputView = datePickerView
         // TOOL BAR FOR KEYBOARD
         let toolBar = UIToolbar()
-        toolBar.barStyle = UIBarStyle.Default
-        toolBar.translucent = true
-        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolBar.barStyle = UIBarStyle.Black
+        toolBar.tintColor = UIColor.whiteColor()
+        toolBar.backgroundColor = UIColor.blackColor()
+
         toolBar.sizeToFit()
         
         let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(enrollmentMembersRenew.donePicker))
@@ -441,9 +442,10 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         leftDOM.inputView = datePickerView
         // TOOL BAR FOR KEYBOARD
         let toolBar = UIToolbar()
-        toolBar.barStyle = UIBarStyle.Default
-        toolBar.translucent = true
-        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolBar.barStyle = UIBarStyle.Black
+        toolBar.tintColor = UIColor.whiteColor()
+        toolBar.backgroundColor = UIColor.blackColor()
+
         toolBar.sizeToFit()
         
         let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(enrollmentMembersRenew.donePicker))
@@ -462,9 +464,10 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         rightDOB.inputView = datePickerView
         // TOOL BAR FOR KEYBOARD
         let toolBar = UIToolbar()
-        toolBar.barStyle = UIBarStyle.Default
-        toolBar.translucent = true
-        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolBar.barStyle = UIBarStyle.Black
+        toolBar.tintColor = UIColor.whiteColor()
+        toolBar.backgroundColor = UIColor.blackColor()
+
         toolBar.sizeToFit()
         
         let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(enrollmentMembersRenew.donePicker))
@@ -483,9 +486,10 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         rightDOM.inputView = datePickerView
         // TOOL BAR FOR KEYBOARD
         let toolBar = UIToolbar()
-        toolBar.barStyle = UIBarStyle.Default
-        toolBar.translucent = true
-        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolBar.barStyle = UIBarStyle.Black
+        toolBar.tintColor = UIColor.whiteColor()
+        toolBar.backgroundColor = UIColor.blackColor()
+
         toolBar.sizeToFit()
         
         let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(enrollmentMembersRenew.donePicker))

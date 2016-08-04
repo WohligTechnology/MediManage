@@ -77,10 +77,10 @@ class helpDesk: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextFiel
         typeQuestionField.inputView = pickerView
         typeQuestionField.delegate = self
         let toolBar = UIToolbar()
-        toolBar.barStyle = UIBarStyle.Default
-//        toolBar.translucent = true
+        toolBar.barStyle = UIBarStyle.Black
         toolBar.tintColor = UIColor.whiteColor()
         toolBar.backgroundColor = UIColor.blackColor()
+
         toolBar.sizeToFit()
         
         let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "donePicker")
