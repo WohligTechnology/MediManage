@@ -1831,7 +1831,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="130" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlD-0s-051">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlD-0s-051">
                                 <rect key="frame" x="145" y="164" width="25" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="4xI-6r-dvR"/>
@@ -3003,13 +3003,13 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
         <image name="triangle_orange" width="32" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="8ZQ-nc-jHt"/>
+        <segue reference="LXm-Lb-FcH"/>
+        <segue reference="Oo4-D3-Nsi"/>
+        <segue reference="2ZW-OI-RRj"/>
+        <segue reference="paQ-eN-3nA"/>
+        <segue reference="ATe-en-caw"/>
         <segue reference="QCt-6c-YRM"/>
         <segue reference="wgK-eO-Wod"/>
-        <segue reference="LXm-Lb-FcH"/>
-        <segue reference="Usm-li-CcL"/>
-        <segue reference="paQ-eN-3nA"/>
-        <segue reference="2ZW-OI-RRj"/>
-        <segue reference="ATe-en-caw"/>
-        <segue reference="8ZQ-nc-jHt"/>
     </inferredMetricsTieBreakers>
 </document>

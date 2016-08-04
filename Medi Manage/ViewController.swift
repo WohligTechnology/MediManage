@@ -29,7 +29,7 @@ public class LoadingOverlay{
     
     var overlayView = UIView()
     var activityIndicator = UIActivityIndicatorView()
-    
+    var blurView: UIVisualEffectView!
     
     class var shared: LoadingOverlay {
         struct Static {
@@ -48,13 +48,11 @@ public class LoadingOverlay{
         overlayView.layer.cornerRadius = 10
         
         let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-        let blurView = UIVisualEffectView(effect: darkBlur)
+        blurView = UIVisualEffectView(effect: darkBlur)
         blurView.frame.size.height = view.frame.height
         blurView.frame.size.width = view.frame.width
-//        blurView.layer.zPosition = -1
         blurView.userInteractionEnabled = false
         blurView.addSubview(overlayView)
-//        view.addSubview(blurView)
         
         activityIndicator.frame = CGRectMake(0, 0, 40, 40)
         activityIndicator.activityIndicatorViewStyle = .WhiteLarge
@@ -68,7 +66,7 @@ public class LoadingOverlay{
     
     public func hideOverlayView() {
         activityIndicator.stopAnimating()
-        overlayView.removeFromSuperview()
+        blurView.removeFromSuperview()
     }
 }
 

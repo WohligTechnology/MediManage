@@ -1,4 +1,3 @@
-//
 //  login.swift
 //  Medi Manage
 //
@@ -11,7 +10,7 @@ import UIKit
 import SwiftyJSON
 import Alamofire
 
-class login: UIView {
+class login: UIView, UITextFieldDelegate {
     
     var TestId = "Test7_19901122"
     //mobile no 7208372744
@@ -26,6 +25,7 @@ class login: UIView {
     @IBAction func retrieveLogin(sender: AnyObject) {
         gLoginController.performSegueWithIdentifier("requestOTP", sender: nil)
     }
+    
     @IBOutlet weak var mobile: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var Loader: UIActivityIndicatorView!
@@ -59,6 +59,13 @@ class login: UIView {
         addPadding(15, myView: mobile)
         addPadding(15, myView: password)
     }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        password.resignFirstResponder()
+        mobile.resignFirstResponder()
+        return true
+    }
+    
     @IBAction func onLogin(sender: AnyObject) {
         if(mobile.text == "" || password.text == "")
         {
