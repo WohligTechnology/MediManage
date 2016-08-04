@@ -84,14 +84,19 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
         
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! documentChecklistUIViewCell
         cell.dcTitle.text = titleMain[indexPath.item]
+        cell.dcTitle.adjustsFontSizeToFitWidth = true
+        cell.dcTitle.frame.size.height = 40
+        cell.dcTitle.numberOfLines = 0
+        cell.dcTitle.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        cell.dcTitle.sizeToFit()
+        
         cell.dcDesc.text = desc[indexPath.item]
         cell.dcImage.image = UIImage(named: image[indexPath.item])
         cell.selectionStyle = .None
         
-        tableView.scrollEnabled = false
         tableView.showsVerticalScrollIndicator = false
         
-        if(indexPath.item % 2 != 0) {
+        if(indexPath.row % 2 != 0) {
             cell.dcView.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 255/255)
         }
         
@@ -99,9 +104,7 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        self.performSegueWithIdentifier("viewPDF", sender: self)
-        
+        //self.performSegueWithIdentifier("viewPDF", sender: self)
     }
     
     @IBOutlet weak var dcDesc: UILabel!
