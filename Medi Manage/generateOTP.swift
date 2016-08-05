@@ -104,7 +104,17 @@ class generateOTP: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextF
         textField.resignFirstResponder()
     }
     
+    @IBAction func backButton(sender: AnyObject) {
+        let passcodemodal = gGenerateOTPController.storyboard?.instantiateViewControllerWithIdentifier("loginc") as! LoginController
+        
+        gGenerateOTPController.presentViewController(passcodemodal, animated: true, completion: nil)
+
+    }
     @IBAction func enterotpCall(sender: AnyObject) {
+        if self.mobileNumber.text == "" || self.countryCode.text == "" {
+            Popups.SharedInstance.ShowPopup("", message: "Both Fields are Required")
+
+        }else{
         LoadingOverlay.shared.showOverlay(gGenerateOTPController.view)
         OTPStatus = 2
         forgotMobileNumber? = String(UTF8String: self.mobileNumber.text!)!
@@ -118,5 +128,6 @@ class generateOTP: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextF
                 }
             }
         })
+        }
     }
 }

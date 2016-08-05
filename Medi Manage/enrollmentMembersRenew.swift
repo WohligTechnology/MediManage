@@ -113,7 +113,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         toolBar.backgroundColor = UIColor.blackColor()
         toolBar.sizeToFit()
         
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "donePicker")
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(enrollmentMembersRenew.donePicker))
         
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
         
@@ -133,7 +133,6 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                 isAddMember = false
                 rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
                     dispatch_sync(dispatch_get_main_queue()){
-                        print(json["result"])
                         
                         self.wholeJson = json["result"]
                         LoadingOverlay.shared.hideOverlayView()
@@ -176,6 +175,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                             }
                             
                         }
+                        print(self.memberjson)
                         self.assignMembers()
                     }
                     
@@ -738,7 +738,6 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
             if !status {
                 Popups.SharedInstance.ShowPopup("Validation", message: msg)
             }else{
-                print(finaljson)
                 rest.AddMembers(finaljson, completion: {(json:JSON) -> ()in
                     dispatch_sync(dispatch_get_main_queue()){
                         if json == 401 {

@@ -56,10 +56,18 @@ class enterOTP: UIView, UITextFieldDelegate {
     @IBAction func resendOTP(sender: AnyObject) {
         if OTPStatus == 1 {
             rest.ClientSendOTP(forgotMobileNumber, password: profilePassword, completion: {(json:JSON) -> () in
+                if json["state"] {
+                    Popups.SharedInstance.ShowPopup("", message: "OTP is send to your Mobile Number")
+
+                }
                 print(json)
             })
         }else{
             rest.SendOtp(forgotMobileNumber, countrycode: forgotCountryCode, completion: {(json:JSON) -> () in
+                if json["state"] {
+                    Popups.SharedInstance.ShowPopup("", message: "OTP is send to your Mobile Number")
+
+                }
                 print("resend otp")
                 print(json)
             })

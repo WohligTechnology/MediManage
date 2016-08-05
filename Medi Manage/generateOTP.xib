@@ -133,6 +133,9 @@
                     <state key="normal" title="Back">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="backButton:" destination="-1" eventType="touchUpInside" id="CQu-9b-Kts"/>
+                    </connections>
                 </button>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Country Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YX2-rZ-N2E">
                     <rect key="frame" x="26" y="346" width="268" height="50"/>
