@@ -33,9 +33,10 @@ class newContact: UIView {
         sortnewview.frame = bounds
         sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(sortnewview)
-        
+        LoadingOverlay.shared.showOverlay(gConnectController.view)
         rest.ConnectDetails({(json:JSON) ->() in
             print(json)
+            LoadingOverlay.shared.hideOverlayView()
             if json["state"] {
                 self.contactDetails = json["result"]
                 self.ccNoOne.text = json["result"]["CashlessClaimsNumber"].stringValue
