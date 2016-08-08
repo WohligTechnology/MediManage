@@ -149,6 +149,8 @@
 		FCB801721D2BB62B00F9226F /* relationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB801711D2BB62B00F9226F /* relationView.xib */; };
 		FCB801741D2BB67100F9226F /* relationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB801731D2BB67100F9226F /* relationView.swift */; };
 		FCBE27F51D33E436004654E0 /* Discharge Summary.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FCBE27F41D33E436004654E0 /* Discharge Summary.pdf */; };
+		FCC1C8061D5861DD005B5F30 /* newContact.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCC1C8051D5861DD005B5F30 /* newContact.xib */; };
+		FCC1C8091D586456005B5F30 /* newContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1C8081D586456005B5F30 /* newContact.swift */; };
 		FCE15CD21D34D6E2009B49E2 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE15CD11D34D6E2009B49E2 /* PDFViewController.swift */; };
 		FCE15CDA1D34DF54009B49E2 /* Doctor's Prescription.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FCE15CD31D34DF54009B49E2 /* Doctor's Prescription.pdf */; };
 		FCE15CDB1D34DF54009B49E2 /* Laboratory Payment Receipt.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FCE15CD41D34DF54009B49E2 /* Laboratory Payment Receipt.pdf */; };
@@ -329,6 +331,8 @@
 		FCB801711D2BB62B00F9226F /* relationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = relationView.xib; sourceTree = "<group>"; };
 		FCB801731D2BB67100F9226F /* relationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = relationView.swift; sourceTree = "<group>"; };
 		FCBE27F41D33E436004654E0 /* Discharge Summary.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Discharge Summary.pdf"; sourceTree = "<group>"; };
+		FCC1C8051D5861DD005B5F30 /* newContact.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = newContact.xib; sourceTree = "<group>"; };
+		FCC1C8081D586456005B5F30 /* newContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newContact.swift; sourceTree = "<group>"; };
 		FCE15CD11D34D6E2009B49E2 /* PDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
 		FCE15CD31D34DF54009B49E2 /* Doctor's Prescription.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Doctor's Prescription.pdf"; sourceTree = "<group>"; };
 		FCE15CD41D34DF54009B49E2 /* Laboratory Payment Receipt.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Laboratory Payment Receipt.pdf"; sourceTree = "<group>"; };
@@ -768,6 +772,7 @@
 				FCB801701D2B7FC400F9226F /* memberListHeader */,
 				FCB801751D2BB6E400F9226F /* relationView */,
 				FC3C2EBE1D37C81F000DAD18 /* enrollmentMembersRenew */,
+				FCC1C8071D586429005B5F30 /* newContact */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -909,6 +914,15 @@
 			name = PDFs;
 			sourceTree = "<group>";
 		};
+		FCC1C8071D586429005B5F30 /* newContact */ = {
+			isa = PBXGroup;
+			children = (
+				FCC1C8051D5861DD005B5F30 /* newContact.xib */,
+				FCC1C8081D586456005B5F30 /* newContact.swift */,
+			);
+			name = newContact;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1044,6 +1058,7 @@
 				FCE15CDF1D34DF54009B49E2 /* Pre Numbered Cash Paid Receipt.pdf in Resources */,
 				3A31911D1CEF41D7001DCBBC /* splashScreen.xib in Resources */,
 				3AF76BAE1CE5A6E500ADCAAF /* footer.xib in Resources */,
+				FCC1C8061D5861DD005B5F30 /* newContact.xib in Resources */,
 				786DFA041CD214F300DDE769 /* LaunchScreen.storyboard in Resources */,
 				78B90BD11CE05C7C0022FE7A /* retrieveLogin.xib in Resources */,
 				3AEEB01F1CE74D820085EEF5 /* helpDeskQuery.xib in Resources */,
@@ -1140,6 +1155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A677B631CE49F7F003B8C2B /* insuredMembersAll.swift in Sources */,
+				FCC1C8091D586456005B5F30 /* newContact.swift in Sources */,
 				786DF9FC1CD214F300DDE769 /* ViewController.swift in Sources */,
 				43D6FF471CFEE7C2008361B2 /* pickDate.swift in Sources */,
 				FC3C2EBD1D37C80E000DAD18 /* enrollmentMembersRenew.swift in Sources */,

@@ -16,6 +16,10 @@ class ConnectController: UIViewController {
         super.viewDidLoad()
         
         gConnectController = self
+        
+        let mainsubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
+        mainsubHeader.subHeaderTitle.text = "Connect"
+        self.view.addSubview(mainsubHeader)
         navshow()
         
         // Do any additional setup after loading the view.

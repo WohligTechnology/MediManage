@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftyJSON
+
 class enrollmentMembersRenew: UIView, UITextFieldDelegate{
     
     var memberjson : JSON = [["ID":0,"Gender":2,"SystemIdentifier":"S","RelationType":"Wife"],
@@ -750,7 +751,6 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                                 Popups.SharedInstance.ShowPopup("Select Members", message: json["error_message"].stringValue)
                             }else{
                                 Popups.SharedInstance.ShowPopup("Select Members", message: "Some Error Occured.")
-                                
                             }
                         }
                     }
