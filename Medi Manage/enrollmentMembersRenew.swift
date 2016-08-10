@@ -636,9 +636,11 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         }
         
         if self.memberjson[page]["ActiveState"] {
+            editLeftMember(true)
             self.leftTick.hidden = false
             checkEP()
         }else{
+            editLeftMember(false)
             self.leftTick.hidden = true
             checkEP()
         }
@@ -655,7 +657,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
             self.rightDOM.hidden = false
             self.rightAddMore.hidden = true
             break
-        case "Sun":
+        case "Son":
             self.rightIcon.image = UIImage(named: "son_icon")
             self.rightDOM.hidden = true
             self.rightAddMore.hidden = false
@@ -679,9 +681,11 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
             
         }
         if self.memberjson[page+1]["ActiveState"] {
+            editRightMember(true)
             self.rightTick.hidden = false
             checkEP()
         }else{
+            editRightMember(false)
             self.rightTick.hidden = true
             checkEP()
         }
