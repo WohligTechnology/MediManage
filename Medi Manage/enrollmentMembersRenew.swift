@@ -667,14 +667,24 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
             self.rightDOM.hidden = true
             self.rightAddMore.hidden = false
             break
-        case "Mother","Mother in law":
+        case "Mother":
             self.rightIcon.image = UIImage(named: "mother_icon")
             self.rightDOM.hidden = false
             self.rightAddMore.hidden = true
             break
-        case "Father","Father in law":
+        case "Father":
             self.rightIcon.image = UIImage(named: "father_icon")
             self.rightDOM.hidden = false
+            self.rightAddMore.hidden = true
+            break
+        case "Mother in law":
+            self.rightIcon.image = UIImage(named: "mother_icon")
+            self.rightDOM.hidden = true
+            self.rightAddMore.hidden = true
+            break
+        case "Father in law":
+            self.rightIcon.image = UIImage(named: "father_icon")
+            self.rightDOM.hidden = true
             self.rightAddMore.hidden = true
             break
         default: break

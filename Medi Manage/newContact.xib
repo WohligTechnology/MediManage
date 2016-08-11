@@ -14,6 +14,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="newContact" customModule="MediManage" customModuleProvider="target">
             <connections>
+                <outlet property="FirstCall" destination="Hoq-55-NYf" id="2DK-Pu-xBY"/>
+                <outlet property="SecondCall" destination="kuE-BJ-gcY" id="7YZ-MS-31k"/>
                 <outlet property="ccNoOne" destination="BBD-Vc-WmF" id="wke-Cd-8lK"/>
                 <outlet property="ccNoTwo" destination="cnE-FZ-VWR" id="zMa-Mm-Eid"/>
                 <outlet property="queries" destination="Wdt-x7-qwD" id="Pyx-xO-mvA"/>

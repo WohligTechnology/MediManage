@@ -2013,6 +2013,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="hospitalCall" destination="hFV-tb-X12" id="C3I-wc-ZvE"/>
                                             <outlet property="hsCallView" destination="3bJ-RM-sid" id="ozh-kc-BdQ"/>
                                             <outlet property="hsHospitalLocation" destination="7Rd-U6-ZCr" id="fQ7-Bi-jru"/>
                                             <outlet property="hsHospitalName" destination="1aR-EN-sDJ" id="u1e-Rg-XCO"/>

@@ -102,6 +102,8 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
             //cell.claimIntimationView.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 255/255)
         }
         
+        
+        
         let line = UIView(frame: CGRectMake(20, 0, 1, cell.hsCallView.frame.size.height))
         line.backgroundColor = UIColor.lightGrayColor()
         cell.hsCallView.addSubview(line)
@@ -138,6 +140,17 @@ class hospitalSearchResultUIViewCell: UITableViewCell {
     @IBOutlet weak var hsHospitalLocation: UILabel!
     @IBOutlet weak var hsHospitalNo: UILabel!
     @IBOutlet weak var hsCallView: UIView!
+    @IBOutlet weak var hospitalCall: UIImageView!
+    
+    let HospitalCall =  UITapGestureRecognizer(target: gHospitalSearchResultController, action: #selector(callFirst))
+    self.hospitalCall.addGestureRecognizer(HospitalCall)
+    self.hospitalCall.userInteractionEnabled = true
+    
+    func callFirst() {
+        print("Call clicked")
+        gHospitalSearchResultController.callNumber(self.hsHospitalNo.text!)
+
+    }
 }
 
 class drawLine: UIView {

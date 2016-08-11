@@ -166,6 +166,15 @@ extension UIViewController {
         self.presentViewController(passcodemodal, animated: true, completion: nil)
     }
     
+    func callNumber(phoneNumber:String) {
+        if let phoneCallURL:NSURL = NSURL(string: "tel://\(phoneNumber)") {
+            let application:UIApplication = UIApplication.sharedApplication()
+            if (application.canOpenURL(phoneCallURL)) {
+                application.openURL(phoneCallURL);
+            }
+        }
+    }
+    
     func rightNavItemEditClick(sender:UIButton!) {
         
         print(selectedViewController)

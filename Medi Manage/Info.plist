@@ -24,6 +24,24 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>testcorp.medimanage.com</key>
+		<dict>
+			<key>NSIncludesSubdomains</key>
+			<true/>
+			<key>NSRequiresCertificateTransparency</key>
+			<true/>
+			<key>NSTemporaryThirdPartyExceptionAllowsInsecureHTTPLoads</key>
+			<true/>
+			<key>NSTemporaryThirdPartyExceptionMinimumTLSVersion</key>
+			<string>TLSv1.1</string>
+			<key>NSTemporaryThirdPartyExceptionRequiresForwardSecrecy</key>
+			<true/>
+		</dict>
+	</dict>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Lato-Black.ttf</string>
@@ -53,24 +71,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-		<key>testcorp.medimanage.com</key>
-		<dict>
-			<key>NSRequiresCertificateTransparency</key>
-			<true/>
-			<key>NSTemporaryThirdPartyExceptionMinimumTLSVersion</key>
-			<string>TLSv1.1</string>
-			<key>NSTemporaryThirdPartyExceptionRequiresForwardSecrecy</key>
-			<true/>
-			<key>NSIncludesSubdomains</key>
-			<true/>
-			<key>NSTemporaryThirdPartyExceptionAllowsInsecureHTTPLoads</key>
-			<true/>
-		</dict>
-	</dict>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 </dict>

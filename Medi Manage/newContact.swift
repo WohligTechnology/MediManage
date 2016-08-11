@@ -17,6 +17,8 @@ class newContact: UIView {
     @IBOutlet weak var ccNoTwo: UILabel!
     @IBOutlet weak var reimbursement: UILabel!
     @IBOutlet weak var queries: UILabel!
+    @IBOutlet weak var FirstCall: UIImageView!
+    @IBOutlet weak var SecondCall: UIImageView!
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
@@ -33,10 +35,10 @@ class newContact: UIView {
         sortnewview.frame = bounds
         sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(sortnewview)
-        LoadingOverlay.shared.showOverlay(gConnectController.view)
+//        LoadingOverlay.shared.showOverlay(gConnectController.view)
         rest.ConnectDetails({(json:JSON) ->() in
             print(json)
-            LoadingOverlay.shared.hideOverlayView()
+//            LoadingOverlay.shared.hideOverlayView()
             if json["state"] {
                 self.contactDetails = json["result"]
                 self.ccNoOne.text = json["result"]["CashlessClaimsNumber"].stringValue
@@ -48,5 +50,21 @@ class newContact: UIView {
             }
         })
         
+        let onFirstCall =  UITapGestureRecognizer(target: self, action: #selector(callFirst))
+        self.FirstCall.addGestureRecognizer(onFirstCall)
+        ccNoOne.userInteractionEnabled = true
+        
+        let onSecondCall =  UITapGestureRecognizer(target: self, action: #selector(callSecond))
+        self.SecondCall.addGestureRecognizer(onSecondCall)
+        ccNoTwo.userInteractionEnabled = true
+
+        
+    }
+    func callFirst() {
+        gConnectController.callNumber(self.ccNoOne.text!)
+    }
+    func callSecond() {
+        gConnectController.callNumber(self.ccNoTwo.text!)
+
     }
 }
