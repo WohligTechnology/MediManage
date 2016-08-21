@@ -44,7 +44,7 @@
                         <constraint firstAttribute="height" constant="30" id="Px8-c6-uQ4"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="16"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                             <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -57,7 +57,7 @@
                         <constraint firstAttribute="height" constant="100" id="BIz-Or-qtL"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="16"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                             <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>

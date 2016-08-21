@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (3.4.0)
+  - QToasterSwift (0.1.2)
   - SwiftHTTP (1.0.5)
   - SwiftSpinner (0.9.5)
   - SwiftValidator (3.0.1)
@@ -7,6 +8,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 3.4)
+  - QToasterSwift (~> 0.1)
   - SwiftHTTP (~> 1.0.3)
   - SwiftSpinner
   - SwiftValidator (from `https://github.com/jpotts18/SwiftValidator.git`, tag `4.0.0`)
@@ -29,11 +31,12 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
+  QToasterSwift: 049f09f1987103686004808104a715413d01c214
   SwiftHTTP: edb45e72f27d1d95d328d2b2c16a61aa94f1e9f7
   SwiftSpinner: c6585a0ae5c67eb33e737695cce88f0262008cce
   SwiftValidator: 461a2c00173f001287a8fa1f12704b87ec8a6bc4
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: 8405a42009e39406c7d3cc28d833abaa36fbaf4c
+PODFILE CHECKSUM: 164954830a5b62f18c12f0b214985bbf88a043b7
 
 COCOAPODS: 1.0.1

@@ -16,6 +16,8 @@ class PremiumCalculationController: UIViewController {
         super.viewDidLoad()
         gPremiumCalculationController = self
         selectedViewController = false
+        LoadingOverlay.shared.showOverlay(self.view)
+
         navshow()
         // Do any additional setup after loading the view.
     }

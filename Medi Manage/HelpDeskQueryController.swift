@@ -22,7 +22,7 @@ class HelpDeskQueryController: UIViewController {
     }
     override func viewWillAppear(animated: Bool) {
         selectedViewController = false
-        
+        print("view appeared")
     }
 
     override func didReceiveMemoryWarning() {

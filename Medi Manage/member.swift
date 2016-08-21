@@ -1,6 +1,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class member: UIView {
     
@@ -9,6 +10,9 @@ class member: UIView {
     @IBOutlet weak var lastname: UILabel!
     @IBOutlet weak var dob: UILabel!
     @IBOutlet weak var relation: UILabel!
+    @IBOutlet weak var ecardOutlate: UIButton!
+    var ecarddwld = ""
+    var isAvailable : Bool = false
     
     var webView: UIWebView! = UIWebView()
     
@@ -35,55 +39,13 @@ class member: UIView {
     }
     
     @IBAction func downloadEcardButton(sender: AnyObject) {
-        //The URL to Save
-//        let pdfURL = NSURL(string: "http://testcorp.medimanage.com/api/Files/EcardsDownloads/TestMastek1_25072016124521.pdf")
-////        //Create a URL request
-////        let urlRequest = NSURLRequest(URL: pdfURL!)
-////        //get the data
-////        let theData = NSURLConnection.sendSynchronousRequest(urlRequest)
-////        //Get the local docs directory and append your local filename.
-////        var docURL = (NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)).last
-////        docURL = docURL?.URLByAppendingPathComponent("myFileName.pdf")
-////        //Lastly, write your file to the disk.
-////        theData.writeToURL(docURL!, atomically: true)
-//        let writePath = NSURL(fileURLWithPath: NSTemporaryDirectory()).URLByAppendingPathComponent("http://testcorp.medimanage.com/api/Files/EcardsDownloads/TestMastek1_25072016124521.pdf")
-//        let url: NSURL = NSURL(string: "http://testcorp.medimanage.com/api/Files/EcardsDownloads/TestMastek1_25072016124521.pdf")!
-//        let urlRequest: NSURLRequest = NSURLRequest(URL: url)
-//        webView.hidden = true
-//        webView!.loadRequest(urlRequest)
-        
-//        UIGraphicsBeginImageContext(view.frame.size)
-//        view.layer.renderInContext(UIGraphicsGetCurrentContext())
-//        let image = UIGraphicsGetPDFContextBounds()
-//        UIGraphicsEndPDFContext()
-//        
-//        // Save image to Camera Roll
-//        UIPdf
-//        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-//        
-//        return UIImageView(image: image)
-        
-        print("download pdf")
-        
-        var docController: UIDocumentInteractionController?
-        do {
-        let path = NSBundle.mainBundle().pathForResource("http://testcorp.medimanage.com/api/Files/EcardsDownloads/TestMastek1_25072016124521", ofType: "pdf")
-            //let targetURL: NSURL!
-            print("path \(path)")
-            do {
-                let targetURL = NSURL.fileURLWithPath(path!)
-                docController = UIDocumentInteractionController(URL: targetURL)
-                let url = NSURL(string:"http://testcorp.medimanage.com/api/Files/EcardsDownloads/TestMastek1_25072016124521.pdf:");
-                print("yaha print")
-                if UIApplication.sharedApplication().canOpenURL(url!) {
-                    docController!.presentOpenInMenuFromRect(CGRectZero, inView: self, animated: true)
-                    print("iBooks is installed")
-                } else {
-                    print("iBooks is not installed")
-                }
+        print("in download ECard")
+        print(lastname)
+        print(ecarddwld)
+        rest.DownloadECard(ecarddwld,completion: {(json:JSON) -> ()in
+            if json["state"] {
+                UIApplication.sharedApplication().openURL(NSURL(string: json["result"].stringValue)!)
             }
-        }
-        
-        print("downloaded")
+        })
     }
 }

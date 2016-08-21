@@ -8,23 +8,28 @@
 
 import UIKit
 import SwiftyJSON
+import CoreLocation
 
 var gHospitalSearchResultController: UIViewController!
 
-class HospitalSearchResultController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
-
+class HospitalSearchResultController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, CLLocationManagerDelegate{
+    
     @IBOutlet weak var searchBoxView: UIView!
     var hospitals : JSON = ""
     
     @IBOutlet weak var searchText: UITextField!
     @IBOutlet weak var searchTable: UITableView!
     @IBOutlet weak var hoscount: UILabel!
+    @IBOutlet weak var nodata: UILabel!
+    var lat = ""
+    var lng = ""
+    var locationManager: CLLocationManager!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navshow()
         selectedViewController = false
-
+        
         LoadingOverlay.shared.showOverlay(self.view)
         
         let mainsubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
@@ -32,6 +37,16 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
         mainsubHeader.subHeaderTitle.text = "HOSPITAL SEARCH"
         self.view.addSubview(mainsubHeader)
         searchText.delegate = self
+        
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        //        locationManager.startUpdatingLocation()
+        
+        checkCoreLocationPermission()
+        
+//        searchTable.hidden
         
         // add borders
         addBottomBorder(UIColor.blackColor(), linewidth: 0.5, myView: searchBoxView)
@@ -43,17 +58,56 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
         
     }
     
+    func checkCoreLocationPermission() {
+        print("in core")
+        if CLLocationManager.authorizationStatus() == .AuthorizedAlways {
+            print("in authorized")
+            locationManager.startUpdatingLocation()
+        }else if CLLocationManager.authorizationStatus() == .NotDetermined {
+            print("in notdetaermined")
+            locationManager.requestWhenInUseAuthorization()
+        }else if CLLocationManager.authorizationStatus() == .Restricted {
+            print("unauthorized")
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print(locations)
+        let locationArray = locations as NSArray
+        let locationObj = locationArray.lastObject as! CLLocation
+        let coord = locationObj.coordinate
+        print(coord)
+        print(coord.latitude)
+        print(coord.longitude)
+        lat = String(coord.latitude)
+        lng = String(coord.longitude)
+        locationManager.stopUpdatingLocation()
+        
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print(error)
+    }
+    
     func loadTable() {
         rest.Hospital(hospitalSearchText, completion: {(json:JSON) -> () in
             dispatch_async(dispatch_get_main_queue(),{
+                print(json)
                 if json == 401 {
                     self.redirectToHome()
                 }else{
-                LoadingOverlay.shared.hideOverlayView()
-            self.hospitals = json["result"]["Results"]
-            self.hoscount.text = json["result"]["Count"].stringValue
-            self.searchTable.reloadData()
-            }
+                    LoadingOverlay.shared.hideOverlayView()
+                    self.hospitals = json["result"]["Results"]
+                    self.hoscount.text = json["result"]["Count"].stringValue
+                    if json["result"]["Count"] == 0{
+                        self.nodata.hidden = false
+                        self.searchTable.hidden = true
+                    }else{
+                        self.nodata.hidden = true
+                        self.searchTable.hidden = false
+                    }
+                    self.searchTable.reloadData()
+                }
             })
         })
     }
@@ -63,12 +117,35 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
         searchText.resignFirstResponder()
         return true
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     @IBAction func searchButton(sender: AnyObject) {
+        //        locationManager.startUpdatingLocation()
+        
+        //        rest.getLocation({(json:JSON) ->() in
+        //            dispatch_async(dispatch_get_main_queue(),{
+        //                //            print(json)
+        //                print(json["routes"][0]["legs"])
+        //
+        //                let saddrlat = "\(json["routes"][0]["legs"][0]["start_location"]["lat"])"
+        //                let saddrlng = "\(json["routes"][0]["legs"][0]["start_location"]["lng"])"
+        //                let daddrlat = "\(json["routes"][0]["legs"][0]["end_location"]["lat"])"
+        //                let daddrlng = "\(json["routes"][0]["legs"][0]["end_location"]["lng"])"
+        //
+        //                let urlstring = "http://maps.google.com/maps?saddr=\(saddrlat),\(saddrlng)&daddr=\(daddrlat),\(daddrlng)"
+        //                print(urlstring)
+        //                if let url = NSURL(string:urlstring.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!)
+        //                {
+        //                    UIApplication.sharedApplication().openURL(url)
+        //                }
+        //            })
+        //        })
+        //
+        //
+        //
         searchCalled()
     }
     
@@ -80,7 +157,7 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
             LoadingOverlay.shared.showOverlay(self.view)
             loadTable()
         }
-
+        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -97,12 +174,23 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
         cell.hsHospitalName.text = hospitals[indexPath.row]["Name"].stringValue
         cell.hsHospitalLocation.text = hospitals[indexPath.row]["Address"].stringValue
         cell.hsHospitalNo.text = hospitals[indexPath.row]["Phone"].stringValue
+        cell.hospitalCall.tag = indexPath.row
+        cell.locationDirection.tag = indexPath.row
+        
+        
+        let HospitalCallGesture = UITapGestureRecognizer(target: self, action: #selector(self.callFirst(_:)))
+        
+        cell.hospitalCall.userInteractionEnabled = true
+        cell.hospitalCall.addGestureRecognizer(HospitalCallGesture)
+        
+        let HospitalDirectionGesture = UITapGestureRecognizer(target: self, action: #selector(self.directions(_:)))
+        
+        cell.locationDirection.userInteractionEnabled = true
+        cell.locationDirection.addGestureRecognizer(HospitalDirectionGesture)
         
         if(indexPath.item % 2 != 0) {
             //cell.claimIntimationView.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 255/255)
         }
-        
-        
         
         let line = UIView(frame: CGRectMake(20, 0, 1, cell.hsCallView.frame.size.height))
         line.backgroundColor = UIColor.lightGrayColor()
@@ -116,6 +204,35 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
         
         return cell
     }
+    func callFirst(sender: UITapGestureRecognizer) {
+        let phone = hospitals[sender.view!.tag]["Phone"].stringValue
+        let fullPhone = phone.characters.split{$0 == "/"}.map(String.init)
+        let formPhone = String(fullPhone[0]).characters.split{$0 == "-"}.map(String.init)
+        let newPhone = formPhone[0].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) + formPhone[1].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        self.callNumber(newPhone)
+    }
+    
+    func directions(sender: UITapGestureRecognizer) {
+        locationManager.startUpdatingLocation()
+        rest.getLocation(hospitals[sender.view!.tag]["Address"].stringValue, completion: {(json:JSON) ->() in
+            dispatch_async(dispatch_get_main_queue(),{
+                print(json["results"][0]["geometry"])
+                
+                let saddrlat = self.lat
+                let saddrlng = self.lng
+                let daddrlat = "\(json["results"][0]["geometry"]["location"]["lat"])"
+                let daddrlng = "\(json["results"][0]["geometry"]["location"]["lng"])"
+                
+                let urlstring = "http://maps.google.com/maps?saddr=\(saddrlat),\(saddrlng)&daddr=\(daddrlat),\(daddrlng)"
+                print(urlstring)
+                if let url = NSURL(string:urlstring.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!)
+                {
+                    UIApplication.sharedApplication().openURL(url)
+                }
+            })
+        })
+        
+    }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {}
     
@@ -126,10 +243,10 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
         border.frame = CGRectMake(5, myView.frame.size.height - linewidth + 2, width - 50, linewidth)
         myView.layer.addSublayer(border)
     }
-//    @IBAction func inboxCall(sender: AnyObject) {
-//        self.performSegueWithIdentifier("benefitResultsToInbox", sender: nil)
-//    }
-
+    //    @IBAction func inboxCall(sender: AnyObject) {
+    //        self.performSegueWithIdentifier("benefitResultsToInbox", sender: nil)
+    //    }
+    
 }
 
 // MARK: - TableView Cell Class
@@ -141,16 +258,7 @@ class hospitalSearchResultUIViewCell: UITableViewCell {
     @IBOutlet weak var hsHospitalNo: UILabel!
     @IBOutlet weak var hsCallView: UIView!
     @IBOutlet weak var hospitalCall: UIImageView!
-    
-    let HospitalCall =  UITapGestureRecognizer(target: gHospitalSearchResultController, action: #selector(callFirst))
-    self.hospitalCall.addGestureRecognizer(HospitalCall)
-    self.hospitalCall.userInteractionEnabled = true
-    
-    func callFirst() {
-        print("Call clicked")
-        gHospitalSearchResultController.callNumber(self.hsHospitalNo.text!)
-
-    }
+    @IBOutlet weak var locationDirection: UIImageView!
 }
 
 class drawLine: UIView {

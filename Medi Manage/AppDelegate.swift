@@ -34,6 +34,7 @@ var OTPStatus = 0 // 1 : from profile 2: forgot passwordSendOtp
 var selectedIndex = 0
 var selectedViewController : Bool = false
 var isAddMember : Bool = false
+var claim = 0 
 struct defaultsKeys {
     static let token = ""
     static let keyTwo = "secondStringKey"

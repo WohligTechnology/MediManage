@@ -151,6 +151,7 @@
 		FCBE27F51D33E436004654E0 /* Discharge Summary.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FCBE27F41D33E436004654E0 /* Discharge Summary.pdf */; };
 		FCC1C8061D5861DD005B5F30 /* newContact.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCC1C8051D5861DD005B5F30 /* newContact.xib */; };
 		FCC1C8091D586456005B5F30 /* newContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1C8081D586456005B5F30 /* newContact.swift */; };
+		FCDE3A0F1D64B25800C73B9A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCDE3A0E1D64B25800C73B9A /* CoreLocation.framework */; };
 		FCE15CD21D34D6E2009B49E2 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE15CD11D34D6E2009B49E2 /* PDFViewController.swift */; };
 		FCE15CDA1D34DF54009B49E2 /* Doctor's Prescription.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FCE15CD31D34DF54009B49E2 /* Doctor's Prescription.pdf */; };
 		FCE15CDB1D34DF54009B49E2 /* Laboratory Payment Receipt.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FCE15CD41D34DF54009B49E2 /* Laboratory Payment Receipt.pdf */; };
@@ -333,6 +334,7 @@
 		FCBE27F41D33E436004654E0 /* Discharge Summary.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Discharge Summary.pdf"; sourceTree = "<group>"; };
 		FCC1C8051D5861DD005B5F30 /* newContact.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = newContact.xib; sourceTree = "<group>"; };
 		FCC1C8081D586456005B5F30 /* newContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newContact.swift; sourceTree = "<group>"; };
+		FCDE3A0E1D64B25800C73B9A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		FCE15CD11D34D6E2009B49E2 /* PDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
 		FCE15CD31D34DF54009B49E2 /* Doctor's Prescription.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Doctor's Prescription.pdf"; sourceTree = "<group>"; };
 		FCE15CD41D34DF54009B49E2 /* Laboratory Payment Receipt.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Laboratory Payment Receipt.pdf"; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCDE3A0F1D64B25800C73B9A /* CoreLocation.framework in Frameworks */,
 				C2382C201D0AA43D00DC0073 /* Alamofire.framework in Frameworks */,
 				43D6FF401CFEA991008361B2 /* SwiftyJSON.framework in Frameworks */,
 				27C9E516FC5526ED88CFCA42 /* Pods_MediManage.framework in Frameworks */,
@@ -573,6 +576,7 @@
 		718172B03362F6EE15D81110 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FCDE3A0E1D64B25800C73B9A /* CoreLocation.framework */,
 				C2382C1F1D0AA43D00DC0073 /* Alamofire.framework */,
 				43D6FF3F1CFEA991008361B2 /* SwiftyJSON.framework */,
 				D759717CAF6EE7B65953226B /* Pods_MediManage.framework */,

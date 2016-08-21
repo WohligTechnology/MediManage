@@ -15,6 +15,7 @@ class PDFViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(pdfname)
+        print("demo demo demo")
         navshow()
         let pdfLoc = NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource(pdfname, ofType:"pdf")!)
         let request = NSURLRequest(URL: pdfLoc);

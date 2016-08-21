@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 var gDocumentChecklistController: UIViewController!
 
 class DocumentChecklistController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let image = ["claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three"]
-    let pdfs = ["Discharge Summary",
+    var image = ["claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three"]
+    var pdfs = ["Discharge Summary",
                 "Discharge Summary",
                 "Doctor's Prescription",
                 "Main Hospital Bill",
@@ -23,7 +24,7 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
                 "Medicine Bill",
                 "PHOTO ID PROOF AND ADDRESS PROOF OF PATIENT",
                 "Pre Numbered Cash Paid Receipt"]
-    let titleMain = ["CLAIM FORM SIGNED BY EMPLOYEE",
+    var titleMain = ["CLAIM FORM SIGNED BY EMPLOYEE",
                      "DISCHARGE CARD",
                      "LETTER OF 1ST CONSULTATION AND ADVICE FOR HOSPITALIZATION",
                      "PROPER HOSPITAL BILLS WITH RECEIPTS DULY STAMPED & SIGNED",
@@ -33,7 +34,7 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
                      "CERTIFIED INDOOR CASE PAPER (ICP)",
                      "PHOTO ID PROOF AND ADDRESS PROOF OF PATIENT",
                      "CANCELLED CHEQUE FOR CLAIM DISBURSEMENT:"]
-    let desc = ["(All details must be filled in & should be signed by The EMPLOYEE only)",
+    var desc = ["(All details must be filled in & should be signed by The EMPLOYEE only)",
                 "(Contains Date of Admission & discharge, patient’s condition while getting hospitalized,brief diagnosis & treatment administered at hospital& doctors advice on discharge)",
                 "(This is the letter of your doctor advise you to get hospitalized for medical treatment of disease ora Surgical Procedure. It should be on the doctor letterhead along with the date of Consultation)",
                 "(This is most important document & in absence of it, no payment can be made. The bill should be detailed with the Registration No. of the hospital. The receipt for the payments made should be Pre-numbered and preferably Pre-printed)",
@@ -57,10 +58,28 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
         
         
         dcDesc.font = UIFont(name: "Lato-Light", size: 10.0)
+        LoadingOverlay.shared.showOverlay(self.view)
         //        self.dcDesc.estimate
         self.documentTable.estimatedRowHeight = 80
         self.documentTable.rowHeight = UITableViewAutomaticDimension
-        
+        print(claim)
+        if claim == 0 {
+            rest.ClaimForm({(json:JSON) ->() in
+                dispatch_async(dispatch_get_main_queue(),{
+                self.image = ["claim_three"]
+                self.desc = []
+                self.desc = ["(Download claim form)"]
+                self.pdfs = []
+                self.pdfs = [json["result"].stringValue]
+                self.titleMain = []
+                self.titleMain = ["Claim Form"]
+                    self.documentTable.reloadData()
+                    LoadingOverlay.shared.hideOverlayView()
+                })
+            })
+        }else{
+            LoadingOverlay.shared.hideOverlayView()
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -104,7 +123,20 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //self.performSegueWithIdentifier("viewPDF", sender: self)
+//        self.performSegueWithIdentifier("viewPDF", sender: self)
+        if claim == 1 {
+            pdfname = pdfs[(indexPath.item)]
+            let passcodemodal = self.storyboard?.instantiateViewControllerWithIdentifier("PDFViewController") as! PDFViewController
+            
+            self.presentViewController(passcodemodal, animated: true, completion: nil)
+        }else{
+            print(self.pdfs[indexPath.item])
+            let pdflink = self.pdfs[indexPath.item]
+            print("pdflink: \(pdflink)")
+            let pdfURL = NSURL(string: pdflink.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)!
+            UIApplication.sharedApplication().openURL(pdfURL)
+        }
+        
     }
     
     @IBOutlet weak var dcDesc: UILabel!

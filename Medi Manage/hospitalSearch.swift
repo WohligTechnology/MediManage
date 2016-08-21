@@ -69,12 +69,20 @@ class hospitalSearch: UIView, UITextFieldDelegate {
     
     @IBAction func hospitalResultCall(sender: AnyObject) {
         
-        if self.yourLocation.text != "" && self.hospitalName.text != ""{
-            hospitalSearchText = self.yourLocation.text! + "%20" + self.hospitalName.text!
+        if self.yourLocation.text != "" || self.hospitalName.text != ""{
+            if self.yourLocation.text == "" {
+                hospitalSearchText = self.hospitalName.text
+            }else if self.hospitalName.text == "" {
+                hospitalSearchText = self.yourLocation.text
+            }else{
+                hospitalSearchText = self.yourLocation.text! + "%20" + self.hospitalName.text!
+
+            }
+//            hospitalSearchText = self.yourLocation.text! + "%20" + self.hospitalName.text!
             
             gHospitalSearchController.performSegueWithIdentifier("hospitalSearchToHospitalResult", sender: nil)
         }else{
-            Popups.SharedInstance.ShowPopup("Hospital Search", message: "Mention Hospital Location & Name")
+            Popups.SharedInstance.ShowPopup("Hospital Search", message: "Mention Hospital Location OR` Name")
         }
         
     }

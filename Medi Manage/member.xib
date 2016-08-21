@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -27,6 +27,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="member" customModule="MediManage" customModuleProvider="target">
             <connections>
                 <outlet property="dob" destination="H3d-He-5jI" id="dZM-Ho-lZr"/>
+                <outlet property="ecardOutlate" destination="IkQ-7E-c9A" id="rDC-cj-HDm"/>
                 <outlet property="firstName" destination="X9J-Ih-2zT" id="cmM-9i-slx"/>
                 <outlet property="lastname" destination="udW-qH-17l" id="q7z-5Z-ttB"/>
                 <outlet property="middleName" destination="Pe0-IO-suw" id="4pA-zf-iYF"/>

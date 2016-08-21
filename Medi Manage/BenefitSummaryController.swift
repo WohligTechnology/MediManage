@@ -42,8 +42,9 @@ class BenefitSummaryController: UIViewController, UITableViewDataSource, UITabBa
                     self.singlePointContact.text = json["result"]["SinglePointofContact"].stringValue
                     self.insurer.text = json["result"]["NameOfInsurer"].stringValue
                     self.TPA.text = json["result"]["NameOfTPA"].stringValue
-                    self.summaryTable.estimatedRowHeight = 80
-                    self.summaryTable.rowHeight = UITableViewAutomaticDimension
+                    self.summaryTable.rowHeight = 44
+
+                    self.summaryTable.estimatedRowHeight = 100
                     self.summaryTable.reloadData()
                     LoadingOverlay.shared.hideOverlayView()
                 }
@@ -81,13 +82,13 @@ class BenefitSummaryController: UIViewController, UITableViewDataSource, UITabBa
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        return UITableViewAutomaticDimension
     }
-    
-    
-    
-    
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 88
+    }
 }
 
 class benefitTableCell: UITableViewCell {

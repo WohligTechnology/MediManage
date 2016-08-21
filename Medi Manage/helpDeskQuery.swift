@@ -8,8 +8,9 @@
 
 import UIKit
 import SwiftyJSON
+import QToasterSwift
 
-class helpDeskQuery: UIView {
+class helpDeskQuery: UIView, UITextFieldDelegate {
     
     @IBOutlet var helpDeskQueryMainView: UIView!
     @IBOutlet weak var subjectTextField: UITextField!
@@ -47,6 +48,8 @@ class helpDeskQuery: UIView {
         mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_four")
         mainsubHeader.subHeaderTitle.text = "HELP DESK"
         self.addSubview(mainsubHeader)
+        subjectTextField.delegate = self
+        queryTextField.delegate = self
         
         //Connection Details
         rest.ConnectDetails({(json:JSON) -> ()  in
@@ -64,35 +67,49 @@ class helpDeskQuery: UIView {
         addBottomBorder(UIColor.blackColor(), linewidth: 0.5, myView: queryTextField)
         
     }
-    @IBAction func connectCall(sender: AnyObject) {
+//    override func resignFirstResponder() -> Bool {
+//        <#code#>
+//    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        subjectTextField.resignFirstResponder()
+        queryTextField.resignFirstResponder()
+        return true
+    }
+    
+    func popMe(title:String, message:String) {
         
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+        gHelpDeskQueryController.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func connectCall(sender: AnyObject) {
+        subjectTextField.resignFirstResponder()
+        queryTextField.resignFirstResponder()
         if self.subjectTextField.text != "" && self.queryTextField.text != "" {
-            let params = "{\"To\":\"jagruti@wohlig.com\",\"Subject\":\(self.subjectTextField.text! as String),\"Body\":\(self.queryTextField.text! as String)}"
-            print(String(params))
+            let params = "{\"To\":\(to),\"Subject\":\(self.subjectTextField.text! as String),\"Body\":\(self.queryTextField.text! as String)}"
             rest.SendQuery(JSON(params), completion: {(json:JSON) -> () in
+                print(json)
                 if json == 401 {
                     gHelpDeskQueryController.redirectToHome()
                 }else{
                 if json["state"] {
-                    Popups.SharedInstance.ShowPopup("Validation", message: "Query submited sucessfully")
+                    let alert = UIAlertController(title: "Validation", message: "Query submited sucessfully", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+                    gHelpDeskQueryController.presentViewController(alert, animated: true, completion: nil)
                 }else{
-                    Popups.SharedInstance.ShowPopup("Validation", message: "Can not send Query")
+                    let alert = UIAlertController(title: "Validation", message: json["error_message"].stringValue, preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+                    gHelpDeskQueryController.presentViewController(alert, animated: true, completion: nil)
                 }
             }
             })
         }else{
-            Popups.SharedInstance.ShowPopup("Validation", message: "Enter all Fields.")
-
+            let alert = UIAlertController(title: "Validation", message: "Enter all Fields.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+            gHelpDeskQueryController.presentViewController(alert, animated: true, completion: nil)
         }
-//        gHelpDeskQueryController.performSegueWithIdentifier("helpDeskQueryToConnect", sender: nil)
     }
-
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
 
 }

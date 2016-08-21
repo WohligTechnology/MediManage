@@ -52,75 +52,11 @@ class InsuredMembersController: UIViewController {
         let temp = UIView(frame: CGRect(x: 0, y: 0, width: widthGlo + 8, height: 15))
         self.verticalLayout.addSubview(temp);
         
-//        checkSession()
-        
-        
         //The URL to Save
-//        let yourURL = NSURL(string: "http://testcorp.medimanage.com/api/Files/EcardsDownloads/TestMastek1_25072016124521.pdf")
-//
-//        if let pdfData = NSData(contentsOfURL: yourURL!) {
-//            print("in document")
-//            let resourceDocPath = NSHomeDirectory().stringByAppendingString("/Documents/yourPDF.pdf")
-//            unlink(resourceDocPath)
-//            pdfData.writeToFile(resourceDocPath, atomically: true)
-//        }
+//        UIApplication.sharedApplication().openURL(NSURL(string: "http://testcorp.medimanage.com/api/Files/EcardsDownloads/TestMastek1_25072016124521.pdf")!)
+
         
-        
-        
-        
-//        //Create a URL request
-//        let urlRequest = NSURLRequest(URL: yourURL!)
-//        //get the data
-//        let theData = try NSURLConnection.sendSynchronousRequest(urlRequest, returningResponse: nil)
-//        
-//        //Get the local docs directory and append your local filename.
-//        var docURL = (NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)).last as? NSURL
-//        
-//        docURL = docURL?.URLByAppendingPathComponent( "myFileName.pdf")
-//        
-//        //Lastly, write your file to the disk.
-//        theData?.writeToURL(docURL!, atomically: true)
-        
-        
-        
-        
-        
-        //The URL to Save
-//        let yourURL = NSURL(string: "http://testcorp.medimanage.com/api/Files/EcardsDownloads/TestMastek1_25072016124521.pdf")
-//        //let urlPath: String = "YOUR_URL_HERE"
-//        let request1: NSURLRequest = NSURLRequest(URL: yourURL!)
-//        let response: AutoreleasingUnsafeMutablePointer<NSURLResponse?>=nil
-//        
-//        
-//        do{
-//            
-//            let dataVal = try NSURLConnection.sendSynchronousRequest(request1, returningResponse: response)
-//            print(response)
-//            do {
-//                if let jsonResult = try NSJSONSerialization.JSONObjectWithData(dataVal, options: []) as? NSDictionary {
-//                    print("pdf response")
-//                    
-//                    print("Synchronous\(jsonResult)")
-//                }
-//            } catch let error as NSError {
-//                print("error aaya")
-//                print(error.localizedDescription)
-//            }
-//            
-//            
-//            
-//        }catch let error as NSError
-//        {
-//            print(error.localizedDescription)
-//        }
-        
-        
-        
-        
-        
-        
-                
-        rest.DashboardDetails({(json:JSON) -> () in
+        rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> () in
             print(json)
             dispatch_async(dispatch_get_main_queue(), {
                 if json == 401 {
@@ -136,18 +72,29 @@ class InsuredMembersController: UIViewController {
                     
                     for y in 0..<json["result"]["Groups"][x]["Members"].count {
                         let membersView = member(frame: CGRect(x: 0, y: 0, width: widthGlo, height: 220))
-                        membersView.dob.text = json["result"]["Groups"][x]["Members"][y]["DateOfBirth"].stringValue;
+                        
+                        var fullNameArr = json["result"]["Groups"][x]["Members"][y]["DateOfBirth"].stringValue.characters.split{$0 == "T"}.map(String.init)
+                        
+                        membersView.dob.text = fullNameArr[0];
+                        
                         membersView.firstName.text = json["result"]["Groups"][x]["Members"][y]["FirstName"].stringValue;
                         membersView.middleName.text = json["result"]["Groups"][x]["Members"][y]["MiddleName"].stringValue;
                         membersView.lastname.text = json["result"]["Groups"][x]["Members"][y]["LastName"].stringValue;
                         membersView.relation.text = json["result"]["Groups"][x]["Members"][y]["RelationType"].stringValue;
+                        membersView.ecarddwld = json["result"]["Groups"][x]["Members"][y]["ID"].stringValue
+                        membersView.isAvailable = json["result"]["Groups"][x]["Members"][y]["IsECardAvailable"].boolValue
+                        if json["result"]["Groups"][x]["Members"][y]["IsECardAvailable"].boolValue {
+                            membersView.ecardOutlate.hidden = false
+                        }else{
+                            membersView.ecardOutlate.hidden = true
+                        }
                         self.verticalLayout.addSubview(membersView);
                         print(self.verticalLayout.frame.height);
                     }
                 }
                     self.verticalLayout.layoutSubviews()
 
-                    self.scrollView.contentSize = CGSize(width: self.verticalLayout.frame.width, height: self.verticalLayout.frame.height )
+                    self.scrollView.contentSize = CGSize(width: self.verticalLayout.frame.width, height: self.verticalLayout.frame.height)
             }
             });
             

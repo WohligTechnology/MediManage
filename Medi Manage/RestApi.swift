@@ -136,6 +136,7 @@ public class RestApi {
         if token != nil {
              isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         }
+        print(token)
         
         do {
             let opt = try HTTP.GET(apiURL+SUBURL , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
@@ -517,6 +518,7 @@ public class RestApi {
         do {
             let opt = try HTTP.GET(apiURL+"Hospitals/Search/\(data)" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
             opt.start { response in
+                print(response.error)
                 if let _ = response.error {
                     let nsError = response.error! as NSError
                     if nsError.code == 401 {
@@ -537,7 +539,36 @@ public class RestApi {
         }
         
     }
-    
+
+    public func getLocation(address:String, completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        let url = NSURL(string:address.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!)
+        do {
+            let opt = try HTTP.GET("https://maps.googleapis.com/maps/api/geocode/json?address=\(url)&key=AIzaSyDAe0p475gZB89bLQUcNRIwkhNzuG2HGFw" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:nil)
+            opt.start { response in
+                print(response.error)
+                if let _ = response.error {
+                    let nsError = response.error! as NSError
+                    if nsError.code == 401 {
+                        json = JSON(nsError.code)
+                        completion(json)
+                    }else{
+                        completion(json);
+                    }
+                }
+                else
+                {
+                    json  = JSON(data: response.data)
+                    completion(json);
+                }
+            }
+        } catch _ {
+            completion(json);
+        }
+        
+    }
+
     public func BenefitSummery(completion:((JSON) -> Void))
     {
         var json = JSON(1)
@@ -837,32 +868,34 @@ public class RestApi {
     public func isEnrolled(completion:((JSON) -> Void))
     {
         var json = JSON(1)
-        
         let token = defaultToken.stringForKey("access_token")
-        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
-                do {
-            let opt = try HTTP.GET(apiURL + "Enrollments/IsEnrolled" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers: isLoginheader)
-            opt.start { response in
-                
-                if let _ = response.error {
-                    let nsError = response.error! as NSError
-                    if nsError.code == 401 {
-                        json = JSON(nsError.code)
-                        completion(json)
-                    }else{
+        if (token != nil) {
+            let isLoginheader = ["Authorization":"Bearer \((token)! as String)"]
+            do {
+                let opt = try HTTP.GET(apiURL + "Enrollments/IsEnrolled" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers: isLoginheader)
+                opt.start { response in
+                    
+                    if let _ = response.error {
+                        let nsError = response.error! as NSError
+                        if nsError.code == 401 {
+                            json = JSON(nsError.code)
+                            completion(json)
+                        }else{
+                            completion(json);
+                        }
+                    }
+                    else
+                    {
+                        json  = JSON(data: response.data)
                         completion(json);
                     }
                 }
-                else
-                {
-                    json  = JSON(data: response.data)
-                    completion(json);
-                }
+            } catch _ {
+                completion(json);
             }
-        } catch _ {
-            completion(json);
+
         }
-    }
+                   }
     
     public func changePassword(cp: String, np: String, cnp: String, completion:((JSON) -> Void))
     {

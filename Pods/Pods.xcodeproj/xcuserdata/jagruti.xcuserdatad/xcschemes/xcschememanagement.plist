@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>QToasterSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftHTTP.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,7 +42,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>6CFB5ED9A2960CC040F601C8D58F5C24</key>
+		<key>56919FCD6087C8E3F05BA1D7C80965B0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5AE14DF6769CCAAEECEB8D75816FA1A3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>75821551F1426CD34CB678A916145776</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -47,22 +62,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7B9A677C1772366CE299BD2E0522E9DC</key>
+		<key>BE4C5F4F9473CB8569B5DBDDE11FC6BC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>93FA9C8143F9265B72747A0C99320DC5</key>
+		<key>BF607C6660960F985C0E97610477EACA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AEC539221543B733030535C39B2F3C5B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E9BE5F277FDAD79B39D0BAA0BABEB8EE</key>
+		<key>DAF3F169D3DE870EDD0ACFDB70495F2C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -84,8 +84,18 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
         tableViewCell.setpickerViewDataSourceDelegate(self, forRow: indexPath.row)
         tableViewCell.tag = indexPath.row
         tableViewCell.namelbl.text = members[0]["Members"][0]["FirstName"].stringValue
-        tableViewCell.doblbl.text = members[0]["Members"][0]["DateOfBirth"].stringValue
-        tableViewCell.domlbl.text = members[0]["Members"][0]["DateOfRelation"].stringValue
+        
+        let fullNameArr = members[0]["Members"][0]["DateOfBirth"].stringValue.characters.split{$0 == "T"}.map(String.init)
+        
+        tableViewCell.doblbl.text = fullNameArr[0]
+        
+        if members[0]["Members"][0]["DateOfRelation"].stringValue != "" && members[0]["Members"][0]["DateOfRelation"].stringValue != "null" {
+            let fullNameArr1 = members[0]["Members"][0]["DateOfRelation"].stringValue.characters.split{$0 == "T"}.map(String.init)
+            tableViewCell.domlbl.text = fullNameArr1[0]
+        }else{
+            tableViewCell.domlbl.text = "-"
+        }
+        
         tableViewCell.sumInsured.text = members[indexPath.row]["SelectedSumInsuredValue"].stringValue
         tableViewCell.topUp.text = members[indexPath.row]["SelectedTopupValue"].stringValue
         if !result["IsInEnrollmentPeriod"] {
@@ -233,11 +243,18 @@ extension MemberListGroupTableController: UICollectionViewDelegate, UICollection
         
         let cell = ListTableView.cellForRowAtIndexPath(tableindexpath) as! MemberListGroupCell
 //        cell.backgroundColor = UIColor.magentaColor()
+        
+        let fullNameArr1 = members[collectionView.tag]["Members"][indexPath.row]["DateOfBirth"].stringValue.characters.split{$0 == "T"}.map(String.init)
 
         cell.namelbl?.text = members[collectionView.tag]["Members"][indexPath.row]["FirstName"].stringValue
-        cell.doblbl?.text = members[collectionView.tag]["Members"][indexPath.row]["DateOfBirth"].stringValue
-        cell.domlbl?.text = members[collectionView.tag]["Members"][indexPath.row]["DateOfRelation"].stringValue
-        
+        cell.doblbl?.text = fullNameArr1[0]
+        if members[collectionView.tag]["Members"][indexPath.row]["DateOfRelation"].stringValue == "" || members[collectionView.tag]["Members"][indexPath.row]["DateOfRelation"].stringValue == "null" {
+            cell.domlbl?.text = "-"
+        }else{
+            let fullNameArr1 = members[collectionView.tag]["Members"][indexPath.row]["DateOfRelation"].stringValue.characters.split{$0 == "T"}.map(String.init)
+            cell.domlbl?.text = fullNameArr1[0]
+        }
+    
     }
 //    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
 //        let cello:UICollectionViewCell = collectionView.cellForItemAtIndexPath(indexPath)!

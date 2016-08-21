@@ -134,7 +134,8 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                 isAddMember = false
                 rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
                     dispatch_sync(dispatch_get_main_queue()){
-                        
+                        print(json)
+
                         self.wholeJson = json["result"]
                         LoadingOverlay.shared.hideOverlayView()
                         for x in 0..<self.memberjson.count{
@@ -151,6 +152,18 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                                             self.memberjson[x]["ActiveState"] = false
                                         }
                                     }
+                                    
+//                                    if json["result"]["Groups"][y]["Members"][z]["DateOfBirth"].stringValue != "" && json["result"]["Groups"][y]["Members"][z]["DateOfBirth"].stringValue != "null"{
+//                                        print(json["result"]["Groups"][y]["Members"][z]["DateOfBirth"].stringValue)
+//                                        let fullNameArr = json["result"]["Groups"][y]["Members"][z]["DateOfBirth"].stringValue.characters.split{$0 == "T"}.map(String.init)
+//                                        self.memberjson[x]["DateOfBirth"].stringValue = fullNameArr[0]
+//                                    }
+//                                    if json["result"]["Groups"][y]["Members"][z]["DateOfRelation"].stringValue != "" && json["result"]["Groups"][y]["Members"][z]["DateOfRelation"].stringValue != "null"{
+//                                        print(json["result"]["Groups"][y]["Members"][z]["DateOfRelation"].stringValue)
+//                                        let fullNameArr = json["result"]["Groups"][y]["Members"][z]["DateOfRelation"].stringValue.characters.split{$0 == "T"}.map(String.init)
+//                                        self.memberjson[x]["DateOfRelation"].stringValue = fullNameArr[0]
+//                                    }
+                                    
                                 }
                             }
                         }

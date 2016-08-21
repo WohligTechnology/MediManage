@@ -52,15 +52,19 @@ class newContact: UIView {
         
         let onFirstCall =  UITapGestureRecognizer(target: self, action: #selector(callFirst))
         self.FirstCall.addGestureRecognizer(onFirstCall)
+        FirstCall.userInteractionEnabled = true
         ccNoOne.userInteractionEnabled = true
         
         let onSecondCall =  UITapGestureRecognizer(target: self, action: #selector(callSecond))
         self.SecondCall.addGestureRecognizer(onSecondCall)
+        SecondCall.userInteractionEnabled = true
         ccNoTwo.userInteractionEnabled = true
 
         
     }
     func callFirst() {
+        print("first call")
+        print(self.ccNoOne.text!)
         gConnectController.callNumber(self.ccNoOne.text!)
     }
     func callSecond() {

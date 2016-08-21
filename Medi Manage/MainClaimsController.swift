@@ -64,7 +64,7 @@ class MainClaimsController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("demo")
+        claim = indexPath.item
     }
 }
 

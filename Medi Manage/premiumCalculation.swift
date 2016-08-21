@@ -79,12 +79,7 @@ class premiumCalculation: UIView {
         statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
         self.addSubview(statusBar)
         
-        let mainheader = header(frame: CGRectMake(0, 20, width, 50))
-        self.addSubview(mainheader)
-        
-        LoadingOverlay.shared.showOverlay(gPremiumCalculationController.view)
-        
-        premiumCalculationMainView.frame = CGRectMake(0, 70, self.frame.size.width, self.frame.size.height - 70)
+        premiumCalculationMainView.frame = CGRectMake(0, 60, self.frame.size.width, self.frame.size.height - 70)
         
         declaration.font = UIFont(name: "Lato-Light", size: 10.0)
         termsLabel.font = UIFont(name: "Lato-Light", size: 10.0)
@@ -121,7 +116,12 @@ class premiumCalculation: UIView {
                     
                 }
                 LoadingOverlay.shared.hideOverlayView()
-                
+                print(self.BasicPremium)
+                    print(self.TopupPremium)
+                    print(self.Subtotal)
+                    print(self.Tax)
+                    print(self.TotalPremium)
+                    
                 self.basicPremiumCost.text = String(self.BasicPremium)
                 self.topupPremiumCost.text = String(self.TopupPremium)
                 self.netPremiumCost.text = String(self.Subtotal)
@@ -149,23 +149,36 @@ class premiumCalculation: UIView {
         }
     }
     
+    func pop() {
+//        Popups.SharedInstance.ShowPopup("Premium Calculation", message: "some error")
+        let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+        gPremiumCalculationController.presentViewController(alert, animated: true, completion: nil)
+//        QToasterSwift.toast(gPremiumCalculationController, text: "Welcome to QToasterSwift")
+    }
+    
     
     @IBAction func insuredmembersCall(sender: AnyObject) {
+        LoadingOverlay.shared.showOverlay(gPremiumCalculationController.view)
         if terms {
             rest.premiumConfirm({(json:JSON) -> ()in
                 print(json)
+                LoadingOverlay.shared.hideOverlayView()
                 if json == 401 {
                     gPremiumCalculationController.redirectToHome()
                 }else{
                 if json["state"] {
+                    print("in true")
                     gPremiumCalculationController.performSegueWithIdentifier("insuredmembers", sender: nil)
                 }else{
-                    Popups.SharedInstance.ShowPopup("Premium Calculation", message: "Some error occured")
-
+                    print("in else")
+                    let alert = UIAlertController(title: "Premium Calculation", message: json["error_message"].stringValue, preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+                    gPremiumCalculationController.presentViewController(alert, animated: true, completion: nil)
                 }
                 }
             })
-        }else{
+        } else {
             Popups.SharedInstance.ShowPopup("Allowed Members", message: "Please check the Terms and Conditions")
 
         }
