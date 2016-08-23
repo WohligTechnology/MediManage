@@ -126,6 +126,7 @@ class signup: UIView, UITextFieldDelegate {
                 dispatch_async(dispatch_get_main_queue(),
                     {
                         LoadingOverlay.shared.hideOverlayView()
+                        print(json)
                         let anotherCharacter: String = (String(json["state"]))
                         switch anotherCharacter {
                         case "true" :

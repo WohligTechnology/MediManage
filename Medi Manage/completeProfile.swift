@@ -167,9 +167,10 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
         return true
     }
     
-//    @IBAction func closeMe(sender: AnyObject) {
-//        dismiss
-//    }
+    @IBAction func closeMe(sender: AnyObject) {
+        gCompleteProfileController.dismissViewControllerAnimated(true, completion: nil)
+
+    }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         if pickerView == maritalPickerView{

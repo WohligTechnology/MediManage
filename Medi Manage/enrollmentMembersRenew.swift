@@ -127,7 +127,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
             if json == 401 {
                 gEnrollmentMembersController.redirectToHome()
             }else{
-            if json && !isAddMember {
+            if json && isAddMember {
                 gEnrollmentMembersController.performSegueWithIdentifier("isEnrolledTrue", sender: nil)
             }else{
                 
@@ -152,19 +152,17 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                                             self.memberjson[x]["ActiveState"] = false
                                         }
                                     }
-                                    
-//                                    if json["result"]["Groups"][y]["Members"][z]["DateOfBirth"].stringValue != "" && json["result"]["Groups"][y]["Members"][z]["DateOfBirth"].stringValue != "null"{
-//                                        print(json["result"]["Groups"][y]["Members"][z]["DateOfBirth"].stringValue)
-//                                        let fullNameArr = json["result"]["Groups"][y]["Members"][z]["DateOfBirth"].stringValue.characters.split{$0 == "T"}.map(String.init)
-//                                        self.memberjson[x]["DateOfBirth"].stringValue = fullNameArr[0]
-//                                    }
-//                                    if json["result"]["Groups"][y]["Members"][z]["DateOfRelation"].stringValue != "" && json["result"]["Groups"][y]["Members"][z]["DateOfRelation"].stringValue != "null"{
-//                                        print(json["result"]["Groups"][y]["Members"][z]["DateOfRelation"].stringValue)
-//                                        let fullNameArr = json["result"]["Groups"][y]["Members"][z]["DateOfRelation"].stringValue.characters.split{$0 == "T"}.map(String.init)
-//                                        self.memberjson[x]["DateOfRelation"].stringValue = fullNameArr[0]
-//                                    }
-                                    
                                 }
+                            }
+                        }
+                        for x in 0..<self.memberjson.count{
+                            if self.memberjson[x]["DateOfBirth"].stringValue != "" && self.memberjson[x]["DateOfBirth"].stringValue != "null"{
+                                var fullNameArr = self.memberjson[x]["DateOfBirth"].stringValue.characters.split{$0 == "T"}.map(String.init)
+                                self.memberjson[x]["DateOfBirth"].stringValue = fullNameArr[0]
+                            }
+                            if self.memberjson[x]["DateOfRelation"].stringValue != "" && self.memberjson[x]["DateOfRelation"].stringValue != "null"{
+                                var fullNameArr = self.memberjson[x]["DateOfRelation"].stringValue.characters.split{$0 == "T"}.map(String.init)
+                                self.memberjson[x]["DateOfRelation"].stringValue = fullNameArr[0]
                             }
                         }
                         for x in 0..<self.wholeJson["PlanMembers"].count {
@@ -189,7 +187,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                             }
                             
                         }
-                        print(self.memberjson)
+//                        print(self.memberjson)
                         self.assignMembers()
                     }
                     
@@ -406,16 +404,16 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         let dateToSave = dateFormatter.stringFromDate(sender.date)
         switch datetype {
         case 1:
-            leftDOB.text = dateToSave + "T00:00:00"
+            leftDOB.text = dateToSave
             break
         case 2:
-            leftDOM.text = dateToSave + "T00:00:00"
+            leftDOM.text = dateToSave
             break
         case 3:
-            rightDOB.text = dateToSave + "T00:00:00"
+            rightDOB.text = dateToSave
             break
         case 4:
-            rightDOM.text = dateToSave + "T00:00:00"
+            rightDOM.text = dateToSave
             break
         default:
             break
@@ -634,15 +632,33 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
             self.leftDOM.hidden = true
             self.leftAddMore.hidden = false
             break
-        case "Mother","Mother in law":
+        case "Mother":
             self.leftIcon.image = UIImage(named: "mother_icon")
-            self.leftDOM.hidden = false
+            self.leftDOM.hidden = true
             self.leftAddMore.hidden = true
             break
-        case "Father","Father in law":
-            self.leftIcon.image = UIImage(named: "father_icon")
-            self.leftDOM.hidden = false
+        case "Mother in law":
+            self.leftIcon.image = UIImage(named: "mother_icon")
             self.leftAddMore.hidden = true
+            if self.memberjson[page]["DateOfRelation"].stringValue == "" {
+                self.leftDOM.hidden = false
+            }else{
+                self.leftDOM.hidden = true
+            }
+            break
+        case "Father":
+            self.leftIcon.image = UIImage(named: "father_icon")
+            self.leftDOM.hidden = true
+            self.leftAddMore.hidden = true
+            break
+        case "Father in law":
+            self.leftIcon.image = UIImage(named: "father_icon")
+            self.leftAddMore.hidden = true
+            if self.memberjson[page]["DateOfRelation"].stringValue == "" {
+                self.leftDOM.hidden = false
+            }else{
+                self.leftDOM.hidden = true
+            }
             break
         default: break
             
@@ -663,6 +679,8 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         self.leftLastName.text = self.memberjson[page]["LastName"].stringValue
         self.leftDOB.text = self.memberjson[page]["DateOfBirth"].stringValue
         self.leftDOM.text = self.memberjson[page]["DateOfRelation"].stringValue
+
+        
         
         switch (self.memberjson[page+1]["RelationType"].stringValue) {
         case "Wife":
@@ -682,23 +700,31 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
             break
         case "Mother":
             self.rightIcon.image = UIImage(named: "mother_icon")
-            self.rightDOM.hidden = false
+            self.rightDOM.hidden = true
             self.rightAddMore.hidden = true
             break
         case "Father":
             self.rightIcon.image = UIImage(named: "father_icon")
-            self.rightDOM.hidden = false
+            self.rightDOM.hidden = true
             self.rightAddMore.hidden = true
             break
         case "Mother in law":
             self.rightIcon.image = UIImage(named: "mother_icon")
-            self.rightDOM.hidden = true
             self.rightAddMore.hidden = true
+            if self.memberjson[page+1]["DateOfRelation"].stringValue == "" {
+                self.rightDOM.hidden = false
+            }else{
+                self.rightDOM.hidden = true
+            }
             break
         case "Father in law":
             self.rightIcon.image = UIImage(named: "father_icon")
-            self.rightDOM.hidden = true
             self.rightAddMore.hidden = true
+            if self.memberjson[page+1]["DateOfRelation"].stringValue == "" {
+                self.rightDOM.hidden = false
+            }else{
+                self.rightDOM.hidden = true
+            }
             break
         default: break
             
@@ -719,6 +745,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         self.rightDOB.text = self.memberjson[page+1]["DateOfBirth"].stringValue
         self.rightDOM.text = self.memberjson[page+1]["DateOfRelation"].stringValue
         
+        
     }
     
     //FINAL PROCESS SUBMIT MEMBERS
@@ -732,7 +759,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                 if self.wholeJson["IsInEnrollmentPeriod"] {
                     if memberjson[x]["ActiveState"] {
                         for (key, itm) in memberjson[x] {
-                            if key == "FirstName" || key == "MiddleName" || key == "LastName" || key == "DateOfRelation" || key == "DateOfBirth" {
+                            if key == "FirstName" || key == "DateOfRelation" || key == "DateOfBirth" {
                                 if itm == "" && status {
                                     if memberjson[x]["SystemIdentifier"] != "C" || key != "DateOfRelation"{
                                         status = false
@@ -746,12 +773,13 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                         finaljson.arrayObject?.append(memberjson[x].object)
                     }
                 }else{
-                    if (memberjson[x]["Status"] == 1 && memberjson[x]["AddedAt"] == 2) || (memberjson[x]["Status"] == 2 && memberjson[x]["AddedAt"] == 2){
+                    if (memberjson[x]["Status"] != 1 && memberjson[x]["AddedAt"] != 2) || (memberjson[x]["Status"] != 2 && memberjson[x]["AddedAt"] != 2){
                         if memberjson[x]["ActiveState"] {
                             for (key, itm) in memberjson[x] {
-                                if key == "FirstName" || key == "MiddleName" || key == "LastName" || key == "DateOfRelation" || key == "DateOfBirth" {
+                                if key == "FirstName" || key == "DateOfRelation" || key == "DateOfBirth" {
                                     if itm == "" && status {
                                         if memberjson[x]["SystemIdentifier"] != "C" || key != "DateOfRelation"{
+                                            
                                             status = false
                                             msg = "Please Enter " + key + " of " + memberjson[x]["RelationType"].stringValue
                                         }
@@ -766,6 +794,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
             if !status {
                 Popups.SharedInstance.ShowPopup("Validation", message: msg)
             }else{
+                print(finaljson)
                 rest.AddMembers(finaljson, completion: {(json:JSON) -> ()in
                     dispatch_sync(dispatch_get_main_queue()){
                         if json == 401 {
@@ -775,7 +804,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                             gEnrollmentMembersController.performSegueWithIdentifier("memberlist", sender: nil)
                         }else{
                             if json["error_message"] != "" {
-                                Popups.SharedInstance.ShowPopup("Select Members", message: json["error_message"].stringValue)
+                                Popups.SharedInstance.ShowPopup("Error Occured", message: json["error_message"].stringValue)
                             }else{
                                 Popups.SharedInstance.ShowPopup("Select Members", message: "Some Error Occured.")
                             }
