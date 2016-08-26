@@ -32,7 +32,7 @@ class BenefitSummaryController: UIViewController, UITableViewDataSource, UITabBa
         gBenefitSummaryController = self
         
         LoadingOverlay.shared.showOverlay(self.view)
-        self.summaryTable.estimatedRowHeight = 100
+        self.summaryTable.estimatedRowHeight = 68.0
         self.summaryTable.rowHeight = UITableViewAutomaticDimension
         
         rest.BenefitSummery({(json:JSON) -> () in
@@ -68,7 +68,14 @@ class BenefitSummaryController: UIViewController, UITableViewDataSource, UITabBa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! benefitTableCell
+        
         cell.summaryText.text = self.myBenefits["SalientFeatures"][indexPath.row]["Text"].stringValue
+        cell.summaryText.adjustsFontSizeToFitWidth = true
+        cell.summaryText.frame.size.height = 40
+        cell.summaryText.numberOfLines = 0
+        cell.summaryText.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        cell.summaryText.sizeToFit()
+        cell.summaryText.tag = indexPath.row
         
         if indexPath.row % 2 == 0 {
             cell.backgroundColor = UIColor(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0, alpha: 1)
