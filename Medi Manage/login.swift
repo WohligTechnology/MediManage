@@ -82,7 +82,7 @@ class login: UIView, UITextFieldDelegate {
                     //if(String(json["error"]) != "null")
                     LoadingOverlay.shared.hideOverlayView()
                     let i = 1
-                    if(i == 0)
+                    if let error = json["error"].string
                     {
                         let stError :String = String(json ["error"])
                         
