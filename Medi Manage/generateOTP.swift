@@ -15,6 +15,7 @@ class generateOTP: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextF
     @IBOutlet weak var mobileNumber: UITextField!
     @IBOutlet weak var multiColor: UILabel!
     @IBOutlet weak var countryCode: UITextField!
+    @IBOutlet weak var countryCodeCode: UITextField!
     
     let allowNumbers = 10
     var countryPickerView = UIPickerView()
@@ -59,6 +60,8 @@ class generateOTP: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextF
         countryPickerView.delegate = self
         countryCode.inputView = countryPickerView
         countryCode.delegate = self
+        countryCode.text = "India"
+        countryCodeCode.text = "91"
         
         let toolBar = UIToolbar()
         toolBar.barStyle = UIBarStyle.Black
@@ -94,7 +97,8 @@ class generateOTP: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextF
     }
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        countryCode.text = countryCodes[1][row]
+        countryCodeCode.text = countryCodes[1][row]
+        countryCode.text = countryCodes[0][row]
     }
     func donePicker(){
         countryCode.resignFirstResponder()
@@ -111,7 +115,7 @@ class generateOTP: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextF
 
     }
     @IBAction func enterotpCall(sender: AnyObject) {
-        if self.mobileNumber.text == "" || self.countryCode.text == "" {
+        if self.mobileNumber.text == "" || self.countryCodeCode.text == "" {
             Popups.SharedInstance.ShowPopup("", message: "Both Fields are Required")
 
         }else{
@@ -122,6 +126,7 @@ class generateOTP: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextF
 
         rest.SendOtp(String(UTF8String: self.mobileNumber.text!)!, countrycode: String(UTF8String: self.countryCode.text!)!, completion: {(json:JSON) -> () in
             dispatch_async(dispatch_get_main_queue()){
+                print(json)
                 LoadingOverlay.shared.hideOverlayView()
                 if json["state"]{
                     gGenerateOTPController.performSegueWithIdentifier("toOTPPage", sender: nil)

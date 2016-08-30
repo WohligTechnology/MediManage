@@ -156,7 +156,7 @@ class signup: UIView, UITextFieldDelegate {
                             
                             dialog.addAction(UIAlertAction(title: "Try Again!!", style: UIAlertActionStyle.Destructive, handler:{
                                 action in
-                                self.employeeID.text = ""
+//                                self.employeeID.text = ""
                                 
                             }))
                             gSignupController.presentViewController(dialog, animated: true, completion: nil)
