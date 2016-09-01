@@ -194,13 +194,13 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
         
         let line = UIView(frame: CGRectMake(20, 0, 1, cell.hsCallView.frame.size.height))
         line.backgroundColor = UIColor.lightGrayColor()
-        cell.hsCallView.addSubview(line)
+        //cell.hsCallView.addSubview(line)
         let line2 = UIView(frame: CGRectMake(145, 0, 1, cell.hsCallView.frame.size.height))
         line2.backgroundColor = UIColor.lightGrayColor()
-        cell.hsCallView.addSubview(line2)
+        //cell.hsCallView.addSubview(line2)
         let line3 = UIView(frame: CGRectMake(280, 0, 1, cell.hsCallView.frame.size.height))
         line3.backgroundColor = UIColor.lightGrayColor()
-        cell.hsCallView.addSubview(line3)
+        //cell.hsCallView.addSubview(line3)
         
         return cell
     }
