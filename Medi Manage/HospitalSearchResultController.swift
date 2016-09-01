@@ -214,16 +214,17 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
     
     func directions(sender: UITapGestureRecognizer) {
         locationManager.startUpdatingLocation()
+        print(hospitals[sender.view!.tag]["Address"].stringValue)
         rest.getLocation(hospitals[sender.view!.tag]["Address"].stringValue, completion: {(json:JSON) ->() in
             dispatch_async(dispatch_get_main_queue(),{
-                print(json["results"][0]["geometry"])
+                print(json["results"][0]["geometry"]["location"])
                 
                 let saddrlat = self.lat
                 let saddrlng = self.lng
                 let daddrlat = "\(json["results"][0]["geometry"]["location"]["lat"])"
                 let daddrlng = "\(json["results"][0]["geometry"]["location"]["lng"])"
                 
-                let urlstring = "http://maps.google.com/maps?saddr=\(saddrlat),\(saddrlng)&daddr=\(daddrlat),\(daddrlng)"
+                let urlstring = "http://maps.google.com/maps?saddr=\(saddrlat),\(saddrlng)&daddr=\(self.hospitals[sender.view!.tag]["Address"].stringValue)"
                 print(urlstring)
                 if let url = NSURL(string:urlstring.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!)
                 {

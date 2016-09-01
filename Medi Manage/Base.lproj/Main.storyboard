@@ -726,7 +726,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZaZ-Hy-CoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1585" y="2403"/>
+            <point key="canvasLocation" x="-1701" y="2487"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ejb-Nu-v4p">
