@@ -218,7 +218,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YdL-NB-sw9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1224" y="266"/>
+            <point key="canvasLocation" x="-1230" y="212"/>
         </scene>
         <!--EnterOTP Controller-->
         <scene sceneID="Ahs-kc-Wh7">
@@ -871,7 +871,6 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                             <outlet property="claimImage" destination="Nkf-2o-1nW" id="Obx-9a-8Us"/>
                                             <outlet property="claimTitle" destination="dF1-gx-oFL" id="9rj-vD-3if"/>
                                             <outlet property="claimView" destination="dwb-TZ-KJ5" id="yRj-nZ-6w6"/>
-                                            <segue destination="ONl-FB-A8K" kind="show" id="Yik-PX-0oS"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -894,6 +893,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                     <connections>
                         <outlet property="mainClaimsMainView" destination="IZ3-Hc-IkU" id="RAq-R7-9kD"/>
                         <outlet property="mainTableView" destination="Y6D-Pf-4Kl" id="QLz-zz-Lww"/>
+                        <segue destination="ONl-FB-A8K" kind="show" identifier="inDetail" id="B7r-nN-N1k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4XJ-Tj-Ptj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -928,7 +928,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
         <!--Document Checklist Controller-->
         <scene sceneID="aXU-qF-aqe">
             <objects>
-                <viewController id="ONl-FB-A8K" customClass="DocumentChecklistController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DocumentChecklistController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ONl-FB-A8K" customClass="DocumentChecklistController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mEL-Rb-cBK"/>
                         <viewControllerLayoutGuide type="bottom" id="Yyw-Wm-zBW"/>

@@ -65,6 +65,16 @@ class MainClaimsController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         claim = indexPath.item
+        
+        if indexPath.row == 0 {
+            
+        }else{
+            let passcodemodal = self.storyboard?.instantiateViewControllerWithIdentifier("DocumentChecklistController") as! DocumentChecklistController
+            
+            self.presentViewController(passcodemodal, animated: true, completion: nil)
+        }
+
+        
     }
 }
 

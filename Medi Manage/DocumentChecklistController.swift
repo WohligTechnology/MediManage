@@ -136,7 +136,6 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
             let pdfURL = NSURL(string: pdflink.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)!
             UIApplication.sharedApplication().openURL(pdfURL)
         }
-        
     }
     
     @IBOutlet weak var dcDesc: UILabel!
