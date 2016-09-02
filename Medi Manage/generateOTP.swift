@@ -129,7 +129,9 @@ class generateOTP: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextF
                 print(json)
                 LoadingOverlay.shared.hideOverlayView()
                 if json["state"]{
-                    gGenerateOTPController.performSegueWithIdentifier("toOTPPage", sender: nil)
+                    let passcodemodal = gGenerateOTPController.storyboard?.instantiateViewControllerWithIdentifier("forgotOTP") as! ForgotPasswordOTPController
+                    
+                    gGenerateOTPController.presentViewController(passcodemodal, animated: true, completion: nil)
                 }
             }
         })

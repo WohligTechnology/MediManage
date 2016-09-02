@@ -356,13 +356,15 @@ public class RestApi {
     public func ResetPassword(data : JSON ,completion:((JSON) -> Void))
     {
         var json = JSON(1)
-        let token = defaultToken.stringForKey("access_token")
-        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         
         let params = ["data": "\(data)"]
+//        params = ["data": {"newPassword": "jagruti","Code": "528743","confirmPassword": "jagruti"}]
+        let header = ["Content-Type":"application/x-www-form-urlencoded"]
+        print(params)
         do {
-            let opt = try HTTP.POST(apiURL+"Users/ResetPassword" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            let opt = try HTTP.POST(apiURL+"Users/ResetPassword" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:header)
             opt.start { response in
+                print(response.error)
                 if let _ = response.error {
                     let nsError = response.error! as NSError
                     if nsError.code == 401 {
