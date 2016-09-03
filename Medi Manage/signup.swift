@@ -136,7 +136,7 @@ class signup: UIView, UITextFieldDelegate {
                             
                             dialog.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Destructive, handler:{
                                 action in
-                                
+                                profileState = "Submit"
                                 let VC = storyboard?.instantiateViewControllerWithIdentifier("completeProfile") as! CompleteProfileController
                                 
                                 gSignupController.presentViewController(VC, animated: true , completion: nil)

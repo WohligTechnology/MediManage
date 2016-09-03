@@ -75,16 +75,11 @@ class forgotPasswordOTP: UIView, UITextFieldDelegate {
     
     @IBAction func enrollmentmembersCall(sender: AnyObject) {
         LoadingOverlay.shared.showOverlay(gForgotPasswordOTPController.view)
-        var params = ["Code":"","newPassword":"","confirmPassword":""]
-        params["Code"] = enterOTP.text! as String
-        params["newPassword"] = newPassword.text! as String
-        params["confirmPassword"] = confirmPassword.text! as String
-        rest.ResetPassword(JSON(params), completion: {(json:JSON) -> () in
+        rest.ResetPassword(enterOTP.text! as String,password: newPassword.text! as String,confirmPassword: confirmPassword.text! as String,completion: {(json:JSON) -> () in
             dispatch_sync(dispatch_get_main_queue()){
                 LoadingOverlay.shared.hideOverlayView()
                 print(json)
                 if json["state"] {
-                    
                         let vc = gForgotPasswordOTPController.storyboard?.instantiateViewControllerWithIdentifier("loginc") as! LoginController
                         gForgotPasswordOTPController.presentViewController(vc, animated: true, completion: nil)
                 }

@@ -44,17 +44,21 @@ class retrieveLogin: UIView {
         addPadding(15, myView: password)
     }
     @IBAction func loginCall(sender: AnyObject) {
-        gRetrieveLoginController.performSegueWithIdentifier("toeditprofile", sender: nil)
+        profileState = "Edit"
+        let vc = gRetrieveLoginController.storyboard?.instantiateViewControllerWithIdentifier("completeProfile") as! CompleteProfileController
+        
+        gRetrieveLoginController.presentViewController(vc, animated: true, completion: nil)
     }
     @IBAction func generateotpcall(sender: AnyObject) {
-        OTPStatus = 1
         forgotMobileNumber = String(self.mobileNo.text!)
         profilePassword = String(self.password.text!)
         rest.ClientSendOTP(String(self.mobileNo.text!), password: String(self.password.text!), completion: {(json:JSON) -> () in
             dispatch_sync(dispatch_get_main_queue()){
             print(json)
             if json["state"] {
-                gRetrieveLoginController.performSegueWithIdentifier("ProfileOTP", sender: nil)
+                let vc = gRetrieveLoginController.storyboard?.instantiateViewControllerWithIdentifier("enterOTP") as! EnterOTPController
+                
+                gRetrieveLoginController.presentViewController(vc, animated: true, completion: nil)
             }
             }
         })

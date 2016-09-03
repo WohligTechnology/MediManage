@@ -17,7 +17,7 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
     @IBOutlet weak var txtFullName: UILabel!
     @IBOutlet weak var txtEmployeeNo: UILabel!
     @IBOutlet weak var txtDateofBirth: UILabel!
-
+    
     @IBOutlet weak var employeeNumber: UIView!
     @IBOutlet weak var dateOfBirth: UIView!
     @IBOutlet weak var mobileNumber: UITextField!
@@ -36,7 +36,7 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
         super.init(frame: frame)
         loadViewFromNib ()
     }
-  
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         loadViewFromNib ()
@@ -86,40 +86,37 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
                 if json == 401 {
                     gCompleteProfileController.redirectToHome()
                 }else{
-                self.userDetail = json["result"]
-
-            self.txtFullName.text = json["result"]["FullName"].stringValue
-            self.txtEmployeeNo.text = json["result"]["EmployeeNumber"].stringValue
-            self.txtDateofBirth.text = json["result"]["DateOfBirth"].stringValue
-            self.mobileNumber.text = json["result"]["MobileNo"].stringValue
-            self.email.text = json["result"]["Email"].stringValue
-            self.maritalStatus.text = json["result"]["MaritalStatus"].stringValue
-            self.countryCode.text = json["result"]["CountryCode"].stringValue
-            if json["result"]["MaritalStatus"].stringValue == "Married"
-                {
-                    self.maritalPickerView.selectRow(0, inComponent: 0, animated: true)
-                }else{
-                    self.maritalPickerView.selectRow(1, inComponent: 0, animated: true)
+                    self.userDetail = json["result"]
+                    
+                    self.txtFullName.text = json["result"]["FullName"].stringValue
+                    self.txtEmployeeNo.text = json["result"]["EmployeeNumber"].stringValue
+                    self.txtDateofBirth.text = json["result"]["DateOfBirth"].stringValue
+                    self.mobileNumber.text = json["result"]["MobileNo"].stringValue
+                    self.email.text = json["result"]["Email"].stringValue
+                    self.maritalStatus.text = json["result"]["MaritalStatus"].stringValue
+                    self.countryCode.text = json["result"]["CountryCode"].stringValue
+                    if json["result"]["MaritalStatus"].stringValue == "Married"
+                    {
+                        self.maritalPickerView.selectRow(0, inComponent: 0, animated: true)
+                    }else{
+                        self.maritalPickerView.selectRow(1, inComponent: 0, animated: true)
+                    }
                 }
-            }
             })
         })
         
-        if isVarifiedToEdit
-            {
-                self.profileButton.setTitle("Submit", forState: .Normal)
-                self.mobileNumber.enabled = true
-                self.maritalStatus.enabled = true
-                self.email.enabled = true
-                self.countryCode.enabled = true
-            }else{
-                self.profileButton.setTitle("Edit", forState: .Normal)
-            
-                self.mobileNumber.enabled = false
-                self.maritalStatus.enabled = false
-                self.email.enabled = false
-            self.countryCode.enabled = false
-            }
+        switch profileState {
+        case "Submit":
+            self.profileButton.setTitle("Submit", forState: .Normal)
+            editSave(true)
+            break
+        case "Edit":
+            self.profileButton.setTitle("Edit", forState: .Normal)
+            editSave(false)
+            break
+        default:
+            break
+        }
         
         // dropdown list
         maritalPickerView.delegate = self
@@ -134,7 +131,7 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
         toolBar.barStyle = UIBarStyle.Black
         toolBar.tintColor = UIColor.whiteColor()
         toolBar.backgroundColor = UIColor.blackColor()
-
+        
         toolBar.sizeToFit()
         
         let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(completeProfile.donePicker))
@@ -146,10 +143,10 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
         
         maritalStatus.inputAccessoryView = toolBar
         countryCode.inputAccessoryView = toolBar
-
+        
         
         completeProfileMainView.frame = CGRectMake(0, 20, self.frame.size.width, self.frame.size.height)
-    
+        
         //add borders
         addBottomBorder(UIColor.blackColor(), linewidth: 1, myView: fullName)
         addBottomBorder(UIColor.blackColor(), linewidth: 1, myView: employeeNumber)
@@ -158,9 +155,15 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
         addBottomBorder(UIColor.blackColor(), linewidth: 1, myView: maritalStatus)
         addBottomBorder(UIColor.blackColor(), linewidth: 1, myView: email)
         addBottomBorder(UIColor.blackColor(), linewidth: 1, myView: countryCode)
-       
-      
-        }
+        
+        
+    }
+    func editSave(data:Bool) {
+        self.mobileNumber.enabled = data
+        self.maritalStatus.enabled = data
+        self.email.enabled = data
+        self.countryCode.enabled = data
+    }
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         mobileNumber.resignFirstResponder()
         email.resignFirstResponder()
@@ -169,7 +172,7 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
     
     @IBAction func closeMe(sender: AnyObject) {
         gCompleteProfileController.dismissViewControllerAnimated(true, completion: nil)
-
+        
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -211,8 +214,8 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
     
     
     @IBAction func retrieveLoginCall(sender: AnyObject) {
-
-       
+        
+        
         if profileButton.titleLabel?.text == "Submit" {
             self.userDetail["CountryCode"].stringValue = self.countryCode.text! as String
             self.userDetail["MobileNo"].stringValue = self.mobileNumber.text! as String
@@ -223,14 +226,25 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
                 if json == 401 {
                     gCompleteProfileController.redirectToHome()
                 }else{
-                Popups.SharedInstance.ShowPopup("Validation", message: "Profile is updated.")
+                    let dialog = UIAlertController(title: "Profile", message: "Profile Updated successfully!" ,preferredStyle: UIAlertControllerStyle.Alert)
+                    
+                    dialog.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Destructive, handler:{
+                        action in
+                        
+                        let vc = gCompleteProfileController.storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
+                        
+                        gCompleteProfileController.presentViewController(vc, animated: true, completion: nil)
+                        
+                    }))
                 }
             })
             
         }else{
-            gCompleteProfileController.performSegueWithIdentifier("requestOTP", sender: nil)
+            let vc = gCompleteProfileController.storyboard?.instantiateViewControllerWithIdentifier("retrieveLogin") as! RetrieveLoginController
+            
+            gCompleteProfileController.presentViewController(vc, animated: true, completion: nil)
         }
-    
-    
-}
+        
+        
+    }
 }

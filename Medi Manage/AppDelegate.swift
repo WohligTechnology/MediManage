@@ -30,6 +30,7 @@ var forgotMobileNumber : String! = ""
 var forgotCountryCode : String! = ""
 var profilePassword : String! = ""
 var hospitalSearchText : String! = ""
+var profileState : String! = ""
 var OTPStatus = 0 // 1 : from profile 2: forgot passwordSendOtp
 var selectedIndex = 0
 var selectedViewController : Bool = false
@@ -198,7 +199,7 @@ extension UIViewController {
         
         // EDIT PROFILE BUTTON
         let editProfileActionButton: UIAlertAction = UIAlertAction(title: "Edit Profile", style: .Default){ action -> Void in
-            
+            profileState = "Edit"
             let passcodemodal = self.storyboard?.instantiateViewControllerWithIdentifier("completeProfile") as! CompleteProfileController
             
             self.presentViewController(passcodemodal, animated: true, completion: nil)

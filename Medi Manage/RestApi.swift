@@ -353,12 +353,12 @@ public class RestApi {
         
     }
     
-    public func ResetPassword(data : JSON ,completion:((JSON) -> Void))
+    public func ResetPassword(code:String, password:String, confirmPassword:String ,completion:((JSON) -> Void))
     {
         var json = JSON(1)
         
-        let params = ["data": "\(data)"]
-//        params = ["data": {"newPassword": "jagruti","Code": "528743","confirmPassword": "jagruti"}]
+        let params = ["Code":code, "newPassword":password, "confirmPassword":confirmPassword]
+
         let header = ["Content-Type":"application/x-www-form-urlencoded"]
         print(params)
         do {
@@ -849,7 +849,6 @@ public class RestApi {
     public func DownloadECard(ecard : String!, completion:((JSON) -> Void))
     {
         var json = JSON(1)
-        print(apiURL + "Users/ConfirmOTP/\(ecard)")
         do {
             let opt = try HTTP.GET(apiURL + "Ecard/\(ecard)" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers: nil)
             opt.start { response in
