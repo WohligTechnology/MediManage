@@ -24,10 +24,8 @@ public class RestApi {
         public func findEmployee(empno:String, dob:String, completion:((JSON) -> Void))  {
         var json = JSON(1);
         let params = ["EmpNo":empno, "DOB":dob]
-        print(params)
         do {
             let opt = try HTTP.POST(apiURL + "Users/FindEmployee", parameters: params, requestSerializer: JSONParameterSerializer(), headers:["header":"application/json"])
-            print(opt)
             opt.start { response in
                 if let _ = response.error {
                     completion(json);
@@ -80,7 +78,6 @@ public class RestApi {
     
   public func loginAlaomFire(username:String, password:String, completion:((JSON) -> Void))  {
         var json = JSON(1);
-          print(json)
         let params = ["grant_type": "password","username":username, "password":password]
         let header = ["Content-Type":"application/x-www-form-urlencoded"]
         
@@ -88,14 +85,10 @@ public class RestApi {
             .responseJSON { response in
                 debugPrint(response)
                 json = JSON(data: response.data!)
-                //print(json["access_token"])
                    completion(json)
                     
                 }
     }
-                
-                
-
 
     private var Manager : Alamofire.Manager = {
         // Create the server trust policies
@@ -221,6 +214,41 @@ public class RestApi {
             completion(json);
         }
 
+    }
+    
+    public func registerUser(data : JSON ,completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        var params = ["data":"\(data)"]
+        
+//        params["Email"].stringValue = data["Email"]
+//        params = "Email=\(data["Email"])&EmployeeID=\(data["EmployeeID"])&LastName=\(data["LastName"])&Password=\(data["Password"])&Gender=\(data["Gender"])&EmployeeNumber=\(data["EmployeeNumber"])&FirstName=\(data["FirstName"])&MiddleName=\(data["MiddleName"])&MobileNo=\(data["MobileNo"])&MaritalStatus=\(data["MaritalStatus"])&FullName=\(data["FullName"]),&CountryCode=\(data["CountryCode"])&DateOfBirth=\(data["DateOfBirth"])"
+        print("in register api")
+        print(params)
+        let header = ["Content-Type":"application/x-www-form-urlencoded"]
+                do {
+            let opt = try HTTP.POST(apiURL+"Users/Register" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:nil)
+            opt.start { response in
+                if let _ = response.error {
+                    print(response.error)
+                    let nsError = response.error! as NSError
+                    if nsError.code == 401 {
+                        json = JSON(nsError.code)
+                        completion(json)
+                    }else{
+                        completion(json);
+                    }
+                }
+                else
+                {
+                    json  = JSON(data: response.data)
+                    completion(json);
+                }
+            }
+        } catch _ {
+            completion(json);
+        }
+        
     }
     
     public func premiumConfirm(completion:((JSON) -> Void))

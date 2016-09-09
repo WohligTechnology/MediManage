@@ -130,7 +130,7 @@ class signup: UIView, UITextFieldDelegate {
                         let anotherCharacter: String = (String(json["state"]))
                         switch anotherCharacter {
                         case "true" :
-                            
+                            signUpUser = json["result"]
                             let dialog = UIAlertController(title: "Welcome", message: "Procced Now ", preferredStyle: UIAlertControllerStyle.Alert)
                             
                             

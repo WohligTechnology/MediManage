@@ -14,6 +14,7 @@
             <string>Lato-Light</string>
             <string>Lato-Light</string>
             <string>Lato-Light</string>
+            <string>Lato-Light</string>
         </mutableArray>
         <mutableArray key="Lato-Regular.ttf">
             <string>Lato-Regular</string>
@@ -35,6 +36,7 @@
                 <outlet property="fullName" destination="YrV-IL-y58" id="tf7-hS-sKJ"/>
                 <outlet property="maritalStatus" destination="GzS-bR-o7C" id="wNz-d0-b3h"/>
                 <outlet property="mobileNumber" destination="pe4-36-10D" id="ySI-Kn-iqw"/>
+                <outlet property="password" destination="qPa-Ig-aok" id="Cua-es-DqY"/>
                 <outlet property="profileButton" destination="b8G-fA-Yw6" id="cpv-QM-HE6"/>
                 <outlet property="txtDateofBirth" destination="Wnr-hS-IUt" id="qeW-GQ-WuB"/>
                 <outlet property="txtEmployeeNo" destination="6XK-BG-Wq3" id="nIM-q2-pHE"/>
@@ -169,7 +171,7 @@
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8G-fA-Yw6">
-                    <rect key="frame" x="40" y="443" width="240" height="50"/>
+                    <rect key="frame" x="40" y="503" width="240" height="50"/>
                     <color key="backgroundColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="FWG-9W-5iD"/>
@@ -233,12 +235,24 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qPa-Ig-aok">
+                    <rect key="frame" x="20" y="401" width="280" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="4NC-9W-EOC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="pe4-36-10D" firstAttribute="top" secondItem="aWb-xT-ceH" secondAttribute="bottom" constant="10" id="0gM-Y1-dop"/>
-                <constraint firstItem="b8G-fA-Yw6" firstAttribute="top" secondItem="rh3-OG-6LO" secondAttribute="bottom" constant="50" id="1d5-IB-wSY"/>
                 <constraint firstItem="YrV-IL-y58" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="6kQ-96-pgz"/>
                 <constraint firstItem="pe4-36-10D" firstAttribute="trailing" secondItem="aWb-xT-ceH" secondAttribute="trailing" id="6vA-rQ-1Ex"/>
                 <constraint firstItem="ogq-na-L0V" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="8lf-mv-JZe"/>
@@ -247,7 +261,10 @@
                 <constraint firstItem="GzS-bR-o7C" firstAttribute="trailing" secondItem="aWb-xT-ceH" secondAttribute="trailing" id="D7I-uk-JN7"/>
                 <constraint firstItem="GzS-bR-o7C" firstAttribute="top" secondItem="pe4-36-10D" secondAttribute="bottom" constant="10" id="ElG-Ho-Kgc"/>
                 <constraint firstItem="aWb-xT-ceH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="JaY-5r-Hhx"/>
+                <constraint firstItem="qPa-Ig-aok" firstAttribute="top" secondItem="rh3-OG-6LO" secondAttribute="bottom" constant="8" id="Jd0-gn-EVb"/>
                 <constraint firstAttribute="trailing" secondItem="aWb-xT-ceH" secondAttribute="trailing" constant="20" id="N8R-HY-k2G"/>
+                <constraint firstAttribute="bottom" secondItem="b8G-fA-Yw6" secondAttribute="bottom" constant="15" id="NDs-96-Wlb"/>
+                <constraint firstItem="qPa-Ig-aok" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="RJm-PY-V0b"/>
                 <constraint firstItem="Byo-Ot-41E" firstAttribute="leading" secondItem="YrV-IL-y58" secondAttribute="leading" id="Ufs-jR-2WI"/>
                 <constraint firstItem="YrV-IL-y58" firstAttribute="top" secondItem="ogq-na-L0V" secondAttribute="bottom" constant="20" id="VHZ-Ci-sbn"/>
                 <constraint firstItem="rh3-OG-6LO" firstAttribute="top" secondItem="GzS-bR-o7C" secondAttribute="bottom" constant="10" id="WzL-aI-6nd"/>
@@ -256,6 +273,7 @@
                 <constraint firstAttribute="trailing" secondItem="b8G-fA-Yw6" secondAttribute="trailing" constant="40" id="fJH-gx-OwR"/>
                 <constraint firstItem="Byo-Ot-41E" firstAttribute="trailing" secondItem="YrV-IL-y58" secondAttribute="trailing" id="iE7-Mc-O0d"/>
                 <constraint firstItem="b8G-fA-Yw6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="40" id="iXo-J9-aIp"/>
+                <constraint firstAttribute="trailing" secondItem="qPa-Ig-aok" secondAttribute="trailing" constant="20" id="lGr-ui-lfv"/>
                 <constraint firstAttribute="trailing" secondItem="ogq-na-L0V" secondAttribute="trailing" id="m8Z-VV-jWx"/>
                 <constraint firstItem="pe4-36-10D" firstAttribute="leading" secondItem="aWb-xT-ceH" secondAttribute="leading" id="rJ0-bT-Jxr"/>
                 <constraint firstItem="rh3-OG-6LO" firstAttribute="trailing" secondItem="aWb-xT-ceH" secondAttribute="trailing" id="ron-3k-fuq"/>

@@ -21,6 +21,7 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
     @IBOutlet weak var employeeNumber: UIView!
     @IBOutlet weak var dateOfBirth: UIView!
     @IBOutlet weak var mobileNumber: UITextField!
+    @IBOutlet weak var password: UITextField!
     @IBOutlet weak var maritalStatus: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var countryCode: UITextField!
@@ -81,29 +82,50 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
         imageView1.frame = CGRect(x: countryCode.frame.size.width + 30, y: 20, width: 10, height: 10)
         countryCode.addSubview(imageView1)
         
-        rest.GetProfile({(json:JSON) -> () in
-            dispatch_async(dispatch_get_main_queue(),{
-                if json == 401 {
-                    gCompleteProfileController.redirectToHome()
-                }else{
-                    self.userDetail = json["result"]
-                    
-                    self.txtFullName.text = json["result"]["FullName"].stringValue
-                    self.txtEmployeeNo.text = json["result"]["EmployeeNumber"].stringValue
-                    self.txtDateofBirth.text = json["result"]["DateOfBirth"].stringValue
-                    self.mobileNumber.text = json["result"]["MobileNo"].stringValue
-                    self.email.text = json["result"]["Email"].stringValue
-                    self.maritalStatus.text = json["result"]["MaritalStatus"].stringValue
-                    self.countryCode.text = json["result"]["CountryCode"].stringValue
-                    if json["result"]["MaritalStatus"].stringValue == "Married"
-                    {
-                        self.maritalPickerView.selectRow(0, inComponent: 0, animated: true)
+        let token = defaultToken.stringForKey("access_token")
+        
+        if token != nil {
+            self.password.hidden = true
+            rest.GetProfile({(json:JSON) -> () in
+                dispatch_async(dispatch_get_main_queue(),{
+                    if json == 401 {
+                        gCompleteProfileController.redirectToHome()
                     }else{
-                        self.maritalPickerView.selectRow(1, inComponent: 0, animated: true)
+                        self.userDetail = json["result"]
+                        
+                        self.txtFullName.text = json["result"]["FullName"].stringValue
+                        self.txtEmployeeNo.text = json["result"]["EmployeeNumber"].stringValue
+                        self.txtDateofBirth.text = json["result"]["DateOfBirth"].stringValue
+                        self.mobileNumber.text = json["result"]["MobileNo"].stringValue
+                        self.email.text = json["result"]["Email"].stringValue
+                        self.maritalStatus.text = json["result"]["MaritalStatus"].stringValue
+                        self.countryCode.text = json["result"]["CountryCode"].stringValue
+                        if json["result"]["MaritalStatus"].stringValue == "Married"
+                        {
+                            self.maritalPickerView.selectRow(0, inComponent: 0, animated: true)
+                        }else{
+                            self.maritalPickerView.selectRow(1, inComponent: 0, animated: true)
+                        }
                     }
-                }
+                })
             })
-        })
+        }else{
+            self.password.hidden = false
+            self.userDetail = signUpUser
+            self.txtFullName.text = signUpUser["FullName"].stringValue
+            self.txtEmployeeNo.text = signUpUser["EmployeeNumber"].stringValue
+            self.txtDateofBirth.text = signUpUser["DateOfBirth"].stringValue
+            self.mobileNumber.text = signUpUser["MobileNo"].stringValue
+            self.email.text = signUpUser["Email"].stringValue
+            self.maritalStatus.text = signUpUser["MaritalStatus"].stringValue
+            self.countryCode.text = signUpUser["CountryCode"].stringValue
+            if signUpUser["MaritalStatus"].stringValue == "Married"
+            {
+                self.maritalPickerView.selectRow(0, inComponent: 0, animated: true)
+            }else{
+                self.maritalPickerView.selectRow(1, inComponent: 0, animated: true)
+            }
+        }
         
         switch profileState {
         case "Submit":
@@ -221,23 +243,56 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
             self.userDetail["MobileNo"].stringValue = self.mobileNumber.text! as String
             self.userDetail["MaritalStatus"].stringValue = self.maritalStatus.text! as String
             self.userDetail["Email"].stringValue = self.email.text! as String
-            print(self.userDetail)
-            rest.UpdateProfile(self.userDetail, completion: {(json:JSON) -> () in
-                if json == 401 {
-                    gCompleteProfileController.redirectToHome()
-                }else{
-                    let dialog = UIAlertController(title: "Profile", message: "Profile Updated successfully!" ,preferredStyle: UIAlertControllerStyle.Alert)
-                    
-                    dialog.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Destructive, handler:{
-                        action in
-                        
-                        let vc = gCompleteProfileController.storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
-                        
-                        gCompleteProfileController.presentViewController(vc, animated: true, completion: nil)
-                        
-                    }))
-                }
+            self.userDetail["Password"].stringValue = self.password.text! as String
+
+            //  LOGIN WITH ENTERED PASSWORD AND USER NAME
+            rest.registerUser(self.userDetail, completion: {(json:JSON) -> () in
+                dispatch_async(dispatch_get_main_queue(),{
+                    print(json)
+                    if json["status"] {
+                    rest.loginAlaomFire(self.userDetail["Email"].stringValue, password: self.userDetail["Password"].stringValue, completion: {(json:JSON) -> () in
+                        dispatch_async(dispatch_get_main_queue(),{
+                            print(json)
+                            LoadingOverlay.shared.hideOverlayView()
+                            let i = 1
+                            if let error = json["error"].string
+                            {
+                                let stError :String = String(json ["error"])
+                                
+                                let dialog = UIAlertController(title: "Login", message: stError, preferredStyle: UIAlertControllerStyle.Alert)
+                                
+                                dialog.addAction(UIAlertAction(title: "Try Again!!", style: UIAlertActionStyle.Destructive, handler:{action in}))
+                                
+                                gCompleteProfileController.presentViewController(dialog, animated: true, completion: nil)
+                            }
+                            else
+                            {
+                                Employee_API_KEY = String(json["access_token"])
+                                let def = NSUserDefaults.standardUserDefaults()
+                                def.setObject(Employee_API_KEY, forKey: "access_token")
+                                
+                                
+                                rest.UpdateProfile(self.userDetail, completion: {(json:JSON) -> () in
+                                    if json == 401 {
+                                        gCompleteProfileController.redirectToHome()
+                                    }else{
+                                        let dialog = UIAlertController(title: "Profile", message: "Profile Updated successfully!" ,preferredStyle: UIAlertControllerStyle.Alert)
+                                        
+                                        dialog.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Destructive, handler:{
+                                            action in
+                                            let vc = gCompleteProfileController.storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
+                                            
+                                            gCompleteProfileController.presentViewController(vc, animated: true, completion: nil)
+                                        }))
+                                    }
+                                })
+                            }
+                        })
+                    })
+                    }
+                })
             })
+            //  LOGIN WITH ENTERED PASSWORD AND USER NAME
             
         }else{
             let vc = gCompleteProfileController.storyboard?.instantiateViewControllerWithIdentifier("retrieveLogin") as! RetrieveLoginController
