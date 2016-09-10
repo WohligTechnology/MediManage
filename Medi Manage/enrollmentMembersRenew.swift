@@ -18,13 +18,13 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
 //                             ["ID":0,"Gender":1,"SystemIdentifier":"I","RelationType":"Father in law"],
 //                             ["ID":0,"Gender":2,"SystemIdentifier":"I","RelationType":"Mother in law"],]
     
-        var memberjson : JSON = [["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":2,"SystemIdentifier":"S","RelationType":"Wife"],
-                                 ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":1,"SystemIdentifier":"C","RelationType":"Son"],
-                                 ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":2,"SystemIdentifier":"C","RelationType":"Daughter"],
-                                 ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"2016-03-02T00:00:00","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":1,"SystemIdentifier":"P","RelationType":"Father"],
-                                 ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":2,"SystemIdentifier":"P","RelationType":"Mother"],
-                                 ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":1,"SystemIdentifier":"I","RelationType":"Father in law"],
-                                 ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":2,"SystemIdentifier":"I","RelationType":"Mother in law"],]
+        var memberjson : JSON = [["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"null","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":2,"SystemIdentifier":"S","RelationType":"Wife"],
+                                 ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"null","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":1,"SystemIdentifier":"C","RelationType":"Son"],
+                                 ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"null","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":2,"SystemIdentifier":"C","RelationType":"Daughter"],
+                                 ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"2016-03-02T00:00:00","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"null","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":1,"SystemIdentifier":"P","RelationType":"Father"],
+                                 ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"null","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":2,"SystemIdentifier":"P","RelationType":"Mother"],
+                                 ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"null","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":1,"SystemIdentifier":"I","RelationType":"Father in law"],
+                                 ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"null","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":2,"SystemIdentifier":"I","RelationType":"Mother in law"],]
     
     var newJsonSun : JSON = ["ID":0,"LastName":"","Gender":"1","SystemIdentifier":"C","RelationType":"Son"]
     var newJsonDaughter : JSON = ["ID":0,"LastName":"","Gender":"2","SystemIdentifier":"C","RelationType":"Daughter"]
@@ -399,7 +399,12 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
     
     func datePickerValueChanged(sender: UIDatePicker) {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-mm-dd"
+        dateFormatter.dateFormat = "ddMMyyyy"
+//        var dateDob = ""
+
+//        dateDob = dateFormatter.stringFromDate(sender.date)
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
         
         let dateToSave = dateFormatter.stringFromDate(sender.date)
         switch datetype {

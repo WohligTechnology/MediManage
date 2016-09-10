@@ -219,15 +219,15 @@ public class RestApi {
     public func registerUser(data : JSON ,completion:((JSON) -> Void))
     {
         var json = JSON(1)
-        var params = ["data":"\(data)"]
-        
+        let params = ["Email": data["Email"].stringValue,"MobileNo":data["MobileNo"].stringValue, "EmployeeID":data["EmployeeID"].stringValue, "EmployeeNumber":data["EmployeeNumber"].stringValue, "Password":data["Password"].stringValue, "MaritalStatus": data["MaritalStatus"].stringValue]
+        let header = ["header":"application/json"]
+
+        print(params)
 //        params["Email"].stringValue = data["Email"]
 //        params = "Email=\(data["Email"])&EmployeeID=\(data["EmployeeID"])&LastName=\(data["LastName"])&Password=\(data["Password"])&Gender=\(data["Gender"])&EmployeeNumber=\(data["EmployeeNumber"])&FirstName=\(data["FirstName"])&MiddleName=\(data["MiddleName"])&MobileNo=\(data["MobileNo"])&MaritalStatus=\(data["MaritalStatus"])&FullName=\(data["FullName"]),&CountryCode=\(data["CountryCode"])&DateOfBirth=\(data["DateOfBirth"])"
-        print("in register api")
-        print(params)
-        let header = ["Content-Type":"application/x-www-form-urlencoded"]
+        
                 do {
-            let opt = try HTTP.POST(apiURL+"Users/Register" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:nil)
+            let opt = try HTTP.POST(apiURL+"Users/Register" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:header)
             opt.start { response in
                 if let _ = response.error {
                     print(response.error)

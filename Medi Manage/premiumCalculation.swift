@@ -162,6 +162,8 @@ class premiumCalculation: UIView {
         LoadingOverlay.shared.showOverlay(gPremiumCalculationController.view)
         if terms {
             rest.premiumConfirm({(json:JSON) -> ()in
+                dispatch_async(dispatch_get_main_queue(),{
+
                 print(json)
                 LoadingOverlay.shared.hideOverlayView()
                 if json == 401 {
@@ -177,6 +179,7 @@ class premiumCalculation: UIView {
                     gPremiumCalculationController.presentViewController(alert, animated: true, completion: nil)
                 }
                 }
+            })
             })
         } else {
             Popups.SharedInstance.ShowPopup("Allowed Members", message: "Please check the Terms and Conditions")

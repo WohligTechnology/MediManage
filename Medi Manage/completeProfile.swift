@@ -84,7 +84,7 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
         
         let token = defaultToken.stringForKey("access_token")
         
-        if token != nil {
+        if token != nil && token != "null" {
             self.password.hidden = true
             rest.GetProfile({(json:JSON) -> () in
                 dispatch_async(dispatch_get_main_queue(),{
@@ -249,7 +249,7 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
             rest.registerUser(self.userDetail, completion: {(json:JSON) -> () in
                 dispatch_async(dispatch_get_main_queue(),{
                     print(json)
-                    if json["status"] {
+                    if json["state"] {
                     rest.loginAlaomFire(self.userDetail["Email"].stringValue, password: self.userDetail["Password"].stringValue, completion: {(json:JSON) -> () in
                         dispatch_async(dispatch_get_main_queue(),{
                             print(json)
@@ -273,6 +273,9 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
                                 
                                 
                                 rest.UpdateProfile(self.userDetail, completion: {(json:JSON) -> () in
+                                    dispatch_async(dispatch_get_main_queue(),{
+
+                                    print(json)
                                     if json == 401 {
                                         gCompleteProfileController.redirectToHome()
                                     }else{
@@ -280,11 +283,16 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
                                         
                                         dialog.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Destructive, handler:{
                                             action in
+                                            gCompleteProfileController.dismissViewControllerAnimated(true, completion: nil)
+
                                             let vc = gCompleteProfileController.storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
                                             
                                             gCompleteProfileController.presentViewController(vc, animated: true, completion: nil)
                                         }))
+                                        gCompleteProfileController.presentViewController(dialog, animated: true, completion: nil)
+
                                     }
+                                    })
                                 })
                             }
                         })

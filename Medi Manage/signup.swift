@@ -23,6 +23,7 @@ class signup: UIView, UITextFieldDelegate {
     var flag : Bool = false
     var count : Int = 0
     
+    
     @IBAction func openDate(sender: UITextField) {
         datePickerView.datePickerMode = UIDatePickerMode.Date
         sender.inputView = datePickerView
@@ -63,6 +64,9 @@ class signup: UIView, UITextFieldDelegate {
         sortnewview.frame = bounds
         sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(sortnewview);
+        dateOfBirth.text = "1990-05-19"
+        employeeID.text = "TestBetsol3"
+        
         
         addPadding(15, myView: employeeID)
         addPadding(15, myView: dateOfBirth)
