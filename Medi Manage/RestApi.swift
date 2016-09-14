@@ -33,7 +33,6 @@ public class RestApi {
                 else
                 {
                     json  = JSON(data: response.data)
-                    print(json)
                     completion(json);
                 }
             }
@@ -387,7 +386,7 @@ public class RestApi {
         
         let params = ["Code":code, "newPassword":password, "confirmPassword":confirmPassword]
 
-        let header = ["Content-Type":"application/x-www-form-urlencoded"]
+        let header = ["header":"application/json"]
         print(params)
         do {
             let opt = try HTTP.POST(apiURL+"Users/ResetPassword" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:header)
@@ -831,6 +830,7 @@ public class RestApi {
             opt.start { response in
                 if let _ = response.error {
                     let nsError = response.error! as NSError
+                    print(response.error)
                     if nsError.code == 401 {
                         json = JSON(nsError.code)
                         completion(json)

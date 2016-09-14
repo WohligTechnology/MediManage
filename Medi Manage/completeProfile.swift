@@ -84,12 +84,14 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
         
         let token = defaultToken.stringForKey("access_token")
         
+        print(token)
+        
         if token != nil && token != "null" {
             self.password.hidden = true
             rest.GetProfile({(json:JSON) -> () in
                 dispatch_async(dispatch_get_main_queue(),{
                     if json == 401 {
-                        gCompleteProfileController.redirectToHome()
+//                        gCompleteProfileController.redirectToHome()
                     }else{
                         self.userDetail = json["result"]
                         
