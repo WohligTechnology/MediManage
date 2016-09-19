@@ -66,6 +66,7 @@ class signup: UIView, UITextFieldDelegate {
         self.addSubview(sortnewview);
         dateOfBirth.text = "1990-05-19"
         employeeID.text = "TestBetsol3"
+        defaultToken.removeObjectForKey("access_token")
         
         
         addPadding(15, myView: employeeID)

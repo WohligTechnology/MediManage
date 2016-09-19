@@ -284,24 +284,29 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
                                     if json == 401 {
                                         gCompleteProfileController.redirectToHome()
                                     }else{
+                                        if json["state"]{
                                         let dialog = UIAlertController(title: "Profile", message: "Profile Updated successfully!" ,preferredStyle: UIAlertControllerStyle.Alert)
                                         
                                         dialog.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Destructive, handler:{
                                             action in
-                                            gCompleteProfileController.dismissViewControllerAnimated(true, completion: nil)
+//                                            gCompleteProfileController.dismissViewControllerAnimated(true, completion: nil)
 
                                             let vc = gCompleteProfileController.storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
                                             
                                             gCompleteProfileController.presentViewController(vc, animated: true, completion: nil)
                                         }))
                                         gCompleteProfileController.presentViewController(dialog, animated: true, completion: nil)
-
+                                        }else{
+                                            Popups.SharedInstance.ShowPopup("Error Occured", message: json["error_message"].stringValue)
+                                        }
                                     }
                                     })
                                 })
                             }
                         })
                     })
+                    }else{
+                        Popups.SharedInstance.ShowPopup("Error Occured", message: json["error_message"].stringValue)
                     }
                 })
             })
