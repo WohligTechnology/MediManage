@@ -123,7 +123,7 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
     
     
     @IBAction func submitSumInsuredAndTopUp(sender: AnyObject) {
-//        var insuredJSON : JSON = ["PlanComposition":"","GroupComposition":"","SumInsuredValue":0,"TopupSumInsuredValue":0,"GroupType":0,"RelationType":""]
+        LoadingOverlay.shared.showOverlay(self.view)
         var SI : JSON = []
         var TU : JSON = []
         for x in 0..<self.members.count {
@@ -142,15 +142,20 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
         }
         print(SI)
         rest.ChangeSI(SI, completion: {(json:JSON) -> ()in
+            dispatch_sync(dispatch_get_main_queue(),{
             if json == 401 {
                 self.redirectToHome()
             }else{
             rest.ChangeTU(TU, completion: {(json:JSON) -> ()in
+                dispatch_sync(dispatch_get_main_queue(),{
+                LoadingOverlay.shared.hideOverlayView()
                 if json["state"] {
                 self.performSegueWithIdentifier("toPremiumWay", sender: self)
                 }
+                })
             })
         }
+            })
         })
         
         

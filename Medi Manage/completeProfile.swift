@@ -248,12 +248,15 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
             self.userDetail["Password"].stringValue = self.password.text! as String
 
             //  LOGIN WITH ENTERED PASSWORD AND USER NAME
+            print(self.userDetail)
             rest.registerUser(self.userDetail, completion: {(json:JSON) -> () in
                 dispatch_async(dispatch_get_main_queue(),{
+                    print("--------------Register user------------------------")
                     print(json)
                     if json["state"] {
                     rest.loginAlaomFire(self.userDetail["Email"].stringValue, password: self.userDetail["Password"].stringValue, completion: {(json:JSON) -> () in
                         dispatch_async(dispatch_get_main_queue(),{
+                            print("--------------Login------------------------")
                             print(json)
                             LoadingOverlay.shared.hideOverlayView()
                             let i = 1
@@ -276,7 +279,7 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
                                 
                                 rest.UpdateProfile(self.userDetail, completion: {(json:JSON) -> () in
                                     dispatch_async(dispatch_get_main_queue(),{
-
+                                    print("--------------Update profile user------------------------")
                                     print(json)
                                     if json == 401 {
                                         gCompleteProfileController.redirectToHome()

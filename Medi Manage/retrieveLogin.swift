@@ -10,10 +10,13 @@ import Foundation
 import UIKit
 import SwiftyJSON
 
-class retrieveLogin: UIView {
+class retrieveLogin: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var mobileNo: UITextField!
-    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var countryCode: UITextField!
+    @IBOutlet weak var countryCodeCode: UITextField!
+    var countryPickerView = UIPickerView()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
@@ -39,9 +42,68 @@ class retrieveLogin: UIView {
         self.addSubview(sortnewview)
         
         // CALENDER ICON
+        let imageView = UIImageView()
+        let image = UIImage(named: "triangle_orange")
+        imageView.image = image
+        
+        imageView.frame = CGRect(x: countryCode.frame.size.width + 30, y: 20, width: 10, height: 10)
+        countryCode.addSubview(imageView)
         
         addPadding(15, myView: mobileNo)
-        addPadding(15, myView: password)
+        mobileNo.delegate = self
+        
+        // dropdown list
+        
+        countryPickerView.delegate = self
+        countryCode.inputView = countryPickerView
+        countryCode.delegate = self
+        countryCode.text = "India"
+        countryCodeCode.text = "91"
+        
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.Black
+        toolBar.tintColor = UIColor.whiteColor()
+        toolBar.backgroundColor = UIColor.blackColor()
+        
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(completeProfile.donePicker))
+        
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        
+        toolBar.setItems([spaceButton, doneButton], animated: false)
+        toolBar.userInteractionEnabled = true
+        
+        countryCode.inputAccessoryView = toolBar
+        
+        addPadding(15, myView: mobileNo)
+        addPadding(15, myView: countryCode)
+    }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        mobileNo.resignFirstResponder()
+        return true
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return countryCodes[0].count
+    }
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return countryCodes[0][row]
+    }
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        countryCodeCode.text = countryCodes[1][row]
+        countryCode.text = countryCodes[0][row]
+    }
+    func donePicker(){
+        countryCode.resignFirstResponder()
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        textField.resignFirstResponder()
     }
     @IBAction func loginCall(sender: AnyObject) {
         profileState = "Edit"
@@ -50,17 +112,27 @@ class retrieveLogin: UIView {
         gRetrieveLoginController.presentViewController(vc, animated: true, completion: nil)
     }
     @IBAction func generateotpcall(sender: AnyObject) {
-        forgotMobileNumber = String(self.mobileNo.text!)
-        profilePassword = String(self.password.text!)
-        rest.ClientSendOTP(String(self.mobileNo.text!), password: String(self.password.text!), completion: {(json:JSON) -> () in
-            dispatch_sync(dispatch_get_main_queue()){
-            print(json)
-            if json["state"] {
-                let vc = gRetrieveLoginController.storyboard?.instantiateViewControllerWithIdentifier("enterOTP") as! EnterOTPController
-                
-                gRetrieveLoginController.presentViewController(vc, animated: true, completion: nil)
-            }
-            }
-        })
+        
+        if self.mobileNo.text == "" || self.countryCodeCode.text == "" {
+            Popups.SharedInstance.ShowPopup("", message: "Both Fields are Required")
+            
+        }else{
+            LoadingOverlay.shared.showOverlay(gRetrieveLoginController.view)
+            OTPStatus = 2
+            forgotMobileNumber? = String(UTF8String: self.mobileNo.text!)!
+            forgotCountryCode? = String(UTF8String: self.countryCode.text!)!
+            
+            rest.SendOtp(String(UTF8String: self.mobileNo.text!)!, countrycode: String(UTF8String: self.countryCode.text!)!, completion: {(json:JSON) -> () in
+                dispatch_async(dispatch_get_main_queue()){
+                    print(json)
+                    LoadingOverlay.shared.hideOverlayView()
+                    if json["state"]{
+                        let passcodemodal = gRetrieveLoginController.storyboard?.instantiateViewControllerWithIdentifier("enterOTP") as! ForgotPasswordOTPController
+                        
+                        gRetrieveLoginController.presentViewController(passcodemodal, animated: true, completion: nil)
+                    }
+                }
+            })
+        }
     }
 }

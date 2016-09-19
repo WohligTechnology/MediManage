@@ -187,12 +187,13 @@ public class RestApi {
     {
         var json = JSON(1)
         let token = defaultToken.stringForKey("access_token")
-        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         
-         let params = ["data": "\(data)"]
+        let params = ["Email": data["Email"].stringValue,"MobileNo":data["MobileNo"].stringValue, "EmployeeID":data["EmployeeID"].stringValue, "EmployeeNumber":data["EmployeeNumber"].stringValue, "Password":data["Password"].stringValue, "MaritalStatus": data["MaritalStatus"].stringValue, "CountryCode":data["CountryCode"].stringValue]
+        
+        let header = ["Authorization":"Bearer \(token! as String)","header":"application/json"]
         print(params)
         do {
-            let opt = try HTTP.POST(apiURL+"Users/UpdateProfile" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            let opt = try HTTP.POST(apiURL+"Users/UpdateProfile" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:header)
             opt.start { response in
                 if let _ = response.error {
                     let nsError = response.error! as NSError
@@ -218,6 +219,7 @@ public class RestApi {
     public func registerUser(data : JSON ,completion:((JSON) -> Void))
     {
         var json = JSON(1)
+        print(data)
         let params = ["Email": data["Email"].stringValue,"MobileNo":data["MobileNo"].stringValue, "EmployeeID":data["EmployeeID"].stringValue, "EmployeeNumber":data["EmployeeNumber"].stringValue, "Password":data["Password"].stringValue, "MaritalStatus": data["MaritalStatus"].stringValue]
         let header = ["header":"application/json"]
 

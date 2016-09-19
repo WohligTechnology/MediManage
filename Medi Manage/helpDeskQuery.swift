@@ -53,6 +53,7 @@ class helpDeskQuery: UIView, UITextFieldDelegate {
         
         //Connection Details
         rest.ConnectDetails({(json:JSON) -> ()  in
+            print(json)
             if json == 401 {
                 gHelpDeskQueryController.redirectToHome()
             }else{

@@ -63,10 +63,16 @@ class helpDesk: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextFiel
                 if json == 401 {
                     gHelpDeskController.redirectToHome()
                 }else{
-                    print("in faq faq faq")
+                    print(json)
                     LoadingOverlay.shared.hideOverlayView()
                     if json["state"] {
+                        if json["result"].count == 0 {
+                            Popups.SharedInstance.ShowPopup("Category", message: "No Categories Found")
+                            self.typeQuestionField.enabled = false
+                        }else{
                         self.categories = json["result"]
+                            self.typeQuestionField.enabled = true
+                        }
                     }
                 }
             }
@@ -121,13 +127,15 @@ class helpDesk: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextFiel
     }
     @IBAction func helpDeskFAQCall(sender: AnyObject) {
         print("submit clicked")
+        if self.categories.count == 0 {
+            Popups.SharedInstance.ShowPopup("Category", message: "No Categories Found")
+        }else{
         if typeQuestionField.text == "" {
             Popups.SharedInstance.ShowPopup("Category", message: "Please Select Category.")
             
         }else{
-           
-
             gHelpDeskController.performSegueWithIdentifier("helpDeskToHelpDeskFAQ", sender: nil)
+        }
         }
     }
     @IBAction func submitQry(sender: AnyObject) {

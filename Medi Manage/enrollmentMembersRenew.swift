@@ -773,6 +773,18 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         
         
     }
+    //  DATE OF RELATION VALIDATION
+    func validRelation() -> Bool {
+        var check = false
+        for x in 0..<memberjson.count {
+            if memberjson[x]["SystemIdentifier"] == "I" || memberjson[x]["SystemIdentifier"] == "S"{
+                if memberjson[x]["DateOfRelation"] != "" {
+                    check = true
+                }
+            }
+        }
+        return check
+    }
     
     //FINAL PROCESS SUBMIT MEMBERS
     @IBAction func submitMembers(sender: AnyObject) {
@@ -786,11 +798,17 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                     print("isinrollment:-\(self.wholeJson["IsInEnrollmentPeriod"])")
                     if memberjson[x]["ActiveState"] {
                         for (key, itm) in memberjson[x] {
-                            if key == "FirstName" || key == "DateOfBirth" {
-                                if itm == "" && status {
+                            print("function return: -\(validRelation())")
+                            if validRelation() {
+                                if key == "FirstName" || key == "DateOfBirth" {
+                                    if itm == "" && status {
                                         status = false
-                                        msg = "Please Enter " + key + " of " + memberjson[x]["RelationType"].stringValue                                    
+                                        msg = "Please Enter " + key + " of " + memberjson[x]["RelationType"].stringValue
+                                    }
                                 }
+                            }else{
+                                status = false
+                                msg = "Please Enter Date Of Relation of Your partner or InLaws. "
                             }
                             
                         }
@@ -800,12 +818,19 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                     if (memberjson[x]["Status"] != 1 && memberjson[x]["AddedAt"] != 2) || (memberjson[x]["Status"] != 2 && memberjson[x]["AddedAt"] != 2){
                         print("in false")
                         if memberjson[x]["ActiveState"] {
+                            var checkdate = 0
                             for (key, itm) in memberjson[x] {
-                                if key == "FirstName" || key == "DateOfBirth" {
-                                    if itm == "" && status {
+                                
+                                if validRelation() {
+                                    if key == "FirstName" || key == "DateOfBirth" {
+                                        if itm == "" && status {
                                             status = false
                                             msg = "Please Enter " + key + " of " + memberjson[x]["RelationType"].stringValue
+                                        }
                                     }
+                                }else{
+                                    status = false
+                                    msg = "Please Enter Date Of Relation of Your partner or InLaws. "
                                 }
                             }
                             finaljson.arrayObject?.append(memberjson[x].object)
