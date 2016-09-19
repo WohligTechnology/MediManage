@@ -1727,6 +1727,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="TPA" destination="QWi-3o-9vZ" id="zf5-zX-v6U"/>
+                        <outlet property="features" destination="Otj-sv-XPa" id="nKO-Sj-b6Z"/>
                         <outlet property="insurer" destination="Gzq-PG-DyW" id="0V1-wd-Exw"/>
                         <outlet property="singlePointContact" destination="3QN-2Q-OD7" id="qSU-Lr-nIt"/>
                         <outlet property="summaryTable" destination="tta-IW-eM1" id="vxN-pF-OlU"/>
