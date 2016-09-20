@@ -37,8 +37,9 @@ class newContact: UIView {
         self.addSubview(sortnewview)
 //        LoadingOverlay.shared.showOverlay(gConnectController.view)
         rest.ConnectDetails({(json:JSON) ->() in
+            dispatch_sync(dispatch_get_main_queue(),{
             print(json)
-//            LoadingOverlay.shared.hideOverlayView()
+            LoadingOverlay.shared.hideOverlayView()
             if json["state"] {
                 self.contactDetails = json["result"]
                 self.ccNoOne.text = json["result"]["CashlessClaimsNumber"].stringValue
@@ -48,6 +49,7 @@ class newContact: UIView {
             }else{
                 Popups.SharedInstance.ShowPopup("Connect", message: "Some ERROR occured")
             }
+            })
         })
         
         let onFirstCall =  UITapGestureRecognizer(target: self, action: #selector(callFirst))
@@ -63,8 +65,6 @@ class newContact: UIView {
         
     }
     func callFirst() {
-        print("first call")
-        print(self.ccNoOne.text!)
         gConnectController.callNumber(self.ccNoOne.text!)
     }
     func callSecond() {

@@ -92,11 +92,15 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
     func loadTable() {
         rest.Hospital(hospitalSearchText, completion: {(json:JSON) -> () in
             dispatch_async(dispatch_get_main_queue(),{
+                LoadingOverlay.shared.hideOverlayView()
+
                 print(json)
                 if json == 401 {
                     self.redirectToHome()
+                }else if json == 1{
+                    Popups.SharedInstance.ShowPopup("Hospital Search", message: "Some Error Occured.")
+
                 }else{
-                    LoadingOverlay.shared.hideOverlayView()
                     self.hospitals = json["result"]["Results"]
                     self.hoscount.text = json["result"]["Count"].stringValue
                     if json["result"]["Count"] == 0{
