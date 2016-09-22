@@ -146,6 +146,8 @@
 		FC32D45A1D4B89AF00918852 /* insuredHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC32D4591D4B89AF00918852 /* insuredHeader.swift */; };
 		FC3C2EBB1D37C7DB000DAD18 /* enrollmentMembersRenew.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC3C2EBA1D37C7DB000DAD18 /* enrollmentMembersRenew.xib */; };
 		FC3C2EBD1D37C80E000DAD18 /* enrollmentMembersRenew.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3C2EBC1D37C80E000DAD18 /* enrollmentMembersRenew.swift */; };
+		FC7FB49B1D92933A00570FB2 /* ButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC7FB49A1D92933A00570FB2 /* ButtonView.xib */; };
+		FC7FB49D1D92940E00570FB2 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7FB49C1D92940E00570FB2 /* ButtonView.swift */; };
 		FC9EA1C41D4CC94600B828AF /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9EA1C31D4CC94600B828AF /* ChangePassword.swift */; };
 		FCB8016D1D2B7EF200F9226F /* memberListHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB8016C1D2B7EF200F9226F /* memberListHeader.xib */; };
 		FCB8016F1D2B7FB200F9226F /* memberListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8016E1D2B7FB200F9226F /* memberListHeader.swift */; };
@@ -332,6 +334,8 @@
 		FC32D4591D4B89AF00918852 /* insuredHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = insuredHeader.swift; sourceTree = "<group>"; };
 		FC3C2EBA1D37C7DB000DAD18 /* enrollmentMembersRenew.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = enrollmentMembersRenew.xib; sourceTree = "<group>"; };
 		FC3C2EBC1D37C80E000DAD18 /* enrollmentMembersRenew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enrollmentMembersRenew.swift; sourceTree = "<group>"; };
+		FC7FB49A1D92933A00570FB2 /* ButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonView.xib; sourceTree = "<group>"; };
+		FC7FB49C1D92940E00570FB2 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		FC9EA1C31D4CC94600B828AF /* ChangePassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
 		FCB8016C1D2B7EF200F9226F /* memberListHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = memberListHeader.xib; sourceTree = "<group>"; };
 		FCB8016E1D2B7FB200F9226F /* memberListHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = memberListHeader.swift; sourceTree = "<group>"; };
@@ -785,6 +789,7 @@
 				FC3C2EBE1D37C81F000DAD18 /* enrollmentMembersRenew */,
 				FCC1C8071D586429005B5F30 /* newContact */,
 				FC1D8AF61D78364C0020FAFB /* forgotPasswordOTP */,
+				FC7FB49E1D92951300570FB2 /* ButtonView */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -900,6 +905,15 @@
 				FC3C2EBC1D37C80E000DAD18 /* enrollmentMembersRenew.swift */,
 			);
 			name = enrollmentMembersRenew;
+			sourceTree = "<group>";
+		};
+		FC7FB49E1D92951300570FB2 /* ButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				FC7FB49A1D92933A00570FB2 /* ButtonView.xib */,
+				FC7FB49C1D92940E00570FB2 /* ButtonView.swift */,
+			);
+			name = ButtonView;
 			sourceTree = "<group>";
 		};
 		FCB801701D2B7FC400F9226F /* memberListHeader */ = {
@@ -1070,6 +1084,7 @@
 				3AEEB0241CE7515C0085EEF5 /* connect.xib in Resources */,
 				FCBE27F51D33E436004654E0 /* Discharge Summary.pdf in Resources */,
 				3A8774C11CEC41C1001DB41F /* queryForm.xib in Resources */,
+				FC7FB49B1D92933A00570FB2 /* ButtonView.xib in Resources */,
 				3A8EFB5B1CE9D31B004489F3 /* homeMenus.xib in Resources */,
 				78B90BD71CE067810022FE7A /* generateOTP.xib in Resources */,
 				3AD3E52D1CE20A1900900A93 /* premiumCalculation.xib in Resources */,
@@ -1193,6 +1208,7 @@
 				C2DCB0EC1D1D4100004FD787 /* RequestDTO.swift in Sources */,
 				3A79A7C71CF045F0008B693B /* ConnectController.swift in Sources */,
 				3ABD66C71D279DB9003462CB /* MemberListGroupTableController.swift in Sources */,
+				FC7FB49D1D92940E00570FB2 /* ButtonView.swift in Sources */,
 				C2A584601D262EAE00F6E0D5 /* EnumSets.swift in Sources */,
 				3AE7AFE21CF2D3190047DFB0 /* HelplineNumberController.swift in Sources */,
 				FCE15CD21D34D6E2009B49E2 /* PDFViewController.swift in Sources */,
@@ -1429,7 +1445,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-Manage";
 				PRODUCT_NAME = MediManage;
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1449,7 +1465,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-Manage";
 				PRODUCT_NAME = MediManage;
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

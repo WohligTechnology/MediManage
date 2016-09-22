@@ -40,8 +40,8 @@ class login: UIView, UITextFieldDelegate {
         loadViewFromNib ()
         mobile.delegate = self
         password.delegate = self
-        mobile.text = TestId
-        password.text = TestPWD
+//        mobile.text = TestId
+//        password.text = TestPWD
     }
     
     func addPadding(width: CGFloat, myView: UITextField) {

@@ -92,6 +92,8 @@ class InsuredMembersController: UIViewController {
                         print(self.verticalLayout.frame.height);
                     }
                 }
+                    let groupView = ButtonView(frame: CGRect(x: 0, y: 0, width: widthGlo + 5 , height: 50))
+                    self.verticalLayout.addSubview(groupView);
                     self.verticalLayout.layoutSubviews()
 
                     self.scrollView.contentSize = CGSize(width: self.verticalLayout.frame.width, height: self.verticalLayout.frame.height)

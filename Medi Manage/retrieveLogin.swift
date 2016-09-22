@@ -40,11 +40,15 @@ class retrieveLogin: UIView, UITextFieldDelegate {
         sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(sortnewview)
         
+        self.mobileNo.delegate = self
+        self.password.delegate = self
+        
         addPadding(15, myView: mobileNo)
         addPadding(15, myView: password)
     }
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         mobileNo.resignFirstResponder()
+        password.resignFirstResponder()
         return true
     }
     

@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import SwiftyJSON
 
+
 class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate  {
     
     @IBOutlet var completeProfileMainView: UIView!
@@ -59,14 +60,17 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
         sortnewview.frame = bounds
         sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(sortnewview)
+        LoadingOverlay.shared.hideOverlayView()
         
         let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
         //statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
         statusBar.backgroundColor = UIColor(red: 244/255, green: 121/255, blue: 32/255, alpha: 1)
         self.addSubview(statusBar)
+//        LoadingOverlay.shared.showOverlay(gCompleteProfileController.view)
         
         mobileNumber.delegate = self
         email.delegate = self
+        password.delegate = self
         
         // MARITAL STATUS ARROW ICON
         let imageView = UIImageView()
@@ -105,7 +109,7 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
                         self.email.text = json["result"]["Email"].stringValue
                         self.maritalStatus.text = json["result"]["MaritalStatus"].stringValue
                         print(json["result"]["CountryCode"])
-                        if json["result"]["CountryCode"].stringValue != "" && json["result"]["CountryCode"].stringValue != "null"{
+                        if json["result"]["CountryCode"].stringValue != "" && json["result"]["CountryCode"] != nil{
                             let a = countryCodes[1].indexOf { $0 == json["result"]["CountryCode"].stringValue }
                             self.countryCode.text = countryCodes[0][a!]
                         }
@@ -119,6 +123,9 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
                 })
             })
         }else{
+            print("in signup")
+            
+
             self.password.hidden = false
             self.userDetail = signUpUser
             self.txtFullName.text = signUpUser["FullName"].stringValue
@@ -127,7 +134,7 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
             self.mobileNumber.text = signUpUser["MobileNo"].stringValue
             self.email.text = signUpUser["Email"].stringValue
             self.maritalStatus.text = signUpUser["MaritalStatus"].stringValue
-            if signUpUser["CountryCode"].stringValue != "null"{
+            if signUpUser["CountryCode"].stringValue != "" && signUpUser["CountryCode"] != nil{
                 let a = countryCodes[1].indexOf { $0 == signUpUser["CountryCode"].stringValue }
                 self.countryCode.text = countryCodes[0][a!]
             }
@@ -137,7 +144,6 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
             }else{
                 self.maritalPickerView.selectRow(1, inComponent: 0, animated: true)
             }
-            LoadingOverlay.shared.hideOverlayView()
         }
         
         

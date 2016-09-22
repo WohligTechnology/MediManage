@@ -64,8 +64,8 @@ class signup: UIView, UITextFieldDelegate {
         sortnewview.frame = bounds
         sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(sortnewview);
-        dateOfBirth.text = "1990-05-19"
-        employeeID.text = "TestBetsol3"
+//        dateOfBirth.text = "1990-05-19"
+//        employeeID.text = "TestBetsol3"
         defaultToken.removeObjectForKey("access_token")
         
         

@@ -788,6 +788,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
     
     //FINAL PROCESS SUBMIT MEMBERS
     @IBAction func submitMembers(sender: AnyObject) {
+        LoadingOverlay.shared.showOverlay(gEnrollmentMembersController.view)
         updateJson()
         var msg = ""
         var finaljson :JSON = []
@@ -839,8 +840,10 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                 }
             }
             if !status {
+                LoadingOverlay.shared.hideOverlayView()
                 Popups.SharedInstance.ShowPopup("Validation", message: msg)
             }else{
+                LoadingOverlay.shared.hideOverlayView()
                 print(finaljson)
                 rest.AddMembers(finaljson, completion: {(json:JSON) -> ()in
                     dispatch_sync(dispatch_get_main_queue()){
@@ -861,6 +864,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                 })
             }
         }else{
+            LoadingOverlay.shared.hideOverlayView()
             Popups.SharedInstance.ShowPopup("Allowed Members", message: msgAllowed)
         }
         

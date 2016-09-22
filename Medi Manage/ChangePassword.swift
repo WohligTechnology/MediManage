@@ -44,14 +44,21 @@ class ChangePassword: UIViewController, UITextFieldDelegate {
     
     @IBAction func Submit(sender: AnyObject) {
         if currentPassword.text != "" && newPassword.text != "" && confPassword.text != "" {
-
+            LoadingOverlay.shared.showOverlay(self.view)
             rest.changePassword(self.currentPassword.text!, np: self.newPassword.text!, cnp: self.confPassword.text!, completion: {(json:JSON) ->() in
                 dispatch_sync(dispatch_get_main_queue()){
+                    LoadingOverlay.shared.hideOverlayView()
                 if json == 401 {
                     self.redirectToHome()
                 }else{
                 if json["state"] {
-                    self.dismissViewControllerAnimated(true, completion: nil)
+                    let dialog = UIAlertController(title: "Change Password", message: "Password changed successfully.", preferredStyle: UIAlertControllerStyle.Alert)
+                    
+                    dialog.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Destructive, handler:{
+                        action in
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    }))
+                    self.presentViewController(dialog, animated: true, completion: nil)
                 }else{
                     print("in side else")
                     Popups.SharedInstance.ShowPopup("Change Password", message: json["error_message"].stringValue)

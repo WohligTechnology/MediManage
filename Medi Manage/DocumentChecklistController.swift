@@ -14,7 +14,7 @@ var gDocumentChecklistController: UIViewController!
 class DocumentChecklistController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var image = ["claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three"]
-    var pdfs = ["Discharge Summary",
+    var pdfs = ["",
                 "Discharge Summary",
                 "Doctor's Prescription",
                 "Main Hospital Bill",
@@ -22,7 +22,7 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
                 "Laboratory Report",
                 "X-Ray Report",
                 "Medicine Bill",
-                "PHOTO ID PROOF AND ADDRESS PROOF OF PATIENT",
+                "",
                 "Pre Numbered Cash Paid Receipt"]
     var titleMain = ["CLAIM FORM SIGNED BY EMPLOYEE",
                      "DISCHARGE CARD",
