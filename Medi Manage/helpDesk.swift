@@ -141,5 +141,6 @@ class helpDesk: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextFiel
     @IBAction func submitQry(sender: AnyObject) {
         gHelpDeskController.performSegueWithIdentifier("sendquery", sender: nil)
     }
-    
+
 }
+

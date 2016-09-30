@@ -40,7 +40,7 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
         
         
         rest.FaqDetails({(json:JSON) -> ()in
-            //dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0),{
+            dispatch_async(dispatch_get_main_queue(), {
                 print(json)
                 if json == 401 {
                     gHelpDeskFAQController.redirectToHome()
@@ -52,8 +52,8 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
                 }
                 self.helpFaqTable.rowHeight = UITableViewAutomaticDimension
                 expandedHeight = self.helpFaqTable.rowHeight
-            
-            //})
+                self.helpFaqTable.reloadData()
+            })
         })
         self.helpFaqTable.reloadData()
     }
@@ -79,8 +79,8 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(queans.count)
-        return queans.count
+        print("5654646746")
+        return self.queans.count
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

@@ -14,12 +14,22 @@ var gDocumentChecklistController: UIViewController!
 class DocumentChecklistController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var image = ["claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three"]
+//    var pdfs = ["",
+//                "Discharge Summary",
+//                "",
+//                "Main Hospital Bill",
+//                "Medicine Bill/Doctor's Prescription",
+//                "Laboratory Report/X-Ray Report/Laboratory Payment Receipt",
+//                "Pre Numbered Cash Paid Receipt",
+//                "",
+//                "",
+//                ""]
     var pdfs = ["",
                 "Discharge Summary",
                 "",
                 "Main Hospital Bill",
-                "Medicine Bill/Doctor's Prescription",
-                "Laboratory Report/X-Ray Report/Laboratory Payment Receipt",
+                "Medicine Bill",
+                "Laboratory Report",
                 "Pre Numbered Cash Paid Receipt",
                 "",
                 "",
@@ -104,7 +114,10 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         pdfname = pdfs[(indexPath.item)]
-        self.performSegueWithIdentifier("viewPDF", sender: self)
+        if pdfname != "" {
+            self.performSegueWithIdentifier("viewPDF", sender: self)
+        }
+        
     }
     
     @IBOutlet weak var dcDesc: UILabel!

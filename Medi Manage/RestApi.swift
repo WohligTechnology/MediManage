@@ -673,7 +673,7 @@ public class RestApi {
         print(categoryId)
         
         do {
-            let opt = try HTTP.GET(apiURL+"FAQ/Details/\(categoryId)" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            let opt = try HTTP.GET(apiURL+"FAQ/Details/\(61)" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
             opt.start { response in
                 print(response.error)
                 if let _ = response.error {
