@@ -704,7 +704,7 @@ public class RestApi {
         let token = defaultToken.stringForKey("access_token")
         let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         
-                let params = ["data": "\(data)"]
+        let params = ["To": data["To"].stringValue,"Subject":data["Subject"].stringValue, "Body":data["Body"].stringValue]
         print(params)
         
         do {

@@ -128,7 +128,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
             if json == 401 {
                 gEnrollmentMembersController.redirectToHome()
             }else{
-            if json && isAddMember {
+            if json && !isAddMember {
                 gEnrollmentMembersController.performSegueWithIdentifier("isEnrolledTrue", sender: nil)
             }else{
                 

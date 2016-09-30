@@ -19,14 +19,17 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
     var selectedIndexPath: NSIndexPath?
     
     @IBOutlet weak var helpFaqTable: UITableView!
+    var jsonCount: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        gHelpDeskFAQController = self
         navshow()
         //        LoadingOverlay.shared.showOverlay(self.view)
         selectedViewController = false
         addObserver(self, forKeyPath: "frame", options: .New, context: nil)
+        self.loadnow()
+        helpFaqTable.reloadData()
     }
     
     func loadnow() {
@@ -37,24 +40,27 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
         
         
         rest.FaqDetails({(json:JSON) -> ()in
-            if json == 401 {
-                gHelpDeskFAQController.redirectToHome()
-            }else{
-                self.queans = json["result"]["list"]
-                self.helpFaqTable.reloadData()
+            //dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0),{
+                print(json)
+                if json == 401 {
+                    gHelpDeskFAQController.redirectToHome()
+                } else{
+                    self.queans = json["result"]["list"]
+                    self.jsonCount = self.queans.count
+                    print("\(#line) quens data: \(self.queans.count)")
                 //                LoadingOverlay.shared.hideOverlayView()
-            }
+                }
+                self.helpFaqTable.rowHeight = UITableViewAutomaticDimension
+                expandedHeight = self.helpFaqTable.rowHeight
+            
+            //})
         })
-        gHelpDeskFAQController = self
-        helpFaqTable.rowHeight = UITableViewAutomaticDimension
-        expandedHeight = helpFaqTable.rowHeight
-        helpFaqTable.reloadData();
-        
+        self.helpFaqTable.reloadData()
     }
     
     override func viewWillAppear(animated: Bool) {
         selectedViewController = false
-        self.loadnow()
+//        self.loadnow()
         self.reloadInputViews()
         
         
@@ -73,7 +79,8 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.queans.count
+        print(queans.count)
+        return queans.count
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -138,6 +145,9 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
         } catch {
             print(error)
         }
+        
+        //tableView.reloadData();
+        //tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         
         return cell
     }

@@ -89,7 +89,8 @@ class helpDeskQuery: UIView, UITextFieldDelegate {
         subjectTextField.resignFirstResponder()
         queryTextField.resignFirstResponder()
         if self.subjectTextField.text != "" && self.queryTextField.text != "" {
-            let params = "{\"To\":\(to),\"Subject\":\(self.subjectTextField.text! as String),\"Body\":\(self.queryTextField.text! as String)}"
+//            let params = "{\"To\":\(to),\"Subject\":\(self.subjectTextField.text! as String),\"Body\":\(self.queryTextField.text! as String)}"
+            let params = ["To": to,"Subject":self.subjectTextField.text! as String, "Body":self.queryTextField.text! as String]
             rest.SendQuery(JSON(params), completion: {(json:JSON) -> () in
                 print(json)
                 if json == 401 {

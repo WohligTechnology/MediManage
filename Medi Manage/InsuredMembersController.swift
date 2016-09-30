@@ -56,7 +56,7 @@ class InsuredMembersController: UIViewController {
 //        UIApplication.sharedApplication().openURL(NSURL(string: "http://testcorp.medimanage.com/api/Files/EcardsDownloads/TestMastek1_25072016124521.pdf")!)
 
         
-        rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> () in
+        rest.findEmployeeProfile("Enrollments/DashboardDetails",completion: {(json:JSON) -> () in
             print(json)
             dispatch_async(dispatch_get_main_queue(), {
                 if json == 401 {

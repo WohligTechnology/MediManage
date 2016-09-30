@@ -16,14 +16,14 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
     var image = ["claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three"]
     var pdfs = ["",
                 "Discharge Summary",
-                "Doctor's Prescription",
-                "Main Hospital Bill",
-                "Laboratory Payment Receipt",
-                "Laboratory Report",
-                "X-Ray Report",
-                "Medicine Bill",
                 "",
-                "Pre Numbered Cash Paid Receipt"]
+                "Main Hospital Bill",
+                "Medicine Bill/Doctor's Prescription",
+                "Laboratory Report/X-Ray Report/Laboratory Payment Receipt",
+                "Pre Numbered Cash Paid Receipt",
+                "",
+                "",
+                ""]
     var titleMain = ["CLAIM FORM SIGNED BY EMPLOYEE",
                      "DISCHARGE CARD",
                      "LETTER OF 1ST CONSULTATION AND ADVICE FOR HOSPITALIZATION",
