@@ -66,9 +66,9 @@ class InsuredMembersController: UIViewController {
                     let groupView = insuredMembersAll(frame: CGRect(x: 0, y: 0, width: widthGlo + 5 , height: 120))
                     self.verticalLayout.addSubview(groupView);
                     
-                    groupView.totalSum.text = json["result"]["Groups"][x]["NetAmount"].stringValue;
-                    groupView.topupSum.text = json["result"]["Groups"][x]["TopupAmount"].stringValue;
-                    groupView.balance.text = json["result"]["Groups"][x]["TopupNetAmount"].stringValue;
+                    groupView.totalSum.text = json["result"]["Groups"][x]["TotalSI"].stringValue;
+                    groupView.topupSum.text = json["result"]["Groups"][x]["SelectedTopup"].stringValue;
+                    groupView.balance.text = json["result"]["Groups"][x]["SelSI"].stringValue;
                     
                     for y in 0..<json["result"]["Groups"][x]["Members"].count {
                         let membersView = member(frame: CGRect(x: 0, y: 0, width: widthGlo, height: 220))

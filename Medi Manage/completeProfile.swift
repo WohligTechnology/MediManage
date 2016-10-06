@@ -101,18 +101,17 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
                         gCompleteProfileController.redirectToHome()
                     }else{
                         self.userDetail = json["result"]
-                        
+//                        self.userDetail["CountryCode"] = "91"
                         self.txtFullName.text = json["result"]["FullName"].stringValue
                         self.txtEmployeeNo.text = json["result"]["EmployeeNumber"].stringValue
-                        let fullNameArr1 = json["result"]["EmployeeNumber"].stringValue.characters.split{$0 == "T"}.map(String.init)
+                        let fullNameArr1 = json["result"]["DateOfBirth"].stringValue.characters.split{$0 == "T"}.map(String.init)
                         self.txtDateofBirth.text = fullNameArr1[0]
                         self.mobileNumber.text = json["result"]["MobileNo"].stringValue
                         self.email.text = json["result"]["Email"].stringValue
                         self.maritalStatus.text = json["result"]["MaritalStatus"].stringValue
-                        print(json["result"]["CountryCode"])
-                        if json["result"]["CountryCode"].stringValue != "" && json["result"]["CountryCode"] != nil{
-                            let a = countryCodes[1].indexOf { $0 == json["result"]["CountryCode"].stringValue }
-                            self.countryCode.text = countryCodes[0][a!]
+                        if self.userDetail["CountryCode"].stringValue != "" && self.userDetail["CountryCode"] != nil{
+                            let a = countryCodes[1].indexOf { $0 == self.userDetail["CountryCode"].stringValue }
+                            self.countryCodeCode.text = countryCodes[0][a!]
                         }
                         if json["result"]["MaritalStatus"].stringValue == "Married"
                         {
@@ -131,7 +130,8 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
             self.userDetail = signUpUser
             self.txtFullName.text = signUpUser["FullName"].stringValue
             self.txtEmployeeNo.text = signUpUser["EmployeeNumber"].stringValue
-            self.txtDateofBirth.text = signUpUser["DateOfBirth"].stringValue
+            let fullNameArr1 = signUpUser["DateOfBirth"].stringValue.characters.split{$0 == "T"}.map(String.init)
+            self.txtDateofBirth.text = fullNameArr1[0]
             self.mobileNumber.text = signUpUser["MobileNo"].stringValue
             self.email.text = signUpUser["Email"].stringValue
             self.maritalStatus.text = signUpUser["MaritalStatus"].stringValue
@@ -205,7 +205,7 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
         self.mobileNumber.enabled = data
         self.maritalStatus.enabled = data
         self.email.enabled = data
-        self.countryCode.enabled = data
+        self.countryCodeCode.enabled = data
     }
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         mobileNumber.resignFirstResponder()
@@ -325,7 +325,8 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
                                 let def = NSUserDefaults.standardUserDefaults()
                                 def.setObject(Employee_API_KEY, forKey: "access_token")
                                 
-                                
+                                print("before api call")
+                                print(self.userDetail)
                                 rest.UpdateProfile(self.userDetail, completion: {(json:JSON) -> () in
                                     dispatch_async(dispatch_get_main_queue(),{
                                     print("--------------Update profile user------------------------")

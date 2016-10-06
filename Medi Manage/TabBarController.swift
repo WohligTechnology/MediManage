@@ -26,7 +26,7 @@ class TabBarController: UITabBarController {
         self.moreNavigationController.navigationBar.tintColor = UIColor.whiteColor()
         
 //        self.tabBarController?.viewControllers![0] = HospitalSearchController
-        self.tabBarController?.selectedIndex = tabSelected
+//        self.tabBarController?.selectedIndex = tabSelected
 //        var tabbar:UITabBar?
         self.selectedIndex = tabSelected
         if let items = self.tabBar.items{

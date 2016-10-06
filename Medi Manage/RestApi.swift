@@ -187,7 +187,8 @@ public class RestApi {
     {
         var json = JSON(1)
         let token = defaultToken.stringForKey("access_token")
-        
+        print("data to params")
+        print(data)
         let params = ["Email": data["Email"].stringValue,"MobileNo":data["MobileNo"].stringValue, "EmployeeID":data["EmployeeID"].stringValue, "EmployeeNumber":data["EmployeeNumber"].stringValue, "Password":data["Password"].stringValue, "MaritalStatus": data["MaritalStatus"].stringValue, "CountryCode":data["CountryCode"].stringValue]
         
         let header = ["Authorization":"Bearer \(token! as String)","header":"application/json"]
@@ -883,7 +884,7 @@ public class RestApi {
         let token = defaultToken.stringForKey("access_token")
         let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         do {
-            let opt = try HTTP.GET(apiURL + "Ecard/\(ecard)" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers: isLoginheader)
+            let opt = try HTTP.GET(apiURL + "Users/Ecard/\(ecard)" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers: isLoginheader)
             opt.start { response in
                 print(response.error)
                 if let _ = response.error {
