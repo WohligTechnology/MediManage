@@ -25,11 +25,16 @@ class TabBarController: UITabBarController {
         self.moreNavigationController.navigationBar.barTintColor = UIColor.blackColor()
         self.moreNavigationController.navigationBar.tintColor = UIColor.whiteColor()
         
-        self.tabBarController?.viewControllers![0] = insuredMemberController
-        print("\(self.tabBarController?.viewControllers?.count)")
-//        tabBarController.setselec
+//        self.tabBarController?.viewControllers![0] = HospitalSearchController
+        self.tabBarController?.selectedIndex = tabSelected
+//        var tabbar:UITabBar?
+        self.selectedIndex = tabSelected
+        if let items = self.tabBar.items{
+            //self.tabBar.setItems([items[5]], animated: true)
+        }
+        print("my selected item: \(tabSelected)")
+        print("\(self.selectedIndex)")
         print("in tab")
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

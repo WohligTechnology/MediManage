@@ -24,19 +24,11 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         
         gMainMenuController = self
-        
-        let statusBar = UIView(frame: CGRectMake(0, -70, width, 20))
-        statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
-        statusBar.layer.zPosition = 10000
-        self.view.addSubview(statusBar)
-        
-        let mainheader = header(frame: CGRectMake(0, -50, width, 50))
-        mainheader.layer.zPosition = 10000
-        self.view.addSubview(mainheader)
+//        navshow()
         
         //self.view.frame = CGRectMake(0, 70, self.view.frame.size.width, self.view.frame.size.height)
-        self.view.bounds.origin.y = -70
-        self.view.frame.size.height = self.view.frame.size.height - 70
+//        self.view.bounds.origin.y = -70
+//        self.view.frame.size.height = self.view.frame.size.height - 70
         
         // 1
         let insuredMembers = homeMenus(frame: CGRectMake(0, 0, width / 2, self.view.frame.size.height / 3))
@@ -107,35 +99,42 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func insuredMembersTap(sender: UITapGestureRecognizer) {
-        let im: InsuredMembersController = storyboard?.instantiateViewControllerWithIdentifier("insuredMemberIdentifier") as! InsuredMembersController //insuredMemberIdentifier
-        //self.insuredMembersController = UINavigationController(rootViewController: im)
-        //self.slideMenuController()?.changeMainViewController(self.insuredMembersController, close: true)
-        self.presentViewController(im, animated: true, completion: nil)
+        tabSelected = 1
+        let passcodemodal = self.storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
+        self.presentViewController(passcodemodal, animated: true, completion: nil)
     }
     
     func claimsTap(sender: UITapGestureRecognizer) {
-        let im: MainClaimsController = storyboard?.instantiateViewControllerWithIdentifier("mainClaimsIdentifier") as! MainClaimsController //mainClaimsIdentifier
+        tabSelected = 2
+        let im: TabBarController = storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
         self.presentViewController(im, animated: true, completion: nil)
     }
     
     func benefitSummaryTap(sender: UITapGestureRecognizer) {
-        let im: BenefitSummaryController = storyboard?.instantiateViewControllerWithIdentifier("benefitSummaryIdentifier") as! BenefitSummaryController //benefitSummaryIdentifier
+        tabSelected = 3
+        let im: TabBarController = storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
         self.presentViewController(im, animated: true, completion: nil)
     }
     
     func helpdeskTap(sender: UITapGestureRecognizer) {
-        let im: HelpDeskController = storyboard?.instantiateViewControllerWithIdentifier("helpdeskIdentifier") as! HelpDeskController //helpdeskIdentifier
+        tabSelected = 4
+        let im: TabBarController = storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
         self.presentViewController(im, animated: true, completion: nil)
+
     }
     
     func hospitalSearchTap(sender: UITapGestureRecognizer) {
-        let im: HospitalSearchController = storyboard?.instantiateViewControllerWithIdentifier("hospitalSearchIdentifier") as! HospitalSearchController //hospitalSearchIdentifier
+        tabSelected = 5
+        let im: TabBarController = storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
         self.presentViewController(im, animated: true, completion: nil)
+
     }
     
     func connectTap(sender: UITapGestureRecognizer) {
-        let im: ConnectController = storyboard?.instantiateViewControllerWithIdentifier("connectIdentifier") as! ConnectController //connectIdentifier
+        tabSelected = 6
+        let im: TabBarController = storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
         self.presentViewController(im, animated: true, completion: nil)
+
     }
 
     /*

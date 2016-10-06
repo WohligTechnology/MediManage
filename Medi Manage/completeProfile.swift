@@ -104,7 +104,8 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
                         
                         self.txtFullName.text = json["result"]["FullName"].stringValue
                         self.txtEmployeeNo.text = json["result"]["EmployeeNumber"].stringValue
-                        self.txtDateofBirth.text = json["result"]["DateOfBirth"].stringValue
+                        let fullNameArr1 = json["result"]["EmployeeNumber"].stringValue.characters.split{$0 == "T"}.map(String.init)
+                        self.txtDateofBirth.text = fullNameArr1[0]
                         self.mobileNumber.text = json["result"]["MobileNo"].stringValue
                         self.email.text = json["result"]["Email"].stringValue
                         self.maritalStatus.text = json["result"]["MaritalStatus"].stringValue

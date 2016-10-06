@@ -673,7 +673,7 @@ public class RestApi {
         print(categoryId)
         
         do {
-            let opt = try HTTP.GET(apiURL+"FAQ/Details/\(61)" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            let opt = try HTTP.GET(apiURL+"FAQ/Details/\(categoryId)" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
             opt.start { response in
                 print(response.error)
                 if let _ = response.error {
@@ -879,9 +879,13 @@ public class RestApi {
     public func DownloadECard(ecard : String!, completion:((JSON) -> Void))
     {
         var json = JSON(1)
+        
+        let token = defaultToken.stringForKey("access_token")
+        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         do {
-            let opt = try HTTP.GET(apiURL + "Ecard/\(ecard)" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers: nil)
+            let opt = try HTTP.GET(apiURL + "Ecard/\(ecard)" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers: isLoginheader)
             opt.start { response in
+                print(response.error)
                 if let _ = response.error {
                     completion(json);
                 }

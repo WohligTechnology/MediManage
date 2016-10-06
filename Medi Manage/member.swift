@@ -46,8 +46,12 @@ class member: UIView {
         }else{
         rest.DownloadECard(ecarddwld,completion: {(json:JSON) -> ()in
             dispatch_sync(dispatch_get_main_queue(), {
+                print(json)
             if json["state"] {
-                UIApplication.sharedApplication().openURL(NSURL(string: json["result"].stringValue)!)
+                if json["result"] != ""{
+                let pdfURL = NSURL(string: (json["result"].stringValue).stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)!
+                UIApplication.sharedApplication().openURL(pdfURL)
+                }
             }
             })
         })

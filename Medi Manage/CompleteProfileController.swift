@@ -21,7 +21,7 @@ class CompleteProfileController: UIViewController {
         let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
         statusBar.backgroundColor = UIColor(red: 244/255, green: 121/255, blue: 32/255, alpha: 1)
         self.view.addSubview(statusBar)
-//        LoadingOverlay.shared.showOverlay(self.view)
+        LoadingOverlay.shared.showOverlay(self.view)
     }
 
     
@@ -36,10 +36,10 @@ class CompleteProfileController: UIViewController {
         border.frame = CGRectMake(0, myView.frame.size.height - linewidth, width - 30, linewidth)
         myView.layer.addSublayer(border)
     }
-    
-    func textFieldDidEndEditing(textField: UITextField) {
-        textField.resignFirstResponder()
-    }
+//    
+//    func textFieldDidEndEditing(textField: UITextField) {
+//        textField.resignFirstResponder()
+//    }
 
     @IBAction func editProfile(sender: AnyObject) {
         print(isVarifiedToEdit)

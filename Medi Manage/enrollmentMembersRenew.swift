@@ -121,6 +121,14 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         
         toolBar.setItems([spaceButton, doneButton], animated: false)
         toolBar.userInteractionEnabled = true
+        
+        leftFirstName.delegate = self
+        leftLastName.delegate = self
+        leftMiddelName.delegate = self
+        
+        rightFirstName.delegate = self
+        rightMiddelName.delegate = self
+        rightLastName.delegate = self
 
         
         // CHECK IF ENROLLMENT PERIOD IS TRUE THEN REDIRECT TO INSURED MEMBER PAGE
@@ -368,7 +376,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
     func checkAllowedMembers() -> Bool {
         countMember()
         var check = false
-        if self.calculatedPlanMember["C"].int64Value >= self.prePlanMembers["C"].int64Value {
+        if self.calculatedPlanMember["C"].int64Value > self.prePlanMembers["C"].int64Value {
             check = false
             msgAllowed = "You can Add Maximum  \(self.prePlanMembers["C"])  Childrens."
         }else if self.calculatedPlanMember["P"].int64Value > self.prePlanMembers["P"].int64Value {
@@ -437,7 +445,15 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         
     }
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        
+        leftFirstName.resignFirstResponder()
+        leftMiddelName.resignFirstResponder()
+        leftLastName.resignFirstResponder()
+        
+        rightFirstName.resignFirstResponder()
+        rightMiddelName.resignFirstResponder()
+        rightLastName.resignFirstResponder()
+        
         return true
     }
     
