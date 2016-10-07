@@ -24,22 +24,15 @@ class TabBarController: UITabBarController {
         self.moreNavigationController.navigationBar.topItem?.leftBarButtonItem = nil
         self.moreNavigationController.navigationBar.barTintColor = UIColor.blackColor()
         self.moreNavigationController.navigationBar.tintColor = UIColor.whiteColor()
+                
+        self.selectedViewController = self.viewControllers![tabSelected];
         
-//        self.tabBarController?.viewControllers![0] = HospitalSearchController
-//        self.tabBarController?.selectedIndex = tabSelected
-//        var tabbar:UITabBar?
-        self.selectedIndex = tabSelected
-        if let items = self.tabBar.items{
-            //self.tabBar.setItems([items[5]], animated: true)
-        }
-        print("my selected item: \(tabSelected)")
-        print("\(self.selectedIndex)")
-        print("in tab")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
     
     
 }

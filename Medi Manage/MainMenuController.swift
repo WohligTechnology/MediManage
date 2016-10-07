@@ -24,11 +24,7 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         
         gMainMenuController = self
-//        navshow()
-        
-        //self.view.frame = CGRectMake(0, 70, self.view.frame.size.width, self.view.frame.size.height)
-//        self.view.bounds.origin.y = -70
-//        self.view.frame.size.height = self.view.frame.size.height - 70
+        self.tabBarController?.tabBar.hidden = true
         
         // 1
         let insuredMembers = homeMenus(frame: CGRectMake(0, 0, width / 2, self.view.frame.size.height / 3))
