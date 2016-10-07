@@ -25,10 +25,17 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         gHelpDeskFAQController = self
         navshow()
+        self.helpFaqTable.delegate = self
         //        LoadingOverlay.shared.showOverlay(self.view)
         selectedViewController = false
         addObserver(self, forKeyPath: "frame", options: .New, context: nil)
-        self.loadnow()
+        performSelectorInBackground(#selector(HelpDeskFAQController.loadnow), withObject: nil)
+        //self.loadnow()
+        //helpFaqTable.reloadData()
+    }
+    
+    override func performSelectorInBackground(aSelector: Selector, withObject arg: AnyObject?) {
+        loadnow()
         helpFaqTable.reloadData()
     }
     
@@ -38,24 +45,29 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
         mainsubHeader.subHeaderTitle.text = "HELP DESK"
         self.view.addSubview(mainsubHeader)
         
-        
-        rest.FaqDetails({(json:JSON) -> ()in
+        rest.FaqDetails({(json:JSON) -> () in
             dispatch_async(dispatch_get_main_queue(), {
+            //dispatch_async(dispatch_get_global_queue(0,0), {
                 print(json)
                 if json == 401 {
                     gHelpDeskFAQController.redirectToHome()
                 } else{
                     self.queans = json["result"]["list"]
                     self.jsonCount = self.queans.count
-                    print("\(#line) quens data: \(self.queans.count)")
+                    print("\(#line) quens data: \(self.queans)")
                 //                LoadingOverlay.shared.hideOverlayView()
                 }
+            })
+            dispatch_async(dispatch_get_main_queue(), {
+                print("1")
                 self.helpFaqTable.rowHeight = UITableViewAutomaticDimension
+                print("2")
                 expandedHeight = self.helpFaqTable.rowHeight
+                print("3")
                 self.helpFaqTable.reloadData()
+                print("4")
             })
         })
-        self.helpFaqTable.reloadData()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -79,7 +91,6 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("5654646746")
         return self.queans.count
     }
     
@@ -140,13 +151,14 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
         do {
             let str = try NSMutableAttributedString(data: ans!.dataUsingEncoding(NSUnicodeStringEncoding, allowLossyConversion: true)!, options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType], documentAttributes: nil)
             str.addAttributes([NSForegroundColorAttributeName: UIColor.blackColor(), NSFontAttributeName: UIFont(name: "Lato-Regular", size: 12)!], range: NSRange(location: 0, length: str.length))
-            cell.answerlbl.attributedText = str
-            cell.answerlbl.hidden = true
+            //cell.answerlbl.attributedText = str
+            //cell.answerlbl.hidden = true
+            cell.webView.loadHTMLString(String(str), baseURL: nil)
         } catch {
             print(error)
         }
         
-        //tableView.reloadData();
+//        tableView.reloadData();
         //tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         
         return cell
@@ -157,12 +169,17 @@ class quecell: UITableViewCell {
     
     @IBOutlet weak var questionlbl: UILabel!
     @IBOutlet weak var answerlbl: UILabel!
+    @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var triangle: UIImageView!
     
     class var expandedHeight: CGFloat { get { return 200} }
-    class var defaultHeight: CGFloat { get { return 90 } }
+    class var defaultHeight: CGFloat { get { return 70 } }
     
     func checkHeight() {
         answerlbl.hidden = (frame.size.height < quecell.expandedHeight)
+//        if quecell.expandedHeight <= frame.size.height {
+//            triangle.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
+//        }
     }
     
     func watchFrameChanges() {
