@@ -14,16 +14,26 @@ var gDocumentChecklistController: UIViewController!
 class DocumentChecklistController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var image = ["claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three", "claim_three"]
-    var pdfs = ["Discharge Summary",
+//    var pdfs = ["",
+//                "Discharge Summary",
+//                "",
+//                "Main Hospital Bill",
+//                "Medicine Bill/Doctor's Prescription",
+//                "Laboratory Report/X-Ray Report/Laboratory Payment Receipt",
+//                "Pre Numbered Cash Paid Receipt",
+//                "",
+//                "",
+//                ""]
+    var pdfs = ["",
                 "Discharge Summary",
-                "Doctor's Prescription",
+                "",
                 "Main Hospital Bill",
-                "Laboratory Payment Receipt",
-                "Laboratory Report",
-                "X-Ray Report",
                 "Medicine Bill",
-                "PHOTO ID PROOF AND ADDRESS PROOF OF PATIENT",
-                "Pre Numbered Cash Paid Receipt"]
+                "Laboratory Report",
+                "Pre Numbered Cash Paid Receipt",
+                "",
+                "",
+                ""]
     var titleMain = ["CLAIM FORM SIGNED BY EMPLOYEE",
                      "DISCHARGE CARD",
                      "LETTER OF 1ST CONSULTATION AND ADVICE FOR HOSPITALIZATION",
@@ -59,28 +69,9 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
         
         dcDesc.font = UIFont(name: "Lato-Light", size: 10.0)
         LoadingOverlay.shared.showOverlay(self.view)
-        //        self.dcDesc.estimate
         self.documentTable.estimatedRowHeight = 80
         self.documentTable.rowHeight = UITableViewAutomaticDimension
-        print(claim)
-        if claim == 0 {
-            rest.ClaimForm({(json:JSON) ->() in
-                dispatch_async(dispatch_get_main_queue(),{
-                self.image = ["claim_three"]
-                self.desc = []
-                self.desc = ["(Download claim form)"]
-                self.pdfs = []
-                self.pdfs = [json["result"].stringValue]
-                self.titleMain = []
-                self.titleMain = ["Claim Form"]
-                    self.documentTable.reloadData()
-                    LoadingOverlay.shared.hideOverlayView()
-                })
-            })
-        }else{
-            LoadingOverlay.shared.hideOverlayView()
-        }
-        // Do any additional setup after loading the view.
+        LoadingOverlay.shared.hideOverlayView()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -90,7 +81,6 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - UITableView Methods
@@ -123,18 +113,9 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        self.performSegueWithIdentifier("viewPDF", sender: self)
-        if claim == 1 {
-            pdfname = pdfs[(indexPath.item)]
-            let passcodemodal = self.storyboard?.instantiateViewControllerWithIdentifier("PDFViewController") as! PDFViewController
-            
-            self.presentViewController(passcodemodal, animated: true, completion: nil)
-        }else{
-            print(self.pdfs[indexPath.item])
-            let pdflink = self.pdfs[indexPath.item]
-            print("pdflink: \(pdflink)")
-            let pdfURL = NSURL(string: pdflink.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)!
-            UIApplication.sharedApplication().openURL(pdfURL)
+        pdfname = pdfs[(indexPath.item)]
+        if pdfname != "" {
+            self.performSegueWithIdentifier("viewPDF", sender: self)
         }
         
     }
@@ -142,15 +123,15 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var dcDesc: UILabel!
     
     @IBOutlet weak var documentTable: UITableView!
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if(segue.identifier == "viewPDF"){
-//            let indexPaths = self.documentTable!.indexPathForSelectedRow
-//            pdfname = pdfs[(indexPaths?.item)!]
-//            let vc = segue.destinationViewController as! PDFViewController
-//            vc.title = self.pdfs[(indexPaths?.row)!]
-//            
-//        }
-//    }
+    //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    //        if(segue.identifier == "viewPDF"){
+    //            let indexPaths = self.documentTable!.indexPathForSelectedRow
+    //            pdfname = pdfs[(indexPaths?.item)!]
+    //            let vc = segue.destinationViewController as! PDFViewController
+    //            vc.title = self.pdfs[(indexPaths?.row)!]
+    //
+    //        }
+    //    }
     
     
 }

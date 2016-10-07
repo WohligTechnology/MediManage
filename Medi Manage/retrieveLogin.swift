@@ -10,10 +10,12 @@ import Foundation
 import UIKit
 import SwiftyJSON
 
-class retrieveLogin: UIView {
+class retrieveLogin: UIView, UITextFieldDelegate {
     
     @IBOutlet weak var mobileNo: UITextField!
     @IBOutlet weak var password: UITextField!
+    var countryPickerView = UIPickerView()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
@@ -38,24 +40,40 @@ class retrieveLogin: UIView {
         sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(sortnewview)
         
-        // CALENDER ICON
+        self.mobileNo.delegate = self
+        self.password.delegate = self
         
         addPadding(15, myView: mobileNo)
         addPadding(15, myView: password)
     }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        mobileNo.resignFirstResponder()
+        password.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        textField.resignFirstResponder()
+    }
     @IBAction func loginCall(sender: AnyObject) {
-        gRetrieveLoginController.performSegueWithIdentifier("toeditprofile", sender: nil)
+        profileState = "Edit"
+        let vc = gRetrieveLoginController.storyboard?.instantiateViewControllerWithIdentifier("completeProfile") as! CompleteProfileController
+        
+        gRetrieveLoginController.presentViewController(vc, animated: true, completion: nil)
     }
     @IBAction func generateotpcall(sender: AnyObject) {
-        OTPStatus = 1
+        LoadingOverlay.shared.showOverlay(gRetrieveLoginController.view)
         forgotMobileNumber = String(self.mobileNo.text!)
         profilePassword = String(self.password.text!)
         rest.ClientSendOTP(String(self.mobileNo.text!), password: String(self.password.text!), completion: {(json:JSON) -> () in
             dispatch_sync(dispatch_get_main_queue()){
-            print(json)
-            if json["state"] {
-                gRetrieveLoginController.performSegueWithIdentifier("ProfileOTP", sender: nil)
-            }
+                print(json)
+                LoadingOverlay.shared.hideOverlayView()
+                if json["state"] {
+                    let vc = gRetrieveLoginController.storyboard?.instantiateViewControllerWithIdentifier("enterOTP") as! EnterOTPController
+                    
+                    gRetrieveLoginController.presentViewController(vc, animated: true, completion: nil)
+                }
             }
         })
     }

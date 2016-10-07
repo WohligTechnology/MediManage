@@ -87,6 +87,7 @@ class premiumCalculation: UIView {
             dispatch_async(dispatch_get_main_queue(),{
                 print(json)
                 if json == 401 {
+                    LoadingOverlay.shared.hideOverlayView()
                     gPremiumCalculationController.redirectToHome()
                 }else{
                 for x in 0..<json["result"]["Groups"].count{
@@ -162,6 +163,8 @@ class premiumCalculation: UIView {
         LoadingOverlay.shared.showOverlay(gPremiumCalculationController.view)
         if terms {
             rest.premiumConfirm({(json:JSON) -> ()in
+                dispatch_async(dispatch_get_main_queue(),{
+
                 print(json)
                 LoadingOverlay.shared.hideOverlayView()
                 if json == 401 {
@@ -178,7 +181,9 @@ class premiumCalculation: UIView {
                 }
                 }
             })
+            })
         } else {
+            LoadingOverlay.shared.hideOverlayView()
             Popups.SharedInstance.ShowPopup("Allowed Members", message: "Please check the Terms and Conditions")
 
         }

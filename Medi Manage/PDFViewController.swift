@@ -17,9 +17,16 @@ class PDFViewController: UIViewController {
         print(pdfname)
         print("demo demo demo")
         navshow()
+        if pdfname == ""{
+            self.pdflbl.hidden = false
+            self.webViewpdf.hidden = true
+        }else{
+            self.pdflbl.hidden = true
+            self.webViewpdf.hidden = false
         let pdfLoc = NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource(pdfname, ofType:"pdf")!)
         let request = NSURLRequest(URL: pdfLoc);
         self.webViewpdf.loadRequest(request);
+        }
     }
 
     override func didReceiveMemoryWarning() {

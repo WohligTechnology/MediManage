@@ -10,12 +10,16 @@ import Foundation
 import UIKit
 import SwiftyJSON
 
-class enterOTP: UIView, UITextFieldDelegate {
+class forgotPasswordOTP: UIView, UITextFieldDelegate {
     
     @IBOutlet weak var enterOTP: UITextField!
     @IBOutlet weak var resetOTP: UIButton!
     @IBOutlet weak var submitOTP: UIButton!
+    @IBOutlet weak var newPassword: UITextField!
     @IBOutlet weak var multiColor: UILabel!
+    @IBOutlet weak var confirmPassword: UITextField!
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
@@ -34,15 +38,19 @@ class enterOTP: UIView, UITextFieldDelegate {
     
     func loadViewFromNib() {
         let bundle = NSBundle(forClass: self.dynamicType)
-        let nib = UINib(nibName: "enterOTP", bundle: bundle)
+        let nib = UINib(nibName: "forgotPasswordOTP", bundle: bundle)
         let sortnewview = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
         sortnewview.frame = bounds
         sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(sortnewview);
         
         enterOTP.delegate = self
+        newPassword.delegate = self
+        confirmPassword.delegate = self
         
         addPadding(15, myView: enterOTP)
+        addPadding(15, myView: newPassword)
+        addPadding(15, myView: confirmPassword)
         resetOTP.layer.borderWidth = 1
         resetOTP.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.25).CGColor
         multiColor.font = UIFont(name: "Lato-Bold", size: 11.0)
@@ -55,37 +63,33 @@ class enterOTP: UIView, UITextFieldDelegate {
     
     @IBAction func resendOTP(sender: AnyObject) {
         
-        rest.ClientSendOTP(forgotMobileNumber, password: profilePassword, completion: {(json:JSON) -> () in
-            dispatch_sync(dispatch_get_main_queue()){
+            rest.SendOtp(forgotMobileNumber, countrycode: forgotCountryCode, completion: {(json:JSON) -> () in
                 if json["state"] {
                     Popups.SharedInstance.ShowPopup("", message: "OTP is send to your Mobile Number")
                     
                 }
+                print("resend otp")
                 print(json)
-            }
-        })
+            })
     }
     
     @IBAction func enrollmentmembersCall(sender: AnyObject) {
-        LoadingOverlay.shared.showOverlay(gEnterOTPController.view)
-        rest.ConfirmOtp(String(UTF8String: self.enterOTP.text!)!, completion: {(json:JSON) -> () in
+        LoadingOverlay.shared.showOverlay(gForgotPasswordOTPController.view)
+        rest.ResetPassword(enterOTP.text! as String,password: newPassword.text! as String,confirmPassword: confirmPassword.text! as String,completion: {(json:JSON) -> () in
             dispatch_sync(dispatch_get_main_queue()){
                 LoadingOverlay.shared.hideOverlayView()
+                print(json)
                 if json["state"] {
-                        profileState = "Submit"
-                        
-                    let vc = gEnterOTPController.storyboard?.instantiateViewControllerWithIdentifier("completeProfile") as! CompleteProfileController
-                    
-                    gEnterOTPController.presentViewController(vc, animated: true, completion: nil)
+                        let vc = gForgotPasswordOTPController.storyboard?.instantiateViewControllerWithIdentifier("loginc") as! LoginController
+                        gForgotPasswordOTPController.presentViewController(vc, animated: true, completion: nil)
                 }
             }
         })
     }
     
     @IBAction func otpBack(sender: AnyObject) {
-        let vc = gEnterOTPController.storyboard?.instantiateViewControllerWithIdentifier("retrieveLogin") as! RetrieveLoginController
         
-        gEnterOTPController.presentViewController(vc, animated: true, completion: nil)
-
+            gForgotPasswordOTPController.performSegueWithIdentifier("otpback", sender: nil)
+        let vc = gForgotPasswordOTPController.storyboard?.instantiateViewControllerWithIdentifier("loginc") as! LoginController
     }
 }

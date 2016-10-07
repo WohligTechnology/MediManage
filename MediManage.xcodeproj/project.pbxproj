@@ -136,6 +136,9 @@
 		C2DCB0F01D1D4A71004FD787 /* SIParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DCB0EF1D1D4A71004FD787 /* SIParameters.swift */; };
 		C2DCB0F21D1D4C42004FD787 /* ResetPasswordDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DCB0F11D1D4C42004FD787 /* ResetPasswordDTO.swift */; };
 		C2DCB0F41D1D4CF1004FD787 /* GroupTopupSiDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DCB0F31D1D4CF1004FD787 /* GroupTopupSiDTO.swift */; };
+		FC1D8AF31D78344A0020FAFB /* forgotPasswordOTP.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC1D8AF21D78344A0020FAFB /* forgotPasswordOTP.xib */; };
+		FC1D8AF51D78363F0020FAFB /* forgotPasswordOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D8AF41D78363F0020FAFB /* forgotPasswordOTP.swift */; };
+		FC1D8AF81D783A250020FAFB /* ForgotPasswordOTPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D8AF71D783A250020FAFB /* ForgotPasswordOTPController.swift */; };
 		FC32D4511D4B7ECF00918852 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC32D4501D4B7ECF00918852 /* Layout.swift */; };
 		FC32D4541D4B823A00918852 /* member.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC32D4531D4B823A00918852 /* member.swift */; };
 		FC32D4561D4B824F00918852 /* member.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC32D4551D4B824F00918852 /* member.xib */; };
@@ -143,6 +146,8 @@
 		FC32D45A1D4B89AF00918852 /* insuredHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC32D4591D4B89AF00918852 /* insuredHeader.swift */; };
 		FC3C2EBB1D37C7DB000DAD18 /* enrollmentMembersRenew.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC3C2EBA1D37C7DB000DAD18 /* enrollmentMembersRenew.xib */; };
 		FC3C2EBD1D37C80E000DAD18 /* enrollmentMembersRenew.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3C2EBC1D37C80E000DAD18 /* enrollmentMembersRenew.swift */; };
+		FC7FB49B1D92933A00570FB2 /* ButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC7FB49A1D92933A00570FB2 /* ButtonView.xib */; };
+		FC7FB49D1D92940E00570FB2 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7FB49C1D92940E00570FB2 /* ButtonView.swift */; };
 		FC9EA1C41D4CC94600B828AF /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9EA1C31D4CC94600B828AF /* ChangePassword.swift */; };
 		FCB8016D1D2B7EF200F9226F /* memberListHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB8016C1D2B7EF200F9226F /* memberListHeader.xib */; };
 		FCB8016F1D2B7FB200F9226F /* memberListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8016E1D2B7FB200F9226F /* memberListHeader.swift */; };
@@ -319,6 +324,9 @@
 		C42FA52A5495CA29BD934BCF /* Pods_MediManageUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediManageUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D759717CAF6EE7B65953226B /* Pods_MediManage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediManage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAE1C269713C6CE4FA8D118 /* Pods-MediManage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediManage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MediManage/Pods-MediManage.debug.xcconfig"; sourceTree = "<group>"; };
+		FC1D8AF21D78344A0020FAFB /* forgotPasswordOTP.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = forgotPasswordOTP.xib; sourceTree = "<group>"; };
+		FC1D8AF41D78363F0020FAFB /* forgotPasswordOTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = forgotPasswordOTP.swift; sourceTree = "<group>"; };
+		FC1D8AF71D783A250020FAFB /* ForgotPasswordOTPController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordOTPController.swift; sourceTree = "<group>"; };
 		FC32D4501D4B7ECF00918852 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		FC32D4531D4B823A00918852 /* member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = member.swift; sourceTree = "<group>"; };
 		FC32D4551D4B824F00918852 /* member.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = member.xib; sourceTree = "<group>"; };
@@ -326,6 +334,8 @@
 		FC32D4591D4B89AF00918852 /* insuredHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = insuredHeader.swift; sourceTree = "<group>"; };
 		FC3C2EBA1D37C7DB000DAD18 /* enrollmentMembersRenew.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = enrollmentMembersRenew.xib; sourceTree = "<group>"; };
 		FC3C2EBC1D37C80E000DAD18 /* enrollmentMembersRenew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enrollmentMembersRenew.swift; sourceTree = "<group>"; };
+		FC7FB49A1D92933A00570FB2 /* ButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonView.xib; sourceTree = "<group>"; };
+		FC7FB49C1D92940E00570FB2 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		FC9EA1C31D4CC94600B828AF /* ChangePassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
 		FCB8016C1D2B7EF200F9226F /* memberListHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = memberListHeader.xib; sourceTree = "<group>"; };
 		FCB8016E1D2B7FB200F9226F /* memberListHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = memberListHeader.swift; sourceTree = "<group>"; };
@@ -701,41 +711,42 @@
 		786DFA281CD2281E00DDE769 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				786DF9FB1CD214F300DDE769 /* ViewController.swift */,
-				3A677B641CE4B2D3003B8C2B /* LoginController.swift */,
-				3A677B661CE4B384003B8C2B /* SignupController.swift */,
-				3A677B681CE4B539003B8C2B /* CompleteProfileController.swift */,
-				3A677B6A1CE4B90C003B8C2B /* RetrieveLoginController.swift */,
-				3A677B6C1CE4BBDE003B8C2B /* GenerateOTPController.swift */,
-				3A677B6E1CE4BEC0003B8C2B /* EnterOTPController.swift */,
-				3ACFB29F1CE4C369003766D8 /* EnrollmentMembersController.swift */,
-				3ACFB2A31CE4C410003766D8 /* PremiumCalculationController.swift */,
-				3AF76BB11CE5BEEA00ADCAAF /* InsuredMembersController.swift */,
-				3AEEB0161CE7344C0085EEF5 /* HelpDeskController.swift */,
-				3A72C7261CEAEDC400B5412E /* MainClaimsController.swift */,
-				3A1A5AE01CEC988A00AD2564 /* DocumentChecklistController.swift */,
+				3AE7AFE31CF2D8C80047DFB0 /* BenefitSummaryController.swift */,
+				FC9EA1C31D4CC94600B828AF /* ChangePassword.swift */,
+				3A79A7C81CF06652008B693B /* ClaimFormController.swift */,
 				3A992F071CEDD21700D85D8A /* ClaimIntimationController.swift */,
-				3A992F091CEDF25F00D85D8A /* HospitalSearchResultController.swift */,
-				3A3191171CEF4076001DCBBC /* SplashScreenController.swift */,
-				3A3191191CEF40AB001DCBBC /* PageViewerController.swift */,
+				3A677B681CE4B539003B8C2B /* CompleteProfileController.swift */,
+				3A79A7C61CF045F0008B693B /* ConnectController.swift */,
+				3A1A5AE01CEC988A00AD2564 /* DocumentChecklistController.swift */,
+				3ACFB29F1CE4C369003766D8 /* EnrollmentMembersController.swift */,
+				3A677B6E1CE4BEC0003B8C2B /* EnterOTPController.swift */,
+				3A677B6C1CE4BBDE003B8C2B /* GenerateOTPController.swift */,
+				3AEEB0161CE7344C0085EEF5 /* HelpDeskController.swift */,
 				3A79A7C11CF0431E008B693B /* HelpDeskFAQController.swift */,
 				3A79A7C41CF044DF008B693B /* HelpDeskQueryController.swift */,
-				3A79A7C61CF045F0008B693B /* ConnectController.swift */,
-				3A79A7C81CF06652008B693B /* ClaimFormController.swift */,
-				3A79A7CA1CF06702008B693B /* MyClaimController.swift */,
-				3A79A7CC1CF06AA0008B693B /* PreAuthorizationOneController.swift */,
-				3A79A7CE1CF06ADC008B693B /* PreAuthorizationTwoController.swift */,
-				3AE7AFDF1CF2D0C10047DFB0 /* QueryFormController.swift */,
 				3AE7AFE11CF2D3190047DFB0 /* HelplineNumberController.swift */,
-				3AE7AFE31CF2D8C80047DFB0 /* BenefitSummaryController.swift */,
 				3AE7AFE51CF2D9060047DFB0 /* HospitalSearchController.swift */,
+				3A992F091CEDF25F00D85D8A /* HospitalSearchResultController.swift */,
 				3AE7AFE71CF2D9330047DFB0 /* InboxController.swift */,
-				3A74A7D31CF422DA00592B3E /* TutorialController.swift */,
+				3AF76BB11CE5BEEA00ADCAAF /* InsuredMembersController.swift */,
+				3A677B641CE4B2D3003B8C2B /* LoginController.swift */,
+				3A72C7261CEAEDC400B5412E /* MainClaimsController.swift */,
 				3A74A7D61CF43BFC00592B3E /* MainMenuController.swift */,
 				3ABD66C61D279DB9003462CB /* MemberListGroupTableController.swift */,
-				3AC2583F1D33782D00384031 /* TabBarController.swift */,
+				3A79A7CA1CF06702008B693B /* MyClaimController.swift */,
+				3A3191191CEF40AB001DCBBC /* PageViewerController.swift */,
 				FCE15CD11D34D6E2009B49E2 /* PDFViewController.swift */,
-				FC9EA1C31D4CC94600B828AF /* ChangePassword.swift */,
+				3A79A7CC1CF06AA0008B693B /* PreAuthorizationOneController.swift */,
+				3A79A7CE1CF06ADC008B693B /* PreAuthorizationTwoController.swift */,
+				3ACFB2A31CE4C410003766D8 /* PremiumCalculationController.swift */,
+				3AE7AFDF1CF2D0C10047DFB0 /* QueryFormController.swift */,
+				3A677B6A1CE4B90C003B8C2B /* RetrieveLoginController.swift */,
+				3A677B661CE4B384003B8C2B /* SignupController.swift */,
+				3A3191171CEF4076001DCBBC /* SplashScreenController.swift */,
+				3AC2583F1D33782D00384031 /* TabBarController.swift */,
+				3A74A7D31CF422DA00592B3E /* TutorialController.swift */,
+				786DF9FB1CD214F300DDE769 /* ViewController.swift */,
+				FC1D8AF71D783A250020FAFB /* ForgotPasswordOTPController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -777,6 +788,8 @@
 				FCB801751D2BB6E400F9226F /* relationView */,
 				FC3C2EBE1D37C81F000DAD18 /* enrollmentMembersRenew */,
 				FCC1C8071D586429005B5F30 /* newContact */,
+				FC1D8AF61D78364C0020FAFB /* forgotPasswordOTP */,
+				FC7FB49E1D92951300570FB2 /* ButtonView */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -867,6 +880,15 @@
 			name = DTO;
 			sourceTree = "<group>";
 		};
+		FC1D8AF61D78364C0020FAFB /* forgotPasswordOTP */ = {
+			isa = PBXGroup;
+			children = (
+				FC1D8AF21D78344A0020FAFB /* forgotPasswordOTP.xib */,
+				FC1D8AF41D78363F0020FAFB /* forgotPasswordOTP.swift */,
+			);
+			name = forgotPasswordOTP;
+			sourceTree = "<group>";
+		};
 		FC32D4521D4B822500918852 /* member */ = {
 			isa = PBXGroup;
 			children = (
@@ -883,6 +905,15 @@
 				FC3C2EBC1D37C80E000DAD18 /* enrollmentMembersRenew.swift */,
 			);
 			name = enrollmentMembersRenew;
+			sourceTree = "<group>";
+		};
+		FC7FB49E1D92951300570FB2 /* ButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				FC7FB49A1D92933A00570FB2 /* ButtonView.xib */,
+				FC7FB49C1D92940E00570FB2 /* ButtonView.swift */,
+			);
+			name = ButtonView;
 			sourceTree = "<group>";
 		};
 		FCB801701D2B7FC400F9226F /* memberListHeader */ = {
@@ -1053,9 +1084,11 @@
 				3AEEB0241CE7515C0085EEF5 /* connect.xib in Resources */,
 				FCBE27F51D33E436004654E0 /* Discharge Summary.pdf in Resources */,
 				3A8774C11CEC41C1001DB41F /* queryForm.xib in Resources */,
+				FC7FB49B1D92933A00570FB2 /* ButtonView.xib in Resources */,
 				3A8EFB5B1CE9D31B004489F3 /* homeMenus.xib in Resources */,
 				78B90BD71CE067810022FE7A /* generateOTP.xib in Resources */,
 				3AD3E52D1CE20A1900900A93 /* premiumCalculation.xib in Resources */,
+				FC1D8AF31D78344A0020FAFB /* forgotPasswordOTP.xib in Resources */,
 				3A01752F1CE364AD00832E49 /* header.xib in Resources */,
 				FCE15CDE1D34DF54009B49E2 /* Medicine Bill.pdf in Resources */,
 				3A72C7251CEAE81100B5412E /* preAuthorizationOne.xib in Resources */,
@@ -1175,6 +1208,7 @@
 				C2DCB0EC1D1D4100004FD787 /* RequestDTO.swift in Sources */,
 				3A79A7C71CF045F0008B693B /* ConnectController.swift in Sources */,
 				3ABD66C71D279DB9003462CB /* MemberListGroupTableController.swift in Sources */,
+				FC7FB49D1D92940E00570FB2 /* ButtonView.swift in Sources */,
 				C2A584601D262EAE00F6E0D5 /* EnumSets.swift in Sources */,
 				3AE7AFE21CF2D3190047DFB0 /* HelplineNumberController.swift in Sources */,
 				FCE15CD21D34D6E2009B49E2 /* PDFViewController.swift in Sources */,
@@ -1217,11 +1251,13 @@
 				3AF76BB01CE5ABC100ADCAAF /* footer.swift in Sources */,
 				3AEEB0211CE7504B0085EEF5 /* helpDeskQuery.swift in Sources */,
 				C2DCB0DC1D1D1CDB004FD787 /* ConnectDetailsDTO.swift in Sources */,
+				FC1D8AF81D783A250020FAFB /* ForgotPasswordOTPController.swift in Sources */,
 				3A677B6B1CE4B90C003B8C2B /* RetrieveLoginController.swift in Sources */,
 				3A677B651CE4B2D3003B8C2B /* LoginController.swift in Sources */,
 				78B90BDB1CE067DA0022FE7A /* enterOTP.swift in Sources */,
 				3A1A5AE11CEC988A00AD2564 /* DocumentChecklistController.swift in Sources */,
 				C2DCB0E01D1D1E6B004FD787 /* EmployeeDomiBalancesDTO.swift in Sources */,
+				FC1D8AF51D78363F0020FAFB /* forgotPasswordOTP.swift in Sources */,
 				3AEEB0171CE7344C0085EEF5 /* HelpDeskController.swift in Sources */,
 				3AE7AFE01CF2D0C10047DFB0 /* QueryFormController.swift in Sources */,
 				3A8EFB581CE9CA54004489F3 /* inbox.swift in Sources */,
@@ -1408,7 +1444,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-Manage";
 				PRODUCT_NAME = MediManage;
-				TARGETED_DEVICE_FAMILY = 1;
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1418,6 +1455,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
@@ -1426,7 +1464,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-Manage";
 				PRODUCT_NAME = MediManage;
-				TARGETED_DEVICE_FAMILY = 1;
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

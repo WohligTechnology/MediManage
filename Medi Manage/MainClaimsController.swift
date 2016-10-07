@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 var gMainClaimsController: UIViewController!
 
@@ -25,7 +26,6 @@ class MainClaimsController: UIViewController, UITableViewDelegate, UITableViewDa
         gMainClaimsController = self
         selectedViewController = false
         navshow()
-        
         let mainsubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_two")
         mainsubHeader.subHeaderTitle.text = "CLAIMS"
@@ -34,7 +34,6 @@ class MainClaimsController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     override func viewWillAppear(animated: Bool) {
         selectedViewController = false
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -65,6 +64,22 @@ class MainClaimsController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         claim = indexPath.item
+        
+        if indexPath.row == 0 {
+            LoadingOverlay.shared.showOverlay(self.view)
+            rest.ClaimForm({(json:JSON) ->() in
+                dispatch_async(dispatch_get_main_queue(),{
+                    LoadingOverlay.shared.hideOverlayView()
+                    let pdflink = json["result"].stringValue
+                    let pdfURL = NSURL(string: pdflink.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)!
+                    UIApplication.sharedApplication().openURL(pdfURL)
+                    
+                })
+            })
+        }else{
+            self.performSegueWithIdentifier("inDetail", sender: self)
+
+        }
     }
 }
 

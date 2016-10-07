@@ -1,33 +1,21 @@
 //
-//  ConnectController.swift
+//  forgotPasswordOTPController.swift
 //  MediManage
 //
-//  Created by Harsh Thakkar on 21/05/16.
+//  Created by Jagruti  on 01/09/16.
 //  Copyright © 2016 Wohlig Technology. All rights reserved.
 //
 
 import UIKit
+var gForgotPasswordOTPController: UIViewController!
 
-var gConnectController: UIViewController!
-
-class ConnectController: UIViewController {
+class ForgotPasswordOTPController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        gConnectController = self
-        
-        let mainsubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
-        mainsubHeader.subHeaderTitle.text = "Connect"
-        self.view.addSubview(mainsubHeader)
-        LoadingOverlay.shared.showOverlay(self.view)
-        navshow()
-        
+        gForgotPasswordOTPController = self
+
         // Do any additional setup after loading the view.
-    }
-    override func viewWillAppear(animated: Bool) {
-        selectedViewController = false
-        
     }
 
     override func didReceiveMemoryWarning() {

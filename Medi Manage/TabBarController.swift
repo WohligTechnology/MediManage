@@ -24,17 +24,15 @@ class TabBarController: UITabBarController {
         self.moreNavigationController.navigationBar.topItem?.leftBarButtonItem = nil
         self.moreNavigationController.navigationBar.barTintColor = UIColor.blackColor()
         self.moreNavigationController.navigationBar.tintColor = UIColor.whiteColor()
+                
+        self.selectedViewController = self.viewControllers![tabSelected];
         
-        self.tabBarController?.viewControllers![0] = insuredMemberController
-        print("\(self.tabBarController?.viewControllers?.count)")
-//        tabBarController.setselec
-        print("in tab")
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
     
     
 }
