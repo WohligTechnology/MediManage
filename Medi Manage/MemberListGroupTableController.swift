@@ -12,6 +12,7 @@ import SwiftyJSON
 var gMemberListGroupTableController: UIViewController!
 var gListTableView: UITableView!
 var cnt = 0
+var activeIndex = 0;
 
 class MemberListGroupTableController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -225,6 +226,12 @@ extension MemberListGroupTableController: UICollectionViewDelegate, UICollection
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! membercollectioncell
        
+        if(indexPath.row == activeIndex) {
+            cell.backgroundColor = UIColor.darkGrayColor()
+        }
+        else {
+            cell.backgroundColor = mainBlueColor
+        }
         
         cell.namelbl.text = members[collectionView.tag]["Members"][indexPath.row]["RelationType"].stringValue
         //        cell.namelbl.text = String(collectionView.tag)
@@ -243,18 +250,9 @@ extension MemberListGroupTableController: UICollectionViewDelegate, UICollection
         
         
         
-        for i in 0...members[collectionView.tag]["Members"].count-1 {
-            let path = NSIndexPath(forRow: i, inSection: 0)
-            let cello = collectionView.cellForItemAtIndexPath(indexPath) as! membercollectioncell
-            if(indexPath.row == path.row) {
-                cello.active();
-            }
-            else {
-                cello.deactive();
-            }
-            
-        }
+        activeIndex  = indexPath.row;
         
+        collectionView.reloadData()
         
         let tableindexpath = NSIndexPath(forRow: collectionView.tag, inSection: 0)
         
