@@ -356,7 +356,7 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
                         })
                     })
                     }else{
-                        Popups.SharedInstance.ShowPopup("Error Occured", message: json["error_message"].stringValue)
+                        Popups.SharedInstance.ShowPopup("Error Occured", message: json["error_message"].stringValue.stringByRemovingPercentEncoding!)
                     }
                 })
             })
