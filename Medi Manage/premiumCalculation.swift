@@ -144,9 +144,11 @@ class premiumCalculation: UIView {
     @IBAction func termsClick(sender: AnyObject) {
         terms = !terms
         if terms {
-            self.termsCheckbox.backgroundColor = UIColor.orangeColor()
-        }else{
-            self.termsCheckbox.backgroundColor = nil
+            //self.termsCheckbox.backgroundColor = UIColor.orangeColor()
+            self.termsCheckbox.setImage(UIImage(named: "checkbox_tick"), forState: .Normal)
+        } else{
+            //self.termsCheckbox.backgroundColor = nil\
+            self.termsCheckbox.setImage(UIImage(named: "checkbox_untick"), forState: .Normal)
         }
     }
     
