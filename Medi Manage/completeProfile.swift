@@ -125,7 +125,7 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
         }else{
             print("in signup")
             
-
+            LoadingOverlay.shared.hideOverlayView()
             self.password.hidden = false
             self.userDetail = signUpUser
             self.txtFullName.text = signUpUser["FullName"].stringValue

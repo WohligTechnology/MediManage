@@ -169,6 +169,12 @@ extension UIViewController {
         
         self.presentViewController(passcodemodal, animated: true, completion: nil)
     }
+    func redirectToAddMember() {
+        isAddMember = true
+        let passcodemodal = self.storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
+        
+        self.presentViewController(passcodemodal, animated: true, completion: nil)
+    }
     
     func callNumber(phoneNumber:String) {
         if let phoneCallURL:NSURL = NSURL(string: "tel://\(phoneNumber)") {

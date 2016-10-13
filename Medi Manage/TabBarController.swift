@@ -24,7 +24,10 @@ class TabBarController: UITabBarController {
         self.moreNavigationController.navigationBar.topItem?.leftBarButtonItem = nil
         self.moreNavigationController.navigationBar.barTintColor = UIColor.blackColor()
         self.moreNavigationController.navigationBar.tintColor = UIColor.whiteColor()
-                
+        
+        if isAddMember {
+            tabSelected = 1;
+        }
         self.selectedViewController = self.viewControllers![tabSelected];
         
     }

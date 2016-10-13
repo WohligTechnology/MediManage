@@ -292,6 +292,14 @@ class MemberListGroupCell: UITableViewCell {
     var topup = UIPickerView()
     var selectedindex = 0;
     
+    @IBAction func editDetails(sender: AnyObject) {
+        isAddMember = true
+        let vc = gMemberListGroupTableController.storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
+        
+        gMemberListGroupTableController.presentViewController(vc, animated: true, completion: nil)
+        
+
+    }
 }
 
 extension MemberListGroupCell {
