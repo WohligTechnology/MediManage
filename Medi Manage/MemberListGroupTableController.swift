@@ -224,6 +224,7 @@ extension MemberListGroupTableController: UICollectionViewDelegate, UICollection
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! membercollectioncell
+       
         
         cell.namelbl.text = members[collectionView.tag]["Members"][indexPath.row]["RelationType"].stringValue
         //        cell.namelbl.text = String(collectionView.tag)
@@ -240,9 +241,20 @@ extension MemberListGroupTableController: UICollectionViewDelegate, UICollection
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-//        collectionView.reloadData()
-//        let cello = collectionView.cellForItemAtIndexPath(indexPath)
-//        cello!.backgroundColor = UIColor(red: 102/256, green: 255/256, blue: 255/256, alpha: 0.66)
+        
+        
+        for i in 0...members[collectionView.tag]["Members"].count-1 {
+            let path = NSIndexPath(forRow: i, inSection: 0)
+            let cello = collectionView.cellForItemAtIndexPath(indexPath) as! membercollectioncell
+            if(indexPath.row == path.row) {
+                cello.active();
+            }
+            else {
+                cello.deactive();
+            }
+            
+        }
+        
         
         let tableindexpath = NSIndexPath(forRow: collectionView.tag, inSection: 0)
         
@@ -339,5 +351,12 @@ extension MemberListGroupCell {
 class membercollectioncell: UICollectionViewCell {
     
     @IBOutlet weak var namelbl: UILabel!
+    func active() {
+        self.backgroundColor = mainBlueColor;
+        
+    }
+    func deactive() {
+        self.backgroundColor = UIColor.blackColor();
+    }
     
 }

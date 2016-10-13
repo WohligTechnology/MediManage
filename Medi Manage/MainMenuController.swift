@@ -22,12 +22,12 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navshow()
         gMainMenuController = self
-        self.tabBarController?.tabBar.hidden = true
+//        self.tabBarController?.tabBar.hidden = false
         
         // 1
-        let insuredMembers = homeMenus(frame: CGRectMake(0, 0, width / 2, self.view.frame.size.height / 3))
+        let insuredMembers = homeMenus(frame: CGRectMake(0, 20, width / 2, self.view.frame.size.height / 3))
         insuredMembers.homeMenuMainView.backgroundColor = UIColor.whiteColor()
         insuredMembers.menuImage.image = UIImage(named: "menu_one")
         insuredMembers.menuTitle.text = "Insured Members"
@@ -37,7 +37,7 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         insuredMembers.addGestureRecognizer(insuredMembersTap)
         
         // 2
-        let claims = homeMenus(frame: CGRectMake(width / 2, 0, width / 2, self.view.frame.size.height / 3))
+        let claims = homeMenus(frame: CGRectMake(width / 2, 20, width / 2, self.view.frame.size.height / 3))
         claims.homeMenuMainView.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 255/255)
         claims.menuImage.image = UIImage(named: "menu_two")
         claims.menuTitle.text = "Claims"
