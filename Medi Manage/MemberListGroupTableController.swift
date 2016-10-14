@@ -100,7 +100,7 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
         tableViewCell.sumInsured.text = members[indexPath.row]["SelectedSumInsuredValue"].stringValue
         tableViewCell.topUp.text = members[indexPath.row]["SelectedTopupValue"].stringValue
         if members[indexPath.row]["SelectedTopupValue"].stringValue == "0" {
-            tableViewCell.topUp.hidden = true
+            tableViewCell.topupView.hidden = true
         }
         if !result["IsInEnrollmentPeriod"] {
             tableViewCell.sumInsured.enabled = false
@@ -290,6 +290,7 @@ class MemberListGroupCell: UITableViewCell {
     @IBOutlet weak var topUp: UITextField!
     @IBOutlet weak var sumInsured: UITextField!
     @IBOutlet weak var hiddenindex: UILabel!
+    @IBOutlet weak var topupView: UIView!
     
     var insured = UIPickerView()
     var topup = UIPickerView()

@@ -101,6 +101,13 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
         
         cell.dcDesc.text = desc[indexPath.item]
         cell.dcImage.image = UIImage(named: image[indexPath.item])
+        if pdfs[indexPath.item] == "" {
+            cell.dwldImage.hidden = true
+            cell.dwldText.hidden = true
+        }else{
+            cell.dwldImage.hidden = false
+            cell.dwldText.hidden = false
+        }
         cell.selectionStyle = .None
         
         tableView.showsVerticalScrollIndicator = false
@@ -143,4 +150,6 @@ class documentChecklistUIViewCell: UITableViewCell {
     @IBOutlet weak var dcImage: UIImageView!
     @IBOutlet weak var dcTitle: UILabel!
     @IBOutlet weak var dcDesc: UILabel!
+    @IBOutlet weak var dwldImage: UIButton!
+    @IBOutlet weak var dwldText: UILabel!
 }

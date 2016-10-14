@@ -312,7 +312,8 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
     }
     
     @IBAction func rightAddMoreClick(sender: AnyObject) {
-        if checkAllowedMembers() {
+        print(checkAllowedChildrend())
+        if checkAllowedChildrend() {
             updateJson()
             addMemberToJson(self.memberjson[page+1]["SystemIdentifier"].stringValue, relation: self.memberjson[page+1]["RelationType"].stringValue)
             rightActionFunction()
@@ -376,6 +377,8 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
     func checkAllowedMembers() -> Bool {
         countMember()
         var check = false
+        print(self.calculatedPlanMember)
+        print(self.prePlanMembers)
         if self.calculatedPlanMember["C"].int64Value > self.prePlanMembers["C"].int64Value {
             check = false
             msgAllowed = "You can Add Maximum  \(self.prePlanMembers["C"])  Childrens."
@@ -385,6 +388,24 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         }else if self.calculatedPlanMember["I"].int64Value > self.prePlanMembers["I"].int64Value {
             check = false
             msgAllowed = "You can Add Maximum  \(self.prePlanMembers["I"])  Parents In Law."
+        }else{
+            check = true
+        }
+        return check
+    }
+    
+    func checkAllowedChildrend() -> Bool {
+        countMember()
+        var check = false
+        var calChil = self.calculatedPlanMember["C"].int64Value
+        if self.calculatedPlanMember["C"].int64Value == 0 {
+            calChil = 2
+        }
+        print(calChil)
+        print(self.prePlanMembers["C"].int64Value)
+        if calChil >= self.prePlanMembers["C"].int64Value {
+            check = false
+            msgAllowed = "You can Add Maximum  \(self.prePlanMembers["C"])  Childrens."
         }else{
             check = true
         }
@@ -599,9 +620,14 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         if !freezeright {
             
             if self.rightTick.hidden {
-                self.rightTick.hidden = false
-                memberjson[page+1]["ActiveState"] = true
-                editRightMember(true)
+                if checkAllowedMembers() {
+                    self.rightTick.hidden = false
+                    memberjson[page+1]["ActiveState"] = true
+                    editRightMember(true)
+                }else{
+                    Popups.SharedInstance.ShowPopup("Allowed Members", message: msgAllowed)
+                }
+                
                 
             }else{
                 self.rightTick.hidden = true
@@ -616,9 +642,14 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         if !freezeleft {
             
             if self.leftTick.hidden {
-                self.leftTick.hidden = false
-                memberjson[page]["ActiveState"] = true
-                editLeftMember(true)
+                if checkAllowedMembers() {
+                    self.leftTick.hidden = false
+                    memberjson[page]["ActiveState"] = true
+                    editLeftMember(true)
+                }else{
+                    Popups.SharedInstance.ShowPopup("Allowed Members", message: msgAllowed)
+                }
+                
             }else{
                 self.leftTick.hidden = true
                 memberjson[page]["ActiveState"] = false
@@ -628,6 +659,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
     }
     
     func assignMembers() {
+        print("in assignment members")
         assignText()
     }
     
@@ -637,6 +669,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
             let txtfield = self.enrollmentMembersMainView.viewWithTag(x) as? UITextField
             txtfield?.enabled = state
         }
+//        rightAddMore.enabled = state
     }
     
     func editRightMember(state : Bool) {
@@ -704,11 +737,11 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         if self.memberjson[page]["ActiveState"] {
             editLeftMember(true)
             self.leftTick.hidden = false
-            checkEP()
+//            checkEP()
         }else{
             editLeftMember(false)
             self.leftTick.hidden = true
-            checkEP()
+//            checkEP()
         }
         self.leftMemberName.text = self.memberjson[page]["RelationType"].stringValue
         self.leftFirstName.text = self.memberjson[page]["FirstName"].stringValue
@@ -774,11 +807,11 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         if self.memberjson[page+1]["ActiveState"] {
             editRightMember(true)
             self.rightTick.hidden = false
-            checkEP()
+//            checkEP()
         }else{
             editRightMember(false)
             self.rightTick.hidden = true
-            checkEP()
+//            checkEP()
         }
         self.rightMemberName.text = self.memberjson[page+1]["RelationType"].stringValue
         self.rightFirstName.text = self.memberjson[page+1]["FirstName"].stringValue
