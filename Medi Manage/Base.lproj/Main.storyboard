@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ndg-xE-RRU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ONl-FB-A8K">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -1018,13 +1018,13 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Claim Form" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24h-JJ-4d8">
-                                                    <rect key="frame" x="51" y="13" width="259" height="19.5"/>
+                                                    <rect key="frame" x="51" y="13" width="242" height="20"/>
                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                                                     <color key="textColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="(All details must be filled in &amp; should be signed by The EMPLOYEE only)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1y-mT-h32">
-                                                    <rect key="frame" x="51" y="37" width="269" height="37.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="(All details must be filled in &amp; should be signed by The EMPLOYEE only)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1y-mT-h32">
+                                                    <rect key="frame" x="51" y="38" width="269" height="37"/>
                                                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="10"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1032,26 +1032,47 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                                 <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGY-og-ZZ8">
                                                     <rect key="frame" x="41" y="0.0" width="279" height="85"/>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fhg-mb-kLl">
+                                                    <rect key="frame" x="298" y="10" width="15" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="15" id="fhn-cr-l1G"/>
+                                                        <constraint firstAttribute="height" constant="15" id="sbL-Vf-GEg"/>
+                                                    </constraints>
+                                                    <state key="normal" image="download_sample"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sample" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIk-sX-Yc4">
+                                                    <rect key="frame" x="295" y="25" width="23" height="10"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="10" id="95d-4f-3Zf"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="6"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="24h-JJ-4d8" firstAttribute="top" secondItem="bc2-Or-qhi" secondAttribute="topMargin" constant="5" id="1rQ-Vg-hmT"/>
+                                                <constraint firstAttribute="trailing" secondItem="LIk-sX-Yc4" secondAttribute="trailing" constant="10" id="BrY-wc-0A0"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="s1y-mT-h32" secondAttribute="bottom" constant="2" id="H72-EX-sq8"/>
                                                 <constraint firstItem="s1y-mT-h32" firstAttribute="leading" secondItem="24h-JJ-4d8" secondAttribute="leading" id="IA7-pg-lDl"/>
+                                                <constraint firstAttribute="trailing" secondItem="Fhg-mb-kLl" secondAttribute="trailing" constant="15" id="IiS-yR-tNi"/>
                                                 <constraint firstItem="s1y-mT-h32" firstAttribute="top" secondItem="24h-JJ-4d8" secondAttribute="bottom" constant="5" id="J5I-yz-BkO"/>
                                                 <constraint firstItem="LGY-og-ZZ8" firstAttribute="leading" secondItem="pgD-ch-0AK" secondAttribute="trailing" id="Q7s-pY-vXY"/>
-                                                <constraint firstItem="s1y-mT-h32" firstAttribute="top" secondItem="24h-JJ-4d8" secondAttribute="bottom" id="Qgx-Q3-Ixg"/>
                                                 <constraint firstItem="pgD-ch-0AK" firstAttribute="top" secondItem="bc2-Or-qhi" secondAttribute="topMargin" constant="7" id="UtS-MT-nEF"/>
                                                 <constraint firstItem="24h-JJ-4d8" firstAttribute="leading" secondItem="pgD-ch-0AK" secondAttribute="trailing" constant="10" id="WKw-kD-wdq"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="LGY-og-ZZ8" secondAttribute="bottom" constant="-8" id="Xmj-hT-Jc2"/>
+                                                <constraint firstAttribute="trailing" secondItem="Fhg-mb-kLl" secondAttribute="trailing" constant="10" id="eTd-gI-N4F"/>
                                                 <constraint firstItem="pgD-ch-0AK" firstAttribute="leading" secondItem="bc2-Or-qhi" secondAttribute="leadingMargin" constant="10" id="geO-nE-en2"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="24h-JJ-4d8" secondAttribute="trailing" constant="10" id="h4j-Zh-1Hv"/>
+                                                <constraint firstItem="Fhg-mb-kLl" firstAttribute="top" secondItem="bc2-Or-qhi" secondAttribute="top" constant="10" id="gud-u0-Wwp"/>
+                                                <constraint firstItem="LIk-sX-Yc4" firstAttribute="top" secondItem="Fhg-mb-kLl" secondAttribute="bottom" id="mFy-Sz-Iyp"/>
                                                 <constraint firstItem="s1y-mT-h32" firstAttribute="trailing" secondItem="LGY-og-ZZ8" secondAttribute="trailing" id="mfK-lg-u6S"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="LGY-og-ZZ8" secondAttribute="trailing" id="o5Z-pf-N7r"/>
                                                 <constraint firstItem="LGY-og-ZZ8" firstAttribute="top" secondItem="bc2-Or-qhi" secondAttribute="topMargin" constant="-8" id="rsk-jr-pyg"/>
+                                                <constraint firstItem="Fhg-mb-kLl" firstAttribute="leading" secondItem="24h-JJ-4d8" secondAttribute="trailing" constant="5" id="vMh-tG-Ove"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="Qgx-Q3-Ixg"/>
+                                                    <exclude reference="eTd-gI-N4F"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -3144,6 +3165,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
         <image name="call_icon2" width="154" height="154"/>
         <image name="claim_three" width="110" height="133"/>
         <image name="direction_icon" width="121" height="121"/>
+        <image name="download_sample" width="75" height="80"/>
         <image name="dropdown_down_icon" width="50" height="50"/>
         <image name="edit_icon" width="33" height="43"/>
         <image name="footer_tab_five" width="22" height="30"/>
