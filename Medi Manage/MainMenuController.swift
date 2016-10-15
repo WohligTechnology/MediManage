@@ -35,6 +35,9 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
             
         })
         
+        self.view.bounds.origin.y = -45
+        self.view.frame.size.height = self.view.frame.size.height - 45
+        
         // 1
         let insuredMembers = homeMenus(frame: CGRectMake(0, 20, width / 2, self.view.frame.size.height / 3))
         insuredMembers.homeMenuMainView.backgroundColor = UIColor.whiteColor()
