@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 var insuredMemberController:UIViewController!
 
@@ -25,11 +26,27 @@ class TabBarController: UITabBarController {
         self.moreNavigationController.navigationBar.barTintColor = UIColor.blackColor()
         self.moreNavigationController.navigationBar.tintColor = UIColor.whiteColor()
         
-        if isAddMember {
-            tabSelected = 1;
-        }
-        self.selectedViewController = self.viewControllers![tabSelected];
         
+//        rest.isEnrolled({(json:JSON) ->() in
+//            var data = json
+//            data = false
+//            if data == 401 {
+//                gEnrollmentMembersController.redirectToHome()
+//            }else{
+//                print(data)
+//                if !data {
+//                    print("in if")
+//                    tabSelected = 1
+//                    self.selectedViewController = self.viewControllers![tabSelected];
+//                }else{
+//                    print("in else")
+                    if isAddMember {
+                        tabSelected = 1;
+                    }
+                    self.selectedViewController = self.viewControllers![tabSelected];
+//                }
+//            }
+//        })
     }
 
     override func didReceiveMemoryWarning() {

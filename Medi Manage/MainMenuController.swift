@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 var gMainMenuController: UIViewController!
 var storyboard: UIStoryboard? = UIStoryboard(name: "Main", bundle: nil)
@@ -25,6 +26,14 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         navshow()
         gMainMenuController = self
 //        self.tabBarController?.tabBar.hidden = false
+        rest.isEnrolled({(json:JSON) ->() in
+            var data = json
+            if !data {
+                print("in if")
+                gMainMenuController.topendding()
+            }
+            
+        })
         
         // 1
         let insuredMembers = homeMenus(frame: CGRectMake(0, 20, width / 2, self.view.frame.size.height / 3))

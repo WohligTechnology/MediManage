@@ -312,8 +312,8 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
     }
     
     @IBAction func rightAddMoreClick(sender: AnyObject) {
-        print(checkAllowedChildrend())
-        if checkAllowedChildrend() {
+        
+        if checkAllowedEach(page+1) {
             updateJson()
             addMemberToJson(self.memberjson[page+1]["SystemIdentifier"].stringValue, relation: self.memberjson[page+1]["RelationType"].stringValue)
             rightActionFunction()
@@ -394,21 +394,52 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         return check
     }
     
-    func checkAllowedChildrend() -> Bool {
+    func checkAllowedEach(onPage:Int) -> Bool {
+        
         countMember()
         var check = false
-        var calChil = self.calculatedPlanMember["C"].int64Value
-        if self.calculatedPlanMember["C"].int64Value == 0 {
-            calChil = 2
-        }
-        print(calChil)
-        print(self.prePlanMembers["C"].int64Value)
-        if calChil >= self.prePlanMembers["C"].int64Value {
-            check = false
-            msgAllowed = "You can Add Maximum  \(self.prePlanMembers["C"])  Childrens."
-        }else{
+        
+        switch memberjson[onPage]["SystemIdentifier"] {
+        case "C":
+            if self.calculatedPlanMember["C"].int64Value >= self.prePlanMembers["C"].int64Value {
+                check = false
+                msgAllowed = "You can Add Maximum  \(self.prePlanMembers["C"])  Childrens."
+            }else{
+                check = true
+            }
+            break
+        case "P":
+            if self.calculatedPlanMember["P"].int64Value >= self.prePlanMembers["P"].int64Value {
+                check = false
+                msgAllowed = "You can Add Maximum  \(self.prePlanMembers["P"])  Parents."
+            }else{
+                check = true
+            }
+            break
+        case "I":
+            if self.calculatedPlanMember["I"].int64Value >= self.prePlanMembers["I"].int64Value {
+                check = false
+                msgAllowed = "You can Add Maximum  \(self.prePlanMembers["I"])  Parents In Law."
+            }else{
+                check = true
+            }
+            break
+        default:
             check = true
         }
+        
+//        var calChil = self.calculatedPlanMember["C"].int64Value
+//        if self.calculatedPlanMember["C"].int64Value == 0 {
+//            calChil = 2
+//        }
+//        print(calChil)
+//        print(self.prePlanMembers["C"].int64Value)
+//        if calChil >= self.prePlanMembers["C"].int64Value {
+//            check = false
+//            msgAllowed = "You can Add Maximum  \(self.prePlanMembers["C"])  Childrens."
+//        }else{
+//            check = true
+//        }
         return check
     }
     
@@ -620,7 +651,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         if !freezeright {
             
             if self.rightTick.hidden {
-                if checkAllowedMembers() {
+                if checkAllowedEach(page+1) {
                     self.rightTick.hidden = false
                     memberjson[page+1]["ActiveState"] = true
                     editRightMember(true)
@@ -642,7 +673,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         if !freezeleft {
             
             if self.leftTick.hidden {
-                if checkAllowedMembers() {
+                if checkAllowedEach(page) {
                     self.leftTick.hidden = false
                     memberjson[page]["ActiveState"] = true
                     editLeftMember(true)

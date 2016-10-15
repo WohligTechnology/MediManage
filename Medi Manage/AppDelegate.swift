@@ -86,8 +86,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let splashscrn = defaultToken.stringForKey("onSplashScreen")
         
         if token != nil {
+            
+            
+            
             let exampleViewController: TabBarController = mainStoryboard.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
             self.window?.rootViewController = exampleViewController
+
             
         }else{
             if splashscrn != nil {
@@ -171,6 +175,12 @@ extension UIViewController {
     }
     func redirectToAddMember() {
         isAddMember = true
+        let passcodemodal = self.storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
+        
+        self.presentViewController(passcodemodal, animated: true, completion: nil)
+    }
+    func topendding() {
+        tabSelected = 1
         let passcodemodal = self.storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
         
         self.presentViewController(passcodemodal, animated: true, completion: nil)
