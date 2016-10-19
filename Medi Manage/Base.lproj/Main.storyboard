@@ -1274,7 +1274,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jxB-ul-5e6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7787" y="1646"/>
+            <point key="canvasLocation" x="4603" y="1614"/>
         </scene>
         <!--Helpline Number Controller-->
         <scene sceneID="YNC-4i-MW0">
@@ -1302,7 +1302,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ns8-23-bBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8154" y="1646"/>
+            <point key="canvasLocation" x="4970" y="1614"/>
         </scene>
         <!--Claim Intimation Controller-->
         <scene sceneID="vxP-hm-Au0">
@@ -1578,7 +1578,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z5F-3Y-lk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8569" y="1646"/>
+            <point key="canvasLocation" x="5385" y="1614"/>
         </scene>
         <!--Benefit Summary Controller-->
         <scene sceneID="zXY-2C-ZUG">

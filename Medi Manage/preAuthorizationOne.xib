@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -249,12 +249,6 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xc3-mS-kj7">
                             <rect key="frame" x="0.0" y="0.0" width="56" height="80"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="request_received" translatesAutoresizingMaskIntoConstraints="NO" id="Hor-AV-cCj">
-                                    <rect key="frame" x="0.0" y="0.0" width="56" height="50"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="50" id="Nwy-Eq-WFo"/>
-                                    </constraints>
-                                </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05/10/2015" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbw-a7-mCX">
                                     <rect key="frame" x="0.0" y="55" width="56" height="10"/>
                                     <constraints>
@@ -275,6 +269,12 @@
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="request_received" translatesAutoresizingMaskIntoConstraints="NO" id="Hor-AV-cCj">
+                                    <rect key="frame" x="0.0" y="0.0" width="56" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="Nwy-Eq-WFo"/>
+                                    </constraints>
+                                </imageView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -302,12 +302,6 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uTi-ox-IO8">
                             <rect key="frame" x="56" y="0.0" width="56" height="80"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="initial_approval" translatesAutoresizingMaskIntoConstraints="NO" id="4NL-Db-MDR">
-                                    <rect key="frame" x="0.0" y="0.0" width="56" height="50"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="50" id="GJm-xa-ftk"/>
-                                    </constraints>
-                                </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05/10/2015" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2MG-wI-d8D">
                                     <rect key="frame" x="0.0" y="55" width="56" height="10"/>
                                     <constraints>
@@ -328,6 +322,12 @@
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="initial_approval" translatesAutoresizingMaskIntoConstraints="NO" id="4NL-Db-MDR">
+                                    <rect key="frame" x="0.0" y="0.0" width="56" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="GJm-xa-ftk"/>
+                                    </constraints>
+                                </imageView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
