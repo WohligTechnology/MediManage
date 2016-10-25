@@ -854,14 +854,23 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         
     }
     //  DATE OF RELATION VALIDATION
-    func validRelation() -> Bool {
+    func validRelation(index:Int) -> Bool {
         var check = false
-        for x in 0..<memberjson.count {
-            if memberjson[x]["SystemIdentifier"] == "I" || memberjson[x]["SystemIdentifier"] == "S"{
-                if memberjson[x]["DateOfRelation"] != "" {
+        if wholeJson["MaritalStatus"] == 2 {
+            
+            //        for x in 0..<memberjson.count {
+            if memberjson[index]["SystemIdentifier"] == "I" && memberjson[index]["ActiveState"] || memberjson[index]["SystemIdentifier"] == "S" && memberjson[index]["ActiveState"]{
+                if memberjson[index]["DateOfRelation"] != "" {
                     check = true
+                }else{
+                    check = false
                 }
+            }else{
+                check = false
             }
+            //        }
+        }else{
+            check = true
         }
         return check
     }
@@ -879,8 +888,8 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                     print("isinrollment:-\(self.wholeJson["IsInEnrollmentPeriod"])")
                     if memberjson[x]["ActiveState"] {
                         for (key, itm) in memberjson[x] {
-                            print("function return: -\(validRelation())")
-                            if validRelation() {
+                            print("function return: -\(validRelation(x))")
+                            if validRelation(x) {
                                 if key == "FirstName" || key == "DateOfBirth" {
                                     if itm == "" && status {
                                         status = false
@@ -902,7 +911,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                             var checkdate = 0
                             for (key, itm) in memberjson[x] {
                                 
-                                if validRelation() {
+                                if validRelation(x) {
                                     if key == "FirstName" || key == "DateOfBirth" {
                                         if itm == "" && status {
                                             status = false

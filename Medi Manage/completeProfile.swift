@@ -202,14 +202,15 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
         
     }
     func editSave(data:Bool) {
-        self.mobileNumber.enabled = data
-        self.maritalStatus.enabled = data
-        self.email.enabled = data
-        self.countryCodeCode.enabled = data
+//        self.mobileNumber.enabled = data
+//        self.maritalStatus.enabled = data
+//        self.email.enabled = data
+//        self.countryCodeCode.enabled = data
     }
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         mobileNumber.resignFirstResponder()
         email.resignFirstResponder()
+        password.resignFirstResponder()
         return true
     }
     
@@ -260,6 +261,7 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
         
         
         if profileButton.titleLabel?.text == "Submit" {
+            profileButton.titleLabel?.text = "Loading...";
             self.userDetail["CountryCode"].stringValue = self.countryCode.text! as String
             self.userDetail["MobileNo"].stringValue = self.mobileNumber.text! as String
             self.userDetail["MaritalStatus"].stringValue = self.maritalStatus.text! as String
