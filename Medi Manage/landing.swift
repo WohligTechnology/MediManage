@@ -23,11 +23,11 @@ class landing: UIView {
         
     }
     func loadViewFromNib() {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "landing", bundle: bundle)
-        let sortnewview = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let sortnewview = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         sortnewview.frame = bounds
-        sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        sortnewview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(sortnewview);
         
         text.font = UIFont(name: "Lato-Bold", size: 14.0)

@@ -22,11 +22,11 @@ class pickDate: UIView {
     }
     
     func loadViewFromNib() {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "pickDate", bundle: bundle)
-        let tutorial = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let tutorial = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         tutorial.frame = bounds
-        tutorial.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        tutorial.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(tutorial)
     }
     

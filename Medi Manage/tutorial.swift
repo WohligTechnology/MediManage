@@ -21,20 +21,20 @@ class tutorial: UIView {
     }
     
     func loadViewFromNib() {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "tutorial", bundle: bundle)
-        let tutorial = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let tutorial = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         tutorial.frame = bounds
-        tutorial.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        tutorial.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(tutorial)
     }
     
-    @IBAction func signUpCall(sender: AnyObject) {
-        gTutorialController.performSegueWithIdentifier("tutorialToSignUp", sender: nil)
+    @IBAction func signUpCall(_ sender: AnyObject) {
+        gTutorialController.performSegue(withIdentifier: "tutorialToSignUp", sender: nil)
     }
 
-    @IBAction func signInCall(sender: AnyObject) {
-        gTutorialController.performSegueWithIdentifier("tutorialToSignIn", sender: nil)
+    @IBAction func signInCall(_ sender: AnyObject) {
+        gTutorialController.performSegue(withIdentifier: "tutorialToSignIn", sender: nil)
     }
     
     /*

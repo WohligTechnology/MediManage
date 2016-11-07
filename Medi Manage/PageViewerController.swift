@@ -31,17 +31,17 @@ class PageViewerController: UIPageViewController, UIPageViewControllerDataSource
         
         super.viewDidLoad()
         
-        let token = defaultToken.stringForKey("access_token")
+        let token = defaultToken.string(forKey: "access_token")
         
         let myVC = viewControllerAtIndex(0) as! SplashScreenController
         
         let viewControllers = [myVC]
         
-        setViewControllers(viewControllers, direction: .Forward, animated: true, completion: nil)
+        setViewControllers(viewControllers, direction: .forward, animated: true, completion: nil)
         
         dataSource = self
         
-        defaultToken.setObject(true, forKey: "onSplashScreen")
+        defaultToken.set(true, forKey: "onSplashScreen")
 
         
     }
@@ -58,7 +58,7 @@ class PageViewerController: UIPageViewController, UIPageViewControllerDataSource
     
     
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
         
         
@@ -86,7 +86,7 @@ class PageViewerController: UIPageViewController, UIPageViewControllerDataSource
     
     
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         let vc = viewController as! SplashScreenController
         
@@ -116,7 +116,7 @@ class PageViewerController: UIPageViewController, UIPageViewControllerDataSource
     
     
     
-    func viewControllerAtIndex(index: Int) -> UIViewController {
+    func viewControllerAtIndex(_ index: Int) -> UIViewController {
         
         if((self.image.count == 0) || (index >= self.image.count)) {
             
@@ -126,7 +126,7 @@ class PageViewerController: UIPageViewController, UIPageViewControllerDataSource
         
         
         
-        let myVC = storyboard?.instantiateViewControllerWithIdentifier("splashScreenStoryBoard") as! SplashScreenController
+        let myVC = storyboard?.instantiateViewController(withIdentifier: "splashScreenStoryBoard") as! SplashScreenController
         
         myVC.backgroundImage = image[index]
         

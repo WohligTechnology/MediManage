@@ -10,34 +10,35 @@ import Foundation
 import UIKit
 
 class Popups: NSObject {
+    fileprivate static var __once: () = {
+            Static.instance = Popups()
+        }()
     class var SharedInstance: Popups {
         struct Static {
-            static var onceToken: dispatch_once_t = 0
+            static var onceToken: Int = 0
             static var instance: Popups? = nil
         }
-        dispatch_once(&Static.onceToken) {
-            Static.instance = Popups()
-        }
+        _ = Popups.__once
         return Static.instance!
     }
     
     var alertComletion : ((String) -> Void)!
     var alertButtons : [String]!
     
-    func ShowAlert(sender: UIViewController, title: String, message: String, buttons : [String], completion: ((buttonPressed: String) -> Void)?) {
+    func ShowAlert(_ sender: UIViewController, title: String, message: String, buttons : [String], completion: ((_ buttonPressed: String) -> Void)?) {
         
         let aboveIOS7 = floor(NSFoundationVersionNumber) > floor(NSFoundationVersionNumber_iOS_7_1)
         if(aboveIOS7) {
             
-            let alertView = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+            let alertView = UIAlertController(title: title, message: message, preferredStyle: .alert)
             for b in buttons {
                 
-                alertView.addAction(UIAlertAction(title: b, style: UIAlertActionStyle.Default, handler: {
+                alertView.addAction(UIAlertAction(title: b, style: UIAlertActionStyle.default, handler: {
                     (action : UIAlertAction) -> Void in
-                    completion!(buttonPressed: action.title!)
+                    completion!(action.title!)
                 }))
             }
-            sender.presentViewController(alertView, animated: true, completion: nil)
+            sender.present(alertView, animated: true, completion: nil)
             
         } else {
             
@@ -49,7 +50,7 @@ class Popups: NSObject {
             alertView.message = message
             for b in buttons {
                 
-                alertView.addButtonWithTitle(b)
+                alertView.addButton(withTitle: b)
                 
             }
             alertView.show()
@@ -57,47 +58,47 @@ class Popups: NSObject {
         
     }
     
-    func ShowPopup(title : String, message : String) {
+    func ShowPopup(_ title : String, message : String) {
         let alert: UIAlertView = UIAlertView()
         alert.title = title
         alert.message = message
-        alert.addButtonWithTitle("Ok")
+        alert.addButton(withTitle: "Ok")
         alert.show()
     }
-    func showalt(sender: UIViewController) {
-        let actionSheetControllerIOS8: UIAlertController = UIAlertController(title: "Settings", message: nil, preferredStyle: .ActionSheet)
+    func showalt(_ sender: UIViewController) {
+        let actionSheetControllerIOS8: UIAlertController = UIAlertController(title: "Settings", message: nil, preferredStyle: .actionSheet)
         
         // CANCEL BUTTON
-        let cancelActionButton: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in}
+        let cancelActionButton: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in}
         actionSheetControllerIOS8.addAction(cancelActionButton)
         
         // CHANGEPASSWORD BUTTON
-        let changePasswordActionButton: UIAlertAction = UIAlertAction(title: "Change Password", style: .Default){ action -> Void in}
+        let changePasswordActionButton: UIAlertAction = UIAlertAction(title: "Change Password", style: .default){ action -> Void in}
         actionSheetControllerIOS8.addAction(changePasswordActionButton)
         
         // EDIT PROFILE BUTTON
-        let editProfileActionButton: UIAlertAction = UIAlertAction(title: "Edit Profile", style: .Default){ action -> Void in
+        let editProfileActionButton: UIAlertAction = UIAlertAction(title: "Edit Profile", style: .default){ action -> Void in
             
-            let passcodemodal = storyboard?.instantiateViewControllerWithIdentifier("completeProfile") as! CompleteProfileController
+            let passcodemodal = storyboard?.instantiateViewController(withIdentifier: "completeProfile") as! CompleteProfileController
             
-            sender.presentViewController(passcodemodal, animated: true, completion: nil)
+            sender.present(passcodemodal, animated: true, completion: nil)
 
         }
         actionSheetControllerIOS8.addAction(editProfileActionButton)
         
         // LOGOUT BUTTON
-        let logoutActionButton: UIAlertAction = UIAlertAction(title: "Logout", style: .Destructive){ action -> Void in}
+        let logoutActionButton: UIAlertAction = UIAlertAction(title: "Logout", style: .destructive){ action -> Void in}
         actionSheetControllerIOS8.addAction(logoutActionButton)
         
         // PRESENT VIEW SENDER
-        sender.presentViewController(actionSheetControllerIOS8, animated: true, completion: nil)
+        sender.present(actionSheetControllerIOS8, animated: true, completion: nil)
     }
 
 }
 
 extension Popups: UIAlertViewDelegate {
     
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+    func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
         if(self.alertComletion != nil) {
             self.alertComletion!(self.alertButtons[buttonIndex])
         }

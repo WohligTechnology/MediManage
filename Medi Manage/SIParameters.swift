@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class SIParameters
+open class SIParameters
 {
     /*
     public var PlanComposition : Int { get{} set{} }

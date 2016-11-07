@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class ResetPasswordDTO
+open class ResetPasswordDTO
 {/*
     public var code : String { get{} set{} }
     public var newPassword : String { get{} set{} }

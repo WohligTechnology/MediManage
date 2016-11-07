@@ -10,83 +10,83 @@ import Foundation
 import UIKit
 
 public enum Gender: Int {
-    case Male = 1, Female,Others
+    case male = 1, female,others
 }
 
 
-public class EmployeeDTO : NSObject
+open class EmployeeDTO : NSObject
 {
-    public var ID : Int { get{ return self.ID }  set{  } }
-    public var FirstName : String { get{ return self.FirstName} set{} }
-    public var MiddleName :String { get{return self.MiddleName} set{} }
-    public var LastName : String { get{ return self.LastName } set{} }
-    public var DateOfBirth : NSDate { get{ return self.DateOfBirth } set{} }
-    public var dobDay : Int { get{ return self.dobDay} set{} }
-    public var dobMonth : Int { get{return self.dobMonth } set{} }
-    public var dobYear : Int { get{ return self.dobYear} set{} }
-    public var dorDay : Int { get{return self.dorDay } set{} }
-    public var dorMonth : Int { get{ return self.dorMonth } set{} }
-    public var dorYear : Int { get{ return self.dorYear } set{} }
-    public var Exist : String { get{return self.Exist } set{} }
+    open var ID : Int { get{ return self.ID }  set{  } }
+    open var FirstName : String { get{ return self.FirstName} set{} }
+    open var MiddleName :String { get{return self.MiddleName} set{} }
+    open var LastName : String { get{ return self.LastName } set{} }
+    open var DateOfBirth : Date { get{ return self.DateOfBirth } set{} }
+    open var dobDay : Int { get{ return self.dobDay} set{} }
+    open var dobMonth : Int { get{return self.dobMonth } set{} }
+    open var dobYear : Int { get{ return self.dobYear} set{} }
+    open var dorDay : Int { get{return self.dorDay } set{} }
+    open var dorMonth : Int { get{ return self.dorMonth } set{} }
+    open var dorYear : Int { get{ return self.dorYear } set{} }
+    open var Exist : String { get{return self.Exist } set{} }
     
-    public var Status: String  {get{return self.Status } set{}}
+    open var Status: String  {get{return self.Status } set{}}
     
     
    // public var AddedAt : MemberAddedAt{get{ return self.AddedAt } set{} }
-    public var Gender : Int?
-    public var RelationType : String { get{return self.RelationType } set{} }
-    public var DateOfRelation : String { get{ return self.DateOfRelation } set{} }
-    public var SystemIdentifier : String { get{return self.SystemIdentifier} set{} }
-    public var UHID : String { get{ return self.UHID } set{} }
+    open var Gender : Int?
+    open var RelationType : String { get{return self.RelationType } set{} }
+    open var DateOfRelation : String { get{ return self.DateOfRelation } set{} }
+    open var SystemIdentifier : String { get{return self.SystemIdentifier} set{} }
+    open var UHID : String { get{ return self.UHID } set{} }
     
-    public var Amount : Double { get{ return self.Amount } set{} }
-    public var Tax : Double { get{ return self.Tax } set{} }
-    public var NetAmount : Double { get{return self.NetAmount } set{} }
+    open var Amount : Double { get{ return self.Amount } set{} }
+    open var Tax : Double { get{ return self.Tax } set{} }
+    open var NetAmount : Double { get{return self.NetAmount } set{} }
     
-    public var TopupAmount :Double{ get{ return self.TopupAmount } set{} }
-    public var TopupTax : Double { get{ return self.TopupTax } set{} }
-    public var TopupNetAmount : Double { get{ return self.TopupNetAmount} set{} }
-    
-}
-
-public class MembersDTO
-{
-    public var ID : Int = 0
-    public var FirstName : String = ""
-    public var MiddleName : String = ""
-    public var LastName  :String = ""
-    public var DateOfBirth =  NSDate()
-    
-    public var dobDay : Int = 0
-    public var dobMonth : Int = 0
-    public var dobYear : Int = 0
-    public var dorDay : Int = 0
-    public var dorMonth : Int = 0
-    public var dorYear : Int = 0
-    public var Exist : String = ""
-    public var InsuredStatus :Int = 0
-    public var MemberAddedAt : Int = 0
-    public var Gender : Int = 0
-    public var RelationType : String = ""
-    public var DateOfRelation : String?
-    public var SystemIdentifier : String = ""
-    public var UHID : String = ""
-    
-    public var Amount : Double = 0
-    public var Tax : Double = 0
-    public var NetAmount : Double = 0
-    
-    public var TopupAmount : Double = 0
-    public var TopupTax : Double = 0
-    public var TopupNetAmount : Double = 0
+    open var TopupAmount :Double{ get{ return self.TopupAmount } set{} }
+    open var TopupTax : Double { get{ return self.TopupTax } set{} }
+    open var TopupNetAmount : Double { get{ return self.TopupNetAmount} set{} }
     
 }
 
-public class SendQueryDTO
+open class MembersDTO
 {
-    public var To : String = ""
-    public var Subject : String = ""
-    public var Body : String = ""
+    open var ID : Int = 0
+    open var FirstName : String = ""
+    open var MiddleName : String = ""
+    open var LastName  :String = ""
+    open var DateOfBirth =  Date()
+    
+    open var dobDay : Int = 0
+    open var dobMonth : Int = 0
+    open var dobYear : Int = 0
+    open var dorDay : Int = 0
+    open var dorMonth : Int = 0
+    open var dorYear : Int = 0
+    open var Exist : String = ""
+    open var InsuredStatus :Int = 0
+    open var MemberAddedAt : Int = 0
+    open var Gender : Int = 0
+    open var RelationType : String = ""
+    open var DateOfRelation : String?
+    open var SystemIdentifier : String = ""
+    open var UHID : String = ""
+    
+    open var Amount : Double = 0
+    open var Tax : Double = 0
+    open var NetAmount : Double = 0
+    
+    open var TopupAmount : Double = 0
+    open var TopupTax : Double = 0
+    open var TopupNetAmount : Double = 0
+    
+}
+
+open class SendQueryDTO
+{
+    open var To : String = ""
+    open var Subject : String = ""
+    open var Body : String = ""
 }
 
  

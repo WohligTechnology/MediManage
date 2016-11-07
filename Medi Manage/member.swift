@@ -27,29 +27,29 @@ class member: UIView {
     }
     
     func loadViewFromNib() {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "member", bundle: bundle)
-        let sortnewview = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let sortnewview = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         sortnewview.frame = bounds
-        sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        sortnewview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(sortnewview)
         
-        webView = UIWebView(frame: CGRectMake(0, 0, self.frame.size.width, self.frame.size.height))
-        webView.hidden = false
+        webView = UIWebView(frame: CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height))
+        webView.isHidden = false
     }
     
-    @IBAction func downloadEcardButton(sender: AnyObject) {
+    @IBAction func downloadEcardButton(_ sender: AnyObject) {
         print("in download ECard")
         print(ecarddwld)
         if ecarddwld == "0" {
             Popups.SharedInstance.ShowPopup("Members", message: "Don't have any id.")
         }else{
         rest.DownloadECard(ecarddwld,completion: {(json:JSON) -> ()in
-            dispatch_sync(dispatch_get_main_queue(), {
+            dispatch_get_main_queue().sync(DispatchQueue.mainexecute: {
                 print(json)
             if json["state"] {
                 if json["result"] != ""{
-                let pdfURL = NSURL(string: (json["result"].stringValue).stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)!
+                let pdfURL = NSURL(string: (json["result"].stringValue).stringByAddingPercentEscapesUsingEncoding(String.Encoding.utf8)!)!
                 UIApplication.sharedApplication().openURL(pdfURL)
                 }
             }

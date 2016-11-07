@@ -27,19 +27,19 @@ class ClaimIntimationController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
+        let statusBar = UIView(frame: CGRect(x: 0, y: 0, width: width, height: 20))
         statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
         self.view.addSubview(statusBar)
         
-        let mainheader = header(frame: CGRectMake(0, 20, width, 50))
+        let mainheader = header(frame: CGRect(x: 0, y: 20, width: width, height: 50))
         self.view.addSubview(mainheader)
         
-        let mainsubHeader = subHeader(frame: CGRectMake(0, 70, width, 50))
+        let mainsubHeader = subHeader(frame: CGRect(x: 0, y: 70, width: width, height: 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "flag_icon")
         mainsubHeader.subHeaderTitle.text = "CLAIM INTIMATION"
         self.view.addSubview(mainsubHeader)
         
-        let mainfooter = footer(frame: CGRectMake(0, height - 55, width, 55))
+        let mainfooter = footer(frame: CGRect(x: 0, y: height - 55, width: width, height: 55))
         mainfooter.layer.zPosition = 1000
         self.view.addSubview(mainfooter)
         
@@ -51,13 +51,13 @@ class ClaimIntimationController: UIViewController, UITableViewDelegate, UITableV
         // Dispose of any resources that can be recreated.
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! claimIntimationUIViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! claimIntimationUIViewCell
         cell.indexNo.text = indexNo[indexPath.item]
         cell.dateOfIntimation.text = dateOfIntimation[indexPath.item]
         cell.patientName.text = patientName[indexPath.item]
@@ -66,7 +66,7 @@ class ClaimIntimationController: UIViewController, UITableViewDelegate, UITableV
         cell.dod.text = dod[indexPath.item]
         cell.diagnosis.text = diagnosis[indexPath.item]
         cell.claimAmount.text = claimAmount[indexPath.item]
-        cell.selectionStyle = .None
+        cell.selectionStyle = .none
         
         //tableView.scrollEnabled = false
         tableView.showsVerticalScrollIndicator = false
@@ -78,11 +78,11 @@ class ClaimIntimationController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
 
-    @IBAction func benefitSummaryCall(sender: AnyObject) {
-        self.performSegueWithIdentifier("claimImmitationToBenefitSummary", sender: nil)
+    @IBAction func benefitSummaryCall(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: "claimImmitationToBenefitSummary", sender: nil)
     }
 }
 

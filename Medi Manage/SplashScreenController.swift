@@ -18,12 +18,12 @@ class SplashScreenController: UIViewController, UIGestureRecognizerDelegate {
         
         let image = UIImage(named: backgroundImage)
         
-        let myimage = UIImageView(frame: CGRectMake(0, 0, width, height))
+        let myimage = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
         myimage.image = image
         self.view.addSubview(myimage)
         
-        let button = UIButton(frame: CGRectMake(width / 2 - 95, height - 85, 200, 40))
-        button.backgroundColor = UIColor.clearColor()
+        let button = UIButton(frame: CGRect(x: width / 2 - 95, y: height - 85, width: 200, height: 40))
+        button.backgroundColor = UIColor.clear
         button.layer.zPosition = 10000
         self.view.addSubview(button)
         
@@ -39,9 +39,9 @@ class SplashScreenController: UIViewController, UIGestureRecognizerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func imageTap(sender: UITapGestureRecognizer) {
-        let im: TutorialController = storyboard?.instantiateViewControllerWithIdentifier("tutorialIdentifier") as! TutorialController //connectIdentifier
-        self.presentViewController(im, animated: true, completion: nil)
+    func imageTap(_ sender: UITapGestureRecognizer) {
+        let im: TutorialController = storyboard?.instantiateViewController(withIdentifier: "tutorialIdentifier") as! TutorialController //connectIdentifier
+        self.present(im, animated: true, completion: nil)
     }
 
     /*

@@ -30,18 +30,18 @@ class generateOTP: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextF
         loadViewFromNib ()
     }
     
-    func addPadding(width: CGFloat, myView: UITextField) {
-        let paddingView = UIView(frame: CGRectMake(0, 0, width, myView.frame.height))
+    func addPadding(_ width: CGFloat, myView: UITextField) {
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: myView.frame.height))
         myView.leftView = paddingView
-        myView.leftViewMode = UITextFieldViewMode.Always
+        myView.leftViewMode = UITextFieldViewMode.always
     }
     
     func loadViewFromNib() {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "generateOTP", bundle: bundle)
-        let sortnewview = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let sortnewview = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         sortnewview.frame = bounds
-        sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        sortnewview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(sortnewview);
         
         let imageView = UIImageView()
@@ -64,38 +64,38 @@ class generateOTP: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextF
         countryCodeCode.text = "91"
         
         let toolBar = UIToolbar()
-        toolBar.barStyle = UIBarStyle.Black
-        toolBar.tintColor = UIColor.whiteColor()
-        toolBar.backgroundColor = UIColor.blackColor()
+        toolBar.barStyle = UIBarStyle.black
+        toolBar.tintColor = UIColor.white
+        toolBar.backgroundColor = UIColor.black
 
         toolBar.sizeToFit()
         
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(completeProfile.donePicker))
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(completeProfile.donePicker))
         
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
         
         toolBar.setItems([spaceButton, doneButton], animated: false)
-        toolBar.userInteractionEnabled = true
+        toolBar.isUserInteractionEnabled = true
         
         countryCode.inputAccessoryView = toolBar
         
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         mobileNumber.resignFirstResponder()
         return true
     }
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return countryCodes[0].count
     }
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return countryCodes[0][row]
     }
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         countryCodeCode.text = countryCodes[1][row]
         countryCode.text = countryCodes[0][row]
@@ -104,25 +104,25 @@ class generateOTP: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextF
         countryCode.resignFirstResponder()
     }
     
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         textField.resignFirstResponder()
     }
     
-    @IBAction func backButton(sender: AnyObject) {
-        let passcodemodal = gGenerateOTPController.storyboard?.instantiateViewControllerWithIdentifier("loginc") as! LoginController
+    @IBAction func backButton(_ sender: AnyObject) {
+        let passcodemodal = gGenerateOTPController.storyboard?.instantiateViewController(withIdentifier: "loginc") as! LoginController
         
-        gGenerateOTPController.presentViewController(passcodemodal, animated: true, completion: nil)
+        gGenerateOTPController.present(passcodemodal, animated: true, completion: nil)
 
     }
-    @IBAction func enterotpCall(sender: AnyObject) {
+    @IBAction func enterotpCall(_ sender: AnyObject) {
         if self.mobileNumber.text == "" || self.countryCodeCode.text == "" {
             Popups.SharedInstance.ShowPopup("", message: "Both Fields are Required")
 
         }else{
         LoadingOverlay.shared.showOverlay(gGenerateOTPController.view)
         OTPStatus = 2
-        forgotMobileNumber? = String(UTF8String: self.mobileNumber.text!)!
-        forgotCountryCode? = String(UTF8String: self.countryCode.text!)!
+        forgotMobileNumber? = String(validatingUTF8: self.mobileNumber.text!)!
+        forgotCountryCode? = String(validatingUTF8: self.countryCode.text!)!
 
         rest.SendOtp(String(UTF8String: self.mobileNumber.text!)!, countrycode: String(UTF8String: self.countryCode.text!)!, completion: {(json:JSON) -> () in
             dispatch_async(dispatch_get_main_queue()){

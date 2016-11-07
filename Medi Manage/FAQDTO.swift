@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class FAQDTO
+open class FAQDTO
 {
    // public var ID: u_long { get; set; }
    // public var CategoryName : String { get; set; }
@@ -21,7 +21,7 @@ public class FAQDTO
     }
 }
 
-public class QuestionsDTO
+open class QuestionsDTO
 {
     /*
     public var Question : String { get{} set{} }

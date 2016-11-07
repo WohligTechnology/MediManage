@@ -25,44 +25,44 @@ class preAuthorizationOne: UIView {
         loadViewFromNib ()
     }
     
-    func addBottomBorder(color: UIColor, linewidth: CGFloat, myView: UIView) {
+    func addBottomBorder(_ color: UIColor, linewidth: CGFloat, myView: UIView) {
         let border = CALayer()
-        border.backgroundColor = color.CGColor
+        border.backgroundColor = color.cgColor
         //border.frame = CGRectMake(0, myView.frame.size.height - width, myView.frame.size.width, width)
-        border.frame = CGRectMake(-5, myView.frame.size.height + 4 - linewidth, width - 30, linewidth)
+        border.frame = CGRect(x: -5, y: myView.frame.size.height + 4 - linewidth, width: width - 30, height: linewidth)
         myView.layer.addSublayer(border)
     }
     
     func loadViewFromNib() {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "preAuthorizationOne", bundle: bundle)
-        let inbox = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let inbox = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         inbox.frame = bounds
-        inbox.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        inbox.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(inbox)
         
-        let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
+        let statusBar = UIView(frame: CGRect(x: 0, y: 0, width: width, height: 20))
         statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
         self.addSubview(statusBar)
         
-        let mainheader = header(frame: CGRectMake(0, 20, width, 50))
+        let mainheader = header(frame: CGRect(x: 0, y: 20, width: width, height: 50))
         self.addSubview(mainheader)
         
-        let mainsubHeader = subHeader(frame: CGRectMake(0, 70, width, 50))
+        let mainsubHeader = subHeader(frame: CGRect(x: 0, y: 70, width: width, height: 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "")
         mainsubHeader.subHeaderTitle.text = "PRE - AUTHORIZATIONS"
         self.addSubview(mainsubHeader)
         
-        preAuthorizationOneMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height - 125)
+        preAuthorizationOneMainView.frame = CGRect(x: 0, y: 120, width: self.frame.size.width, height: self.frame.size.height - 125)
         
         // add borders
-        addBottomBorder(UIColor.blackColor(), linewidth: 0.5, myView: patientNameView)
-        addBottomBorder(UIColor.blackColor(), linewidth: 0.5, myView: preAuthorizationNoView)
-        addBottomBorder(UIColor.blackColor(), linewidth: 0.5, myView: requestedAmountView)
+        addBottomBorder(UIColor.black, linewidth: 0.5, myView: patientNameView)
+        addBottomBorder(UIColor.black, linewidth: 0.5, myView: preAuthorizationNoView)
+        addBottomBorder(UIColor.black, linewidth: 0.5, myView: requestedAmountView)
     }
 
-    @IBAction func preAuthTwoCall(sender: AnyObject) {
-        gPreAuthorizationOneController.performSegueWithIdentifier("preAuthOneToPreAuthTwo", sender: nil)
+    @IBAction func preAuthTwoCall(_ sender: AnyObject) {
+        gPreAuthorizationOneController.performSegue(withIdentifier: "preAuthOneToPreAuthTwo", sender: nil)
     }
     
     /*

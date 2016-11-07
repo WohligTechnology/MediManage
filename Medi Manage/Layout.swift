@@ -15,7 +15,7 @@ class HorizontalLayout: UIView {
     var xOffsets: [CGFloat] = []
     
     init(height: CGFloat) {
-        super.init(frame: CGRectMake(0, 0, 0, height))
+        super.init(frame: CGRect(x: 0, y: 0, width: 0, height: height))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -38,7 +38,7 @@ class HorizontalLayout: UIView {
         
     }
     
-    override func addSubview(view: UIView) {
+    override func addSubview(_ view: UIView) {
         
         xOffsets.append(view.frame.origin.x)
         super.addSubview(view)
@@ -50,7 +50,7 @@ class HorizontalLayout: UIView {
         for view in subviews {
             view.removeFromSuperview()
         }
-        xOffsets.removeAll(keepCapacity: false)
+        xOffsets.removeAll(keepingCapacity: false)
         
     }
     
@@ -101,7 +101,7 @@ class VerticalLayout: UIView {
     var yOffsets: [CGFloat] = []
     
     init(width: CGFloat) {
-        super.init(frame: CGRectMake(0, 0, width, 0))
+        super.init(frame: CGRect(x: 0, y: 0, width: width, height: 0))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -124,7 +124,7 @@ class VerticalLayout: UIView {
         
     }
     
-    override func addSubview(view: UIView) {
+    override func addSubview(_ view: UIView) {
         
         yOffsets.append(view.frame.origin.y)
         super.addSubview(view)
@@ -136,7 +136,7 @@ class VerticalLayout: UIView {
         for view in subviews {
             view.removeFromSuperview()
         }
-        yOffsets.removeAll(keepCapacity: false)
+        yOffsets.removeAll(keepingCapacity: false)
         
     }
     
@@ -147,7 +147,7 @@ class VerticalScreenLayout: VerticalLayout {
     
     
     init() {
-        super.init(width: UIScreen.mainScreen().bounds.width)
+        super.init(width: UIScreen.main.bounds.width)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -156,7 +156,7 @@ class VerticalScreenLayout: VerticalLayout {
     
     override func layoutSubviews() {
         
-        self.frame.size.width = UIScreen.mainScreen().bounds.width
+        self.frame.size.width = UIScreen.main.bounds.width
         super.layoutSubviews()
         
     }

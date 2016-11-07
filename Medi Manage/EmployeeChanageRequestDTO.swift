@@ -7,7 +7,7 @@
 //
 
 import Foundation
-public class EmployeeChanageRequestDTO
+open class EmployeeChanageRequestDTO
 {
     /*
     public var ID :u_long  { get{} set{} }

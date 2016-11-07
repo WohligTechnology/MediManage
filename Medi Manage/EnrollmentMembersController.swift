@@ -19,7 +19,7 @@ class EnrollmentMembersController: UIViewController {
     
     @IBOutlet weak var EnrollmentMemberUIView: UIView!
     
-    func saveText(strText: NSString) {
+    func saveText(_ strText: NSString) {
         // labelText.text=strText
     }
     
@@ -32,7 +32,7 @@ class EnrollmentMembersController: UIViewController {
         navshow()
         
     }
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         selectedViewController = false
 
     }

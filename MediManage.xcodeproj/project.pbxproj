@@ -1042,13 +1042,16 @@
 					786DF9F51CD214F300DDE769 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = YVWVDTRG4B;
+						LastSwiftMigration = 0810;
 					};
 					786DFA091CD214F300DDE769 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0810;
 						TestTargetID = 786DF9F51CD214F300DDE769;
 					};
 					786DFA141CD214F300DDE769 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0810;
 						TestTargetID = 786DF9F51CD214F300DDE769;
 					};
 				};
@@ -1197,7 +1200,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1461,6 +1464,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-Manage";
 				PRODUCT_NAME = MediManage;
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1481,6 +1485,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-Manage";
 				PRODUCT_NAME = MediManage;
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1493,6 +1498,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-ManageTests";
 				PRODUCT_NAME = MediManage;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MediManage.app/MediManage";
 			};
 			name = Debug;
@@ -1505,6 +1511,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-ManageTests";
 				PRODUCT_NAME = MediManage;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MediManage.app/MediManage";
 			};
 			name = Release;
@@ -1516,6 +1523,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-ManageUITests";
 				PRODUCT_NAME = MediManage;
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Medi Manage";
 			};
 			name = Debug;
@@ -1527,6 +1535,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-ManageUITests";
 				PRODUCT_NAME = MediManage;
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Medi Manage";
 			};
 			name = Release;

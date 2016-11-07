@@ -59,32 +59,32 @@ class premiumCalculation: UIView {
     
     
     
-    func addBottomBorder(color: UIColor, linewidth: CGFloat, myView: UIView) {
+    func addBottomBorder(_ color: UIColor, linewidth: CGFloat, myView: UIView) {
         let border = CALayer()
-        border.backgroundColor = color.CGColor
-        border.frame = CGRectMake(5, myView.frame.size.height, width - 45, linewidth)
+        border.backgroundColor = color.cgColor
+        border.frame = CGRect(x: 5, y: myView.frame.size.height, width: width - 45, height: linewidth)
         myView.layer.addSublayer(border)
     }
     
     
     func loadViewFromNib() {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "premiumCalculation", bundle: bundle)
-        let sortnewview = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let sortnewview = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         sortnewview.frame = bounds
-        sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        sortnewview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(sortnewview)
         
-        let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
+        let statusBar = UIView(frame: CGRect(x: 0, y: 0, width: width, height: 20))
         statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
         self.addSubview(statusBar)
         
-        premiumCalculationMainView.frame = CGRectMake(0, 60, self.frame.size.width, self.frame.size.height - 70)
+        premiumCalculationMainView.frame = CGRect(x: 0, y: 60, width: self.frame.size.width, height: self.frame.size.height - 70)
         
         declaration.font = UIFont(name: "Lato-Light", size: 10.0)
         termsLabel.font = UIFont(name: "Lato-Light", size: 10.0)
         rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
-            dispatch_async(dispatch_get_main_queue(),{
+            dispatch_get_main_queue().asynchronously(DispatchQueue.mainexecute: {
                 print(json)
                 if json == 401 {
                     LoadingOverlay.shared.hideOverlayView()
@@ -133,39 +133,39 @@ class premiumCalculation: UIView {
         })
         
         //add borders
-        addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: basicPremiumView)
-        addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: topupPremiumView)
-        addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: netPremiumView)
-        addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: serviceTaxView)
-        addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: totalPremiumView)
+        addBottomBorder(UIColor.gray, linewidth: 0.5, myView: basicPremiumView)
+        addBottomBorder(UIColor.gray, linewidth: 0.5, myView: topupPremiumView)
+        addBottomBorder(UIColor.gray, linewidth: 0.5, myView: netPremiumView)
+        addBottomBorder(UIColor.gray, linewidth: 0.5, myView: serviceTaxView)
+        addBottomBorder(UIColor.gray, linewidth: 0.5, myView: totalPremiumView)
     }
 
     var terms = false
-    @IBAction func termsClick(sender: AnyObject) {
+    @IBAction func termsClick(_ sender: AnyObject) {
         terms = !terms
         if terms {
             //self.termsCheckbox.backgroundColor = UIColor.orangeColor()
-            self.termsCheckbox.setImage(UIImage(named: "checkbox_tick"), forState: .Normal)
+            self.termsCheckbox.setImage(UIImage(named: "checkbox_tick"), for: UIControlState())
         } else{
             //self.termsCheckbox.backgroundColor = nil\
-            self.termsCheckbox.setImage(UIImage(named: "checkbox_untick"), forState: .Normal)
+            self.termsCheckbox.setImage(UIImage(named: "checkbox_untick"), for: UIControlState())
         }
     }
     
     func pop() {
 //        Popups.SharedInstance.ShowPopup("Premium Calculation", message: "some error")
-        let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
-        gPremiumCalculationController.presentViewController(alert, animated: true, completion: nil)
+        let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        gPremiumCalculationController.present(alert, animated: true, completion: nil)
 //        QToasterSwift.toast(gPremiumCalculationController, text: "Welcome to QToasterSwift")
     }
     
     
-    @IBAction func insuredmembersCall(sender: AnyObject) {
+    @IBAction func insuredmembersCall(_ sender: AnyObject) {
         LoadingOverlay.shared.showOverlay(gPremiumCalculationController.view)
         if terms {
             rest.premiumConfirm({(json:JSON) -> ()in
-                dispatch_async(dispatch_get_main_queue(),{
+                dispatch_get_main_queue().asynchronously(DispatchQueue.mainexecute: {
 
                 print(json)
                 LoadingOverlay.shared.hideOverlayView()
@@ -174,12 +174,12 @@ class premiumCalculation: UIView {
                 }else{
                 if json["state"] {
                     print("in true")
-                    gPremiumCalculationController.performSegueWithIdentifier("insuredmembers", sender: nil)
+                    gPremiumCalculationController.performSegue(withIdentifier: "insuredmembers", sender: nil)
                 }else{
                     print("in else")
-                    let alert = UIAlertController(title: "Premium Calculation", message: json["error_message"].stringValue, preferredStyle: UIAlertControllerStyle.Alert)
-                    alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
-                    gPremiumCalculationController.presentViewController(alert, animated: true, completion: nil)
+                    let alert = UIAlertController(title: "Premium Calculation", message: json["error_message"].stringValue, preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+                    gPremiumCalculationController.present(alert, animated: true, completion: nil)
                 }
                 }
             })

@@ -24,11 +24,11 @@ class subHeader: UIView {
     }
     
     func loadViewFromNib() {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "subHeader", bundle: bundle)
-        let subHeader = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let subHeader = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         subHeader.frame = bounds
-        subHeader.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        subHeader.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(subHeader)
         
         subHeaderTitle.text = "HELP DESK"
@@ -37,7 +37,7 @@ class subHeader: UIView {
         //self.addSubview(mainsubHeader)
     }
 
-    @IBAction func backButton(sender: AnyObject) {
+    @IBAction func backButton(_ sender: AnyObject) {
         //gSubHeaderController.navigationController!.popViewControllerAnimated(true)
     }
     /*

@@ -23,24 +23,24 @@ class connect: UIView {
     }
     
     func loadViewFromNib() {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "connect", bundle: bundle)
-        let connect = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let connect = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         connect.frame = bounds
-        connect.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        connect.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(connect)
         
-        let mainsubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
+        let mainsubHeader = subHeader(frame: CGRect(x: 0, y: 60, width: width, height: 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_four")
         mainsubHeader.subHeaderTitle.text = "CONNECT"
         self.addSubview(mainsubHeader)
         
-        connectMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height - 125)
+        connectMainView.frame = CGRect(x: 0, y: 120, width: self.frame.size.width, height: self.frame.size.height - 125)
         
     }
     
-    @IBAction func myClaimsCall(sender: AnyObject) {
-        gConnectController.performSegueWithIdentifier("connectToMainClaims", sender: nil)
+    @IBAction func myClaimsCall(_ sender: AnyObject) {
+        gConnectController.performSegue(withIdentifier: "connectToMainClaims", sender: nil)
     }
     /*
     // Only override drawRect: if you perform custom drawing.

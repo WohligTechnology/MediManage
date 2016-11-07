@@ -32,7 +32,7 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
         
         LoadingOverlay.shared.showOverlay(self.view)
         
-        let mainsubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
+        let mainsubHeader = subHeader(frame: CGRect(x: 0, y: 60, width: width, height: 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_five")
         mainsubHeader.subHeaderTitle.text = "HOSPITAL SEARCH"
         self.view.addSubview(mainsubHeader)
@@ -49,29 +49,29 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
 //        searchTable.hidden
         
         // add borders
-        addBottomBorder(UIColor.blackColor(), linewidth: 0.5, myView: searchBoxView)
+        addBottomBorder(UIColor.black, linewidth: 0.5, myView: searchBoxView)
         loadTable()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         selectedViewController = false
         
     }
     
     func checkCoreLocationPermission() {
         print("in core")
-        if CLLocationManager.authorizationStatus() == .AuthorizedAlways {
+        if CLLocationManager.authorizationStatus() == .authorizedAlways {
             print("in authorized")
             locationManager.startUpdatingLocation()
-        }else if CLLocationManager.authorizationStatus() == .NotDetermined {
+        }else if CLLocationManager.authorizationStatus() == .notDetermined {
             print("in notdetaermined")
             locationManager.requestWhenInUseAuthorization()
-        }else if CLLocationManager.authorizationStatus() == .Restricted {
+        }else if CLLocationManager.authorizationStatus() == .restricted {
             print("unauthorized")
         }
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print(locations)
         let locationArray = locations as NSArray
         let locationObj = locationArray.lastObject as! CLLocation
@@ -85,13 +85,13 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
         
     }
     
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
     }
     
     func loadTable() {
         rest.Hospital(hospitalSearchText, completion: {(json:JSON) -> () in
-            dispatch_async(dispatch_get_main_queue(),{
+            dispatch_get_main_queue().asynchronously(DispatchQueue.mainexecute: {
                 LoadingOverlay.shared.hideOverlayView()
 
                 print(json)
@@ -104,11 +104,11 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
                     self.hospitals = json["result"]["Results"]
                     self.hoscount.text = json["result"]["Count"].stringValue
                     if json["result"]["Count"] == 0{
-                        self.nodata.hidden = false
-                        self.searchTable.hidden = true
+                        self.nodata.isHidden = false
+                        self.searchTable.isHidden = true
                     }else{
-                        self.nodata.hidden = true
-                        self.searchTable.hidden = false
+                        self.nodata.isHidden = true
+                        self.searchTable.isHidden = false
                     }
                     self.searchTable.reloadData()
                 }
@@ -116,7 +116,7 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
         })
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchCalled()
         searchText.resignFirstResponder()
         return true
@@ -126,7 +126,7 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func searchButton(sender: AnyObject) {
+    @IBAction func searchButton(_ sender: AnyObject) {
         //        locationManager.startUpdatingLocation()
         
         //        rest.getLocation({(json:JSON) ->() in
@@ -164,14 +164,14 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
         
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.hospitals.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! hospitalSearchResultUIViewCell
-        cell.selectionStyle = .None
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! hospitalSearchResultUIViewCell
+        cell.selectionStyle = .none
         
         //tableView.scrollEnabled = false
         tableView.showsVerticalScrollIndicator = false
@@ -184,43 +184,43 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
         
         let HospitalCallGesture = UITapGestureRecognizer(target: self, action: #selector(self.callFirst(_:)))
         
-        cell.hospitalCall.userInteractionEnabled = true
+        cell.hospitalCall.isUserInteractionEnabled = true
         cell.hospitalCall.addGestureRecognizer(HospitalCallGesture)
         
         let HospitalDirectionGesture = UITapGestureRecognizer(target: self, action: #selector(self.directions(_:)))
         
-        cell.locationDirection.userInteractionEnabled = true
+        cell.locationDirection.isUserInteractionEnabled = true
         cell.locationDirection.addGestureRecognizer(HospitalDirectionGesture)
         
         if(indexPath.item % 2 != 0) {
             //cell.claimIntimationView.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 255/255)
         }
         
-        let line = UIView(frame: CGRectMake(20, 0, 1, cell.hsCallView.frame.size.height))
-        line.backgroundColor = UIColor.lightGrayColor()
+        let line = UIView(frame: CGRect(x: 20, y: 0, width: 1, height: cell.hsCallView.frame.size.height))
+        line.backgroundColor = UIColor.lightGray
         //cell.hsCallView.addSubview(line)
-        let line2 = UIView(frame: CGRectMake(145, 0, 1, cell.hsCallView.frame.size.height))
-        line2.backgroundColor = UIColor.lightGrayColor()
+        let line2 = UIView(frame: CGRect(x: 145, y: 0, width: 1, height: cell.hsCallView.frame.size.height))
+        line2.backgroundColor = UIColor.lightGray
         //cell.hsCallView.addSubview(line2)
-        let line3 = UIView(frame: CGRectMake(280, 0, 1, cell.hsCallView.frame.size.height))
-        line3.backgroundColor = UIColor.lightGrayColor()
+        let line3 = UIView(frame: CGRect(x: 280, y: 0, width: 1, height: cell.hsCallView.frame.size.height))
+        line3.backgroundColor = UIColor.lightGray
         //cell.hsCallView.addSubview(line3)
         
         return cell
     }
-    func callFirst(sender: UITapGestureRecognizer) {
+    func callFirst(_ sender: UITapGestureRecognizer) {
         let phone = hospitals[sender.view!.tag]["Phone"].stringValue
         let fullPhone = phone.characters.split{$0 == "/"}.map(String.init)
         let formPhone = String(fullPhone[0]).characters.split{$0 == "-"}.map(String.init)
-        let newPhone = formPhone[0].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) + formPhone[1].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        let newPhone = formPhone[0].stringByTrimmingCharactersInSet(CharacterSet.whitespaceCharacterSet()) + formPhone[1].stringByTrimmingCharactersInSet(CharacterSet.whitespaceCharacterSet())
         self.callNumber(newPhone)
     }
     
-    func directions(sender: UITapGestureRecognizer) {
+    func directions(_ sender: UITapGestureRecognizer) {
         locationManager.startUpdatingLocation()
         print(hospitals[sender.view!.tag]["Address"].stringValue)
         rest.getLocation(hospitals[sender.view!.tag]["Address"].stringValue, completion: {(json:JSON) ->() in
-            dispatch_async(dispatch_get_main_queue(),{
+            dispatch_get_main_queue().asynchronously(DispatchQueue.mainexecute: {
                 print(json["results"][0]["geometry"]["location"])
                 
                 let saddrlat = self.lat
@@ -239,13 +239,13 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
         
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {}
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
     
-    func addBottomBorder(color: UIColor, linewidth: CGFloat, myView: UIView) {
+    func addBottomBorder(_ color: UIColor, linewidth: CGFloat, myView: UIView) {
         let border = CALayer()
-        border.backgroundColor = color.CGColor
+        border.backgroundColor = color.cgColor
         //border.frame = CGRectMake(0, myView.frame.size.height - width, myView.frame.size.width, width)
-        border.frame = CGRectMake(5, myView.frame.size.height - linewidth + 2, width - 50, linewidth)
+        border.frame = CGRect(x: 5, y: myView.frame.size.height - linewidth + 2, width: width - 50, height: linewidth)
         myView.layer.addSublayer(border)
     }
     //    @IBAction func inboxCall(sender: AnyObject) {
@@ -267,18 +267,18 @@ class hospitalSearchResultUIViewCell: UITableViewCell {
 }
 
 class drawLine: UIView {
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         
         let context = UIGraphicsGetCurrentContext()
-        CGContextSetLineWidth(context, 2.0)
-        CGContextSetStrokeColorWithColor(context, UIColor(red: 57/255, green: 66/255, blue: 106/255, alpha: 255/255).CGColor)
+        context?.setLineWidth(2.0)
+        context?.setStrokeColor(UIColor(red: 57/255, green: 66/255, blue: 106/255, alpha: 255/255).cgColor)
         //CGContextSetLineDash(context, 0, [7.5], 1)
         //CGContextSetLineCap(context, kCGLineCapRound)
         
-        CGContextMoveToPoint(context, 0, 0)
-        CGContextAddLineToPoint(context, 0, 45)
+        context?.move(to: CGPoint(x: 0, y: 0))
+        context?.addLine(to: CGPoint(x: 0, y: 45))
         
-        CGContextStrokePath(context)
+        context?.strokePath()
         
     }
 }

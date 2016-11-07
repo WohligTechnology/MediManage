@@ -21,15 +21,15 @@ class footer: UIView {
     }
     
     func loadViewFromNib() {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "footer", bundle: bundle)
-        let footer = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let footer = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         footer.frame = bounds
-        footer.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        footer.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(footer)
     }
 
-    @IBAction func footerHelpDesk(sender: AnyObject) {
+    @IBAction func footerHelpDesk(_ sender: AnyObject) {
         
     }
     /*

@@ -23,25 +23,25 @@ class helplineNumber: UIView {
     }
     
     func loadViewFromNib() {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "helplineNumber", bundle: bundle)
-        let inbox = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let inbox = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         inbox.frame = bounds
-        inbox.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        inbox.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(inbox)
         
-        let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
+        let statusBar = UIView(frame: CGRect(x: 0, y: 0, width: width, height: 20))
         statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
         self.addSubview(statusBar)
         
-        let mainheader = header(frame: CGRectMake(0, 20, width, 50))
+        let mainheader = header(frame: CGRect(x: 0, y: 20, width: width, height: 50))
         self.addSubview(mainheader)
         
-        helplineNumberMainView.frame = CGRectMake(0, 70, self.frame.size.width, self.frame.size.height - 125)
+        helplineNumberMainView.frame = CGRect(x: 0, y: 70, width: self.frame.size.width, height: self.frame.size.height - 125)
     }
     
-    @IBAction func claimImmitationCall(sender: AnyObject) {
-        gHelplineNumberController.performSegueWithIdentifier("helplineToClaimImmitation", sender: nil)
+    @IBAction func claimImmitationCall(_ sender: AnyObject) {
+        gHelplineNumberController.performSegue(withIdentifier: "helplineToClaimImmitation", sender: nil)
     }
     /*
     // Only override drawRect: if you perform custom drawing.

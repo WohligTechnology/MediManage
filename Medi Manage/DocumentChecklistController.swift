@@ -61,7 +61,7 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
         navshow()
         selectedViewController = false
         
-        let mainsubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
+        let mainsubHeader = subHeader(frame: CGRect(x: 0, y: 60, width: width, height: 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "document_checklist")
         mainsubHeader.subHeaderTitle.text = "DOCUMENT CHECKLIST"
         self.view.addSubview(mainsubHeader)
@@ -74,7 +74,7 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
         LoadingOverlay.shared.hideOverlayView()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         selectedViewController = false
         
     }
@@ -85,30 +85,30 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
     
     // MARK: - UITableView Methods
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return desc.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! documentChecklistUIViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! documentChecklistUIViewCell
         cell.dcTitle.text = titleMain[indexPath.item]
         cell.dcTitle.adjustsFontSizeToFitWidth = true
         cell.dcTitle.frame.size.height = 40
         cell.dcTitle.numberOfLines = 0
-        cell.dcTitle.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        cell.dcTitle.lineBreakMode = NSLineBreakMode.byWordWrapping
         cell.dcTitle.sizeToFit()
         
         cell.dcDesc.text = desc[indexPath.item]
         cell.dcImage.image = UIImage(named: image[indexPath.item])
         if pdfs[indexPath.item] == "" {
-            cell.dwldImage.hidden = true
-            cell.dwldText.hidden = true
+            cell.dwldImage.isHidden = true
+            cell.dwldText.isHidden = true
         }else{
-            cell.dwldImage.hidden = false
-            cell.dwldText.hidden = false
+            cell.dwldImage.isHidden = false
+            cell.dwldText.isHidden = false
         }
-        cell.selectionStyle = .None
+        cell.selectionStyle = .none
         
         tableView.showsVerticalScrollIndicator = false
         
@@ -119,10 +119,10 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         pdfname = pdfs[(indexPath.item)]
         if pdfname != "" {
-            self.performSegueWithIdentifier("viewPDF", sender: self)
+            self.performSegue(withIdentifier: "viewPDF", sender: self)
         }
         
     }

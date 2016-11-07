@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class ClientPolicyDTOClient
+open class ClientPolicyDTOClient
 {
     /*
     public var ID :u_long { get{} set{} }

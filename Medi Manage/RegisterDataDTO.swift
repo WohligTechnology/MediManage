@@ -7,7 +7,7 @@
 //
 
 import Foundation
-public class RegisterDataDTO : NSObject
+open class RegisterDataDTO : NSObject
 {/*
     public var EmployeeID : u_long { get{} set{} }
     public var EmployeeNumber : u_long { get{} set{} }

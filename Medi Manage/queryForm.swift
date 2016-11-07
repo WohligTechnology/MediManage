@@ -24,37 +24,37 @@ class queryForm: UIView {
         loadViewFromNib ()
     }
     
-    func addBottomBorder(color: UIColor, linewidth: CGFloat, myView: UIView) {
+    func addBottomBorder(_ color: UIColor, linewidth: CGFloat, myView: UIView) {
         let border = CALayer()
-        border.backgroundColor = color.CGColor
+        border.backgroundColor = color.cgColor
         //border.frame = CGRectMake(0, myView.frame.size.height - width, myView.frame.size.width, width)
-        border.frame = CGRectMake(-5, myView.frame.size.height - linewidth, width - 30, linewidth)
+        border.frame = CGRect(x: -5, y: myView.frame.size.height - linewidth, width: width - 30, height: linewidth)
         myView.layer.addSublayer(border)
     }
     
     func loadViewFromNib() {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "queryForm", bundle: bundle)
-        let queryForm = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let queryForm = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         queryForm.frame = bounds
-        queryForm.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        queryForm.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(queryForm)
         
-        let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
+        let statusBar = UIView(frame: CGRect(x: 0, y: 0, width: width, height: 20))
         statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
         self.addSubview(statusBar)
         
-        let mainheader = header(frame: CGRectMake(0, 20, width, 50))
+        let mainheader = header(frame: CGRect(x: 0, y: 20, width: width, height: 50))
         self.addSubview(mainheader)
         
-        queryFormMainView.frame = CGRectMake(0, 70, self.frame.size.width, self.frame.size.height - 125)
+        queryFormMainView.frame = CGRect(x: 0, y: 70, width: self.frame.size.width, height: self.frame.size.height - 125)
         
         // add borders
-        addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: queryTextfield)
+        addBottomBorder(UIColor.gray, linewidth: 0.5, myView: queryTextfield)
     }
     
-    @IBAction func helplineCall(sender: AnyObject) {
-        gQueryFormController.performSegueWithIdentifier("queryFormToHelpline", sender: nil)
+    @IBAction func helplineCall(_ sender: AnyObject) {
+        gQueryFormController.performSegue(withIdentifier: "queryFormToHelpline", sender: nil)
     }
 
     /*

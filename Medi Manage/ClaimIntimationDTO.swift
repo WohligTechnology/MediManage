@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class ClaimIntimationDTO
+open class ClaimIntimationDTO
 {
     /*
     public  var ID : u_long { get{} set{} }

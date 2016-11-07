@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class EmployeeEcardDTO
+open class EmployeeEcardDTO
 {/*
     public var EmpID : u_long { get{} set{} }
     

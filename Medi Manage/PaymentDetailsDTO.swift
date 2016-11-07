@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class PaymentDetailsDTO
+open class PaymentDetailsDTO
 {
     /*
     public var BankCode : String{ get{} set{} }

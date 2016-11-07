@@ -18,14 +18,14 @@ var widthGlo = bounds.size.width
 var heightGlo = bounds.size.height
 
 
-let bounds = UIScreen.mainScreen().bounds
+let bounds = UIScreen.main.bounds
 let width = bounds.size.width
 let height = bounds.size.height
 let mainBlueColor = UIColor(red: 21/255, green: 177/255, blue: 230/255, alpha: 255/255) // #15b1e6
 let rest = RestApi()
 var categoryId : String = ""
 var pdfname : String = ""
-var isVarifiedToEdit : BooleanType = false
+var isVarifiedToEdit : Bool = false
 var forgotMobileNumber : String! = ""
 var forgotCountryCode : String! = ""
 var profilePassword : String! = ""
@@ -75,30 +75,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         createMenuView()
-        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        self.window = UIWindow(frame: UIScreen.main.bounds)
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let token = defaultToken.stringForKey("access_token")
-        let splashscrn = defaultToken.stringForKey("onSplashScreen")
+        let token = defaultToken.string(forKey: "access_token")
+        let splashscrn = defaultToken.string(forKey: "onSplashScreen")
         
         if token != nil {
             
             
             
-            let exampleViewController: TabBarController = mainStoryboard.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
+            let exampleViewController: TabBarController = mainStoryboard.instantiateViewController(withIdentifier: "tabbar") as! TabBarController
             self.window?.rootViewController = exampleViewController
 
             
         }else{
             if splashscrn != nil {
-                let exampleViewController: LoginController = mainStoryboard.instantiateViewControllerWithIdentifier("loginc") as! LoginController
+                let exampleViewController: LoginController = mainStoryboard.instantiateViewController(withIdentifier: "loginc") as! LoginController
                 self.window?.rootViewController = exampleViewController
             }else{
-                let exampleViewController: PageViewerController = mainStoryboard.instantiateViewControllerWithIdentifier("pageViewCtlr") as! PageViewerController
+                let exampleViewController: PageViewerController = mainStoryboard.instantiateViewController(withIdentifier: "pageViewCtlr") as! PageViewerController
                 self.window?.rootViewController = exampleViewController
             }
         }
@@ -116,25 +116,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    func applicationWillResignActive(application: UIApplication) {
+    func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
 
-    func applicationDidEnterBackground(application: UIApplication) {
+    func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
-    func applicationWillEnterForeground(application: UIApplication) {
+    func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
 
-    func applicationDidBecomeActive(application: UIApplication) {
+    func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
-    func applicationWillTerminate(application: UIApplication) {
+    func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
@@ -151,102 +151,102 @@ extension UIViewController {
         let imgWidth = 25
         let imgHeight = 25
         let button:UIButton = UIButton(frame: CGRect(x: 0,y: 0,width: imgWidth, height: imgHeight))
-        button.setBackgroundImage(infoImage, forState: .Normal)
-        button.addTarget(self, action: #selector(UIViewController.rightNavItemEditClick(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        button.setBackgroundImage(infoImage, for: UIControlState())
+        button.addTarget(self, action: #selector(UIViewController.rightNavItemEditClick(_:)), for: UIControlEvents.touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
-        self.navigationController?.navigationBar.barTintColor = UIColor.blackColor()
-        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        self.navigationController?.navigationBar.barTintColor = UIColor.black
+        self.navigationController?.navigationBar.tintColor = UIColor.white
     }
     
     func checkSession() {
         rest.Hospital("mumbai%20fortis", completion: {(json:JSON) ->() in
             if json == 1{
-                let passcodemodal = self.storyboard?.instantiateViewControllerWithIdentifier("loginc") as! LoginController
+                let passcodemodal = self.storyboard?.instantiateViewController(withIdentifier: "loginc") as! LoginController
                 
-                self.presentViewController(passcodemodal, animated: true, completion: nil)
+                self.present(passcodemodal, animated: true, completion: nil)
             }
         })
     }
     
     func redirectToHome() {
-        let passcodemodal = self.storyboard?.instantiateViewControllerWithIdentifier("loginc") as! LoginController
+        let passcodemodal = self.storyboard?.instantiateViewController(withIdentifier: "loginc") as! LoginController
         
-        self.presentViewController(passcodemodal, animated: true, completion: nil)
+        self.present(passcodemodal, animated: true, completion: nil)
     }
     func redirectToAddMember() {
         isAddMember = true
-        let passcodemodal = self.storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
+        let passcodemodal = self.storyboard?.instantiateViewController(withIdentifier: "tabbar") as! TabBarController
         
-        self.presentViewController(passcodemodal, animated: true, completion: nil)
+        self.present(passcodemodal, animated: true, completion: nil)
     }
     func topendding() {
         tabSelected = 1
-        let passcodemodal = self.storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
+        let passcodemodal = self.storyboard?.instantiateViewController(withIdentifier: "tabbar") as! TabBarController
         
-        self.presentViewController(passcodemodal, animated: true, completion: nil)
+        self.present(passcodemodal, animated: true, completion: nil)
     }
     
-    func callNumber(phoneNumber:String) {
-        if let phoneCallURL:NSURL = NSURL(string: "tel://\(phoneNumber)") {
-            let application:UIApplication = UIApplication.sharedApplication()
+    func callNumber(_ phoneNumber:String) {
+        if let phoneCallURL:URL = URL(string: "tel://\(phoneNumber)") {
+            let application:UIApplication = UIApplication.shared
             if (application.canOpenURL(phoneCallURL)) {
                 application.openURL(phoneCallURL);
             }
         }
     }
     
-    func rightNavItemEditClick(sender:UIButton!) {
+    func rightNavItemEditClick(_ sender:UIButton!) {
         
         print(selectedViewController)
        
         
-        let actionSheetControllerIOS8: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        let actionSheetControllerIOS8: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         // CANCEL BUTTON
-        let cancelActionButton: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in}
+        let cancelActionButton: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in}
         actionSheetControllerIOS8.addAction(cancelActionButton)
         
         // CHANGEPASSWORD BUTTON
-        let changePasswordActionButton: UIAlertAction = UIAlertAction(title: "Change Password", style: .Default){ action -> Void in
-            let passcodemodal = self.storyboard?.instantiateViewControllerWithIdentifier("changePass") as! ChangePassword
+        let changePasswordActionButton: UIAlertAction = UIAlertAction(title: "Change Password", style: .default){ action -> Void in
+            let passcodemodal = self.storyboard?.instantiateViewController(withIdentifier: "changePass") as! ChangePassword
             
-            self.presentViewController(passcodemodal, animated: true, completion: nil)
+            self.present(passcodemodal, animated: true, completion: nil)
 
         }
         actionSheetControllerIOS8.addAction(changePasswordActionButton)
         
         // EDIT PROFILE BUTTON
-        let editProfileActionButton: UIAlertAction = UIAlertAction(title: "Edit Profile", style: .Default){ action -> Void in
+        let editProfileActionButton: UIAlertAction = UIAlertAction(title: "Edit Profile", style: .default){ action -> Void in
             profileState = "Edit"
-            let passcodemodal = self.storyboard?.instantiateViewControllerWithIdentifier("completeProfile") as! CompleteProfileController
+            let passcodemodal = self.storyboard?.instantiateViewController(withIdentifier: "completeProfile") as! CompleteProfileController
             
-            self.presentViewController(passcodemodal, animated: true, completion: nil)
+            self.present(passcodemodal, animated: true, completion: nil)
             
         }
         actionSheetControllerIOS8.addAction(editProfileActionButton)
         
         if selectedViewController {
-            let editProfileActionButton: UIAlertAction = UIAlertAction(title: "Add Members", style: .Default){ action -> Void in
+            let editProfileActionButton: UIAlertAction = UIAlertAction(title: "Add Members", style: .default){ action -> Void in
                 isAddMember = true
-                let passcodemodal = self.storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
+                let passcodemodal = self.storyboard?.instantiateViewController(withIdentifier: "tabbar") as! TabBarController
                 
-                self.presentViewController(passcodemodal, animated: true, completion: nil)
+                self.present(passcodemodal, animated: true, completion: nil)
                 
             }
             actionSheetControllerIOS8.addAction(editProfileActionButton)
         }
         
         // LOGOUT BUTTON
-        let logoutActionButton: UIAlertAction = UIAlertAction(title: "Logout", style: .Destructive){ action -> Void in
-            defaultToken.removeObjectForKey("access_token")
-            let passcodemodal = self.storyboard?.instantiateViewControllerWithIdentifier("loginc") as! LoginController
+        let logoutActionButton: UIAlertAction = UIAlertAction(title: "Logout", style: .destructive){ action -> Void in
+            defaultToken.removeObject(forKey: "access_token")
+            let passcodemodal = self.storyboard?.instantiateViewController(withIdentifier: "loginc") as! LoginController
             
-            self.presentViewController(passcodemodal, animated: true, completion: nil)
+            self.present(passcodemodal, animated: true, completion: nil)
             
         }
         actionSheetControllerIOS8.addAction(logoutActionButton)
         
         // PRESENT VIEW SENDER
-        self.presentViewController(actionSheetControllerIOS8, animated: true, completion: nil)
+        self.present(actionSheetControllerIOS8, animated: true, completion: nil)
     }
 }

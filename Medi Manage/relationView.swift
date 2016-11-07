@@ -18,11 +18,11 @@ class relationView: UIView {
     }
     
     func loadViewFromNib() {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "relationView", bundle: bundle)
-        let helpDesk = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let helpDesk = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         helpDesk.frame = bounds
-        helpDesk.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        helpDesk.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(helpDesk)
     }
         

@@ -1,42 +1,21 @@
 PODS:
-  - Alamofire (3.4.0)
-  - QToasterSwift (0.1.2)
-  - SwiftHTTP (1.0.5)
-  - SwiftSpinner (0.9.5)
-  - SwiftValidator (3.0.1)
-  - SwiftyJSON (2.3.2)
+  - Alamofire (4.0.1)
+  - SwiftHTTP (2.0.2)
+  - SwiftSpinner (1.1.0)
+  - SwiftyJSON (3.1.1)
 
 DEPENDENCIES:
-  - Alamofire (~> 3.4)
-  - QToasterSwift (~> 0.1)
-  - SwiftHTTP (~> 1.0.3)
-  - SwiftSpinner
-  - SwiftValidator (from `https://github.com/jpotts18/SwiftValidator.git`, tag `4.0.0`)
-  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
-
-EXTERNAL SOURCES:
-  SwiftValidator:
-    :git: https://github.com/jpotts18/SwiftValidator.git
-    :tag: 4.0.0
-  SwiftyJSON:
-    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
-
-CHECKOUT OPTIONS:
-  SwiftValidator:
-    :git: https://github.com/jpotts18/SwiftValidator.git
-    :tag: 4.0.0
-  SwiftyJSON:
-    :commit: 2a5b70f06001316d4fb54501edc70b4084705da0
-    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+  - Alamofire (~> 4.0)
+  - SwiftHTTP (~> 2.0.0)
+  - SwiftSpinner (= 1.1.0)
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
-  QToasterSwift: 049f09f1987103686004808104a715413d01c214
-  SwiftHTTP: edb45e72f27d1d95d328d2b2c16a61aa94f1e9f7
-  SwiftSpinner: c6585a0ae5c67eb33e737695cce88f0262008cce
-  SwiftValidator: 461a2c00173f001287a8fa1f12704b87ec8a6bc4
-  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  SwiftHTTP: faa1a5f7670568ffc9361898229dbe84a6088468
+  SwiftSpinner: c03815614599b91eea46594bd52ba742849d0414
+  SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: 164954830a5b62f18c12f0b214985bbf88a043b7
+PODFILE CHECKSUM: 94ea9e25e5889f718fc7141f1ef84997e5528bbc
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.1

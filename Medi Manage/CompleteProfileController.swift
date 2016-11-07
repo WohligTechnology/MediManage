@@ -18,7 +18,7 @@ class CompleteProfileController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         gCompleteProfileController = self
-        let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
+        let statusBar = UIView(frame: CGRect(x: 0, y: 0, width: width, height: 20))
         statusBar.backgroundColor = UIColor(red: 244/255, green: 121/255, blue: 32/255, alpha: 1)
         self.view.addSubview(statusBar)
 //        LoadingOverlay.shared.showOverlay(self.view)
@@ -30,10 +30,10 @@ class CompleteProfileController: UIViewController {
     }
     
     
-    func addBottomBorder(color: UIColor, linewidth: CGFloat, myView: UIView) {
+    func addBottomBorder(_ color: UIColor, linewidth: CGFloat, myView: UIView) {
         let border = CALayer()
-        border.backgroundColor = color.CGColor
-        border.frame = CGRectMake(0, myView.frame.size.height - linewidth, width - 30, linewidth)
+        border.backgroundColor = color.cgColor
+        border.frame = CGRect(x: 0, y: myView.frame.size.height - linewidth, width: width - 30, height: linewidth)
         myView.layer.addSublayer(border)
     }
 //    
@@ -41,9 +41,9 @@ class CompleteProfileController: UIViewController {
 //        textField.resignFirstResponder()
 //    }
 
-    @IBAction func editProfile(sender: AnyObject) {
+    @IBAction func editProfile(_ sender: AnyObject) {
         print(isVarifiedToEdit)
-        self.performSegueWithIdentifier("requestOTP", sender: nil)
+        self.performSegue(withIdentifier: "requestOTP", sender: nil)
     }
     
 }

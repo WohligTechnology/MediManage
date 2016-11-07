@@ -23,8 +23,8 @@ class TabBarController: UITabBarController {
         self.moreNavigationController.navigationBar.topItem?.rightBarButtonItem = nil
 
         self.moreNavigationController.navigationBar.topItem?.leftBarButtonItem = nil
-        self.moreNavigationController.navigationBar.barTintColor = UIColor.blackColor()
-        self.moreNavigationController.navigationBar.tintColor = UIColor.whiteColor()
+        self.moreNavigationController.navigationBar.barTintColor = UIColor.black
+        self.moreNavigationController.navigationBar.tintColor = UIColor.white
         
         
 //        rest.isEnrolled({(json:JSON) ->() in

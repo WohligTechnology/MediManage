@@ -9,7 +9,7 @@
 import Foundation
 
 
-public class EmailDTO
+open class EmailDTO
 {
     /*
     public var To :String { get{} set{} }

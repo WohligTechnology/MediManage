@@ -97,14 +97,14 @@ class memberList: UIView ,UIActionSheetDelegate{
        UpdateTabs(lblWife, uiview:  tabWife)
         for x in 0..<7
         {
-            let currRelation  = String(json2["result"]["Groups"][0]["Members"][x][1])
+            let currRelation  = String(describing: json2["result"]["Groups"][0]["Members"][x][1])
             
             switch currRelation{
                 
             case "Wife":
             
-            firstname =   String(json2["result"]["Groups"][0]["Members"][x]["FirstName"])
-               lastName = String(json2["result"]["Groups"][0]["Members"][x]["LastName"])
+            firstname =   String(describing: json2["result"]["Groups"][0]["Members"][x]["FirstName"])
+               lastName = String(describing: json2["result"]["Groups"][0]["Members"][x]["LastName"])
               
                 DOB = String(json2["result"]["Groups"][0]["Members"][x]["DateOfBirth"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
               
@@ -120,7 +120,7 @@ class memberList: UIView ,UIActionSheetDelegate{
     }
     
  
-    @IBAction func Calculation(sender: AnyObject) {
+    @IBAction func Calculation(_ sender: AnyObject) {
         
     }
     
@@ -129,14 +129,14 @@ class memberList: UIView ,UIActionSheetDelegate{
         UpdateTabs(lblSon, uiview: tabSon)
     
         for x in 0..<7
-        {       let currRelation  = String(json2["result"]["Groups"][0]["Members"][x]["RelationType"])
+        {       let currRelation  = String(describing: json2["result"]["Groups"][0]["Members"][x]["RelationType"])
             
             switch currRelation{
                 
             case "Son":
                 
-                firstname =   String(json2["result"]["Groups"][0]["Members"][x]["FirstName"])
-                lastName = String(json2["result"]["Groups"][0]["Members"][x]["LastName"])
+                firstname =   String(describing: json2["result"]["Groups"][0]["Members"][x]["FirstName"])
+                lastName = String(describing: json2["result"]["Groups"][0]["Members"][x]["LastName"])
                 DOB = String(json2["result"]["Groups"][0]["Members"][x]["DateOfBirth"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
              DOM = String(json2["result"]["Groups"][0]["Members"][x]["DateOfRelation"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
                 
@@ -158,13 +158,13 @@ class memberList: UIView ,UIActionSheetDelegate{
        updateTab()
         UpdateTabs(lblDaughter, uiview: tabDaughter)
         for x in 0..<7
-        {       let currRelation  = String(json2["result"]["Groups"][0]["Members"][x]["RelationType"])
+        {       let currRelation  = String(describing: json2["result"]["Groups"][0]["Members"][x]["RelationType"])
             
             switch currRelation{
                 
             case "Daughter":
-                firstname =   String(json2["result"]["Groups"][0]["Members"][x]["FirstName"])
-                lastName = String(json2["result"]["Groups"][0]["Members"][x]["LastName"])
+                firstname =   String(describing: json2["result"]["Groups"][0]["Members"][x]["FirstName"])
+                lastName = String(describing: json2["result"]["Groups"][0]["Members"][x]["LastName"])
             
                 DOB = String(json2["result"]["Groups"][0]["Members"][x]["DateOfBirth"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
                 
@@ -187,14 +187,14 @@ class memberList: UIView ,UIActionSheetDelegate{
        updateTab()
          UpdateTabs(lblFather,uiview: tabFather)
         for x in 0..<7
-        {       let currRelation  = String(json2["result"]["Groups"][0]["Members"][x]["RelationType"])
+        {       let currRelation  = String(describing: json2["result"]["Groups"][0]["Members"][x]["RelationType"])
             
             switch currRelation{
                 
             case "Father":
                 
-                firstname =   String(json2["result"]["Groups"][0]["Members"][x]["FirstName"])
-                lastName = String(json2["result"]["Groups"][0]["Members"][x]["LastName"])
+                firstname =   String(describing: json2["result"]["Groups"][0]["Members"][x]["FirstName"])
+                lastName = String(describing: json2["result"]["Groups"][0]["Members"][x]["LastName"])
                 
                 DOB = String(json2["result"]["Groups"][0]["Members"][x]["DateOfBirth"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
                 
@@ -218,14 +218,14 @@ class memberList: UIView ,UIActionSheetDelegate{
        updateTab()
         UpdateTabs(lblMother,uiview: tabMother)
         for x in 0..<7
-        {       let currRelation  = String(json2["result"]["Groups"][0]["Members"][x]["RelationType"])
+        {       let currRelation  = String(describing: json2["result"]["Groups"][0]["Members"][x]["RelationType"])
             
             switch currRelation{
                 
             case "Mother":
                 
-                firstname =   String(json2["result"]["Groups"][0]["Members"][x]["FirstName"])
-                lastName = String(json2["result"]["Groups"][0]["Members"][x]["LastName"])
+                firstname =   String(describing: json2["result"]["Groups"][0]["Members"][x]["FirstName"])
+                lastName = String(describing: json2["result"]["Groups"][0]["Members"][x]["LastName"])
                 
                 DOB = String(json2["result"]["Groups"][0]["Members"][x]["DateOfBirth"]).stringByReplacingOccurrencesOfString("T00:00:00", withString: "")
                 
@@ -249,35 +249,35 @@ class memberList: UIView ,UIActionSheetDelegate{
     func updateTab(){
    
            tabWife.backgroundColor =  UIColor(red: 21/255, green: 177/255, blue: 230/255, alpha: 255/255)
-         lblWife.textColor  = UIColor.whiteColor()
+         lblWife.textColor  = UIColor.white
       
         tabSon.backgroundColor    =  UIColor(red: 21/255, green: 177/255, blue: 230/255, alpha: 255/255)
-         lblSon.textColor         = UIColor.whiteColor()
+         lblSon.textColor         = UIColor.white
        
         tabDaughter.backgroundColor   =  UIColor(red: 21/255, green: 177/255, blue: 230/255, alpha: 255/255)
-        lblDaughter.textColor           = UIColor.whiteColor()
+        lblDaughter.textColor           = UIColor.white
         
         tabFather.backgroundColor     =  UIColor(red: 21/255, green: 177/255, blue: 230/255, alpha: 255/255)
-          lblFather.textColor   = UIColor.whiteColor()
+          lblFather.textColor   = UIColor.white
         
            tabMother.backgroundColor   =  UIColor(red: 21/255, green: 177/255, blue: 230/255, alpha: 255/255)
-           lblMother.textColor   = UIColor.whiteColor()
+           lblMother.textColor   = UIColor.white
         
     
         
     }
 
-    func UpdateTabs (label :UILabel ,uiview :UIView)  {
+    func UpdateTabs (_ label :UILabel ,uiview :UIView)  {
     
     label.textColor =    UIColor(red: 21/255, green: 177/255, blue: 230/255, alpha: 255/255)
-    uiview.backgroundColor = UIColor.whiteColor()
+    uiview.backgroundColor = UIColor.white
     }
  
     func fbtnclicked() {
-        let vc = gEnrollmentMembersController.storyboard?.instantiateViewControllerWithIdentifier("EnrollmentMember") as! EnrollmentMembersController
+        let vc = gEnrollmentMembersController.storyboard?.instantiateViewController(withIdentifier: "EnrollmentMember") as! EnrollmentMembersController
         
         //  vc.RESULT = "Result"
-        gMemberListGroupTableController.presentViewController(vc, animated: true, completion: nil)
+        gMemberListGroupTableController.present(vc, animated: true, completion: nil)
         
      }
     
@@ -288,7 +288,7 @@ class memberList: UIView ,UIActionSheetDelegate{
         
     }
     
-    func FirstTabs(fullName : String,DatofBirth : String,Dateofmarriage: String)
+    func FirstTabs(_ fullName : String,DatofBirth : String,Dateofmarriage: String)
     {
                lblName.text = fullName
                lblDOB.text = DatofBirth
@@ -296,7 +296,7 @@ class memberList: UIView ,UIActionSheetDelegate{
 
     }
     
-    func SecondsTabs(fullName : String,DatofBirth : String,Dateofmarriage: String)
+    func SecondsTabs(_ fullName : String,DatofBirth : String,Dateofmarriage: String)
     {
         lblPName.text = fullName
         lblPDOB.text = DatofBirth
@@ -306,62 +306,62 @@ class memberList: UIView ,UIActionSheetDelegate{
     }
     
    
-    func addBottomBorder(color: UIColor, width: CGFloat, myView: UIView) {
+    func addBottomBorder(_ color: UIColor, width: CGFloat, myView: UIView) {
         let border = CALayer()
-        border.backgroundColor = color.CGColor
-        border.frame = CGRectMake(5, myView.frame.size.height, myView.frame.size.width - 10, width)
+        border.backgroundColor = color.cgColor
+        border.frame = CGRect(x: 5, y: myView.frame.size.height, width: myView.frame.size.width - 10, height: width)
         myView.layer.addSublayer(border)
     }
     
     func loadViewFromNib() {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "memberList", bundle: bundle)
-        let sortnewview = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let sortnewview = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         sortnewview.frame = bounds
-        sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-        let scrollView = UIScrollView(frame: CGRectMake(0, 0, self.frame.size.width, self.frame.size.height))
+        sortnewview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        let scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height))
         scrollView.contentSize.height = 1000 //856
         scrollView.showsVerticalScrollIndicator = false
-        scrollView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        scrollView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         scrollView.addSubview(sortnewview)
         self.addSubview(scrollView)
         
-        let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
+        let statusBar = UIView(frame: CGRect(x: 0, y: 0, width: width, height: 20))
         statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
         self.addSubview(statusBar)
         
-        let mainheader = header(frame: CGRectMake(0, 20, width, 50))
+        let mainheader = header(frame: CGRect(x: 0, y: 20, width: width, height: 50))
         self.addSubview(mainheader)
         
-        memberListMainView.frame = CGRectMake(0, 70, self.frame.size.width, self.frame.size.height)
+        memberListMainView.frame = CGRect(x: 0, y: 70, width: self.frame.size.width, height: self.frame.size.height)
         
         dummyButton.layer.zPosition = 10000
       //  premiumCalculation.layer.zPosition = 10000
         
-        let calculationButton = UIButton(frame: CGRectMake(0, 850, self.frame.size.width, 40))
-        calculationButton.backgroundColor = UIColor.blackColor()
-        calculationButton.setTitle("Premium Calculation", forState: .Normal)
+        let calculationButton = UIButton(frame: CGRect(x: 0, y: 850, width: self.frame.size.width, height: 40))
+        calculationButton.backgroundColor = UIColor.black
+        calculationButton.setTitle("Premium Calculation", for: UIControlState())
         calculationButton.layer.zPosition = 9230
         
         
-        let hell = UITapGestureRecognizer(target: self, action: Selector("Premcalculation"))
+        let hell = UITapGestureRecognizer(target: self, action: #selector(memberList.Premcalculation))
         calculationButton.addGestureRecognizer(hell)
-        calculationButton.userInteractionEnabled = true
+        calculationButton.isUserInteractionEnabled = true
         
         scrollView.addSubview(calculationButton)
         
         //add borders
-        addBottomBorder(UIColor.grayColor(), width: 0.5, myView: nameViewOne)
-        addBottomBorder(UIColor.grayColor(), width: 0.5, myView: dobViewOne)
-        addBottomBorder(UIColor.grayColor(), width: 0.5, myView: domViewOne)
-        addBottomBorder(UIColor.grayColor(), width: 0.5, myView: nameViewTwo)
-        addBottomBorder(UIColor.grayColor(), width: 0.5, myView: dobViewTwo)
-        addBottomBorder(UIColor.grayColor(), width: 0.5, myView: domViewTwo)
+        addBottomBorder(UIColor.gray, width: 0.5, myView: nameViewOne)
+        addBottomBorder(UIColor.gray, width: 0.5, myView: dobViewOne)
+        addBottomBorder(UIColor.gray, width: 0.5, myView: domViewOne)
+        addBottomBorder(UIColor.gray, width: 0.5, myView: nameViewTwo)
+        addBottomBorder(UIColor.gray, width: 0.5, myView: dobViewTwo)
+        addBottomBorder(UIColor.gray, width: 0.5, myView: domViewTwo)
     }
     
 
-    @IBAction func premiumcalculationCall(sender: AnyObject) {
-        gMemberListGroupTableController.performSegueWithIdentifier("premiumcalculation", sender: nil)
+    @IBAction func premiumcalculationCall(_ sender: AnyObject) {
+        gMemberListGroupTableController.performSegue(withIdentifier: "premiumcalculation", sender: nil)
     }
     /*
     // Only override drawRect: if you perform custom drawing.
@@ -377,31 +377,31 @@ class memberList: UIView ,UIActionSheetDelegate{
       //  premiumCalculation.addGestureRecognizer(calculation)
         //premiumCalculation.userInteractionEnabled = true
         
-        let fbtnEdit = UITapGestureRecognizer(target: self, action: Selector("fbtnclicked"))
+        let fbtnEdit = UITapGestureRecognizer(target: self, action: #selector(memberList.fbtnclicked))
         editDetails.addGestureRecognizer(fbtnEdit)
-        editDetails.userInteractionEnabled = true
-        let secbtnEdit = UITapGestureRecognizer(target: self, action: Selector("secbtnclicked"))
+        editDetails.isUserInteractionEnabled = true
+        let secbtnEdit = UITapGestureRecognizer(target: self, action: #selector(memberList.secbtnclicked))
        seceditDetails.addGestureRecognizer(secbtnEdit)
-        seceditDetails.userInteractionEnabled = true
-        let tabwife = UITapGestureRecognizer(target: self, action: Selector("tabwifeclicked"))
+        seceditDetails.isUserInteractionEnabled = true
+        let tabwife = UITapGestureRecognizer(target: self, action: #selector(memberList.tabwifeclicked))
         tabWife.addGestureRecognizer(tabwife)
-        tabWife.userInteractionEnabled = true
+        tabWife.isUserInteractionEnabled = true
         
-        let tabson = UITapGestureRecognizer(target: self, action: Selector("tabsonclicked"))
+        let tabson = UITapGestureRecognizer(target: self, action: #selector(memberList.tabsonclicked))
         tabSon.addGestureRecognizer(tabson)
-        tabSon.userInteractionEnabled = true
+        tabSon.isUserInteractionEnabled = true
         
-        let tabdaughter = UITapGestureRecognizer(target: self, action: Selector("tabdaughterclicked"))
+        let tabdaughter = UITapGestureRecognizer(target: self, action: #selector(memberList.tabdaughterclicked))
         tabDaughter.addGestureRecognizer(tabdaughter)
-        tabDaughter.userInteractionEnabled = true
+        tabDaughter.isUserInteractionEnabled = true
         
-        let tabfather = UITapGestureRecognizer(target: self, action: Selector("tabfatherclicked"))
+        let tabfather = UITapGestureRecognizer(target: self, action: #selector(memberList.tabfatherclicked))
         tabFather.addGestureRecognizer(tabfather)
-        tabFather.userInteractionEnabled = true
+        tabFather.isUserInteractionEnabled = true
         
-        let tabmother = UITapGestureRecognizer(target: self, action: Selector("tabmotherclicked"))
+        let tabmother = UITapGestureRecognizer(target: self, action: #selector(memberList.tabmotherclicked))
         tabMother.addGestureRecognizer(tabmother)
-        tabMother.userInteractionEnabled = true
+        tabMother.isUserInteractionEnabled = true
       
     }
 
@@ -410,15 +410,15 @@ class memberList: UIView ,UIActionSheetDelegate{
    {
  
     let myActionSheet = UIActionSheet()
-    myActionSheet.addButtonWithTitle("Save")
-    myActionSheet.addButtonWithTitle("Cancel")
-    myActionSheet.showInView(gMemberListGroupTableController.view)
+    myActionSheet.addButton(withTitle: "Save")
+    myActionSheet.addButton(withTitle: "Cancel")
+    myActionSheet.show(in: gMemberListGroupTableController.view)
     
   //  gMemberListController.performSegueWithIdentifier("premiumcalculation", sender: nil)
    
     }
     
-    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int)
+    func actionSheet(_ actionSheet: UIActionSheet, clickedButtonAt buttonIndex: Int)
     {
         print("\(buttonIndex)")
         switch (buttonIndex){

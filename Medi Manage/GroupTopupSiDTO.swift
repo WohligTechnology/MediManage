@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class GroupTopupSiDTO
+open class GroupTopupSiDTO
 {/*
     public var GroupID : u_long { get{} set{} }
     public var GroupComposition : String { get{} set{} }

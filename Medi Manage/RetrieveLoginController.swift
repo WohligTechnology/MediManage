@@ -26,14 +26,14 @@ class RetrieveLoginController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func GenerateOTP(sender: AnyObject) {
+    @IBAction func GenerateOTP(_ sender: AnyObject) {
         isVarifiedToEdit = true
         print(isVarifiedToEdit)
-        self.performSegueWithIdentifier("toeditprofile", sender: nil)
+        self.performSegue(withIdentifier: "toeditprofile", sender: nil)
     }
 
-    @IBAction func BackBtn(sender: AnyObject) {
-        self.performSegueWithIdentifier("toeditprofile", sender: nil)
+    @IBAction func BackBtn(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: "toeditprofile", sender: nil)
     }
     /*
     // MARK: - Navigation

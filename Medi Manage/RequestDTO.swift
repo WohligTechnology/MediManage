@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class RequestDTO
+open class RequestDTO
 {
     /*
     public var ID : u_long { get{} set{} }

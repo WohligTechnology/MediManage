@@ -20,7 +20,7 @@ class HelpDeskQueryController: UIViewController {
         navshow()
         // Do any additional setup after loading the view.
     }
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         selectedViewController = false
         print("view appeared")
     }
@@ -32,9 +32,9 @@ class HelpDeskQueryController: UIViewController {
     
     func showPopup () {
         
-        let dialog = UIAlertController(title: "Login", message: "error", preferredStyle: UIAlertControllerStyle.Alert)
+        let dialog = UIAlertController(title: "Login", message: "error", preferredStyle: UIAlertControllerStyle.alert)
         
-        dialog.addAction(UIAlertAction(title: "Try Again!!", style: UIAlertActionStyle.Destructive, handler:{
+        dialog.addAction(UIAlertAction(title: "Try Again!!", style: UIAlertActionStyle.destructive, handler:{
             action in
             
         }))

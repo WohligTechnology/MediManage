@@ -20,7 +20,7 @@ class TutorialController: UIViewController {
 //        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("pageViewCtlr") as! PageViewerController
 //        self.presentViewController(vc, animated: true, completion: nil)
 //        self.presentViewController(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
-        self.performSegueWithIdentifier("goToPage", sender: nil)
+        self.performSegue(withIdentifier: "goToPage", sender: nil)
     }
 
     override func didReceiveMemoryWarning() {

@@ -12,15 +12,15 @@ import SwiftyJSON
 var gInsuredMembersController: UIViewController!
 
 class Downloader {
-    class func load(URL: NSURL) {
-        let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
-        let session = NSURLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
-        let request = NSMutableURLRequest(URL: URL)
-        request.HTTPMethod = "GET"
-        let task = session.dataTaskWithRequest(request, completionHandler: { (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+    class func load(_ URL: Foundation.URL) {
+        let sessionConfig = URLSessionConfiguration.default
+        let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
+        let request = NSMutableURLRequest(url: URL)
+        request.httpMethod = "GET"
+        let task = session.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: NSError?) -> Void in
             if (error == nil) {
                 // Success
-                let statusCode = (response as! NSHTTPURLResponse).statusCode
+                let statusCode = (response as! HTTPURLResponse).statusCode
                 print("Success: \(statusCode)")
                 
                 // This is your file-variable:
@@ -38,7 +38,7 @@ class Downloader {
 class InsuredMembersController: UIViewController {
     
     let relations = ["Self", "Mother", "Father"]
-    var selectedIndexPath: NSIndexPath?
+    var selectedIndexPath: IndexPath?
     
     @IBOutlet weak var scrollView: UIScrollView!
     var verticalLayout : VerticalLayout!
@@ -47,7 +47,7 @@ class InsuredMembersController: UIViewController {
         super.viewDidLoad()
         gInsuredMembersController = self
         self.verticalLayout = VerticalLayout(width: self.view.frame.width);
-        self.scrollView.insertSubview(self.verticalLayout, atIndex: 0)
+        self.scrollView.insertSubview(self.verticalLayout, at: 0)
         selectedViewController = true
         let temp = UIView(frame: CGRect(x: 0, y: 0, width: widthGlo + 8, height: 15))
         self.verticalLayout.addSubview(temp);
@@ -58,7 +58,7 @@ class InsuredMembersController: UIViewController {
         
         rest.findEmployeeProfile("Enrollments/DashboardDetails",completion: {(json:JSON) -> () in
             print(json)
-            dispatch_async(dispatch_get_main_queue(), {
+            DispatchQueue.main.asynchronously(DispatchQueue.mainexecute: {
                 if json == 401 {
                     self.redirectToHome()
                 }else{
@@ -84,9 +84,9 @@ class InsuredMembersController: UIViewController {
                         membersView.ecarddwld = json["result"]["Groups"][x]["Members"][y]["ID"].stringValue
                         membersView.isAvailable = json["result"]["Groups"][x]["Members"][y]["IsECardAvailable"].boolValue
                         if json["result"]["Groups"][x]["Members"][y]["IsECardAvailable"].boolValue {
-                            membersView.ecardOutlate.hidden = false
+                            membersView.ecardOutlate.isHidden = false
                         }else{
-                            membersView.ecardOutlate.hidden = true
+                            membersView.ecardOutlate.isHidden = true
                         }
                         self.verticalLayout.addSubview(membersView);
                         print(self.verticalLayout.frame.height);
@@ -108,7 +108,7 @@ class InsuredMembersController: UIViewController {
         navshow()
         self.navigationItem.setHidesBackButton(true, animated:true);
     }
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         selectedViewController = true
         
     }

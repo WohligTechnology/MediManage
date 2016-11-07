@@ -29,18 +29,18 @@ class newContact: UIView {
         loadViewFromNib ()
     }
     func loadViewFromNib() {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "newContact", bundle: bundle)
-        let sortnewview = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let sortnewview = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         sortnewview.frame = bounds
-        sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        sortnewview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(sortnewview)
 //        LoadingOverlay.shared.showOverlay(gConnectController.view)
         rest.ConnectDetails({(json:JSON) ->() in
-            dispatch_sync(dispatch_get_main_queue(),{
+            DispatchQueue.main.sync(execute: {
             print(json)
             LoadingOverlay.shared.hideOverlayView()
-            if json["state"] {
+            if json["state"].bool! {
                 self.contactDetails = json["result"]
                 self.ccNoOne.text = json["result"]["CashlessClaimsNumber"].stringValue
                 self.ccNoTwo.text = json["result"]["CashlessClaimsAlternateNumber"].stringValue
@@ -54,13 +54,13 @@ class newContact: UIView {
         
         let onFirstCall =  UITapGestureRecognizer(target: self, action: #selector(callFirst))
         self.FirstCall.addGestureRecognizer(onFirstCall)
-        FirstCall.userInteractionEnabled = true
-        ccNoOne.userInteractionEnabled = true
+        FirstCall.isUserInteractionEnabled = true
+        ccNoOne.isUserInteractionEnabled = true
         
         let onSecondCall =  UITapGestureRecognizer(target: self, action: #selector(callSecond))
         self.SecondCall.addGestureRecognizer(onSecondCall)
-        SecondCall.userInteractionEnabled = true
-        ccNoTwo.userInteractionEnabled = true
+        SecondCall.isUserInteractionEnabled = true
+        ccNoTwo.isUserInteractionEnabled = true
 
         
     }

@@ -25,11 +25,11 @@ class homeMenus: UIView {
     }
     
     func loadViewFromNib() {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "homeMenus", bundle: bundle)
-        let homeMenus = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let homeMenus = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         homeMenus.frame = bounds
-        homeMenus.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        homeMenus.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(homeMenus)
     }
 

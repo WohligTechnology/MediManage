@@ -26,18 +26,18 @@ class retrieveLogin: UIView, UITextFieldDelegate {
         loadViewFromNib ()
     }
     
-    func addPadding(width: CGFloat, myView: UITextField) {
-        let paddingView = UIView(frame: CGRectMake(0, 0, width, myView.frame.height))
+    func addPadding(_ width: CGFloat, myView: UITextField) {
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: myView.frame.height))
         myView.leftView = paddingView
-        myView.leftViewMode = UITextFieldViewMode.Always
+        myView.leftViewMode = UITextFieldViewMode.always
     }
     
     func loadViewFromNib() {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "retrieveLogin", bundle: bundle)
-        let sortnewview = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let sortnewview = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         sortnewview.frame = bounds
-        sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        sortnewview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(sortnewview)
         
         self.mobileNo.delegate = self
@@ -46,33 +46,33 @@ class retrieveLogin: UIView, UITextFieldDelegate {
         addPadding(15, myView: mobileNo)
         addPadding(15, myView: password)
     }
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         mobileNo.resignFirstResponder()
         password.resignFirstResponder()
         return true
     }
     
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         textField.resignFirstResponder()
     }
-    @IBAction func loginCall(sender: AnyObject) {
+    @IBAction func loginCall(_ sender: AnyObject) {
         profileState = "Edit"
-        let vc = gRetrieveLoginController.storyboard?.instantiateViewControllerWithIdentifier("completeProfile") as! CompleteProfileController
+        let vc = gRetrieveLoginController.storyboard?.instantiateViewController(withIdentifier: "completeProfile") as! CompleteProfileController
         
-        gRetrieveLoginController.presentViewController(vc, animated: true, completion: nil)
+        gRetrieveLoginController.present(vc, animated: true, completion: nil)
     }
-    @IBAction func generateotpcall(sender: AnyObject) {
+    @IBAction func generateotpcall(_ sender: AnyObject) {
         LoadingOverlay.shared.showOverlay(gRetrieveLoginController.view)
         forgotMobileNumber = String(self.mobileNo.text!)
         profilePassword = String(self.password.text!)
         rest.ClientSendOTP(String(self.mobileNo.text!), password: String(self.password.text!), completion: {(json:JSON) -> () in
-            dispatch_sync(dispatch_get_main_queue()){
+            dispatch_get_main_queue().sync(DispatchQueue.main){
                 print(json)
                 LoadingOverlay.shared.hideOverlayView()
                 if json["state"] {
-                    let vc = gRetrieveLoginController.storyboard?.instantiateViewControllerWithIdentifier("enterOTP") as! EnterOTPController
+                    let vc = gRetrieveLoginController.storyboard?.instantiateViewController(withIdentifier: "enterOTP") as! EnterOTPController
                     
-                    gRetrieveLoginController.presentViewController(vc, animated: true, completion: nil)
+                    gRetrieveLoginController.present(vc, animated: true, completion: nil)
                 }
             }
         })

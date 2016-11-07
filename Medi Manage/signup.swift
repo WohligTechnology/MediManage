@@ -10,7 +10,6 @@
 import Foundation
 import UIKit
 import SwiftyJSON
-import SwiftValidator
 
 
 class signup: UIView, UITextFieldDelegate {
@@ -24,19 +23,19 @@ class signup: UIView, UITextFieldDelegate {
     var count : Int = 0
     
     
-    @IBAction func openDate(sender: UITextField) {
-        datePickerView.datePickerMode = UIDatePickerMode.Date
+    @IBAction func openDate(_ sender: UITextField) {
+        datePickerView.datePickerMode = UIDatePickerMode.date
         sender.inputView = datePickerView
         
-        datePickerView.addTarget(self, action: #selector(self.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
+        datePickerView.addTarget(self, action: #selector(self.datePickerValueChanged), for: UIControlEvents.valueChanged)
     }
-    func datePickerValueChanged(sender:UIDatePicker) {
-        let dateFormatter = NSDateFormatter()
+    func datePickerValueChanged(_ sender:UIDatePicker) {
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "ddMMyyyy"
-        dateDob = dateFormatter.stringFromDate(sender.date)
-        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
-        dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
-        dateOfBirth.text = dateFormatter.stringFromDate(sender.date)
+        dateDob = dateFormatter.string(from: sender.date)
+        dateFormatter.dateStyle = DateFormatter.Style.medium
+        dateFormatter.timeStyle = DateFormatter.Style.none
+        dateOfBirth.text = dateFormatter.string(from: sender.date)
         
     }
     
@@ -51,22 +50,22 @@ class signup: UIView, UITextFieldDelegate {
         
     }
     
-    func addPadding(width: CGFloat, myView: UITextField) {
-        let paddingView = UIView(frame: CGRectMake(0, 0, width, myView.frame.height))
+    func addPadding(_ width: CGFloat, myView: UITextField) {
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: myView.frame.height))
         myView.leftView = paddingView
-        myView.leftViewMode = UITextFieldViewMode.Always
+        myView.leftViewMode = UITextFieldViewMode.always
     }
     
     func loadViewFromNib() {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "signup", bundle: bundle)
-        let sortnewview = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let sortnewview = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         sortnewview.frame = bounds
-        sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        sortnewview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(sortnewview);
 //        dateOfBirth.text = "1990-05-19"
 //        employeeID.text = "TestBetsol3"
-        defaultToken.removeObjectForKey("access_token")
+        defaultToken.removeObject(forKey: "access_token")
         
         
         addPadding(15, myView: employeeID)
@@ -86,18 +85,18 @@ class signup: UIView, UITextFieldDelegate {
         dateOfBirth.inputView = datePickerView
         dateOfBirth.delegate = self
         let toolBar = UIToolbar()
-        toolBar.barStyle = UIBarStyle.Black
-        toolBar.tintColor = UIColor.whiteColor()
-        toolBar.backgroundColor = UIColor.blackColor()
+        toolBar.barStyle = UIBarStyle.black
+        toolBar.tintColor = UIColor.white
+        toolBar.backgroundColor = UIColor.black
 
         toolBar.sizeToFit()
         
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(signup.donePicker))
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(signup.donePicker))
         
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
         
         toolBar.setItems([spaceButton, doneButton], animated: false)
-        toolBar.userInteractionEnabled = true
+        toolBar.isUserInteractionEnabled = true
         
         dateOfBirth.inputAccessoryView = toolBar
         
@@ -109,15 +108,15 @@ class signup: UIView, UITextFieldDelegate {
         dateOfBirth.resignFirstResponder()
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         employeeID.resignFirstResponder()
         return true
     }
     
-    @IBAction func loginCall(sender: AnyObject) {
-        gSignupController.performSegueWithIdentifier("login", sender: nil)
+    @IBAction func loginCall(_ sender: AnyObject) {
+        gSignupController.performSegue(withIdentifier: "login", sender: nil)
     }
-    @IBAction func completeProfileCall(sender: AnyObject) {
+    @IBAction func completeProfileCall(_ sender: AnyObject) {
         
         if(employeeID.text == "" || dateOfBirth.text == "")
         {
@@ -128,43 +127,42 @@ class signup: UIView, UITextFieldDelegate {
             LoadingOverlay.shared.showOverlay(gSignupController.view)
             
             rest.findEmployee(employeeID.text!, dob: dateDob, completion: {(json:JSON) -> ()in
-                dispatch_async(dispatch_get_main_queue(),
-                    {
+                dispatch_get_main_queue().asynchronously(DispatchQueue.mainexecute: {
                         LoadingOverlay.shared.hideOverlayView()
                         print(json)
-                        let anotherCharacter: String = (String(json["state"]))
+                        let anotherCharacter: String = (String(describing: json["state"]))
                         switch anotherCharacter {
                         case "true" :
                             signUpUser = json["result"]
-                            let dialog = UIAlertController(title: "Welcome", message: "Procced Now ", preferredStyle: UIAlertControllerStyle.Alert)
+                            let dialog = UIAlertController(title: "Welcome", message: "Procced Now ", preferredStyle: UIAlertControllerStyle.alert)
                             
                             
-                            dialog.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Destructive, handler:{
+                            dialog.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.destructive, handler:{
                                 action in
                                 profileState = "Submit"
-                                let VC = storyboard?.instantiateViewControllerWithIdentifier("completeProfile") as! CompleteProfileController
+                                let VC = storyboard?.instantiateViewController(withIdentifier: "completeProfile") as! CompleteProfileController
                                 
-                                gSignupController.presentViewController(VC, animated: true , completion: nil)
+                                gSignupController.present(VC, animated: true , completion: nil)
                                 
                             }))
                             
-                            gSignupController.presentViewController(dialog, animated: true, completion: nil)
+                            gSignupController.present(dialog, animated: true, completion: nil)
                             
                             
                             break
                         case "false" :
-                            let error_msg : String = String(json["error_message"])
+                            let error_msg : String = String(describing: json["error_message"])
                             
                             
                             
-                            let dialog = UIAlertController(title: "Sign Up", message: error_msg, preferredStyle: UIAlertControllerStyle.Alert)
+                            let dialog = UIAlertController(title: "Sign Up", message: error_msg, preferredStyle: UIAlertControllerStyle.alert)
                             
-                            dialog.addAction(UIAlertAction(title: "Try Again!!", style: UIAlertActionStyle.Destructive, handler:{
+                            dialog.addAction(UIAlertAction(title: "Try Again!!", style: UIAlertActionStyle.destructive, handler:{
                                 action in
 //                                self.employeeID.text = ""
                                 
                             }))
-                            gSignupController.presentViewController(dialog, animated: true, completion: nil)
+                            gSignupController.present(dialog, animated: true, completion: nil)
                             
                             break
                             

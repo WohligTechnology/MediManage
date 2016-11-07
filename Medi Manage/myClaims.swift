@@ -27,34 +27,34 @@ class myClaims: UIView {
     }
     
     func loadViewFromNib() {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "myClaims", bundle: bundle)
-        let myClaims = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let myClaims = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         myClaims.frame = bounds
-        myClaims.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        myClaims.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(myClaims)
         
-        let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
+        let statusBar = UIView(frame: CGRect(x: 0, y: 0, width: width, height: 20))
         statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
         self.addSubview(statusBar)
         
-        let mainheader = header(frame: CGRectMake(0, 20, width, 50))
+        let mainheader = header(frame: CGRect(x: 0, y: 20, width: width, height: 50))
         self.addSubview(mainheader)
         
-        let mainsubHeader = subHeader(frame: CGRectMake(0, 70, width, 50))
+        let mainsubHeader = subHeader(frame: CGRect(x: 0, y: 70, width: width, height: 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "my_claim_icon")
         mainsubHeader.subHeaderTitle.text = "MY CLAIMS"
         self.addSubview(mainsubHeader)
         
-        myClaimsMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height - 125)
+        myClaimsMainView.frame = CGRect(x: 0, y: 120, width: self.frame.size.width, height: self.frame.size.height - 125)
         
 //        let repeated = UIView(frame: CGRectMake(0, 320, self.frame.size.width, self.frame.size.height - 175))
 //        myClaimsMainView.addSubview(repeated)
 //        self.addSubview(repeated)
         
     }
-    @IBAction func preAuthOneCall(sender: AnyObject) {
-        gMyClaimController.performSegueWithIdentifier("myClaimsToPreAuthOne", sender: nil)
+    @IBAction func preAuthOneCall(_ sender: AnyObject) {
+        gMyClaimController.performSegue(withIdentifier: "myClaimsToPreAuthOne", sender: nil)
     }
     
     /*

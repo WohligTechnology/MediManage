@@ -87,40 +87,40 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
     }
     
     func loadViewFromNib() {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "enrollmentMembersRenew", bundle: bundle)
-        let sortnewview = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let sortnewview = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         sortnewview.frame = bounds
-        sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        sortnewview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(sortnewview);
         
         //RIGHT PERSON ICON CLICK
         let selectSecondPerson =  UITapGestureRecognizer(target: self, action: #selector(enrollmentMembersRenew.selectpright))
         self.rightIcon.addGestureRecognizer(selectSecondPerson)
-        rightIcon.userInteractionEnabled = true
+        rightIcon.isUserInteractionEnabled = true
         
         //LEFT PERSON ICON CLICK
         let selectFirstPerson =  UITapGestureRecognizer(target: self, action: #selector(enrollmentMembersRenew.selectpleft))
         self.leftIcon.addGestureRecognizer(selectFirstPerson)
-        leftIcon.userInteractionEnabled = true
+        leftIcon.isUserInteractionEnabled = true
         
         //HIDE LEFT ARROW INITIALLY
-        self.leftArrow.hidden = true
+        self.leftArrow.isHidden = true
 //        self.rightArrow.hidden = true
         
         // TOOL BAR FOR KEYBOARD
         let toolBar = UIToolbar()
-        toolBar.barStyle = UIBarStyle.Black
-        toolBar.tintColor = UIColor.whiteColor()
-        toolBar.backgroundColor = UIColor.blackColor()
+        toolBar.barStyle = UIBarStyle.black
+        toolBar.tintColor = UIColor.white
+        toolBar.backgroundColor = UIColor.black
         toolBar.sizeToFit()
         
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(enrollmentMembersRenew.donePicker))
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(enrollmentMembersRenew.donePicker))
         
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
         
         toolBar.setItems([spaceButton, doneButton], animated: false)
-        toolBar.userInteractionEnabled = true
+        toolBar.isUserInteractionEnabled = true
         
         leftFirstName.delegate = self
         leftLastName.delegate = self
@@ -136,13 +136,13 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
             if json == 401 {
                 gEnrollmentMembersController.redirectToHome()
             }else{
-            if json && !isAddMember {
-                gEnrollmentMembersController.performSegueWithIdentifier("isEnrolledTrue", sender: nil)
+            if json != nil && !isAddMember {
+                gEnrollmentMembersController.performSegue(withIdentifier: "isEnrolledTrue", sender: nil)
             }else{
                 
                 isAddMember = false
                 rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
-                    dispatch_sync(dispatch_get_main_queue()){
+                    DispatchQueue.main.sync(){
                         print(json)
 
                         self.wholeJson = json["result"]
@@ -160,7 +160,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                         for x in 0..<self.memberjson.count{
                             for y in 0..<json["result"]["Groups"].count{
                                 for z in 0..<json["result"]["Groups"][y]["Members"].count{
-                                    let a = String(self.memberjson[x]["SystemIdentifier"]) == String(json["result"]["Groups"][y]["Members"][z]["SystemIdentifier"])
+                                    let a = String(describing: self.memberjson[x]["SystemIdentifier"]) == String(describing: json["result"]["Groups"][y]["Members"][z]["SystemIdentifier"])
                                     let b = self.memberjson[x]["Gender"] == json["result"]["Groups"][y]["Members"][z]["Gender"]
                                     
                                     if a && b {
@@ -218,25 +218,25 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         
         
         
-        enrollmentMembersMainView.frame = CGRectMake(0, 60, self.frame.size.width, self.frame.size.height - 60);
+        enrollmentMembersMainView.frame = CGRect(x: 0, y: 60, width: self.frame.size.width, height: self.frame.size.height - 60);
         
-        addBottomBorder(UIColor.blackColor(), width: 1, myView: leftFirstName)
-        addBottomBorder(UIColor.blackColor(), width: 1, myView: leftMiddelName)
-        addBottomBorder(UIColor.blackColor(), width: 1, myView: leftLastName)
-        addBottomBorder(UIColor.blackColor(), width: 1, myView: leftDOB)
-        addBottomBorder(UIColor.blackColor(), width: 1, myView: leftDOM)
+        addBottomBorder(UIColor.black, width: 1, myView: leftFirstName)
+        addBottomBorder(UIColor.black, width: 1, myView: leftMiddelName)
+        addBottomBorder(UIColor.black, width: 1, myView: leftLastName)
+        addBottomBorder(UIColor.black, width: 1, myView: leftDOB)
+        addBottomBorder(UIColor.black, width: 1, myView: leftDOM)
         
-        addBottomBorder(UIColor.blackColor(), width: 1, myView: rightFirstName)
-        addBottomBorder(UIColor.blackColor(), width: 1, myView: rightMiddelName)
-        addBottomBorder(UIColor.blackColor(), width: 1, myView: rightLastName)
-        addBottomBorder(UIColor.blackColor(), width: 1, myView: rightDOB)
-        addBottomBorder(UIColor.blackColor(), width: 1, myView: rightDOM)
+        addBottomBorder(UIColor.black, width: 1, myView: rightFirstName)
+        addBottomBorder(UIColor.black, width: 1, myView: rightMiddelName)
+        addBottomBorder(UIColor.black, width: 1, myView: rightLastName)
+        addBottomBorder(UIColor.black, width: 1, myView: rightDOB)
+        addBottomBorder(UIColor.black, width: 1, myView: rightDOM)
     }
     
-    func addBottomBorder(color: UIColor, width: CGFloat, myView: UIView) {
+    func addBottomBorder(_ color: UIColor, width: CGFloat, myView: UIView) {
         let border = CALayer()
-        border.backgroundColor = color.CGColor
-        border.frame = CGRectMake(0, myView.frame.size.height - width, myView.frame.size.width, width)
+        border.backgroundColor = color.cgColor
+        border.frame = CGRect(x: 0, y: myView.frame.size.height - width, width: myView.frame.size.width, height: width)
         myView.layer.addSublayer(border)
     }
     
@@ -289,7 +289,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
     }
     
     // FREEZE LEFT MEMBER
-    func freezeMembers(position: String) {
+    func freezeMembers(_ position: String) {
         if position == "L" {
             self.freezeleft = true
             self.editLeftMember(false)
@@ -301,7 +301,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
     }
     
     // UNFREEZE MEMBERS
-    func unfreezeMembers(position: String) {
+    func unfreezeMembers(_ position: String) {
         if position == "L" {
             self.freezeleft = false
             self.editLeftMember(true)
@@ -311,7 +311,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         }
     }
     
-    @IBAction func rightAddMoreClick(sender: AnyObject) {
+    @IBAction func rightAddMoreClick(_ sender: AnyObject) {
         
         if checkAllowedEach(page+1) {
             updateJson()
@@ -323,7 +323,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         
     }
     
-    @IBAction func leftAddMoreClick(sender: AnyObject) {
+    @IBAction func leftAddMoreClick(_ sender: AnyObject) {
         if checkAllowedMembers() {
             updateJson()
             addMemberToJson(self.memberjson[page]["SystemIdentifier"].stringValue, relation: self.memberjson[page]["RelationType"].stringValue)
@@ -394,7 +394,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         return check
     }
     
-    func checkAllowedEach(onPage:Int) -> Bool {
+    func checkAllowedEach(_ onPage:Int) -> Bool {
         
         countMember()
         var check = false
@@ -443,7 +443,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         return check
     }
     
-    func addMemberToJson(identifier : String, relation : String) {
+    func addMemberToJson(_ identifier : String, relation : String) {
         var checkrelation = false
         afterArray = []
         for x in 0..<self.memberjson.count {
@@ -468,16 +468,16 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         assignMembers()
     }
     
-    func datePickerValueChanged(sender: UIDatePicker) {
-        let dateFormatter = NSDateFormatter()
+    func datePickerValueChanged(_ sender: UIDatePicker) {
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "ddMMyyyy"
 //        var dateDob = ""
 
 //        dateDob = dateFormatter.stringFromDate(sender.date)
-        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
-        dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
+        dateFormatter.dateStyle = DateFormatter.Style.medium
+        dateFormatter.timeStyle = DateFormatter.Style.none
         
-        let dateToSave = dateFormatter.stringFromDate(sender.date)
+        let dateToSave = dateFormatter.string(from: sender.date)
         switch datetype {
         case 1:
             leftDOB.text = dateToSave
@@ -496,7 +496,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         }
         
     }
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         leftFirstName.resignFirstResponder()
         leftMiddelName.resignFirstResponder()
@@ -509,140 +509,140 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         return true
     }
     
-    @IBAction func leftDOBClick(sender: AnyObject) {
+    @IBAction func leftDOBClick(_ sender: AnyObject) {
         datetype = 1
-        datePickerView.datePickerMode = UIDatePickerMode.Date
+        datePickerView.datePickerMode = UIDatePickerMode.date
         leftDOB.inputView = datePickerView
         // TOOL BAR FOR KEYBOARD
         let toolBar = UIToolbar()
-        toolBar.barStyle = UIBarStyle.Black
-        toolBar.tintColor = UIColor.whiteColor()
-        toolBar.backgroundColor = UIColor.blackColor()
+        toolBar.barStyle = UIBarStyle.black
+        toolBar.tintColor = UIColor.white
+        toolBar.backgroundColor = UIColor.black
 
         toolBar.sizeToFit()
         
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(enrollmentMembersRenew.donePicker))
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(enrollmentMembersRenew.donePicker))
         
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
         
         toolBar.setItems([spaceButton, doneButton], animated: false)
-        toolBar.userInteractionEnabled = true
+        toolBar.isUserInteractionEnabled = true
         leftDOB.inputAccessoryView = toolBar
 
-        datePickerView.addTarget(self , action: #selector(self.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
+        datePickerView.addTarget(self , action: #selector(self.datePickerValueChanged), for: UIControlEvents.valueChanged)
     }
     
-    @IBAction func leftDOMClick(sender: AnyObject) {
+    @IBAction func leftDOMClick(_ sender: AnyObject) {
         datetype = 2
-        datePickerView.datePickerMode = UIDatePickerMode.Date
+        datePickerView.datePickerMode = UIDatePickerMode.date
         leftDOM.inputView = datePickerView
         // TOOL BAR FOR KEYBOARD
         let toolBar = UIToolbar()
-        toolBar.barStyle = UIBarStyle.Black
-        toolBar.tintColor = UIColor.whiteColor()
-        toolBar.backgroundColor = UIColor.blackColor()
+        toolBar.barStyle = UIBarStyle.black
+        toolBar.tintColor = UIColor.white
+        toolBar.backgroundColor = UIColor.black
 
         toolBar.sizeToFit()
         
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(enrollmentMembersRenew.donePicker))
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(enrollmentMembersRenew.donePicker))
         
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
         
         toolBar.setItems([spaceButton, doneButton], animated: false)
-        toolBar.userInteractionEnabled = true
+        toolBar.isUserInteractionEnabled = true
         leftDOM.inputAccessoryView = toolBar
-        datePickerView.addTarget(self , action: #selector(self.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
+        datePickerView.addTarget(self , action: #selector(self.datePickerValueChanged), for: UIControlEvents.valueChanged)
     }
     
-    @IBAction func rightDOBClick(sender: AnyObject) {
+    @IBAction func rightDOBClick(_ sender: AnyObject) {
         datetype = 3
-        datePickerView.datePickerMode = UIDatePickerMode.Date
+        datePickerView.datePickerMode = UIDatePickerMode.date
         rightDOB.inputView = datePickerView
         // TOOL BAR FOR KEYBOARD
         let toolBar = UIToolbar()
-        toolBar.barStyle = UIBarStyle.Black
-        toolBar.tintColor = UIColor.whiteColor()
-        toolBar.backgroundColor = UIColor.blackColor()
+        toolBar.barStyle = UIBarStyle.black
+        toolBar.tintColor = UIColor.white
+        toolBar.backgroundColor = UIColor.black
 
         toolBar.sizeToFit()
         
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(enrollmentMembersRenew.donePicker))
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(enrollmentMembersRenew.donePicker))
         
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
         
         toolBar.setItems([spaceButton, doneButton], animated: false)
-        toolBar.userInteractionEnabled = true
+        toolBar.isUserInteractionEnabled = true
         rightDOB.inputAccessoryView = toolBar
-        datePickerView.addTarget(self , action: #selector(self.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
+        datePickerView.addTarget(self , action: #selector(self.datePickerValueChanged), for: UIControlEvents.valueChanged)
     }
     
-    @IBAction func rightDOMClick(sender: AnyObject) {
+    @IBAction func rightDOMClick(_ sender: AnyObject) {
         datetype = 4
-        datePickerView.datePickerMode = UIDatePickerMode.Date
+        datePickerView.datePickerMode = UIDatePickerMode.date
         rightDOM.inputView = datePickerView
         // TOOL BAR FOR KEYBOARD
         let toolBar = UIToolbar()
-        toolBar.barStyle = UIBarStyle.Black
-        toolBar.tintColor = UIColor.whiteColor()
-        toolBar.backgroundColor = UIColor.blackColor()
+        toolBar.barStyle = UIBarStyle.black
+        toolBar.tintColor = UIColor.white
+        toolBar.backgroundColor = UIColor.black
 
         toolBar.sizeToFit()
         
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(enrollmentMembersRenew.donePicker))
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(enrollmentMembersRenew.donePicker))
         
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
         
         toolBar.setItems([spaceButton, doneButton], animated: false)
-        toolBar.userInteractionEnabled = true
+        toolBar.isUserInteractionEnabled = true
         rightDOM.inputAccessoryView = toolBar
-        datePickerView.addTarget(self , action: #selector(self.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
+        datePickerView.addTarget(self , action: #selector(self.datePickerValueChanged), for: UIControlEvents.valueChanged)
     }
     
     func rightActionFunction() {
         updateJson()
-        self.leftArrow.hidden = false
+        self.leftArrow.isHidden = false
         page = page + 2
         if (page + 1 == self.memberjson.count || page + 2 == self.memberjson.count) {
-            self.rightArrow.hidden = true
+            self.rightArrow.isHidden = true
             assignMembers()
         }else{
             assignMembers()
-            self.rightArrow.hidden = false
+            self.rightArrow.isHidden = false
         }
         if page + 1 == self.memberjson.count {
-            self.enrollmentMembersMainView.viewWithTag(22)?.hidden = true
+            self.enrollmentMembersMainView.viewWithTag(22)?.isHidden = true
             for x in 11...17 {
                 let txtfield = self.enrollmentMembersMainView.viewWithTag(x) as? UITextField
-                txtfield?.hidden = true
+                txtfield?.isHidden = true
             }
         }
         
     }
     
-    @IBAction func rightActionArrow(sender: AnyObject) {
+    @IBAction func rightActionArrow(_ sender: AnyObject) {
         rightActionFunction()
     }
     
     func leftActionFunction() {
         updateJson()
-        self.enrollmentMembersMainView.viewWithTag(22)?.hidden = false
+        self.enrollmentMembersMainView.viewWithTag(22)?.isHidden = false
         for x in 11...17 {
             let txtfield = self.enrollmentMembersMainView.viewWithTag(x) as? UITextField
-            txtfield?.hidden = false
+            txtfield?.isHidden = false
         }
-        self.rightArrow.hidden = false
+        self.rightArrow.isHidden = false
         page = page - 2
         if page == 0 {
-            self.leftArrow.hidden = true
+            self.leftArrow.isHidden = true
             assignMembers()
         }else{
-            self.leftArrow.hidden = false
+            self.leftArrow.isHidden = false
             assignMembers()
         }
         
     }
     
-    @IBAction func leftActionArrow(sender: AnyObject) {
+    @IBAction func leftActionArrow(_ sender: AnyObject) {
         leftActionFunction()
     }
     
@@ -650,9 +650,9 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
     func selectpright() {
         if !freezeright {
             
-            if self.rightTick.hidden {
+            if self.rightTick.isHidden {
                 if checkAllowedEach(page+1) {
-                    self.rightTick.hidden = false
+                    self.rightTick.isHidden = false
                     memberjson[page+1]["ActiveState"] = true
                     editRightMember(true)
                 }else{
@@ -661,7 +661,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                 
                 
             }else{
-                self.rightTick.hidden = true
+                self.rightTick.isHidden = true
                 memberjson[page+1]["ActiveState"] = false
                 editRightMember(false)
                 
@@ -672,9 +672,9 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
     func selectpleft() {
         if !freezeleft {
             
-            if self.leftTick.hidden {
+            if self.leftTick.isHidden {
                 if checkAllowedEach(page) {
-                    self.leftTick.hidden = false
+                    self.leftTick.isHidden = false
                     memberjson[page]["ActiveState"] = true
                     editLeftMember(true)
                 }else{
@@ -682,7 +682,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                 }
                 
             }else{
-                self.leftTick.hidden = true
+                self.leftTick.isHidden = true
                 memberjson[page]["ActiveState"] = false
                 editLeftMember(false)
             }
@@ -694,20 +694,20 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         assignText()
     }
     
-    func editLeftMember(state : Bool) {
-        (self.enrollmentMembersMainView.viewWithTag(6) as? UIButton)?.enabled = state
+    func editLeftMember(_ state : Bool) {
+        (self.enrollmentMembersMainView.viewWithTag(6) as? UIButton)?.isEnabled = state
         for x in 1...5 {
             let txtfield = self.enrollmentMembersMainView.viewWithTag(x) as? UITextField
-            txtfield?.enabled = state
+            txtfield?.isEnabled = state
         }
 //        rightAddMore.enabled = state
     }
     
-    func editRightMember(state : Bool) {
-        (self.enrollmentMembersMainView.viewWithTag(16) as? UIButton)?.enabled = state
+    func editRightMember(_ state : Bool) {
+        (self.enrollmentMembersMainView.viewWithTag(16) as? UIButton)?.isEnabled = state
         for x in 11...15 {
             let txtfield = self.enrollmentMembersMainView.viewWithTag(x) as? UITextField
-            txtfield?.enabled = state
+            txtfield?.isEnabled = state
         }
     }
     
@@ -715,50 +715,50 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         switch (self.memberjson[page]["RelationType"].stringValue) {
         case "Husband":
             self.leftIcon.image = UIImage(named: "son_icon")
-            self.leftDOM.hidden = false
-            self.leftAddMore.hidden = true
+            self.leftDOM.isHidden = false
+            self.leftAddMore.isHidden = true
             break
         case "Wife":
             self.leftIcon.image = UIImage(named: "wife_icon")
-            self.leftDOM.hidden = false
-            self.leftAddMore.hidden = true
+            self.leftDOM.isHidden = false
+            self.leftAddMore.isHidden = true
             break
         case "Son":
             self.leftIcon.image = UIImage(named: "son_icon")
-            self.leftDOM.hidden = true
-            self.leftAddMore.hidden = false
+            self.leftDOM.isHidden = true
+            self.leftAddMore.isHidden = false
             break
         case "Daughter":
             self.leftIcon.image = UIImage(named: "daughter_icon")
-            self.leftDOM.hidden = true
-            self.leftAddMore.hidden = false
+            self.leftDOM.isHidden = true
+            self.leftAddMore.isHidden = false
             break
         case "Mother":
             self.leftIcon.image = UIImage(named: "mother_icon")
-            self.leftDOM.hidden = true
-            self.leftAddMore.hidden = true
+            self.leftDOM.isHidden = true
+            self.leftAddMore.isHidden = true
             break
         case "Mother in law":
             self.leftIcon.image = UIImage(named: "mother_icon")
-            self.leftAddMore.hidden = true
+            self.leftAddMore.isHidden = true
             if self.memberjson[page]["DateOfRelation"].stringValue == "" {
-                self.leftDOM.hidden = false
+                self.leftDOM.isHidden = false
             }else{
-                self.leftDOM.hidden = true
+                self.leftDOM.isHidden = true
             }
             break
         case "Father":
             self.leftIcon.image = UIImage(named: "father_icon")
-            self.leftDOM.hidden = true
-            self.leftAddMore.hidden = true
+            self.leftDOM.isHidden = true
+            self.leftAddMore.isHidden = true
             break
         case "Father in law":
             self.leftIcon.image = UIImage(named: "father_icon")
-            self.leftAddMore.hidden = true
+            self.leftAddMore.isHidden = true
             if self.memberjson[page]["DateOfRelation"].stringValue == "" {
-                self.leftDOM.hidden = false
+                self.leftDOM.isHidden = false
             }else{
-                self.leftDOM.hidden = true
+                self.leftDOM.isHidden = true
             }
             break
         default: break
@@ -767,11 +767,11 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         
         if self.memberjson[page]["ActiveState"] {
             editLeftMember(true)
-            self.leftTick.hidden = false
+            self.leftTick.isHidden = false
 //            checkEP()
         }else{
             editLeftMember(false)
-            self.leftTick.hidden = true
+            self.leftTick.isHidden = true
 //            checkEP()
         }
         self.leftMemberName.text = self.memberjson[page]["RelationType"].stringValue
@@ -786,50 +786,50 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         switch (self.memberjson[page+1]["RelationType"].stringValue) {
         case "Husband":
             self.rightIcon.image = UIImage(named: "son_icon")
-            self.rightDOM.hidden = false
-            self.rightAddMore.hidden = true
+            self.rightDOM.isHidden = false
+            self.rightAddMore.isHidden = true
             break
         case "Wife":
             self.rightIcon.image = UIImage(named: "wife_icon")
-            self.rightDOM.hidden = false
-            self.rightAddMore.hidden = true
+            self.rightDOM.isHidden = false
+            self.rightAddMore.isHidden = true
             break
         case "Son":
             self.rightIcon.image = UIImage(named: "son_icon")
-            self.rightDOM.hidden = true
-            self.rightAddMore.hidden = false
+            self.rightDOM.isHidden = true
+            self.rightAddMore.isHidden = false
             break
         case "Daughter":
             self.rightIcon.image = UIImage(named: "daughter_icon")
-            self.rightDOM.hidden = true
-            self.rightAddMore.hidden = false
+            self.rightDOM.isHidden = true
+            self.rightAddMore.isHidden = false
             break
         case "Mother":
             self.rightIcon.image = UIImage(named: "mother_icon")
-            self.rightDOM.hidden = true
-            self.rightAddMore.hidden = true
+            self.rightDOM.isHidden = true
+            self.rightAddMore.isHidden = true
             break
         case "Father":
             self.rightIcon.image = UIImage(named: "father_icon")
-            self.rightDOM.hidden = true
-            self.rightAddMore.hidden = true
+            self.rightDOM.isHidden = true
+            self.rightAddMore.isHidden = true
             break
         case "Mother in law":
             self.rightIcon.image = UIImage(named: "mother_icon")
-            self.rightAddMore.hidden = true
+            self.rightAddMore.isHidden = true
             if self.memberjson[page+1]["DateOfRelation"].stringValue == "" {
-                self.rightDOM.hidden = false
+                self.rightDOM.isHidden = false
             }else{
-                self.rightDOM.hidden = true
+                self.rightDOM.isHidden = true
             }
             break
         case "Father in law":
             self.rightIcon.image = UIImage(named: "father_icon")
-            self.rightAddMore.hidden = true
+            self.rightAddMore.isHidden = true
             if self.memberjson[page+1]["DateOfRelation"].stringValue == "" {
-                self.rightDOM.hidden = false
+                self.rightDOM.isHidden = false
             }else{
-                self.rightDOM.hidden = true
+                self.rightDOM.isHidden = true
             }
             break
         default: break
@@ -837,11 +837,11 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         }
         if self.memberjson[page+1]["ActiveState"] {
             editRightMember(true)
-            self.rightTick.hidden = false
+            self.rightTick.isHidden = false
 //            checkEP()
         }else{
             editRightMember(false)
-            self.rightTick.hidden = true
+            self.rightTick.isHidden = true
 //            checkEP()
         }
         self.rightMemberName.text = self.memberjson[page+1]["RelationType"].stringValue
@@ -854,7 +854,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         
     }
     //  DATE OF RELATION VALIDATION
-    func validRelation(index:Int) -> Bool {
+    func validRelation(_ index:Int) -> Bool {
         var check = false
         if wholeJson["MaritalStatus"] == 2 {
             
@@ -876,7 +876,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
     }
     
     //FINAL PROCESS SUBMIT MEMBERS
-    @IBAction func submitMembers(sender: AnyObject) {
+    @IBAction func submitMembers(_ sender: AnyObject) {
         LoadingOverlay.shared.showOverlay(gEnrollmentMembersController.view)
         updateJson()
         var msg = ""
@@ -935,12 +935,12 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                 LoadingOverlay.shared.hideOverlayView()
                 print(finaljson)
                 rest.AddMembers(finaljson, completion: {(json:JSON) -> ()in
-                    dispatch_sync(dispatch_get_main_queue()){
+                    dispatch_get_main_queue().sync(DispatchQueue.main){
                         if json == 401 {
                             gEnrollmentMembersController.redirectToHome()
                         }else{
                         if json["state"] {
-                            gEnrollmentMembersController.performSegueWithIdentifier("memberlist", sender: nil)
+                            gEnrollmentMembersController.performSegue(withIdentifier: "memberlist", sender: nil)
                         }else{
                             if json["error_message"] != "" {
                                 Popups.SharedInstance.ShowPopup("Error Occured", message: json["error_message"].stringValue)

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class ConnectDetailsDTO
+open class ConnectDetailsDTO
 {
     /*
     public var Name: String { get{} set{} }

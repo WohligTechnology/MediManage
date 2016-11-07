@@ -27,7 +27,7 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         gMainMenuController = self
 //        self.tabBarController?.tabBar.hidden = false
         rest.isEnrolled({(json:JSON) ->() in
-            var data = json
+            let data = json
             if !data {
                 print("in if")
                 gMainMenuController.topendding()
@@ -39,8 +39,8 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         self.view.frame.size.height = self.view.frame.size.height - 45
         
         // 1
-        let insuredMembers = homeMenus(frame: CGRectMake(0, 20, width / 2, self.view.frame.size.height / 3))
-        insuredMembers.homeMenuMainView.backgroundColor = UIColor.whiteColor()
+        let insuredMembers = homeMenus(frame: CGRect(x: 0, y: 20, width: width / 2, height: self.view.frame.size.height / 3))
+        insuredMembers.homeMenuMainView.backgroundColor = UIColor.white
         insuredMembers.menuImage.image = UIImage(named: "menu_one")
         insuredMembers.menuTitle.text = "Insured Members"
         self.view.addSubview(insuredMembers)
@@ -49,7 +49,7 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         insuredMembers.addGestureRecognizer(insuredMembersTap)
         
         // 2
-        let claims = homeMenus(frame: CGRectMake(width / 2, 20, width / 2, self.view.frame.size.height / 3))
+        let claims = homeMenus(frame: CGRect(x: width / 2, y: 20, width: width / 2, height: self.view.frame.size.height / 3))
         claims.homeMenuMainView.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 255/255)
         claims.menuImage.image = UIImage(named: "menu_two")
         claims.menuTitle.text = "Claims"
@@ -59,7 +59,7 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         claims.addGestureRecognizer(claimsTap)
         
         // 3
-        let benefitSummary = homeMenus(frame: CGRectMake(0, self.view.frame.size.height / 3, width / 2, self.view.frame.size.height / 3))
+        let benefitSummary = homeMenus(frame: CGRect(x: 0, y: self.view.frame.size.height / 3, width: width / 2, height: self.view.frame.size.height / 3))
         benefitSummary.homeMenuMainView.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 255/255)
         benefitSummary.menuImage.image = UIImage(named: "menu_three")
         benefitSummary.menuTitle.text = "Benefit Summary"
@@ -69,8 +69,8 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         benefitSummary.addGestureRecognizer(benefitSummaryTap)
         
         // 4
-        let helpdesk = homeMenus(frame: CGRectMake(width / 2, self.view.frame.size.height / 3, width / 2, self.view.frame.size.height / 3))
-        helpdesk.homeMenuMainView.backgroundColor = UIColor.whiteColor()
+        let helpdesk = homeMenus(frame: CGRect(x: width / 2, y: self.view.frame.size.height / 3, width: width / 2, height: self.view.frame.size.height / 3))
+        helpdesk.homeMenuMainView.backgroundColor = UIColor.white
         helpdesk.menuImage.image = UIImage(named: "menu_four")
         helpdesk.menuTitle.text = "Helpdesk"
         self.view.addSubview(helpdesk)
@@ -79,8 +79,8 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         helpdesk.addGestureRecognizer(helpdeskTap)
         
         // 5
-        let hospitalSearch = homeMenus(frame: CGRectMake(0, self.view.frame.size.height / 1.5, width / 2, self.view.frame.size.height / 3))
-        hospitalSearch.homeMenuMainView.backgroundColor = UIColor.whiteColor()
+        let hospitalSearch = homeMenus(frame: CGRect(x: 0, y: self.view.frame.size.height / 1.5, width: width / 2, height: self.view.frame.size.height / 3))
+        hospitalSearch.homeMenuMainView.backgroundColor = UIColor.white
         hospitalSearch.menuImage.image = UIImage(named: "menu_five")
         hospitalSearch.menuTitle.text = "Hospital Search"
         self.view.addSubview(hospitalSearch)
@@ -89,7 +89,7 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         hospitalSearch.addGestureRecognizer(hospitalSearchTap)
         
         // 6
-        let connect = homeMenus(frame: CGRectMake(width / 2, self.view.frame.size.height / 1.5, width / 2, self.view.frame.size.height / 3))
+        let connect = homeMenus(frame: CGRect(x: width / 2, y: self.view.frame.size.height / 1.5, width: width / 2, height: self.view.frame.size.height / 3))
         connect.homeMenuMainView.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 255/255)
         connect.menuImage.image = UIImage(named: "menu_six")
         connect.menuTitle.text = "Connect"
@@ -106,42 +106,42 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func insuredMembersTap(sender: UITapGestureRecognizer) {
+    func insuredMembersTap(_ sender: UITapGestureRecognizer) {
         tabSelected = 1
-        let passcodemodal = self.storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
-        self.presentViewController(passcodemodal, animated: true, completion: nil)
+        let passcodemodal = self.storyboard?.instantiateViewController(withIdentifier: "tabbar") as! TabBarController
+        self.present(passcodemodal, animated: true, completion: nil)
     }
     
-    func claimsTap(sender: UITapGestureRecognizer) {
+    func claimsTap(_ sender: UITapGestureRecognizer) {
         tabSelected = 2
-        let im: TabBarController = storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
-        self.presentViewController(im, animated: true, completion: nil)
+        let im: TabBarController = storyboard?.instantiateViewController(withIdentifier: "tabbar") as! TabBarController
+        self.present(im, animated: true, completion: nil)
     }
     
-    func benefitSummaryTap(sender: UITapGestureRecognizer) {
+    func benefitSummaryTap(_ sender: UITapGestureRecognizer) {
         tabSelected = 3
-        let im: TabBarController = storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
-        self.presentViewController(im, animated: true, completion: nil)
+        let im: TabBarController = storyboard?.instantiateViewController(withIdentifier: "tabbar") as! TabBarController
+        self.present(im, animated: true, completion: nil)
     }
     
-    func helpdeskTap(sender: UITapGestureRecognizer) {
+    func helpdeskTap(_ sender: UITapGestureRecognizer) {
         tabSelected = 4
-        let im: TabBarController = storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
-        self.presentViewController(im, animated: true, completion: nil)
+        let im: TabBarController = storyboard?.instantiateViewController(withIdentifier: "tabbar") as! TabBarController
+        self.present(im, animated: true, completion: nil)
 
     }
     
-    func hospitalSearchTap(sender: UITapGestureRecognizer) {
+    func hospitalSearchTap(_ sender: UITapGestureRecognizer) {
         tabSelected = 5
-        let im: TabBarController = storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
-        self.presentViewController(im, animated: true, completion: nil)
+        let im: TabBarController = storyboard?.instantiateViewController(withIdentifier: "tabbar") as! TabBarController
+        self.present(im, animated: true, completion: nil)
 
     }
     
-    func connectTap(sender: UITapGestureRecognizer) {
+    func connectTap(_ sender: UITapGestureRecognizer) {
         tabSelected = 6
-        let im: TabBarController = storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
-        self.presentViewController(im, animated: true, completion: nil)
+        let im: TabBarController = storyboard?.instantiateViewController(withIdentifier: "tabbar") as! TabBarController
+        self.present(im, animated: true, completion: nil)
 
     }
 

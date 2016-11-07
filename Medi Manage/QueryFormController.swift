@@ -19,7 +19,7 @@ class QueryFormController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         selectedViewController = false
         
     }

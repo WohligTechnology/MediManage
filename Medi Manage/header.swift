@@ -25,15 +25,15 @@ class header: UIView {
     }
     
     func loadViewFromNib() {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "header", bundle: bundle)
-        let sortnewview = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let sortnewview = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         sortnewview.frame = bounds
-        sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        sortnewview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(sortnewview)
     }
 
-    @IBAction func hambergerClick(sender: AnyObject) {
+    @IBAction func hambergerClick(_ sender: AnyObject) {
 //        let vc = storyboard!.instantiateViewControllerWithIdentifier("MainMenuController") as! UIViewController
 //        self.presentViewController(vc, animated: true, completion: nil)
     }

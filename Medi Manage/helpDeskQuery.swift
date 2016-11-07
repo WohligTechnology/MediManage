@@ -8,7 +8,6 @@
 
 import UIKit
 import SwiftyJSON
-import QToasterSwift
 
 class helpDeskQuery: UIView, UITextFieldDelegate {
     
@@ -27,24 +26,24 @@ class helpDeskQuery: UIView, UITextFieldDelegate {
         loadViewFromNib ()
     }
     
-    func addBottomBorder(color: UIColor, linewidth: CGFloat, myView: UIView) {
+    func addBottomBorder(_ color: UIColor, linewidth: CGFloat, myView: UIView) {
         let border = CALayer()
-        border.backgroundColor = color.CGColor
-        border.frame = CGRectMake(-5, myView.frame.size.height - linewidth, width - 30, linewidth)
+        border.backgroundColor = color.cgColor
+        border.frame = CGRect(x: -5, y: myView.frame.size.height - linewidth, width: width - 30, height: linewidth)
         myView.layer.addSublayer(border)
     }
     
     func loadViewFromNib() {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "helpDeskQuery", bundle: bundle)
-        let helpDeskQuery = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let helpDeskQuery = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         helpDeskQuery.frame = bounds
-        helpDeskQuery.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        helpDeskQuery.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(helpDeskQuery)
         
         
         
-        let mainsubHeader = subHeader(frame: CGRectMake(0, 0, width, 50))
+        let mainsubHeader = subHeader(frame: CGRect(x: 0, y: 0, width: width, height: 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_four")
         mainsubHeader.subHeaderTitle.text = "HELP DESK"
         self.addSubview(mainsubHeader)
@@ -61,31 +60,31 @@ class helpDeskQuery: UIView, UITextFieldDelegate {
             }
         })
         
-        helpDeskQueryMainView.frame = CGRectMake(0, 70, self.frame.size.width, self.frame.size.height - 75)
+        helpDeskQueryMainView.frame = CGRect(x: 0, y: 70, width: self.frame.size.width, height: self.frame.size.height - 75)
         
         // add borders
-        addBottomBorder(UIColor.blackColor(), linewidth: 0.5, myView: subjectTextField)
-        addBottomBorder(UIColor.blackColor(), linewidth: 0.5, myView: queryTextField)
+        addBottomBorder(UIColor.black, linewidth: 0.5, myView: subjectTextField)
+        addBottomBorder(UIColor.black, linewidth: 0.5, myView: queryTextField)
         
     }
 //    override func resignFirstResponder() -> Bool {
 //        <#code#>
 //    }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         subjectTextField.resignFirstResponder()
         queryTextField.resignFirstResponder()
         return true
     }
     
-    func popMe(title:String, message:String) {
+    func popMe(_ title:String, message:String) {
         
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
-        gHelpDeskQueryController.presentViewController(alert, animated: true, completion: nil)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        gHelpDeskQueryController.present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func connectCall(sender: AnyObject) {
+    @IBAction func connectCall(_ sender: AnyObject) {
         subjectTextField.resignFirstResponder()
         queryTextField.resignFirstResponder()
         if self.subjectTextField.text != "" && self.queryTextField.text != "" {
@@ -97,20 +96,20 @@ class helpDeskQuery: UIView, UITextFieldDelegate {
                     gHelpDeskQueryController.redirectToHome()
                 }else{
                 if json["state"] {
-                    let alert = UIAlertController(title: "Validation", message: "Query submited sucessfully", preferredStyle: UIAlertControllerStyle.Alert)
-                    alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
-                    gHelpDeskQueryController.presentViewController(alert, animated: true, completion: nil)
+                    let alert = UIAlertController(title: "Validation", message: "Query submited sucessfully", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+                    gHelpDeskQueryController.present(alert, animated: true, completion: nil)
                 }else{
-                    let alert = UIAlertController(title: "Validation", message: json["error_message"].stringValue, preferredStyle: UIAlertControllerStyle.Alert)
-                    alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
-                    gHelpDeskQueryController.presentViewController(alert, animated: true, completion: nil)
+                    let alert = UIAlertController(title: "Validation", message: json["error_message"].stringValue, preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+                    gHelpDeskQueryController.present(alert, animated: true, completion: nil)
                 }
             }
             })
         }else{
-            let alert = UIAlertController(title: "Validation", message: "Enter all Fields.", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
-            gHelpDeskQueryController.presentViewController(alert, animated: true, completion: nil)
+            let alert = UIAlertController(title: "Validation", message: "Enter all Fields.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            gHelpDeskQueryController.present(alert, animated: true, completion: nil)
         }
     }
 

@@ -26,13 +26,13 @@ class MainClaimsController: UIViewController, UITableViewDelegate, UITableViewDa
         gMainClaimsController = self
         selectedViewController = false
         navshow()
-        let mainsubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
+        let mainsubHeader = subHeader(frame: CGRect(x: 0, y: 60, width: width, height: 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_two")
         mainsubHeader.subHeaderTitle.text = "CLAIMS"
         self.view.addSubview(mainsubHeader)
         
     }
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         selectedViewController = false
     }
     
@@ -41,19 +41,19 @@ class MainClaimsController: UIViewController, UITableViewDelegate, UITableViewDa
         // Dispose of any resources that can be recreated.
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! mainClaimUIViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! mainClaimUIViewCell
         cell.claimTitle.text = label1[indexPath.item]
         cell.claimDescription.text = label2[indexPath.item]
         cell.claimImage.image = UIImage(named: image[indexPath.item])
-        cell.selectionStyle = .None
+        cell.selectionStyle = .none
         
-        tableView.scrollEnabled = true
+        tableView.isScrollEnabled = true
         tableView.showsVerticalScrollIndicator = false
         
         if(indexPath.item % 2 != 0) {
@@ -62,22 +62,22 @@ class MainClaimsController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         claim = indexPath.item
         
         if indexPath.row == 0 {
             LoadingOverlay.shared.showOverlay(self.view)
             rest.ClaimForm({(json:JSON) ->() in
-                dispatch_async(dispatch_get_main_queue(),{
+                dispatch_get_main_queue().asynchronously(DispatchQueue.mainexecute: {
                     LoadingOverlay.shared.hideOverlayView()
                     let pdflink = json["result"].stringValue
-                    let pdfURL = NSURL(string: pdflink.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)!
+                    let pdfURL = NSURL(string: pdflink.stringByAddingPercentEscapesUsingEncoding(String.Encoding.utf8)!)!
                     UIApplication.sharedApplication().openURL(pdfURL)
                     
                 })
             })
         }else{
-            self.performSegueWithIdentifier("inDetail", sender: self)
+            self.performSegue(withIdentifier: "inDetail", sender: self)
 
         }
     }

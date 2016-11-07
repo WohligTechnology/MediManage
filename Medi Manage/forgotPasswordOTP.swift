@@ -30,18 +30,18 @@ class forgotPasswordOTP: UIView, UITextFieldDelegate {
         loadViewFromNib ()
     }
     
-    func addPadding(width: CGFloat, myView: UITextField) {
-        let paddingView = UIView(frame: CGRectMake(0, 0, width, myView.frame.height))
+    func addPadding(_ width: CGFloat, myView: UITextField) {
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: myView.frame.height))
         myView.leftView = paddingView
-        myView.leftViewMode = UITextFieldViewMode.Always
+        myView.leftViewMode = UITextFieldViewMode.always
     }
     
     func loadViewFromNib() {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "forgotPasswordOTP", bundle: bundle)
-        let sortnewview = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let sortnewview = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         sortnewview.frame = bounds
-        sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        sortnewview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(sortnewview);
         
         enterOTP.delegate = self
@@ -52,16 +52,16 @@ class forgotPasswordOTP: UIView, UITextFieldDelegate {
         addPadding(15, myView: newPassword)
         addPadding(15, myView: confirmPassword)
         resetOTP.layer.borderWidth = 1
-        resetOTP.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.25).CGColor
+        resetOTP.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.25).cgColor
         multiColor.font = UIFont(name: "Lato-Bold", size: 11.0)
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         enterOTP.resignFirstResponder()
         return true
     }
     
-    @IBAction func resendOTP(sender: AnyObject) {
+    @IBAction func resendOTP(_ sender: AnyObject) {
         
             rest.SendOtp(forgotMobileNumber, countrycode: forgotCountryCode, completion: {(json:JSON) -> () in
                 if json["state"] {
@@ -73,23 +73,23 @@ class forgotPasswordOTP: UIView, UITextFieldDelegate {
             })
     }
     
-    @IBAction func enrollmentmembersCall(sender: AnyObject) {
+    @IBAction func enrollmentmembersCall(_ sender: AnyObject) {
         LoadingOverlay.shared.showOverlay(gForgotPasswordOTPController.view)
         rest.ResetPassword(enterOTP.text! as String,password: newPassword.text! as String,confirmPassword: confirmPassword.text! as String,completion: {(json:JSON) -> () in
-            dispatch_sync(dispatch_get_main_queue()){
+            dispatch_get_main_queue().sync(DispatchQueue.main){
                 LoadingOverlay.shared.hideOverlayView()
                 print(json)
                 if json["state"] {
-                        let vc = gForgotPasswordOTPController.storyboard?.instantiateViewControllerWithIdentifier("loginc") as! LoginController
-                        gForgotPasswordOTPController.presentViewController(vc, animated: true, completion: nil)
+                        let vc = gForgotPasswordOTPController.storyboard?.instantiateViewController(withIdentifier: "loginc") as! LoginController
+                        gForgotPasswordOTPController.present(vc, animated: true, completion: nil)
                 }
             }
         })
     }
     
-    @IBAction func otpBack(sender: AnyObject) {
+    @IBAction func otpBack(_ sender: AnyObject) {
         
-            gForgotPasswordOTPController.performSegueWithIdentifier("otpback", sender: nil)
-        let vc = gForgotPasswordOTPController.storyboard?.instantiateViewControllerWithIdentifier("loginc") as! LoginController
+            gForgotPasswordOTPController.performSegue(withIdentifier: "otpback", sender: nil)
+        let vc = gForgotPasswordOTPController.storyboard?.instantiateViewController(withIdentifier: "loginc") as! LoginController
     }
 }

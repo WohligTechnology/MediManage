@@ -20,7 +20,7 @@ class HospitalSearchController: UIViewController {
         navshow()
         
     }
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         selectedViewController = false
         
     }

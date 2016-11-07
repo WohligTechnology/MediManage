@@ -24,17 +24,17 @@ class ButtonView: UIView {
     }
     
     func loadViewFromNib() {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "ButtonView", bundle: bundle)
-        let sortnewview = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let sortnewview = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         sortnewview.frame = bounds
-        sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        sortnewview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(sortnewview);
         
     }
 
-    @IBAction func payNow(sender: AnyObject) {
-        let pdfURL = NSURL(string: "https://corporate.medimanage.com".stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)!
-        UIApplication.sharedApplication().openURL(pdfURL)
+    @IBAction func payNow(_ sender: AnyObject) {
+        let pdfURL = URL(string: "https://corporate.medimanage.com".addingPercentEscapes(using: String.Encoding.utf8)!)!
+        UIApplication.shared.openURL(pdfURL)
     }
 }

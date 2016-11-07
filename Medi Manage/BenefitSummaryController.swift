@@ -25,7 +25,7 @@ class BenefitSummaryController: UIViewController, UITableViewDataSource, UITabBa
         
         navshow()
         
-        let mainsubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
+        let mainsubHeader = subHeader(frame: CGRect(x: 0, y: 60, width: width, height: 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "footer_three")
         mainsubHeader.subHeaderTitle.text = "BENEFIT SUMMARY"
         self.view.addSubview(mainsubHeader)
@@ -38,7 +38,7 @@ class BenefitSummaryController: UIViewController, UITableViewDataSource, UITabBa
         self.summaryTable.rowHeight = UITableViewAutomaticDimension
         
         rest.BenefitSummery({(json:JSON) -> () in
-            dispatch_sync(dispatch_get_main_queue(),{
+            dispatch_get_main_queue().sync(DispatchQueue.mainexecute: {
                 if json == 401 {
                     self.redirectToHome()
                 }else{
@@ -58,7 +58,7 @@ class BenefitSummaryController: UIViewController, UITableViewDataSource, UITabBa
         
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         selectedViewController = false
         
     }
@@ -67,18 +67,18 @@ class BenefitSummaryController: UIViewController, UITableViewDataSource, UITabBa
         super.didReceiveMemoryWarning()
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.myBenefits["SalientFeatures"].count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! benefitTableCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! benefitTableCell
         
         cell.summaryText.text = self.myBenefits["SalientFeatures"][indexPath.row]["Text"].stringValue
         cell.summaryText.adjustsFontSizeToFitWidth = true
         cell.summaryText.frame.size.height = 40
         cell.summaryText.numberOfLines = 0
-        cell.summaryText.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        cell.summaryText.lineBreakMode = NSLineBreakMode.byWordWrapping
         cell.summaryText.sizeToFit()
         cell.summaryText.tag = indexPath.row
         
@@ -87,7 +87,7 @@ class BenefitSummaryController: UIViewController, UITableViewDataSource, UITabBa
             
             
         } else if indexPath.row % 2 == 1 {
-            cell.backgroundColor = UIColor.whiteColor()
+            cell.backgroundColor = UIColor.white
         }
         
         return cell

@@ -18,13 +18,13 @@ class PDFViewController: UIViewController {
         print("demo demo demo")
         navshow()
         if pdfname == ""{
-            self.pdflbl.hidden = false
-            self.webViewpdf.hidden = true
+            self.pdflbl.isHidden = false
+            self.webViewpdf.isHidden = true
         }else{
-            self.pdflbl.hidden = true
-            self.webViewpdf.hidden = false
-        let pdfLoc = NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource(pdfname, ofType:"pdf")!)
-        let request = NSURLRequest(URL: pdfLoc);
+            self.pdflbl.isHidden = true
+            self.webViewpdf.isHidden = false
+        let pdfLoc = URL(fileURLWithPath:Bundle.main.path(forResource: pdfname, ofType:"pdf")!)
+        let request = URLRequest(url: pdfLoc);
         self.webViewpdf.loadRequest(request);
         }
     }

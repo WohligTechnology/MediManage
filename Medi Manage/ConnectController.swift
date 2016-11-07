@@ -17,7 +17,7 @@ class ConnectController: UIViewController {
         
         gConnectController = self
         
-        let mainsubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
+        let mainsubHeader = subHeader(frame: CGRect(x: 0, y: 60, width: width, height: 50))
         mainsubHeader.subHeaderTitle.text = "Connect"
         self.view.addSubview(mainsubHeader)
         LoadingOverlay.shared.showOverlay(self.view)
@@ -25,7 +25,7 @@ class ConnectController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         selectedViewController = false
         
     }

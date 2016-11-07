@@ -32,45 +32,45 @@ class preAuthorizationTwo: UIView {
         loadViewFromNib ()
     }
     
-    func addBottomBorder(color: UIColor, linewidth: CGFloat, myView: UIView) {
+    func addBottomBorder(_ color: UIColor, linewidth: CGFloat, myView: UIView) {
         let border = CALayer()
-        border.backgroundColor = color.CGColor
+        border.backgroundColor = color.cgColor
         //border.frame = CGRectMake(0, myView.frame.size.height - width, myView.frame.size.width, width)
-        border.frame = CGRectMake(-5, myView.frame.size.height + 4 - linewidth, width - 30, linewidth)
+        border.frame = CGRect(x: -5, y: myView.frame.size.height + 4 - linewidth, width: width - 30, height: linewidth)
         myView.layer.addSublayer(border)
     }
     
     func loadViewFromNib() {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "preAuthorizationTwo", bundle: bundle)
-        let preAuthorizationTwo = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let preAuthorizationTwo = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         preAuthorizationTwo.frame = bounds
-        preAuthorizationTwo.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        preAuthorizationTwo.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(preAuthorizationTwo)
         
-        let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
+        let statusBar = UIView(frame: CGRect(x: 0, y: 0, width: width, height: 20))
         statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
         self.addSubview(statusBar)
         
-        let mainheader = header(frame: CGRectMake(0, 20, width, 50))
+        let mainheader = header(frame: CGRect(x: 0, y: 20, width: width, height: 50))
         self.addSubview(mainheader)
         
-        let mainsubHeader = subHeader(frame: CGRectMake(0, 70, width, 50))
+        let mainsubHeader = subHeader(frame: CGRect(x: 0, y: 70, width: width, height: 50))
         mainsubHeader.subHeaderIcon.image = UIImage(named: "")
         mainsubHeader.subHeaderTitle.text = "PRE - AUTHORIZATIONS"
         self.addSubview(mainsubHeader)
         
-        preAuthorizationTwoMainView.frame = CGRectMake(0, 120, self.frame.size.width, self.frame.size.height - 125)
+        preAuthorizationTwoMainView.frame = CGRect(x: 0, y: 120, width: self.frame.size.width, height: self.frame.size.height - 125)
         
         // add borders
-        addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: patientNameView)
-        addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: preAuthorizationNoView)
-        addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: dateOfAdmissionView)
-        addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: requestedAmountView)
+        addBottomBorder(UIColor.gray, linewidth: 0.5, myView: patientNameView)
+        addBottomBorder(UIColor.gray, linewidth: 0.5, myView: preAuthorizationNoView)
+        addBottomBorder(UIColor.gray, linewidth: 0.5, myView: dateOfAdmissionView)
+        addBottomBorder(UIColor.gray, linewidth: 0.5, myView: requestedAmountView)
         
         // dotted lines for no use
-        let line = drawDottedLine(frame: CGRectMake(50, 180, 1.5, 300))
-        line.backgroundColor = UIColor.clearColor()
+        let line = drawDottedLine(frame: CGRect(x: 50, y: 180, width: 1.5, height: 300))
+        line.backgroundColor = UIColor.clear
         line.layer.zPosition = 0
         preAuthorizationTwoMainView.addSubview(line)
         
@@ -79,8 +79,8 @@ class preAuthorizationTwo: UIView {
         initialApprovalImage.layer.zPosition = 10
         finalApprovalImage.layer.zPosition = 10
     }
-    @IBAction func queryFormCall(sender: AnyObject) {
-        gPreAuthorizationTwoController.performSegueWithIdentifier("preAuthoTwoToQueryForm", sender: nil)
+    @IBAction func queryFormCall(_ sender: AnyObject) {
+        gPreAuthorizationTwoController.performSegue(withIdentifier: "preAuthoTwoToQueryForm", sender: nil)
     }
 
     /*
@@ -94,15 +94,15 @@ class preAuthorizationTwo: UIView {
 }
 
 class drawDottedLine: UIView {
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         let context = UIGraphicsGetCurrentContext() //Initializing the line
-        CGContextSetLineWidth(context, 5.0) //Set the points of the line
-        CGContextSetStrokeColorWithColor(context, mainBlueColor.CGColor) //set colour
+        context?.setLineWidth(5.0) //Set the points of the line
+        context?.setStrokeColor(mainBlueColor.cgColor) //set colour
         CGContextSetLineDash(context, 0, [5.5], 1) // if equal lengths: [7.5 pts colored, 7.5 pts empty] else: [1,2] //Set Line dash
-        CGContextSetLineCap(context, CGLineCap(rawValue: 500)!) //line border radius
-        CGContextMoveToPoint(context, 0, 0) //initial point and end point on the x an y axes
-        CGContextAddLineToPoint(context, 0, 1000)
-        CGContextStrokePath(context) //To actually make the line
+        context?.setLineCap(CGLineCap(rawValue: 500)!) //line border radius
+        context?.move(to: CGPoint(x: 0, y: 0)) //initial point and end point on the x an y axes
+        context?.addLine(to: CGPoint(x: 0, y: 1000))
+        context?.strokePath() //To actually make the line
     }
     
 }
