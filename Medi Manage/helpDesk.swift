@@ -89,11 +89,11 @@ class helpDesk: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UITextFiel
 
         toolBar.sizeToFit()
         
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "donePicker")
+//        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(helpDesk.donePicker))
         
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
         
-        toolBar.setItems([spaceButton, doneButton], animated: false)
+//        toolBar.setItems([spaceButton, doneButton], animated: false)
         toolBar.userInteractionEnabled = true
         
         typeQuestionField.inputAccessoryView = toolBar

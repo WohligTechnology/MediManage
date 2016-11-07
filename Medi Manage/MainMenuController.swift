@@ -27,7 +27,7 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         gMainMenuController = self
 //        self.tabBarController?.tabBar.hidden = false
         rest.isEnrolled({(json:JSON) ->() in
-            var data = json
+            let data = json
             if !data {
                 print("in if")
                 gMainMenuController.topendding()

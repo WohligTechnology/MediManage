@@ -10,14 +10,13 @@
 import Foundation
 import UIKit
 import SwiftyJSON
-import SwiftValidator
 
 
 class signup: UIView, UITextFieldDelegate {
     
     @IBOutlet weak var employeeID: UITextField!
     @IBOutlet weak var dateOfBirth: UITextField!
-    let validator = Validator()
+//    let validator = Validator()
     var dateDob = ""
     var datePickerView:UIDatePicker = UIDatePicker()
     var flag : Bool = false
@@ -102,7 +101,7 @@ class signup: UIView, UITextFieldDelegate {
         dateOfBirth.inputAccessoryView = toolBar
         
         
-        validator.registerField(employeeID, rules: [RequiredRule(), FullNameRule()])
+//        validator.registerField(employeeID, rules: [RequiredRule(), FullNameRule()])
         
     }
     func donePicker(){

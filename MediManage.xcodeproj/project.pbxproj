@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		27C9E516FC5526ED88CFCA42 /* Pods_MediManage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D759717CAF6EE7B65953226B /* Pods_MediManage.framework */; };
+		3693E66B1DD0B49A00235FDE /* 1_Discharge_Card.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3693E6671DD0B49A00235FDE /* 1_Discharge_Card.pdf */; };
+		3693E66C1DD0B49A00235FDE /* 2_Proper_Hospital_Bill.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3693E6681DD0B49A00235FDE /* 2_Proper_Hospital_Bill.pdf */; };
+		3693E66D1DD0B49A00235FDE /* 3_Medicine_Bills_with_Doctor's_Prescription.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3693E6691DD0B49A00235FDE /* 3_Medicine_Bills_with_Doctor's_Prescription.pdf */; };
+		3693E66E1DD0B49A00235FDE /* 4_Investigation_Reports_Bill Receipt.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3693E66A1DD0B49A00235FDE /* 4_Investigation_Reports_Bill Receipt.pdf */; };
 		3A01752F1CE364AD00832E49 /* header.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A01752E1CE364AD00832E49 /* header.xib */; };
 		3A0175311CE369AB00832E49 /* header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0175301CE369AB00832E49 /* header.swift */; };
 		3A1369AE1CE4566500BEE355 /* memberList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A1369AD1CE4566500BEE355 /* memberList.xib */; };
@@ -157,10 +161,6 @@
 		FCC1C8061D5861DD005B5F30 /* newContact.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCC1C8051D5861DD005B5F30 /* newContact.xib */; };
 		FCC1C8091D586456005B5F30 /* newContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1C8081D586456005B5F30 /* newContact.swift */; };
 		FCDE3A0F1D64B25800C73B9A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCDE3A0E1D64B25800C73B9A /* CoreLocation.framework */; };
-		FCDF4B2E1DB23B9900FFC620 /* 1_Discharge_Card.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FCDF4B2D1DB23B9900FFC620 /* 1_Discharge_Card.pdf */; };
-		FCDF4B301DB23BA600FFC620 /* 2_Proper_Hospital_Bill.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FCDF4B2F1DB23BA600FFC620 /* 2_Proper_Hospital_Bill.pdf */; };
-		FCDF4B321DB23BB100FFC620 /* 3_Medicine_Bills_with_Doctor's_Prescription.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FCDF4B311DB23BB100FFC620 /* 3_Medicine_Bills_with_Doctor's_Prescription.pdf */; };
-		FCDF4B341DB23BBD00FFC620 /* 4_Investigation_Reports_Bill Receipt.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FCDF4B331DB23BBD00FFC620 /* 4_Investigation_Reports_Bill Receipt.pdf */; };
 		FCE15CD21D34D6E2009B49E2 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE15CD11D34D6E2009B49E2 /* PDFViewController.swift */; };
 		FCE15CDA1D34DF54009B49E2 /* Doctor's Prescription.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FCE15CD31D34DF54009B49E2 /* Doctor's Prescription.pdf */; };
 		FCE15CDB1D34DF54009B49E2 /* Laboratory Payment Receipt.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FCE15CD41D34DF54009B49E2 /* Laboratory Payment Receipt.pdf */; };
@@ -190,6 +190,10 @@
 
 /* Begin PBXFileReference section */
 		1350669CA9DD04202B9A6DA6 /* Pods_MediManageTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediManageTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3693E6671DD0B49A00235FDE /* 1_Discharge_Card.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 1_Discharge_Card.pdf; sourceTree = "<group>"; };
+		3693E6681DD0B49A00235FDE /* 2_Proper_Hospital_Bill.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 2_Proper_Hospital_Bill.pdf; sourceTree = "<group>"; };
+		3693E6691DD0B49A00235FDE /* 3_Medicine_Bills_with_Doctor's_Prescription.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "3_Medicine_Bills_with_Doctor's_Prescription.pdf"; sourceTree = "<group>"; };
+		3693E66A1DD0B49A00235FDE /* 4_Investigation_Reports_Bill Receipt.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "4_Investigation_Reports_Bill Receipt.pdf"; sourceTree = "<group>"; };
 		3A01752E1CE364AD00832E49 /* header.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = header.xib; sourceTree = "<group>"; };
 		3A0175301CE369AB00832E49 /* header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = header.swift; sourceTree = "<group>"; };
 		3A1369AD1CE4566500BEE355 /* memberList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = memberList.xib; sourceTree = "<group>"; };
@@ -349,10 +353,6 @@
 		FCC1C8051D5861DD005B5F30 /* newContact.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = newContact.xib; sourceTree = "<group>"; };
 		FCC1C8081D586456005B5F30 /* newContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newContact.swift; sourceTree = "<group>"; };
 		FCDE3A0E1D64B25800C73B9A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		FCDF4B2D1DB23B9900FFC620 /* 1_Discharge_Card.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = 1_Discharge_Card.pdf; path = ../../../docs/Medimanage/fwdmedimanagerelatedinfo__/1_Discharge_Card.pdf; sourceTree = "<group>"; };
-		FCDF4B2F1DB23BA600FFC620 /* 2_Proper_Hospital_Bill.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = 2_Proper_Hospital_Bill.pdf; path = ../../../docs/Medimanage/fwdmedimanagerelatedinfo__/2_Proper_Hospital_Bill.pdf; sourceTree = "<group>"; };
-		FCDF4B311DB23BB100FFC620 /* 3_Medicine_Bills_with_Doctor's_Prescription.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "3_Medicine_Bills_with_Doctor's_Prescription.pdf"; path = "../../../docs/Medimanage/fwdmedimanagerelatedinfo__/3_Medicine_Bills_with_Doctor's_Prescription.pdf"; sourceTree = "<group>"; };
-		FCDF4B331DB23BBD00FFC620 /* 4_Investigation_Reports_Bill Receipt.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "4_Investigation_Reports_Bill Receipt.pdf"; path = "../../../docs/Medimanage/fwdmedimanagerelatedinfo__/4_Investigation_Reports_Bill Receipt.pdf"; sourceTree = "<group>"; };
 		FCE15CD11D34D6E2009B49E2 /* PDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
 		FCE15CD31D34DF54009B49E2 /* Doctor's Prescription.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Doctor's Prescription.pdf"; sourceTree = "<group>"; };
 		FCE15CD41D34DF54009B49E2 /* Laboratory Payment Receipt.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Laboratory Payment Receipt.pdf"; sourceTree = "<group>"; };
@@ -949,11 +949,11 @@
 				FCE15CD31D34DF54009B49E2 /* Doctor's Prescription.pdf */,
 				FCE15CD41D34DF54009B49E2 /* Laboratory Payment Receipt.pdf */,
 				FCE15CD51D34DF54009B49E2 /* Laboratory Report.pdf */,
-				FCDF4B331DB23BBD00FFC620 /* 4_Investigation_Reports_Bill Receipt.pdf */,
-				FCDF4B2D1DB23B9900FFC620 /* 1_Discharge_Card.pdf */,
+				3693E6671DD0B49A00235FDE /* 1_Discharge_Card.pdf */,
+				3693E6681DD0B49A00235FDE /* 2_Proper_Hospital_Bill.pdf */,
+				3693E6691DD0B49A00235FDE /* 3_Medicine_Bills_with_Doctor's_Prescription.pdf */,
+				3693E66A1DD0B49A00235FDE /* 4_Investigation_Reports_Bill Receipt.pdf */,
 				FCE15CD61D34DF54009B49E2 /* Main Hospital Bill.pdf */,
-				FCDF4B311DB23BB100FFC620 /* 3_Medicine_Bills_with_Doctor's_Prescription.pdf */,
-				FCDF4B2F1DB23BA600FFC620 /* 2_Proper_Hospital_Bill.pdf */,
 				FCE15CD71D34DF54009B49E2 /* Medicine Bill.pdf */,
 				FCE15CD81D34DF54009B49E2 /* Pre Numbered Cash Paid Receipt.pdf */,
 				FCE15CD91D34DF54009B49E2 /* X-Ray Report.pdf */,
@@ -1036,19 +1036,22 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Wohlig Technology";
 				TargetAttributes = {
 					786DF9F51CD214F300DDE769 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = YVWVDTRG4B;
+						LastSwiftMigration = 0810;
 					};
 					786DFA091CD214F300DDE769 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0810;
 						TestTargetID = 786DF9F51CD214F300DDE769;
 					};
 					786DFA141CD214F300DDE769 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0810;
 						TestTargetID = 786DF9F51CD214F300DDE769;
 					};
 				};
@@ -1082,6 +1085,7 @@
 				783322AD1CDB380C0015CE37 /* onboarding.xib in Resources */,
 				3A8EFB561CE9C3A3004489F3 /* inbox.xib in Resources */,
 				FC3C2EBB1D37C7DB000DAD18 /* enrollmentMembersRenew.xib in Resources */,
+				3693E66C1DD0B49A00235FDE /* 2_Proper_Hospital_Bill.pdf in Resources */,
 				FCE15CDB1D34DF54009B49E2 /* Laboratory Payment Receipt.pdf in Resources */,
 				C2A59E901CDDDF700093CFEC /* Lato-Bold.ttf in Resources */,
 				C2A59E911CDDDF700093CFEC /* Lato-Hairline.ttf in Resources */,
@@ -1091,15 +1095,13 @@
 				3A8774BC1CEC3783001DB41F /* preAuthorizationTwo.xib in Resources */,
 				C2A59E8F1CDDDF700093CFEC /* Lato-Black.ttf in Resources */,
 				783322B01CDB50D10015CE37 /* landing.xib in Resources */,
+				3693E66E1DD0B49A00235FDE /* 4_Investigation_Reports_Bill Receipt.pdf in Resources */,
 				43D6FF431CFEE486008361B2 /* pickDate.xib in Resources */,
 				FCB801721D2BB62B00F9226F /* relationView.xib in Resources */,
 				3AEEB0241CE7515C0085EEF5 /* connect.xib in Resources */,
 				FCBE27F51D33E436004654E0 /* Discharge Summary.pdf in Resources */,
-				FCDF4B341DB23BBD00FFC620 /* 4_Investigation_Reports_Bill Receipt.pdf in Resources */,
-				FCDF4B2E1DB23B9900FFC620 /* 1_Discharge_Card.pdf in Resources */,
 				3A8774C11CEC41C1001DB41F /* queryForm.xib in Resources */,
 				FC7FB49B1D92933A00570FB2 /* ButtonView.xib in Resources */,
-				FCDF4B321DB23BB100FFC620 /* 3_Medicine_Bills_with_Doctor's_Prescription.pdf in Resources */,
 				3A8EFB5B1CE9D31B004489F3 /* homeMenus.xib in Resources */,
 				78B90BD71CE067810022FE7A /* generateOTP.xib in Resources */,
 				3AD3E52D1CE20A1900900A93 /* premiumCalculation.xib in Resources */,
@@ -1123,10 +1125,11 @@
 				3A72C72C1CEB454100B5412E /* helplineNumber.xib in Resources */,
 				786DF9FF1CD214F300DDE769 /* Main.storyboard in Resources */,
 				3A8EFB601CE9E0BA004489F3 /* claimForm.xib in Resources */,
-				FCDF4B301DB23BA600FFC620 /* 2_Proper_Hospital_Bill.pdf in Resources */,
 				3AC43DCF1CE9FC1500ED2523 /* myClaims.xib in Resources */,
+				3693E66D1DD0B49A00235FDE /* 3_Medicine_Bills_with_Doctor's_Prescription.pdf in Resources */,
 				3AEEB0131CE70F3D0085EEF5 /* helpDesk.xib in Resources */,
 				FCE15CDA1D34DF54009B49E2 /* Doctor's Prescription.pdf in Resources */,
+				3693E66B1DD0B49A00235FDE /* 1_Discharge_Card.pdf in Resources */,
 				783322951CD9FB1B0015CE37 /* login.xib in Resources */,
 				3A74A7D01CF41FCA00592B3E /* tutorial.xib in Resources */,
 				C2A59E931CDDDF700093CFEC /* Lato-Regular.ttf in Resources */,
@@ -1197,7 +1200,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1374,8 +1377,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1420,8 +1425,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1440,6 +1447,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1449,6 +1457,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EEAE1C269713C6CE4FA8D118 /* Pods-MediManage.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1461,6 +1470,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-Manage";
 				PRODUCT_NAME = MediManage;
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1469,6 +1479,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4415F35FCFCB220C77D14407 /* Pods-MediManage.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1481,6 +1492,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-Manage";
 				PRODUCT_NAME = MediManage;
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1493,6 +1505,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-ManageTests";
 				PRODUCT_NAME = MediManage;
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MediManage.app/MediManage";
 			};
 			name = Debug;
@@ -1505,6 +1518,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-ManageTests";
 				PRODUCT_NAME = MediManage;
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MediManage.app/MediManage";
 			};
 			name = Release;
@@ -1516,6 +1530,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-ManageUITests";
 				PRODUCT_NAME = MediManage;
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = "Medi Manage";
 			};
 			name = Debug;
@@ -1527,6 +1542,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-ManageUITests";
 				PRODUCT_NAME = MediManage;
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = "Medi Manage";
 			};
 			name = Release;

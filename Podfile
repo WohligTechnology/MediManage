@@ -4,9 +4,9 @@ target 'MediManage' do
     
     use_frameworks!
     
-    pod 'SwiftyJSON'
+    pod 'SwiftyJSON', '2.4.0'
     pod 'SwiftHTTP', '~> 1.0.3'
-    pod 'Alamofire', '~> 3.4'
+    pod 'Alamofire', '~> 3.5'
     pod 'SwiftSpinner'
 
 end

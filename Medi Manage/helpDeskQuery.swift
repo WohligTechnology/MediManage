@@ -8,7 +8,6 @@
 
 import UIKit
 import SwiftyJSON
-import QToasterSwift
 
 class helpDeskQuery: UIView, UITextFieldDelegate {
     

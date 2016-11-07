@@ -8,11 +8,11 @@
 
 import Foundation
 import SwiftyJSON
-import SwiftHTTP
 import UIKit
 import CoreData
 import SystemConfiguration
 import Alamofire
+import SwiftHTTP
 
 
 
