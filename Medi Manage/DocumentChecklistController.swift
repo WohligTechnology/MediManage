@@ -130,7 +130,7 @@ class DocumentChecklistController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var dcDesc: UILabel!
     
     @IBOutlet weak var documentTable: UITableView!
-    //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    //   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     //        if(segue.identifier == "viewPDF"){
     //            let indexPaths = self.documentTable!.indexPathForSelectedRow
     //            pdfname = pdfs[(indexPaths?.item)!]

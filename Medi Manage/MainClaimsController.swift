@@ -13,10 +13,11 @@ var gMainClaimsController: UIViewController!
 
 class MainClaimsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let label1 = ["Claim Form", "Document Checklist"]
+    let label1 = ["My Claims", "Claim Form", "Document Checklist"]
     let label2 = ["Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit."]
-    let image = ["claim_two", "claim_three"]
+    let image = ["claim_one", "claim_two", "claim_three"]
     
     @IBOutlet var mainClaimsMainView: UIView!
     @IBOutlet weak var mainTableView: UITableView!
@@ -42,7 +43,7 @@ class MainClaimsController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -56,16 +57,19 @@ class MainClaimsController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.scrollEnabled = true
         tableView.showsVerticalScrollIndicator = false
         
-        if(indexPath.item % 2 != 0) {
+        if( indexPath.item % 2 != 1) {
             cell.claimView.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 255/255)
         }
         return cell
+        
     }
+    
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         claim = indexPath.item
-        
-        if indexPath.row == 0 {
+        if (indexPath.row != 1 && indexPath.row != 2) {
+            self.performSegueWithIdentifier("myClaim", sender: self)
+        }else if indexPath.row == 1 {
             LoadingOverlay.shared.showOverlay(self.view)
             rest.ClaimForm({(json:JSON) ->() in
                 dispatch_async(dispatch_get_main_queue(),{
@@ -76,11 +80,12 @@ class MainClaimsController: UIViewController, UITableViewDelegate, UITableViewDa
                     
                 })
             })
-        }else{
-            self.performSegueWithIdentifier("inDetail", sender: self)
-
         }
-    }
+        else {
+            self.performSegueWithIdentifier("inDetail", sender: self)
+            }
+        }
+    
 }
 
 class mainClaimUIViewCell: UITableViewCell {

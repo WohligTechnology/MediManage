@@ -36,6 +36,10 @@ var selectedIndex = 0
 var selectedViewController : Bool = false
 var isAddMember : Bool = false
 var claim = 0
+var myClaim = 0
+var activeClaim = 0
+var checkPreRe = 0
+var preAuthOne = 0
 var tabSelected = 0
 struct defaultsKeys {
     static let token = ""

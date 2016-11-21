@@ -50,7 +50,7 @@ public class RestApi {
        // opt.security = HTTPSecurity(certs: [HTTPSSLCe(data: data)], usePublicKeys: true)
          
             opt.start { response in
-               
+            
                 print(response.error)
                 if let _ = response.error {
                     completion(json);
@@ -933,6 +933,72 @@ public class RestApi {
         }
                    }
     
+    public func activeClaims(completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        let token = defaultToken.stringForKey("access_token")
+        if (token != nil) {
+            let isLoginheader = ["Authorization":"Bearer \((token)! as String)"]
+            do {
+                let opt = try HTTP.GET(apiURL + "EmployeeClaims/PreAuthClaimsMobile" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers: isLoginheader)
+                opt.start { response in
+                    
+                    if let _ = response.error {
+                        let nsError = response.error! as NSError
+                        if nsError.code == 401 {
+                            json = JSON(nsError.code)
+                            completion(json)
+                        }else{
+                            completion(json);
+                        }
+                    }
+                    else
+                    {
+                        json  = JSON(data: response.data)
+                        completion(json);
+                    }
+                }
+            } catch _ {
+                completion(json);
+            }
+            
+        }
+    }
+
+    public func reimbursementClaims(completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        let token = defaultToken.stringForKey("access_token")
+        if (token != nil) {
+            let isLoginheader = ["Authorization":"Bearer \((token)! as String)"]
+            do {
+                let opt = try HTTP.GET(apiURL + "EmployeeClaims/ReimbusementClaimsMobile" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers: isLoginheader)
+                opt.start { response in
+                    
+                    if let _ = response.error {
+                        let nsError = response.error! as NSError
+                        if nsError.code == 401 {
+                            json = JSON(nsError.code)
+                            completion(json)
+                        }else{
+                            completion(json);
+                        }
+                    }
+                    else
+                    {
+                        json  = JSON(data: response.data)
+                        completion(json);
+                    }
+                }
+            } catch _ {
+                completion(json);
+            }
+            
+        }
+    }
+    
+
+    
     public func changePassword(cp: String, np: String, cnp: String, completion:((JSON) -> Void))
     {
         var json = JSON(1)
@@ -961,6 +1027,7 @@ public class RestApi {
             completion(json);
         }
     }
+    
 
 }
 
