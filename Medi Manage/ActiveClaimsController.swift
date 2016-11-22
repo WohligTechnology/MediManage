@@ -360,9 +360,12 @@ let activeClaimTitle = []
           }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "reimbursement" {
-            print("index path")
-            print(sender)
             let controller = segue.destinationViewController as! ReimbursementOneController
+            if activeClaim == 0 {
+                controller.personJson = claimsJSON["result"]["PendingClaims"][preAuthOne]
+            }else{
+                controller.personJson = claimsJSON["result"]["closedClaims"][preAuthOne]
+            }
             //let jsonResult = claimsJSON["result"]["PendingClaims"].dictionaryValue
 //            if activeClaim == 0 {
 //            for i in 0...preAuthOne {

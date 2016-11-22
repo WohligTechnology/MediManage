@@ -56,7 +56,7 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
         print("personJson ")
         print(personJson)
 //      mainStatusLabelDate = personJson["PendingClaims"][0]["ClaimsStatus"][0]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
-        nameLabel.text = name
+        nameLabel.text = personJson["PatientName"].stringValue
         idLabel.text = id
         amountLabel.text = amount
         firstStatus.text = status1
@@ -115,143 +115,6 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
             }
         }
         
-        //json function calling for preAuthorization
-        if myClaim == 0{
-            if activeClaim == 0{
-                rest.activeClaims({(json:JSON) -> () in
-                    dispatch_sync(dispatch_get_main_queue(),{
-                        if json == 401 {
-                            self.redirectToHome()
-                        }else{
-                            print(json)
-                            self.claimsJSON = json
-                            self.pendingClaimJSON = self.claimsJSON["result"]["PendingClaims"]
-                            dispatch_async(dispatch_get_main_queue(),{
-                                if(self.pendingClaimJSON!.count == 0 ) {
-                                    let noClaim = UILabel(frame: CGRectMake(90, 250, 200, 200))
-                                    noClaim.text = "No History Found"
-                                    noClaim.textColor = UIColor.blackColor()
-                                    noClaim.textAlignment = .Center
-                                    self.view.addSubview(noClaim)
-                                    let viewsDictionary = ["noClaim":noClaim]
-                                    let noClaim_H = NSLayoutConstraint.constraintsWithVisualFormat("H:|-50-[noClaim]-50-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
-                                    let noClaim_V = NSLayoutConstraint.constraintsWithVisualFormat("V:|-50-[noClaim]-50-|", options: NSLayoutFormatOptions(rawValue:0), metrics: nil, views: viewsDictionary)
-                                    self.view.addConstraints(noClaim_H)
-                                    self.view.addConstraints(noClaim_V)
-                                }
-                                
-                            })
-                        }
-                    })
-                    
-                })
-            }else{
-                rest.activeClaims({(json:JSON) -> () in
-                    
-                    dispatch_sync(dispatch_get_main_queue(),{
-                        if json == 401 {
-                            self.redirectToHome()
-                        }else{
-                            self.claimsJSON = json
-                            self.closedClaimsJSON = self.claimsJSON["result"]["closedClaims"]
-                            dispatch_async(dispatch_get_main_queue(),{
-                                print("ALL IS WELL");
-                               
-                                
-                                
-                                if(self.closedClaimsJSON!.count == 0 ) {
-                                    let noClaim = UILabel(frame: CGRectMake(90, 250, 200, 200))
-                                    noClaim.text = "No History Found"
-                                    noClaim.textColor = UIColor.blackColor()
-                                    noClaim.textAlignment = .Center
-                                    self.view.addSubview(noClaim)
-                                    let viewsDictionary = ["noClaim":noClaim]
-                                    let noClaim_H = NSLayoutConstraint.constraintsWithVisualFormat("H:|-50-[noClaim]-50-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
-                                    let noClaim_V = NSLayoutConstraint.constraintsWithVisualFormat("V:|-50-[noClaim]-50-|", options: NSLayoutFormatOptions(rawValue:0), metrics: nil, views: viewsDictionary)
-                                    self.view.addConstraints(noClaim_H)
-                                    self.view.addConstraints(noClaim_V)
-                                }
-                                
-                                
-                                
-                                
-                                
-                            })
-                        }
-                    })
-                    
-                })
-            }
-        }
-        //json for reimbursement
-        if myClaim == 1{
-            if activeClaim == 0 {
-                rest.reimbursementClaims({(json:JSON) -> () in
-                    dispatch_sync(dispatch_get_main_queue(),{
-                        if json == 401 {
-                            self.redirectToHome()
-                        }else{
-                            print(json)
-                            self.claimsJSON = json
-                            self.pendingClaimJSON = self.claimsJSON["result"]["PendingClaims"]
-                            dispatch_async(dispatch_get_main_queue(),{
-                                
-                                if(self.pendingClaimJSON!.count == 0 ) {
-                                    let noClaim = UILabel(frame: CGRectMake(90, 250, 200, 200))
-                                    noClaim.text = "No History Found"
-                                    noClaim.textColor = UIColor.blackColor()
-                                    noClaim.textAlignment = .Center
-                                    self.view.addSubview(noClaim)
-                                    let viewsDictionary = ["noClaim":noClaim]
-                                    let noClaim_H = NSLayoutConstraint.constraintsWithVisualFormat("H:|-50-[noClaim]-50-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
-                                    let noClaim_V = NSLayoutConstraint.constraintsWithVisualFormat("V:|-50-[noClaim]-50-|", options: NSLayoutFormatOptions(rawValue:0), metrics: nil, views: viewsDictionary)
-                                    self.view.addConstraints(noClaim_H)
-                                    self.view.addConstraints(noClaim_V)
-                                }
-                                
-                            })
-                        }
-                    })
-                    
-                })
-            }
-                
-                // Do any additional setup after loading the view.
-            else {
-                rest.reimbursementClaims({(json:JSON) -> () in
-                    dispatch_sync(dispatch_get_main_queue(),{
-                        if json == 401 {
-                            self.redirectToHome()
-                        }else{
-                            print(json)
-                            self.claimsJSON = json
-                            self.closedClaimsJSON = self.claimsJSON["result"]["closedClaims"]
-                            dispatch_async(dispatch_get_main_queue(),{
-                               
-                                
-                                
-                                if(self.closedClaimsJSON!.count == 0 ) {
-                                    let noClaim = UILabel(frame: CGRectMake(90, 250, 200, 200))
-                                    noClaim.text = "No History Found"
-                                    noClaim.textColor = UIColor.blackColor()
-                                    noClaim.textAlignment = .Center
-                                    self.view.addSubview(noClaim)
-                                    let viewsDictionary = ["noClaim":noClaim]
-                                    let noClaim_H = NSLayoutConstraint.constraintsWithVisualFormat("H:|-50-[noClaim]-50-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
-                                    let noClaim_V = NSLayoutConstraint.constraintsWithVisualFormat("V:|-50-[noClaim]-50-|", options: NSLayoutFormatOptions(rawValue:0), metrics: nil, views: viewsDictionary)
-                                    self.view.addConstraints(noClaim_H)
-                                    self.view.addConstraints(noClaim_V)
-                                }
-                                
-                            })
-                        }
-                    })
-                    
-                })
-            }
-        }
-        
-        // Do any additional setup after loading the view.
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -260,29 +123,16 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
             if activeClaim == 0{
             
            controller1.nameReimburseTwo = claimsJSON["result"]["PendingClaims"][0]["PatientName"].string!
-                print("\(claimsJSON["result"]["PendingClaims"][0]["PatientName"].string!)")
             
             }
         }
     }
     @IBAction func knowMoreButton(sender: UIButton) {
-        //nothing
         
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
