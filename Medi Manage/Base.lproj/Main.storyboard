@@ -1351,6 +1351,10 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="call_icon" translatesAutoresizingMaskIntoConstraints="NO" id="553-5i-vkT">
+                                                <rect key="frame" x="301" y="174" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -1469,6 +1473,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <outlet property="claimNo" destination="KVe-Zt-oFL" id="dX6-Qf-YKC"/>
                         <outlet property="firstStatus" destination="f3P-Tb-1Vf" id="ZC9-FZ-jdT"/>
                         <outlet property="fourthStatus" destination="p8l-3r-mS9" id="WUC-4h-R06"/>
+                        <outlet property="hideCall" destination="553-5i-vkT" id="yuU-5A-udZ"/>
                         <outlet property="idLabel" destination="745-Hm-x0N" id="ST3-kv-UfX"/>
                         <outlet property="knowMore" destination="HJA-Id-fgy" id="DuP-Vr-9Id"/>
                         <outlet property="mainStatus" destination="At3-MR-ya5" id="yf5-GF-veE"/>
@@ -1842,6 +1847,7 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                         <outlet property="claimNoReimburseTwo" destination="ted-AF-dTc" id="3nb-Hw-QDX"/>
                         <outlet property="claimSupport" destination="Oex-Jh-h8N" id="CC5-EC-2mG"/>
                         <outlet property="dateofAdmissionReimburseTwo" destination="Tco-FE-3J9" id="evL-27-DXi"/>
+                        <outlet property="hidePopup" destination="Uvl-rX-N90" id="xrm-Ee-Pwd"/>
                         <outlet property="nameTwo" destination="mRS-EN-I62" id="qp4-Xz-dFA"/>
                         <outlet property="noTwo" destination="YfS-1Y-e7O" id="GOo-vx-UwS"/>
                         <outlet property="number1" destination="Xsd-Ad-eZ1" id="ZTC-o5-L7Z"/>
@@ -1928,6 +1934,9 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
                             <constraint firstItem="PI2-W2-2KQ" firstAttribute="top" secondItem="ZtX-hP-0wA" secondAttribute="bottom" constant="60" id="z8q-kS-bRb"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="subjectText" destination="Do0-fI-qr6" id="How-jP-JAa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X6O-iu-pvz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -4665,10 +4674,10 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
         <image name="triangle_orange" width="32" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dUS-S7-jua"/>
         <segue reference="LXm-Lb-FcH"/>
         <segue reference="Oo4-D3-Nsi"/>
-        <segue reference="wgK-eO-Wod"/>
+        <segue reference="8ZQ-nc-jHt"/>
         <segue reference="QCt-6c-YRM"/>
+        <segue reference="wgK-eO-Wod"/>
     </inferredMetricsTieBreakers>
 </document>

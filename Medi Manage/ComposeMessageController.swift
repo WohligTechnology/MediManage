@@ -7,18 +7,37 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ComposeMessageController: UIViewController {
-
+    var subjectMessage:String! = ""
+    var inboxMessage: JSON!
+    var inboxPatient: JSON!
+    
+    @IBOutlet weak var subjectText: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         navshow()
+       
+        
         let mainSubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
         mainSubHeader.subHeaderTitle.text = "INBOX"
         mainSubHeader.subHeaderIcon.image = UIImage(named: "inbox")
         self.view.addSubview(mainSubHeader)
 
-
+        rest.messageReimburse({(json:JSON) -> () in
+            dispatch_sync(dispatch_get_main_queue(),{
+                if json == 401 {
+                    self.redirectToHome()
+                }else{
+                    print(json)
+                    self.inboxMessage = json
+                }
+                })
+        })
+        inboxPatient = inboxMessage!["result"]["Patients"]
+         subjectMessage = "Reimbursement Claim Update - \(inboxPatient[0]["ID"].int)"
+        subjectText.text = subjectMessage
         // Do any additional setup after loading the view.
     }
 

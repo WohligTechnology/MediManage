@@ -36,6 +36,7 @@ class newDemoViewController: UIViewController {
     
     @IBOutlet weak var pendingImage: UIImageView!
     
+    @IBOutlet weak var hidePopup: UIButton!
     @IBOutlet weak var settledImage: UIImageView!
     @IBOutlet weak var reimburseTwoScroll: UIScrollView!
     
@@ -53,7 +54,6 @@ class newDemoViewController: UIViewController {
         self.reimburseView.alpha = 1
         popupView.layer.masksToBounds = true
         self.popupView.alpha = 0
-        
         navshow()
                 nameTwo.text = nameReimburseTwo
                 
@@ -99,11 +99,13 @@ class newDemoViewController: UIViewController {
                 mainSubHeader.subHeaderTitle.text = ("Pre-Authorizations")
                 mainSubHeader.subHeaderIcon.image = UIImage(named: "my_claim_icon")
                 self.view.addSubview(mainSubHeader)
+                
             } else {
                 let mainSubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
                 mainSubHeader.subHeaderTitle.text = ("Pre-Authorizations")
                 mainSubHeader.subHeaderIcon.image = UIImage(named: "my_claim_icon")
                 self.view.addSubview(mainSubHeader)
+               
             }
         }
         if myClaim == 1 {
@@ -113,12 +115,14 @@ class newDemoViewController: UIViewController {
                 mainSubHeader.subHeaderTitle.text = ("REIMBURSEMENT CLAIMS")
                 mainSubHeader.subHeaderIcon.image = UIImage(named: "my_claim_icon")
                 self.view.addSubview(mainSubHeader)
+                hidePopup.alpha = 0
             }else{
                 let mainSubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
                 
                 mainSubHeader.subHeaderTitle.text = ("REIMBURSEMENT CLAIMS")
                 mainSubHeader.subHeaderIcon.image = UIImage(named: "my_claim_icon")
                 self.view.addSubview(mainSubHeader)
+                hidePopup.alpha = 0
                 
             }
         }
