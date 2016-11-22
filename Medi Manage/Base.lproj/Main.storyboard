@@ -1488,10 +1488,10 @@ c3BlbmRpc3NlIHRpbmNpZHVudCBhdWd1ZSBhYyBuaXNsIHZpdmVycmEgdmVuZW5hdGlzLg
             </objects>
             <point key="canvasLocation" x="3863" y="2873"/>
         </scene>
-        <!--Reimbursement Claim Two Controller-->
+        <!--New Demo View Controller-->
         <scene sceneID="nSN-CA-8ja">
             <objects>
-                <viewController id="crY-Zf-owt" customClass="ReimbursementClaimTwoController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="crY-Zf-owt" customClass="newDemoViewController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cNp-Xy-ZLR"/>
                         <viewControllerLayoutGuide type="bottom" id="dki-6s-UFP"/>
