@@ -109,10 +109,8 @@
 		78B90BD91CE067950022FE7A /* enterOTP.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78B90BD81CE067950022FE7A /* enterOTP.xib */; };
 		78B90BDB1CE067DA0022FE7A /* enterOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B90BDA1CE067DA0022FE7A /* enterOTP.swift */; };
 		9B1323CF1DD1F2EF0078DB26 /* preAuthorizationOne.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B1323CE1DD1F2EF0078DB26 /* preAuthorizationOne.xib */; };
+		9B1790691DE41423006FE8F5 /* newDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1790681DE41423006FE8F5 /* newDemoViewController.swift */; };
 		9B618F1D1DDAF03D0045C18A /* ComposeMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B618F1C1DDAF03D0045C18A /* ComposeMessageController.swift */; };
-		9B618F2F1DDC5A190045C18A /* ReimbursementClaimTwoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B618F2E1DDC5A190045C18A /* ReimbursementClaimTwoController.swift */; };
-		9B618F301DDC5A190045C18A /* ReimbursementClaimTwoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B618F2E1DDC5A190045C18A /* ReimbursementClaimTwoController.swift */; };
-		9B618F311DDC5A190045C18A /* ReimbursementClaimTwoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B618F2E1DDC5A190045C18A /* ReimbursementClaimTwoController.swift */; };
 		9B88B8B71DD6EA8A005CA455 /* ReimbursementOneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B88B8B61DD6EA8A005CA455 /* ReimbursementOneController.swift */; };
 		9B88B8BF1DD724AB005CA455 /* preAuthTwoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B88B8BE1DD724AB005CA455 /* preAuthTwoController.swift */; };
 		9BC6885C1DD361BD004C2915 /* PreAuthorizationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC6885B1DD361BD004C2915 /* PreAuthorizationController.swift */; };
@@ -305,8 +303,8 @@
 		78B90BD81CE067950022FE7A /* enterOTP.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = enterOTP.xib; sourceTree = "<group>"; };
 		78B90BDA1CE067DA0022FE7A /* enterOTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enterOTP.swift; sourceTree = "<group>"; };
 		9B1323CE1DD1F2EF0078DB26 /* preAuthorizationOne.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = preAuthorizationOne.xib; sourceTree = "<group>"; };
+		9B1790681DE41423006FE8F5 /* newDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newDemoViewController.swift; sourceTree = "<group>"; };
 		9B618F1C1DDAF03D0045C18A /* ComposeMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeMessageController.swift; sourceTree = "<group>"; };
-		9B618F2E1DDC5A190045C18A /* ReimbursementClaimTwoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReimbursementClaimTwoController.swift; sourceTree = "<group>"; };
 		9B88B8B61DD6EA8A005CA455 /* ReimbursementOneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReimbursementOneController.swift; sourceTree = "<group>"; };
 		9B88B8BE1DD724AB005CA455 /* preAuthTwoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = preAuthTwoController.swift; path = ../preAuthTwoController.swift; sourceTree = "<group>"; };
 		9BC6885B1DD361BD004C2915 /* PreAuthorizationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreAuthorizationController.swift; sourceTree = "<group>"; };
@@ -722,7 +720,6 @@
 		786DFA281CD2281E00DDE769 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9B618F2E1DDC5A190045C18A /* ReimbursementClaimTwoController.swift */,
 				9B618F1C1DDAF03D0045C18A /* ComposeMessageController.swift */,
 				9B88B8B61DD6EA8A005CA455 /* ReimbursementOneController.swift */,
 				9B88B8BE1DD724AB005CA455 /* preAuthTwoController.swift */,
@@ -765,6 +762,7 @@
 				3A74A7D31CF422DA00592B3E /* TutorialController.swift */,
 				786DF9FB1CD214F300DDE769 /* ViewController.swift */,
 				FC1D8AF71D783A250020FAFB /* ForgotPasswordOTPController.swift */,
+				9B1790681DE41423006FE8F5 /* newDemoViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1228,7 +1226,6 @@
 				C2DCB0F21D1D4C42004FD787 /* ResetPasswordDTO.swift in Sources */,
 				3ACFB2A01CE4C369003766D8 /* EnrollmentMembersController.swift in Sources */,
 				3A3191181CEF4076001DCBBC /* SplashScreenController.swift in Sources */,
-				9B618F2F1DDC5A190045C18A /* ReimbursementClaimTwoController.swift in Sources */,
 				3A8774BE1CEC38E6001DB41F /* preAuthorizationTwo.swift in Sources */,
 				3AEEB0151CE731050085EEF5 /* helpDesk.swift in Sources */,
 				3ACFB2A41CE4C410003766D8 /* PremiumCalculationController.swift in Sources */,
@@ -1312,6 +1309,7 @@
 				3A677B671CE4B384003B8C2B /* SignupController.swift in Sources */,
 				C2DCB0E21D1D34B6004FD787 /* EmployeeEcardDTO.swift in Sources */,
 				9B88B8B71DD6EA8A005CA455 /* ReimbursementOneController.swift in Sources */,
+				9B1790691DE41423006FE8F5 /* newDemoViewController.swift in Sources */,
 				786DF9FA1CD214F300DDE769 /* AppDelegate.swift in Sources */,
 				C2DCB0F01D1D4A71004FD787 /* SIParameters.swift in Sources */,
 				3AF76BB21CE5BEEA00ADCAAF /* InsuredMembersController.swift in Sources */,
@@ -1330,7 +1328,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B618F301DDC5A190045C18A /* ReimbursementClaimTwoController.swift in Sources */,
 				786DFA0F1CD214F300DDE769 /* Medi_ManageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1339,7 +1336,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B618F311DDC5A190045C18A /* ReimbursementClaimTwoController.swift in Sources */,
 				786DFA1A1CD214F300DDE769 /* Medi_ManageUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
