@@ -59,11 +59,12 @@ let claimName = ["Pre-Authorization", "Reimbursement"]
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         myClaim = indexPath.item
-       if (myClaim == 0) {
-            self.performSegueWithIdentifier("preAuth", sender: self)
-    }else {
-    self.performSegueWithIdentifier("preAuth", sender: self)
-        }
+        self.performSegueWithIdentifier("preAuth", sender: self)
+//       if (myClaim == 0) {
+//        
+//    }else {
+//    self.performSegueWithIdentifier("preAuth", sender: self)
+//        }
     }
     /*
     // MARK: - Navigation

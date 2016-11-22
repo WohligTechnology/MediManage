@@ -15,7 +15,7 @@ let preAuth = ["Active Claims", "Claims History"]
     @IBOutlet var preAuthView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-gPreAuthorizatonCntroller = self
+        gPreAuthorizatonCntroller = self
         selectedViewController = false
         navshow()
         if myClaim == 0 {
@@ -58,11 +58,12 @@ gPreAuthorizatonCntroller = self
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         activeClaim = indexPath.item
-        if (activeClaim == 0) {
-            performSegueWithIdentifier("activeClaims", sender: self)
-        }else {
-           performSegueWithIdentifier("activeClaims", sender: self)
-        }
+        performSegueWithIdentifier("activeClaims", sender: self)
+//        if (activeClaim == 0) {
+//            
+//        }else {
+//           performSegueWithIdentifier("activeClaims", sender: self)
+//        }
     }
        /*
     // MARK: - Navigation

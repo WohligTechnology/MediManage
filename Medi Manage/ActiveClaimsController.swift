@@ -355,7 +355,7 @@ let activeClaimTitle = []
    // var claimsStatus:String = claimsJSON["result"]["PendingClaims"]["ClaimsStatus"]
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         preAuthOne = indexPath.row
-        
+//        performSegueWithIdentifier("activeClaims", sender: self)
         performSegueWithIdentifier("reimbursement", sender: indexPath.row)
           }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -364,42 +364,42 @@ let activeClaimTitle = []
             print(sender)
             let controller = segue.destinationViewController as! ReimbursementOneController
             //let jsonResult = claimsJSON["result"]["PendingClaims"].dictionaryValue
-            if activeClaim == 0 {
-            for i in 0...preAuthOne {
-                
-                
-            controller.name = claimsJSON["result"]["PendingClaims"][i]["PatientName"].string
-                controller.id = claimsJSON["result"]["PendingClaims"][i]["PATNo"].string
-                controller.amount = "Rs. \(claimsJSON["result"]["PendingClaims"][i]["ApprovedAmount"].int!)"
-                
-               controller.status1 = claimsJSON["result"]["PendingClaims"][i]["ClaimsStatus"][0]["Status"].string
-                    controller.status2 = claimsJSON["result"]["PendingClaims"][i]["ClaimsStatus"][1]["Status"].string
-                     controller.status3 = claimsJSON["result"]["PendingClaims"][i]["ClaimsStatus"][2]["Status"].string
-                    controller.status4 = claimsJSON["result"]["PendingClaims"][i]["ClaimsStatus"][3]["Status"].string
-
-                     controller.mainStatusLabel = claimsJSON["result"]["PendingClaims"][i]["Status"].string
-                controller.mainStatusLabelDate = claimsJSON["result"]["PendingClaims"][i]["Status"]["ClaimsStatus"][0]["ClaimDate"].string
-
-            controller.personJson = claimsJSON["result"]["PendingClaims"][i]
-                
-                }
-            }else {
-                for i in 0...preAuthOne {
-                    controller.name = claimsJSON["result"]["closedClaims"][i]["PatientName"].string
-                    controller.id = claimsJSON["result"]["closedClaims"][i]["PATNo"].string
-                    controller.amount = "Rs. \(claimsJSON["result"]["closedClaims"][i]["ApprovedAmount"].int!)"
-                    controller.status1 = claimsJSON["result"]["PendingClaims"][i]["ClaimsStatus"][0]["Status"].string
-                    controller.status2 = claimsJSON["result"]["PendingClaims"][i]["ClaimsStatus"][1]["Status"].string
-                    controller.status3 = claimsJSON["result"]["PendingClaims"][i]["ClaimsStatus"][2]["Status"].string
-                    controller.status4 = claimsJSON["result"]["PendingClaims"][i]["ClaimsStatus"][3]["Status"].string
-                    //controller.mainStatusLabel = claimsJSON["result"]["PendingClaims"][i]["Status"].string!
-                    status1Date.dateFormat = "yyyy-MM-dd"
-                    
-                    
-                    
-
-                }
-            }
+//            if activeClaim == 0 {
+//            for i in 0...preAuthOne {
+//                
+//                
+//            controller.name = claimsJSON["result"]["PendingClaims"][i]["PatientName"].string
+//                controller.id = claimsJSON["result"]["PendingClaims"][i]["PATNo"].string
+//                controller.amount = "Rs. \(claimsJSON["result"]["PendingClaims"][i]["ApprovedAmount"].int!)"
+//                
+//               controller.status1 = claimsJSON["result"]["PendingClaims"][i]["ClaimsStatus"][0]["Status"].string
+//                    controller.status2 = claimsJSON["result"]["PendingClaims"][i]["ClaimsStatus"][1]["Status"].string
+//                     controller.status3 = claimsJSON["result"]["PendingClaims"][i]["ClaimsStatus"][2]["Status"].string
+//                    controller.status4 = claimsJSON["result"]["PendingClaims"][i]["ClaimsStatus"][3]["Status"].string
+//
+//                     controller.mainStatusLabel = claimsJSON["result"]["PendingClaims"][i]["Status"].string
+//                controller.mainStatusLabelDate = claimsJSON["result"]["PendingClaims"][i]["Status"]["ClaimsStatus"][0]["ClaimDate"].string
+//
+//            controller.personJson = claimsJSON["result"]["PendingClaims"][i]
+//                
+//                }
+//            }else {
+//                for i in 0...preAuthOne {
+//                    controller.name = claimsJSON["result"]["closedClaims"][i]["PatientName"].string
+//                    controller.id = claimsJSON["result"]["closedClaims"][i]["PATNo"].string
+//                    controller.amount = "Rs. \(claimsJSON["result"]["closedClaims"][i]["ApprovedAmount"].int!)"
+//                    controller.status1 = claimsJSON["result"]["PendingClaims"][i]["ClaimsStatus"][0]["Status"].string
+//                    controller.status2 = claimsJSON["result"]["PendingClaims"][i]["ClaimsStatus"][1]["Status"].string
+//                    controller.status3 = claimsJSON["result"]["PendingClaims"][i]["ClaimsStatus"][2]["Status"].string
+//                    controller.status4 = claimsJSON["result"]["PendingClaims"][i]["ClaimsStatus"][3]["Status"].string
+//                    //controller.mainStatusLabel = claimsJSON["result"]["PendingClaims"][i]["Status"].string!
+//                    status1Date.dateFormat = "yyyy-MM-dd"
+//                    
+//                    
+//                    
+//
+//                }
+//            }
         }
     }
              /*
