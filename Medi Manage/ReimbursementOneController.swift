@@ -9,7 +9,6 @@
 import UIKit
 import SwiftyJSON
 class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
-    @IBOutlet weak var knowMorePressed: UIButton!
     var claimsJSON: JSON!
     var closedClaimsJSON: JSON!
     var pendingClaimJSON: JSON!
@@ -24,14 +23,24 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
     var name:String! = ""
     var id:String! = ""
     var amount:String! = ""
-    @IBOutlet weak var settledDate: UILabel!
-    @IBOutlet weak var fourthStatus: UILabel!
-   
+  
+    
+       @IBOutlet weak var fourthStatus: UILabel!
     @IBOutlet weak var mainStatusDate: UILabel!
         @IBOutlet weak var thirdStatus: UILabel!
     @IBOutlet weak var secondStatus: UILabel!
     @IBOutlet weak var firstStatus: UILabel!
+    @IBOutlet weak var status1Label2: UILabel!
     
+    @IBOutlet weak var sMLabel3: UILabel!
+    @IBOutlet weak var sMLabel2: UILabel!
+    @IBOutlet weak var sMLable1: UILabel!
+    @IBOutlet weak var mainStatusHide: UIImageView!
+    @IBOutlet weak var s3Label2: UILabel!
+    @IBOutlet weak var s3Label1: UILabel!
+    @IBOutlet weak var s2Label2: UILabel!
+    @IBOutlet weak var s2label1: UILabel!
+    @IBOutlet weak var status1Label1: UILabel!
     @IBOutlet weak var mainStatus: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var idLabel: UILabel!
@@ -39,10 +48,13 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
     @IBOutlet weak var patientNameReimburse: UILabel!
     @IBOutlet weak var reimbursementOneScroll: UIScrollView!
     
+    @IBOutlet weak var hideStatus: UIImageView!
+  
+    @IBOutlet weak var hideCall: UIImageView!
     @IBOutlet weak var pendingStatus: UIImageView!
     @IBOutlet weak var queryStatus: UIImageView!
     
-    @IBOutlet weak var knowMore: UIButton!
+   
     @IBOutlet weak var RequestRecdeivedStatus: UIImageView!
     @IBOutlet weak var requestedAmountReimburseOne: UILabel!
     
@@ -57,13 +69,44 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
         print(personJson)
 //      mainStatusLabelDate = personJson["PendingClaims"][0]["ClaimsStatus"][0]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
         nameLabel.text = personJson["PatientName"].stringValue
-        idLabel.text = id
-        amountLabel.text = amount
-        firstStatus.text = status1
-        secondStatus.text = status2
-        thirdStatus.text = status3
-        fourthStatus.text = status4
-        mainStatus.text = mainStatusLabel
+       idLabel.text = personJson["PATNo"].stringValue
+        amountLabel.text = ("Rs. \(personJson["ApprovedAmount"].stringValue)")
+        if personJson["ClaimsStatus"][0]["Status"] != nil{
+        firstStatus.text = personJson["ClaimsStatus"][0]["Status"].stringValue
+        }else {
+            RequestRecdeivedStatus.alpha = 0
+            status1Label1.alpha = 0
+            status1Label2.alpha = 0
+        }
+        if personJson["ClaimsStatus"][1]["Status"] != nil{
+        secondStatus.text = personJson["ClaimsStatus"][1]["Status"].stringValue
+        }else {
+            queryStatus.alpha = 0
+            s2label1.alpha = 0
+            s2Label2.alpha = 0
+        }
+        if personJson["ClaimsStatus"][2]["Status"] != nil{
+        thirdStatus.text = personJson["ClaimsStatus"][2]["Status"].stringValue
+        }else{
+            pendingStatus.alpha = 0
+            s3Label1.alpha = 0
+            s3Label2.alpha = 0
+        }
+        if personJson["ClaimsStatus"][2]["Status"] != nil{
+        fourthStatus.text = personJson["ClaimsStatus"][3]["Status"].stringValue
+        }else{
+            hideStatus.alpha = 0
+            
+            
+        }
+        if personJson["Status"] != nil {
+        mainStatus.text = personJson["Status"].stringValue
+        }else {
+            mainStatusHide.alpha = 0
+            sMLabel2.alpha = 0
+            sMLabel3.alpha = 0
+            sMLable1.alpha = 0
+        }
 //        var a = mainStatusLabelDate!.characters.split{$0 == "T"}.map(String.init)
       //  print(mainStatusLabelDate)
 //        mainStatusDate.text = a[0]
@@ -91,6 +134,7 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
                 mainSubHeader.subHeaderTitle.text = ("Pre-Authorizations")
                 mainSubHeader.subHeaderIcon.image = UIImage(named: "my_claim_icon")
                 self.view.addSubview(mainSubHeader)
+                
             } else {
                 let mainSubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
                 mainSubHeader.subHeaderTitle.text = ("Pre-Authorizations")
@@ -105,32 +149,69 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
                 mainSubHeader.subHeaderTitle.text = ("REIMBURSEMENT CLAIMS")
                 mainSubHeader.subHeaderIcon.image = UIImage(named: "my_claim_icon")
                 self.view.addSubview(mainSubHeader)
+                hideCall.alpha = 0
             }else{
                 let mainSubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
                 
                 mainSubHeader.subHeaderTitle.text = ("REIMBURSEMENT CLAIMS")
                 mainSubHeader.subHeaderIcon.image = UIImage(named: "my_claim_icon")
                 self.view.addSubview(mainSubHeader)
+                hideCall.alpha = 0
                 
             }
         }
         
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "KnowMore" {
-            let controller1 = segue.destinationViewController as! newDemoViewController
-            if activeClaim == 0{
-            
-           controller1.nameReimburseTwo = claimsJSON["result"]["PendingClaims"][0]["PatientName"].string!
-            
+    
+  /*  @IBAction func knowMoreButton(sender: UIButton) {
+        let nextViewController: newDemoViewController = mainStoryboard.instantiateViewControllerWithIdentifier("knowMore") as! newDemoViewController
+        prepareForSegue(newDemo", sender: self)
+        
+
+    }*/
+
+    
+       
+    @IBAction func knowButton(sender: AnyObject) {
+        
+        
+        oneJson = personJson
+        
+        
+    }
+    /*func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+            if segue.identifier == "KnowMore" {
+                let controller1 = segue.destinationViewController as! newDemoViewController
+                if activeClaim == 0 {
+                    controller1.continueJson = claimsJSON["result"]["PendingClaims"][preAuthOne]
+                    
+                }else{
+                    controller1.continueJson = claimsJSON["result"]["closedClaims"][preAuthOne]
+                    
+                }
+                
+                
             }
         }
     }
-    @IBAction func knowMoreButton(sender: UIButton) {
-        
-    }
-    override func didReceiveMemoryWarning() {
+    func button() {
+     func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "KnowMore" {
+            let controller1 = segue.destinationViewController as! newDemoViewController
+            if activeClaim == 0 {
+                controller1.continueJson = claimsJSON["result"]["PendingClaims"][preAuthOne]
+               
+            }else{
+                controller1.continueJson = claimsJSON["result"]["closedClaims"][preAuthOne]
+                
+            }
+            
+    
+                  }
+    }*/
+    
+        override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
