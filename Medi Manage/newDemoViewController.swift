@@ -17,9 +17,11 @@ class newDemoViewController: UIViewController {
     var closedClaimsJSON: JSON!
     var pendingClaimJSON: JSON!
     var nameReimburseTwo: String = ""
+    var connectNumberJSON: JSON! = []
     @IBOutlet weak var nameTwo: UILabel!
     @IBOutlet weak var claimSupport: UILabel!
     
+    @IBOutlet weak var preAuthorizationTwohide: UILabel!
     @IBOutlet weak var admissionTwo: UILabel!
     @IBOutlet weak var amountTwo: UILabel!
     @IBOutlet weak var noTwo: UILabel!
@@ -34,9 +36,12 @@ class newDemoViewController: UIViewController {
     @IBOutlet weak var requestReceivedImage: UIImageView!
     @IBOutlet weak var requestedAmountReimburseTwo: UILabel!
     
+    @IBOutlet weak var claimNo2Hide: UILabel!
     
+    @IBOutlet weak var callLabel1: UILabel!
     @IBOutlet weak var pendingImage: UIImageView!
     
+    @IBOutlet weak var callLabel2: UILabel!
     
     @IBOutlet weak var hidePopup: UIButton!
     @IBOutlet weak var settledImage: UIImageView!
@@ -64,7 +69,20 @@ class newDemoViewController: UIViewController {
         amountTwo.text = "Rs.\(oneJson["ApprovedAmount"].stringValue)"
         //noTwo.text = "Rs.\(continueJson["PATNo"].stringValue)"
         print("\(continueJson["ApprovedAmount"].stringValue)")
-
+        
+        rest.ConnectDetails({(json:JSON) -> () in
+            dispatch_sync(dispatch_get_main_queue(),{
+                if json == 401 {
+                    self.redirectToHome()
+                }else{
+                    print(json)
+                    self.connectNumberJSON = json
+                    print("connectNumberJSON")
+                    self.callLabel1.text = self.connectNumberJSON["result"]["CashlessClaimsNumber"].stringValue
+                    self.callLabel2.text = self.connectNumberJSON["result"]["CashlessClaimsAlternateNumber"].stringValue
+                }
+            })
+        })
         
         func addBottomBorder(color: UIColor, linewidth: CGFloat, myView:UIView) {
             let border = CALayer()
@@ -84,7 +102,10 @@ class newDemoViewController: UIViewController {
         addBottomBorder(UIColor.blackColor(), linewidth: 0.5, myView: patientNameReimburseTwo)
         addBottomBorder(UIColor.lightGrayColor(), linewidth: 0.5, myView: claimNoReimburseTwo)
         addBottomBorder(UIColor.darkGrayColor(), linewidth: 0.5, myView: requestedAmountReimburseTwo)
-        addBottomBorderView(UIColor.lightGrayColor(), linewidth: 0.5, myView: claimSupport)
+        addBottomBorder(UIColor.darkGrayColor(), linewidth: 0.5, myView: preAuthorizationTwohide)
+addBottomBorderView(UIColor.lightGrayColor(), linewidth: 0.5, myView: claimSupport)
+        
+
         // Do any additional setup after loading the view.
         
         //dashedline
@@ -95,10 +116,10 @@ class newDemoViewController: UIViewController {
         pendingImage.layer.zPosition = 10
         reimburseView.addSubview(line)
         claimSupport.layer.zPosition = 10
-        self.number1.layer.cornerRadius = 8
+        self.number1.layer.cornerRadius = 10
         self.number1.layer.borderColor = UIColor.grayColor().CGColor
         self.popupView.layer.zPosition = 40
-        self.number2.layer.cornerRadius = 8
+        self.number2.layer.cornerRadius = 10
         if myClaim == 0 {
             if activeClaim == 0 {
                 
@@ -108,13 +129,13 @@ class newDemoViewController: UIViewController {
                 mainSubHeader.subHeaderTitle.text = ("Pre-Authorizations")
                 mainSubHeader.subHeaderIcon.image = UIImage(named: "my_claim_icon")
                 self.view.addSubview(mainSubHeader)
-                
+                claimNo2Hide.alpha = 0
             } else {
                 let mainSubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
                 mainSubHeader.subHeaderTitle.text = ("Pre-Authorizations")
                 mainSubHeader.subHeaderIcon.image = UIImage(named: "my_claim_icon")
                 self.view.addSubview(mainSubHeader)
-               
+               claimNo2Hide.alpha = 0
             }
         }
         if myClaim == 1 {
@@ -125,6 +146,7 @@ class newDemoViewController: UIViewController {
                 mainSubHeader.subHeaderIcon.image = UIImage(named: "my_claim_icon")
                 self.view.addSubview(mainSubHeader)
                 hidePopup.alpha = 0
+                preAuthorizationTwohide.alpha = 0
             }else{
                 let mainSubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
                 
@@ -132,6 +154,7 @@ class newDemoViewController: UIViewController {
                 mainSubHeader.subHeaderIcon.image = UIImage(named: "my_claim_icon")
                 self.view.addSubview(mainSubHeader)
                 hidePopup.alpha = 0
+                preAuthorizationTwohide.alpha = 0
                 
             }
         }

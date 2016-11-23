@@ -13,7 +13,7 @@ class ActiveClaimsController: UIViewController, UITableViewDelegate, UITableView
 let activeClaimTitle = []
     let activeClaimNo = []
     let activeClaimAmount = []
-    let activeClaimsImage = ["blue_arrow_right", "blue_arrow_right"]
+   // let activeClaimsImage = ["blue_arrow_right", "blue_arrow_right"]
     var claimsJSON: JSON!
     var closedClaimsJSON: JSON!
     var pendingClaimJSON: JSON!
@@ -78,18 +78,26 @@ let activeClaimTitle = []
         //json function calling for preAuthorization
         if myClaim == 0{
         if activeClaim == 0{
+            LoadingOverlay.shared.showOverlay(self.view)
         rest.activeClaims({(json:JSON) -> () in
             dispatch_sync(dispatch_get_main_queue(),{
+                            
+
                 if json == 401 {
                     self.redirectToHome()
                 }else{
+                   
+                  
                     print(json)
                     self.claimsJSON = json
                     self.pendingClaimJSON = self.claimsJSON["result"]["PendingClaims"]
                     dispatch_async(dispatch_get_main_queue(),{
                         self.activeClaimTableView.reloadData()
+                        LoadingOverlay.shared.hideOverlayView()
                         
                         if(self.pendingClaimJSON!.count == 0 ) {
+                            LoadingOverlay.shared.showOverlay(self.view)
+
                             let noClaim = UILabel(frame: CGRectMake(90, 250, 200, 200))
                             noClaim.text = "No History Found"
                             noClaim.textColor = UIColor.blackColor()
@@ -100,6 +108,7 @@ let activeClaimTitle = []
                             let noClaim_V = NSLayoutConstraint.constraintsWithVisualFormat("V:|-50-[noClaim]-50-|", options: NSLayoutFormatOptions(rawValue:0), metrics: nil, views: viewsDictionary)
                             self.view.addConstraints(noClaim_H)
                             self.view.addConstraints(noClaim_V)
+                           LoadingOverlay.shared.hideOverlayView()
                         }
 
                     })
@@ -108,20 +117,26 @@ let activeClaimTitle = []
             
         })
         }else{
+              LoadingOverlay.shared.showOverlay(self.view)
             rest.activeClaims({(json:JSON) -> () in
-            
+          
                 dispatch_sync(dispatch_get_main_queue(),{
                     if json == 401 {
                         self.redirectToHome()
                     }else{
+                        
+
                         self.claimsJSON = json
                         self.closedClaimsJSON = self.claimsJSON["result"]["closedClaims"]
                         dispatch_async(dispatch_get_main_queue(),{
                             print("ALL IS WELL");
                             self.activeClaimTableView.reloadData()
-                            
+                           
+                            LoadingOverlay.shared.hideOverlayView()
                             
                             if(self.closedClaimsJSON!.count == 0 ) {
+                                LoadingOverlay.shared.showOverlay(self.view)
+
                                 let noClaim = UILabel(frame: CGRectMake(90, 250, 200, 200))
                                 noClaim.text = "No History Found"
                                 noClaim.textColor = UIColor.blackColor()
@@ -132,6 +147,7 @@ let activeClaimTitle = []
                                 let noClaim_V = NSLayoutConstraint.constraintsWithVisualFormat("V:|-50-[noClaim]-50-|", options: NSLayoutFormatOptions(rawValue:0), metrics: nil, views: viewsDictionary)
                                 self.view.addConstraints(noClaim_H)
                                 self.view.addConstraints(noClaim_V)
+                                LoadingOverlay.shared.hideOverlayView()
                             }
                             
                             
@@ -148,18 +164,21 @@ let activeClaimTitle = []
         //json for reimbursement
         if myClaim == 1{
         if activeClaim == 0 {
+            LoadingOverlay.shared.showOverlay(self.view)
         rest.reimbursementClaims({(json:JSON) -> () in
             dispatch_sync(dispatch_get_main_queue(),{
                 if json == 401 {
                     self.redirectToHome()
                 }else{
+
                     print(json)
                     self.claimsJSON = json
                     self.pendingClaimJSON = self.claimsJSON["result"]["PendingClaims"]
                     dispatch_async(dispatch_get_main_queue(),{
                         self.activeClaimTableView.reloadData()
-                        
+                           LoadingOverlay.shared.hideOverlayView()
                         if(self.pendingClaimJSON!.count == 0 ) {
+                            LoadingOverlay.shared.hideOverlayView()
                             let noClaim = UILabel(frame: CGRectMake(90, 250, 200, 200))
                             noClaim.text = "No History Found"
                             noClaim.textColor = UIColor.blackColor()
@@ -170,6 +189,7 @@ let activeClaimTitle = []
                             let noClaim_V = NSLayoutConstraint.constraintsWithVisualFormat("V:|-50-[noClaim]-50-|", options: NSLayoutFormatOptions(rawValue:0), metrics: nil, views: viewsDictionary)
                             self.view.addConstraints(noClaim_H)
                             self.view.addConstraints(noClaim_V)
+                            LoadingOverlay.shared.hideOverlayView()
                         }
 
                     })
@@ -181,18 +201,21 @@ let activeClaimTitle = []
         
         // Do any additional setup after loading the view.
          else {
+             LoadingOverlay.shared.showOverlay(self.view)
             rest.reimbursementClaims({(json:JSON) -> () in
                 dispatch_sync(dispatch_get_main_queue(),{
                     if json == 401 {
                         self.redirectToHome()
                     }else{
+                       
+
                         print(json)
                         self.claimsJSON = json
                         self.closedClaimsJSON = self.claimsJSON["result"]["closedClaims"]
                         dispatch_async(dispatch_get_main_queue(),{
                             self.activeClaimTableView.reloadData()
                             
-                            
+                           LoadingOverlay.shared.hideOverlayView()
                             if(self.closedClaimsJSON!.count == 0 ) {
                                 let noClaim = UILabel(frame: CGRectMake(90, 250, 200, 200))
                                 noClaim.text = "No History Found"
@@ -204,6 +227,8 @@ let activeClaimTitle = []
                                 let noClaim_V = NSLayoutConstraint.constraintsWithVisualFormat("V:|-50-[noClaim]-50-|", options: NSLayoutFormatOptions(rawValue:0), metrics: nil, views: viewsDictionary)
                                 self.view.addConstraints(noClaim_H)
                                 self.view.addConstraints(noClaim_V)
+                                LoadingOverlay.shared.hideOverlayView()
+                                
                             }
 
                         })
@@ -251,7 +276,8 @@ let activeClaimTitle = []
             cell.activeClaimsName.text = claimsJSON["result"]["PendingClaims"][indexPath.row]["PatientName"].string!
             cell.activeClaimId.text = claimsJSON["result"]["PendingClaims"][indexPath.row]["PATNo"].string!
             cell.activeClaimAmount.text = "Rs. \(claimsJSON["result"]["PendingClaims"][indexPath.row]["ApprovedAmount"].int!)"
-            cell.activeClaimImage.image = UIImage(named: activeClaimsImage[indexPath.item])
+            
+           // cell.activeClaimImage.image = UIImage(named: activeClaimsImage[indexPath.item])
             if (indexPath.item % 2 != 1) {
                 cell.activeClaimView.backgroundColor = UIColor(colorLiteralRed: 245/255, green: 245/255, blue: 245/255, alpha: 245/255)
                 tableView.scrollEnabled = true
@@ -272,7 +298,7 @@ let activeClaimTitle = []
                     cell.activeClaimsName.text = claimsJSON["result"]["closedClaims"][indexPath.row]["PatientName"].string!
                     cell.activeClaimId.text = claimsJSON["result"]["closedClaims"][indexPath.row]["PATNo"].string!
                     cell.activeClaimAmount.text = "Rs. \(claimsJSON["result"]["closedClaims"][indexPath.row]["ApprovedAmount"].int!)"
-                    cell.activeClaimImage.image = UIImage(named: activeClaimsImage[indexPath.item])
+                   // cell.activeClaimImage.image = UIImage(named: activeClaimsImage[indexPath.item])
                     //let currentCell = tableView.cellForRowAtIndexPath(indexPath)! as UITableViewCell
                     if (indexPath.item % 2 != 1) {
                         cell.activeClaimView.backgroundColor = UIColor(colorLiteralRed: 245/255, green: 245/255, blue: 245/255, alpha: 245/255)
@@ -301,7 +327,7 @@ let activeClaimTitle = []
                 cell.activeClaimsName.text = claimsJSON["result"]["PendingClaims"][indexPath.row]["PatientName"].string!
                 cell.activeClaimId.text = claimsJSON["result"]["PendingClaims"][indexPath.row]["PATNo"].string!
                 cell.activeClaimAmount.text = "Rs. \(claimsJSON["result"]["PendingClaims"][indexPath.row]["ApprovedAmount"].int!)"
-                cell.activeClaimImage.image = UIImage(named: activeClaimsImage[indexPath.item])
+               // cell.activeClaimImage.image = UIImage(named: activeClaimsImage[indexPath.item])
                 if (indexPath.item % 2 != 1) {
                     cell.activeClaimView.backgroundColor = UIColor(colorLiteralRed: 245/255, green: 245/255, blue: 245/255, alpha: 245/255)
                     tableView.scrollEnabled = true
@@ -327,7 +353,7 @@ let activeClaimTitle = []
                 cell.activeClaimsName.text = claimsJSON["result"]["closedClaims"][indexPath.row]["PatientName"].string!
                 cell.activeClaimId.text = claimsJSON["result"]["closedClaims"][indexPath.row]["PATNo"].string!
                 cell.activeClaimAmount.text = "Rs. \(claimsJSON["result"]["closedClaims"][indexPath.row]["ApprovedAmount"].int!)"
-                cell.activeClaimImage.image = UIImage(named: activeClaimsImage[indexPath.item])
+               // cell.activeClaimImage.image = UIImage(named: activeClaimsImage[indexPath.item])
                 if (indexPath.item % 2 != 1) {
                     cell.activeClaimView.backgroundColor = UIColor(colorLiteralRed: 245/255, green: 245/255, blue: 245/255, alpha: 245/255)
                     tableView.scrollEnabled = true

@@ -17,21 +17,26 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
     var status2:String! = ""
     var status3:String! = ""
     var status4:String! = ""
+    var mainStatusChange = NSDateFormatter()
     var mainStatusLabelDate:String! = ""
     var mainStatusLabel:String! = ""
     @IBOutlet weak var claimNo: UILabel!
     var name:String! = ""
     var id:String! = ""
     var amount:String! = ""
+    @IBOutlet weak var claimNoHide: UILabel!
   
+    @IBOutlet weak var preAuthorizationhide: UILabel!
     
        @IBOutlet weak var fourthStatus: UILabel!
-    @IBOutlet weak var mainStatusDate: UILabel!
+    
         @IBOutlet weak var thirdStatus: UILabel!
     @IBOutlet weak var secondStatus: UILabel!
     @IBOutlet weak var firstStatus: UILabel!
     @IBOutlet weak var status1Label2: UILabel!
     
+    @IBOutlet weak var s4Label2: UILabel!
+    @IBOutlet weak var s4Label1: UILabel!
     @IBOutlet weak var sMLabel3: UILabel!
     @IBOutlet weak var sMLabel2: UILabel!
     @IBOutlet weak var sMLable1: UILabel!
@@ -68,11 +73,20 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
         print("personJson ")
         print(personJson)
 //      mainStatusLabelDate = personJson["PendingClaims"][0]["ClaimsStatus"][0]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
+       // var change = NSDateFormatter()
+       // change.dateFormat = "dd-MM-yyyy"
+      
+      //var  change2 = change.dateFromString(change1)
+        
         nameLabel.text = personJson["PatientName"].stringValue
        idLabel.text = personJson["PATNo"].stringValue
         amountLabel.text = ("Rs. \(personJson["ApprovedAmount"].stringValue)")
-        if personJson["ClaimsStatus"][0]["Status"] != nil{
+        if personJson["ClaimsStatus"][0] != nil{
         firstStatus.text = personJson["ClaimsStatus"][0]["Status"].stringValue
+            var change1 = personJson["ClaimsStatus"][0]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
+            status1Label1.text = change1[0]
+            status1Label2.text = change1[1]
+
         }else {
             RequestRecdeivedStatus.alpha = 0
             status1Label1.alpha = 0
@@ -80,6 +94,10 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
         }
         if personJson["ClaimsStatus"][1]["Status"] != nil{
         secondStatus.text = personJson["ClaimsStatus"][1]["Status"].stringValue
+            var change1 = personJson["ClaimsStatus"][1]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
+            s2label1.text = change1[0]
+            s2Label2.text = change1[1]
+
         }else {
             queryStatus.alpha = 0
             s2label1.alpha = 0
@@ -87,20 +105,33 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
         }
         if personJson["ClaimsStatus"][2]["Status"] != nil{
         thirdStatus.text = personJson["ClaimsStatus"][2]["Status"].stringValue
+            var change1 = personJson["ClaimsStatus"][2]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
+            s3Label1.text = change1[0]
+            s3Label2.text = change1[1]
+
         }else{
             pendingStatus.alpha = 0
             s3Label1.alpha = 0
             s3Label2.alpha = 0
         }
-        if personJson["ClaimsStatus"][2]["Status"] != nil{
+        if personJson["ClaimsStatus"][3]["Status"] != nil{
         fourthStatus.text = personJson["ClaimsStatus"][3]["Status"].stringValue
+            var change1 = personJson["ClaimsStatus"][3]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
+            s4Label1.text = change1[0]
+            s4Label2.text = change1[1]
+
         }else{
             hideStatus.alpha = 0
-            
+            s4Label1.alpha = 0
+            s4Label2.alpha = 0
             
         }
         if personJson["Status"] != nil {
         mainStatus.text = personJson["Status"].stringValue
+            var change1 = personJson["SettledDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
+            sMLabel2.text = change1[0]
+            sMLabel3.text = change1[1]
+
         }else {
             mainStatusHide.alpha = 0
             sMLabel2.alpha = 0
@@ -110,10 +141,10 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
 //        var a = mainStatusLabelDate!.characters.split{$0 == "T"}.map(String.init)
       //  print(mainStatusLabelDate)
 //        mainStatusDate.text = a[0]
-        let mainSubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
-        mainSubHeader.subHeaderTitle.text = "REIMURSEMENT CLAIM"
-        mainSubHeader.subHeaderIcon.image = UIImage(named: "my_claim_icon")
-        self.view.addSubview(mainSubHeader)
+       // let mainSubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
+        //mainSubHeader.subHeaderTitle.text = "REIMURSEMENT CLAIM"
+        //mainSubHeader.subHeaderIcon.image = UIImage(named: "my_claim_icon")
+        //self.view.addSubview(mainSubHeader)
        // patientNameReimburse.text = name
         func addBottomBorder(color: UIColor, linewidth: CGFloat, myView: UIView) {
             let border = CALayer()
@@ -125,6 +156,7 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
         addBottomBorder(UIColor.lightGrayColor(), linewidth: 0.5, myView: patientNameReimburse)
         addBottomBorder(UIColor.darkGrayColor(), linewidth: 0.5, myView: claimNo)
         addBottomBorder(UIColor.blackColor(), linewidth: 0.5, myView: requestedAmountReimburseOne)
+         addBottomBorder(UIColor.blackColor(), linewidth: 0.5, myView: preAuthorizationhide)
         if myClaim == 0 {
             if activeClaim == 0 {
                 
@@ -134,12 +166,13 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
                 mainSubHeader.subHeaderTitle.text = ("Pre-Authorizations")
                 mainSubHeader.subHeaderIcon.image = UIImage(named: "my_claim_icon")
                 self.view.addSubview(mainSubHeader)
-                
+                claimNoHide.alpha = 0
             } else {
                 let mainSubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
                 mainSubHeader.subHeaderTitle.text = ("Pre-Authorizations")
                 mainSubHeader.subHeaderIcon.image = UIImage(named: "my_claim_icon")
                 self.view.addSubview(mainSubHeader)
+                claimNoHide.alpha = 0
             }
         }
         if myClaim == 1 {
@@ -150,6 +183,7 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
                 mainSubHeader.subHeaderIcon.image = UIImage(named: "my_claim_icon")
                 self.view.addSubview(mainSubHeader)
                 hideCall.alpha = 0
+                preAuthorizationhide.alpha = 0
             }else{
                 let mainSubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
                 
@@ -157,6 +191,7 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
                 mainSubHeader.subHeaderIcon.image = UIImage(named: "my_claim_icon")
                 self.view.addSubview(mainSubHeader)
                 hideCall.alpha = 0
+                preAuthorizationhide.alpha = 0
                 
             }
         }

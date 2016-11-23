@@ -42,6 +42,7 @@ var checkPreRe = 0
 var preAuthOne = 0
 var tabSelected = 0
 var oneJson: JSON = []
+var message: JSON = []
 struct defaultsKeys {
     static let token = ""
     static let keyTwo = "secondStringKey"
