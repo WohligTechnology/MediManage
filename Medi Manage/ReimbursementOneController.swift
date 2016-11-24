@@ -28,15 +28,16 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
   
     @IBOutlet weak var preAuthorizationhide: UILabel!
     
-       @IBOutlet weak var fourthStatus: UILabel!
+    @IBOutlet weak var s5Label2: UILabel!
+    @IBOutlet weak var s5Labe1: UILabel!
+    @IBOutlet weak var statusFourth: UILabel!
     
         @IBOutlet weak var thirdStatus: UILabel!
     @IBOutlet weak var secondStatus: UILabel!
     @IBOutlet weak var firstStatus: UILabel!
     @IBOutlet weak var status1Label2: UILabel!
     
-    @IBOutlet weak var s4Label2: UILabel!
-    @IBOutlet weak var s4Label1: UILabel!
+  
     @IBOutlet weak var sMLabel3: UILabel!
     @IBOutlet weak var sMLabel2: UILabel!
     @IBOutlet weak var sMLable1: UILabel!
@@ -115,15 +116,15 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
             s3Label2.alpha = 0
         }
         if personJson["ClaimsStatus"][3]["Status"] != nil{
-        fourthStatus.text = personJson["ClaimsStatus"][3]["Status"].stringValue
+        statusFourth.text = personJson["ClaimsStatus"][3]["Status"].stringValue
             var change1 = personJson["ClaimsStatus"][3]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
-            s4Label1.text = change1[0]
-            s4Label2.text = change1[1]
+            s5Labe1.text = change1[0]
+            s5Label2.text = change1[1]
 
         }else{
             hideStatus.alpha = 0
-            s4Label1.alpha = 0
-            s4Label2.alpha = 0
+            s5Labe1.alpha = 0
+            s5Label2.alpha = 0
             
         }
         if personJson["Status"] != nil {

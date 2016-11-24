@@ -99,12 +99,12 @@ let activeClaimTitle = []
                             LoadingOverlay.shared.showOverlay(self.view)
 
                             let noClaim = UILabel(frame: CGRectMake(90, 250, 200, 200))
-                            noClaim.text = "No History Found"
+                            noClaim.text = "No claims Found"
                             noClaim.textColor = UIColor.blackColor()
                             noClaim.textAlignment = .Center
                             self.view.addSubview(noClaim)
                             let viewsDictionary = ["noClaim":noClaim]
-                            let noClaim_H = NSLayoutConstraint.constraintsWithVisualFormat("H:|-50-[noClaim]-50-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
+                            let noClaim_H = NSLayoutConstraint.constraintsWithVisualFormat("H:|-94-[noClaim]-94-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
                             let noClaim_V = NSLayoutConstraint.constraintsWithVisualFormat("V:|-50-[noClaim]-50-|", options: NSLayoutFormatOptions(rawValue:0), metrics: nil, views: viewsDictionary)
                             self.view.addConstraints(noClaim_H)
                             self.view.addConstraints(noClaim_V)
@@ -143,7 +143,7 @@ let activeClaimTitle = []
                                 noClaim.textAlignment = .Center
                                 self.view.addSubview(noClaim)
                                 let viewsDictionary = ["noClaim":noClaim]
-                                let noClaim_H = NSLayoutConstraint.constraintsWithVisualFormat("H:|-50-[noClaim]-50-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
+                                let noClaim_H = NSLayoutConstraint.constraintsWithVisualFormat("H:|-94-[noClaim]-94-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
                                 let noClaim_V = NSLayoutConstraint.constraintsWithVisualFormat("V:|-50-[noClaim]-50-|", options: NSLayoutFormatOptions(rawValue:0), metrics: nil, views: viewsDictionary)
                                 self.view.addConstraints(noClaim_H)
                                 self.view.addConstraints(noClaim_V)
@@ -180,12 +180,12 @@ let activeClaimTitle = []
                         if(self.pendingClaimJSON!.count == 0 ) {
                             LoadingOverlay.shared.hideOverlayView()
                             let noClaim = UILabel(frame: CGRectMake(90, 250, 200, 200))
-                            noClaim.text = "No History Found"
+                            noClaim.text = "No claims Found"
                             noClaim.textColor = UIColor.blackColor()
                             noClaim.textAlignment = .Center
                             self.view.addSubview(noClaim)
                             let viewsDictionary = ["noClaim":noClaim]
-                            let noClaim_H = NSLayoutConstraint.constraintsWithVisualFormat("H:|-50-[noClaim]-50-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
+                            let noClaim_H = NSLayoutConstraint.constraintsWithVisualFormat("H:|-94-[noClaim]-94-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
                             let noClaim_V = NSLayoutConstraint.constraintsWithVisualFormat("V:|-50-[noClaim]-50-|", options: NSLayoutFormatOptions(rawValue:0), metrics: nil, views: viewsDictionary)
                             self.view.addConstraints(noClaim_H)
                             self.view.addConstraints(noClaim_V)
@@ -223,7 +223,7 @@ let activeClaimTitle = []
                                 noClaim.textAlignment = .Center
                                 self.view.addSubview(noClaim)
                                 let viewsDictionary = ["noClaim":noClaim]
-                                let noClaim_H = NSLayoutConstraint.constraintsWithVisualFormat("H:|-50-[noClaim]-50-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
+                                let noClaim_H = NSLayoutConstraint.constraintsWithVisualFormat("H:|-94-[noClaim]-94-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
                                 let noClaim_V = NSLayoutConstraint.constraintsWithVisualFormat("V:|-50-[noClaim]-50-|", options: NSLayoutFormatOptions(rawValue:0), metrics: nil, views: viewsDictionary)
                                 self.view.addConstraints(noClaim_H)
                                 self.view.addConstraints(noClaim_V)
@@ -284,9 +284,23 @@ let activeClaimTitle = []
                 tableView.showsVerticalScrollIndicator = false
 
             }
-        }else if closedClaimsJSON == [] {
-            print("Secong ONE");
-            print("history")
+        }else  {
+            let alert = UIAlertController(title: "Internet Issue", message: "No Internet Connection.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+
+            /* print("THIS IS IT");
+            let noClaim = UILabel(frame: CGRectMake(50, 60, 100, 100))
+            noClaim.text = "No claims Found"
+            noClaim.textColor = UIColor.blackColor()
+            noClaim.textAlignment = .Center
+            noClaim.layer.zPosition = 100
+            self.view.addSubview(noClaim)
+            let viewsDictionary = ["noClaim":noClaim]
+            let noClaim_H = NSLayoutConstraint.constraintsWithVisualFormat("H:|-94-[noClaim]-94-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
+            let noClaim_V = NSLayoutConstraint.constraintsWithVisualFormat("V:|-50-[noClaim]-50-|", options: NSLayoutFormatOptions(rawValue:0), metrics: nil, views: viewsDictionary)
+            view.addConstraints(noClaim_H)
+            view.addConstraints(noClaim_V)*/
             
             }
 
@@ -306,18 +320,22 @@ let activeClaimTitle = []
                         tableView.showsVerticalScrollIndicator = false
                     }
                 } else {
-                    print("THIS IS IT");
+                    let alert = UIAlertController(title: "Internet Issue", message: "No Internet Connection.", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+
+                    /* print("THIS IS IT");
                     let noClaim = UILabel(frame: CGRectMake(50, 60, 100, 100))
-                    noClaim.text = "No History Found"
+                    noClaim.text = "No history Found"
                     noClaim.textColor = UIColor.blackColor()
                     noClaim.textAlignment = .Center
                     noClaim.layer.zPosition = 100
                     self.view.addSubview(noClaim)
                     let viewsDictionary = ["noClaim":noClaim]
-                    let noClaim_H = NSLayoutConstraint.constraintsWithVisualFormat("H:|-50-[noClaim]-50-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
+                    let noClaim_H = NSLayoutConstraint.constraintsWithVisualFormat("H:|-94-[noClaim]-94-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
                   let noClaim_V = NSLayoutConstraint.constraintsWithVisualFormat("V:|-50-[noClaim]-50-|", options: NSLayoutFormatOptions(rawValue:0), metrics: nil, views: viewsDictionary)
                    view.addConstraints(noClaim_H)
-                    view.addConstraints(noClaim_V)
+                    view.addConstraints(noClaim_V)*/
             }
             }
         }
@@ -335,17 +353,21 @@ let activeClaimTitle = []
                     
                 }
             }else {
-                 let noClaim = UILabel(frame: CGRectMake(50, 60, 100, 100))
-                noClaim.text = "No History Found"
+                let alert = UIAlertController(title: "Internet Issue", message: "No Internet Connection.", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+
+                /* let noClaim = UILabel(frame: CGRectMake(50, 60, 100, 100))
+                noClaim.text = "No claims Found"
                 noClaim.textColor = UIColor.blackColor()
                 noClaim.textAlignment = .Center
                 noClaim.layer.zPosition = 100
                 self.view.addSubview(noClaim)
                 let viewsDictionary = ["noClaim":noClaim]
-                let noClaim_H = NSLayoutConstraint.constraintsWithVisualFormat("H:|-50-[noClaim]-50-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
+                let noClaim_H = NSLayoutConstraint.constraintsWithVisualFormat("H:|-94-[noClaim]-94-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
                 let noClaim_V = NSLayoutConstraint.constraintsWithVisualFormat("V:|-50-[noClaim]-50-|", options: NSLayoutFormatOptions(rawValue:0), metrics: nil, views: viewsDictionary)
                 view.addConstraints(noClaim_H)
-                view.addConstraints(noClaim_V)
+                view.addConstraints(noClaim_V)*/
 
             }
         }else{
@@ -361,17 +383,21 @@ let activeClaimTitle = []
                 }
 
             } else {
-                let noClaim = UILabel(frame: CGRectMake(50, 60, 100, 100))
+                let alert = UIAlertController(title: "Internet Issue", message: "No Internet Connection.", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+
+                /*let noClaim = UILabel(frame: CGRectMake(50, 60, 100, 100))
                 noClaim.text = "No History Found"
                 noClaim.textColor = UIColor.blackColor()
                 noClaim.textAlignment = .Center
                 noClaim.layer.zPosition = 100
                 self.view.addSubview(noClaim)
                 let viewsDictionary = ["noClaim":noClaim]
-                let noClaim_H = NSLayoutConstraint.constraintsWithVisualFormat("H:|-50-[noClaim]-50-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
+                let noClaim_H = NSLayoutConstraint.constraintsWithVisualFormat("H:|-94-[noClaim]-94-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
                 let noClaim_V = NSLayoutConstraint.constraintsWithVisualFormat("V:|-50-[noClaim]-50-|", options: NSLayoutFormatOptions(rawValue:0), metrics: nil, views: viewsDictionary)
                 view.addConstraints(noClaim_H)
-                view.addConstraints(noClaim_V)
+                view.addConstraints(noClaim_V)*/
             }
             }
         }

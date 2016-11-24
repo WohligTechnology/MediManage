@@ -304,6 +304,7 @@
 		78B90BDA1CE067DA0022FE7A /* enterOTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enterOTP.swift; sourceTree = "<group>"; };
 		9B1323CE1DD1F2EF0078DB26 /* preAuthorizationOne.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = preAuthorizationOne.xib; sourceTree = "<group>"; };
 		9B1790681DE41423006FE8F5 /* newDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newDemoViewController.swift; sourceTree = "<group>"; };
+		9B2694491DE6CEF0007105CC /* MediManage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MediManage.entitlements; sourceTree = "<group>"; };
 		9B618F1C1DDAF03D0045C18A /* ComposeMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeMessageController.swift; sourceTree = "<group>"; };
 		9B88B8B61DD6EA8A005CA455 /* ReimbursementOneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReimbursementOneController.swift; sourceTree = "<group>"; };
 		9B88B8BE1DD724AB005CA455 /* preAuthTwoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = preAuthTwoController.swift; path = ../preAuthTwoController.swift; sourceTree = "<group>"; };
@@ -653,6 +654,7 @@
 		786DF9ED1CD214F300DDE769 = {
 			isa = PBXGroup;
 			children = (
+				9B2694491DE6CEF0007105CC /* MediManage.entitlements */,
 				786DF9F81CD214F300DDE769 /* Medi Manage */,
 				786DFA0D1CD214F300DDE769 /* Medi ManageTests */,
 				786DFA181CD214F300DDE769 /* Medi ManageUITests */,
@@ -1050,6 +1052,15 @@
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = YVWVDTRG4B;
 						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					786DFA091CD214F300DDE769 = {
 						CreatedOnToolsVersion = 7.3;
@@ -1058,6 +1069,7 @@
 					};
 					786DFA141CD214F300DDE769 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = YVWVDTRG4B;
 						LastSwiftMigration = 0810;
 						TestTargetID = 786DF9F51CD214F300DDE769;
 					};
@@ -1471,6 +1483,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MediManage.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = YVWVDTRG4B;
@@ -1480,9 +1493,10 @@
 				);
 				INFOPLIST_FILE = "Medi Manage/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-Manage";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wohlig.medimanage;
 				PRODUCT_NAME = MediManage;
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1494,6 +1508,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MediManage.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = YVWVDTRG4B;
@@ -1503,9 +1518,10 @@
 				);
 				INFOPLIST_FILE = "Medi Manage/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-Manage";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wohlig.medimanage;
 				PRODUCT_NAME = MediManage;
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1540,6 +1556,7 @@
 		786DFA251CD214F300DDE769 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = YVWVDTRG4B;
 				INFOPLIST_FILE = "Medi ManageUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-ManageUITests";
@@ -1552,6 +1569,7 @@
 		786DFA261CD214F300DDE769 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = YVWVDTRG4B;
 				INFOPLIST_FILE = "Medi ManageUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-ManageUITests";

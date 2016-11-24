@@ -11,6 +11,7 @@ import SwiftyJSON
 
 class newDemoViewController: UIViewController {
     var continueJson: JSON! = []
+   
     var amountReimburseTwo:String = ""
     var AdmissionTwoString = ""
     var claimsJSON: JSON!
@@ -19,36 +20,59 @@ class newDemoViewController: UIViewController {
     var nameReimburseTwo: String = ""
     var connectNumberJSON: JSON! = []
     @IBOutlet weak var nameTwo: UILabel!
+    @IBOutlet weak var remarkHide: UILabel!
+  
     @IBOutlet weak var claimSupport: UILabel!
     
+    @IBOutlet weak var billsHide: UILabel!
+    @IBOutlet weak var popupView: UIView!
+    @IBOutlet weak var ss2Label1: UILabel!
+    @IBOutlet weak var ss2Status2: UILabel!
+    @IBOutlet weak var ss3Status3: UILabel!
+    @IBOutlet weak var ss1Label2: UILabel!
+    @IBOutlet weak var ss4Image: UIImageView!
+    @IBOutlet weak var ss4Status: UILabel!
+    @IBOutlet weak var ss5Image: UIImageView!
+    @IBOutlet weak var ss4Label1: UILabel!
+    @IBOutlet weak var ss5Stat: UILabel!
+    @IBOutlet weak var ss5Label1: UILabel!
+    @IBOutlet weak var ss5Label2: UILabel!
+    @IBOutlet weak var ss4Label2: UILabel!
+    @IBOutlet weak var ss1Label1: UILabel!
+    @IBOutlet weak var ss3Label2: UILabel!
+    @IBOutlet weak var ss3Label1: UILabel!
+    @IBOutlet weak var ss1First1: UILabel!
+    @IBOutlet weak var ss2Label2: UILabel!
     @IBOutlet weak var preAuthorizationTwohide: UILabel!
     @IBOutlet weak var admissionTwo: UILabel!
     @IBOutlet weak var amountTwo: UILabel!
     @IBOutlet weak var noTwo: UILabel!
-    @IBOutlet weak var popupView: UIStackView!
+  
     @IBOutlet weak var number1: UIButton!
+   
     @IBOutlet weak var patientNameReimburseTwo: UILabel!
     
     @IBOutlet weak var claimNoReimburseTwo: UILabel!
     
     @IBOutlet weak var dateofAdmissionReimburseTwo: UILabel!
     
+    @IBOutlet weak var number2: UIButton!
     @IBOutlet weak var requestReceivedImage: UIImageView!
     @IBOutlet weak var requestedAmountReimburseTwo: UILabel!
     
     @IBOutlet weak var claimNo2Hide: UILabel!
     
     @IBOutlet weak var callLabel1: UILabel!
-    @IBOutlet weak var pendingImage: UIImageView!
+       @IBOutlet weak var pendingImage: UIImageView!
     
     @IBOutlet weak var callLabel2: UILabel!
+  
     
     @IBOutlet weak var hidePopup: UIButton!
     @IBOutlet weak var settledImage: UIImageView!
     @IBOutlet weak var reimburseTwoScroll: UIScrollView!
     
-    @IBOutlet weak var number2: UIButton!
-    @IBOutlet weak var reimburseView: UIView!
+     @IBOutlet weak var reimburseView: UIView!
     
     
     override func viewDidLoad() {
@@ -69,6 +93,117 @@ class newDemoViewController: UIViewController {
         amountTwo.text = "Rs.\(oneJson["ApprovedAmount"].stringValue)"
         //noTwo.text = "Rs.\(continueJson["PATNo"].stringValue)"
         print("\(continueJson["ApprovedAmount"].stringValue)")
+               if oneJson["ClaimsStatus"][1]["Remark"] != nil {
+            //nothing
+        }else {
+            remarkHide.alpha = 0
+            billsHide.alpha = 0
+        }
+        
+        
+        if oneJson["ClaimsStatus"][0]["Status"] != nil{
+            ss2Status2.text = oneJson["ClaimsStatus"][0]["Status"].stringValue
+            var change1 = oneJson["ClaimsStatus"][0]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
+            ss2Label1.text = change1[0]
+            ss2Label2.text = change1[1]
+            ss2Status2.layer.zPosition = 20
+            let line = drawDottedLine(frame: CGRectMake(55, 175, 1.5, 80))
+            line.backgroundColor = UIColor.clearColor()
+            requestReceivedImage.layer.zPosition = 10
+        settledImage.layer.zPosition = 10
+            pendingImage.layer.zPosition = 10
+            ss4Image.layer.zPosition = 10
+            ss5Image.layer.zPosition = 10
+            reimburseView.addSubview(line)
+            
+
+            
+        }else {
+            settledImage.alpha = 0
+            ss2Label1.alpha = 0
+            ss2Status2.alpha = 0
+        }
+        if oneJson["ClaimsStatus"][1]["Status"] != nil{
+            ss3Status3.text = oneJson["ClaimsStatus"][1]["Status"].stringValue
+            ss3Status3.layer.zPosition = 20
+            var change1 = oneJson["ClaimsStatus"][1]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
+            ss3Label1.text = change1[0]
+            ss3Label2.text = change1[1]
+            let line = drawDottedLine(frame: CGRectMake(55, 175, 1.5, 150))
+            line.backgroundColor = UIColor.clearColor()
+            requestReceivedImage.layer.zPosition = 10
+            settledImage.layer.zPosition = 10
+            pendingImage.layer.zPosition = 10
+            ss4Image.layer.zPosition = 10
+            ss5Image.layer.zPosition = 10
+            reimburseView.addSubview(line)
+            
+
+            
+        }else {
+           pendingImage.alpha = 0
+            ss3Label1.alpha = 0
+            ss3Label2.alpha = 0
+        }
+        if oneJson["ClaimsStatus"][2]["Status"] != nil{
+            ss4Status.text = oneJson["ClaimsStatus"][2]["Status"].stringValue
+            ss4Status.layer.zPosition = 20
+            var change1 = oneJson["ClaimsStatus"][2]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
+            ss4Label1.text = change1[0]
+            ss4Label2.text = change1[1]
+            let line = drawDottedLine(frame: CGRectMake(55, 175, 1.5, 250))
+            line.backgroundColor = UIColor.clearColor()
+            requestReceivedImage.layer.zPosition = 10
+            settledImage.layer.zPosition = 10
+            pendingImage.layer.zPosition = 10
+            ss4Image.layer.zPosition = 10
+            ss5Image.layer.zPosition = 10
+            reimburseView.addSubview(line)
+
+            
+        }else{
+            ss4Image.alpha = 0
+            ss4Label1.alpha = 0
+            ss4Label2.alpha = 0
+            
+        }
+        if oneJson["ClaimsStatus"][3]["Status"] != nil{
+            ss5Stat.text = oneJson["ClaimsStatus"][3]["Status"].stringValue
+            ss5Stat.layer.zPosition = 20
+            var change1 = oneJson["ClaimsStatus"][3]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
+            ss5Label1.text = change1[0]
+            ss5Label2.text = change1[1]
+            let line = drawDottedLine(frame: CGRectMake(55, 175, 1.5, 350))
+            line.backgroundColor = UIColor.clearColor()
+            requestReceivedImage.layer.zPosition = 10
+            settledImage.layer.zPosition = 10
+            pendingImage.layer.zPosition = 10
+            ss4Image.layer.zPosition = 10
+            ss5Image.layer.zPosition = 10
+            reimburseView.addSubview(line)
+
+            
+        }else{
+            ss5Image.alpha = 0
+            ss5Label1.alpha = 0
+            ss5Label2.alpha = 0
+            
+        }
+        if oneJson["Status"] != nil {
+            ss1First1.text = oneJson["Status"].stringValue
+            ss1First1.layer.zPosition = 20
+            print(oneJson["Status"].stringValue)
+            var change1 = oneJson["SettledDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
+            ss1Label1.text = change1[0]
+            ss1Label2.text = change1[1]
+           
+        }else {
+            requestReceivedImage.alpha = 0
+            ss1Label1.alpha = 0
+            ss1Label2.alpha = 0
+            ss1First1.alpha = 0
+        }
+
         
         rest.ConnectDetails({(json:JSON) -> () in
             dispatch_sync(dispatch_get_main_queue(),{
@@ -109,17 +244,16 @@ addBottomBorderView(UIColor.lightGrayColor(), linewidth: 0.5, myView: claimSuppo
         // Do any additional setup after loading the view.
         
         //dashedline
-        let line = drawDottedLine(frame: CGRectMake(60, 175, 1.5, 275))
-        line.backgroundColor = UIColor.clearColor()
-        requestReceivedImage.layer.zPosition = 10
-        settledImage.layer.zPosition = 10
-        pendingImage.layer.zPosition = 10
-        reimburseView.addSubview(line)
+        
+      
         claimSupport.layer.zPosition = 10
         self.number1.layer.cornerRadius = 10
         self.number1.layer.borderColor = UIColor.grayColor().CGColor
         self.popupView.layer.zPosition = 40
         self.number2.layer.cornerRadius = 10
+        self.number2.layer.borderColor = UIColor.grayColor().CGColor
+        self.number1.layer.borderWidth = 1.0
+        self.number2.layer.borderWidth = 1.0
         if myClaim == 0 {
             if activeClaim == 0 {
                 
@@ -172,8 +306,9 @@ addBottomBorderView(UIColor.lightGrayColor(), linewidth: 0.5, myView: claimSuppo
     }
     
     
-    @IBAction func closePopup(sender: UIButton)
-    {
+    
+    @IBAction func closePopover(sender: UIButton) {
+    
         UIView.animateWithDuration(0.3, animations: {
             self.view.layoutIfNeeded()
             
@@ -183,33 +318,34 @@ addBottomBorderView(UIColor.lightGrayColor(), linewidth: 0.5, myView: claimSuppo
         
     }
     var terms = false
-    @IBAction func call1(sender: AnyObject) {
-        
-        terms = !terms
-        if terms {
-            //self.termsCheckbox.backgroundColor = UIColor.orangeColor()
-            self.number1.setImage(UIImage(named: "checkbox_tick"), forState: .Normal)
-            print(true)
-        } else{
-            //self.termsCheckbox.backgroundColor = nil\
-            self.number1.setImage(UIImage(named: "checkbox_untick"), forState: .Normal)
-            print("false")
-        }
+    @IBAction func call1(sender: UIButton) {
+            terms = !terms
+            if terms {
+                self.number1.setImage(UIImage(named: "checkbox_tick"), forState: .Normal)
+                print(true)
+            } else{
+                 self.number1.setImage(UIImage(named: "checkbox_untick"), forState: .Normal)
+                print("false")
+            }
     }
+
     var terms1 = false
-    @IBAction func call2(sender: AnyObject) {   terms1 = !terms1
-        if terms {
-            //self.termsCheckbox.backgroundColor = UIColor.orangeColor()
+    
+    @IBAction func call2(sender: UIButton) {
+    
+        terms1 = !terms1
+        if terms1 {
+           
             self.number2.setImage(UIImage(named: "checkbox_tick"), forState: .Normal)
             print("true1")
         } else{
-            //self.termsCheckbox.backgroundColor = nil\
+
             self.number2.setImage(UIImage(named: "checkbox_untick"), forState: .Normal)
             print("false1")
         }
         
-        
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
