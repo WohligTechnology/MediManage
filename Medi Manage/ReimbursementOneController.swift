@@ -26,6 +26,8 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
     var amount:String! = ""
     @IBOutlet weak var claimNoHide: UILabel!
   
+    @IBOutlet weak var mail1Hide: UILabel!
+    @IBOutlet weak var call1Hide: UILabel!
     @IBOutlet weak var preAuthorizationhide: UILabel!
     
     @IBOutlet weak var s5Label2: UILabel!
@@ -73,6 +75,21 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
         navshow()
         print("personJson ")
         print(personJson)
+        func changeDateFormat(givenFormat: String, getFormat: String, givenDate: String, isDate: Bool) -> String {
+            
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = givenFormat
+            let date = dateFormatter.dateFromString(givenDate)
+            print("date : \(givenDate)")
+            dateFormatter.dateFormat = getFormat
+            if isDate {
+                //nothing
+            }
+            let goodDate = dateFormatter.stringFromDate(date!)
+            print("date : \(date)")
+            return goodDate
+        }
+
 //      mainStatusLabelDate = personJson["PendingClaims"][0]["ClaimsStatus"][0]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
        // var change = NSDateFormatter()
        // change.dateFormat = "dd-MM-yyyy"
@@ -85,7 +102,7 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
         if personJson["ClaimsStatus"][0] != nil{
         firstStatus.text = personJson["ClaimsStatus"][0]["Status"].stringValue
             var change1 = personJson["ClaimsStatus"][0]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
-            status1Label1.text = change1[0]
+            status1Label1.text = changeDateFormat("yyyy-MM-dd'T'HH:mm:ss", getFormat: "dd-MM-yyyy", givenDate: personJson["ClaimsStatus"][0]["ClaimDate"].stringValue, isDate: true)
             status1Label2.text = change1[1]
 
         }else {
@@ -96,7 +113,7 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
         if personJson["ClaimsStatus"][1]["Status"] != nil{
         secondStatus.text = personJson["ClaimsStatus"][1]["Status"].stringValue
             var change1 = personJson["ClaimsStatus"][1]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
-            s2label1.text = change1[0]
+            s2label1.text = changeDateFormat("yyyy-MM-dd'T'HH:mm:ss", getFormat: "dd-MM-yyyy", givenDate: personJson["ClaimsStatus"][1]["ClaimDate"].stringValue, isDate: true)
             s2Label2.text = change1[1]
 
         }else {
@@ -107,7 +124,7 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
         if personJson["ClaimsStatus"][2]["Status"] != nil{
         thirdStatus.text = personJson["ClaimsStatus"][2]["Status"].stringValue
             var change1 = personJson["ClaimsStatus"][2]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
-            s3Label1.text = change1[0]
+            s3Label1.text = changeDateFormat("yyyy-MM-dd'T'HH:mm:ss", getFormat: "dd-MM-yyyy", givenDate: personJson["ClaimsStatus"][2]["ClaimDate"].stringValue, isDate: true)
             s3Label2.text = change1[1]
 
         }else{
@@ -118,7 +135,7 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
         if personJson["ClaimsStatus"][3]["Status"] != nil{
         statusFourth.text = personJson["ClaimsStatus"][3]["Status"].stringValue
             var change1 = personJson["ClaimsStatus"][3]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
-            s5Labe1.text = change1[0]
+            s5Labe1.text = changeDateFormat("yyyy-MM-dd'T'HH:mm:ss", getFormat: "dd-MM-yyyy", givenDate: personJson["ClaimsStatus"][3]["ClaimDate"].stringValue, isDate: true)
             s5Label2.text = change1[1]
 
         }else{
@@ -129,8 +146,8 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
         }
         if personJson["Status"] != nil {
         mainStatus.text = personJson["Status"].stringValue
-            var change1 = personJson["SettledDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
-            sMLabel2.text = change1[0]
+            var change1 = personJson["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
+            sMLabel2.text = changeDateFormat("yyyy-MM-dd'T'HH:mm:ss", getFormat: "dd-MM-yyyy", givenDate: personJson["ClaimDate"].stringValue, isDate: true)
             sMLabel3.text = change1[1]
 
         }else {
@@ -168,12 +185,14 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
                 mainSubHeader.subHeaderIcon.image = UIImage(named: "my_claim_icon")
                 self.view.addSubview(mainSubHeader)
                 claimNoHide.alpha = 0
+                mail1Hide.alpha = 0
             } else {
                 let mainSubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
                 mainSubHeader.subHeaderTitle.text = ("Pre-Authorizations")
                 mainSubHeader.subHeaderIcon.image = UIImage(named: "my_claim_icon")
                 self.view.addSubview(mainSubHeader)
                 claimNoHide.alpha = 0
+                mail1Hide.alpha = 0
             }
         }
         if myClaim == 1 {
@@ -185,6 +204,7 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
                 self.view.addSubview(mainSubHeader)
                 hideCall.alpha = 0
                 preAuthorizationhide.alpha = 0
+                call1Hide.alpha = 0
             }else{
                 let mainSubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
                 
@@ -193,6 +213,7 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
                 self.view.addSubview(mainSubHeader)
                 hideCall.alpha = 0
                 preAuthorizationhide.alpha = 0
+                call1Hide.alpha = 0
                 
             }
         }

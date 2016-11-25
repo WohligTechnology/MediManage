@@ -86,6 +86,22 @@ class newDemoViewController: UIViewController {
         popupView.layer.masksToBounds = true
         self.popupView.alpha = 0
         navshow()
+        func changeDateFormat(givenFormat: String, getFormat: String, givenDate: String, isDate: Bool) -> String {
+            
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = givenFormat
+            let date = dateFormatter.dateFromString(givenDate)
+            print("date : \(givenDate)")
+            dateFormatter.dateFormat = getFormat
+            if isDate {
+                //nothing
+            }
+            let goodDate = dateFormatter.stringFromDate(date!)
+            print("date : \(date)")
+            return goodDate
+        }
+        
+
         print("))))))))))))))))))))))")
         print(oneJson)
                 nameTwo.text = oneJson["PatientName"].stringValue
@@ -103,9 +119,13 @@ class newDemoViewController: UIViewController {
         
         if oneJson["ClaimsStatus"][0]["Status"] != nil{
             ss2Status2.text = oneJson["ClaimsStatus"][0]["Status"].stringValue
-            var change1 = oneJson["ClaimsStatus"][0]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
-            ss2Label1.text = change1[0]
-            ss2Label2.text = change1[1]
+            var change = oneJson["ClaimsStatus"][0]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
+            var dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "dd-MM-yyyy'T'HH:mm:ss"
+            var date = dateFormatter.dateFromString(change[0])
+
+            ss2Label1.text = changeDateFormat("yyyy-MM-dd'T'HH:mm:ss", getFormat: "dd-MM-yyyy", givenDate: oneJson["ClaimsStatus"][0]["ClaimDate"].stringValue, isDate: true)
+            ss2Label2.text = change[1]
             ss2Status2.layer.zPosition = 20
             let line = drawDottedLine(frame: CGRectMake(55, 175, 1.5, 80))
             line.backgroundColor = UIColor.clearColor()
@@ -127,7 +147,7 @@ class newDemoViewController: UIViewController {
             ss3Status3.text = oneJson["ClaimsStatus"][1]["Status"].stringValue
             ss3Status3.layer.zPosition = 20
             var change1 = oneJson["ClaimsStatus"][1]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
-            ss3Label1.text = change1[0]
+            ss3Label1.text = changeDateFormat("yyyy-MM-dd'T'HH:mm:ss", getFormat: "dd-MM-yyyy", givenDate: oneJson["ClaimsStatus"][1]["ClaimDate"].stringValue, isDate: true)
             ss3Label2.text = change1[1]
             let line = drawDottedLine(frame: CGRectMake(55, 175, 1.5, 150))
             line.backgroundColor = UIColor.clearColor()
@@ -149,7 +169,12 @@ class newDemoViewController: UIViewController {
             ss4Status.text = oneJson["ClaimsStatus"][2]["Status"].stringValue
             ss4Status.layer.zPosition = 20
             var change1 = oneJson["ClaimsStatus"][2]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
-            ss4Label1.text = change1[0]
+            var dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "dd-MM-yyyy'T'HH:mm:ss"
+            var date = dateFormatter.dateFromString(change1[0])
+            
+
+            ss4Label1.text = changeDateFormat("yyyy-MM-dd'T'HH:mm:ss", getFormat: "dd-MM-yyyy", givenDate: oneJson["ClaimsStatus"][2]["ClaimDate"].stringValue, isDate: true)
             ss4Label2.text = change1[1]
             let line = drawDottedLine(frame: CGRectMake(55, 175, 1.5, 250))
             line.backgroundColor = UIColor.clearColor()
@@ -170,9 +195,14 @@ class newDemoViewController: UIViewController {
         if oneJson["ClaimsStatus"][3]["Status"] != nil{
             ss5Stat.text = oneJson["ClaimsStatus"][3]["Status"].stringValue
             ss5Stat.layer.zPosition = 20
-            var change1 = oneJson["ClaimsStatus"][3]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
-            ss5Label1.text = change1[0]
-            ss5Label2.text = change1[1]
+            var change = oneJson["ClaimsStatus"][3]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
+            var dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "dd-MM-yyyy'T'HH:mm:ss"
+            var date1 = dateFormatter.dateFromString(change[0])
+            print(change[0])
+            print(date1)
+          ss5Label1.text = changeDateFormat("yyyy-MM-dd'T'HH:mm:ss", getFormat: "dd-MM-yyyy", givenDate: oneJson["ClaimsStatus"][3]["ClaimDate"].stringValue, isDate: true)
+            ss5Label2.text = change[1]
             let line = drawDottedLine(frame: CGRectMake(55, 175, 1.5, 350))
             line.backgroundColor = UIColor.clearColor()
             requestReceivedImage.layer.zPosition = 10
@@ -193,8 +223,14 @@ class newDemoViewController: UIViewController {
             ss1First1.text = oneJson["Status"].stringValue
             ss1First1.layer.zPosition = 20
             print(oneJson["Status"].stringValue)
-            var change1 = oneJson["SettledDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
-            ss1Label1.text = change1[0]
+            
+            var change1 = oneJson["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "dd-MM-yyyy'T'HH:mm:ss.SSSZ"
+            let date = dateFormatter.dateFromString(change1[0])
+            
+            print("qwdasdad\(date)")
+            ss1Label1.text = changeDateFormat("yyyy-MM-dd'T'HH:mm:ss", getFormat: "dd-MM-yyyy", givenDate: oneJson["ClaimDate"].stringValue, isDate: true)
             ss1Label2.text = change1[1]
            
         }else {
