@@ -79,7 +79,7 @@ class newDemoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        reimburseTwoScroll.contentSize.height = 500
+        reimburseTwoScroll.contentSize.height = 667
         reimburseTwoScroll.contentSize.width = 375
         reimburseTwoScroll.minimumZoomScale = 0.03
         reimburseTwoScroll.maximumZoomScale = 1.0
