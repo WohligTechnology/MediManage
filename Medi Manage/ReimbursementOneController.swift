@@ -99,44 +99,49 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
         nameLabel.text = personJson["PatientName"].stringValue
        idLabel.text = personJson["PATNo"].stringValue
         amountLabel.text = ("Rs. \(personJson["ApprovedAmount"].stringValue)")
-        if personJson["ClaimsStatus"][0] != nil{
-        firstStatus.text = personJson["ClaimsStatus"][0]["Status"].stringValue
-            var change1 = personJson["ClaimsStatus"][0]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
-            status1Label1.text = changeDateFormat("yyyy-MM-dd'T'HH:mm:ss", getFormat: "dd-MM-yyyy", givenDate: personJson["ClaimsStatus"][0]["ClaimDate"].stringValue, isDate: true)
+         var cnt = personJson["ClaimsStatus"].count
+        if personJson["ClaimsStatus"][cnt-2]["Status"] != nil{
+        firstStatus.text = personJson["ClaimsStatus"][cnt-2]["Status"].stringValue
+            var change1 = personJson["ClaimsStatus"][cnt-2]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
+            status1Label1.text = changeDateFormat("yyyy-MM-dd'T'HH:mm:ss", getFormat: "dd-MM-yyyy", givenDate: personJson["ClaimsStatus"][cnt-2]["ClaimDate"].stringValue, isDate: true)
             status1Label2.text = change1[1]
+            RequestRecdeivedStatus.image = UIImage(named: personJson["ClaimsStatus"][cnt-2]["Status"].stringValue)
 
         }else {
             RequestRecdeivedStatus.alpha = 0
             status1Label1.alpha = 0
             status1Label2.alpha = 0
         }
-        if personJson["ClaimsStatus"][1]["Status"] != nil{
-        secondStatus.text = personJson["ClaimsStatus"][1]["Status"].stringValue
-            var change1 = personJson["ClaimsStatus"][1]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
-            s2label1.text = changeDateFormat("yyyy-MM-dd'T'HH:mm:ss", getFormat: "dd-MM-yyyy", givenDate: personJson["ClaimsStatus"][1]["ClaimDate"].stringValue, isDate: true)
+        if personJson["ClaimsStatus"][cnt-3]["Status"] != nil{
+        secondStatus.text = personJson["ClaimsStatus"][cnt-3]["Status"].stringValue
+            var change1 = personJson["ClaimsStatus"][cnt-3]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
+            s2label1.text = changeDateFormat("yyyy-MM-dd'T'HH:mm:ss", getFormat: "dd-MM-yyyy", givenDate: personJson["ClaimsStatus"][cnt-3]["ClaimDate"].stringValue, isDate: true)
             s2Label2.text = change1[1]
+            queryStatus.image = UIImage(named: personJson["ClaimsStatus"][cnt-3]["Status"].stringValue)
 
         }else {
             queryStatus.alpha = 0
             s2label1.alpha = 0
             s2Label2.alpha = 0
         }
-        if personJson["ClaimsStatus"][2]["Status"] != nil{
-        thirdStatus.text = personJson["ClaimsStatus"][2]["Status"].stringValue
-            var change1 = personJson["ClaimsStatus"][2]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
-            s3Label1.text = changeDateFormat("yyyy-MM-dd'T'HH:mm:ss", getFormat: "dd-MM-yyyy", givenDate: personJson["ClaimsStatus"][2]["ClaimDate"].stringValue, isDate: true)
+        if personJson["ClaimsStatus"][cnt-4]["Status"] != nil{
+        thirdStatus.text = personJson["ClaimsStatus"][cnt-4]["Status"].stringValue
+            var change1 = personJson["ClaimsStatus"][cnt-4]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
+            s3Label1.text = changeDateFormat("yyyy-MM-dd'T'HH:mm:ss", getFormat: "dd-MM-yyyy", givenDate: personJson["ClaimsStatus"][cnt-4]["ClaimDate"].stringValue, isDate: true)
             s3Label2.text = change1[1]
+            pendingStatus.image = UIImage(named: personJson["ClaimsStatus"][cnt-4]["Status"].stringValue)
 
         }else{
             pendingStatus.alpha = 0
             s3Label1.alpha = 0
             s3Label2.alpha = 0
         }
-        if personJson["ClaimsStatus"][3]["Status"] != nil{
-        statusFourth.text = personJson["ClaimsStatus"][3]["Status"].stringValue
-            var change1 = personJson["ClaimsStatus"][3]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
-            s5Labe1.text = changeDateFormat("yyyy-MM-dd'T'HH:mm:ss", getFormat: "dd-MM-yyyy", givenDate: personJson["ClaimsStatus"][3]["ClaimDate"].stringValue, isDate: true)
+        if personJson["ClaimsStatus"][cnt-5]["Status"] != nil{
+        statusFourth.text = personJson["ClaimsStatus"][cnt-5]["Status"].stringValue
+            var change1 = personJson["ClaimsStatus"][cnt-5]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
+            s5Labe1.text = changeDateFormat("yyyy-MM-dd'T'HH:mm:ss", getFormat: "dd-MM-yyyy", givenDate: personJson["ClaimsStatus"][cnt-5]["ClaimDate"].stringValue, isDate: true)
             s5Label2.text = change1[1]
+            hideStatus.image = UIImage(named:personJson["ClaimsStatus"][cnt-5]["Status"].stringValue)
 
         }else{
             hideStatus.alpha = 0
@@ -144,11 +149,14 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
             s5Label2.alpha = 0
             
         }
-        if personJson["Status"] != nil {
-        mainStatus.text = personJson["Status"].stringValue
-            var change1 = personJson["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
-            sMLabel2.text = changeDateFormat("yyyy-MM-dd'T'HH:mm:ss", getFormat: "dd-MM-yyyy", givenDate: personJson["ClaimDate"].stringValue, isDate: true)
+               if personJson["ClaimsStatus"][cnt-1]["Status"] != nil {
+            print("demo demo demo")
+            print(personJson["ClaimsStatus"][cnt-1]["Status"].stringValue)
+        mainStatus.text = personJson["ClaimsStatus"][cnt-1]["Status"].stringValue
+            var change1 = personJson["ClaimsStatus"][cnt-1]["ClaimDate"].stringValue.characters.split{$0 == "T"}.map(String.init)
+            sMLabel2.text = changeDateFormat("yyyy-MM-dd'T'HH:mm:ss", getFormat: "dd-MM-yyyy", givenDate: personJson["ClaimsStatus"][cnt-1]["ClaimDate"].stringValue, isDate: true)
             sMLabel3.text = change1[1]
+            mainStatusHide.image = UIImage(named:personJson["ClaimsStatus"][cnt-1]["Status"].stringValue)
 
         }else {
             mainStatusHide.alpha = 0

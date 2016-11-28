@@ -16,7 +16,8 @@ var EmployeeNo : String = ""
 
 var widthGlo = bounds.size.width
 var heightGlo = bounds.size.height
-
+var isBlurred: Bool = true
+var savedBlurView: UIVisualEffectView?
 
 let bounds = UIScreen.mainScreen().bounds
 let width = bounds.size.width

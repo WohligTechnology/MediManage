@@ -14,9 +14,9 @@ var gMainClaimsController: UIViewController!
 class MainClaimsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let label1 = ["My Claims", "Claim Form", "Document Checklist"]
-    let label2 = ["Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."]
+    let label2 = ["View the Status of all your claims.",
+                  "Download the Re-Imbursement Claim Form.",
+                  "Supporting documents required while submitting the claim."]
     let image = ["claim_one", "claim_two", "claim_three"]
     
     @IBOutlet var mainClaimsMainView: UIView!

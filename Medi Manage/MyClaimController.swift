@@ -11,7 +11,7 @@ import SwiftyJSON
 var gmyClaimController: UIViewController!
 class MyClaimController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
 let claimName = ["Pre-Authorization", "Reimbursement"]
-    let claimDescription = ["Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "Lorem ipsum dolor sit amet, consectetur adipiscing elit."]
+    let claimDescription = ["View the Cashless Hospitalization requests status.", "View the Re-Imbursement Claim status."]
     let claimImage = ["blue_arrow_right", "blue_arrow_right"]
     @IBOutlet var myClaimView: UIView!
     @IBOutlet weak var myClaimTableView: UITableView!

@@ -448,7 +448,7 @@ public class RestApi {
     }
 
     
-    public func ConnectSection(data : JSON ,completion:((JSON) -> Void))
+    public func ConnectSection(data : String ,completion:((JSON) -> Void))
     {
         var json = JSON(1)
         let token = defaultToken.stringForKey("access_token")
