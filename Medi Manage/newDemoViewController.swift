@@ -394,7 +394,7 @@ class newDemoViewController: UIViewController {
         // UIView.animateWithDuration(0.3, animations: {
         self.view.layoutIfNeeded()
         print("hello")
-        
+        self.reimburseTwoScroll.scrollEnabled = true
         self.popupView.alpha = 0
         self.reimburseView.alpha = 1
         savedBlurView?.removeFromSuperview()
