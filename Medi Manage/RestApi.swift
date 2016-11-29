@@ -16,7 +16,7 @@ import SwiftHTTP
 
 
 
-let adminUrl = "http://testcorp.medimanage.com/api/";
+let adminUrl = "https://corporate.medimanage.com/api/";
 let apiURL = adminUrl + "v1/";
 let defaultToken = NSUserDefaults.standardUserDefaults()
 

@@ -283,17 +283,17 @@
 		783322B11CDB50E50015CE37 /* landing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = landing.swift; sourceTree = "<group>"; };
 		783322B41CDB7B4F0015CE37 /* completeProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = completeProfile.swift; sourceTree = "<group>"; };
 		783322B61CDB7B620015CE37 /* completeProfile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = completeProfile.xib; sourceTree = "<group>"; };
-		786DF9F61CD214F300DDE769 /* MediManage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediManage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		786DF9F61CD214F300DDE769 /* mPower+.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mPower+.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		786DF9F91CD214F300DDE769 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		786DF9FB1CD214F300DDE769 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		786DF9FE1CD214F300DDE769 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		786DFA001CD214F300DDE769 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		786DFA031CD214F300DDE769 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		786DFA051CD214F300DDE769 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		786DFA0A1CD214F300DDE769 /* MediManage.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MediManage.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		786DFA0A1CD214F300DDE769 /* mpowerplus.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mpowerplus.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		786DFA0E1CD214F300DDE769 /* Medi_ManageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medi_ManageTests.swift; sourceTree = "<group>"; };
 		786DFA101CD214F300DDE769 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		786DFA151CD214F300DDE769 /* MediManage.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MediManage.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		786DFA151CD214F300DDE769 /* mpowerplus.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mpowerplus.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		786DFA191CD214F300DDE769 /* Medi_ManageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medi_ManageUITests.swift; sourceTree = "<group>"; };
 		786DFA1B1CD214F300DDE769 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78B90BD01CE05C7C0022FE7A /* retrieveLogin.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = retrieveLogin.xib; sourceTree = "<group>"; };
@@ -667,9 +667,9 @@
 		786DF9F71CD214F300DDE769 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				786DF9F61CD214F300DDE769 /* MediManage.app */,
-				786DFA0A1CD214F300DDE769 /* MediManage.xctest */,
-				786DFA151CD214F300DDE769 /* MediManage.xctest */,
+				786DF9F61CD214F300DDE769 /* mPower+.app */,
+				786DFA0A1CD214F300DDE769 /* mpowerplus.xctest */,
+				786DFA151CD214F300DDE769 /* mpowerplus.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -982,9 +982,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		786DF9F51CD214F300DDE769 /* MediManage */ = {
+		786DF9F51CD214F300DDE769 /* mpowerplus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 786DFA1E1CD214F300DDE769 /* Build configuration list for PBXNativeTarget "MediManage" */;
+			buildConfigurationList = 786DFA1E1CD214F300DDE769 /* Build configuration list for PBXNativeTarget "mpowerplus" */;
 			buildPhases = (
 				FAC1EACC97379DDD558FE355 /* [CP] Check Pods Manifest.lock */,
 				786DF9F21CD214F300DDE769 /* Sources */,
@@ -997,14 +997,14 @@
 			);
 			dependencies = (
 			);
-			name = MediManage;
+			name = mpowerplus;
 			productName = "Medi Manage";
-			productReference = 786DF9F61CD214F300DDE769 /* MediManage.app */;
+			productReference = 786DF9F61CD214F300DDE769 /* mPower+.app */;
 			productType = "com.apple.product-type.application";
 		};
-		786DFA091CD214F300DDE769 /* MediManageTests */ = {
+		786DFA091CD214F300DDE769 /* mpowerplusTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 786DFA211CD214F300DDE769 /* Build configuration list for PBXNativeTarget "MediManageTests" */;
+			buildConfigurationList = 786DFA211CD214F300DDE769 /* Build configuration list for PBXNativeTarget "mpowerplusTests" */;
 			buildPhases = (
 				786DFA061CD214F300DDE769 /* Sources */,
 				786DFA071CD214F300DDE769 /* Frameworks */,
@@ -1015,14 +1015,14 @@
 			dependencies = (
 				786DFA0C1CD214F300DDE769 /* PBXTargetDependency */,
 			);
-			name = MediManageTests;
+			name = mpowerplusTests;
 			productName = "Medi ManageTests";
-			productReference = 786DFA0A1CD214F300DDE769 /* MediManage.xctest */;
+			productReference = 786DFA0A1CD214F300DDE769 /* mpowerplus.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		786DFA141CD214F300DDE769 /* MediManageUITests */ = {
+		786DFA141CD214F300DDE769 /* mpowerplusUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 786DFA241CD214F300DDE769 /* Build configuration list for PBXNativeTarget "MediManageUITests" */;
+			buildConfigurationList = 786DFA241CD214F300DDE769 /* Build configuration list for PBXNativeTarget "mpowerplusUITests" */;
 			buildPhases = (
 				786DFA111CD214F300DDE769 /* Sources */,
 				786DFA121CD214F300DDE769 /* Frameworks */,
@@ -1033,9 +1033,9 @@
 			dependencies = (
 				786DFA171CD214F300DDE769 /* PBXTargetDependency */,
 			);
-			name = MediManageUITests;
+			name = mpowerplusUITests;
 			productName = "Medi ManageUITests";
-			productReference = 786DFA151CD214F300DDE769 /* MediManage.xctest */;
+			productReference = 786DFA151CD214F300DDE769 /* mpowerplus.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -1050,7 +1050,7 @@
 				TargetAttributes = {
 					786DF9F51CD214F300DDE769 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = YVWVDTRG4B;
+						DevelopmentTeam = GQCVF92R6N;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -1075,7 +1075,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 786DF9F11CD214F300DDE769 /* Build configuration list for PBXProject "MediManage" */;
+			buildConfigurationList = 786DF9F11CD214F300DDE769 /* Build configuration list for PBXProject "mpowerplus" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1088,9 +1088,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				786DF9F51CD214F300DDE769 /* MediManage */,
-				786DFA091CD214F300DDE769 /* MediManageTests */,
-				786DFA141CD214F300DDE769 /* MediManageUITests */,
+				786DF9F51CD214F300DDE769 /* mpowerplus */,
+				786DFA091CD214F300DDE769 /* mpowerplusTests */,
+				786DFA141CD214F300DDE769 /* mpowerplusUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -1357,12 +1357,12 @@
 /* Begin PBXTargetDependency section */
 		786DFA0C1CD214F300DDE769 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 786DF9F51CD214F300DDE769 /* MediManage */;
+			target = 786DF9F51CD214F300DDE769 /* mpowerplus */;
 			targetProxy = 786DFA0B1CD214F300DDE769 /* PBXContainerItemProxy */;
 		};
 		786DFA171CD214F300DDE769 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 786DF9F51CD214F300DDE769 /* MediManage */;
+			target = 786DF9F51CD214F300DDE769 /* mpowerplus */;
 			targetProxy = 786DFA161CD214F300DDE769 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1486,15 +1486,15 @@
 				CODE_SIGN_ENTITLEMENTS = MediManage.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = YVWVDTRG4B;
+				DEVELOPMENT_TEAM = GQCVF92R6N;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
 				);
 				INFOPLIST_FILE = "Medi Manage/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wohlig.medimanage;
-				PRODUCT_NAME = MediManage;
+				PRODUCT_BUNDLE_IDENTIFIER = com.medimanage.mpowerplus;
+				PRODUCT_NAME = mpowerplus;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 2.3;
@@ -1511,15 +1511,15 @@
 				CODE_SIGN_ENTITLEMENTS = MediManage.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = YVWVDTRG4B;
+				DEVELOPMENT_TEAM = GQCVF92R6N;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
 				);
 				INFOPLIST_FILE = "Medi Manage/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wohlig.medimanage;
-				PRODUCT_NAME = MediManage;
+				PRODUCT_BUNDLE_IDENTIFIER = com.medimanage.mpowerplus;
+				PRODUCT_NAME = mpowerplus;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 2.3;
@@ -1534,9 +1534,9 @@
 				INFOPLIST_FILE = "Medi ManageTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-ManageTests";
-				PRODUCT_NAME = MediManage;
+				PRODUCT_NAME = mpowerplus;
 				SWIFT_VERSION = 2.3;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MediManage.app/MediManage";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mpowerplus.app/mpowerplus";
 			};
 			name = Debug;
 		};
@@ -1547,9 +1547,9 @@
 				INFOPLIST_FILE = "Medi ManageTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-ManageTests";
-				PRODUCT_NAME = MediManage;
+				PRODUCT_NAME = mpowerplus;
 				SWIFT_VERSION = 2.3;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MediManage.app/MediManage";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mpowerplus.app/mpowerplus";
 			};
 			name = Release;
 		};
@@ -1560,7 +1560,7 @@
 				INFOPLIST_FILE = "Medi ManageUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-ManageUITests";
-				PRODUCT_NAME = MediManage;
+				PRODUCT_NAME = mpowerplus;
 				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = "Medi Manage";
 			};
@@ -1573,7 +1573,7 @@
 				INFOPLIST_FILE = "Medi ManageUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-ManageUITests";
-				PRODUCT_NAME = MediManage;
+				PRODUCT_NAME = mpowerplus;
 				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = "Medi Manage";
 			};
@@ -1582,7 +1582,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		786DF9F11CD214F300DDE769 /* Build configuration list for PBXProject "MediManage" */ = {
+		786DF9F11CD214F300DDE769 /* Build configuration list for PBXProject "mpowerplus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				786DFA1C1CD214F300DDE769 /* Debug */,
@@ -1591,7 +1591,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		786DFA1E1CD214F300DDE769 /* Build configuration list for PBXNativeTarget "MediManage" */ = {
+		786DFA1E1CD214F300DDE769 /* Build configuration list for PBXNativeTarget "mpowerplus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				786DFA1F1CD214F300DDE769 /* Debug */,
@@ -1600,7 +1600,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		786DFA211CD214F300DDE769 /* Build configuration list for PBXNativeTarget "MediManageTests" */ = {
+		786DFA211CD214F300DDE769 /* Build configuration list for PBXNativeTarget "mpowerplusTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				786DFA221CD214F300DDE769 /* Debug */,
@@ -1609,7 +1609,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		786DFA241CD214F300DDE769 /* Build configuration list for PBXNativeTarget "MediManageUITests" */ = {
+		786DFA241CD214F300DDE769 /* Build configuration list for PBXNativeTarget "mpowerplusUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				786DFA251CD214F300DDE769 /* Debug */,

@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -17,7 +20,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="member" customModule="MediManage" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="member" customModule="mPower_" customModuleProvider="target">
             <connections>
                 <outlet property="dob" destination="H3d-He-5jI" id="dZM-Ho-lZr"/>
                 <outlet property="ecardOutlate" destination="IkQ-7E-c9A" id="rDC-cj-HDm"/>
@@ -33,6 +36,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Relation:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLX-KK-9vg">
+                    <rect key="frame" x="14" y="8" width="55" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="J1o-KG-thb"/>
                     </constraints>
@@ -40,6 +44,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Self" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxX-fd-213">
+                    <rect key="frame" x="88" y="8" width="24" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="SpD-LH-2Rj"/>
                     </constraints>
@@ -48,6 +53,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Middle Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXe-XA-BNo">
+                    <rect key="frame" x="15" y="66" width="72" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="72" id="Hgp-yg-WE1"/>
                         <constraint firstAttribute="height" constant="20" id="wuz-dG-sYl"/>
@@ -57,6 +63,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chander" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pe0-IO-suw">
+                    <rect key="frame" x="88" y="66" width="224" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="ehW-DK-98i"/>
                     </constraints>
@@ -65,6 +72,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o54-cc-o7n">
+                    <rect key="frame" x="15" y="95" width="60" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="8dQ-dC-Fjc"/>
                         <constraint firstAttribute="width" constant="60" id="aPk-gS-Pxc"/>
@@ -74,6 +82,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manocha" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udW-qH-17l">
+                    <rect key="frame" x="89" y="95" width="224" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="xcd-Vs-pIX"/>
                     </constraints>
@@ -82,6 +91,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PU-tn-ISm">
+                    <rect key="frame" x="16" y="123" width="70" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="70" id="XQe-Ci-2rs"/>
                         <constraint firstAttribute="height" constant="20" id="rq8-gN-9sg"/>
@@ -91,6 +101,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/30/1981" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3d-He-5jI">
+                    <rect key="frame" x="89" y="123" width="224" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="idN-gS-tt4"/>
                     </constraints>
@@ -99,6 +110,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jN1-B1-tri">
+                    <rect key="frame" x="14" y="38" width="60" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="BHe-7Q-Qdi"/>
                         <constraint firstAttribute="height" constant="20" id="w7I-rl-Rqb"/>
@@ -108,6 +120,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Puneet" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9J-Ih-2zT">
+                    <rect key="frame" x="88" y="38" width="224" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="bC7-ya-tZU"/>
                     </constraints>
@@ -116,6 +129,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkQ-7E-c9A">
+                    <rect key="frame" x="44" y="166" width="232" height="35"/>
                     <color key="backgroundColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="hSO-nb-tX8"/>

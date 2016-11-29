@@ -20,7 +20,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="memberList" customModule="MediManage" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="memberList" customModule="mPower_" customModuleProvider="target">
             <connections>
                 <outlet property="SumInsuredList" destination="Hqx-ej-b7G" id="9ue-8o-cR3"/>
                 <outlet property="dobViewOne" destination="le8-eu-kw0" id="iFZ-Eg-GQm"/>
@@ -69,10 +69,10 @@
                     <rect key="frame" x="0.0" y="80" width="375" height="70"/>
                     <subviews>
                         <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwI-zy-snk">
-                            <rect key="frame" x="0.0" y="0.0" width="124.5" height="70"/>
+                            <rect key="frame" x="0.0" y="0.0" width="124" height="70"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wife" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nnV-wG-aHF">
-                                    <rect key="frame" x="35" y="25" width="34.5" height="20"/>
+                                    <rect key="frame" x="35" y="25" width="34" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="e9M-do-aOH"/>
                                     </constraints>
@@ -81,7 +81,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropdown_up_icon" translatesAutoresizingMaskIntoConstraints="NO" id="6BZ-OF-FhT">
-                                    <rect key="frame" x="74.5" y="28" width="15" height="15"/>
+                                    <rect key="frame" x="74" y="28" width="15" height="15"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="15" id="reL-0c-cdW"/>
                                         <constraint firstAttribute="height" constant="15" id="vhL-ZP-A7G"/>
@@ -101,10 +101,10 @@
                             </constraints>
                         </view>
                         <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kai-5T-zSq">
-                            <rect key="frame" x="125.5" y="0.0" width="124" height="70"/>
+                            <rect key="frame" x="125" y="0.0" width="125" height="70"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Son" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TKf-d1-Kq8">
-                                    <rect key="frame" x="35" y="25" width="34" height="20"/>
+                                    <rect key="frame" x="35" y="25" width="35" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="DOx-yg-Hy9"/>
                                     </constraints>
@@ -133,10 +133,10 @@
                             </constraints>
                         </view>
                         <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SO1-Po-rAq">
-                            <rect key="frame" x="250.5" y="0.0" width="124.5" height="70"/>
+                            <rect key="frame" x="251" y="0.0" width="124" height="70"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daughter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bYE-1e-A3a">
-                                    <rect key="frame" x="15" y="25" width="60.5" height="20"/>
+                                    <rect key="frame" x="15" y="25" width="60" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="5IQ-pU-iMJ"/>
                                     </constraints>
@@ -145,7 +145,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropdown_down_icon" translatesAutoresizingMaskIntoConstraints="NO" id="MgM-JS-sFq">
-                                    <rect key="frame" x="79.5" y="28" width="15" height="15"/>
+                                    <rect key="frame" x="79" y="28" width="15" height="15"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="15" id="QKh-e8-YU2"/>
                                         <constraint firstAttribute="height" constant="15" id="nyo-64-Rwg"/>
@@ -303,7 +303,7 @@
                             <rect key="frame" x="25" y="15" width="325" height="40"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected Sum Insured" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSP-Sg-vpI">
-                                    <rect key="frame" x="20" y="10" width="128.5" height="20"/>
+                                    <rect key="frame" x="20" y="10" width="129" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="KiT-t6-zx4"/>
                                     </constraints>
@@ -334,7 +334,7 @@
                             <rect key="frame" x="25" y="63" width="325" height="40"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Top Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEU-Sk-SHv">
-                                    <rect key="frame" x="20" y="10" width="81.5" height="20"/>
+                                    <rect key="frame" x="20" y="10" width="82" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="9NK-RY-k8f"/>
                                     </constraints>
@@ -582,7 +582,7 @@
                             <rect key="frame" x="25" y="15" width="325" height="40"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected Sum Insured" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNS-lB-2VJ">
-                                    <rect key="frame" x="20" y="10" width="128.5" height="20"/>
+                                    <rect key="frame" x="20" y="10" width="129" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="bYW-l9-wpu"/>
                                     </constraints>
@@ -613,7 +613,7 @@
                             <rect key="frame" x="25" y="65" width="325" height="40"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Top Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAN-H9-YNR">
-                                    <rect key="frame" x="20" y="10" width="81.5" height="20"/>
+                                    <rect key="frame" x="20" y="10" width="82" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="EAq-zf-z2A"/>
                                     </constraints>

@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:MediManage.xcodeproj">
+      location = "group:/Users/pranay/Documents/ios/MediManage/mpowerplus.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

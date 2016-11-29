@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0800"
+   LastUpgradeVersion = "0810"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "786DF9F51CD214F300DDE769"
-               BuildableName = "MediManage.app"
-               BlueprintName = "MediManage"
-               ReferencedContainer = "container:MediManage.xcodeproj">
+               BuildableName = "mpowerplus.app"
+               BlueprintName = "mpowerplus"
+               ReferencedContainer = "container:mpowerplus.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "786DFA091CD214F300DDE769"
-               BuildableName = "MediManage.xctest"
-               BlueprintName = "MediManageTests"
-               ReferencedContainer = "container:MediManage.xcodeproj">
+               BuildableName = "mpowerplus.xctest"
+               BlueprintName = "mpowerplusTests"
+               ReferencedContainer = "container:mpowerplus.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "786DFA141CD214F300DDE769"
-               BuildableName = "MediManage.xctest"
-               BlueprintName = "MediManageUITests"
-               ReferencedContainer = "container:MediManage.xcodeproj">
+               BuildableName = "mpowerplus.xctest"
+               BlueprintName = "mpowerplusUITests"
+               ReferencedContainer = "container:mpowerplus.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "786DF9F51CD214F300DDE769"
-            BuildableName = "MediManage.app"
-            BlueprintName = "MediManage"
-            ReferencedContainer = "container:MediManage.xcodeproj">
+            BuildableName = "mpowerplus.app"
+            BlueprintName = "mpowerplus"
+            ReferencedContainer = "container:mpowerplus.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "786DF9F51CD214F300DDE769"
-            BuildableName = "MediManage.app"
-            BlueprintName = "MediManage"
-            ReferencedContainer = "container:MediManage.xcodeproj">
+            BuildableName = "mpowerplus.app"
+            BlueprintName = "mpowerplus"
+            ReferencedContainer = "container:mpowerplus.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "786DF9F51CD214F300DDE769"
-            BuildableName = "MediManage.app"
-            BlueprintName = "MediManage"
-            ReferencedContainer = "container:MediManage.xcodeproj">
+            BuildableName = "mpowerplus.app"
+            BlueprintName = "mpowerplus"
+            ReferencedContainer = "container:mpowerplus.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
