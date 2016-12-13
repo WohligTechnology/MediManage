@@ -95,7 +95,7 @@ let activeClaimTitle = []
                         self.activeClaimTableView.reloadData()
                         LoadingOverlay.shared.hideOverlayView()
                         
-                        if(self.pendingClaimJSON!.count == 0 ) {
+                        if(self.pendingClaimJSON.count == 0 ) {
                             LoadingOverlay.shared.showOverlay(self.view)
 
                             let noClaim = UILabel(frame: CGRectMake(90, 250, 200, 200))
@@ -134,7 +134,7 @@ let activeClaimTitle = []
                            
                             LoadingOverlay.shared.hideOverlayView()
                             
-                            if(self.closedClaimsJSON!.count == 0 ) {
+                            if(self.closedClaimsJSON.count == 0 ) {
                                 LoadingOverlay.shared.showOverlay(self.view)
 
                                 let noClaim = UILabel(frame: CGRectMake(90, 250, 200, 200))

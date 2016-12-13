@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class ComposeMessageController: UIViewController {
+class ComposeMessageController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
     var subjectMessage:String! = ""
     var inboxMessage: JSON! = []
     var inboxPatient: JSON! = []
@@ -17,7 +17,7 @@ class ComposeMessageController: UIViewController {
     var composeTo = ""
     var reimburseEmail: JSON! = []
     
-    @IBOutlet var messageTextView: UIView!
+   
     
     @IBOutlet weak var message1: UITextView!
     
@@ -26,6 +26,9 @@ class ComposeMessageController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navshow()
+        LoadingOverlay.shared.showOverlay(self.view)
+        self.subjectText.delegate = self
+        self.message1.delegate = self
         message1.layer.borderWidth = 1.0
         message1.layer.borderColor = UIColor.blackColor().CGColor
                 let mainSubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
@@ -38,8 +41,10 @@ class ComposeMessageController: UIViewController {
                     self.redirectToHome()
                 }else{
                     print(json)
+                    
                     self.reimburseEmail = json
                     self.composeTo = self.reimburseEmail["result"]["ReimbursementEmail"].stringValue
+                    print("bhejde:\(self.composeTo)")
                 }
                 })
             })
@@ -51,6 +56,7 @@ class ComposeMessageController: UIViewController {
                 if json == 401 {
                     self.redirectToHome()
                 }else{
+                    
                     print(json)
                     self.inboxMessage = json
                     message = self.inboxMessage
@@ -61,6 +67,7 @@ class ComposeMessageController: UIViewController {
                     //self.clientName.text = message["result"]["ClientName"].stringValue
                     print("\(message["result"]["ClientName"].stringValue)")
                     self.message1.text = ("Hi,\n\nI have some queries regarding my claim number \(oneJson["PATNo"].stringValue).The details of my query are as per below.\n\n\n\nThanks & Regards,\nEmployeeName: \(message["result"]["EmployeeName"].stringValue)\nCorporateName: \(message["result"]["ClientName"].stringValue)\nEmployee ID: \(message["result"]["EmpID"])\nEmail ID: \(message["result"]["EmployeeEmail"])")
+                    LoadingOverlay.shared.hideOverlayView()
                 }
             })
         })
@@ -105,7 +112,19 @@ class ComposeMessageController: UIViewController {
 
     
     }
-
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if (text == "\n") {
+            message1.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        subjectText.resignFirstResponder()
+        return true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

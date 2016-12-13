@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="Lato-Black.ttf">
+        <array key="Lato-Black.ttf">
             <string>Lato-Black</string>
-        </mutableArray>
-        <mutableArray key="Lato-Bold.ttf">
+        </array>
+        <array key="Lato-Bold.ttf">
             <string>Lato-Bold</string>
-            <string>Lato-Bold</string>
-        </mutableArray>
-        <mutableArray key="Lato-Regular.ttf">
+        </array>
+        <array key="Lato-Regular.ttf">
             <string>Lato-Regular</string>
-            <string>Lato-Regular</string>
-            <string>Lato-Regular</string>
-        </mutableArray>
+        </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="signup" customModule="MediManage" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="signup" customModule="mpowerplus" customModuleProvider="target">
             <connections>
                 <outlet property="dateOfBirth" destination="QSx-ct-H4g" id="yM6-u5-tLv"/>
                 <outlet property="employeeID" destination="5DR-Zw-sys" id="wIc-hb-MVt"/>
@@ -27,10 +28,10 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-bg" translatesAutoresizingMaskIntoConstraints="NO" id="0ac-Gn-rZB">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="login-bg" translatesAutoresizingMaskIntoConstraints="NO" id="0ac-Gn-rZB">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="7SO-qH-6FU">
@@ -40,9 +41,9 @@
                         <constraint firstAttribute="height" constant="61" id="wwY-lv-qfS"/>
                     </constraints>
                 </imageView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Employee ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5DR-Zw-sys">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Employee ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5DR-Zw-sys">
                     <rect key="frame" x="25" y="228" width="270" height="50"/>
-                    <color key="backgroundColor" white="1" alpha="0.40272090519999998" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.40272090519999998" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="ipo-1z-deK"/>
                     </constraints>
@@ -50,13 +51,13 @@
                     <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
-                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QSx-ct-H4g">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QSx-ct-H4g">
                     <rect key="frame" x="25" y="293" width="270" height="50"/>
-                    <color key="backgroundColor" white="1" alpha="0.40272090519999998" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.40272090519999998" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="ZJO-BG-Xi0"/>
                     </constraints>
@@ -64,20 +65,20 @@
                     <textInputTraits key="textInputTraits"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
-                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="openDate:" destination="-1" eventType="editingDidBegin" id="PlG-a0-7F9"/>
                     </connections>
                 </textField>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uA3-m2-gQh">
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uA3-m2-gQh">
                     <rect key="frame" x="113" y="191" width="94" height="22"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGNUP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4h-vj-eIu">
                             <rect key="frame" x="34" y="0.0" width="60" height="22"/>
                             <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="16"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-signup" translatesAutoresizingMaskIntoConstraints="NO" id="9fb-Z4-feu">
@@ -104,34 +105,34 @@
                         <constraint firstItem="9fb-Z4-feu" firstAttribute="top" secondItem="uA3-m2-gQh" secondAttribute="top" id="g0g-8W-P9R"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQs-dZ-4n9">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQs-dZ-4n9">
                     <rect key="frame" x="44" y="397" width="232" height="50"/>
-                    <color key="backgroundColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="qrK-X5-zRj"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                     <state key="normal" title="Sign Up">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="completeProfileCall:" destination="-1" eventType="touchUpInside" id="C9K-F9-iP4"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="05A-hL-lfa">
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="05A-hL-lfa">
                     <rect key="frame" x="80" y="462" width="160" height="25"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already a Member?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E15-JU-XEh">
                             <rect key="frame" x="0.0" y="0.0" width="119" height="17"/>
                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
-                            <color key="textColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78h-Wf-1ao">
                             <rect key="frame" x="122" y="-5" width="38" height="29"/>
                             <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
                             <state key="normal" title="Log In">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
                                 <action selector="loginCall:" destination="-1" eventType="touchUpInside" id="YdP-zX-ZSe"/>
@@ -148,7 +149,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="05A-hL-lfa" firstAttribute="top" secondItem="JQs-dZ-4n9" secondAttribute="bottom" constant="15" id="6VS-aL-Dne"/>
                 <constraint firstAttribute="bottom" secondItem="0ac-Gn-rZB" secondAttribute="bottom" id="6Z6-3f-En5"/>
@@ -172,7 +173,6 @@
                 <constraint firstItem="0ac-Gn-rZB" firstAttribute="centerX" secondItem="QSx-ct-H4g" secondAttribute="centerX" id="zea-6V-HSS"/>
                 <constraint firstItem="0ac-Gn-rZB" firstAttribute="centerX" secondItem="5DR-Zw-sys" secondAttribute="centerX" id="zmZ-0k-5hK"/>
             </constraints>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="83" y="405"/>
         </view>
     </objects>

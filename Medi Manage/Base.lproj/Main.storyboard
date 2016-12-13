@@ -27,12 +27,12 @@
         <!--Login Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="loginc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="View" customClass="login" customModule="mPower_" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="View" customClass="login" customModule="mpowerplus" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -58,12 +58,12 @@
         <!--Signup Controller-->
         <scene sceneID="Yas-2D-Mnc">
             <objects>
-                <viewController id="PG1-d8-yAc" customClass="SignupController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PG1-d8-yAc" customClass="SignupController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tQO-tL-MVv"/>
                         <viewControllerLayoutGuide type="bottom" id="Dfx-ok-RTa"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nRp-Zb-UaK" customClass="signup" customModule="mPower_" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="nRp-Zb-UaK" customClass="signup" customModule="mpowerplus" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -94,12 +94,12 @@
         <!--Complete Profile Controller-->
         <scene sceneID="xoo-J9-7Uf">
             <objects>
-                <viewController storyboardIdentifier="completeProfile" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0gz-Ph-Qzj" customClass="CompleteProfileController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="completeProfile" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0gz-Ph-Qzj" customClass="CompleteProfileController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ku2-ch-8MP"/>
                         <viewControllerLayoutGuide type="bottom" id="k7x-cx-Hy3"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mDh-ci-A7w" customClass="completeProfile" customModule="mPower_" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="mDh-ci-A7w" customClass="completeProfile" customModule="mpowerplus" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -112,12 +112,12 @@
         <!--Retrieve Login Controller-->
         <scene sceneID="rTg-MV-Mil">
             <objects>
-                <viewController storyboardIdentifier="retrieveLogin" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hoJ-8d-wib" customClass="RetrieveLoginController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="retrieveLogin" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hoJ-8d-wib" customClass="RetrieveLoginController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fT5-XF-q9V"/>
                         <viewControllerLayoutGuide type="bottom" id="kHv-YM-lu7"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="KUg-df-9hQ" customClass="retrieveLogin" customModule="mPower_" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="KUg-df-9hQ" customClass="retrieveLogin" customModule="mpowerplus" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -130,12 +130,12 @@
         <!--GenerateOTP Controller-->
         <scene sceneID="Exh-M4-Th5">
             <objects>
-                <viewController id="byF-rF-bm6" customClass="GenerateOTPController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="byF-rF-bm6" customClass="GenerateOTPController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YiB-ye-OUd"/>
                         <viewControllerLayoutGuide type="bottom" id="v18-H1-J9J"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="CS6-Vb-ABS" customClass="generateOTP" customModule="mPower_" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="CS6-Vb-ABS" customClass="generateOTP" customModule="mpowerplus" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -148,12 +148,12 @@
         <!--Forgot PasswordOTP Controller-->
         <scene sceneID="Vl5-HZ-k8B">
             <objects>
-                <viewController storyboardIdentifier="forgotOTP" useStoryboardIdentifierAsRestorationIdentifier="YES" id="h8e-iI-8CP" customClass="ForgotPasswordOTPController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="forgotOTP" useStoryboardIdentifierAsRestorationIdentifier="YES" id="h8e-iI-8CP" customClass="ForgotPasswordOTPController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PFY-9j-M5r"/>
                         <viewControllerLayoutGuide type="bottom" id="gcQ-GQ-2N3"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9AJ-Ve-xgQ" customClass="forgotPasswordOTP" customModule="mPower_" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="9AJ-Ve-xgQ" customClass="forgotPasswordOTP" customModule="mpowerplus" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -166,12 +166,12 @@
         <!--EnterOTP Controller-->
         <scene sceneID="Ahs-kc-Wh7">
             <objects>
-                <viewController storyboardIdentifier="enterOTP" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1Ua-DA-seN" customClass="EnterOTPController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="enterOTP" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1Ua-DA-seN" customClass="EnterOTPController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PVb-6e-dhv"/>
                         <viewControllerLayoutGuide type="bottom" id="r50-QP-NRd"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="atN-gy-3f2" customClass="enterOTP" customModule="mPower_" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="atN-gy-3f2" customClass="enterOTP" customModule="mpowerplus" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -184,12 +184,12 @@
         <!--Enrollment Members Controller-->
         <scene sceneID="D1A-DN-M9H">
             <objects>
-                <viewController storyboardIdentifier="EnrollmentMember" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vmg-Ax-set" customClass="EnrollmentMembersController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EnrollmentMember" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vmg-Ax-set" customClass="EnrollmentMembersController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cOK-ET-reB"/>
                         <viewControllerLayoutGuide type="bottom" id="aP0-mu-VS7"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="MG6-Mo-3gO" customClass="enrollmentMembersRenew" customModule="mPower_" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="MG6-Mo-3gO" customClass="enrollmentMembersRenew" customModule="mpowerplus" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -215,7 +215,7 @@
         <!--Member List Table Controller-->
         <scene sceneID="ErO-d8-i1w">
             <objects>
-                <viewController id="OI0-Qo-ZJ8" customClass="MemberListTableController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OI0-Qo-ZJ8" customClass="MemberListTableController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ham-is-K64"/>
                         <viewControllerLayoutGuide type="bottom" id="38J-3M-lEL"/>
@@ -261,7 +261,7 @@
                                 <rect key="frame" x="-4" y="150" width="383" height="517"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="membercell" rowHeight="307" id="tRU-K0-Crk" customClass="MemberListCell" customModule="mPower_" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="membercell" rowHeight="307" id="tRU-K0-Crk" customClass="MemberListCell" customModule="mpowerplus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="383" height="307"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tRU-K0-Crk" id="hn9-6K-by2">
@@ -563,12 +563,12 @@
         <!--Premium Calculation Controller-->
         <scene sceneID="uXr-YC-cqh">
             <objects>
-                <viewController id="ndg-xE-RRU" customClass="PremiumCalculationController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ndg-xE-RRU" customClass="PremiumCalculationController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Kw7-4l-LkT"/>
                         <viewControllerLayoutGuide type="bottom" id="ieK-yE-ABn"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="589-f0-k2b" customClass="premiumCalculation" customModule="mPower_" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="589-f0-k2b" customClass="premiumCalculation" customModule="mpowerplus" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -591,7 +591,7 @@
         <!--Insured Members Controller-->
         <scene sceneID="lbr-HL-zhG">
             <objects>
-                <viewController storyboardIdentifier="insuredMemberIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cTe-eZ-3rn" customClass="InsuredMembersController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="insuredMemberIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cTe-eZ-3rn" customClass="InsuredMembersController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fme-sh-ngZ"/>
                         <viewControllerLayoutGuide type="bottom" id="4ii-CL-Ghl"/>
@@ -710,7 +710,7 @@
         <!--Main Menu Controller-->
         <scene sceneID="VD3-34-bgu">
             <objects>
-                <viewController storyboardIdentifier="mainMenuIdentifier" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8qg-Oc-jM8" customClass="MainMenuController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainMenuIdentifier" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8qg-Oc-jM8" customClass="MainMenuController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6W3-PL-fYg"/>
                         <viewControllerLayoutGuide type="bottom" id="Eac-hH-KFa"/>
@@ -730,7 +730,7 @@
         <!--Main Claims Controller-->
         <scene sceneID="cnZ-l8-HiF">
             <objects>
-                <viewController storyboardIdentifier="mainClaimsIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xMa-F4-Ivl" customClass="MainClaimsController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainClaimsIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xMa-F4-Ivl" customClass="MainClaimsController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Z7-O4-tfH"/>
                         <viewControllerLayoutGuide type="bottom" id="vxf-Rx-VbC"/>
@@ -744,7 +744,7 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="69" id="YSW-kf-Ygl" customClass="mainClaimUIViewCell" customModule="mPower_" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="69" id="YSW-kf-Ygl" customClass="mainClaimUIViewCell" customModule="mpowerplus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="YSW-kf-Ygl" id="dwb-TZ-KJ5">
@@ -822,7 +822,7 @@
         <!--My Claim Controller-->
         <scene sceneID="seQ-kj-A4N">
             <objects>
-                <viewController id="y2S-fh-Ofh" customClass="MyClaimController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="y2S-fh-Ofh" customClass="MyClaimController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JOd-EE-8UI"/>
                         <viewControllerLayoutGuide type="bottom" id="Pje-io-JXz"/>
@@ -835,7 +835,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myClaims" rowHeight="71" id="VAP-ws-bvt" customClass="myclaimUIViewCell" customModule="mPower_" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myClaims" rowHeight="71" id="VAP-ws-bvt" customClass="myclaimUIViewCell" customModule="mpowerplus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VAP-ws-bvt" id="KoT-TM-OKZ">
@@ -915,7 +915,7 @@
         <!--Pre Authorization Controller-->
         <scene sceneID="Lbl-t8-EX3">
             <objects>
-                <viewController id="IB5-rg-HzR" customClass="PreAuthorizationController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IB5-rg-HzR" customClass="PreAuthorizationController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="h0m-Np-qbU"/>
                         <viewControllerLayoutGuide type="bottom" id="xyY-Py-OGE"/>
@@ -925,10 +925,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="71" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hae-CR-XXf">
-                                <rect key="frame" x="0.0" y="43" width="375" height="451"/>
+                                <rect key="frame" x="0.0" y="43" width="375" height="575"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="preAuth" rowHeight="71" id="wKd-1P-s3C" customClass="preAuthTableViewCell" customModule="mPower_" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="preAuth" rowHeight="71" id="wKd-1P-s3C" customClass="preAuthTableViewCell" customModule="mpowerplus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wKd-1P-s3C" id="Pqe-HB-Jpc">
@@ -975,7 +975,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xyY-Py-OGE" firstAttribute="top" secondItem="Hae-CR-XXf" secondAttribute="bottom" constant="124" id="6bu-Ca-A76"/>
+                            <constraint firstItem="xyY-Py-OGE" firstAttribute="top" secondItem="Hae-CR-XXf" secondAttribute="bottom" id="6bu-Ca-A76"/>
                             <constraint firstItem="Hae-CR-XXf" firstAttribute="top" secondItem="Qiq-ql-dRE" secondAttribute="top" constant="43" id="GXc-5g-F0b"/>
                             <constraint firstAttribute="trailing" secondItem="Hae-CR-XXf" secondAttribute="trailing" id="LPs-dc-Y4B"/>
                             <constraint firstItem="Hae-CR-XXf" firstAttribute="leading" secondItem="Qiq-ql-dRE" secondAttribute="leading" id="qQd-I4-ngQ"/>
@@ -989,12 +989,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U8f-Gp-DRH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3782" y="2167"/>
+            <point key="canvasLocation" x="3781.5999999999999" y="2166.5667166416792"/>
         </scene>
         <!--Active Claims Controller-->
         <scene sceneID="XS8-gw-Ahy">
             <objects>
-                <viewController id="rWb-Ew-ehb" customClass="ActiveClaimsController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rWb-Ew-ehb" customClass="ActiveClaimsController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KxK-b2-BoK"/>
                         <viewControllerLayoutGuide type="bottom" id="o9L-EY-Rnf"/>
@@ -1007,7 +1007,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="activeClaims" rowHeight="71" id="IOJ-MS-RVe" customClass="activeClaimsTableViewCell" customModule="mPower_" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="activeClaims" rowHeight="71" id="IOJ-MS-RVe" customClass="activeClaimsTableViewCell" customModule="mpowerplus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IOJ-MS-RVe" id="29M-ei-8Rf">
@@ -1033,9 +1033,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSA-Ui-n76">
-                                                    <rect key="frame" x="18" y="38" width="75" height="13"/>
+                                                    <rect key="frame" x="18" y="38" width="178" height="13"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="75" id="xzJ-kI-KPM"/>
+                                                        <constraint firstAttribute="width" constant="178" id="xzJ-kI-KPM"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="11"/>
                                                     <nil key="textColor"/>
@@ -1095,12 +1095,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iIV-Dp-45z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3105" y="2873"/>
+            <point key="canvasLocation" x="3104.8000000000002" y="2872.7136431784111"/>
         </scene>
         <!--Reimbursement One Controller-->
         <scene sceneID="EFz-0b-2Mh">
             <objects>
-                <viewController id="z55-AF-BdD" customClass="ReimbursementOneController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="z55-AF-BdD" customClass="ReimbursementOneController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QeK-0I-C5d"/>
                         <viewControllerLayoutGuide type="bottom" id="6L9-sw-31R"/>
@@ -1534,7 +1534,7 @@
         <!--New Demo View Controller-->
         <scene sceneID="nSN-CA-8ja">
             <objects>
-                <viewController storyboardIdentifier="newDemo" useStoryboardIdentifierAsRestorationIdentifier="YES" id="crY-Zf-owt" customClass="newDemoViewController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newDemo" useStoryboardIdentifierAsRestorationIdentifier="YES" id="crY-Zf-owt" customClass="newDemoViewController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cNp-Xy-ZLR"/>
                         <viewControllerLayoutGuide type="bottom" id="dki-6s-UFP"/>
@@ -2029,7 +2029,7 @@
         <!--Compose Message Controller-->
         <scene sceneID="hKG-jW-ssK">
             <objects>
-                <viewController id="F2S-ER-GHK" customClass="ComposeMessageController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="F2S-ER-GHK" customClass="ComposeMessageController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eud-FP-bvr"/>
                         <viewControllerLayoutGuide type="bottom" id="2DJ-IK-Mzw"/>
@@ -2071,6 +2071,9 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Yd6-jH-zBS" id="1sn-LO-zdp"/>
+                                </connections>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2104,7 +2107,7 @@
         <!--Pre Auth One Controller-->
         <scene sceneID="83x-0d-M6U">
             <objects>
-                <viewController id="Nid-ti-Rlp" customClass="preAuthOneController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Nid-ti-Rlp" customClass="preAuthOneController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cj3-RF-v2Q"/>
                         <viewControllerLayoutGuide type="bottom" id="t0a-rP-Ewl"/>
@@ -2311,7 +2314,7 @@
         <!--Pre Auth Two Controller-->
         <scene sceneID="3tK-7q-wvG">
             <objects>
-                <viewController id="4qm-k9-PFS" customClass="preAuthTwoController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4qm-k9-PFS" customClass="preAuthTwoController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zbh-0R-0HQ"/>
                         <viewControllerLayoutGuide type="bottom" id="G0l-o5-YgZ"/>
@@ -2571,12 +2574,12 @@
         <!--Claim Form Controller-->
         <scene sceneID="4J3-VK-l5C">
             <objects>
-                <viewController id="E1T-GP-FrN" customClass="ClaimFormController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="E1T-GP-FrN" customClass="ClaimFormController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1b6-Gc-8qK"/>
                         <viewControllerLayoutGuide type="bottom" id="Fwa-P6-S8Z"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="GVi-g6-xAi" customClass="claimForm" customModule="mPower_" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="GVi-g6-xAi" customClass="claimForm" customModule="mpowerplus" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -2596,7 +2599,7 @@
         <!--Document Checklist Controller-->
         <scene sceneID="aXU-qF-aqe">
             <objects>
-                <viewController storyboardIdentifier="DocumentChecklistController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ONl-FB-A8K" customClass="DocumentChecklistController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DocumentChecklistController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ONl-FB-A8K" customClass="DocumentChecklistController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mEL-Rb-cBK"/>
                         <viewControllerLayoutGuide type="bottom" id="Yyw-Wm-zBW"/>
@@ -2663,7 +2666,7 @@
                                 <rect key="frame" x="-4" y="194" width="383" height="424"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="85" id="PrS-6N-cFu" customClass="documentChecklistUIViewCell" customModule="mPower_" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="85" id="PrS-6N-cFu" customClass="documentChecklistUIViewCell" customModule="mpowerplus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="383" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PrS-6N-cFu" id="bc2-Or-qhi">
@@ -2777,7 +2780,7 @@
         <!--View Controller-->
         <scene sceneID="GJS-MH-7xp">
             <objects>
-                <viewController storyboardIdentifier="PDFViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3zG-at-efe" customClass="PDFViewController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PDFViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3zG-at-efe" customClass="PDFViewController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="561-iO-PQl"/>
                         <viewControllerLayoutGuide type="bottom" id="EBu-DH-PxI"/>
@@ -2819,12 +2822,12 @@
         <!--My Claim Controller-->
         <scene sceneID="DT7-P3-dAS">
             <objects>
-                <viewController id="kAO-Eg-RQN" customClass="MyClaimController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kAO-Eg-RQN" customClass="MyClaimController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZQT-VV-bRp"/>
                         <viewControllerLayoutGuide type="bottom" id="ZkJ-tp-4Yv"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Dkh-U0-dm1" customClass="myClaims" customModule="mPower_" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="Dkh-U0-dm1" customClass="myClaims" customModule="mpowerplus" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -2850,12 +2853,12 @@
         <!--Pre Authorization One Controller-->
         <scene sceneID="2FI-Z6-g2T">
             <objects>
-                <viewController id="r6M-mj-iXb" customClass="PreAuthorizationOneController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="r6M-mj-iXb" customClass="PreAuthorizationOneController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZkZ-qa-Elr"/>
                         <viewControllerLayoutGuide type="bottom" id="I7M-W4-RHp"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tOG-Tx-eeg" customClass="preAuthorizationOne" customModule="mPower_" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="tOG-Tx-eeg" customClass="preAuthorizationOne" customModule="mpowerplus" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -2881,12 +2884,12 @@
         <!--Pre Authorization Two Controller-->
         <scene sceneID="qok-K9-MCE">
             <objects>
-                <viewController id="7xJ-H7-UQM" customClass="PreAuthorizationTwoController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7xJ-H7-UQM" customClass="PreAuthorizationTwoController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="k6y-uA-Pbl"/>
                         <viewControllerLayoutGuide type="bottom" id="Myw-MA-JzN"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="MDb-Gu-9nz" customClass="preAuthorizationTwo" customModule="mPower_" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="MDb-Gu-9nz" customClass="preAuthorizationTwo" customModule="mpowerplus" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -2909,12 +2912,12 @@
         <!--Query Form Controller-->
         <scene sceneID="8eY-qL-Wci">
             <objects>
-                <viewController id="EXl-QI-QSa" customClass="QueryFormController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="EXl-QI-QSa" customClass="QueryFormController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5Nb-PH-EOe"/>
                         <viewControllerLayoutGuide type="bottom" id="TX1-w7-QQP"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="5p3-3g-NS7" customClass="queryForm" customModule="mPower_" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="5p3-3g-NS7" customClass="queryForm" customModule="mpowerplus" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -2937,12 +2940,12 @@
         <!--Helpline Number Controller-->
         <scene sceneID="YNC-4i-MW0">
             <objects>
-                <viewController id="HN5-J9-bak" customClass="HelplineNumberController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HN5-J9-bak" customClass="HelplineNumberController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3I6-Vy-wL3"/>
                         <viewControllerLayoutGuide type="bottom" id="SiF-77-dQk"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kX8-Jb-gjH" customClass="helplineNumber" customModule="mPower_" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="kX8-Jb-gjH" customClass="helplineNumber" customModule="mpowerplus" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -2965,7 +2968,7 @@
         <!--Claim Intimation Controller-->
         <scene sceneID="vxP-hm-Au0">
             <objects>
-                <viewController id="rfz-2B-B0l" customClass="ClaimIntimationController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rfz-2B-B0l" customClass="ClaimIntimationController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bgn-9O-jAY"/>
                         <viewControllerLayoutGuide type="bottom" id="YSy-5r-Jco"/>
@@ -3022,7 +3025,7 @@
                                 <rect key="frame" x="-4" y="195" width="383" height="417"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="150" id="Lvp-03-8pO" customClass="claimIntimationUIViewCell" customModule="mPower_" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="150" id="Lvp-03-8pO" customClass="claimIntimationUIViewCell" customModule="mpowerplus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="383" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lvp-03-8pO" id="OTJ-Dg-ErC">
@@ -3240,7 +3243,7 @@
         <!--Benefit Summary Controller-->
         <scene sceneID="zXY-2C-ZUG">
             <objects>
-                <viewController storyboardIdentifier="benefitSummaryIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="A4M-Ka-07a" customClass="BenefitSummaryController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="benefitSummaryIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="A4M-Ka-07a" customClass="BenefitSummaryController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="I4x-a1-FRl"/>
                         <viewControllerLayoutGuide type="bottom" id="qto-5L-AaS"/>
@@ -3364,7 +3367,7 @@
                                 <rect key="frame" x="-4" y="343" width="383" height="275"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="cell" rowHeight="64" id="Qm7-kY-sAF" customClass="benefitTableCell" customModule="mPower_" customModuleProvider="target">
+                                    <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="cell" rowHeight="64" id="Qm7-kY-sAF" customClass="benefitTableCell" customModule="mpowerplus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="383" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qm7-kY-sAF" id="RMt-Ea-FhX">
@@ -3438,12 +3441,12 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
         <!--Hospital Search Controller-->
         <scene sceneID="mQ4-Cc-ecH">
             <objects>
-                <viewController storyboardIdentifier="hospitalSearchIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3eb-do-LtT" customClass="HospitalSearchController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="hospitalSearchIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3eb-do-LtT" customClass="HospitalSearchController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Q4h-fQ-Xrb"/>
                         <viewControllerLayoutGuide type="bottom" id="U6D-JU-snr"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="EOD-7Z-fqI" customClass="hospitalSearch" customModule="mPower_" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="EOD-7Z-fqI" customClass="hospitalSearch" customModule="mpowerplus" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -3467,7 +3470,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
         <!--Hospital Search Result Controller-->
         <scene sceneID="Ja7-k4-UaN">
             <objects>
-                <viewController id="zcf-UU-fHe" customClass="HospitalSearchResultController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zcf-UU-fHe" customClass="HospitalSearchResultController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CRy-s7-uZq"/>
                         <viewControllerLayoutGuide type="bottom" id="KXb-m9-L6Z"/>
@@ -3569,7 +3572,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                                 <rect key="frame" x="-4" y="194" width="383" height="424"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="125" id="NzD-le-UMl" customClass="hospitalSearchResultUIViewCell" customModule="mPower_" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="125" id="NzD-le-UMl" customClass="hospitalSearchResultUIViewCell" customModule="mpowerplus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="383" height="125"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NzD-le-UMl" id="aHw-tb-Igb">
@@ -3791,12 +3794,12 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
         <!--Inbox Controller-->
         <scene sceneID="Eew-Ia-Niw">
             <objects>
-                <viewController id="Yob-a2-WNP" customClass="InboxController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Yob-a2-WNP" customClass="InboxController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TwT-fR-gwn"/>
                         <viewControllerLayoutGuide type="bottom" id="eqO-Sx-m1M"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="QpW-pg-pQB" customClass="inbox" customModule="mPower_" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="QpW-pg-pQB" customClass="inbox" customModule="mpowerplus" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3809,7 +3812,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
         <!--Splash Screen Controller-->
         <scene sceneID="vxc-Kb-Cyn">
             <objects>
-                <viewController storyboardIdentifier="splashScreenStoryBoard" id="tV6-si-7rM" customClass="SplashScreenController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="splashScreenStoryBoard" id="tV6-si-7rM" customClass="SplashScreenController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="z2d-aS-mse"/>
                         <viewControllerLayoutGuide type="bottom" id="hQl-X3-VGb"/>
@@ -3827,7 +3830,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
         <!--Page Viewer Controller-->
         <scene sceneID="4hG-tJ-o9G">
             <objects>
-                <pageViewController storyboardIdentifier="pageViewCtlr" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="NMF-BA-RYD" customClass="PageViewerController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="pageViewCtlr" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="NMF-BA-RYD" customClass="PageViewerController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4mP-7X-dlr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2946" y="-494"/>
@@ -3835,12 +3838,12 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
         <!--Tutorial Controller-->
         <scene sceneID="dUa-zI-cRa">
             <objects>
-                <viewController storyboardIdentifier="tutorialIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WoX-5m-1V4" customClass="TutorialController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tutorialIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WoX-5m-1V4" customClass="TutorialController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aNC-b7-a1c"/>
                         <viewControllerLayoutGuide type="bottom" id="jrp-Hv-u8Q"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0Ye-kx-UFJ" customClass="tutorial" customModule="mPower_" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="0Ye-kx-UFJ" customClass="tutorial" customModule="mpowerplus" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -3874,12 +3877,12 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
         <!--Help Desk Controller-->
         <scene sceneID="hkv-BM-BAV">
             <objects>
-                <viewController storyboardIdentifier="helpdeskIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WL9-QD-aTf" customClass="HelpDeskController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="helpdeskIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WL9-QD-aTf" customClass="HelpDeskController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RkX-Ic-5Wq"/>
                         <viewControllerLayoutGuide type="bottom" id="fOC-HF-hVB"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="x9i-OF-UUA" customClass="helpDesk" customModule="mPower_" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="x9i-OF-UUA" customClass="helpDesk" customModule="mpowerplus" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3897,7 +3900,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
         <!--Help DeskFAQ Controller-->
         <scene sceneID="8Fv-fP-hi8">
             <objects>
-                <viewController id="peo-2X-GNG" customClass="HelpDeskFAQController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="peo-2X-GNG" customClass="HelpDeskFAQController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7Pg-bc-fwc"/>
                         <viewControllerLayoutGuide type="bottom" id="CoY-M6-X0S"/>
@@ -3914,7 +3917,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                                 <rect key="frame" x="-4" y="84" width="383" height="534"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="140" id="Mzg-9Q-uP1" customClass="quecell" customModule="mPower_" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="140" id="Mzg-9Q-uP1" customClass="quecell" customModule="mpowerplus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="383" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mzg-9Q-uP1" id="BvK-ka-JyQ">
@@ -4000,12 +4003,12 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
         <!--Help Desk Query Controller-->
         <scene sceneID="BBF-QB-d8e">
             <objects>
-                <viewController id="oN0-Q9-8IX" customClass="HelpDeskQueryController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oN0-Q9-8IX" customClass="HelpDeskQueryController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1E4-Jb-OZN"/>
                         <viewControllerLayoutGuide type="bottom" id="7Pr-Qy-Kfs"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ira-Rd-CX2" customClass="helpDeskQuery" customModule="mPower_" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="ira-Rd-CX2" customClass="helpDeskQuery" customModule="mpowerplus" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -4026,7 +4029,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
         <!--Connect Controller-->
         <scene sceneID="SR5-cc-YkG">
             <objects>
-                <viewController storyboardIdentifier="connectIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kjT-5A-5E0" customClass="ConnectController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="connectIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kjT-5A-5E0" customClass="ConnectController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="knv-0m-Ed2"/>
                         <viewControllerLayoutGuide type="bottom" id="C47-LC-WBL"/>
@@ -4038,7 +4041,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b52-Q6-vgp">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FVE-O8-gyq" customClass="newContact" customModule="mPower_" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FVE-O8-gyq" customClass="newContact" customModule="mpowerplus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="367"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -4072,7 +4075,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
         <!--Member List Group Table Controller-->
         <scene sceneID="gr7-Ij-iRd">
             <objects>
-                <viewController id="HRj-QJ-lx8" customClass="MemberListGroupTableController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HRj-QJ-lx8" customClass="MemberListGroupTableController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xOC-OY-WOd"/>
                         <viewControllerLayoutGuide type="bottom" id="hUB-MS-xsX"/>
@@ -4134,7 +4137,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                                     </connections>
                                 </button>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="354" id="Qa8-QI-XcA" customClass="MemberListGroupCell" customModule="mPower_" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="354" id="Qa8-QI-XcA" customClass="MemberListGroupCell" customModule="mpowerplus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="383" height="354"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qa8-QI-XcA" id="EmS-Uk-nlt">
@@ -4340,7 +4343,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" reuseIdentifier="Cell" id="LIX-HB-0iF" customClass="membercollectioncell" customModule="mPower_" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" reuseIdentifier="Cell" id="LIX-HB-0iF" customClass="membercollectioncell" customModule="mpowerplus" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="4" width="80" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -4459,7 +4462,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
         <!--Change Password-->
         <scene sceneID="ZV3-31-Y0W">
             <objects>
-                <viewController storyboardIdentifier="changePass" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2HE-uH-d1r" customClass="ChangePassword" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="changePass" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2HE-uH-d1r" customClass="ChangePassword" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3yJ-y9-YFc"/>
                         <viewControllerLayoutGuide type="bottom" id="YNL-oe-EcH"/>
@@ -4600,7 +4603,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
         <!--Tab Bar Controller-->
         <scene sceneID="Lef-QB-KJs">
             <objects>
-                <tabBarController storyboardIdentifier="tabbar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="crn-Bn-ORl" customClass="TabBarController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabbar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="crn-Bn-ORl" customClass="TabBarController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="lsY-9F-LDr">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="49"/>
@@ -4629,7 +4632,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                         <viewControllerLayoutGuide type="top" id="lr1-1k-lys"/>
                         <viewControllerLayoutGuide type="bottom" id="Sht-3J-3Ys"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="r4R-b4-wiD" customClass="newContact" customModule="mPower_" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="r4R-b4-wiD" customClass="newContact" customModule="mpowerplus" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -4677,11 +4680,11 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
             </objects>
             <point key="canvasLocation" x="2356" y="1460"/>
         </scene>
-        <!--Help Desk-->
+        <!--HELP DESK-->
         <scene sceneID="D1d-66-LGq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TKM-gt-Cbe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Help Desk" image="footer_tab_four" id="XZC-kA-4gw"/>
+                    <tabBarItem key="tabBarItem" title="HELP DESK" image="footer_tab_four" id="XZC-kA-4gw"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="bY9-yx-BZx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -4756,12 +4759,12 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
         <!--EnterOTP Controller-->
         <scene sceneID="t34-pP-wXe">
             <objects>
-                <viewController id="zrF-MW-4sE" customClass="EnterOTPController" customModule="mPower_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zrF-MW-4sE" customClass="EnterOTPController" customModule="mpowerplus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Yde-43-rsu"/>
                         <viewControllerLayoutGuide type="bottom" id="IGr-4C-u3i"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="TSG-h2-4od" customClass="enterOTP" customModule="mPower_" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="TSG-h2-4od" customClass="enterOTP" customModule="mpowerplus" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

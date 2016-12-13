@@ -135,7 +135,7 @@ class signup: UIView, UITextFieldDelegate {
                         switch anotherCharacter {
                         case "true" :
                             signUpUser = json["result"]
-                            let dialog = UIAlertController(title: "Welcome", message: "Procced Now ", preferredStyle: UIAlertControllerStyle.Alert)
+                            let dialog = UIAlertController(title: "Welcome", message: "Proceed Now ", preferredStyle: UIAlertControllerStyle.Alert)
                             
                             
                             dialog.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Destructive, handler:{
