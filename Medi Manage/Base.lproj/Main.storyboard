@@ -210,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MV2-PS-E4L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-914" y="2158"/>
+            <point key="canvasLocation" x="-915" y="2277"/>
         </scene>
         <!--Member List Table Controller-->
         <scene sceneID="ErO-d8-i1w">
@@ -433,7 +433,7 @@
                                                             <rect key="frame" x="25" y="15" width="327" height="40"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected Sum Insured" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7A-Lg-SpU">
-                                                                    <rect key="frame" x="20" y="10" width="128.5" height="20"/>
+                                                                    <rect key="frame" x="20" y="10" width="129" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="QJp-oh-kWh"/>
                                                                     </constraints>
@@ -464,7 +464,7 @@
                                                             <rect key="frame" x="25" y="60" width="327" height="40"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Top Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNL-kJ-7Tc">
-                                                                    <rect key="frame" x="20" y="10" width="81.5" height="20"/>
+                                                                    <rect key="frame" x="20" y="10" width="82" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="2hP-HS-Ugy"/>
                                                                     </constraints>
@@ -725,7 +725,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l5h-gc-awo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1554" y="2158"/>
+            <point key="canvasLocation" x="-1574" y="2277"/>
         </scene>
         <!--Main Claims Controller-->
         <scene sceneID="cnZ-l8-HiF">
@@ -768,7 +768,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zc0-fQ-9Zr">
-                                                    <rect key="frame" x="51" y="28" width="254.5" height="13"/>
+                                                    <rect key="frame" x="51" y="28" width="255" height="14"/>
                                                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="11"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -817,7 +817,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4XJ-Tj-Ptj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2356" y="2167"/>
+            <point key="canvasLocation" x="2417" y="2277"/>
         </scene>
         <!--My Claim Controller-->
         <scene sceneID="seQ-kj-A4N">
@@ -1033,7 +1033,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSA-Ui-n76">
-                                                    <rect key="frame" x="18" y="38" width="178" height="13"/>
+                                                    <rect key="frame" x="18" y="38" width="178" height="14"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="178" id="xzJ-kI-KPM"/>
                                                     </constraints>
@@ -1173,10 +1173,10 @@
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="request_received" translatesAutoresizingMaskIntoConstraints="NO" id="gJz-TA-gIF">
-                                                <rect key="frame" x="10" y="322" width="70" height="71"/>
+                                                <rect key="frame" x="10" y="322" width="70" height="70"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04-07-2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBt-sV-c9f">
-                                                <rect key="frame" x="10" y="401" width="70" height="16"/>
+                                                <rect key="frame" x="10" y="400" width="70" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="Frp-Cf-VQB"/>
                                                 </constraints>
@@ -1203,13 +1203,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="query" translatesAutoresizingMaskIntoConstraints="NO" id="oTV-GE-T6G">
-                                                <rect key="frame" x="86" y="322" width="70" height="71"/>
+                                                <rect key="frame" x="86" y="322" width="70" height="70"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="TkN-Bi-UA6"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="06-07-2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4j-AV-J0g">
-                                                <rect key="frame" x="89" y="401" width="70" height="17"/>
+                                                <rect key="frame" x="89" y="400" width="70" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="XVF-Kv-dD6"/>
                                                 </constraints>
@@ -1218,25 +1218,25 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="10:30:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWE-fk-bRT">
-                                                <rect key="frame" x="84" y="416" width="70" height="13"/>
+                                                <rect key="frame" x="84" y="415" width="70" height="14"/>
                                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="11"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pending" translatesAutoresizingMaskIntoConstraints="NO" id="jkC-c1-2DV">
-                                                <rect key="frame" x="161" y="322" width="70" height="71"/>
+                                                <rect key="frame" x="161" y="322" width="70" height="70"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="g5h-yg-3In"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06-07-2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YfB-ot-bxh">
-                                                <rect key="frame" x="165" y="400" width="70" height="17"/>
+                                                <rect key="frame" x="165" y="399" width="70" height="17"/>
                                                 <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6AO-qB-h81">
-                                                <rect key="frame" x="161" y="414" width="70" height="13"/>
+                                                <rect key="frame" x="161" y="413" width="70" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="jxj-EC-SZx"/>
                                                 </constraints>
@@ -1270,7 +1270,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBQ-KO-Wab">
-                                                <rect key="frame" x="166" y="349" width="60" height="18"/>
+                                                <rect key="frame" x="166" y="349" width="60" height="17"/>
                                                 <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="10"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1298,7 +1298,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wi-K2-Cdb">
-                                                <rect key="frame" x="239" y="401" width="70" height="17"/>
+                                                <rect key="frame" x="239" y="400" width="70" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="iMD-nk-NZm"/>
                                                 </constraints>
@@ -1307,7 +1307,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEe-0Z-ghW">
-                                                <rect key="frame" x="10" y="416" width="70" height="13"/>
+                                                <rect key="frame" x="10" y="415" width="70" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="fon-p3-laV"/>
                                                 </constraints>
@@ -1316,7 +1316,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3P-Tb-1Vf">
-                                                <rect key="frame" x="15" y="349" width="60" height="18"/>
+                                                <rect key="frame" x="15" y="349" width="60" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="Kti-66-AYu"/>
                                                 </constraints>
@@ -1325,7 +1325,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpp-ah-oGv">
-                                                <rect key="frame" x="91" y="349" width="60" height="17"/>
+                                                <rect key="frame" x="91" y="349" width="60" height="16"/>
                                                 <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="10"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1347,13 +1347,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="query" translatesAutoresizingMaskIntoConstraints="NO" id="rTE-Id-IOB">
-                                                <rect key="frame" x="238" y="322" width="70" height="71"/>
+                                                <rect key="frame" x="238" y="322" width="70" height="70"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="80j-0d-4XQ"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnl-5M-jLt">
-                                                <rect key="frame" x="244" y="346" width="58" height="19"/>
+                                                <rect key="frame" x="244" y="346" width="58" height="18"/>
                                                 <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="10"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1580,7 +1580,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Admission:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tco-FE-3J9">
-                                                <rect key="frame" x="23" y="106" width="115.5" height="17"/>
+                                                <rect key="frame" x="23" y="106" width="116" height="17"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -2681,13 +2681,13 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Claim Form" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24h-JJ-4d8">
-                                                    <rect key="frame" x="51" y="13" width="297" height="19"/>
+                                                    <rect key="frame" x="51" y="13" width="297" height="20"/>
                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                                                     <color key="textColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="(All details must be filled in &amp; should be signed by The EMPLOYEE only)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1y-mT-h32">
-                                                    <rect key="frame" x="51" y="37" width="324" height="38"/>
+                                                    <rect key="frame" x="51" y="38" width="324" height="37"/>
                                                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="10"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -3033,7 +3033,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9Y-iD-2Ei">
-                                                    <rect key="frame" x="18" y="13" width="8" height="20"/>
+                                                    <rect key="frame" x="18" y="13" width="9" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="0jJ-WX-nML"/>
                                                     </constraints>
@@ -3042,7 +3042,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Intimation:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Auu-6M-wLy">
-                                                    <rect key="frame" x="36" y="13" width="115" height="20"/>
+                                                    <rect key="frame" x="37" y="13" width="116" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="tbd-mn-e13"/>
                                                     </constraints>
@@ -3051,7 +3051,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14/08/2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BdL-vg-gtR">
-                                                    <rect key="frame" x="153" y="13" width="75.5" height="20"/>
+                                                    <rect key="frame" x="155" y="13" width="76" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="hxS-fR-UEg"/>
                                                     </constraints>
@@ -3060,7 +3060,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Patient Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdP-yT-7Bv">
-                                                    <rect key="frame" x="36" y="33" width="87.5" height="20"/>
+                                                    <rect key="frame" x="37" y="33" width="88" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="Q7i-55-mNX"/>
                                                     </constraints>
@@ -3069,7 +3069,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Puneet Manocha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjD-r9-TL7">
-                                                    <rect key="frame" x="125.5" y="33" width="104" height="20"/>
+                                                    <rect key="frame" x="127" y="33" width="104" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="WB0-Ej-OUm"/>
                                                     </constraints>
@@ -3078,7 +3078,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hospital Name &amp; Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rau-qF-SMo">
-                                                    <rect key="frame" x="36" y="53" width="160" height="20"/>
+                                                    <rect key="frame" x="37" y="53" width="160" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="225-mg-fHT"/>
                                                     </constraints>
@@ -3087,7 +3087,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kohinoor Hospital, kurla" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJ2-d3-Nxs">
-                                                    <rect key="frame" x="198" y="53" width="149" height="20"/>
+                                                    <rect key="frame" x="199" y="53" width="149" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="avs-qL-5fm"/>
                                                     </constraints>
@@ -3096,7 +3096,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOA:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QN3-E8-irJ">
-                                                    <rect key="frame" x="36" y="73" width="34" height="20"/>
+                                                    <rect key="frame" x="37" y="73" width="35" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="CmJ-NQ-qKX"/>
                                                     </constraints>
@@ -3105,7 +3105,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15/08/2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztt-CI-xhv">
-                                                    <rect key="frame" x="72" y="73" width="75.5" height="20"/>
+                                                    <rect key="frame" x="74" y="73" width="76" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="2Xk-0Y-i6S"/>
                                                     </constraints>
@@ -3114,7 +3114,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOD:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqQ-5y-AtV">
-                                                    <rect key="frame" x="162.5" y="73" width="36" height="20"/>
+                                                    <rect key="frame" x="165" y="73" width="36" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="BNA-e8-0m8"/>
                                                     </constraints>
@@ -3123,7 +3123,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17/08/2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fT-lL-ndl">
-                                                    <rect key="frame" x="200.5" y="73" width="75.5" height="20"/>
+                                                    <rect key="frame" x="203" y="73" width="76" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="IoE-qD-yG7"/>
                                                     </constraints>
@@ -3132,7 +3132,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diagnosis / Ailment:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yqd-b0-8DN">
-                                                    <rect key="frame" x="36" y="93" width="122.5" height="20"/>
+                                                    <rect key="frame" x="37" y="93" width="123" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="mX8-cA-NBx"/>
                                                     </constraints>
@@ -3141,7 +3141,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fever" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLh-je-mmm">
-                                                    <rect key="frame" x="160.5" y="93" width="35" height="20"/>
+                                                    <rect key="frame" x="162" y="93" width="35" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="Wzm-M9-R0C"/>
                                                     </constraints>
@@ -3150,7 +3150,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Claim Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gp-bI-E0P">
-                                                    <rect key="frame" x="36" y="113" width="91.5" height="20"/>
+                                                    <rect key="frame" x="37" y="113" width="92" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="uzo-MX-8Ae"/>
                                                     </constraints>
@@ -3159,7 +3159,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIx-h1-kUw">
-                                                    <rect key="frame" x="129.5" y="113" width="44" height="20"/>
+                                                    <rect key="frame" x="131" y="113" width="44" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="OgR-xA-okk"/>
                                                     </constraints>
@@ -3436,7 +3436,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2rv-Ng-9aE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1009" y="2158"/>
+            <point key="canvasLocation" x="989" y="2235"/>
         </scene>
         <!--Hospital Search Controller-->
         <scene sceneID="mQ4-Cc-ecH">
@@ -3528,7 +3528,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Search Results:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srE-gH-JBC">
-                                <rect key="frame" x="16" y="164" width="126.5" height="20"/>
+                                <rect key="frame" x="16" y="164" width="127" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Gfb-ae-Jad"/>
                                 </constraints>
@@ -3537,7 +3537,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlD-0s-051">
-                                <rect key="frame" x="144.5" y="164" width="0.0" height="20"/>
+                                <rect key="frame" x="145" y="164" width="0.0" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="4xI-6r-dvR"/>
                                 </constraints>
@@ -3895,7 +3895,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acB-RW-ROH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1673" y="2158"/>
+            <point key="canvasLocation" x="1350" y="2035"/>
         </scene>
         <!--Help DeskFAQ Controller-->
         <scene sceneID="8Fv-fP-hi8">
@@ -3998,7 +3998,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wg2-Qv-lAZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1009" y="2873"/>
+            <point key="canvasLocation" x="1026" y="3105"/>
         </scene>
         <!--Help Desk Query Controller-->
         <scene sceneID="BBF-QB-d8e">
@@ -4457,7 +4457,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VfG-lo-faf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-914" y="3027"/>
+            <point key="canvasLocation" x="-893" y="3204"/>
         </scene>
         <!--Change Password-->
         <scene sceneID="ZV3-31-Y0W">
@@ -4824,9 +4824,9 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
         <image name="triangle_orange" width="32" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dUS-S7-jua"/>
-        <segue reference="LXm-Lb-FcH"/>
+        <segue reference="8ZQ-nc-jHt"/>
         <segue reference="Oo4-D3-Nsi"/>
+        <segue reference="s1I-qw-2n8"/>
         <segue reference="QCt-6c-YRM"/>
         <segue reference="wgK-eO-Wod"/>
     </inferredMetricsTieBreakers>

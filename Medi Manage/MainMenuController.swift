@@ -72,7 +72,7 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         let helpdesk = homeMenus(frame: CGRectMake(width / 2, self.view.frame.size.height / 3, width / 2, self.view.frame.size.height / 3))
         helpdesk.homeMenuMainView.backgroundColor = UIColor.whiteColor()
         helpdesk.menuImage.image = UIImage(named: "menu_four")
-        helpdesk.menuTitle.text = "Helpdesk"
+        helpdesk.menuTitle.text = "Help Desk"
         self.view.addSubview(helpdesk)
         let helpdeskTap = UITapGestureRecognizer(target: self, action: #selector(MainMenuController.helpdeskTap(_:)))
         helpdeskTap.delegate = self
