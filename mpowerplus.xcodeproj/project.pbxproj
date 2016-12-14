@@ -283,7 +283,7 @@
 		783322B11CDB50E50015CE37 /* landing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = landing.swift; sourceTree = "<group>"; };
 		783322B41CDB7B4F0015CE37 /* completeProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = completeProfile.swift; sourceTree = "<group>"; };
 		783322B61CDB7B620015CE37 /* completeProfile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = completeProfile.xib; sourceTree = "<group>"; };
-		786DF9F61CD214F300DDE769 /* mPower+.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mPower+.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		786DF9F61CD214F300DDE769 /* mpowerplus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mpowerplus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		786DF9F91CD214F300DDE769 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		786DF9FB1CD214F300DDE769 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		786DF9FE1CD214F300DDE769 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -667,7 +667,7 @@
 		786DF9F71CD214F300DDE769 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				786DF9F61CD214F300DDE769 /* mPower+.app */,
+				786DF9F61CD214F300DDE769 /* mpowerplus.app */,
 				786DFA0A1CD214F300DDE769 /* mpowerplus.xctest */,
 				786DFA151CD214F300DDE769 /* mpowerplus.xctest */,
 			);
@@ -999,7 +999,7 @@
 			);
 			name = mpowerplus;
 			productName = "Medi Manage";
-			productReference = 786DF9F61CD214F300DDE769 /* mPower+.app */;
+			productReference = 786DF9F61CD214F300DDE769 /* mpowerplus.app */;
 			productType = "com.apple.product-type.application";
 		};
 		786DFA091CD214F300DDE769 /* mpowerplusTests */ = {
@@ -1050,7 +1050,7 @@
 				TargetAttributes = {
 					786DF9F51CD214F300DDE769 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = GQCVF92R6N;
+						DevelopmentTeam = YVWVDTRG4B;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -1486,7 +1486,7 @@
 				CODE_SIGN_ENTITLEMENTS = MediManage.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = GQCVF92R6N;
+				DEVELOPMENT_TEAM = YVWVDTRG4B;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
@@ -1511,7 +1511,7 @@
 				CODE_SIGN_ENTITLEMENTS = MediManage.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = GQCVF92R6N;
+				DEVELOPMENT_TEAM = YVWVDTRG4B;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",

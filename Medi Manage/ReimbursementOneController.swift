@@ -26,6 +26,8 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
     var amount:String! = ""
     @IBOutlet weak var claimNoHide: UILabel!
   
+    @IBOutlet weak var callHideShow: UIButton!
+    @IBOutlet weak var messageHideShow: UIButton!
     @IBOutlet weak var mail1Hide: UILabel!
     @IBOutlet weak var call1Hide: UILabel!
     @IBOutlet weak var preAuthorizationhide: UILabel!
@@ -192,15 +194,17 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
                 mainSubHeader.subHeaderTitle.text = ("Pre-Authorizations")
                 mainSubHeader.subHeaderIcon.image = UIImage(named: "my_claim_icon")
                 self.view.addSubview(mainSubHeader)
-                claimNoHide.alpha = 0
-                mail1Hide.alpha = 0
+                claimNoHide.hidden = true
+                messageHideShow.hidden = true
+                mail1Hide.hidden = true
             } else {
                 let mainSubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
                 mainSubHeader.subHeaderTitle.text = ("Pre-Authorizations")
                 mainSubHeader.subHeaderIcon.image = UIImage(named: "my_claim_icon")
                 self.view.addSubview(mainSubHeader)
-                claimNoHide.alpha = 0
-                mail1Hide.alpha = 0
+                claimNoHide.hidden = true
+                messageHideShow.hidden = true
+                mail1Hide.hidden = true
             }
         }
         if myClaim == 1 {
@@ -210,18 +214,18 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
                 mainSubHeader.subHeaderTitle.text = ("REIMBURSEMENT CLAIMS")
                 mainSubHeader.subHeaderIcon.image = UIImage(named: "my_claim_icon")
                 self.view.addSubview(mainSubHeader)
-                hideCall.alpha = 0
-                preAuthorizationhide.alpha = 0
-                call1Hide.alpha = 0
+                callHideShow.hidden = true
+                preAuthorizationhide.hidden = true
+                call1Hide.hidden = true
             }else{
                 let mainSubHeader = subHeader(frame: CGRectMake(0, 60, width, 50))
                 
                 mainSubHeader.subHeaderTitle.text = ("REIMBURSEMENT CLAIMS")
                 mainSubHeader.subHeaderIcon.image = UIImage(named: "my_claim_icon")
                 self.view.addSubview(mainSubHeader)
-                hideCall.alpha = 0
-                preAuthorizationhide.alpha = 0
-                call1Hide.alpha = 0
+                callHideShow.hidden = true
+                preAuthorizationhide.hidden = true
+                call1Hide.hidden = true
                 
             }
         }
@@ -237,6 +241,9 @@ class ReimbursementOneController: UIViewController,UIScrollViewDelegate {
     }*/
 
     
+    @IBAction func callPassJson(sender: UIButton) {
+        oneJson = personJson
+    }
        
     @IBAction func knowButton(sender: AnyObject) {
         
