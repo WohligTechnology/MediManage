@@ -897,7 +897,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                                     }
                                 }
                             }else{
-                                status = true
+                                status = false
                                 msg = "Please Enter Date Of Relation of Your partner or InLaws. "
                             }
                             
@@ -919,7 +919,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                                         }
                                     }
                                 }else{
-                                    status = true
+                                    status = false
                                     msg = "Please Enter Date Of Relation of Your partner or InLaws. "
                                 }
                             }

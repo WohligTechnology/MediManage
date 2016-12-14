@@ -99,12 +99,13 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
         
         tableViewCell.sumInsured.text = members[indexPath.row]["SelectedSumInsuredValue"].stringValue
         tableViewCell.topUp.text = members[indexPath.row]["SelectedTopupValue"].stringValue
-        if members[indexPath.row]["SelectedTopupValue"].stringValue == "0" {
-            tableViewCell.topupView.hidden = true
-        }
+        
         if !result["IsInEnrollmentPeriod"] {
             tableViewCell.sumInsured.enabled = false
             tableViewCell.topUp.enabled = false
+            if members[indexPath.row]["SelectedTopupValue"].stringValue == "0" {
+                tableViewCell.topupView.hidden = true
+            }
         }
         
     }
