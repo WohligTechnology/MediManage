@@ -872,7 +872,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         }else{
             check = true
         }
-        return check
+        return true
     }
     
     //FINAL PROCESS SUBMIT MEMBERS

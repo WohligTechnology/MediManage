@@ -26,7 +26,6 @@ class TabBarController: UITabBarController {
         self.moreNavigationController.navigationBar.barTintColor = UIColor.blackColor()
         self.moreNavigationController.navigationBar.tintColor = UIColor.whiteColor()
         
-        
 //        rest.isEnrolled({(json:JSON) ->() in
 //            var data = json
 //            data = false
