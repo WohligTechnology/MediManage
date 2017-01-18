@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "786DF9F51CD214F300DDE769"
                BuildableName = "MediManage.app"
-               BlueprintName = "MediManage"
+               BlueprintName = "mpowerplus"
                ReferencedContainer = "container:MediManage.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,13 +28,23 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "786DFA141CD214F300DDE769"
+               BuildableName = "mpowerplus.xctest"
+               BlueprintName = "mpowerplusUITests"
+               ReferencedContainer = "container:MediManage.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "786DF9F51CD214F300DDE769"
             BuildableName = "MediManage.app"
-            BlueprintName = "MediManage"
+            BlueprintName = "mpowerplus"
             ReferencedContainer = "container:MediManage.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -57,7 +67,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "786DF9F51CD214F300DDE769"
             BuildableName = "MediManage.app"
-            BlueprintName = "MediManage"
+            BlueprintName = "mpowerplus"
             ReferencedContainer = "container:MediManage.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -76,7 +86,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "786DF9F51CD214F300DDE769"
             BuildableName = "MediManage.app"
-            BlueprintName = "MediManage"
+            BlueprintName = "mpowerplus"
             ReferencedContainer = "container:MediManage.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
