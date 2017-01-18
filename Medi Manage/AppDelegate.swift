@@ -112,6 +112,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
+//        self.window?.rootViewController = mainStoryboard.instantiateViewControllerWithIdentifier("eventController") as! EventController
+        
         setupGoogleAnalytics()
         
         self.window?.makeKeyAndVisible()

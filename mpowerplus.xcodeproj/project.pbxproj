@@ -118,6 +118,7 @@
 		C2382C201D0AA43D00DC0073 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2382C1F1D0AA43D00DC0073 /* Alamofire.framework */; };
 		C28A40821E2F7FE1002C49E5 /* singleEvent.xib in Resources */ = {isa = PBXBuildFile; fileRef = C28A40811E2F7FE1002C49E5 /* singleEvent.xib */; };
 		C28A40841E2F8239002C49E5 /* singleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28A40831E2F8239002C49E5 /* singleEvent.swift */; };
+		C28A40861E2F8A6B002C49E5 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28A40851E2F8A6B002C49E5 /* EventController.swift */; };
 		C2A584601D262EAE00F6E0D5 /* EnumSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A5845F1D262EAE00F6E0D5 /* EnumSets.swift */; };
 		C2A59E8F1CDDDF700093CFEC /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2A59E8A1CDDDF700093CFEC /* Lato-Black.ttf */; };
 		C2A59E901CDDDF700093CFEC /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2A59E8B1CDDDF700093CFEC /* Lato-Bold.ttf */; };
@@ -319,6 +320,7 @@
 		C2745E2B1E23C5B30091DAFB /* MediManage-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MediManage-Bridging-Header.h"; sourceTree = "<group>"; };
 		C28A40811E2F7FE1002C49E5 /* singleEvent.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = singleEvent.xib; sourceTree = "<group>"; };
 		C28A40831E2F8239002C49E5 /* singleEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = singleEvent.swift; sourceTree = "<group>"; };
+		C28A40851E2F8A6B002C49E5 /* EventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
 		C2A5845F1D262EAE00F6E0D5 /* EnumSets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumSets.swift; sourceTree = "<group>"; };
 		C2A59E8A1CDDDF700093CFEC /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		C2A59E8B1CDDDF700093CFEC /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
@@ -777,6 +779,7 @@
 				786DF9FB1CD214F300DDE769 /* ViewController.swift */,
 				FC1D8AF71D783A250020FAFB /* ForgotPasswordOTPController.swift */,
 				9B1790681DE41423006FE8F5 /* newDemoViewController.swift */,
+				C28A40851E2F8A6B002C49E5 /* EventController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1330,6 +1333,7 @@
 				3A8774C31CEC4E62001DB41F /* queryForm.swift in Sources */,
 				3A74A7D41CF422DA00592B3E /* TutorialController.swift in Sources */,
 				9BC688621DD44C09004C2915 /* ActiveClaimsController.swift in Sources */,
+				C28A40861E2F8A6B002C49E5 /* EventController.swift in Sources */,
 				C2DCB0D21D1D079D004FD787 /* RegisterDataDTO.swift in Sources */,
 				3A74A7D21CF4216500592B3E /* tutorial.swift in Sources */,
 				3A677B671CE4B384003B8C2B /* SignupController.swift in Sources */,
