@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'BF607C6660960F985C0E97610477EACA'
+               BlueprintIdentifier = 'F87FB4F9029931C32F29731612E12B88'
                BlueprintName = 'QToasterSwift'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'QToasterSwift.framework'>

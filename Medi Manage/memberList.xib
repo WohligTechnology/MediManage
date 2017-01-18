@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="NO">
     <dependencies>
         <deployment identifier="iOS"/>
+        <development version="7000" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
-        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="Lato-Bold.ttf">
@@ -20,7 +17,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="memberList" customModule="mPower_" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="memberList" customModule="MediManage" customModuleProvider="target">
             <connections>
                 <outlet property="SumInsuredList" destination="Hqx-ej-b7G" id="9ue-8o-cR3"/>
                 <outlet property="dobViewOne" destination="le8-eu-kw0" id="iFZ-Eg-GQm"/>
@@ -77,7 +74,7 @@
                                         <constraint firstAttribute="height" constant="20" id="e9M-do-aOH"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
-                                    <color key="textColor" red="0.08235294118" green="0.69411764710000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="textColor" red="0.08235294118" green="0.69411764710000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropdown_up_icon" translatesAutoresizingMaskIntoConstraints="NO" id="6BZ-OF-FhT">
@@ -88,7 +85,7 @@
                                     </constraints>
                                 </imageView>
                             </subviews>
-                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="nnV-wG-aHF" secondAttribute="trailing" constant="55" id="Bd7-Qq-WJd"/>
                                 <constraint firstAttribute="bottom" secondItem="6BZ-OF-FhT" secondAttribute="bottom" constant="27" id="HEi-BM-8UZ"/>
@@ -109,7 +106,7 @@
                                         <constraint firstAttribute="height" constant="20" id="DOx-yg-Hy9"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="dropdown_down_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Eld-Ad-Kg0">
@@ -120,7 +117,7 @@
                                     </constraints>
                                 </imageView>
                             </subviews>
-                            <color key="backgroundColor" red="0.10588235294117647" green="0.63137254901960782" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.10588235294117647" green="0.63137254901960782" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="Eld-Ad-Kg0" firstAttribute="leading" secondItem="TKf-d1-Kq8" secondAttribute="trailing" constant="5" id="27Z-aB-vXH"/>
                                 <constraint firstAttribute="height" constant="70" id="IlR-PP-sxT"/>
@@ -141,7 +138,7 @@
                                         <constraint firstAttribute="height" constant="20" id="5IQ-pU-iMJ"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropdown_down_icon" translatesAutoresizingMaskIntoConstraints="NO" id="MgM-JS-sFq">
@@ -152,7 +149,7 @@
                                     </constraints>
                                 </imageView>
                             </subviews>
-                            <color key="backgroundColor" red="0.08235294118" green="0.69411764710000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.08235294118" green="0.69411764710000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="70" id="19i-Vw-FkC"/>
                                 <constraint firstAttribute="bottom" secondItem="MgM-JS-sFq" secondAttribute="bottom" constant="27" id="4Og-DX-9Hs"/>
@@ -193,7 +190,7 @@
                                 <constraint firstAttribute="height" constant="20" id="OgZ-fQ-GMi"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="12"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -231,7 +228,7 @@
                                 <constraint firstAttribute="height" constant="20" id="KfX-ds-3Au"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="12"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -269,7 +266,7 @@
                                 <constraint firstAttribute="width" constant="120" id="sXu-td-rPR"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="12"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -308,7 +305,7 @@
                                         <constraint firstAttribute="height" constant="20" id="KiT-t6-zx4"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangle_orange" translatesAutoresizingMaskIntoConstraints="NO" id="Gd0-7O-0fg">
@@ -319,7 +316,7 @@
                                     </constraints>
                                 </imageView>
                             </subviews>
-                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="Gd0-7O-0fg" secondAttribute="trailing" constant="25" id="Agq-eL-OLO"/>
                                 <constraint firstAttribute="bottom" secondItem="cSP-Sg-vpI" secondAttribute="bottom" constant="10" id="JeG-lP-raN"/>
@@ -339,7 +336,7 @@
                                         <constraint firstAttribute="height" constant="20" id="9NK-RY-k8f"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangle_orange" translatesAutoresizingMaskIntoConstraints="NO" id="EFI-BM-sLt">
@@ -350,7 +347,7 @@
                                     </constraints>
                                 </imageView>
                             </subviews>
-                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="EFI-BM-sLt" secondAttribute="bottom" constant="15" id="2VQ-Pr-bPm"/>
                                 <constraint firstItem="gEU-Sk-SHv" firstAttribute="top" secondItem="7dl-Nh-NzG" secondAttribute="top" constant="10" id="9o1-VQ-JKT"/>
@@ -362,7 +359,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="7dl-Nh-NzG" firstAttribute="leading" secondItem="TbP-Ql-CvM" secondAttribute="leading" constant="25" id="7tb-3W-2ta"/>
                         <constraint firstAttribute="bottom" secondItem="7dl-Nh-NzG" secondAttribute="bottom" constant="15" id="8Qa-2v-arI"/>
@@ -377,7 +374,7 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7Z-De-Rhn">
                     <rect key="frame" x="0.0" y="415" width="375" height="15"/>
-                    <color key="backgroundColor" red="0.24313725489999999" green="0.24313725489999999" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.24313725489999999" green="0.24313725489999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="15" id="5wp-H6-CzB"/>
                     </constraints>
@@ -394,7 +391,7 @@
                                         <constraint firstAttribute="height" constant="20" id="6IT-AF-5EM"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
-                                    <color key="textColor" red="0.08235294118" green="0.69411764710000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="textColor" red="0.08235294118" green="0.69411764710000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropdown_up_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ryQ-vK-Shq">
@@ -405,7 +402,7 @@
                                     </constraints>
                                 </imageView>
                             </subviews>
-                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="fAJ-gb-3cT" secondAttribute="bottom" constant="25" id="2q9-hF-ZkD"/>
                                 <constraint firstItem="ryQ-vK-Shq" firstAttribute="top" secondItem="vRu-8h-ao7" secondAttribute="top" constant="28" id="8Kt-ry-PTO"/>
@@ -433,11 +430,11 @@
                                         <constraint firstAttribute="height" constant="20" id="k2f-0Q-OjO"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" red="0.08235294118" green="0.69411764710000001" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.08235294118" green="0.69411764710000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="0Ut-dT-I8A" firstAttribute="top" secondItem="y0M-LS-UoN" secondAttribute="top" constant="25" id="3qR-YL-rEa"/>
                                 <constraint firstAttribute="bottom" secondItem="0Ut-dT-I8A" secondAttribute="bottom" constant="25" id="4Az-DK-9Db"/>
@@ -469,7 +466,7 @@
                                 <constraint firstAttribute="height" constant="20" id="ZUr-d6-hhH"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="12"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -507,7 +504,7 @@
                                 <constraint firstAttribute="height" constant="20" id="iuU-Y6-OaL"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="12"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -545,7 +542,7 @@
                                 <constraint firstAttribute="width" constant="120" id="vwd-CG-0FA"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="12"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -572,7 +569,7 @@
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="mX8-iw-Sf6"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
-                    <color key="textColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="textColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KOZ-iy-Qr4">
@@ -587,7 +584,7 @@
                                         <constraint firstAttribute="height" constant="20" id="bYW-l9-wpu"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangle_orange" translatesAutoresizingMaskIntoConstraints="NO" id="zpg-uL-PEW">
@@ -598,7 +595,7 @@
                                     </constraints>
                                 </imageView>
                             </subviews>
-                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="zpg-uL-PEW" firstAttribute="top" secondItem="Hqx-ej-b7G" secondAttribute="top" constant="15" id="GIS-af-mkl"/>
                                 <constraint firstItem="LNS-lB-2VJ" firstAttribute="top" secondItem="Hqx-ej-b7G" secondAttribute="top" constant="10" id="Tf1-R4-va2"/>
@@ -618,7 +615,7 @@
                                         <constraint firstAttribute="height" constant="20" id="EAq-zf-z2A"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangle_orange" translatesAutoresizingMaskIntoConstraints="NO" id="9Mv-SO-fFD">
@@ -629,7 +626,7 @@
                                     </constraints>
                                 </imageView>
                             </subviews>
-                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="9MQ-Qn-hFc"/>
                                 <constraint firstAttribute="bottom" secondItem="PAN-H9-YNR" secondAttribute="bottom" constant="10" id="Aeq-sJ-vhC"/>
@@ -641,7 +638,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="Mqi-2f-cze" secondAttribute="trailing" constant="25" id="2EW-V5-BcZ"/>
                         <constraint firstItem="Mqi-2f-cze" firstAttribute="leading" secondItem="Hqx-ej-b7G" secondAttribute="leading" id="5wM-Sb-f7U"/>
@@ -656,7 +653,7 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ra8-hB-3cm">
                     <rect key="frame" x="0.0" y="822" width="375" height="15"/>
-                    <color key="backgroundColor" red="0.24313725489999999" green="0.24313725489999999" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.24313725489999999" green="0.24313725489999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="15" id="8ud-T8-bJh"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="jmv-8r-Pqs"/>
@@ -668,7 +665,7 @@
                         <constraint firstAttribute="height" constant="15" id="J08-BN-30F"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
-                    <color key="textColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="textColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vJ-7u-qwP">
@@ -685,7 +682,7 @@
                                 <constraint firstAttribute="height" constant="21" id="s9v-yQ-RFi"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We need you to select Sum Insured for You and added dependents." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vm6-mn-Le9">
@@ -694,11 +691,11 @@
                                 <constraint firstAttribute="height" constant="33" id="vmw-e2-13d"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="12"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="Vm6-mn-Le9" firstAttribute="top" secondItem="84U-AK-ADM" secondAttribute="bottom" constant="2" id="4TI-Pc-Aw1"/>
                         <constraint firstItem="Vm6-mn-Le9" firstAttribute="leading" secondItem="jTJ-sl-5Xl" secondAttribute="leading" id="5dR-sd-6wB"/>
@@ -710,7 +707,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="TbP-Ql-CvM" firstAttribute="top" secondItem="04I-lg-1LY" secondAttribute="bottom" constant="20" id="0ev-1N-2it"/>
                 <constraint firstItem="xUt-i3-aLO" firstAttribute="top" secondItem="2tM-dT-SbN" secondAttribute="bottom" constant="20" id="0f9-yT-h5c"/>

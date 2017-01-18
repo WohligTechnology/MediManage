@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="NO">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <development version="7000" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="Lato-Bold.ttf">
@@ -28,11 +28,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Patient" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nEE-j1-cK2">
-                    <frame key="frameInset" minX="30" minY="20" width="260" height="30"/>
+                    <rect key="frame" x="30" y="20" width="260" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="3Tp-tp-aWr"/>
                     </constraints>
@@ -40,12 +40,12 @@
                     <textInputTraits key="textInputTraits"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
-                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Hospital Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k6F-v5-3JB">
-                    <frame key="frameInset" minX="30" minY="70" width="260" height="30"/>
+                    <rect key="frame" x="30" y="70" width="260" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Kxj-rX-2oK"/>
                     </constraints>
@@ -53,12 +53,12 @@
                     <textInputTraits key="textInputTraits"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
-                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Hospital Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HjP-vt-657">
-                    <frame key="frameInset" minX="30" minY="120" width="260" height="30"/>
+                    <rect key="frame" x="30" y="120" width="260" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="tYQ-Ca-eGH"/>
                     </constraints>
@@ -66,12 +66,12 @@
                     <textInputTraits key="textInputTraits"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
-                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of Admission" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tta-nr-kQE">
-                    <frame key="frameInset" minX="30" minY="170" width="260" height="30"/>
+                    <rect key="frame" x="30" y="170" width="260" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="NWJ-8w-D1N"/>
                     </constraints>
@@ -79,12 +79,12 @@
                     <textInputTraits key="textInputTraits"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
-                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of Discharge" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bHa-F9-cgH">
-                    <frame key="frameInset" minX="30" minY="220" width="260" height="30"/>
+                    <rect key="frame" x="30" y="220" width="260" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="qO6-gm-s1Z"/>
                     </constraints>
@@ -92,12 +92,12 @@
                     <textInputTraits key="textInputTraits"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
-                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Diagnosis / Ailment" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AgW-J2-xop">
-                    <frame key="frameInset" minX="30" minY="270" width="260" height="30"/>
+                    <rect key="frame" x="30" y="270" width="260" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="HHh-8E-RMK"/>
                     </constraints>
@@ -105,12 +105,12 @@
                     <textInputTraits key="textInputTraits"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
-                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Claim Amount" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="80e-xn-Awm">
-                    <frame key="frameInset" minX="30" minY="320" width="260" height="30"/>
+                    <rect key="frame" x="30" y="320" width="260" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="uiC-nX-uqc"/>
                     </constraints>
@@ -118,26 +118,26 @@
                     <textInputTraits key="textInputTraits"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
-                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zfo-Wb-444">
-                    <frame key="frameInset" minX="30" minY="380" width="260" height="40"/>
-                    <color key="backgroundColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <rect key="frame" x="30" y="380" width="260" height="40"/>
+                    <color key="backgroundColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="fxd-TY-MZu"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
                     <state key="normal" title="SUBMIT">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
                         <action selector="documentChecklistCall:" destination="-1" eventType="touchUpInside" id="gCc-2y-Xn1"/>
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="bHa-F9-cgH" secondAttribute="trailing" constant="30" id="06p-dr-Za0"/>
                 <constraint firstItem="bHa-F9-cgH" firstAttribute="top" secondItem="tta-nr-kQE" secondAttribute="bottom" constant="20" id="2DU-UF-Zcy"/>

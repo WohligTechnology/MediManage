@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (3.4.0)
+  - Alamofire (3.5.1)
   - FirebaseAnalytics (3.4.4):
     - FirebaseCore (~> 3.4)
     - FirebaseInstanceID (~> 1.0)
@@ -26,7 +26,7 @@ PODS:
   - SwiftyJSON (2.4.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 3.4)
+  - Alamofire (~> 3.5)
   - Google/Analytics
   - QToasterSwift (~> 0.1)
   - SwiftHTTP (~> 1.0.3)
@@ -34,7 +34,7 @@ DEPENDENCIES:
   - SwiftyJSON (= 2.4.0)
 
 SPEC CHECKSUMS:
-  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
+  Alamofire: 0dfba1184a543e2aa160f4e39cac4e8aba48d223
   FirebaseAnalytics: 0533a00b681e08fd0b2cd0444b7ddf0ef9fd7a1a
   FirebaseCore: 5a885548bbc5f0c410b04f8e9ac9d73ff1221907
   FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
@@ -48,6 +48,6 @@ SPEC CHECKSUMS:
   SwiftSpinner: c6585a0ae5c67eb33e737695cce88f0262008cce
   SwiftyJSON: 96918c1bf505efa50c4f72957018dd3452090c9c
 
-PODFILE CHECKSUM: 5c65afd98f7f8b335e7d0393f0d5ceba694a050f
+PODFILE CHECKSUM: 79fc3bfa0505a8d3ddb16cbc47b3751d8e6f49a1
 
 COCOAPODS: 1.1.1

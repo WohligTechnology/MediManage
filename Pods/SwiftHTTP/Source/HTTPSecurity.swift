@@ -147,22 +147,22 @@ public class HTTPSecurity {
                 collect.append(SecCertificateCreateWithData(nil,cert)!)
             }
             SecTrustSetAnchorCertificates(trust,collect)
-            var result: SecTrustResultType = .Invalid
-            SecTrustEvaluate(trust,&result)
-            if result == SecTrustResultType.Unspecified || result == SecTrustResultType.Proceed {
-                var trustedCount = 0
-                for serverCert in serverCerts {
-                    for cert in certs {
-                        if cert == serverCert {
-                            trustedCount += 1
-                            break
-                        }
-                    }
-                }
-                if trustedCount == serverCerts.count {
-                    return true
-                }
-            }
+            //var result: SecTrustResultType = .Invalid
+            //SecTrustEvaluate(trust,&result)
+//            if result == SecTrustResultType.Unspecified || result == SecTrustResultType.Proceed {
+//                var trustedCount = 0
+//                for serverCert in serverCerts {
+//                    for cert in certs {
+//                        if cert == serverCert {
+//                            trustedCount += 1
+//                            break
+//                        }
+//                    }
+//                }
+//                if trustedCount == serverCerts.count {
+//                    return true
+//                }
+//            }
         }
         return false
     }
@@ -193,8 +193,8 @@ public class HTTPSecurity {
         var possibleTrust: SecTrust?
         SecTrustCreateWithCertificates(cert, policy, &possibleTrust)
         if let trust = possibleTrust {
-            var result: SecTrustResultType = .Invalid
-            SecTrustEvaluate(trust, &result)
+            //var result: SecTrustResultType = .Invalid
+            //SecTrustEvaluate(trust, &result)
             return SecTrustCopyPublicKey(trust)
         }
         return nil

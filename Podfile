@@ -1,6 +1,8 @@
 platform :ios, '9.0'
 
-target 'MediManage' do
+target 'mpowerplus' do
+    
+    project 'mpowerplus.xcodeproj'
 
     use_frameworks!
 

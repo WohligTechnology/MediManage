@@ -1055,6 +1055,7 @@
 					786DF9F51CD214F300DDE769 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = GQCVF92R6N;
+						ProvisioningStyle = Automatic;
 					};
 					786DFA091CD214F300DDE769 = {
 						CreatedOnToolsVersion = 7.3;
@@ -1480,8 +1481,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MediManage.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: MEDIMANAGE INSURANCE BROKING PRIVATE LIMITED (GQCVF92R6N)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MEDIMANAGE INSURANCE BROKING PRIVATE LIMITED (GQCVF92R6N)";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1492,6 +1494,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.medimanage.mpowerplus;
 				PRODUCT_NAME = MediManage;
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Medi Manage/MediManage-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1504,8 +1507,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MediManage.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: MEDIMANAGE INSURANCE BROKING PRIVATE LIMITED (GQCVF92R6N)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MEDIMANAGE INSURANCE BROKING PRIVATE LIMITED (GQCVF92R6N)";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1516,6 +1520,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.medimanage.mpowerplus;
 				PRODUCT_NAME = MediManage;
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Medi Manage/MediManage-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
