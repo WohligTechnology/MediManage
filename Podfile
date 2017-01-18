@@ -12,7 +12,8 @@ target 'MediManage' do
     pod 'SwiftValidator', :git => 'https://github.com/jpotts18/SwiftValidator.git', :tag => '4.0.0'
     pod 'Alamofire', '~> 3.4'
     pod 'SwiftSpinner'
-        pod 'QToasterSwift', '~> 0.1'
+    pod 'QToasterSwift', '~> 0.1'
+    pod 'Google/Analytics'
 
 
 end

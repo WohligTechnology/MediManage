@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import Google
 
 var gSignupController: UIViewController!
 
@@ -17,9 +18,10 @@ class SignupController: UIViewController {
         super.viewDidLoad()
         gSignupController = self
                 // Do any additional setup after loading the view.
-   
+    }
     
-    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)        
     }
 
     override func didReceiveMemoryWarning() {

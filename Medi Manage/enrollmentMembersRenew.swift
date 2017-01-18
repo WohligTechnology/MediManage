@@ -134,7 +134,15 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                 isAddMember = false
                 rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
                     dispatch_sync(dispatch_get_main_queue()){
-                        print(json)
+                        print("\(#file)\(#line)\(json)")
+                        
+                        // GOOGLE ANALYTICS
+                        let tracker = GAI.sharedInstance().defaultTracker
+                        let def = NSUserDefaults.standardUserDefaults()
+                        let user_mobile = def.stringForKey("user_mobile")
+                        let epoch = NSNumber(unsignedLongLong: UInt64(floor(NSDate().timeIntervalSince1970 * 1000)))
+                        let builder = GAIDictionaryBuilder.createEventWithCategory("EnrollmentDetails", action: "\(json["result"]["ClientName"])\("[")\(json["result"]["ClientId"])\("]")", label: user_mobile, value: epoch)
+                        tracker.send(builder.build() as [NSObject : AnyObject])
 
                         self.wholeJson = json["result"]
                         LoadingOverlay.shared.hideOverlayView()

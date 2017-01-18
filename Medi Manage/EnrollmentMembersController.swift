@@ -32,9 +32,26 @@ class EnrollmentMembersController: UIViewController {
         navshow()
         
     }
+    
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        
         selectedViewController = false
-
+        
+        if let default_tracker = GAI.sharedInstance().defaultTracker {
+            #if DEBUG
+                
+                print("default tracker")
+                
+            #endif
+        }
+        
+        // let tracker = GAI.sharedInstance().defaultTracker
+        let tracker = GAI.sharedInstance().trackerWithTrackingId("UA-84646919-1")
+        tracker.set(kGAIScreenName, value: "")
+        let builder = GAIDictionaryBuilder.createScreenView()
+        tracker.send(builder.build() as [NSObject : AnyObject])
+        
     }
     
     override func didReceiveMemoryWarning() {

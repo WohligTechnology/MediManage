@@ -115,6 +115,7 @@
 		C2A59E911CDDDF700093CFEC /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2A59E8C1CDDDF700093CFEC /* Lato-Hairline.ttf */; };
 		C2A59E921CDDDF700093CFEC /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2A59E8D1CDDDF700093CFEC /* Lato-Light.ttf */; };
 		C2A59E931CDDDF700093CFEC /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2A59E8E1CDDDF700093CFEC /* Lato-Regular.ttf */; };
+		C2A7293A1E23CD3100EA2127 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2A729391E23CD3100EA2127 /* GoogleService-Info.plist */; };
 		C2B4401F1D1BF5A4003EECDB /* EmployeeGroupDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B4401E1D1BF5A4003EECDB /* EmployeeGroupDTO.swift */; };
 		C2DCB0CE1D1CF497004FD787 /* ClaimDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DCB0CD1D1CF497004FD787 /* ClaimDTO.swift */; };
 		C2DCB0D01D1CFFDD004FD787 /* EmployeeChanageRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DCB0CF1D1CFFDD004FD787 /* EmployeeChanageRequestDTO.swift */; };
@@ -289,12 +290,14 @@
 		78B90BD81CE067950022FE7A /* enterOTP.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = enterOTP.xib; sourceTree = "<group>"; };
 		78B90BDA1CE067DA0022FE7A /* enterOTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enterOTP.swift; sourceTree = "<group>"; };
 		C2382C1F1D0AA43D00DC0073 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		C2745E2B1E23C5B30091DAFB /* MediManage-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MediManage-Bridging-Header.h"; sourceTree = "<group>"; };
 		C2A5845F1D262EAE00F6E0D5 /* EnumSets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumSets.swift; sourceTree = "<group>"; };
 		C2A59E8A1CDDDF700093CFEC /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		C2A59E8B1CDDDF700093CFEC /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		C2A59E8C1CDDDF700093CFEC /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Hairline.ttf"; sourceTree = "<group>"; };
 		C2A59E8D1CDDDF700093CFEC /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
 		C2A59E8E1CDDDF700093CFEC /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		C2A729391E23CD3100EA2127 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Medi Manage/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C2B4401E1D1BF5A4003EECDB /* EmployeeGroupDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeGroupDTO.swift; sourceTree = "<group>"; };
 		C2DCB0CD1D1CF497004FD787 /* ClaimDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClaimDTO.swift; sourceTree = "<group>"; };
 		C2DCB0CF1D1CFFDD004FD787 /* EmployeeChanageRequestDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeChanageRequestDTO.swift; sourceTree = "<group>"; };
@@ -576,6 +579,7 @@
 		718172B03362F6EE15D81110 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C2A729391E23CD3100EA2127 /* GoogleService-Info.plist */,
 				FCDE3A0E1D64B25800C73B9A /* CoreLocation.framework */,
 				C2382C1F1D0AA43D00DC0073 /* Alamofire.framework */,
 				43D6FF3F1CFEA991008361B2 /* SwiftyJSON.framework */,
@@ -667,6 +671,7 @@
 				786DFA271CD227F600DDE769 /* Helper */,
 				786DFA001CD214F300DDE769 /* Assets.xcassets */,
 				786DFA051CD214F300DDE769 /* Info.plist */,
+				C2745E2B1E23C5B30091DAFB /* MediManage-Bridging-Header.h */,
 			);
 			path = "Medi Manage";
 			sourceTree = "<group>";
@@ -998,7 +1003,7 @@
 				TargetAttributes = {
 					786DF9F51CD214F300DDE769 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = YVWVDTRG4B;
+						DevelopmentTeam = GQCVF92R6N;
 					};
 					786DFA091CD214F300DDE769 = {
 						CreatedOnToolsVersion = 7.3;
@@ -1048,6 +1053,7 @@
 				3A8774BC1CEC3783001DB41F /* preAuthorizationTwo.xib in Resources */,
 				C2A59E8F1CDDDF700093CFEC /* Lato-Black.ttf in Resources */,
 				783322B01CDB50D10015CE37 /* landing.xib in Resources */,
+				C2A7293A1E23CD3100EA2127 /* GoogleService-Info.plist in Resources */,
 				43D6FF431CFEE486008361B2 /* pickDate.xib in Resources */,
 				FCB801721D2BB62B00F9226F /* relationView.xib in Resources */,
 				3AEEB0241CE7515C0085EEF5 /* connect.xib in Resources */,
@@ -1148,7 +1154,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1326,7 +1332,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: MEDIMANAGE INSURANCE BROKING PRIVATE LIMITED (GQCVF92R6N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MEDIMANAGE INSURANCE BROKING PRIVATE LIMITED (GQCVF92R6N)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1372,7 +1379,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: MEDIMANAGE INSURANCE BROKING PRIVATE LIMITED (GQCVF92R6N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MEDIMANAGE INSURANCE BROKING PRIVATE LIMITED (GQCVF92R6N)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1399,16 +1407,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MEDIMANAGE INSURANCE BROKING PRIVATE LIMITED (GQCVF92R6N)";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
 				);
 				INFOPLIST_FILE = "Medi Manage/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-Manage";
+				PRODUCT_BUNDLE_IDENTIFIER = com.medimanage.mpowerplus;
 				PRODUCT_NAME = MediManage;
-				TARGETED_DEVICE_FAMILY = 1;
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Medi Manage/MediManage-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1418,15 +1429,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MEDIMANAGE INSURANCE BROKING PRIVATE LIMITED (GQCVF92R6N)";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
 				);
 				INFOPLIST_FILE = "Medi Manage/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-Manage";
+				PRODUCT_BUNDLE_IDENTIFIER = com.medimanage.mpowerplus;
 				PRODUCT_NAME = MediManage;
-				TARGETED_DEVICE_FAMILY = 1;
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Medi Manage/MediManage-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

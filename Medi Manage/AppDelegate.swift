@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import Google
 
 var Employee_API_KEY : String = ""
 var EmployeeFullName  : String = ""
@@ -96,7 +97,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        
+        setupGoogleAnalytics()
         
         self.window?.makeKeyAndVisible()
         
@@ -129,6 +130,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func setupGoogleAnalytics() {
+        // Configure tracker from GoogleService-Info.plist.
+        var configureError: NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        assert(configureError == nil, "Error configuring Google services: \(configureError)")
+        
+        // Optional: configure GAI options.
+        guard let gai = GAI.sharedInstance() else {
+            assert(false, "Google Analytics not configured correctly")
+            return
+        }
+        gai.trackUncaughtExceptions = true // report uncaught exceptions
+//        gai.logger.logLevel = GAILogLevel.verbose  // remove before app release
     }
     
 

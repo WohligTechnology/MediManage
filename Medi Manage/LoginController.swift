@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Google
 
 var gLoginController: UIViewController!
 
@@ -17,6 +18,10 @@ class LoginController: UIViewController {
         
         gLoginController = self
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)        
     }
 
     override func didReceiveMemoryWarning() {

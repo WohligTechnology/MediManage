@@ -5,6 +5,9 @@
       location = "group:MediManage.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Medi Manage/GoogleService-Info.plist">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

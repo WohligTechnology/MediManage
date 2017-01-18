@@ -69,6 +69,8 @@ class login: UIView, UITextFieldDelegate {
     }
     
     @IBAction func onLogin(sender: AnyObject) {
+        let def = NSUserDefaults.standardUserDefaults()
+        def.setObject(mobile.text, forKey: "user_mobile")
         if(mobile.text == "" || password.text == "")
         {
             Popups.SharedInstance.ShowPopup("Login", message: "Both Fields are Required")
@@ -102,10 +104,15 @@ class login: UIView, UITextFieldDelegate {
                         Employee_API_KEY = String(json["access_token"])
                         let def = NSUserDefaults.standardUserDefaults()
                         def.setObject(Employee_API_KEY, forKey: "access_token")
-                        let dialog = UIAlertController(title: "Welcome", message: "Login Successfull!" ,preferredStyle: UIAlertControllerStyle.Alert)
+                        let dialog = UIAlertController(title: "Welcome", message: "Login Successfull!", preferredStyle: UIAlertControllerStyle.Alert)
                         
                         dialog.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Destructive, handler:{
                             action in
+                            
+                            let tracker = GAI.sharedInstance().defaultTracker
+                            let epoch = NSNumber(unsignedLongLong: UInt64(floor(NSDate().timeIntervalSince1970 * 1000)))
+                            let builder = GAIDictionaryBuilder.createEventWithCategory("SignIn", action: "LoginSuccess", label: self.mobile.text, value: epoch)
+                            tracker.send(builder.build() as [NSObject : AnyObject])
                             
                             //let vc = gLoginController.storyboard?.instantiateViewControllerWithIdentifier("EnrollmentMember") as! EnrollmentMembersController
                             let vc = gLoginController.storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
