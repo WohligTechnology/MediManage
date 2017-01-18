@@ -116,6 +116,8 @@
 		9BC688661DD48A02004C2915 /* preAuthOneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC688651DD48A02004C2915 /* preAuthOneController.swift */; };
 		9BF4AD791DD2FF5A00925CA6 /* MyClaimController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF4AD781DD2FF5A00925CA6 /* MyClaimController.swift */; };
 		C2382C201D0AA43D00DC0073 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2382C1F1D0AA43D00DC0073 /* Alamofire.framework */; };
+		C28A40821E2F7FE1002C49E5 /* singleEvent.xib in Resources */ = {isa = PBXBuildFile; fileRef = C28A40811E2F7FE1002C49E5 /* singleEvent.xib */; };
+		C28A40841E2F8239002C49E5 /* singleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28A40831E2F8239002C49E5 /* singleEvent.swift */; };
 		C2A584601D262EAE00F6E0D5 /* EnumSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A5845F1D262EAE00F6E0D5 /* EnumSets.swift */; };
 		C2A59E8F1CDDDF700093CFEC /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2A59E8A1CDDDF700093CFEC /* Lato-Black.ttf */; };
 		C2A59E901CDDDF700093CFEC /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2A59E8B1CDDDF700093CFEC /* Lato-Bold.ttf */; };
@@ -315,6 +317,8 @@
 		B0D9A43CDBD987144230F52C /* Pods_mpowerplus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mpowerplus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2382C1F1D0AA43D00DC0073 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		C2745E2B1E23C5B30091DAFB /* MediManage-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MediManage-Bridging-Header.h"; sourceTree = "<group>"; };
+		C28A40811E2F7FE1002C49E5 /* singleEvent.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = singleEvent.xib; sourceTree = "<group>"; };
+		C28A40831E2F8239002C49E5 /* singleEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = singleEvent.swift; sourceTree = "<group>"; };
 		C2A5845F1D262EAE00F6E0D5 /* EnumSets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumSets.swift; sourceTree = "<group>"; };
 		C2A59E8A1CDDDF700093CFEC /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		C2A59E8B1CDDDF700093CFEC /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
@@ -780,6 +784,7 @@
 		786DFA291CD2282700DDE769 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C28A40801E2F7FB2002C49E5 /* singleEvent */,
 				FC32D4521D4B822500918852 /* member */,
 				43D6FF411CFEE44C008361B2 /* pickDate */,
 				3A74A7CE1CF41F6100592B3E /* tutorial */,
@@ -874,6 +879,15 @@
 				78B90BD81CE067950022FE7A /* enterOTP.xib */,
 			);
 			name = enterOTP;
+			sourceTree = "<group>";
+		};
+		C28A40801E2F7FB2002C49E5 /* singleEvent */ = {
+			isa = PBXGroup;
+			children = (
+				C28A40811E2F7FE1002C49E5 /* singleEvent.xib */,
+				C28A40831E2F8239002C49E5 /* singleEvent.swift */,
+			);
+			name = singleEvent;
 			sourceTree = "<group>";
 		};
 		C2B4401D1D1BF4B0003EECDB /* DTO */ = {
@@ -1131,6 +1145,7 @@
 				FCC1C8061D5861DD005B5F30 /* newContact.xib in Resources */,
 				786DFA041CD214F300DDE769 /* LaunchScreen.storyboard in Resources */,
 				78B90BD11CE05C7C0022FE7A /* retrieveLogin.xib in Resources */,
+				C28A40821E2F7FE1002C49E5 /* singleEvent.xib in Resources */,
 				3AEEB01F1CE74D820085EEF5 /* helpDeskQuery.xib in Resources */,
 				3AFE389C1CE4932D0062A497 /* insuredMembersAll.xib in Resources */,
 				786DFA011CD214F300DDE769 /* Assets.xcassets in Resources */,
@@ -1286,6 +1301,7 @@
 				3AEEB0211CE7504B0085EEF5 /* helpDeskQuery.swift in Sources */,
 				C2DCB0DC1D1D1CDB004FD787 /* ConnectDetailsDTO.swift in Sources */,
 				9B88B8BF1DD724AB005CA455 /* preAuthTwoController.swift in Sources */,
+				C28A40841E2F8239002C49E5 /* singleEvent.swift in Sources */,
 				FC1D8AF81D783A250020FAFB /* ForgotPasswordOTPController.swift in Sources */,
 				3A677B6B1CE4B90C003B8C2B /* RetrieveLoginController.swift in Sources */,
 				3A677B651CE4B2D3003B8C2B /* LoginController.swift in Sources */,
