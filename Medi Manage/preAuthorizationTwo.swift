@@ -96,13 +96,13 @@ class preAuthorizationTwo: UIView {
 class drawDottedLine: UIView {
     override func drawRect(rect: CGRect) {
         let context = UIGraphicsGetCurrentContext() //Initializing the line
-        CGContextSetLineWidth(context, 5.0) //Set the points of the line
-        CGContextSetStrokeColorWithColor(context, mainBlueColor.CGColor) //set colour
-        CGContextSetLineDash(context, 0, [5.5], 1) // if equal lengths: [7.5 pts colored, 7.5 pts empty] else: [1,2] //Set Line dash
-        CGContextSetLineCap(context, CGLineCap(rawValue: 500)!) //line border radius
-        CGContextMoveToPoint(context, 0, 0) //initial point and end point on the x an y axes
-        CGContextAddLineToPoint(context, 0, 1000)
-        CGContextStrokePath(context) //To actually make the line
+        CGContextSetLineWidth(context!, 5.0) //Set the points of the line
+        CGContextSetStrokeColorWithColor(context!, mainBlueColor.CGColor) //set colour
+        CGContextSetLineDash(context!, 0, [5.5], 1) // if equal lengths: [7.5 pts colored, 7.5 pts empty] else: [1,2] //Set Line dash
+        CGContextSetLineCap(context!, CGLineCap(rawValue: 500)!) //line border radius
+        CGContextMoveToPoint(context!, 0, 0) //initial point and end point on the x an y axes
+        CGContextAddLineToPoint(context!, 0, 1000)
+        CGContextStrokePath(context!) //To actually make the line
     }
     
 }

@@ -54,25 +54,16 @@ class enterOTP: UIView, UITextFieldDelegate {
     }
     
     @IBAction func resendOTP(sender: AnyObject) {
-        if OTPStatus == 1 {
-            rest.ClientSendOTP(forgotMobileNumber, password: profilePassword, completion: {(json:JSON) -> () in
-                if json["state"] {
-                    Popups.SharedInstance.ShowPopup("", message: "OTP is send to your Mobile Number")
-
-                }
-                print(json)
-            })
-        }else{
-            rest.SendOtp(forgotMobileNumber, countrycode: forgotCountryCode, completion: {(json:JSON) -> () in
-                if json["state"] {
-                    Popups.SharedInstance.ShowPopup("", message: "OTP is send to your Mobile Number")
-
-                }
-                print("resend otp")
-                print(json)
-            })
-        }
         
+        rest.ClientSendOTP(forgotMobileNumber, password: profilePassword, completion: {(json:JSON) -> () in
+            dispatch_sync(dispatch_get_main_queue()){
+                if json["state"] {
+                    Popups.SharedInstance.ShowPopup("", message: "OTP is send to your Mobile Number")
+                    
+                }
+                print(json)
+            }
+        })
     }
     
     @IBAction func enrollmentmembersCall(sender: AnyObject) {
@@ -81,25 +72,20 @@ class enterOTP: UIView, UITextFieldDelegate {
             dispatch_sync(dispatch_get_main_queue()){
                 LoadingOverlay.shared.hideOverlayView()
                 if json["state"] {
-                    if OTPStatus == 1 {
-                        isVarifiedToEdit = true
+                        profileState = "Submit"
                         
-                        gEnterOTPController.performSegueWithIdentifier("otpdonetoprofile", sender: nil)
-                    }else{
-                        let vc = gEnterOTPController.storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
-                        gEnterOTPController.presentViewController(vc, animated: true, completion: nil)
-                    }
+                    let vc = gEnterOTPController.storyboard?.instantiateViewControllerWithIdentifier("completeProfile") as! CompleteProfileController
+                    
+                    gEnterOTPController.presentViewController(vc, animated: true, completion: nil)
                 }
             }
         })
     }
     
     @IBAction func otpBack(sender: AnyObject) {
-        if OTPStatus == 1 {
-            
-            gEnterOTPController.performSegueWithIdentifier("otpdonetoprofile", sender: nil)
-        }else if OTPStatus == 2{
-            gEnterOTPController.performSegueWithIdentifier("otpback", sender: nil)
-        }
+        let vc = gEnterOTPController.storyboard?.instantiateViewControllerWithIdentifier("retrieveLogin") as! RetrieveLoginController
+        
+        gEnterOTPController.presentViewController(vc, animated: true, completion: nil)
+
     }
 }

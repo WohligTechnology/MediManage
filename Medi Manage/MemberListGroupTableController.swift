@@ -12,6 +12,7 @@ import SwiftyJSON
 var gMemberListGroupTableController: UIViewController!
 var gListTableView: UITableView!
 var cnt = 0
+var activeIndex = 0;
 
 class MemberListGroupTableController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -98,9 +99,13 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
         
         tableViewCell.sumInsured.text = members[indexPath.row]["SelectedSumInsuredValue"].stringValue
         tableViewCell.topUp.text = members[indexPath.row]["SelectedTopupValue"].stringValue
+        
         if !result["IsInEnrollmentPeriod"] {
             tableViewCell.sumInsured.enabled = false
             tableViewCell.topUp.enabled = false
+            if members[indexPath.row]["SelectedTopupValue"].stringValue == "0" {
+                tableViewCell.topupView.hidden = true
+            }
         }
         
     }
@@ -123,7 +128,7 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
     
     
     @IBAction func submitSumInsuredAndTopUp(sender: AnyObject) {
-//        var insuredJSON : JSON = ["PlanComposition":"","GroupComposition":"","SumInsuredValue":0,"TopupSumInsuredValue":0,"GroupType":0,"RelationType":""]
+        LoadingOverlay.shared.showOverlay(self.view)
         var SI : JSON = []
         var TU : JSON = []
         for x in 0..<self.members.count {
@@ -142,15 +147,20 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
         }
         print(SI)
         rest.ChangeSI(SI, completion: {(json:JSON) -> ()in
+            dispatch_sync(dispatch_get_main_queue(),{
             if json == 401 {
                 self.redirectToHome()
             }else{
             rest.ChangeTU(TU, completion: {(json:JSON) -> ()in
+                dispatch_sync(dispatch_get_main_queue(),{
+                LoadingOverlay.shared.hideOverlayView()
                 if json["state"] {
                 self.performSegueWithIdentifier("toPremiumWay", sender: self)
                 }
+                })
             })
         }
+            })
         })
         
         
@@ -219,6 +229,13 @@ extension MemberListGroupTableController: UICollectionViewDelegate, UICollection
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! membercollectioncell
+       
+        if(indexPath.row == activeIndex) {
+            cell.backgroundColor = UIColor.darkGrayColor()
+        }
+        else {
+            cell.backgroundColor = mainBlueColor
+        }
         
         cell.namelbl.text = members[collectionView.tag]["Members"][indexPath.row]["RelationType"].stringValue
         //        cell.namelbl.text = String(collectionView.tag)
@@ -235,9 +252,11 @@ extension MemberListGroupTableController: UICollectionViewDelegate, UICollection
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-//        collectionView.reloadData()
-//        let cello = collectionView.cellForItemAtIndexPath(indexPath)
-//        cello!.backgroundColor = UIColor(red: 102/256, green: 255/256, blue: 255/256, alpha: 0.66)
+        
+        
+        activeIndex  = indexPath.row;
+        
+        collectionView.reloadData()
         
         let tableindexpath = NSIndexPath(forRow: collectionView.tag, inSection: 0)
         
@@ -272,11 +291,20 @@ class MemberListGroupCell: UITableViewCell {
     @IBOutlet weak var topUp: UITextField!
     @IBOutlet weak var sumInsured: UITextField!
     @IBOutlet weak var hiddenindex: UILabel!
+    @IBOutlet weak var topupView: UIView!
     
     var insured = UIPickerView()
     var topup = UIPickerView()
     var selectedindex = 0;
     
+    @IBAction func editDetails(sender: AnyObject) {
+        isAddMember = true
+        let vc = gMemberListGroupTableController.storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
+        
+        gMemberListGroupTableController.presentViewController(vc, animated: true, completion: nil)
+        
+
+    }
 }
 
 extension MemberListGroupCell {
@@ -334,5 +362,12 @@ extension MemberListGroupCell {
 class membercollectioncell: UICollectionViewCell {
     
     @IBOutlet weak var namelbl: UILabel!
+    func active() {
+        self.backgroundColor = mainBlueColor;
+        
+    }
+    func deactive() {
+        self.backgroundColor = UIColor.blackColor();
+    }
     
 }

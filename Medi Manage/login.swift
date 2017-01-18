@@ -12,7 +12,7 @@ import Alamofire
 
 class login: UIView, UITextFieldDelegate {
     
-    var TestId = "Test7_19901122"
+    var TestId = "TestBetsol2"
     //mobile no 7208372744
     var TestPWD = "123456"
     
@@ -40,8 +40,8 @@ class login: UIView, UITextFieldDelegate {
         loadViewFromNib ()
         mobile.delegate = self
         password.delegate = self
-        mobile.text = TestId
-        password.text = TestPWD
+//        mobile.text = TestId
+//        password.text = TestPWD
     }
     
     func addPadding(width: CGFloat, myView: UITextField) {
@@ -92,8 +92,8 @@ class login: UIView, UITextFieldDelegate {
                         
                         dialog.addAction(UIAlertAction(title: "Try Again!!", style: UIAlertActionStyle.Destructive, handler:{
                             action in
-                            self.mobile.text = ""
-                            self.password.text = ""
+//                            self.mobile.text = ""
+//                            self.password.text = ""
                             
                         }))
                         gLoginController.presentViewController(dialog, animated: true, completion: nil)

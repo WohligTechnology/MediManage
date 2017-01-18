@@ -1,6 +1,0 @@
-framework module QToasterSwift {
-  umbrella header "QToasterSwift-umbrella.h"
-
-  export *
-  module * { export * }
-}

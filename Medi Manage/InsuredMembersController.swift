@@ -56,7 +56,7 @@ class InsuredMembersController: UIViewController {
 //        UIApplication.sharedApplication().openURL(NSURL(string: "http://testcorp.medimanage.com/api/Files/EcardsDownloads/TestMastek1_25072016124521.pdf")!)
 
         
-        rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> () in
+        rest.findEmployeeProfile("Enrollments/DashboardDetails",completion: {(json:JSON) -> () in
             print(json)
             dispatch_async(dispatch_get_main_queue(), {
                 if json == 401 {
@@ -66,9 +66,9 @@ class InsuredMembersController: UIViewController {
                     let groupView = insuredMembersAll(frame: CGRect(x: 0, y: 0, width: widthGlo + 5 , height: 120))
                     self.verticalLayout.addSubview(groupView);
                     
-                    groupView.totalSum.text = json["result"]["Groups"][x]["NetAmount"].stringValue;
-                    groupView.topupSum.text = json["result"]["Groups"][x]["TopupAmount"].stringValue;
-                    groupView.balance.text = json["result"]["Groups"][x]["TopupNetAmount"].stringValue;
+                    groupView.totalSum.text = json["result"]["Groups"][x]["TotalSI"].stringValue;
+                    groupView.topupSum.text = json["result"]["Groups"][x]["SelectedTopup"].stringValue;
+                    groupView.balance.text = json["result"]["Groups"][x]["SelSI"].stringValue;
                     
                     for y in 0..<json["result"]["Groups"][x]["Members"].count {
                         let membersView = member(frame: CGRect(x: 0, y: 0, width: widthGlo, height: 220))
@@ -92,6 +92,8 @@ class InsuredMembersController: UIViewController {
                         print(self.verticalLayout.frame.height);
                     }
                 }
+//                    let groupView = ButtonView(frame: CGRect(x: 0, y: 0, width: widthGlo + 5 , height: 50))
+//                    self.verticalLayout.addSubview(groupView);
                     self.verticalLayout.layoutSubviews()
 
                     self.scrollView.contentSize = CGSize(width: self.verticalLayout.frame.width, height: self.verticalLayout.frame.height)

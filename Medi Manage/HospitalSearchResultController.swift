@@ -92,11 +92,15 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
     func loadTable() {
         rest.Hospital(hospitalSearchText, completion: {(json:JSON) -> () in
             dispatch_async(dispatch_get_main_queue(),{
+                LoadingOverlay.shared.hideOverlayView()
+
                 print(json)
                 if json == 401 {
                     self.redirectToHome()
+                }else if json == 1{
+                    Popups.SharedInstance.ShowPopup("Hospital Search", message: "Some Error Occured.")
+
                 }else{
-                    LoadingOverlay.shared.hideOverlayView()
                     self.hospitals = json["result"]["Results"]
                     self.hoscount.text = json["result"]["Count"].stringValue
                     if json["result"]["Count"] == 0{
@@ -194,13 +198,13 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
         
         let line = UIView(frame: CGRectMake(20, 0, 1, cell.hsCallView.frame.size.height))
         line.backgroundColor = UIColor.lightGrayColor()
-        cell.hsCallView.addSubview(line)
+        //cell.hsCallView.addSubview(line)
         let line2 = UIView(frame: CGRectMake(145, 0, 1, cell.hsCallView.frame.size.height))
         line2.backgroundColor = UIColor.lightGrayColor()
-        cell.hsCallView.addSubview(line2)
+        //cell.hsCallView.addSubview(line2)
         let line3 = UIView(frame: CGRectMake(280, 0, 1, cell.hsCallView.frame.size.height))
         line3.backgroundColor = UIColor.lightGrayColor()
-        cell.hsCallView.addSubview(line3)
+        //cell.hsCallView.addSubview(line3)
         
         return cell
     }
@@ -214,16 +218,17 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
     
     func directions(sender: UITapGestureRecognizer) {
         locationManager.startUpdatingLocation()
+        print(hospitals[sender.view!.tag]["Address"].stringValue)
         rest.getLocation(hospitals[sender.view!.tag]["Address"].stringValue, completion: {(json:JSON) ->() in
             dispatch_async(dispatch_get_main_queue(),{
-                print(json["results"][0]["geometry"])
+                print(json["results"][0]["geometry"]["location"])
                 
                 let saddrlat = self.lat
                 let saddrlng = self.lng
                 let daddrlat = "\(json["results"][0]["geometry"]["location"]["lat"])"
                 let daddrlng = "\(json["results"][0]["geometry"]["location"]["lng"])"
                 
-                let urlstring = "http://maps.google.com/maps?saddr=\(saddrlat),\(saddrlng)&daddr=\(daddrlat),\(daddrlng)"
+                let urlstring = "http://maps.google.com/maps?saddr=\(saddrlat),\(saddrlng)&daddr=\(self.hospitals[sender.view!.tag]["Address"].stringValue)"
                 print(urlstring)
                 if let url = NSURL(string:urlstring.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!)
                 {
@@ -265,15 +270,15 @@ class drawLine: UIView {
     override func drawRect(rect: CGRect) {
         
         let context = UIGraphicsGetCurrentContext()
-        CGContextSetLineWidth(context, 2.0)
-        CGContextSetStrokeColorWithColor(context, UIColor(red: 57/255, green: 66/255, blue: 106/255, alpha: 255/255).CGColor)
+        CGContextSetLineWidth(context!, 2.0)
+        CGContextSetStrokeColorWithColor(context!, UIColor(red: 57/255, green: 66/255, blue: 106/255, alpha: 255/255).CGColor)
         //CGContextSetLineDash(context, 0, [7.5], 1)
         //CGContextSetLineCap(context, kCGLineCapRound)
         
-        CGContextMoveToPoint(context, 0, 0)
-        CGContextAddLineToPoint(context, 0, 45)
+        CGContextMoveToPoint(context!, 0, 0)
+        CGContextAddLineToPoint(context!, 0, 45)
         
-        CGContextStrokePath(context)
+        CGContextStrokePath(context!)
         
     }
 }

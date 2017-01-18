@@ -10,21 +10,21 @@ import SwiftyJSON
 
 class enrollmentMembersRenew: UIView, UITextFieldDelegate{
     
-    var memberjson : JSON = [["ID":0,"Gender":2,"SystemIdentifier":"S","RelationType":"Wife"],
-                             ["ID":0,"Gender":1,"SystemIdentifier":"C","RelationType":"Son"],
-                             ["ID":0,"Gender":2,"SystemIdentifier":"C","RelationType":"Daughter"],
-                             ["ID":0,"Gender":1,"SystemIdentifier":"P","RelationType":"Father"],
-                             ["ID":0,"Gender":2,"SystemIdentifier":"P","RelationType":"Mother"],
-                             ["ID":0,"Gender":1,"SystemIdentifier":"I","RelationType":"Father in law"],
-                             ["ID":0,"Gender":2,"SystemIdentifier":"I","RelationType":"Mother in law"],]
+//    var memberjson : JSON = [["ID":0,"Gender":2,"SystemIdentifier":"S","RelationType":"Wife"],
+//                             ["ID":0,"Gender":1,"SystemIdentifier":"C","RelationType":"Son"],
+//                             ["ID":0,"Gender":2,"SystemIdentifier":"C","RelationType":"Daughter"],
+//                             ["ID":0,"Gender":1,"SystemIdentifier":"P","RelationType":"Father"],
+//                             ["ID":0,"Gender":2,"SystemIdentifier":"P","RelationType":"Mother"],
+//                             ["ID":0,"Gender":1,"SystemIdentifier":"I","RelationType":"Father in law"],
+//                             ["ID":0,"Gender":2,"SystemIdentifier":"I","RelationType":"Mother in law"],]
     
-    //    var memberjson : JSON = [["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":2,"SystemIdentifier":"S","RelationType":"Wife"],
-    //                             ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":1,"SystemIdentifier":"C","RelationType":"Son"],
-    //                             ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":2,"SystemIdentifier":"C","RelationType":"Daughter"],
-    //                             ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":1,"SystemIdentifier":"P","RelationType":"Father"],
-    //                             ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":2,"SystemIdentifier":"P","RelationType":"Mother"],
-    //                             ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":1,"SystemIdentifier":"I","RelationType":"Father in law"],
-    //                             ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":2,"SystemIdentifier":"I","RelationType":"Mother in law"],]
+        var memberjson : JSON = [["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"null","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":2,"SystemIdentifier":"S","RelationType":"Wife"],
+                                 ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"null","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":1,"SystemIdentifier":"C","RelationType":"Son"],
+                                 ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"null","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":2,"SystemIdentifier":"C","RelationType":"Daughter"],
+                                 ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"2016-03-02T00:00:00","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"null","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":1,"SystemIdentifier":"P","RelationType":"Father"],
+                                 ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"null","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":2,"SystemIdentifier":"P","RelationType":"Mother"],
+                                 ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"null","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":1,"SystemIdentifier":"I","RelationType":"Father in law"],
+                                 ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"null","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":2,"SystemIdentifier":"I","RelationType":"Mother in law"],]
     
     var newJsonSun : JSON = ["ID":0,"LastName":"","Gender":"1","SystemIdentifier":"C","RelationType":"Son"]
     var newJsonDaughter : JSON = ["ID":0,"LastName":"","Gender":"2","SystemIdentifier":"C","RelationType":"Daughter"]
@@ -106,6 +106,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         
         //HIDE LEFT ARROW INITIALLY
         self.leftArrow.hidden = true
+//        self.rightArrow.hidden = true
         
         // TOOL BAR FOR KEYBOARD
         let toolBar = UIToolbar()
@@ -120,6 +121,14 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         
         toolBar.setItems([spaceButton, doneButton], animated: false)
         toolBar.userInteractionEnabled = true
+        
+        leftFirstName.delegate = self
+        leftLastName.delegate = self
+        leftMiddelName.delegate = self
+        
+        rightFirstName.delegate = self
+        rightMiddelName.delegate = self
+        rightLastName.delegate = self
 
         
         // CHECK IF ENROLLMENT PERIOD IS TRUE THEN REDIRECT TO INSURED MEMBER PAGE
@@ -127,7 +136,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
             if json == 401 {
                 gEnrollmentMembersController.redirectToHome()
             }else{
-            if json && isAddMember {
+            if json && !isAddMember {
                 gEnrollmentMembersController.performSegueWithIdentifier("isEnrolledTrue", sender: nil)
             }else{
                 
@@ -145,6 +154,16 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                         tracker.send(builder.build() as [NSObject : AnyObject])
 
                         self.wholeJson = json["result"]
+                        if json["result"]["MaritalStatus"] == 1{
+                            self.memberjson = [["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"2016-03-02T00:00:00","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"null","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":1,"SystemIdentifier":"P","RelationType":"Father"],
+                                ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"null","Exist":"","AddedAt":0,"Status":0,"Tax":0,"Gender":2,"SystemIdentifier":"P","RelationType":"Mother"],["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"null","Exist":"","AddedAt":1,"Status":1,"Tax":0,"Gender":1,"SystemIdentifier":"I","RelationType":"Father in law"],
+                                ["ID":0,"FirstName":"","MiddleName":"","LastName":"","DateOfBirth":"","DateOfRelation":"","Amount":0,"NetAmount":0,"TopupAmount":0,"TopupTax":0,"TopupNetAmount":0,"UHID":"null","Exist":"","AddedAt":1,"Status":1,"Tax":0,"Gender":2,"SystemIdentifier":"I","RelationType":"Mother in law"],]
+                        }else{
+                            if json["result"]["Groups"][0]["Members"][0]["Gender"] == 2{
+                                self.memberjson[0]["RelationType"] = "Husband"
+                            }
+                            
+                        }
                         LoadingOverlay.shared.hideOverlayView()
                         for x in 0..<self.memberjson.count{
                             for y in 0..<json["result"]["Groups"].count{
@@ -301,7 +320,8 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
     }
     
     @IBAction func rightAddMoreClick(sender: AnyObject) {
-        if checkAllowedMembers() {
+        
+        if checkAllowedEach(page+1) {
             updateJson()
             addMemberToJson(self.memberjson[page+1]["SystemIdentifier"].stringValue, relation: self.memberjson[page+1]["RelationType"].stringValue)
             rightActionFunction()
@@ -365,7 +385,9 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
     func checkAllowedMembers() -> Bool {
         countMember()
         var check = false
-        if self.calculatedPlanMember["C"].int64Value >= self.prePlanMembers["C"].int64Value {
+        print(self.calculatedPlanMember)
+        print(self.prePlanMembers)
+        if self.calculatedPlanMember["C"].int64Value > self.prePlanMembers["C"].int64Value {
             check = false
             msgAllowed = "You can Add Maximum  \(self.prePlanMembers["C"])  Childrens."
         }else if self.calculatedPlanMember["P"].int64Value > self.prePlanMembers["P"].int64Value {
@@ -377,6 +399,55 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         }else{
             check = true
         }
+        return check
+    }
+    
+    func checkAllowedEach(onPage:Int) -> Bool {
+        
+        countMember()
+        var check = false
+        
+        switch memberjson[onPage]["SystemIdentifier"] {
+        case "C":
+            if self.calculatedPlanMember["C"].int64Value >= self.prePlanMembers["C"].int64Value {
+                check = false
+                msgAllowed = "You can Add Maximum  \(self.prePlanMembers["C"])  Childrens."
+            }else{
+                check = true
+            }
+            break
+        case "P":
+            if self.calculatedPlanMember["P"].int64Value >= self.prePlanMembers["P"].int64Value {
+                check = false
+                msgAllowed = "You can Add Maximum  \(self.prePlanMembers["P"])  Parents."
+            }else{
+                check = true
+            }
+            break
+        case "I":
+            if self.calculatedPlanMember["I"].int64Value >= self.prePlanMembers["I"].int64Value {
+                check = false
+                msgAllowed = "You can Add Maximum  \(self.prePlanMembers["I"])  Parents In Law."
+            }else{
+                check = true
+            }
+            break
+        default:
+            check = true
+        }
+        
+//        var calChil = self.calculatedPlanMember["C"].int64Value
+//        if self.calculatedPlanMember["C"].int64Value == 0 {
+//            calChil = 2
+//        }
+//        print(calChil)
+//        print(self.prePlanMembers["C"].int64Value)
+//        if calChil >= self.prePlanMembers["C"].int64Value {
+//            check = false
+//            msgAllowed = "You can Add Maximum  \(self.prePlanMembers["C"])  Childrens."
+//        }else{
+//            check = true
+//        }
         return check
     }
     
@@ -407,7 +478,12 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
     
     func datePickerValueChanged(sender: UIDatePicker) {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-mm-dd"
+        dateFormatter.dateFormat = "ddMMyyyy"
+//        var dateDob = ""
+
+//        dateDob = dateFormatter.stringFromDate(sender.date)
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
         
         let dateToSave = dateFormatter.stringFromDate(sender.date)
         switch datetype {
@@ -429,7 +505,15 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         
     }
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        
+        leftFirstName.resignFirstResponder()
+        leftMiddelName.resignFirstResponder()
+        leftLastName.resignFirstResponder()
+        
+        rightFirstName.resignFirstResponder()
+        rightMiddelName.resignFirstResponder()
+        rightLastName.resignFirstResponder()
+        
         return true
     }
     
@@ -575,9 +659,14 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         if !freezeright {
             
             if self.rightTick.hidden {
-                self.rightTick.hidden = false
-                memberjson[page+1]["ActiveState"] = true
-                editRightMember(true)
+                if checkAllowedEach(page+1) {
+                    self.rightTick.hidden = false
+                    memberjson[page+1]["ActiveState"] = true
+                    editRightMember(true)
+                }else{
+                    Popups.SharedInstance.ShowPopup("Allowed Members", message: msgAllowed)
+                }
+                
                 
             }else{
                 self.rightTick.hidden = true
@@ -592,9 +681,14 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         if !freezeleft {
             
             if self.leftTick.hidden {
-                self.leftTick.hidden = false
-                memberjson[page]["ActiveState"] = true
-                editLeftMember(true)
+                if checkAllowedEach(page) {
+                    self.leftTick.hidden = false
+                    memberjson[page]["ActiveState"] = true
+                    editLeftMember(true)
+                }else{
+                    Popups.SharedInstance.ShowPopup("Allowed Members", message: msgAllowed)
+                }
+                
             }else{
                 self.leftTick.hidden = true
                 memberjson[page]["ActiveState"] = false
@@ -604,6 +698,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
     }
     
     func assignMembers() {
+        print("in assignment members")
         assignText()
     }
     
@@ -613,6 +708,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
             let txtfield = self.enrollmentMembersMainView.viewWithTag(x) as? UITextField
             txtfield?.enabled = state
         }
+//        rightAddMore.enabled = state
     }
     
     func editRightMember(state : Bool) {
@@ -625,6 +721,11 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
     
     func assignText() {
         switch (self.memberjson[page]["RelationType"].stringValue) {
+        case "Husband":
+            self.leftIcon.image = UIImage(named: "son_icon")
+            self.leftDOM.hidden = false
+            self.leftAddMore.hidden = true
+            break
         case "Wife":
             self.leftIcon.image = UIImage(named: "wife_icon")
             self.leftDOM.hidden = false
@@ -675,11 +776,11 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         if self.memberjson[page]["ActiveState"] {
             editLeftMember(true)
             self.leftTick.hidden = false
-            checkEP()
+//            checkEP()
         }else{
             editLeftMember(false)
             self.leftTick.hidden = true
-            checkEP()
+//            checkEP()
         }
         self.leftMemberName.text = self.memberjson[page]["RelationType"].stringValue
         self.leftFirstName.text = self.memberjson[page]["FirstName"].stringValue
@@ -691,6 +792,11 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         
         
         switch (self.memberjson[page+1]["RelationType"].stringValue) {
+        case "Husband":
+            self.rightIcon.image = UIImage(named: "son_icon")
+            self.rightDOM.hidden = false
+            self.rightAddMore.hidden = true
+            break
         case "Wife":
             self.rightIcon.image = UIImage(named: "wife_icon")
             self.rightDOM.hidden = false
@@ -740,11 +846,11 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         if self.memberjson[page+1]["ActiveState"] {
             editRightMember(true)
             self.rightTick.hidden = false
-            checkEP()
+//            checkEP()
         }else{
             editRightMember(false)
             self.rightTick.hidden = true
-            checkEP()
+//            checkEP()
         }
         self.rightMemberName.text = self.memberjson[page+1]["RelationType"].stringValue
         self.rightFirstName.text = self.memberjson[page+1]["FirstName"].stringValue
@@ -755,9 +861,31 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         
         
     }
+    //  DATE OF RELATION VALIDATION
+    func validRelation(index:Int) -> Bool {
+        var check = false
+        if wholeJson["MaritalStatus"] == 2 {
+            
+            //        for x in 0..<memberjson.count {
+            if memberjson[index]["SystemIdentifier"] == "I" && memberjson[index]["ActiveState"] || memberjson[index]["SystemIdentifier"] == "S" && memberjson[index]["ActiveState"]{
+                if memberjson[index]["DateOfRelation"] != "" {
+                    check = true
+                }else{
+                    check = false
+                }
+            }else{
+                check = false
+            }
+            //        }
+        }else{
+            check = true
+        }
+        return true
+    }
     
     //FINAL PROCESS SUBMIT MEMBERS
     @IBAction func submitMembers(sender: AnyObject) {
+        LoadingOverlay.shared.showOverlay(gEnrollmentMembersController.view)
         updateJson()
         var msg = ""
         var finaljson :JSON = []
@@ -765,16 +893,20 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         if checkAllowedMembers(){
             for x in 0..<memberjson.count {
                 if self.wholeJson["IsInEnrollmentPeriod"] {
+                    print("isinrollment:-\(self.wholeJson["IsInEnrollmentPeriod"])")
                     if memberjson[x]["ActiveState"] {
                         for (key, itm) in memberjson[x] {
-                            if key == "FirstName" || key == "DateOfRelation" || key == "DateOfBirth" {
-                                if itm == "" && status {
-                                    if memberjson[x]["SystemIdentifier"] != "C" || key != "DateOfRelation"{
+                            print("function return: -\(validRelation(x))")
+                            if validRelation(x) {
+                                if key == "FirstName" || key == "DateOfBirth" {
+                                    if itm == "" && status {
                                         status = false
                                         msg = "Please Enter " + key + " of " + memberjson[x]["RelationType"].stringValue
                                     }
-                                    
                                 }
+                            }else{
+                                status = false
+                                msg = "Please Enter Date Of Relation of Your partner or InLaws. "
                             }
                             
                         }
@@ -782,16 +914,21 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                     }
                 }else{
                     if (memberjson[x]["Status"] != 1 && memberjson[x]["AddedAt"] != 2) || (memberjson[x]["Status"] != 2 && memberjson[x]["AddedAt"] != 2){
+                        print("in false")
                         if memberjson[x]["ActiveState"] {
+                            var checkdate = 0
                             for (key, itm) in memberjson[x] {
-                                if key == "FirstName" || key == "DateOfRelation" || key == "DateOfBirth" {
-                                    if itm == "" && status {
-                                        if memberjson[x]["SystemIdentifier"] != "C" || key != "DateOfRelation"{
-                                            
+                                
+                                if validRelation(x) {
+                                    if key == "FirstName" || key == "DateOfBirth" {
+                                        if itm == "" && status {
                                             status = false
                                             msg = "Please Enter " + key + " of " + memberjson[x]["RelationType"].stringValue
                                         }
                                     }
+                                }else{
+                                    status = false
+                                    msg = "Please Enter Date Of Relation of Your partner or InLaws. "
                                 }
                             }
                             finaljson.arrayObject?.append(memberjson[x].object)
@@ -800,8 +937,10 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                 }
             }
             if !status {
+                LoadingOverlay.shared.hideOverlayView()
                 Popups.SharedInstance.ShowPopup("Validation", message: msg)
             }else{
+                LoadingOverlay.shared.hideOverlayView()
                 print(finaljson)
                 rest.AddMembers(finaljson, completion: {(json:JSON) -> ()in
                     dispatch_sync(dispatch_get_main_queue()){
@@ -822,6 +961,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                 })
             }
         }else{
+            LoadingOverlay.shared.hideOverlayView()
             Popups.SharedInstance.ShowPopup("Allowed Members", message: msgAllowed)
         }
         

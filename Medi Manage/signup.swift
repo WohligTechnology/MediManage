@@ -10,18 +10,18 @@
 import Foundation
 import UIKit
 import SwiftyJSON
-import SwiftValidator
 
 
 class signup: UIView, UITextFieldDelegate {
     
     @IBOutlet weak var employeeID: UITextField!
     @IBOutlet weak var dateOfBirth: UITextField!
-    let validator = Validator()
+//    let validator = Validator()
     var dateDob = ""
     var datePickerView:UIDatePicker = UIDatePicker()
     var flag : Bool = false
     var count : Int = 0
+    
     
     @IBAction func openDate(sender: UITextField) {
         datePickerView.datePickerMode = UIDatePickerMode.Date
@@ -63,6 +63,10 @@ class signup: UIView, UITextFieldDelegate {
         sortnewview.frame = bounds
         sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(sortnewview);
+//        dateOfBirth.text = "1990-05-19"
+//        employeeID.text = "TestBetsol3"
+        defaultToken.removeObjectForKey("access_token")
+        
         
         addPadding(15, myView: employeeID)
         addPadding(15, myView: dateOfBirth)
@@ -97,7 +101,7 @@ class signup: UIView, UITextFieldDelegate {
         dateOfBirth.inputAccessoryView = toolBar
         
         
-        validator.registerField(employeeID, rules: [RequiredRule(), FullNameRule()])
+//        validator.registerField(employeeID, rules: [RequiredRule(), FullNameRule()])
         
     }
     func donePicker(){
@@ -130,13 +134,13 @@ class signup: UIView, UITextFieldDelegate {
                         let anotherCharacter: String = (String(json["state"]))
                         switch anotherCharacter {
                         case "true" :
-                            
-                            let dialog = UIAlertController(title: "Welcome", message: "Procced Now ", preferredStyle: UIAlertControllerStyle.Alert)
+                            signUpUser = json["result"]
+                            let dialog = UIAlertController(title: "Welcome", message: "Proceed Now ", preferredStyle: UIAlertControllerStyle.Alert)
                             
                             
                             dialog.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Destructive, handler:{
                                 action in
-                                
+                                profileState = "Submit"
                                 let VC = storyboard?.instantiateViewControllerWithIdentifier("completeProfile") as! CompleteProfileController
                                 
                                 gSignupController.presentViewController(VC, animated: true , completion: nil)
@@ -156,7 +160,7 @@ class signup: UIView, UITextFieldDelegate {
                             
                             dialog.addAction(UIAlertAction(title: "Try Again!!", style: UIAlertActionStyle.Destructive, handler:{
                                 action in
-                                self.employeeID.text = ""
+//                                self.employeeID.text = ""
                                 
                             }))
                             gSignupController.presentViewController(dialog, animated: true, completion: nil)

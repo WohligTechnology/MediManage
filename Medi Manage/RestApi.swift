@@ -8,15 +8,15 @@
 
 import Foundation
 import SwiftyJSON
-import SwiftHTTP
 import UIKit
 import CoreData
 import SystemConfiguration
 import Alamofire
+import SwiftHTTP
 
 
 
-let adminUrl = "http://testcorp.medimanage.com/api/";
+let adminUrl = "https://corporate.medimanage.com/api/";
 let apiURL = adminUrl + "v1/";
 let defaultToken = NSUserDefaults.standardUserDefaults()
 
@@ -24,10 +24,8 @@ public class RestApi {
         public func findEmployee(empno:String, dob:String, completion:((JSON) -> Void))  {
         var json = JSON(1);
         let params = ["EmpNo":empno, "DOB":dob]
-        print(params)
         do {
             let opt = try HTTP.POST(apiURL + "Users/FindEmployee", parameters: params, requestSerializer: JSONParameterSerializer(), headers:["header":"application/json"])
-            print(opt)
             opt.start { response in
                 if let _ = response.error {
                     completion(json);
@@ -35,7 +33,6 @@ public class RestApi {
                 else
                 {
                     json  = JSON(data: response.data)
-                    print(json)
                     completion(json);
                 }
             }
@@ -53,7 +50,7 @@ public class RestApi {
        // opt.security = HTTPSecurity(certs: [HTTPSSLCe(data: data)], usePublicKeys: true)
          
             opt.start { response in
-               
+            
                 print(response.error)
                 if let _ = response.error {
                     completion(json);
@@ -80,7 +77,6 @@ public class RestApi {
     
   public func loginAlaomFire(username:String, password:String, completion:((JSON) -> Void))  {
         var json = JSON(1);
-          print(json)
         let params = ["grant_type": "password","username":username, "password":password]
         let header = ["Content-Type":"application/x-www-form-urlencoded"]
         
@@ -88,14 +84,10 @@ public class RestApi {
             .responseJSON { response in
                 debugPrint(response)
                 json = JSON(data: response.data!)
-                //print(json["access_token"])
                    completion(json)
                     
                 }
     }
-                
-                
-
 
     private var Manager : Alamofire.Manager = {
         // Create the server trust policies
@@ -195,12 +187,14 @@ public class RestApi {
     {
         var json = JSON(1)
         let token = defaultToken.stringForKey("access_token")
-        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
+        print("data to params")
+        print(data)
+        let params = ["Email": data["Email"].stringValue,"MobileNo":data["MobileNo"].stringValue, "EmployeeID":data["EmployeeID"].stringValue, "EmployeeNumber":data["EmployeeNumber"].stringValue, "Password":data["Password"].stringValue, "MaritalStatus": data["MaritalStatus"].stringValue, "CountryCode":data["CountryCode"].stringValue]
         
-         let params = ["data": "\(data)"]
+        let header = ["Authorization":"Bearer \(token! as String)","header":"application/json"]
         print(params)
         do {
-            let opt = try HTTP.POST(apiURL+"Users/UpdateProfile" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            let opt = try HTTP.POST(apiURL+"Users/UpdateProfile" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:header)
             opt.start { response in
                 if let _ = response.error {
                     let nsError = response.error! as NSError
@@ -221,6 +215,42 @@ public class RestApi {
             completion(json);
         }
 
+    }
+    
+    public func registerUser(data : JSON ,completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        print(data)
+        let params = ["Email": data["Email"].stringValue,"MobileNo":data["MobileNo"].stringValue, "EmployeeID":data["EmployeeID"].stringValue, "EmployeeNumber":data["EmployeeNumber"].stringValue, "Password":data["Password"].stringValue, "MaritalStatus": data["MaritalStatus"].stringValue, "CountryCode":data["CountryCode"].stringValue]
+        let header = ["header":"application/json"]
+
+        print(params)
+//        params["Email"].stringValue = data["Email"]
+//        params = "Email=\(data["Email"])&EmployeeID=\(data["EmployeeID"])&LastName=\(data["LastName"])&Password=\(data["Password"])&Gender=\(data["Gender"])&EmployeeNumber=\(data["EmployeeNumber"])&FirstName=\(data["FirstName"])&MiddleName=\(data["MiddleName"])&MobileNo=\(data["MobileNo"])&MaritalStatus=\(data["MaritalStatus"])&FullName=\(data["FullName"]),&CountryCode=\(data["CountryCode"])&DateOfBirth=\(data["DateOfBirth"])"
+        
+                do {
+            let opt = try HTTP.POST(apiURL+"Users/Register" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:header)
+            opt.start { response in
+                if let _ = response.error {
+                    print(response.error)
+                    let nsError = response.error! as NSError
+                    if nsError.code == 401 {
+                        json = JSON(nsError.code)
+                        completion(json)
+                    }else{
+                        completion(json);
+                    }
+                }
+                else
+                {
+                    json  = JSON(data: response.data)
+                    completion(json);
+                }
+            }
+        } catch _ {
+            completion(json);
+        }
+        
     }
     
     public func premiumConfirm(completion:((JSON) -> Void))
@@ -353,16 +383,18 @@ public class RestApi {
         
     }
     
-    public func ResetPassword(data : JSON ,completion:((JSON) -> Void))
+    public func ResetPassword(code:String, password:String, confirmPassword:String ,completion:((JSON) -> Void))
     {
         var json = JSON(1)
-        let token = defaultToken.stringForKey("access_token")
-        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         
-        let params = ["data": "\(data)"]
+        let params = ["Code":code, "newPassword":password, "confirmPassword":confirmPassword]
+
+        let header = ["header":"application/json"]
+        print(params)
         do {
-            let opt = try HTTP.POST(apiURL+"Users/ResetPassword" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            let opt = try HTTP.POST(apiURL+"Users/ResetPassword" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:header)
             opt.start { response in
+                print(response.error)
                 if let _ = response.error {
                     let nsError = response.error! as NSError
                     if nsError.code == 401 {
@@ -416,7 +448,7 @@ public class RestApi {
     }
 
     
-    public func ConnectSection(data : JSON ,completion:((JSON) -> Void))
+    public func ConnectSection(data : String ,completion:((JSON) -> Void))
     {
         var json = JSON(1)
         let token = defaultToken.stringForKey("access_token")
@@ -673,7 +705,7 @@ public class RestApi {
         let token = defaultToken.stringForKey("access_token")
         let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         
-                let params = ["data": "\(data)"]
+        let params = ["To": data["To"].stringValue,"Subject":data["Subject"].stringValue, "Body":data["Body"].stringValue]
         print(params)
         
         do {
@@ -801,6 +833,7 @@ public class RestApi {
             opt.start { response in
                 if let _ = response.error {
                     let nsError = response.error! as NSError
+                    print(response.error)
                     if nsError.code == 401 {
                         json = JSON(nsError.code)
                         completion(json)
@@ -847,10 +880,13 @@ public class RestApi {
     public func DownloadECard(ecard : String!, completion:((JSON) -> Void))
     {
         var json = JSON(1)
-        print(apiURL + "Users/ConfirmOTP/\(ecard)")
+        
+        let token = defaultToken.stringForKey("access_token")
+        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         do {
-            let opt = try HTTP.GET(apiURL + "Ecard/\(ecard)" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers: nil)
+            let opt = try HTTP.GET(apiURL + "Users/Ecard/\(ecard)" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers: isLoginheader)
             opt.start { response in
+                print(response.error)
                 if let _ = response.error {
                     completion(json);
                 }
@@ -897,6 +933,103 @@ public class RestApi {
         }
                    }
     
+    public func activeClaims(completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        let token = defaultToken.stringForKey("access_token")
+        if (token != nil) {
+            let isLoginheader = ["Authorization":"Bearer \((token)! as String)"]
+            do {
+                let opt = try HTTP.GET(apiURL + "EmployeeClaims/PreAuthClaimsMobile" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers: isLoginheader)
+                opt.start { response in
+                    
+                    if let _ = response.error {
+                        let nsError = response.error! as NSError
+                        if nsError.code == 401 {
+                            json = JSON(nsError.code)
+                            completion(json)
+                        }else{
+                            completion(json);
+                        }
+                    }
+                    else
+                    {
+                        json  = JSON(data: response.data)
+                        completion(json);
+                    }
+                }
+            } catch _ {
+                completion(json);
+            }
+            
+        }
+    }
+
+    public func reimbursementClaims(completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        let token = defaultToken.stringForKey("access_token")
+        if (token != nil) {
+            let isLoginheader = ["Authorization":"Bearer \((token)! as String)"]
+            do {
+                let opt = try HTTP.GET(apiURL + "EmployeeClaims/ReimbusementClaimsMobile" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers: isLoginheader)
+                opt.start { response in
+                    
+                    if let _ = response.error {
+                        let nsError = response.error! as NSError
+                        if nsError.code == 401 {
+                            json = JSON(nsError.code)
+                            completion(json)
+                        }else{
+                            completion(json);
+                        }
+                    }
+                    else
+                    {
+                        json  = JSON(data: response.data)
+                        completion(json);
+                    }
+                }
+            } catch _ {
+                completion(json);
+            }
+            
+        }
+    }
+    
+    public func messageReimburse(completion:((JSON) -> Void))
+    {
+        var json = JSON(1)
+        let token = defaultToken.stringForKey("access_token")
+        if (token != nil) {
+            let isLoginheader = ["Authorization":"Bearer \((token)! as String)"]
+            do {
+                let opt = try HTTP.GET(apiURL + "Claim/PatientList" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers: isLoginheader)
+                opt.start { response in
+                    
+                    if let _ = response.error {
+                        let nsError = response.error! as NSError
+                        if nsError.code == 401 {
+                            json = JSON(nsError.code)
+                            completion(json)
+                        }else{
+                            completion(json);
+                        }
+                    }
+                    else
+                    {
+                        json  = JSON(data: response.data)
+                        completion(json);
+                    }
+                }
+            } catch _ {
+                completion(json);
+            }
+            
+        }
+    }
+
+    
     public func changePassword(cp: String, np: String, cnp: String, completion:((JSON) -> Void))
     {
         var json = JSON(1)
@@ -925,6 +1058,7 @@ public class RestApi {
             completion(json);
         }
     }
+    
 
 }
 

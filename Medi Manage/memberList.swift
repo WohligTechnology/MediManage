@@ -344,7 +344,7 @@ class memberList: UIView ,UIActionSheetDelegate{
         calculationButton.layer.zPosition = 9230
         
         
-        let hell = UITapGestureRecognizer(target: self, action: Selector("Premcalculation"))
+        let hell = UITapGestureRecognizer(target: self, action: #selector(memberList.Premcalculation))
         calculationButton.addGestureRecognizer(hell)
         calculationButton.userInteractionEnabled = true
         
@@ -377,29 +377,29 @@ class memberList: UIView ,UIActionSheetDelegate{
       //  premiumCalculation.addGestureRecognizer(calculation)
         //premiumCalculation.userInteractionEnabled = true
         
-        let fbtnEdit = UITapGestureRecognizer(target: self, action: Selector("fbtnclicked"))
+        let fbtnEdit = UITapGestureRecognizer(target: self, action: #selector(memberList.fbtnclicked))
         editDetails.addGestureRecognizer(fbtnEdit)
         editDetails.userInteractionEnabled = true
-        let secbtnEdit = UITapGestureRecognizer(target: self, action: Selector("secbtnclicked"))
+        let secbtnEdit = UITapGestureRecognizer(target: self, action: #selector(memberList.secbtnclicked))
        seceditDetails.addGestureRecognizer(secbtnEdit)
         seceditDetails.userInteractionEnabled = true
-        let tabwife = UITapGestureRecognizer(target: self, action: Selector("tabwifeclicked"))
+        let tabwife = UITapGestureRecognizer(target: self, action: #selector(memberList.tabwifeclicked))
         tabWife.addGestureRecognizer(tabwife)
         tabWife.userInteractionEnabled = true
         
-        let tabson = UITapGestureRecognizer(target: self, action: Selector("tabsonclicked"))
+        let tabson = UITapGestureRecognizer(target: self, action: #selector(memberList.tabsonclicked))
         tabSon.addGestureRecognizer(tabson)
         tabSon.userInteractionEnabled = true
         
-        let tabdaughter = UITapGestureRecognizer(target: self, action: Selector("tabdaughterclicked"))
+        let tabdaughter = UITapGestureRecognizer(target: self, action: #selector(memberList.tabdaughterclicked))
         tabDaughter.addGestureRecognizer(tabdaughter)
         tabDaughter.userInteractionEnabled = true
         
-        let tabfather = UITapGestureRecognizer(target: self, action: Selector("tabfatherclicked"))
+        let tabfather = UITapGestureRecognizer(target: self, action: #selector(memberList.tabfatherclicked))
         tabFather.addGestureRecognizer(tabfather)
         tabFather.userInteractionEnabled = true
         
-        let tabmother = UITapGestureRecognizer(target: self, action: Selector("tabmotherclicked"))
+        let tabmother = UITapGestureRecognizer(target: self, action: #selector(memberList.tabmotherclicked))
         tabMother.addGestureRecognizer(tabmother)
         tabMother.userInteractionEnabled = true
       

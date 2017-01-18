@@ -40,12 +40,21 @@ class member: UIView {
     
     @IBAction func downloadEcardButton(sender: AnyObject) {
         print("in download ECard")
-        print(lastname)
         print(ecarddwld)
+        if ecarddwld == "0" {
+            Popups.SharedInstance.ShowPopup("Members", message: "Don't have any id.")
+        }else{
         rest.DownloadECard(ecarddwld,completion: {(json:JSON) -> ()in
+            dispatch_sync(dispatch_get_main_queue(), {
+                print(json)
             if json["state"] {
-                UIApplication.sharedApplication().openURL(NSURL(string: json["result"].stringValue)!)
+                if json["result"] != ""{
+                let pdfURL = NSURL(string: (json["result"].stringValue).stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)!
+                UIApplication.sharedApplication().openURL(pdfURL)
+                }
             }
+            })
         })
+        }
     }
 }

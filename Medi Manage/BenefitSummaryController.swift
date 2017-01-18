@@ -17,6 +17,8 @@ class BenefitSummaryController: UIViewController, UITableViewDataSource, UITabBa
     @IBOutlet weak var insurer: UILabel!
     @IBOutlet weak var TPA: UILabel!
     @IBOutlet weak var summaryTable: UITableView!
+    @IBOutlet weak var features: UILabel!
+    
     var myBenefits : JSON = ""
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,11 +38,14 @@ class BenefitSummaryController: UIViewController, UITableViewDataSource, UITabBa
         self.summaryTable.rowHeight = UITableViewAutomaticDimension
         
         rest.BenefitSummery({(json:JSON) -> () in
-            dispatch_async(dispatch_get_main_queue(),{
+            dispatch_sync(dispatch_get_main_queue(),{
                 if json == 401 {
                     self.redirectToHome()
                 }else{
                     self.myBenefits = json["result"]
+                    if json["result"]["SalientFeatures"].count == 0{
+                        self.features.text = "No Features Available."
+                    }
                     self.singlePointContact.text = json["result"]["SinglePointofContact"].stringValue
                     self.insurer.text = json["result"]["NameOfInsurer"].stringValue
                     self.TPA.text = json["result"]["NameOfTPA"].stringValue
