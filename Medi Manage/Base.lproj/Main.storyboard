@@ -4112,7 +4112,40 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="67V-m5-t0s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1485" y="4146"/>
+            <point key="canvasLocation" x="1166" y="4138"/>
+        </scene>
+        <!--Event Detail Controller-->
+        <scene sceneID="vLy-BI-LSg">
+            <objects>
+                <viewController storyboardIdentifier="eventDetailController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Van-q3-Eif" customClass="EventDetailController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cY0-kf-UnZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="HGc-gv-dEb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c9P-W9-4ul">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tnj-fj-LXh">
+                                <rect key="frame" x="0.0" y="-44" width="320" height="612"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Tnj-fj-LXh" firstAttribute="top" secondItem="cY0-kf-UnZ" secondAttribute="bottom" constant="-64" id="30R-Eb-MQq"/>
+                            <constraint firstItem="Tnj-fj-LXh" firstAttribute="leading" secondItem="c9P-W9-4ul" secondAttribute="leading" id="GC3-WL-DBP"/>
+                            <constraint firstItem="HGc-gv-dEb" firstAttribute="top" secondItem="Tnj-fj-LXh" secondAttribute="bottom" id="bNh-ng-YOi"/>
+                            <constraint firstAttribute="trailing" secondItem="Tnj-fj-LXh" secondAttribute="trailing" id="l4d-Sk-BDh"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="scrollView" destination="Tnj-fj-LXh" id="v1e-ZA-GZV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="liu-uD-MJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1538" y="4138"/>
         </scene>
         <!--Help Desk Query Controller-->
         <scene sceneID="BBF-QB-d8e">
@@ -4925,7 +4958,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pqQ-a6-6zO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1017" y="4138"/>
+            <point key="canvasLocation" x="794" y="4138"/>
         </scene>
     </scenes>
     <resources>

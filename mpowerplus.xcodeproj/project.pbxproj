@@ -147,6 +147,7 @@
 		C2DCB0F01D1D4A71004FD787 /* SIParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DCB0EF1D1D4A71004FD787 /* SIParameters.swift */; };
 		C2DCB0F21D1D4C42004FD787 /* ResetPasswordDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DCB0F11D1D4C42004FD787 /* ResetPasswordDTO.swift */; };
 		C2DCB0F41D1D4CF1004FD787 /* GroupTopupSiDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DCB0F31D1D4CF1004FD787 /* GroupTopupSiDTO.swift */; };
+		C2FF29A41E3096400062DD08 /* EventDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FF29A31E3096400062DD08 /* EventDetailController.swift */; };
 		FC1D8AF31D78344A0020FAFB /* forgotPasswordOTP.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC1D8AF21D78344A0020FAFB /* forgotPasswordOTP.xib */; };
 		FC1D8AF51D78363F0020FAFB /* forgotPasswordOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D8AF41D78363F0020FAFB /* forgotPasswordOTP.swift */; };
 		FC1D8AF81D783A250020FAFB /* ForgotPasswordOTPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D8AF71D783A250020FAFB /* ForgotPasswordOTPController.swift */; };
@@ -349,6 +350,7 @@
 		C2DCB0EF1D1D4A71004FD787 /* SIParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIParameters.swift; sourceTree = "<group>"; };
 		C2DCB0F11D1D4C42004FD787 /* ResetPasswordDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordDTO.swift; sourceTree = "<group>"; };
 		C2DCB0F31D1D4CF1004FD787 /* GroupTopupSiDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTopupSiDTO.swift; sourceTree = "<group>"; };
+		C2FF29A31E3096400062DD08 /* EventDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailController.swift; sourceTree = "<group>"; };
 		C42FA52A5495CA29BD934BCF /* Pods_MediManageUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediManageUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D759717CAF6EE7B65953226B /* Pods_MediManage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediManage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78D1D5096BBD316BFDB2ECF /* Pods-mpowerplus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mpowerplus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mpowerplus/Pods-mpowerplus.debug.xcconfig"; sourceTree = "<group>"; };
@@ -780,6 +782,7 @@
 				FC1D8AF71D783A250020FAFB /* ForgotPasswordOTPController.swift */,
 				9B1790681DE41423006FE8F5 /* newDemoViewController.swift */,
 				C28A40851E2F8A6B002C49E5 /* EventController.swift */,
+				C2FF29A31E3096400062DD08 /* EventDetailController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1295,6 +1298,7 @@
 				3A992F0A1CEDF25F00D85D8A /* HospitalSearchResultController.swift in Sources */,
 				FCB8016F1D2B7FB200F9226F /* memberListHeader.swift in Sources */,
 				43D6FF3E1CFC4510008361B2 /* RestApi.swift in Sources */,
+				C2FF29A41E3096400062DD08 /* EventDetailController.swift in Sources */,
 				3A72C72E1CEB4F7500B5412E /* helplineNumber.swift in Sources */,
 				3A79A7C21CF0431E008B693B /* HelpDeskFAQController.swift in Sources */,
 				78B90BD31CE05C8D0022FE7A /* retrieveLogin.swift in Sources */,
