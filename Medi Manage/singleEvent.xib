@@ -22,23 +22,23 @@
                     <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJI-8m-DeY">
-                    <rect key="frame" x="0.0" y="144" width="400" height="56"/>
+                    <rect key="frame" x="0.0" y="150" width="400" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnS-Mp-NBw">
-                            <rect key="frame" x="5" y="5" width="390" height="18"/>
+                            <rect key="frame" x="5" y="5" width="390" height="17"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="18" id="1DX-qc-A4b"/>
+                                <constraint firstAttribute="height" constant="17" id="1DX-qc-A4b"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
                             <color key="textColor" red="0.95686274509803915" green="0.42745098039215684" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIO-Jc-NrX">
-                            <rect key="frame" x="5" y="33" width="390" height="18"/>
+                            <rect key="frame" x="5" y="28" width="390" height="17"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="18" id="cpt-KZ-u5n"/>
+                                <constraint firstAttribute="height" constant="17" id="cpt-KZ-u5n"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -49,7 +49,7 @@
                         <constraint firstAttribute="trailing" secondItem="mnS-Mp-NBw" secondAttribute="trailing" constant="5" id="JZF-Qa-6w1"/>
                         <constraint firstItem="mnS-Mp-NBw" firstAttribute="top" secondItem="CJI-8m-DeY" secondAttribute="top" constant="5" id="WlW-eK-5lF"/>
                         <constraint firstAttribute="trailing" secondItem="fIO-Jc-NrX" secondAttribute="trailing" constant="5" id="cWS-Nm-wMP"/>
-                        <constraint firstAttribute="height" constant="56" id="cxf-bt-0Hd"/>
+                        <constraint firstAttribute="height" constant="50" id="cxf-bt-0Hd"/>
                         <constraint firstItem="mnS-Mp-NBw" firstAttribute="leading" secondItem="CJI-8m-DeY" secondAttribute="leading" constant="5" id="f3j-ct-FxL"/>
                         <constraint firstItem="fIO-Jc-NrX" firstAttribute="leading" secondItem="CJI-8m-DeY" secondAttribute="leading" constant="5" id="zze-Ox-kBG"/>
                     </constraints>

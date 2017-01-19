@@ -19,6 +19,10 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navshow()
+        
+        self.view.backgroundColor = UIColor.redColor()
     }
     
     override func viewDidAppear(animated: Bool) {

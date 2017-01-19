@@ -4006,8 +4006,8 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHo-cC-8qh">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHo-cC-8qh">
+                                <rect key="frame" x="0.0" y="-44" width="320" height="563"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BkG-Xc-3XZ">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
@@ -4053,7 +4053,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                                                 </constraints>
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gZo-Tq-H1w">
-                                                <rect key="frame" x="0.0" y="40" width="320" height="459"/>
+                                                <rect key="frame" x="0.0" y="40" width="320" height="415"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="upcomingEventCell" id="7OK-3s-mGJ">
@@ -4073,7 +4073,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                                         </subviews>
                                         <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="gZo-Tq-H1w" secondAttribute="bottom" constant="20" id="EYt-yb-tC0"/>
+                                            <constraint firstAttribute="bottom" secondItem="gZo-Tq-H1w" secondAttribute="bottom" constant="64" id="EYt-yb-tC0"/>
                                             <constraint firstItem="vVJ-kl-mJ5" firstAttribute="top" secondItem="BkG-Xc-3XZ" secondAttribute="top" id="OkV-lR-rp8"/>
                                             <constraint firstItem="gZo-Tq-H1w" firstAttribute="top" secondItem="vVJ-kl-mJ5" secondAttribute="bottom" id="QPS-Kl-Bl3"/>
                                             <constraint firstItem="gZo-Tq-H1w" firstAttribute="leading" secondItem="BkG-Xc-3XZ" secondAttribute="leading" id="buO-uS-faJ"/>
@@ -4093,12 +4093,13 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="tHo-cC-8qh" firstAttribute="top" secondItem="FU8-Yp-2vS" secondAttribute="bottom" id="LCF-Np-G0b"/>
-                            <constraint firstItem="YHz-yS-lv5" firstAttribute="top" secondItem="tHo-cC-8qh" secondAttribute="bottom" id="Lbh-g0-hcT"/>
+                            <constraint firstAttribute="bottom" secondItem="tHo-cC-8qh" secondAttribute="bottom" id="PEf-kd-GLY"/>
+                            <constraint firstAttribute="bottom" secondItem="tHo-cC-8qh" secondAttribute="bottom" id="VPX-bw-ctY"/>
                             <constraint firstAttribute="trailing" secondItem="tHo-cC-8qh" secondAttribute="trailing" id="eKa-hv-0RW"/>
                             <constraint firstItem="BkG-Xc-3XZ" firstAttribute="height" secondItem="HnA-WL-5mb" secondAttribute="height" id="haX-R9-TPs"/>
                             <constraint firstItem="BkG-Xc-3XZ" firstAttribute="width" secondItem="HnA-WL-5mb" secondAttribute="width" id="x2z-Kh-DfU"/>
                             <constraint firstItem="tHo-cC-8qh" firstAttribute="leading" secondItem="HnA-WL-5mb" secondAttribute="leading" id="zMl-1j-WJQ"/>
+                            <constraint firstItem="tHo-cC-8qh" firstAttribute="top" secondItem="FU8-Yp-2vS" secondAttribute="bottom" constant="-64" id="zQ5-Hc-WAq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ozT-M1-TRJ"/>
@@ -4907,7 +4908,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
         <!--Wellness-->
         <scene sceneID="cVa-5y-hFQ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tCq-Mb-4qV" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="tCq-Mb-4qV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Wellness" image="wellness_white" id="azw-h8-2ZB">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
