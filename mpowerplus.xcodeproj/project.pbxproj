@@ -148,6 +148,8 @@
 		C2DCB0F21D1D4C42004FD787 /* ResetPasswordDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DCB0F11D1D4C42004FD787 /* ResetPasswordDTO.swift */; };
 		C2DCB0F41D1D4CF1004FD787 /* GroupTopupSiDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DCB0F31D1D4CF1004FD787 /* GroupTopupSiDTO.swift */; };
 		C2FF29A41E3096400062DD08 /* EventDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FF29A31E3096400062DD08 /* EventDetailController.swift */; };
+		C2FF29A71E30A9C70062DD08 /* eventDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2FF29A61E30A9C70062DD08 /* eventDetail.xib */; };
+		C2FF29A91E30ADEB0062DD08 /* eventDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FF29A81E30ADEB0062DD08 /* eventDetail.swift */; };
 		FC1D8AF31D78344A0020FAFB /* forgotPasswordOTP.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC1D8AF21D78344A0020FAFB /* forgotPasswordOTP.xib */; };
 		FC1D8AF51D78363F0020FAFB /* forgotPasswordOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D8AF41D78363F0020FAFB /* forgotPasswordOTP.swift */; };
 		FC1D8AF81D783A250020FAFB /* ForgotPasswordOTPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D8AF71D783A250020FAFB /* ForgotPasswordOTPController.swift */; };
@@ -351,6 +353,8 @@
 		C2DCB0F11D1D4C42004FD787 /* ResetPasswordDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordDTO.swift; sourceTree = "<group>"; };
 		C2DCB0F31D1D4CF1004FD787 /* GroupTopupSiDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTopupSiDTO.swift; sourceTree = "<group>"; };
 		C2FF29A31E3096400062DD08 /* EventDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailController.swift; sourceTree = "<group>"; };
+		C2FF29A61E30A9C70062DD08 /* eventDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = eventDetail.xib; sourceTree = "<group>"; };
+		C2FF29A81E30ADEB0062DD08 /* eventDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventDetail.swift; sourceTree = "<group>"; };
 		C42FA52A5495CA29BD934BCF /* Pods_MediManageUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediManageUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D759717CAF6EE7B65953226B /* Pods_MediManage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediManage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78D1D5096BBD316BFDB2ECF /* Pods-mpowerplus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mpowerplus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mpowerplus/Pods-mpowerplus.debug.xcconfig"; sourceTree = "<group>"; };
@@ -790,6 +794,7 @@
 		786DFA291CD2282700DDE769 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C2FF29A51E30A9A90062DD08 /* eventDetail */,
 				C28A40801E2F7FB2002C49E5 /* singleEvent */,
 				FC32D4521D4B822500918852 /* member */,
 				43D6FF411CFEE44C008361B2 /* pickDate */,
@@ -923,6 +928,15 @@
 				C2A5845F1D262EAE00F6E0D5 /* EnumSets.swift */,
 			);
 			name = DTO;
+			sourceTree = "<group>";
+		};
+		C2FF29A51E30A9A90062DD08 /* eventDetail */ = {
+			isa = PBXGroup;
+			children = (
+				C2FF29A61E30A9C70062DD08 /* eventDetail.xib */,
+				C2FF29A81E30ADEB0062DD08 /* eventDetail.swift */,
+			);
+			name = eventDetail;
 			sourceTree = "<group>";
 		};
 		FC1D8AF61D78364C0020FAFB /* forgotPasswordOTP */ = {
@@ -1139,6 +1153,7 @@
 				FCBE27F51D33E436004654E0 /* Discharge Summary.pdf in Resources */,
 				3A8774C11CEC41C1001DB41F /* queryForm.xib in Resources */,
 				FC7FB49B1D92933A00570FB2 /* ButtonView.xib in Resources */,
+				C2FF29A71E30A9C70062DD08 /* eventDetail.xib in Resources */,
 				3A8EFB5B1CE9D31B004489F3 /* homeMenus.xib in Resources */,
 				78B90BD71CE067810022FE7A /* generateOTP.xib in Resources */,
 				3AD3E52D1CE20A1900900A93 /* premiumCalculation.xib in Resources */,
@@ -1306,6 +1321,7 @@
 				3A992F081CEDD21700D85D8A /* ClaimIntimationController.swift in Sources */,
 				3AF76BB01CE5ABC100ADCAAF /* footer.swift in Sources */,
 				3AEEB0211CE7504B0085EEF5 /* helpDeskQuery.swift in Sources */,
+				C2FF29A91E30ADEB0062DD08 /* eventDetail.swift in Sources */,
 				C2DCB0DC1D1D1CDB004FD787 /* ConnectDetailsDTO.swift in Sources */,
 				9B88B8BF1DD724AB005CA455 /* preAuthTwoController.swift in Sources */,
 				C28A40841E2F8239002C49E5 /* singleEvent.swift in Sources */,

@@ -20,12 +20,12 @@ class EventDetailController: UIViewController {
         
         navshow()
         
-        self.view.backgroundColor = UIColor(red: 230, green: 230, blue: 230, alpha: 1)
+        self.view.backgroundColor = UIColor(red: 240 / 255, green: 240 / 255, blue: 240 / 255, alpha: 1)
         
         scrollView.contentSize.height = self.view.frame.height
         
         verticalLayout = VerticalLayout(width: self.view.frame.width)
-        verticalLayout.backgroundColor = UIColor(red: 230, green: 230, blue: 230, alpha: 1)
+        verticalLayout.backgroundColor = UIColor(red: 240 / 255, green: 240 / 255, blue: 240 / 255, alpha: 1)
         scrollView.addSubview(verticalLayout)
         
         verticalLayout.addSubview(eventMapView())
@@ -54,13 +54,22 @@ class EventDetailController: UIViewController {
     }
     
     func eventDetailView() -> UIView {
-        let detailView = UIView(frame: CGRect(x: 10, y: 10, width: self.view.frame.size.width - 20, height: 200))
+        let detailView = eventDetail(frame: CGRect(x: 10, y: 10, width: self.view.frame.size.width - 20, height: 150))
         detailView.backgroundColor = UIColor.whiteColor()
-        detailView.layer.shadowColor = UIColor.blackColor().CGColor
-        detailView.layer.shadowOpacity = 0.5
-        detailView.layer.shadowOffset = CGSize.zero
-        detailView.layer.shadowRadius = 2
+        addShadow(detailView)
         return detailView
+    }
+    
+    func eventRegistrationView() -> UIView {
+        let registratioView = UIView(frame: CGRect(x: 10, y: 10, width: self.view.frame.size.width - 20, height: 150))        
+        return registratioView
+    }
+    
+    func addShadow(view: UIView) {
+        view.layer.shadowColor = UIColor.blackColor().CGColor
+        view.layer.shadowOpacity = 0.5
+        view.layer.shadowOffset = CGSize.zero
+        view.layer.shadowRadius = 2
     }
 
 }

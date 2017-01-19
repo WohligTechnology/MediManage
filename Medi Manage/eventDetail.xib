@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="eventDetail" customModule="MediManage" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="435" height="150"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mumbai Yoga Fest 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTR-AJ-0zK">
+                    <rect key="frame" x="15" y="10" width="405" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="B3E-QB-QFC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wellness_location" translatesAutoresizingMaskIntoConstraints="NO" id="bHd-dz-Gvq">
+                    <rect key="frame" x="10" y="44" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="25" id="cev-Lv-Hzw"/>
+                        <constraint firstAttribute="height" constant="25" id="xmq-n9-asK"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mumbai" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myI-hF-jbQ">
+                    <rect key="frame" x="50" y="46" width="370" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="Dc2-7K-JRu"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="16"/>
+                    <color key="textColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wellness_event_date" translatesAutoresizingMaskIntoConstraints="NO" id="nfd-ax-cJK">
+                    <rect key="frame" x="10" y="79" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="25" id="XAS-DZ-5HG"/>
+                        <constraint firstAttribute="height" constant="25" id="gqf-m3-Bvd"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30-12-2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkK-tY-y81">
+                    <rect key="frame" x="50" y="81" width="82" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="aUT-Jn-gTG"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                    <color key="textColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMA-W6-fTU">
+                    <rect key="frame" x="142" y="81" width="22" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="THi-1E-xc0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31-12-2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8CK-DU-y0m">
+                    <rect key="frame" x="174" y="81" width="82" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="yyw-4r-qgK"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                    <color key="textColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wellness_event_time" translatesAutoresizingMaskIntoConstraints="NO" id="WBx-b0-Y9C">
+                    <rect key="frame" x="10" y="114" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="PJB-Su-QA9"/>
+                        <constraint firstAttribute="width" constant="25" id="hRT-od-oba"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7:00 am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMT-Pm-Yzj">
+                    <rect key="frame" x="50" y="116" width="375" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="ZVe-ou-hXf"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                    <color key="textColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="pTR-AJ-0zK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="2mI-da-J6d"/>
+                <constraint firstAttribute="trailing" secondItem="AMT-Pm-Yzj" secondAttribute="trailing" constant="10" id="51j-ro-AF2"/>
+                <constraint firstItem="nfd-ax-cJK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="AZ0-db-iWl"/>
+                <constraint firstItem="pTR-AJ-0zK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="Arf-xV-q49"/>
+                <constraint firstItem="8CK-DU-y0m" firstAttribute="leading" secondItem="QMA-W6-fTU" secondAttribute="trailing" constant="10" id="BdF-hC-Eml"/>
+                <constraint firstItem="bHd-dz-Gvq" firstAttribute="top" secondItem="pTR-AJ-0zK" secondAttribute="bottom" constant="10" id="EVC-Vj-Uy9"/>
+                <constraint firstItem="8CK-DU-y0m" firstAttribute="top" secondItem="myI-hF-jbQ" secondAttribute="bottom" constant="15" id="Fc9-GM-Ldd"/>
+                <constraint firstItem="AMT-Pm-Yzj" firstAttribute="top" secondItem="YkK-tY-y81" secondAttribute="bottom" constant="15" id="GVR-KU-SOj"/>
+                <constraint firstItem="YkK-tY-y81" firstAttribute="top" secondItem="myI-hF-jbQ" secondAttribute="bottom" constant="15" id="PSX-ZO-NMZ"/>
+                <constraint firstAttribute="trailing" secondItem="myI-hF-jbQ" secondAttribute="trailing" constant="15" id="X0G-Z7-LhM"/>
+                <constraint firstItem="AMT-Pm-Yzj" firstAttribute="leading" secondItem="WBx-b0-Y9C" secondAttribute="trailing" constant="15" id="X0X-br-sXu"/>
+                <constraint firstItem="WBx-b0-Y9C" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="XsD-Wy-Y5B"/>
+                <constraint firstItem="WBx-b0-Y9C" firstAttribute="top" secondItem="nfd-ax-cJK" secondAttribute="bottom" constant="10" id="dCF-V3-CYa"/>
+                <constraint firstItem="QMA-W6-fTU" firstAttribute="top" secondItem="myI-hF-jbQ" secondAttribute="bottom" constant="15" id="did-oF-veW"/>
+                <constraint firstItem="nfd-ax-cJK" firstAttribute="top" secondItem="bHd-dz-Gvq" secondAttribute="bottom" constant="10" id="jeA-Xo-S5u"/>
+                <constraint firstItem="myI-hF-jbQ" firstAttribute="top" secondItem="pTR-AJ-0zK" secondAttribute="bottom" constant="12" id="jtL-8X-sfC"/>
+                <constraint firstItem="QMA-W6-fTU" firstAttribute="leading" secondItem="YkK-tY-y81" secondAttribute="trailing" constant="10" id="lCQ-0j-tCE"/>
+                <constraint firstItem="myI-hF-jbQ" firstAttribute="leading" secondItem="bHd-dz-Gvq" secondAttribute="trailing" constant="15" id="oSo-pN-BJw"/>
+                <constraint firstAttribute="trailing" secondItem="pTR-AJ-0zK" secondAttribute="trailing" constant="15" id="rij-pe-EPg"/>
+                <constraint firstItem="YkK-tY-y81" firstAttribute="leading" secondItem="nfd-ax-cJK" secondAttribute="trailing" constant="15" id="ujW-16-9R3"/>
+                <constraint firstItem="bHd-dz-Gvq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="yy2-pR-jsT"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="228.5" y="206.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="wellness_event_date" width="48" height="48"/>
+        <image name="wellness_event_time" width="48" height="48"/>
+        <image name="wellness_location" width="48" height="48"/>
+    </resources>
+</document>
