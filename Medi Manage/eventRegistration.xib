@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="eventRegistration" customModule="MediManage" customModuleProvider="target">
+            <connections>
+                <outlet property="dateFrom" destination="EhI-Eh-e5Z" id="lXX-P2-R2m"/>
+                <outlet property="dateTo" destination="MXX-BZ-hq9" id="gau-o0-60Y"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="sWg-bH-YEz">
+            <rect key="frame" x="0.0" y="0.0" width="435" height="75"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N63-8C-FqL">
+                    <rect key="frame" x="15" y="10" width="405" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="mmn-Ac-9pE"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wellness_event_date" translatesAutoresizingMaskIntoConstraints="NO" id="06b-hM-5j2">
+                    <rect key="frame" x="10" y="44" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="25" id="7NS-NG-46z"/>
+                        <constraint firstAttribute="height" constant="25" id="rMo-HG-ft0"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30-12-2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhI-Eh-e5Z">
+                    <rect key="frame" x="50" y="44" width="82" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="NoL-2S-Rqk"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                    <color key="textColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0g-AF-3x5">
+                    <rect key="frame" x="142" y="44" width="22" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="J4F-DE-v8D"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31-12-2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXX-BZ-hq9">
+                    <rect key="frame" x="174" y="44" width="82" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="env-9f-Dpo"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                    <color key="textColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Q0g-AF-3x5" firstAttribute="top" secondItem="N63-8C-FqL" secondAttribute="bottom" constant="10" id="03L-oJ-7PZ"/>
+                <constraint firstItem="N63-8C-FqL" firstAttribute="top" secondItem="sWg-bH-YEz" secondAttribute="top" constant="10" id="2ZE-eC-9VR"/>
+                <constraint firstItem="Q0g-AF-3x5" firstAttribute="leading" secondItem="EhI-Eh-e5Z" secondAttribute="trailing" constant="10" id="DYx-ez-FAv"/>
+                <constraint firstItem="MXX-BZ-hq9" firstAttribute="leading" secondItem="Q0g-AF-3x5" secondAttribute="trailing" constant="10" id="E3n-yk-1A3"/>
+                <constraint firstItem="06b-hM-5j2" firstAttribute="leading" secondItem="sWg-bH-YEz" secondAttribute="leading" constant="10" id="Hck-GH-a2Z"/>
+                <constraint firstItem="EhI-Eh-e5Z" firstAttribute="leading" secondItem="06b-hM-5j2" secondAttribute="trailing" constant="15" id="QCH-ad-YHj"/>
+                <constraint firstAttribute="trailing" secondItem="N63-8C-FqL" secondAttribute="trailing" constant="15" id="Sk3-W0-oF6"/>
+                <constraint firstItem="MXX-BZ-hq9" firstAttribute="top" secondItem="N63-8C-FqL" secondAttribute="bottom" constant="10" id="aZO-hV-YOs"/>
+                <constraint firstItem="06b-hM-5j2" firstAttribute="top" secondItem="N63-8C-FqL" secondAttribute="bottom" constant="10" id="dBf-TX-13d"/>
+                <constraint firstItem="EhI-Eh-e5Z" firstAttribute="top" secondItem="N63-8C-FqL" secondAttribute="bottom" constant="10" id="jab-f0-t6c"/>
+                <constraint firstItem="N63-8C-FqL" firstAttribute="leading" secondItem="sWg-bH-YEz" secondAttribute="leading" constant="15" id="v8s-R0-6fa"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="276.5" y="216"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="wellness_event_date" width="48" height="48"/>
+    </resources>
+</document>

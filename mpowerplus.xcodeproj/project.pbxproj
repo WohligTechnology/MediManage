@@ -150,6 +150,8 @@
 		C2FF29A41E3096400062DD08 /* EventDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FF29A31E3096400062DD08 /* EventDetailController.swift */; };
 		C2FF29A71E30A9C70062DD08 /* eventDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2FF29A61E30A9C70062DD08 /* eventDetail.xib */; };
 		C2FF29A91E30ADEB0062DD08 /* eventDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FF29A81E30ADEB0062DD08 /* eventDetail.swift */; };
+		C2FF29AD1E30E23B0062DD08 /* eventRegistration.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2FF29AC1E30E23B0062DD08 /* eventRegistration.xib */; };
+		C2FF29AF1E30E2E60062DD08 /* eventRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FF29AE1E30E2E60062DD08 /* eventRegistration.swift */; };
 		FC1D8AF31D78344A0020FAFB /* forgotPasswordOTP.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC1D8AF21D78344A0020FAFB /* forgotPasswordOTP.xib */; };
 		FC1D8AF51D78363F0020FAFB /* forgotPasswordOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D8AF41D78363F0020FAFB /* forgotPasswordOTP.swift */; };
 		FC1D8AF81D783A250020FAFB /* ForgotPasswordOTPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D8AF71D783A250020FAFB /* ForgotPasswordOTPController.swift */; };
@@ -355,6 +357,8 @@
 		C2FF29A31E3096400062DD08 /* EventDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailController.swift; sourceTree = "<group>"; };
 		C2FF29A61E30A9C70062DD08 /* eventDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = eventDetail.xib; sourceTree = "<group>"; };
 		C2FF29A81E30ADEB0062DD08 /* eventDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventDetail.swift; sourceTree = "<group>"; };
+		C2FF29AC1E30E23B0062DD08 /* eventRegistration.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = eventRegistration.xib; sourceTree = "<group>"; };
+		C2FF29AE1E30E2E60062DD08 /* eventRegistration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventRegistration.swift; sourceTree = "<group>"; };
 		C42FA52A5495CA29BD934BCF /* Pods_MediManageUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediManageUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D759717CAF6EE7B65953226B /* Pods_MediManage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediManage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78D1D5096BBD316BFDB2ECF /* Pods-mpowerplus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mpowerplus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mpowerplus/Pods-mpowerplus.debug.xcconfig"; sourceTree = "<group>"; };
@@ -794,6 +798,7 @@
 		786DFA291CD2282700DDE769 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C2FF29AB1E30E2190062DD08 /* eventRegistration */,
 				C2FF29A51E30A9A90062DD08 /* eventDetail */,
 				C28A40801E2F7FB2002C49E5 /* singleEvent */,
 				FC32D4521D4B822500918852 /* member */,
@@ -937,6 +942,15 @@
 				C2FF29A81E30ADEB0062DD08 /* eventDetail.swift */,
 			);
 			name = eventDetail;
+			sourceTree = "<group>";
+		};
+		C2FF29AB1E30E2190062DD08 /* eventRegistration */ = {
+			isa = PBXGroup;
+			children = (
+				C2FF29AC1E30E23B0062DD08 /* eventRegistration.xib */,
+				C2FF29AE1E30E2E60062DD08 /* eventRegistration.swift */,
+			);
+			name = eventRegistration;
 			sourceTree = "<group>";
 		};
 		FC1D8AF61D78364C0020FAFB /* forgotPasswordOTP */ = {
@@ -1187,6 +1201,7 @@
 				C2A59E931CDDDF700093CFEC /* Lato-Regular.ttf in Resources */,
 				783322B71CDB7B620015CE37 /* completeProfile.xib in Resources */,
 				FCE15CDD1D34DF54009B49E2 /* Main Hospital Bill.pdf in Resources */,
+				C2FF29AD1E30E23B0062DD08 /* eventRegistration.xib in Resources */,
 				78B90BD91CE067950022FE7A /* enterOTP.xib in Resources */,
 				FCE15CDC1D34DF54009B49E2 /* Laboratory Report.pdf in Resources */,
 				783322A61CDB13CE0015CE37 /* signup.xib in Resources */,
@@ -1309,6 +1324,7 @@
 				C2DCB0D81D1D144E004FD787 /* ClientConnectDTO.swift in Sources */,
 				C2B4401F1D1BF5A4003EECDB /* EmployeeGroupDTO.swift in Sources */,
 				783322AB1CDB37FE0015CE37 /* onboarding.swift in Sources */,
+				C2FF29AF1E30E2E60062DD08 /* eventRegistration.swift in Sources */,
 				783322971CD9FCD90015CE37 /* login.swift in Sources */,
 				3A992F0A1CEDF25F00D85D8A /* HospitalSearchResultController.swift in Sources */,
 				FCB8016F1D2B7FB200F9226F /* memberListHeader.swift in Sources */,
