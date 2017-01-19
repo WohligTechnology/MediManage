@@ -30,6 +30,7 @@ class EventDetailController: UIViewController {
         
         verticalLayout.addSubview(eventMapView())
         verticalLayout.addSubview(eventDetailView())
+        verticalLayout.addSubview(eventRegistrationView())
         
         addHeightToLayout()
     }
@@ -61,7 +62,8 @@ class EventDetailController: UIViewController {
     }
     
     func eventRegistrationView() -> UIView {
-        let registratioView = UIView(frame: CGRect(x: 10, y: 10, width: self.view.frame.size.width - 20, height: 150))        
+        let registratioView = eventRegistration(frame: CGRect(x: 10, y: 10, width: self.view.frame.size.width - 20, height: 75))
+        addShadow(registratioView)
         return registratioView
     }
     
