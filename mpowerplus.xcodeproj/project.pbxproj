@@ -152,6 +152,8 @@
 		C2FF29A91E30ADEB0062DD08 /* eventDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FF29A81E30ADEB0062DD08 /* eventDetail.swift */; };
 		C2FF29AD1E30E23B0062DD08 /* eventRegistration.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2FF29AC1E30E23B0062DD08 /* eventRegistration.xib */; };
 		C2FF29AF1E30E2E60062DD08 /* eventRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FF29AE1E30E2E60062DD08 /* eventRegistration.swift */; };
+		C2FF29B21E30E55F0062DD08 /* eventDescription.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2FF29B11E30E55F0062DD08 /* eventDescription.xib */; };
+		C2FF29B41E30EB9E0062DD08 /* eventDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FF29B31E30EB9E0062DD08 /* eventDescription.swift */; };
 		FC1D8AF31D78344A0020FAFB /* forgotPasswordOTP.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC1D8AF21D78344A0020FAFB /* forgotPasswordOTP.xib */; };
 		FC1D8AF51D78363F0020FAFB /* forgotPasswordOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D8AF41D78363F0020FAFB /* forgotPasswordOTP.swift */; };
 		FC1D8AF81D783A250020FAFB /* ForgotPasswordOTPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D8AF71D783A250020FAFB /* ForgotPasswordOTPController.swift */; };
@@ -359,6 +361,8 @@
 		C2FF29A81E30ADEB0062DD08 /* eventDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventDetail.swift; sourceTree = "<group>"; };
 		C2FF29AC1E30E23B0062DD08 /* eventRegistration.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = eventRegistration.xib; sourceTree = "<group>"; };
 		C2FF29AE1E30E2E60062DD08 /* eventRegistration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventRegistration.swift; sourceTree = "<group>"; };
+		C2FF29B11E30E55F0062DD08 /* eventDescription.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = eventDescription.xib; sourceTree = "<group>"; };
+		C2FF29B31E30EB9E0062DD08 /* eventDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventDescription.swift; sourceTree = "<group>"; };
 		C42FA52A5495CA29BD934BCF /* Pods_MediManageUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediManageUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D759717CAF6EE7B65953226B /* Pods_MediManage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediManage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78D1D5096BBD316BFDB2ECF /* Pods-mpowerplus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mpowerplus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mpowerplus/Pods-mpowerplus.debug.xcconfig"; sourceTree = "<group>"; };
@@ -798,6 +802,7 @@
 		786DFA291CD2282700DDE769 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C2FF29B01E30E53C0062DD08 /* eventDescription */,
 				C2FF29AB1E30E2190062DD08 /* eventRegistration */,
 				C2FF29A51E30A9A90062DD08 /* eventDetail */,
 				C28A40801E2F7FB2002C49E5 /* singleEvent */,
@@ -951,6 +956,15 @@
 				C2FF29AE1E30E2E60062DD08 /* eventRegistration.swift */,
 			);
 			name = eventRegistration;
+			sourceTree = "<group>";
+		};
+		C2FF29B01E30E53C0062DD08 /* eventDescription */ = {
+			isa = PBXGroup;
+			children = (
+				C2FF29B11E30E55F0062DD08 /* eventDescription.xib */,
+				C2FF29B31E30EB9E0062DD08 /* eventDescription.swift */,
+			);
+			name = eventDescription;
 			sourceTree = "<group>";
 		};
 		FC1D8AF61D78364C0020FAFB /* forgotPasswordOTP */ = {
@@ -1161,6 +1175,7 @@
 				C2A59E8F1CDDDF700093CFEC /* Lato-Black.ttf in Resources */,
 				783322B01CDB50D10015CE37 /* landing.xib in Resources */,
 				C2A7293A1E23CD3100EA2127 /* GoogleService-Info.plist in Resources */,
+				C2FF29B21E30E55F0062DD08 /* eventDescription.xib in Resources */,
 				43D6FF431CFEE486008361B2 /* pickDate.xib in Resources */,
 				FCB801721D2BB62B00F9226F /* relationView.xib in Resources */,
 				3AEEB0241CE7515C0085EEF5 /* connect.xib in Resources */,
@@ -1300,6 +1315,7 @@
 				FCE15CD21D34D6E2009B49E2 /* PDFViewController.swift in Sources */,
 				3A8EFB621CE9E742004489F3 /* claimForm.swift in Sources */,
 				3A677B691CE4B539003B8C2B /* CompleteProfileController.swift in Sources */,
+				C2FF29B41E30EB9E0062DD08 /* eventDescription.swift in Sources */,
 				3A6C4E451CF48B3D0056D46F /* SlideMenuController.swift in Sources */,
 				3A79A7C91CF06652008B693B /* ClaimFormController.swift in Sources */,
 				3A31911A1CEF40AB001DCBBC /* PageViewerController.swift in Sources */,
