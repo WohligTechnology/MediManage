@@ -61,7 +61,7 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let eventDetailController = storyboard?.instantiateViewControllerWithIdentifier("eventDetailController") as! EventDetailController
+        let eventDetailController = storyboard?.instantiateViewControllerWithIdentifier("eventImageController") as! EventImageController
         self.navigationController?.pushViewController(eventDetailController, animated: true)
     }
     

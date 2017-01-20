@@ -146,6 +146,7 @@
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -4146,6 +4147,120 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="liu-uD-MJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1538" y="4138"/>
+        </scene>
+        <!--Event Image Controller-->
+        <scene sceneID="PV0-By-Zna">
+            <objects>
+                <viewController storyboardIdentifier="eventImageController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EeI-md-uGc" customClass="EventImageController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h4q-Tw-rdD"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lj3-vg-TVp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="clx-VH-A44">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Odo-Bh-RPo">
+                                <rect key="frame" x="0.0" y="10" width="320" height="548"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2wR-4p-hqv">
+                                    <size key="itemSize" width="127" height="106"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="SZL-Z4-HJQ" customClass="ImageCollectionCell" customModule="MediManage" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="127" height="106"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="127" height="106"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hPq-fF-pxL">
+                                                    <rect key="frame" x="8" y="8" width="111" height="90"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="hPq-fF-pxL" firstAttribute="top" secondItem="SZL-Z4-HJQ" secondAttribute="topMargin" id="Jat-et-bD3"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="hPq-fF-pxL" secondAttribute="bottom" id="Oih-Uh-81A"/>
+                                            <constraint firstItem="hPq-fF-pxL" firstAttribute="leading" secondItem="SZL-Z4-HJQ" secondAttribute="leadingMargin" id="hHm-gT-1e3"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="hPq-fF-pxL" secondAttribute="trailing" id="qMq-XP-7Zs"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="eventImage" destination="hPq-fF-pxL" id="HTp-Xc-5cM"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="EeI-md-uGc" id="G7H-0h-iPX"/>
+                                    <outlet property="delegate" destination="EeI-md-uGc" id="449-eY-EEH"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Odo-Bh-RPo" secondAttribute="trailing" id="Hjk-r0-dhm"/>
+                            <constraint firstItem="Odo-Bh-RPo" firstAttribute="leading" secondItem="clx-VH-A44" secondAttribute="leading" id="STG-qC-gv8"/>
+                            <constraint firstItem="Odo-Bh-RPo" firstAttribute="top" secondItem="clx-VH-A44" secondAttribute="top" constant="10" id="oDX-n1-b1e"/>
+                            <constraint firstItem="Lj3-vg-TVp" firstAttribute="top" secondItem="Odo-Bh-RPo" secondAttribute="bottom" constant="10" id="rwh-qi-QjS"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Odo-Bh-RPo" id="O5J-PC-ads"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IC8-ra-2DB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1882" y="4138"/>
+        </scene>
+        <!--Single Image Controller-->
+        <scene sceneID="Zus-Z1-bxC">
+            <objects>
+                <viewController storyboardIdentifier="singleImageController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="I7a-Lp-VGu" customClass="SingleImageController" customModule="MediManage" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CeJ-zy-wLi"/>
+                        <viewControllerLayoutGuide type="bottom" id="uTl-et-VmM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xWk-sm-0Xq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xaw-mJ-rbL">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9A-bK-A7F">
+                                <rect key="frame" x="0.0" y="40" width="320" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="VsN-Z5-fHp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                                <color key="textColor" red="0.08235294118" green="0.69411764710000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="t9A-bK-A7F" secondAttribute="trailing" id="06N-E9-bUC"/>
+                            <constraint firstItem="t9A-bK-A7F" firstAttribute="leading" secondItem="xWk-sm-0Xq" secondAttribute="leading" id="2Ye-cg-90d"/>
+                            <constraint firstItem="Xaw-mJ-rbL" firstAttribute="leading" secondItem="xWk-sm-0Xq" secondAttribute="leading" id="AHI-jk-WU1"/>
+                            <constraint firstItem="uTl-et-VmM" firstAttribute="top" secondItem="Xaw-mJ-rbL" secondAttribute="bottom" id="aaY-AD-nzi"/>
+                            <constraint firstItem="t9A-bK-A7F" firstAttribute="top" secondItem="CeJ-zy-wLi" secondAttribute="bottom" constant="20" id="p5V-lN-zkN"/>
+                            <constraint firstAttribute="trailing" secondItem="Xaw-mJ-rbL" secondAttribute="trailing" id="qe3-yy-ogb"/>
+                            <constraint firstItem="Xaw-mJ-rbL" firstAttribute="top" secondItem="CeJ-zy-wLi" secondAttribute="bottom" id="rMx-Sg-GkW"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="eventImage" destination="Xaw-mJ-rbL" id="DKv-zv-u7u"/>
+                        <outlet property="eventText" destination="t9A-bK-A7F" id="VM7-ux-u2T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mjy-mF-ZjA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2244" y="4196"/>
         </scene>
         <!--Help Desk Query Controller-->
         <scene sceneID="BBF-QB-d8e">

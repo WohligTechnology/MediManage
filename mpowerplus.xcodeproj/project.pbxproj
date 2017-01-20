@@ -117,6 +117,8 @@
 		9BF4AD791DD2FF5A00925CA6 /* MyClaimController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF4AD781DD2FF5A00925CA6 /* MyClaimController.swift */; };
 		C21A03191E31DD7D004C18EC /* eventHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = C21A03181E31DD7D004C18EC /* eventHeader.xib */; };
 		C21A031B1E31DEAF004C18EC /* eventHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21A031A1E31DEAF004C18EC /* eventHeader.swift */; };
+		C21A031D1E32109C004C18EC /* EventImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21A031C1E32109C004C18EC /* EventImageController.swift */; };
+		C21A031F1E32255E004C18EC /* SingleImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21A031E1E32255D004C18EC /* SingleImageController.swift */; };
 		C2382C201D0AA43D00DC0073 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2382C1F1D0AA43D00DC0073 /* Alamofire.framework */; };
 		C28A40821E2F7FE1002C49E5 /* singleEvent.xib in Resources */ = {isa = PBXBuildFile; fileRef = C28A40811E2F7FE1002C49E5 /* singleEvent.xib */; };
 		C28A40841E2F8239002C49E5 /* singleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28A40831E2F8239002C49E5 /* singleEvent.swift */; };
@@ -327,6 +329,8 @@
 		B0D9A43CDBD987144230F52C /* Pods_mpowerplus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mpowerplus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C21A03181E31DD7D004C18EC /* eventHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = eventHeader.xib; sourceTree = "<group>"; };
 		C21A031A1E31DEAF004C18EC /* eventHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventHeader.swift; sourceTree = "<group>"; };
+		C21A031C1E32109C004C18EC /* EventImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventImageController.swift; sourceTree = "<group>"; };
+		C21A031E1E32255D004C18EC /* SingleImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleImageController.swift; sourceTree = "<group>"; };
 		C2382C1F1D0AA43D00DC0073 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		C2745E2B1E23C5B30091DAFB /* MediManage-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MediManage-Bridging-Header.h"; sourceTree = "<group>"; };
 		C28A40811E2F7FE1002C49E5 /* singleEvent.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = singleEvent.xib; sourceTree = "<group>"; };
@@ -799,6 +803,8 @@
 				9B1790681DE41423006FE8F5 /* newDemoViewController.swift */,
 				C28A40851E2F8A6B002C49E5 /* EventController.swift */,
 				C2FF29A31E3096400062DD08 /* EventDetailController.swift */,
+				C21A031C1E32109C004C18EC /* EventImageController.swift */,
+				C21A031E1E32255D004C18EC /* SingleImageController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1331,6 +1337,7 @@
 				3A8EFB621CE9E742004489F3 /* claimForm.swift in Sources */,
 				3A677B691CE4B539003B8C2B /* CompleteProfileController.swift in Sources */,
 				C2FF29B41E30EB9E0062DD08 /* eventDescription.swift in Sources */,
+				C21A031D1E32109C004C18EC /* EventImageController.swift in Sources */,
 				3A6C4E451CF48B3D0056D46F /* SlideMenuController.swift in Sources */,
 				3A79A7C91CF06652008B693B /* ClaimFormController.swift in Sources */,
 				3A31911A1CEF40AB001DCBBC /* PageViewerController.swift in Sources */,
@@ -1389,6 +1396,7 @@
 				3AE7AFE61CF2D9060047DFB0 /* HospitalSearchController.swift in Sources */,
 				9BC688661DD48A02004C2915 /* preAuthOneController.swift in Sources */,
 				C2DCB0DA1D1D178B004FD787 /* ClientPolicyDTOClient.swift in Sources */,
+				C21A031F1E32255E004C18EC /* SingleImageController.swift in Sources */,
 				C2DCB0EE1D1D4603004FD787 /* TicketDataDTO.swift in Sources */,
 				3A79A7CF1CF06ADC008B693B /* PreAuthorizationTwoController.swift in Sources */,
 				3AC258401D33782D00384031 /* TabBarController.swift in Sources */,
