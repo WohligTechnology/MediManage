@@ -14,6 +14,7 @@ class EventDetailController: UIViewController {
     
     var eventId: Int!
     var verticalLayout: VerticalLayout!
+    var descriptionView: eventDescription!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,7 @@ class EventDetailController: UIViewController {
         verticalLayout.backgroundColor = UIColor(red: 240 / 255, green: 240 / 255, blue: 240 / 255, alpha: 1)
         scrollView.addSubview(verticalLayout)
         
-//        verticalLayout.addSubview(subHeaderView())
+        verticalLayout.addSubview(subHeaderView())
         verticalLayout.addSubview(eventMapView())
         verticalLayout.addSubview(eventDetailView())
         verticalLayout.addSubview(eventRegistrationView())
@@ -72,8 +73,13 @@ class EventDetailController: UIViewController {
     }
     
     func eventDescriptionView() -> UIView {
-        let descriptionView = eventDescription(frame: CGRect(x: 10, y: 20, width: self.view.frame.size.width - 20, height: 45))
+        descriptionView = eventDescription(frame: CGRect(x: 10, y: 20, width: self.view.frame.size.width - 20, height: 45))
         addShadow(descriptionView)
+        
+        descriptionView.descriptionText.alpha = 0
+        descriptionView.arrowButton.tag = 1
+        descriptionView.arrowButton.addTarget(self, action: #selector(descriptionArrow(_:)), forControlEvents: .TouchUpInside)
+        
         return descriptionView
     }
     
@@ -98,7 +104,8 @@ class EventDetailController: UIViewController {
     }
     
     func subHeaderView() -> UIView {
-        let headerView = subHeader(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 60))
+        let headerView = eventHeader(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50))
+        headerView.title.text = "Mumbai Yoga Fest 2017"
         return headerView
     }
     
@@ -107,6 +114,22 @@ class EventDetailController: UIViewController {
         view.layer.shadowOpacity = 0.5
         view.layer.shadowOffset = CGSize.zero
         view.layer.shadowRadius = 2
+    }
+    
+    func descriptionArrow(sender: UIButton) {
+        if sender.tag == 0 {
+            descriptionView.descriptionText.alpha = 0
+            descriptionView.frame.size.height = 45
+            descriptionView.arrowButton.transform = CGAffineTransformMakeRotation(0)
+            sender.tag = 1
+            addHeightToLayout()
+        } else if sender.tag == 1 {
+            descriptionView.descriptionText.alpha = 1
+            descriptionView.frame.size.height = 250
+            descriptionView.arrowButton.transform = CGAffineTransformMakeRotation((CGFloat(M_PI)))
+            sender.tag = 0
+            addHeightToLayout()
+        }
     }
 
 }

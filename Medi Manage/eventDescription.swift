@@ -10,6 +10,10 @@ import UIKit
 
 class eventDescription: UIView {
     
+    @IBOutlet var descriptionView: UIView!
+    @IBOutlet weak var arrowButton: UIButton!
+    @IBOutlet weak var descriptionText: UILabel!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
