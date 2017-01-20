@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class EventImageController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    var photos: [String]!
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -16,6 +19,9 @@ class EventImageController: UIViewController, UICollectionViewDataSource, UIColl
         super.viewDidLoad()
         
         collectionView.backgroundColor = UIColor.whiteColor()
+        
+        photos = ["tutorial", "call_icon", "tutorial", "tutorial", "daughter_icon", "tutorial", "tutorial", "tutorial",
+                    "tutorial", "father_icon", "tutorial", "tutorial", "call_icon2", "tutorial", "tutorial", "tutorial"]
         
         navshow()
     }
@@ -31,16 +37,22 @@ class EventImageController: UIViewController, UICollectionViewDataSource, UIColl
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("imageCell", forIndexPath: indexPath) as! ImageCollectionCell
         cell.backgroundColor = UIColor.whiteColor()
-        cell.eventImage.image = UIImage(named: "tutorial")
+        cell.eventImage.image = UIImage(named: photos[indexPath.row])
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return photos.count
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         print(indexPath.row)
+        let singleImageController = storyboard?.instantiateViewControllerWithIdentifier("singleImageController") as! SingleImageController
+        singleImageController.image = UIImage(named: photos[indexPath.row])
+        singleImageController.imageIndex = indexPath.row
+        singleImageController.totalImages = 20
+        singleImageController.photos = photos
+        self.navigationController?.pushViewController(singleImageController, animated: true)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {

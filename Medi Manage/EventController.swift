@@ -16,6 +16,7 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
     @IBOutlet weak var upcomingTableView: UITableView!
     
     var titleString: String = "Upcoming Title"
+    var tab: String = "upcoming"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,8 +62,15 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let eventDetailController = storyboard?.instantiateViewControllerWithIdentifier("eventImageController") as! EventImageController
-        self.navigationController?.pushViewController(eventDetailController, animated: true)
+        
+        if tab == "upcoming" {
+            let eventDetailController = storyboard?.instantiateViewControllerWithIdentifier("eventDetailController") as! EventDetailController
+            self.navigationController?.pushViewController(eventDetailController, animated: true)
+        } else if tab == "past" {
+            let eventImageController = storyboard?.instantiateViewControllerWithIdentifier("eventImageController") as! EventImageController
+            self.navigationController?.pushViewController(eventImageController, animated: true)
+        }
+        
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -83,6 +91,7 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
         pastbutton.backgroundColor = UIColor.whiteColor()
         pastbutton.setTitleColor(mainBlueColor, forState: .Normal)
         
+        tab = "upcoming"
         titleString = "Upcoming Title"
         upcomingTableView.reloadData()
         
@@ -94,6 +103,7 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
         upcomingButton.backgroundColor = UIColor.whiteColor()
         upcomingButton.setTitleColor(mainBlueColor, forState: .Normal)
         
+        tab = "past"
         titleString = "Past Title"
         upcomingTableView.reloadData()
     }
