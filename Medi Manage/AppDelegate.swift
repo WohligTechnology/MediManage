@@ -94,21 +94,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let token = defaultToken.stringForKey("access_token")
         let splashscrn = defaultToken.stringForKey("onSplashScreen")
         
+        print("\(token)")
+        
         if token != nil {
-            
-            
             
             let exampleViewController: TabBarController = mainStoryboard.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
             self.window?.rootViewController = exampleViewController
-
             
-        }else{
+        } else {
             if splashscrn != nil {
+                
                 let exampleViewController: LoginController = mainStoryboard.instantiateViewControllerWithIdentifier("loginc") as! LoginController
                 self.window?.rootViewController = exampleViewController
-            }else{
+                
+            } else {
+                
                 let exampleViewController: PageViewerController = mainStoryboard.instantiateViewControllerWithIdentifier("pageViewCtlr") as! PageViewerController
                 self.window?.rootViewController = exampleViewController
+                
             }
         }
         

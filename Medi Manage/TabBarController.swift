@@ -12,6 +12,9 @@ import SwiftyJSON
 var insuredMemberController:UIViewController!
 
 class TabBarController: UITabBarController {
+    
+    var enrollmentJSON: JSON!
+    var clientId: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +28,14 @@ class TabBarController: UITabBarController {
         self.moreNavigationController.navigationBar.topItem?.leftBarButtonItem = nil
         self.moreNavigationController.navigationBar.barTintColor = UIColor.blackColor()
         self.moreNavigationController.navigationBar.tintColor = UIColor.whiteColor()
+        
+        rest.EnrolledName({(request) in
+            dispatch_async(dispatch_get_main_queue(), {
+                self.enrollmentJSON = request
+                self.clientId = request["result"][6].string
+                defaultToken.setObject(self.clientId, forKey: "clientId")
+            })
+        })
         
 //        rest.isEnrolled({(json:JSON) ->() in
 //            var data = json

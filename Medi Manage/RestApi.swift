@@ -417,7 +417,7 @@ public class RestApi {
     }
     
     
-    public func EnrolledName(data : JSON ,completion:((JSON) -> Void))
+    public func EnrolledName(completion:((JSON) -> Void))
     {
         var json = JSON(1)
         let token = defaultToken.stringForKey("access_token")
@@ -570,6 +570,34 @@ public class RestApi {
             completion(json);
         }
         
+    }
+    
+    public func getAllEvents(completion:((JSON) -> Void)) {
+        var json = JSON(1)
+        let token = defaultToken.stringForKey("access_token")
+        let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
+        let id = defaultToken.stringForKey("clientId")
+        
+        do {
+            let opt = try HTTP.GET(apiURL+"Wellness/Events/\(id!)", parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            opt.start { response in
+                print(response.error)
+                if let _ = response.error {
+                    let nsError = response.error! as NSError
+                    if nsError.code == 401 {
+                        json = JSON(nsError.code)
+                        completion(json)
+                    } else {
+                        completion(json)
+                    }
+                } else {
+                    json  = JSON(data: response.data)
+                    completion(json)
+                }
+            }
+        } catch _ {
+            completion(json)
+        }
     }
 
     public func getLocation(address:String, completion:((JSON) -> Void))

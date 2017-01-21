@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class EventController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -18,12 +19,21 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
     var titleString: String = "Upcoming Title"
     var tab: String = "upcoming"
     
+    var eventJSON: JSON!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navshow()
         
         self.view.backgroundColor = UIColor.redColor()
+        
+        rest.getAllEvents({(request) in
+            dispatch_async(dispatch_get_main_queue(), {
+                self.eventJSON = request
+                print("my json: \(self.eventJSON)")
+            })
+        })
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -83,6 +93,24 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 8
+    }
+    
+    func eventLoaded(json:JSON) {
+        
+        print(json)
+        
+        if(json == 1) {
+            let alertController = UIAlertController(title: "No Connection", message:
+                "Please check your internet connection", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+            self.presentViewController(alertController, animated: true, completion: nil)
+        } else {
+            eventJSON = json
+            dispatch_async(dispatch_get_main_queue(),{
+                self.upcomingTableView.reloadData()
+            })
+        }
+        
     }
 
     @IBAction func upcomingAction(sender: AnyObject) {
