@@ -30,6 +30,7 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
         navshow()
         
         self.view.backgroundColor = UIColor.redColor()
+        LoadingOverlay.shared.showOverlay(self.view)
         
         self.eventArr = []
         
@@ -45,7 +46,8 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
                 self.pastArr = request["result"]["PastEvents"].array!
                 self.eventArr = self.upcomingArr
                 print("my json: \(self.eventArr) - \(self.pastArr)")
-                dispatch_async(dispatch_get_main_queue(),{
+                LoadingOverlay.shared.hideOverlayView()
+                dispatch_async(dispatch_get_main_queue(), {
                     self.upcomingTableView.reloadData()
                 })
             }
@@ -86,9 +88,11 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
             if (eventArr[indexPath.section]["ImageURL"].string != nil) {
                 if let dataURL = NSURL(string: self.eventArr[indexPath.section]["ImageURL"].string!) {
                     do {
-                        let data = NSData(contentsOfURL: dataURL)
-                        let image = UIImage(data: data!)
-                        singleEventView.eventImage.image = image
+                        dispatch_async(dispatch_get_main_queue(), {
+                            let data = NSData(contentsOfURL: dataURL)
+                            let image = UIImage(data: data!)
+                            singleEventView.eventImage.image = image
+                        })
                     }
                 }
             }
