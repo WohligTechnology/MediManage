@@ -55,10 +55,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vwI-KO-OSC">
-                    <rect key="frame" x="305" y="0.0" width="95" height="18"/>
+                    <rect key="frame" x="290" y="0.0" width="110" height="18"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30-12-2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBm-S1-iDQ">
-                            <rect key="frame" x="0.0" y="0.0" width="95" height="18"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30-JAN-2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBm-S1-iDQ">
+                            <rect key="frame" x="0.0" y="0.0" width="110" height="18"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="18" id="Gvw-pe-eMU"/>
                             </constraints>
@@ -71,7 +71,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="18" id="E0h-Ea-CcZ"/>
                         <constraint firstAttribute="bottom" secondItem="GBm-S1-iDQ" secondAttribute="bottom" id="Lob-zf-rbG"/>
-                        <constraint firstAttribute="width" constant="95" id="owL-j3-mmG"/>
+                        <constraint firstAttribute="width" constant="110" id="owL-j3-mmG"/>
                         <constraint firstAttribute="trailing" secondItem="GBm-S1-iDQ" secondAttribute="trailing" id="pkX-Vc-cku"/>
                         <constraint firstItem="GBm-S1-iDQ" firstAttribute="top" secondItem="vwI-KO-OSC" secondAttribute="top" id="twA-Qr-8t9"/>
                         <constraint firstItem="GBm-S1-iDQ" firstAttribute="leading" secondItem="vwI-KO-OSC" secondAttribute="leading" id="vwq-e2-oni"/>

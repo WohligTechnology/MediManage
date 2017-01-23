@@ -18,6 +18,7 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     var titleString: String = "Upcoming Title"
     var tab: String = "upcoming"
+    var data = 0
     
     var eventJSON: JSON!
     var upcomingArr: [JSON]!
@@ -35,7 +36,7 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
         self.eventArr = []
         
         rest.getAllEvents({(request) in
-            if(request == 1) {
+            if request == 1 {
                 let alertController = UIAlertController(title: "No Connection", message:
                     "Please check your internet connection", preferredStyle: UIAlertControllerStyle.Alert)
                 alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
@@ -46,6 +47,7 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
                 self.pastArr = request["result"]["PastEvents"].array!
                 self.eventArr = self.upcomingArr
                 print("my json: \(self.eventArr) - \(self.pastArr)")
+                self.data = 1
                 LoadingOverlay.shared.hideOverlayView()
                 dispatch_async(dispatch_get_main_queue(), {
                     self.upcomingTableView.reloadData()
@@ -56,6 +58,8 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -132,24 +136,25 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
         upcomingButton.backgroundColor = mainBlueColor
         upcomingButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         pastbutton.backgroundColor = UIColor.whiteColor()
-        pastbutton.setTitleColor(mainBlueColor, forState: .Normal)
-        
+        pastbutton.setTitleColor(UIColor(red: 244 / 255, green: 109 / 255, blue: 30 / 255, alpha: 1), forState: .Normal)
         tab = "upcoming"
-        titleString = "Upcoming Title"
-        eventArr = upcomingArr
-        upcomingTableView.reloadData()
         
+        if data == 1 {
+            eventArr = upcomingArr
+            upcomingTableView.reloadData()
+        }
     }
     
     @IBAction func pastAction(sender: AnyObject) {
         pastbutton.backgroundColor = mainBlueColor
         pastbutton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         upcomingButton.backgroundColor = UIColor.whiteColor()
-        upcomingButton.setTitleColor(mainBlueColor, forState: .Normal)
-        
+        upcomingButton.setTitleColor(UIColor(red: 244 / 255, green: 109 / 255, blue: 30 / 255, alpha: 1), forState: .Normal)
         tab = "past"
-        titleString = "Past Title"
-        eventArr = pastArr
-        upcomingTableView.reloadData()
+        
+        if data == 1 {
+            eventArr = pastArr
+            upcomingTableView.reloadData()
+        }
     }
 }
