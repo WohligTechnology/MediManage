@@ -20,6 +20,9 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
     var tab: String = "upcoming"
     
     var eventJSON: JSON!
+    var upcomingArr: [JSON]!
+    var pastArr: [JSON]!
+    var eventArr:[JSON]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,6 +124,7 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         tab = "upcoming"
         titleString = "Upcoming Title"
+        eventArr = upcomingArr
         upcomingTableView.reloadData()
         
     }
@@ -133,6 +137,7 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         tab = "past"
         titleString = "Past Title"
+        eventArr = pastArr
         upcomingTableView.reloadData()
     }
 }
