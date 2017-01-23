@@ -16,7 +16,8 @@ import SwiftHTTP
 
 
 
-let adminUrl = "https://corporate.medimanage.com/api/";
+//let adminUrl = "https://corporate.medimanage.com/api/";
+let adminUrl = "http://testcorp.medimanage.com/api/"
 let apiURL = adminUrl + "v1/";
 let defaultToken = NSUserDefaults.standardUserDefaults()
 
@@ -579,7 +580,7 @@ public class RestApi {
         let id = defaultToken.stringForKey("clientId")
         
         do {
-            let opt = try HTTP.GET(apiURL+"Wellness/Events/\(id!)", parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            let opt = try HTTP.GET(apiURL+"Wellness/Events/1", parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
             opt.start { response in
                 print(response.error)
                 if let _ = response.error {
@@ -600,14 +601,13 @@ public class RestApi {
         }
     }
     
-    public func getEventDetail(completion:((JSON) -> Void)) {
+    public func getEventDetail(id: String, completion:((JSON) -> Void)) {
         var json = JSON(1)
         let token = defaultToken.stringForKey("access_token")
         let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
-        let id = defaultToken.stringForKey("clientId")
         
         do {
-            let opt = try HTTP.GET(apiURL+"Wellness/EventDetails/\(id!)", parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            let opt = try HTTP.GET(apiURL+"Wellness/EventDetails/\(id)", parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
             opt.start { response in
                 print(response.error)
                 if let _ = response.error {

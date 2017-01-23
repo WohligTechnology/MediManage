@@ -22,7 +22,7 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
     var eventJSON: JSON!
     var upcomingArr: [JSON]!
     var pastArr: [JSON]!
-    var eventArr:[JSON]!
+    var eventArr: [JSON]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +31,24 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         self.view.backgroundColor = UIColor.redColor()
         
+        self.eventArr = []
+        
         rest.getAllEvents({(request) in
-            dispatch_async(dispatch_get_main_queue(), {
+            if(request == 1) {
+                let alertController = UIAlertController(title: "No Connection", message:
+                    "Please check your internet connection", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                self.presentViewController(alertController, animated: true, completion: nil)
+            } else {
                 self.eventJSON = request
-                print("my json: \(self.eventJSON)")
-            })
+                self.upcomingArr = request["result"]["UpcomingEvents"].array!
+                self.pastArr = request["result"]["PastEvents"].array!
+                self.eventArr = self.upcomingArr
+                print("my json: \(self.eventArr) - \(self.pastArr)")
+                dispatch_async(dispatch_get_main_queue(),{
+                    self.upcomingTableView.reloadData()
+                })
+            }
         })
     }
     
@@ -52,7 +65,7 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 5
+        return eventArr.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -63,13 +76,25 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
         let upcell = tableView.dequeueReusableCellWithIdentifier("upcomingEventCell", forIndexPath: indexPath)
         upcell.selectionStyle = UITableViewCellSelectionStyle.None
         
+        let singleEventView = singleEvent(frame: CGRectMake(0, 0, self.view.frame.width, 180))
         
-        let singleEventView = singleEvent(frame: CGRectMake(0, 0, self.view.frame.width, 180));
-        singleEventView.eventDate.text = "16-12-2017"
-        singleEventView.eventTitle.text = titleString
-        singleEventView.eventDescription.text = "Mumbai Yoga Fest is an initiative to bring to all"
-        singleEventView.eventImage.image = UIImage(named: "tutorial")
-        upcell.addSubview(singleEventView)
+        if (eventArr[indexPath.section]["EventStartDate"].string != nil) {
+            singleEventView.eventDate.text = eventArr[indexPath.section]["EventStartDate"].string!
+            singleEventView.eventTitle.text = eventArr[indexPath.section]["EventName"].string!
+            singleEventView.eventDescription.text = eventArr[indexPath.section]["EventDesc"].string!
+            
+            if (eventArr[indexPath.section]["ImageURL"].string != nil) {
+                if let dataURL = NSURL(string: self.eventArr[indexPath.section]["ImageURL"].string!) {
+                    do {
+                        let data = NSData(contentsOfURL: dataURL)
+                        let image = UIImage(data: data!)
+                        singleEventView.eventImage.image = image
+                    }
+                }
+            }
+            
+            upcell.addSubview(singleEventView)
+        }
         
         return upcell
     }
@@ -78,6 +103,7 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         if tab == "upcoming" {
             let eventDetailController = storyboard?.instantiateViewControllerWithIdentifier("eventDetailController") as! EventDetailController
+            eventDetailController.eventId = eventArr[indexPath.section]["ID"].int!
             self.navigationController?.pushViewController(eventDetailController, animated: true)
         } else if tab == "past" {
             let eventImageController = storyboard?.instantiateViewControllerWithIdentifier("eventImageController") as! EventImageController
@@ -96,24 +122,6 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 8
-    }
-    
-    func eventLoaded(json:JSON) {
-        
-        print(json)
-        
-        if(json == 1) {
-            let alertController = UIAlertController(title: "No Connection", message:
-                "Please check your internet connection", preferredStyle: UIAlertControllerStyle.Alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
-            self.presentViewController(alertController, animated: true, completion: nil)
-        } else {
-            eventJSON = json
-            dispatch_async(dispatch_get_main_queue(),{
-                self.upcomingTableView.reloadData()
-            })
-        }
-        
     }
 
     @IBAction func upcomingAction(sender: AnyObject) {
