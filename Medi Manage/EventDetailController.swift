@@ -32,20 +32,19 @@ class EventDetailController: UIViewController {
         verticalLayout = VerticalLayout(width: self.view.frame.width)
         verticalLayout.backgroundColor = UIColor(red: 240 / 255, green: 240 / 255, blue: 240 / 255, alpha: 1)
         scrollView.addSubview(verticalLayout)
-        
-        if data == 0 {
+
+//        if data == 0 {
             eventDetailAPI(eventId)
-        }
+//        }
         
-        addHeightToLayout()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        if data == 0 {
-            eventDetailAPI(eventId)
-        }
+//        if data == 0 {
+//            eventDetailAPI(eventId)
+//        }
         
     }
     
@@ -148,46 +147,55 @@ class EventDetailController: UIViewController {
     }
     
     func eventDetailAPI(id: Int) {
-        LoadingOverlay.shared.showOverlay(self.view)
         
-        rest.getEventDetail(id, completion: { request in
-            if request == 1 {
-                let alertController = UIAlertController(title: "No Connection", message:
-                    "Please check your internet connection", preferredStyle: UIAlertControllerStyle.Alert)
-                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
-                self.presentViewController(alertController, animated: true, completion: nil)
-            } else {
-                LoadingOverlay.shared.hideOverlayView()
-                self.data = 1
-                
-                self.eventDetailJSON = request["result"]
-                print("my json: \(self.eventDetailJSON)")
-                
-                self.verticalLayout.addSubview(self.subHeaderView(self.eventDetailJSON["Name"].string!))
-                
-                self.verticalLayout.addSubview(self.eventMapView())
-                
-                self.verticalLayout.addSubview(self.eventDetailView(
-                    self.eventDetailJSON["Name"].string!,
-                    location: self.eventDetailJSON["Address"].string!,
-                    dateFrom: self.eventDetailJSON["StartDate"].string!,
-                    dateTo: self.eventDetailJSON["EndDate"].string!,
-                    dateTime: self.eventDetailJSON["FromTime"].string!))
-                
-                if self.eventDetailJSON["IsRegistrationRequired"].bool! {
-                    self.verticalLayout.addSubview(self.eventRegistrationView(
-                        self.eventDetailJSON["RegistrationStartDate"].string!,
-                        dateTo: self.eventDetailJSON["RegistrationEndDate"].string!))
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            rest.getEventDetail(id, completion: { request in
+                if request == 1 {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        let alertController = UIAlertController(title: "No Connection", message:
+                            "Please check your internet connection", preferredStyle: UIAlertControllerStyle.Alert)
+                        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                        self.presentViewController(alertController, animated: true, completion: nil)
+                    })
+                } else {
+                    self.data = 1
+                    
+                    self.eventDetailJSON = request["result"]
+                    print("my json: \(self.eventDetailJSON)")
+                    
+                    dispatch_async(dispatch_get_main_queue(), {
+                    
+                        self.verticalLayout.addSubview(self.subHeaderView(self.eventDetailJSON["Name"].string!))
+                        
+                        self.verticalLayout.addSubview(self.eventMapView())
+                        
+                        self.verticalLayout.addSubview(self.eventDetailView(
+                            self.eventDetailJSON["Name"].string!,
+                            location: self.eventDetailJSON["Address"].string!,
+                            dateFrom: self.eventDetailJSON["StartDate"].string!,
+                            dateTo: self.eventDetailJSON["EndDate"].string!,
+                            dateTime: self.eventDetailJSON["FromTime"].string!))
+                        
+                        if self.eventDetailJSON["IsRegistrationRequired"].bool! {
+                            self.verticalLayout.addSubview(self.eventRegistrationView(
+                                self.eventDetailJSON["RegistrationStartDate"].string!,
+                                dateTo: self.eventDetailJSON["RegistrationEndDate"].string!))
+                        }
+                        
+                        self.verticalLayout.addSubview(self.eventDescriptionView(self.eventDetailJSON["Description"].string!))
+                        
+                        if self.eventDetailJSON["IsRegistrationRequired"].bool! {
+                            self.verticalLayout.addSubview(self.registerButton())
+                        }
+                        
+                        self.verticalLayout.addSubview(self.spaceView())
+                        
+                        self.addHeightToLayout()
+                        
+                    })
+                    
                 }
-                
-                self.verticalLayout.addSubview(self.eventDescriptionView(self.eventDetailJSON["Description"].string!))
-                
-                if self.eventDetailJSON["IsRegistrationRequired"].bool! {
-                    self.verticalLayout.addSubview(self.registerButton())
-                }
-                
-                self.verticalLayout.addSubview(self.spaceView())
-            }
+            })
         })
     }
 

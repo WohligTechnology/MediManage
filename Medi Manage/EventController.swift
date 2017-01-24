@@ -31,7 +31,6 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
         navshow()
         
         self.view.backgroundColor = UIColor.redColor()
-        LoadingOverlay.shared.showOverlay(self.view)
         
         self.eventArr = []
         
@@ -42,15 +41,16 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
                 alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
                 self.presentViewController(alertController, animated: true, completion: nil)
             } else {
-                LoadingOverlay.shared.hideOverlayView()
-                self.eventJSON = request
-                self.upcomingArr = request["result"]["UpcomingEvents"].array!
-                self.eventArr = self.upcomingArr
-                self.pastArr = request["result"]["PastEvents"].array!
-                print("my json: \(self.eventArr) - \(self.pastArr)")
-                self.data = 1
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.upcomingTableView.reloadData()
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                    self.eventJSON = request
+                    self.upcomingArr = request["result"]["UpcomingEvents"].array!
+                    self.eventArr = self.upcomingArr
+                    self.pastArr = request["result"]["PastEvents"].array!
+                    print("my json: \(self.eventArr) - \(self.pastArr)")
+                    self.data = 1
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.upcomingTableView.reloadData()
+                    })
                 })
             }
         })
@@ -90,16 +90,18 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
             singleEventView.eventDescription.text = eventArr[indexPath.section]["EventDesc"].string!
             
             if (eventArr[indexPath.section]["ImageURL"].string != nil) {
-                if let dataURL = NSURL(string: self.eventArr[indexPath.section]["ImageURL"].string!) {
-                    do {
-                        dispatch_async(dispatch_get_main_queue(), {
-                            if let data = NSData(contentsOfURL: dataURL) {
-                                let image = UIImage(data: data)
-                                singleEventView.eventImage.image = image
-                            }
-                        })
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                    if let dataURL = NSURL(string: self.eventArr[indexPath.section]["ImageURL"].string!) {
+                        do {
+                            dispatch_async(dispatch_get_main_queue(), {
+                                if let data = NSData(contentsOfURL: dataURL) {
+                                    let image = UIImage(data: data)
+                                    singleEventView.eventImage.image = image
+                                }
+                            })
+                        }
                     }
-                }
+                })
             }
             
             upcell.addSubview(singleEventView)
@@ -113,6 +115,7 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
         if tab == "upcoming" {
             let eventDetailController = storyboard?.instantiateViewControllerWithIdentifier("eventDetailController") as! EventDetailController
             eventDetailController.eventId = eventArr[indexPath.section]["ID"].int!
+            print(eventDetailController.eventId)
             self.navigationController?.pushViewController(eventDetailController, animated: true)
         } else if tab == "past" {
             let eventImageController = storyboard?.instantiateViewControllerWithIdentifier("eventImageController") as! EventImageController
