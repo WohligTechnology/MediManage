@@ -42,13 +42,13 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
                 alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
                 self.presentViewController(alertController, animated: true, completion: nil)
             } else {
+                LoadingOverlay.shared.hideOverlayView()
                 self.eventJSON = request
                 self.upcomingArr = request["result"]["UpcomingEvents"].array!
-                self.pastArr = request["result"]["PastEvents"].array!
                 self.eventArr = self.upcomingArr
+                self.pastArr = request["result"]["PastEvents"].array!
                 print("my json: \(self.eventArr) - \(self.pastArr)")
                 self.data = 1
-                LoadingOverlay.shared.hideOverlayView()
                 dispatch_async(dispatch_get_main_queue(), {
                     self.upcomingTableView.reloadData()
                 })
@@ -93,9 +93,10 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
                 if let dataURL = NSURL(string: self.eventArr[indexPath.section]["ImageURL"].string!) {
                     do {
                         dispatch_async(dispatch_get_main_queue(), {
-                            let data = NSData(contentsOfURL: dataURL)
-                            let image = UIImage(data: data!)
-                            singleEventView.eventImage.image = image
+                            if let data = NSData(contentsOfURL: dataURL) {
+                                let image = UIImage(data: data)
+                                singleEventView.eventImage.image = image
+                            }
                         })
                     }
                 }

@@ -601,7 +601,7 @@ public class RestApi {
         }
     }
     
-    public func getEventDetail(id: String, completion:((JSON) -> Void)) {
+    public func getEventDetail(id: Int, completion:((JSON) -> Void)) {
         var json = JSON(1)
         let token = defaultToken.stringForKey("access_token")
         let isLoginheader = ["Authorization":"Bearer \(token! as String)"]

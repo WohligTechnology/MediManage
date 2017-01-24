@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class EventDetailController: UIViewController {
     
@@ -15,6 +16,9 @@ class EventDetailController: UIViewController {
     var eventId: Int!
     var verticalLayout: VerticalLayout!
     var descriptionView: eventDescription!
+    var eventDetailJSON: JSON!
+    
+    var data = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,19 +33,20 @@ class EventDetailController: UIViewController {
         verticalLayout.backgroundColor = UIColor(red: 240 / 255, green: 240 / 255, blue: 240 / 255, alpha: 1)
         scrollView.addSubview(verticalLayout)
         
-        verticalLayout.addSubview(subHeaderView())
-        verticalLayout.addSubview(eventMapView())
-        verticalLayout.addSubview(eventDetailView())
-        verticalLayout.addSubview(eventRegistrationView())
-        verticalLayout.addSubview(eventDescriptionView())
-        verticalLayout.addSubview(registerButton())
-        verticalLayout.addSubview(spaceView())
+        if data == 0 {
+            eventDetailAPI(eventId)
+        }
         
         addHeightToLayout()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+        if data == 0 {
+            eventDetailAPI(eventId)
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,27 +60,37 @@ class EventDetailController: UIViewController {
     
     func eventMapView() -> UIView {
         let mapView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 250))
-        mapView.backgroundColor = UIColor.blueColor()
+        mapView.backgroundColor = UIColor(red: 240 / 255, green: 240 / 255, blue: 240 / 255, alpha: 1)
         return mapView
     }
     
-    func eventDetailView() -> UIView {
+    func eventDetailView(name: String, location: String, dateFrom: String, dateTo: String, dateTime: String) -> UIView {
         let detailView = eventDetail(frame: CGRect(x: 10, y: 10, width: self.view.frame.size.width - 20, height: 150))
         detailView.backgroundColor = UIColor.whiteColor()
+        detailView.name.text = name
+        detailView.location.text = location
+        detailView.dateFrom.text = dateFrom
+        detailView.dateTo.text = dateTo
+        detailView.dateTime.text = dateTime
+        
         addShadow(detailView)
         return detailView
     }
     
-    func eventRegistrationView() -> UIView {
+    func eventRegistrationView(dateFrom: String, dateTo: String) -> UIView {
         let registratioView = eventRegistration(frame: CGRect(x: 10, y: 20, width: self.view.frame.size.width - 20, height: 75))
+        registratioView.dateFrom.text = dateFrom
+        registratioView.dateTo.text = dateTo
+        
         addShadow(registratioView)
         return registratioView
     }
     
-    func eventDescriptionView() -> UIView {
+    func eventDescriptionView(descriptionText: String) -> UIView {
         descriptionView = eventDescription(frame: CGRect(x: 10, y: 20, width: self.view.frame.size.width - 20, height: 45))
         addShadow(descriptionView)
         
+        descriptionView.descriptionText.text = descriptionText
         descriptionView.descriptionText.alpha = 0
         descriptionView.arrowButton.tag = 1
         descriptionView.arrowButton.addTarget(self, action: #selector(descriptionArrow(_:)), forControlEvents: .TouchUpInside)
@@ -103,9 +118,9 @@ class EventDetailController: UIViewController {
         return spaceView
     }
     
-    func subHeaderView() -> UIView {
+    func subHeaderView(name: String) -> UIView {
         let headerView = eventHeader(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50))
-        headerView.title.text = "Mumbai Yoga Fest 2017"
+        headerView.title.text = name
         return headerView
     }
     
@@ -130,6 +145,50 @@ class EventDetailController: UIViewController {
             sender.tag = 0
             addHeightToLayout()
         }
+    }
+    
+    func eventDetailAPI(id: Int) {
+        LoadingOverlay.shared.showOverlay(self.view)
+        
+        rest.getEventDetail(id, completion: { request in
+            if request == 1 {
+                let alertController = UIAlertController(title: "No Connection", message:
+                    "Please check your internet connection", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                self.presentViewController(alertController, animated: true, completion: nil)
+            } else {
+                LoadingOverlay.shared.hideOverlayView()
+                self.data = 1
+                
+                self.eventDetailJSON = request["result"]
+                print("my json: \(self.eventDetailJSON)")
+                
+                self.verticalLayout.addSubview(self.subHeaderView(self.eventDetailJSON["Name"].string!))
+                
+                self.verticalLayout.addSubview(self.eventMapView())
+                
+                self.verticalLayout.addSubview(self.eventDetailView(
+                    self.eventDetailJSON["Name"].string!,
+                    location: self.eventDetailJSON["Address"].string!,
+                    dateFrom: self.eventDetailJSON["StartDate"].string!,
+                    dateTo: self.eventDetailJSON["EndDate"].string!,
+                    dateTime: self.eventDetailJSON["FromTime"].string!))
+                
+                if self.eventDetailJSON["IsRegistrationRequired"].bool! {
+                    self.verticalLayout.addSubview(self.eventRegistrationView(
+                        self.eventDetailJSON["RegistrationStartDate"].string!,
+                        dateTo: self.eventDetailJSON["RegistrationEndDate"].string!))
+                }
+                
+                self.verticalLayout.addSubview(self.eventDescriptionView(self.eventDetailJSON["Description"].string!))
+                
+                if self.eventDetailJSON["IsRegistrationRequired"].bool! {
+                    self.verticalLayout.addSubview(self.registerButton())
+                }
+                
+                self.verticalLayout.addSubview(self.spaceView())
+            }
+        })
     }
 
 }

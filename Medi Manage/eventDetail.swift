@@ -10,6 +10,12 @@ import UIKit
 
 class eventDetail: UIView {
     
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var location: UILabel!
+    @IBOutlet weak var dateFrom: UILabel!
+    @IBOutlet weak var dateTo: UILabel!
+    @IBOutlet weak var dateTime: UILabel!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
