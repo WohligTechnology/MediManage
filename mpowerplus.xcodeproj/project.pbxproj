@@ -131,6 +131,7 @@
 		C2A59E931CDDDF700093CFEC /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2A59E8E1CDDDF700093CFEC /* Lato-Regular.ttf */; };
 		C2A7293A1E23CD3100EA2127 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2A729391E23CD3100EA2127 /* GoogleService-Info.plist */; };
 		C2B4401F1D1BF5A4003EECDB /* EmployeeGroupDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B4401E1D1BF5A4003EECDB /* EmployeeGroupDTO.swift */; };
+		C2CE8C031E377D0E00A91EBB /* FeedbackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CE8C021E377D0E00A91EBB /* FeedbackController.swift */; };
 		C2DCB0CE1D1CF497004FD787 /* ClaimDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DCB0CD1D1CF497004FD787 /* ClaimDTO.swift */; };
 		C2DCB0D01D1CFFDD004FD787 /* EmployeeChanageRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DCB0CF1D1CFFDD004FD787 /* EmployeeChanageRequestDTO.swift */; };
 		C2DCB0D21D1D079D004FD787 /* RegisterDataDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DCB0D11D1D079D004FD787 /* RegisterDataDTO.swift */; };
@@ -344,6 +345,7 @@
 		C2A59E8E1CDDDF700093CFEC /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		C2A729391E23CD3100EA2127 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Medi Manage/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C2B4401E1D1BF5A4003EECDB /* EmployeeGroupDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeGroupDTO.swift; sourceTree = "<group>"; };
+		C2CE8C021E377D0E00A91EBB /* FeedbackController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackController.swift; sourceTree = "<group>"; };
 		C2DCB0CD1D1CF497004FD787 /* ClaimDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClaimDTO.swift; sourceTree = "<group>"; };
 		C2DCB0CF1D1CFFDD004FD787 /* EmployeeChanageRequestDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeChanageRequestDTO.swift; sourceTree = "<group>"; };
 		C2DCB0D11D1D079D004FD787 /* RegisterDataDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterDataDTO.swift; sourceTree = "<group>"; };
@@ -805,6 +807,7 @@
 				C2FF29A31E3096400062DD08 /* EventDetailController.swift */,
 				C21A031C1E32109C004C18EC /* EventImageController.swift */,
 				C21A031E1E32255D004C18EC /* SingleImageController.swift */,
+				C2CE8C021E377D0E00A91EBB /* FeedbackController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1339,6 +1342,7 @@
 				C2FF29B41E30EB9E0062DD08 /* eventDescription.swift in Sources */,
 				C21A031D1E32109C004C18EC /* EventImageController.swift in Sources */,
 				3A6C4E451CF48B3D0056D46F /* SlideMenuController.swift in Sources */,
+				C2CE8C031E377D0E00A91EBB /* FeedbackController.swift in Sources */,
 				3A79A7C91CF06652008B693B /* ClaimFormController.swift in Sources */,
 				3A31911A1CEF40AB001DCBBC /* PageViewerController.swift in Sources */,
 				FCB801741D2BB67100F9226F /* relationView.swift in Sources */,

@@ -35,31 +35,27 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
         self.eventArr = []
         
         rest.getAllEvents({(request) in
+            dispatch_async(dispatch_get_main_queue(), {
             if request == 1 {
                 let alertController = UIAlertController(title: "No Connection", message:
                     "Please check your internet connection", preferredStyle: UIAlertControllerStyle.Alert)
                 alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
                 self.presentViewController(alertController, animated: true, completion: nil)
             } else {
-                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
                     self.eventJSON = request
                     self.upcomingArr = request["result"]["UpcomingEvents"].array!
                     self.eventArr = self.upcomingArr
                     self.pastArr = request["result"]["PastEvents"].array!
                     print("my json: \(self.eventArr) - \(self.pastArr)")
                     self.data = 1
-                    dispatch_async(dispatch_get_main_queue(), {
-                        self.upcomingTableView.reloadData()
-                    })
-                })
+                    self.upcomingTableView.reloadData()
             }
+            })
         })
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -77,7 +73,6 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-        tableView.tableFooterView = UIView()
         
         let upcell = tableView.dequeueReusableCellWithIdentifier("upcomingEventCell", forIndexPath: indexPath)
         upcell.selectionStyle = UITableViewCellSelectionStyle.None
@@ -85,26 +80,30 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
         let singleEventView = singleEvent(frame: CGRectMake(0, 0, self.view.frame.width, 180))
         
         if (eventArr[indexPath.section]["EventStartDate"].string != nil) {
-            singleEventView.eventDate.text = eventArr[indexPath.section]["EventStartDate"].string!
-            singleEventView.eventTitle.text = eventArr[indexPath.section]["EventName"].string!
-            singleEventView.eventDescription.text = eventArr[indexPath.section]["EventDesc"].string!
-            
-            if (eventArr[indexPath.section]["ImageURL"].string != nil) {
-                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-                    if let dataURL = NSURL(string: self.eventArr[indexPath.section]["ImageURL"].string!) {
-                        do {
-                            dispatch_async(dispatch_get_main_queue(), {
-                                if let data = NSData(contentsOfURL: dataURL) {
-                                    let image = UIImage(data: data)
-                                    singleEventView.eventImage.image = image
-                                }
-                            })
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                singleEventView.eventDate.text = self.eventArr[indexPath.section]["EventStartDate"].string!
+                singleEventView.eventTitle.text = self.eventArr[indexPath.section]["EventName"].string!
+                singleEventView.eventDescription.text = self.eventArr[indexPath.section]["EventDesc"].string!
+                
+                if (self.eventArr[indexPath.section]["ImageURL"].string != nil) {
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                        if let dataURL = NSURL(string: self.eventArr[indexPath.section]["ImageURL"].string!) {
+                            do {
+                                dispatch_async(dispatch_get_main_queue(), {
+                                    if let data = NSData(contentsOfURL: dataURL) {
+                                        let image = UIImage(data: data)
+                                        singleEventView.eventImage.image = image
+                                    }
+                                })
+                            }
                         }
-                    }
+                    })
+                }
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    upcell.addSubview(singleEventView)
                 })
-            }
-            
-            upcell.addSubview(singleEventView)
+            })
         }
         
         return upcell

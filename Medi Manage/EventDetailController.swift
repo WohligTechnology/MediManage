@@ -18,8 +18,6 @@ class EventDetailController: UIViewController {
     var descriptionView: eventDescription!
     var eventDetailJSON: JSON!
     
-    var data = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,18 +31,12 @@ class EventDetailController: UIViewController {
         verticalLayout.backgroundColor = UIColor(red: 240 / 255, green: 240 / 255, blue: 240 / 255, alpha: 1)
         scrollView.addSubview(verticalLayout)
 
-//        if data == 0 {
-            eventDetailAPI(eventId)
-//        }
+        eventDetailAPI(eventId)
         
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-//        if data == 0 {
-//            eventDetailAPI(eventId)
-//        }
         
     }
     
@@ -57,9 +49,23 @@ class EventDetailController: UIViewController {
         self.scrollView.contentSize = CGSize(width: self.verticalLayout.frame.width, height: self.verticalLayout.frame.height)
     }
     
-    func eventMapView() -> UIView {
+    func eventMapView(imageUrl: String) -> UIView {
         let mapView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 250))
         mapView.backgroundColor = UIColor(red: 240 / 255, green: 240 / 255, blue: 240 / 255, alpha: 1)
+        
+        let imageview = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 250))
+        if let dataURL = NSURL(string: imageUrl) {
+            do {
+                dispatch_async(dispatch_get_main_queue(), {
+                    if let data = NSData(contentsOfURL: dataURL) {
+                        let image = UIImage(data: data)
+                        imageview.image = image
+                    }
+                })
+            }
+        }
+        mapView.addSubview(imageview)
+        
         return mapView
     }
     
@@ -158,7 +164,6 @@ class EventDetailController: UIViewController {
                         self.presentViewController(alertController, animated: true, completion: nil)
                     })
                 } else {
-                    self.data = 1
                     
                     self.eventDetailJSON = request["result"]
                     print("my json: \(self.eventDetailJSON)")
@@ -167,7 +172,9 @@ class EventDetailController: UIViewController {
                     
                         self.verticalLayout.addSubview(self.subHeaderView(self.eventDetailJSON["Name"].string!))
                         
-                        self.verticalLayout.addSubview(self.eventMapView())
+                        if self.eventDetailJSON["ImageURL"].string != nil {
+                            self.verticalLayout.addSubview(self.eventMapView(self.eventDetailJSON["ImageURL"].string!))
+                        }
                         
                         self.verticalLayout.addSubview(self.eventDetailView(
                             self.eventDetailJSON["Name"].string!,
