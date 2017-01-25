@@ -54,8 +54,12 @@ class EventDetailController: UIViewController {
         let mapView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 250))
         mapView.backgroundColor = UIColor(red: 240 / 255, green: 240 / 255, blue: 240 / 255, alpha: 1)
         
+        let mapString = "https://maps.googleapis.com/maps/api/staticmap?center=\(imageUrl)&zoom=13&size=400x250&maptype=roadmap&markers=color:red"
+        let mapStaticUrl = NSURL(string: mapString)
+        
         let imageview = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 250))
-        if let dataURL = NSURL(string: imageUrl) {
+        imageview.contentMode = .ScaleAspectFill
+        if let dataURL = NSURL(string: mapString) {
             do {
                 dispatch_async(dispatch_get_main_queue(), {
                     if let data = NSData(contentsOfURL: dataURL) {
@@ -66,6 +70,11 @@ class EventDetailController: UIViewController {
             }
         }
         mapView.addSubview(imageview)
+        
+//        let mapurl = NSURL(string: "http://maps.google.com/maps?q=\(imageUrl)")
+//        let webView = UIWebView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 250))
+//        webView.loadRequest(NSURLRequest(URL: mapStaticUrl!))
+//        mapView.addSubview(webView)
         
         return mapView
     }
@@ -183,7 +192,7 @@ class EventDetailController: UIViewController {
                         self.verticalLayout.addSubview(self.subHeaderView(self.eventDetailJSON["Name"].string!))
                         
                         if self.eventDetailJSON["ImageURL"].string != nil {
-                            self.verticalLayout.addSubview(self.eventMapView(self.eventDetailJSON["ImageURL"].string!))
+                            self.verticalLayout.addSubview(self.eventMapView(self.eventDetailJSON["Address"].string!))
                         }
                         
                         self.verticalLayout.addSubview(self.eventDetailView(
