@@ -31,31 +31,22 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
         navshow()
         
         self.view.backgroundColor = UIColor.redColor()
+        LoadingOverlay.shared.showOverlay(self.view)
         
         self.eventArr = []
         
-        rest.getAllEvents({(request) in
-            dispatch_async(dispatch_get_main_queue(), {
-            if request == 1 {
-                let alertController = UIAlertController(title: "No Connection", message:
-                    "Please check your internet connection", preferredStyle: UIAlertControllerStyle.Alert)
-                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
-                self.presentViewController(alertController, animated: true, completion: nil)
-            } else {
-                    self.eventJSON = request
-                    self.upcomingArr = request["result"]["UpcomingEvents"].array!
-                    self.eventArr = self.upcomingArr
-                    self.pastArr = request["result"]["PastEvents"].array!
-                    print("my json: \(self.eventArr) - \(self.pastArr)")
-                    self.data = 1
-                    self.upcomingTableView.reloadData()
-            }
-            })
-        })
+        if data == 0 {
+            getEvents()
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+        if data == 0 {
+            getEvents()
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -159,5 +150,47 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
             eventArr = pastArr
             upcomingTableView.reloadData()
         }
+    }
+    
+    func getEvents() {
+        rest.getAllEvents({(request) in
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                if request == 1 {
+                    let alertController = UIAlertController(title: "No Connection", message:
+                        "Please check your internet connection", preferredStyle: UIAlertControllerStyle.Alert)
+                    alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                } else {
+                    self.eventJSON = request
+                    if self.eventJSON["result"] == [] {
+                        dispatch_async(dispatch_get_main_queue(), {
+                            let alertController = UIAlertController(title: "No Data", message:
+                                "Please try again later", preferredStyle: UIAlertControllerStyle.Alert)
+                            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                                self.presentViewController(alertController, animated: true, completion: nil)
+                        })
+                    } else {
+                        if (request["result"]["UpcomingEvents"].array != nil || request["result"]["PastEvents"].array != nil) {
+                            self.upcomingArr = request["result"]["UpcomingEvents"].array!
+                            self.eventArr = self.upcomingArr
+                            self.pastArr = request["result"]["PastEvents"].array!
+                            print("my json: \(self.eventArr) - \(self.pastArr)")
+                            self.data = 1
+                            dispatch_async(dispatch_get_main_queue(), {
+                                self.upcomingTableView.reloadData()
+                                LoadingOverlay.shared.hideOverlayView()
+                            })
+                        } else {
+                            dispatch_async(dispatch_get_main_queue(), {
+                                let alertController = UIAlertController(title: "Something went wrong", message:
+                                    "Please signin again", preferredStyle: UIAlertControllerStyle.Alert)
+                                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                                self.presentViewController(alertController, animated: true, completion: nil)
+                            })
+                        }
+                    }
+                }
+            })
+        })
     }
 }

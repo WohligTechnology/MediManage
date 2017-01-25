@@ -24,6 +24,7 @@ class EventDetailController: UIViewController {
         navshow()
         
         self.view.backgroundColor = UIColor(red: 240 / 255, green: 240 / 255, blue: 240 / 255, alpha: 1)
+        LoadingOverlay.shared.showOverlay(self.view)
         
         scrollView.contentSize.height = self.view.frame.height
         
@@ -168,6 +169,15 @@ class EventDetailController: UIViewController {
                     self.eventDetailJSON = request["result"]
                     print("my json: \(self.eventDetailJSON)")
                     
+                    if self.eventDetailJSON == [] {
+                        dispatch_async(dispatch_get_main_queue(), {
+                            let alertController = UIAlertController(title: "No Data", message:
+                                "Please try again later", preferredStyle: UIAlertControllerStyle.Alert)
+                            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                            self.presentViewController(alertController, animated: true, completion: nil)
+                        })
+                    }
+                    
                     dispatch_async(dispatch_get_main_queue(), {
                     
                         self.verticalLayout.addSubview(self.subHeaderView(self.eventDetailJSON["Name"].string!))
@@ -198,6 +208,8 @@ class EventDetailController: UIViewController {
                         self.verticalLayout.addSubview(self.spaceView())
                         
                         self.addHeightToLayout()
+                        
+                        LoadingOverlay.shared.showOverlay(self.view)
                         
                     })
                     
