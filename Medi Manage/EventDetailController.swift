@@ -209,7 +209,7 @@ class EventDetailController: UIViewController {
                         
                         self.addHeightToLayout()
                         
-                        LoadingOverlay.shared.showOverlay(self.view)
+                        LoadingOverlay.shared.hideOverlayView()
                         
                     })
                     

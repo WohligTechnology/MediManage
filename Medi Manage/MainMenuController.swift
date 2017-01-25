@@ -39,7 +39,7 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         self.view.frame.size.height = self.view.frame.size.height - 45
         
         // 1
-        let insuredMembers = homeMenus(frame: CGRectMake(0, 20, width / 2, self.view.frame.size.height / 3))
+        let insuredMembers = homeMenus(frame: CGRectMake(0, 20, width / 2, self.view.frame.size.height / 4))
         insuredMembers.homeMenuMainView.backgroundColor = UIColor.whiteColor()
         insuredMembers.menuImage.image = UIImage(named: "menu_one")
         insuredMembers.menuTitle.text = "Insured Members"
@@ -49,7 +49,7 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         insuredMembers.addGestureRecognizer(insuredMembersTap)
         
         // 2
-        let claims = homeMenus(frame: CGRectMake(width / 2, 20, width / 2, self.view.frame.size.height / 3))
+        let claims = homeMenus(frame: CGRectMake(width / 2, 20, width / 2, self.view.frame.size.height / 4))
         claims.homeMenuMainView.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 255/255)
         claims.menuImage.image = UIImage(named: "menu_two")
         claims.menuTitle.text = "Claims"
@@ -59,7 +59,7 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         claims.addGestureRecognizer(claimsTap)
         
         // 3
-        let benefitSummary = homeMenus(frame: CGRectMake(0, self.view.frame.size.height / 3, width / 2, self.view.frame.size.height / 3))
+        let benefitSummary = homeMenus(frame: CGRectMake(0, self.view.frame.size.height / 4, width / 2, self.view.frame.size.height / 4))
         benefitSummary.homeMenuMainView.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 255/255)
         benefitSummary.menuImage.image = UIImage(named: "menu_three")
         benefitSummary.menuTitle.text = "Benefit Summary"
@@ -69,7 +69,7 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         benefitSummary.addGestureRecognizer(benefitSummaryTap)
         
         // 4
-        let helpdesk = homeMenus(frame: CGRectMake(width / 2, self.view.frame.size.height / 3, width / 2, self.view.frame.size.height / 3))
+        let helpdesk = homeMenus(frame: CGRectMake(width / 2, self.view.frame.size.height / 4, width / 2, self.view.frame.size.height / 4))
         helpdesk.homeMenuMainView.backgroundColor = UIColor.whiteColor()
         helpdesk.menuImage.image = UIImage(named: "menu_four")
         helpdesk.menuTitle.text = "Help Desk"
@@ -79,7 +79,7 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         helpdesk.addGestureRecognizer(helpdeskTap)
         
         // 5
-        let hospitalSearch = homeMenus(frame: CGRectMake(0, self.view.frame.size.height / 1.5, width / 2, self.view.frame.size.height / 3))
+        let hospitalSearch = homeMenus(frame: CGRectMake(0, self.view.frame.size.height / 2, width / 2, self.view.frame.size.height / 4))
         hospitalSearch.homeMenuMainView.backgroundColor = UIColor.whiteColor()
         hospitalSearch.menuImage.image = UIImage(named: "menu_five")
         hospitalSearch.menuTitle.text = "Hospital Search"
@@ -89,7 +89,7 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         hospitalSearch.addGestureRecognizer(hospitalSearchTap)
         
         // 6
-        let connect = homeMenus(frame: CGRectMake(width / 2, self.view.frame.size.height / 1.5, width / 2, self.view.frame.size.height / 3))
+        let connect = homeMenus(frame: CGRectMake(width / 2, self.view.frame.size.height / 2, width / 2, self.view.frame.size.height / 4))
         connect.homeMenuMainView.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 255/255)
         connect.menuImage.image = UIImage(named: "menu_six")
         connect.menuTitle.text = "Connect"
@@ -97,6 +97,16 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         let connectTap = UITapGestureRecognizer(target: self, action: #selector(MainMenuController.connectTap(_:)))
         connectTap.delegate = self
         connect.addGestureRecognizer(connectTap)
+        
+        // 7
+        let wellness = homeMenus(frame: CGRectMake(0, self.view.frame.size.height - self.view.frame.size.height / 4, width, self.view.frame.size.height / 4))
+        wellness.homeMenuMainView.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 255/255)
+        wellness.menuImage.image = UIImage(named: "menu_seven")
+        wellness.menuTitle.text = "Wellness"
+        self.view.addSubview(wellness)
+        let wellnessTap = UITapGestureRecognizer(target: self, action: #selector(MainMenuController.wellnessTap(_:)))
+        wellnessTap.delegate = self
+        wellness.addGestureRecognizer(wellnessTap)
 
         // Do any additional setup after loading the view.
     }
@@ -143,6 +153,12 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         let im: TabBarController = storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
         self.presentViewController(im, animated: true, completion: nil)
 
+    }
+    
+    func wellnessTap(sender: UITapGestureRecognizer) {
+        tabSelected = 7
+        let im: TabBarController = storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
+        self.presentViewController(im, animated: true, completion: nil)
     }
 
     /*

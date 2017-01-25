@@ -156,10 +156,12 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
         rest.getAllEvents({(request) in
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
                 if request == 1 {
-                    let alertController = UIAlertController(title: "No Connection", message:
-                        "Please check your internet connection", preferredStyle: UIAlertControllerStyle.Alert)
-                    alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
-                    self.presentViewController(alertController, animated: true, completion: nil)
+                    dispatch_async(dispatch_get_main_queue(), {
+                        let alertController = UIAlertController(title: "No Connection", message:
+                            "Please check your internet connection", preferredStyle: UIAlertControllerStyle.Alert)
+                        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                        self.presentViewController(alertController, animated: true, completion: nil)
+                    })
                 } else {
                     self.eventJSON = request
                     if self.eventJSON["result"] == [] {
@@ -178,8 +180,8 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
                             self.data = 1
                             dispatch_async(dispatch_get_main_queue(), {
                                 self.upcomingTableView.reloadData()
-                                LoadingOverlay.shared.hideOverlayView()
                             })
+                            LoadingOverlay.shared.hideOverlayView()
                         } else {
                             dispatch_async(dispatch_get_main_queue(), {
                                 let alertController = UIAlertController(title: "Something went wrong", message:
