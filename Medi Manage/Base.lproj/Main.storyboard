@@ -4603,6 +4603,7 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="oneTextField" destination="E1J-4v-YKb" id="wed-2B-Qo3"/>
+                        <outlet property="submitButton" destination="fdc-pH-uto" id="fcC-oh-Zf3"/>
                         <outletCollection property="twoCheckboxes" destination="nGN-b8-Nvz" collectionClass="NSMutableArray" id="hno-tP-bA0"/>
                         <outletCollection property="twoCheckboxes" destination="99w-6u-oyD" collectionClass="NSMutableArray" id="a4V-D6-JwK"/>
                         <outletCollection property="twoCheckboxes" destination="Fvy-rL-e77" collectionClass="NSMutableArray" id="10K-Sx-cyg"/>

@@ -14,6 +14,7 @@ class FeedbackController: UIViewController {
     @IBOutlet var twoCheckboxes: [UIButton]!
     @IBOutlet var threeRadios: [UIButton]!
     @IBOutlet var fourRadios: [UIButton]!
+    @IBOutlet weak var submitButton: UIButton!
     
     var threeValues = ["1", "2", "3", "4"]
     var fourValues = ["1", "2"]
@@ -47,11 +48,14 @@ class FeedbackController: UIViewController {
             }
             radio.addTarget(self, action: #selector(fourRadioClick(_:)), forControlEvents: .TouchUpInside)
         }
+        
+        submitButton.layer.cornerRadius = 5.0
+        submitButton.clipsToBounds = true
+        
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
     }
     
     override func didReceiveMemoryWarning() {
