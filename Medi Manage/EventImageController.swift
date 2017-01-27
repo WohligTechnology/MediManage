@@ -11,7 +11,9 @@ import SwiftyJSON
 
 class EventImageController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    var photos: [String]!
+    var photos: [JSON]!
+    var eventId: Int!
+    var eventDetailJSON: JSON!
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -19,11 +21,13 @@ class EventImageController: UIViewController, UICollectionViewDataSource, UIColl
         super.viewDidLoad()
         
         collectionView.backgroundColor = UIColor.whiteColor()
-        
-        photos = ["tutorial", "call_icon", "tutorial", "tutorial", "daughter_icon", "tutorial", "tutorial", "tutorial",
-                    "tutorial", "father_icon", "tutorial", "tutorial", "call_icon2", "tutorial", "tutorial", "tutorial"]
+        LoadingOverlay.shared.showOverlay(self.view)
         
         navshow()
+        
+        self.photos = []
+        
+        eventDetailAPI(eventId)
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -37,7 +41,22 @@ class EventImageController: UIViewController, UICollectionViewDataSource, UIColl
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("imageCell", forIndexPath: indexPath) as! ImageCollectionCell
         cell.backgroundColor = UIColor.whiteColor()
-        cell.eventImage.image = UIImage(named: photos[indexPath.row])
+        
+        if (photos[indexPath.item]["Path"].string != nil) {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                if let dataURL = NSURL(string: self.photos[indexPath.item]["Path"].string!) {
+                    do {
+                        dispatch_async(dispatch_get_main_queue(), {
+                            if let data = NSData(contentsOfURL: dataURL) {
+                                let image = UIImage(data: data)
+                                cell.eventImage.image = image
+                            }
+                        })
+                    }
+                }
+            })
+        }
+        
         return cell
     }
     
@@ -46,11 +65,11 @@ class EventImageController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        print(indexPath.row)
+        print(indexPath.item)
         let singleImageController = storyboard?.instantiateViewControllerWithIdentifier("singleImageController") as! SingleImageController
-        singleImageController.image = UIImage(named: photos[indexPath.row])
-        singleImageController.imageIndex = indexPath.row
-        singleImageController.totalImages = 20
+        singleImageController.image = UIImage(named: photos[indexPath.row]["Path"].string!)
+        singleImageController.imageIndex = indexPath.item
+        singleImageController.totalImages = photos.count
         singleImageController.photos = photos
         self.navigationController?.pushViewController(singleImageController, animated: true)
     }
@@ -63,6 +82,46 @@ class EventImageController: UIViewController, UICollectionViewDataSource, UIColl
         let heightPerItem = (availableWidth / 3) - 20
         
         return CGSize(width: widthPerItem, height: heightPerItem)
+    }
+    
+    func eventDetailAPI(id: Int) {
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            rest.getEventDetail(id, completion: { request in
+                if request == 1 {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        let alertController = UIAlertController(title: "No Connection", message:
+                            "Please check your internet connection", preferredStyle: UIAlertControllerStyle.Alert)
+                        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                        self.presentViewController(alertController, animated: true, completion: nil)
+                    })
+                } else {
+                    
+                    self.eventDetailJSON = request["result"]
+                    print("my json: \(self.eventDetailJSON["Pictures"])")
+                    
+                    if self.eventDetailJSON == [] {
+                        dispatch_async(dispatch_get_main_queue(), {
+                            let alertController = UIAlertController(title: "No Data", message:
+                                "Please try again later", preferredStyle: UIAlertControllerStyle.Alert)
+                            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                            self.presentViewController(alertController, animated: true, completion: nil)
+                        })
+                    }
+                    
+                    dispatch_async(dispatch_get_main_queue(), {
+                        
+                        self.photos = self.eventDetailJSON["Pictures"].array!
+                        
+                        self.collectionView.reloadData()
+                        
+                        LoadingOverlay.shared.hideOverlayView()
+                        
+                    })
+                    
+                }
+            })
+        })
     }
 
 }

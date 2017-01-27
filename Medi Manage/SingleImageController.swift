@@ -19,7 +19,7 @@ class SingleImageController: UIViewController {
     var image: UIImage!
     var currentIndex: Int!
     
-    var photos: [String]!
+    var photos: [JSON]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +28,22 @@ class SingleImageController: UIViewController {
         currentIndex = imageIndex
         
         eventText.text = "\(currentIndex + 1) / \(totalImages)"
-        eventImage.image = image
         eventImage.userInteractionEnabled = true
+        
+        if (photos[currentIndex!]["Path"].string != nil) {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                if let dataURL = NSURL(string: self.photos[self.currentIndex!]["Path"].string!) {
+                    do {
+                        dispatch_async(dispatch_get_main_queue(), {
+                            if let data = NSData(contentsOfURL: dataURL) {
+                                let image = UIImage(data: data)
+                                self.eventImage.image = image
+                            }
+                        })
+                    }
+                }
+            })
+        }
         
         let imageLeftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(self.leftSwipe(_:)))
         let imageRightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(self.rightSwipe(_:)))
@@ -56,7 +70,20 @@ class SingleImageController: UIViewController {
         if currentIndex >= totalImages {
             currentIndex = Int(currentIndex) - 1
         } else {
-            self.eventImage.image = UIImage(named: photos[currentIndex!])
+            if (photos[currentIndex!]["Path"].string != nil) {
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                    if let dataURL = NSURL(string: self.photos[self.currentIndex!]["Path"].string!) {
+                        do {
+                            dispatch_async(dispatch_get_main_queue(), {
+                                if let data = NSData(contentsOfURL: dataURL) {
+                                    let image = UIImage(data: data)
+                                    self.eventImage.image = image
+                                }
+                            })
+                        }
+                    }
+                })
+            }
             eventText.text = "\(currentIndex + 1) / \(totalImages)"
         }
     }
@@ -67,7 +94,20 @@ class SingleImageController: UIViewController {
         if currentIndex < 0 {
             currentIndex = Int(currentIndex) + 1
         } else {
-            self.eventImage.image = UIImage(named: photos[currentIndex!])
+            if (photos[currentIndex!]["Path"].string != nil) {
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                    if let dataURL = NSURL(string: self.photos[self.currentIndex!]["Path"].string!) {
+                        do {
+                            dispatch_async(dispatch_get_main_queue(), {
+                                if let data = NSData(contentsOfURL: dataURL) {
+                                    let image = UIImage(data: data)
+                                    self.eventImage.image = image
+                                }
+                            })
+                        }
+                    }
+                })
+            }
             eventText.text = "\(currentIndex + 1) / \(totalImages)"
         }
     }

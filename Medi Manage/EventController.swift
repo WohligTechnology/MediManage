@@ -109,6 +109,8 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
             self.navigationController?.pushViewController(eventDetailController, animated: true)
         } else if tab == "past" {
             let eventImageController = storyboard?.instantiateViewControllerWithIdentifier("eventImageController") as! EventImageController
+            eventImageController.eventId = eventArr[indexPath.section]["ID"].int!
+            print(eventImageController.eventId)
             self.navigationController?.pushViewController(eventImageController, animated: true)
         }
         

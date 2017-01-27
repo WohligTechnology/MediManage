@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import CoreLocation
 
 class EventDetailController: UIViewController {
     
@@ -38,7 +39,6 @@ class EventDetailController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -54,11 +54,14 @@ class EventDetailController: UIViewController {
         let mapView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 250))
         mapView.backgroundColor = UIColor(red: 240 / 255, green: 240 / 255, blue: 240 / 255, alpha: 1)
         
-        let mapString = "https://maps.googleapis.com/maps/api/staticmap?center=\(imageUrl)&zoom=13&size=400x250&maptype=roadmap&markers=color:red"
+        let mapString = "https://maps.googleapis.com/maps/api/staticmap?center=\(imageUrl)&zoom=13&size=414x250&maptype=roadmap&markers=color:red"
         let mapStaticUrl = NSURL(string: mapString)
         
         let imageview = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 250))
         imageview.contentMode = .ScaleAspectFill
+        imageview.userInteractionEnabled = true
+//        imageview.accessibilityLabel = imageUrl
+        imageview.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(self.openMaps(_:))))
         if let dataURL = NSURL(string: mapString) {
             do {
                 dispatch_async(dispatch_get_main_queue(), {
@@ -159,6 +162,30 @@ class EventDetailController: UIViewController {
             descriptionView.arrowButton.transform = CGAffineTransformMakeRotation((CGFloat(M_PI)))
             sender.tag = 0
             addHeightToLayout()
+        }
+    }
+    
+    func openMaps(recognizer: UIGestureRecognizer) {
+        let geocoder = CLGeocoder()
+        let str = "sceqw" // A string of the address info you already have
+        print(str)
+        geocoder.geocodeAddressString(str) { (placemarksOptional, error) -> Void in
+            if let placemarks = placemarksOptional {
+                print("placemark| \(placemarks.first)")
+                if let location = placemarks.first?.location {
+                    let query = "?ll=\(location.coordinate.latitude),\(location.coordinate.longitude)"
+                    let path = "http://maps.apple.com/" + query
+                    if let url = NSURL(string: path) {
+                        UIApplication.sharedApplication().openURL(url)
+                    } else {
+                        // Could not construct url. Handle error.
+                    }
+                } else {
+                    // Could not get a location from the geocode request. Handle error.
+                }
+            } else {
+                // Didn't get any placemarks. Handle error.
+            }
         }
     }
     
