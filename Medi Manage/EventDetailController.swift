@@ -61,7 +61,9 @@ class EventDetailController: UIViewController {
         imageview.contentMode = .ScaleAspectFill
         imageview.userInteractionEnabled = true
 //        imageview.accessibilityLabel = imageUrl
-        imageview.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(self.openMaps(_:))))
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(self.openMaps(_:)))
+        singleTap.numberOfTapsRequired = 1
+        imageview.addGestureRecognizer(singleTap)
         if let dataURL = NSURL(string: mapString) {
             do {
                 dispatch_async(dispatch_get_main_queue(), {
@@ -96,12 +98,12 @@ class EventDetailController: UIViewController {
     }
     
     func eventRegistrationView(dateFrom: String, dateTo: String) -> UIView {
-        let registratioView = eventRegistration(frame: CGRect(x: 10, y: 20, width: self.view.frame.size.width - 20, height: 75))
-        registratioView.dateFrom.text = dateFrom
-        registratioView.dateTo.text = dateTo
+        let registrationView = eventRegistration(frame: CGRect(x: 10, y: 20, width: self.view.frame.size.width - 20, height: 75))
+        registrationView.dateFrom.text = dateFrom
+        registrationView.dateTo.text = dateTo
         
-        addShadow(registratioView)
-        return registratioView
+        addShadow(registrationView)
+        return registrationView
     }
     
     func eventDescriptionView(descriptionText: String) -> UIView {
@@ -116,11 +118,12 @@ class EventDetailController: UIViewController {
         return descriptionView
     }
     
-    func registerButton() -> UIView {
-        let registerButtonView = UIView(frame: CGRect(x: self.view.frame.width - 110, y: 20, width: 100, height: 40))
+    func registerButton() -> UIButton {
+        let registerButtonView = UIButton(frame: CGRect(x: self.view.frame.width - 110, y: 20, width: 100, height: 40))
         registerButtonView.backgroundColor = UIColor(red: 244 / 255, green: 109 / 255, blue: 30 / 255, alpha: 1)
         registerButtonView.layer.cornerRadius = 5.0
         registerButtonView.clipsToBounds = true
+        registerButtonView.addTarget(self, action: #selector(self.register(_:)), forControlEvents: .TouchUpInside)
         
         let registerLabel = UILabel(frame: CGRect(x: 10, y: 0, width: registerButtonView.frame.width - 20, height: registerButtonView.frame.height))
         registerLabel.text = "REGISTER"
@@ -165,9 +168,13 @@ class EventDetailController: UIViewController {
         }
     }
     
+    func register(sender: UIButton) {
+        eventRegistrationAPI(eventId)
+    }
+    
     func openMaps(recognizer: UIGestureRecognizer) {
         let geocoder = CLGeocoder()
-        let str = "sceqw" // A string of the address info you already have
+        let str = "Mumbai" // A string of the address info you already have
         print(str)
         geocoder.geocodeAddressString(str) { (placemarksOptional, error) -> Void in
             if let placemarks = placemarksOptional {
@@ -249,6 +256,31 @@ class EventDetailController: UIViewController {
                         
                     })
                     
+                }
+            })
+        })
+    }
+    
+    func eventRegistrationAPI(id: Int) {
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            rest.getEventRegistration(id, completion: { request in
+                if request == 1 {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        let alertController = UIAlertController(title: "No Connection", message:
+                            "Please check your internet connection", preferredStyle: UIAlertControllerStyle.Alert)
+                        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                        self.presentViewController(alertController, animated: true, completion: nil)
+                    })
+                } else {
+                    if request["state"].bool! {
+                        dispatch_async(dispatch_get_main_queue(), {
+                            let alertController = UIAlertController(title: "Event Registration Successful", message:
+                                "", preferredStyle: UIAlertControllerStyle.Alert)
+                            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                            self.presentViewController(alertController, animated: true, completion: nil)
+                        })
+                    }
                 }
             })
         })
