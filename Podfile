@@ -2,7 +2,7 @@ platform :ios, '9.0'
 
 target 'mpowerplus' do
     
-    project 'mpowerplus.xcodeproj'
+#    project 'mpowerplus.xcodeproj'
 
     use_frameworks!
 
