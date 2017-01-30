@@ -100,24 +100,22 @@ class EventImageController: UIViewController, UICollectionViewDataSource, UIColl
                     self.eventDetailJSON = request["result"]
                     print("my json: \(self.eventDetailJSON["Pictures"])")
                     
-                    if self.eventDetailJSON == [] {
+                    if self.eventDetailJSON["Pictures"] == [] {
                         dispatch_async(dispatch_get_main_queue(), {
                             let alertController = UIAlertController(title: "No Data", message:
                                 "Please try again later", preferredStyle: UIAlertControllerStyle.Alert)
                             alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
                             self.presentViewController(alertController, animated: true, completion: nil)
                         })
+                    } else {
+                        dispatch_async(dispatch_get_main_queue(), {
+                            self.photos = self.eventDetailJSON["Pictures"].arrayValue
+                            
+                            self.collectionView.reloadData()
+                        })
                     }
                     
-                    dispatch_async(dispatch_get_main_queue(), {
-                        
-                        self.photos = self.eventDetailJSON["Pictures"].array!
-                        
-                        self.collectionView.reloadData()
-                        
-                        LoadingOverlay.shared.hideOverlayView()
-                        
-                    })
+                    LoadingOverlay.shared.hideOverlayView()
                     
                 }
             })
