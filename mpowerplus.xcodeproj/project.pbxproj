@@ -1161,7 +1161,7 @@
 				TargetAttributes = {
 					786DF9F51CD214F300DDE769 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = GQCVF92R6N;
+						DevelopmentTeam = YVWVDTRG4B;
 					};
 					786DFA091CD214F300DDE769 = {
 						CreatedOnToolsVersion = 7.3;
@@ -1619,7 +1619,7 @@
 					"\"${PODS_ROOT}\"",
 					"$(SRCROOT)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.medimanage.mpowerplus;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-Manage";
 				PRODUCT_NAME = MediManage;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Medi Manage/MediManage-Bridging-Header.h";
@@ -1651,7 +1651,7 @@
 					"\"${PODS_ROOT}\"",
 					"$(SRCROOT)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.medimanage.mpowerplus;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wohlig.Medi-Manage";
 				PRODUCT_NAME = MediManage;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Medi Manage/MediManage-Bridging-Header.h";

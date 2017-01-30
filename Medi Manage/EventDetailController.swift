@@ -169,7 +169,7 @@ class EventDetailController: UIViewController {
     }
     
     func register(sender: UIButton) {
-        eventRegistrationAPI(eventId)
+        eventRegistrationAPI(eventId, button: sender)
     }
     
     func openMaps(recognizer: UIGestureRecognizer) {
@@ -261,7 +261,7 @@ class EventDetailController: UIViewController {
         })
     }
     
-    func eventRegistrationAPI(id: Int) {
+    func eventRegistrationAPI(id: Int, button: UIButton) {
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             rest.getEventRegistration(id, completion: { request in
@@ -279,6 +279,7 @@ class EventDetailController: UIViewController {
                                 "", preferredStyle: UIAlertControllerStyle.Alert)
                             alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
                             self.presentViewController(alertController, animated: true, completion: nil)
+                            button.removeFromSuperview()
                         })
                     }
                 }

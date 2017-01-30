@@ -133,11 +133,13 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
         upcomingButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         pastbutton.backgroundColor = UIColor.whiteColor()
         pastbutton.setTitleColor(UIColor(red: 244 / 255, green: 109 / 255, blue: 30 / 255, alpha: 1), forState: .Normal)
+        upcomingTableView.alpha = 0
         tab = "upcoming"
         
         if data == 1 {
             eventArr = upcomingArr
             upcomingTableView.reloadData()
+            upcomingTableView.alpha = 1
         }
     }
     
@@ -146,11 +148,13 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
         pastbutton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         upcomingButton.backgroundColor = UIColor.whiteColor()
         upcomingButton.setTitleColor(UIColor(red: 244 / 255, green: 109 / 255, blue: 30 / 255, alpha: 1), forState: .Normal)
+        upcomingTableView.alpha = 0
         tab = "past"
         
         if data == 1 {
             eventArr = pastArr
             upcomingTableView.reloadData()
+            upcomingTableView.alpha = 1
         }
     }
     
@@ -186,11 +190,15 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
                             LoadingOverlay.shared.hideOverlayView()
                         } else {
                             dispatch_async(dispatch_get_main_queue(), {
-                                let alertController = UIAlertController(title: "Something went wrong", message:
-                                    "Please signin again", preferredStyle: UIAlertControllerStyle.Alert)
-                                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
-                                self.presentViewController(alertController, animated: true, completion: nil)
+                                //let alertController = UIAlertController(title: "Something went wrong", message:
+                                    //"Please signin again", preferredStyle: UIAlertControllerStyle.Alert)
+                                //alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                                //self.presentViewController(alertController, animated: true, completion: nil)
+                                
+                                let vc = self.storyboard?.instantiateViewControllerWithIdentifier("loginc") as! LoginController
+                                self.navigationController?.pushViewController(vc, animated: true)
                             })
+                            
                         }
                     }
                 }
