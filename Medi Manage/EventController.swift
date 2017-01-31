@@ -185,9 +185,9 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
                             print("my json: \(self.eventArr) - \(self.pastArr)")
                             self.data = 1
                             dispatch_async(dispatch_get_main_queue(), {
+                                LoadingOverlay.shared.hideOverlayView()
                                 self.upcomingTableView.reloadData()
                             })
-                            LoadingOverlay.shared.hideOverlayView()
                         } else {
                             dispatch_async(dispatch_get_main_queue(), {
                                 //let alertController = UIAlertController(title: "Something went wrong", message:

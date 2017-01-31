@@ -2,7 +2,7 @@ platform :ios, '9.0'
 
 target 'mpowerplus' do
     
-#    project 'mpowerplus.xcodeproj'
+    project 'mpowerplus.xcodeproj'
 
     use_frameworks!
 
@@ -12,5 +12,6 @@ target 'mpowerplus' do
     pod 'SwiftSpinner'
     pod 'QToasterSwift', '~> 0.1'
     pod 'Google/Analytics'
+    pod 'HanekeSwift'
 
 end

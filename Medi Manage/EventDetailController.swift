@@ -277,7 +277,7 @@ class EventDetailController: UIViewController {
                         dispatch_async(dispatch_get_main_queue(), {
                             let alertController = UIAlertController(title: "Event Registration Successful", message:
                                 "", preferredStyle: UIAlertControllerStyle.Alert)
-                            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                            alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default,handler: nil))
                             self.presentViewController(alertController, animated: true, completion: nil)
                             button.removeFromSuperview()
                         })

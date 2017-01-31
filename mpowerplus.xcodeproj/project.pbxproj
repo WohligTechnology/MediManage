@@ -118,6 +118,7 @@
 		C21A031B1E31DEAF004C18EC /* eventHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21A031A1E31DEAF004C18EC /* eventHeader.swift */; };
 		C21A031D1E32109C004C18EC /* EventImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21A031C1E32109C004C18EC /* EventImageController.swift */; };
 		C21A031F1E32255E004C18EC /* SingleImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21A031E1E32255D004C18EC /* SingleImageController.swift */; };
+		C24022541E4059100033B4B8 /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C24022531E4059100033B4B8 /* Haneke.framework */; };
 		C28A40821E2F7FE1002C49E5 /* singleEvent.xib in Resources */ = {isa = PBXBuildFile; fileRef = C28A40811E2F7FE1002C49E5 /* singleEvent.xib */; };
 		C28A40841E2F8239002C49E5 /* singleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28A40831E2F8239002C49E5 /* singleEvent.swift */; };
 		C28A40861E2F8A6B002C49E5 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28A40851E2F8A6B002C49E5 /* EventController.swift */; };
@@ -162,6 +163,7 @@
 		C2FF29AF1E30E2E60062DD08 /* eventRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FF29AE1E30E2E60062DD08 /* eventRegistration.swift */; };
 		C2FF29B21E30E55F0062DD08 /* eventDescription.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2FF29B11E30E55F0062DD08 /* eventDescription.xib */; };
 		C2FF29B41E30EB9E0062DD08 /* eventDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FF29B31E30EB9E0062DD08 /* eventDescription.swift */; };
+		DA246BAD02A9B2165E57FE5F /* Pods_mpowerplus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0D9A43CDBD987144230F52C /* Pods_mpowerplus.framework */; };
 		FC1D8AF31D78344A0020FAFB /* forgotPasswordOTP.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC1D8AF21D78344A0020FAFB /* forgotPasswordOTP.xib */; };
 		FC1D8AF51D78363F0020FAFB /* forgotPasswordOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D8AF41D78363F0020FAFB /* forgotPasswordOTP.swift */; };
 		FC1D8AF81D783A250020FAFB /* ForgotPasswordOTPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D8AF71D783A250020FAFB /* ForgotPasswordOTPController.swift */; };
@@ -336,6 +338,7 @@
 		C21A031C1E32109C004C18EC /* EventImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventImageController.swift; sourceTree = "<group>"; };
 		C21A031E1E32255D004C18EC /* SingleImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleImageController.swift; sourceTree = "<group>"; };
 		C2382C1F1D0AA43D00DC0073 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		C24022531E4059100033B4B8 /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = "Pods/../build/Debug-iphoneos/HanekeSwift/Haneke.framework"; sourceTree = "<group>"; };
 		C2745E2B1E23C5B30091DAFB /* MediManage-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MediManage-Bridging-Header.h"; sourceTree = "<group>"; };
 		C28A40811E2F7FE1002C49E5 /* singleEvent.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = singleEvent.xib; sourceTree = "<group>"; };
 		C28A40831E2F8239002C49E5 /* singleEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = singleEvent.swift; sourceTree = "<group>"; };
@@ -422,12 +425,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C24022541E4059100033B4B8 /* Haneke.framework in Frameworks */,
 				C2DDCBC51E3F2935007941C2 /* SwiftSpinner.framework in Frameworks */,
 				C2DDCBC31E3F2931007941C2 /* QToasterSwift.framework in Frameworks */,
 				C2DDCBC11E3F2536007941C2 /* SwiftHTTP.framework in Frameworks */,
 				C2DDCBBF1E3F2532007941C2 /* Alamofire.framework in Frameworks */,
 				FCDE3A0F1D64B25800C73B9A /* CoreLocation.framework in Frameworks */,
 				C2DDCBBD1E3F252E007941C2 /* SwiftyJSON.framework in Frameworks */,
+				DA246BAD02A9B2165E57FE5F /* Pods_mpowerplus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -643,6 +648,7 @@
 		718172B03362F6EE15D81110 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C24022531E4059100033B4B8 /* Haneke.framework */,
 				C2DDCBC41E3F2935007941C2 /* SwiftSpinner.framework */,
 				C2DDCBC21E3F2931007941C2 /* QToasterSwift.framework */,
 				C2DDCBC01E3F2536007941C2 /* SwiftHTTP.framework */,
@@ -1611,6 +1617,7 @@
 					"$(SRCROOT)/**",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/QToasterSwift",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/SwiftSpinner",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/HanekeSwift",
 				);
 				INFOPLIST_FILE = "Medi Manage/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1643,6 +1650,7 @@
 					"$(SRCROOT)/**",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/QToasterSwift",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/SwiftSpinner",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/HanekeSwift",
 				);
 				INFOPLIST_FILE = "Medi Manage/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
