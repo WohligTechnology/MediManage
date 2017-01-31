@@ -18,6 +18,7 @@ class EventDetailController: UIViewController {
     var verticalLayout: VerticalLayout!
     var descriptionView: eventDescription!
     var eventDetailJSON: JSON!
+    var likeType: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -142,6 +143,18 @@ class EventDetailController: UIViewController {
     func subHeaderView(name: String) -> UIView {
         let headerView = eventHeader(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50))
         headerView.title.text = name
+        
+        headerView.share.setTitle(name, forState: .Application)
+        headerView.share.addTarget(self, action: #selector(shareEvent(_:)), forControlEvents: .TouchUpInside)
+        
+        if eventDetailJSON["result"]["EmployeeLike"] {
+            likeType = "Unlike"
+            headerView.like.setImage(UIImage(named: "wellness_like_filled_blue"), forState: .Normal)
+        } else {
+            likeType = "Like"
+            headerView.like.setImage(UIImage(named: "wellness_like_filled_white"), forState: .Normal)
+        }
+        headerView.like.addTarget(self, action: #selector(likeEvent(_:)), forControlEvents: .TouchUpInside)
         return headerView
     }
     
@@ -259,6 +272,34 @@ class EventDetailController: UIViewController {
                 }
             })
         })
+    }
+    
+    func displayShareSheet(shareContent:String) {
+        let activityViewController = UIActivityViewController(activityItems: [shareContent as NSString], applicationActivities: nil)
+        presentViewController(activityViewController, animated: true, completion: {})
+    }
+    
+    func shareEvent(sender: UIButton) {
+        displayShareSheet(sender.titleForState(.Application)!)
+    }
+    
+    func likeEvent(sender: UIButton) {
+        if likeType == "Unlike" {
+            rest.likeEvent(eventId, type: likeType, completion: { request in
+                if request["state"] {
+                    self.likeType = "Like"
+                    sender.setImage(UIImage(named: "wellness_like_filled_white"), forState: .Normal)
+                }
+            })
+        } else if likeType == "Like" {
+            rest.likeEvent(eventId, type: likeType, completion: { request in
+                if request["state"] {
+                    self.likeType = "Unlike"
+                    sender.setImage(UIImage(named: "wellness_like_filled_blue"), forState: .Normal)
+                }
+            })
+            
+        }
     }
     
     func eventRegistrationAPI(id: Int, button: UIButton) {
