@@ -113,8 +113,12 @@ class EventDetailController: UIViewController {
         
         let decodedDescription = descriptionText.stringByReplacingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
         
-        descriptionView.descriptionText.text = descriptionText
+        descriptionView.descriptionText.text = decodedDescription
         descriptionView.descriptionText.alpha = 0
+        
+        descriptionView.descriptionWebView.loadHTMLString(decodedDescription, baseURL: nil)
+        descriptionView.descriptionWebView.alpha = 0
+        
         descriptionView.arrowButton.tag = 1
         descriptionView.arrowButton.addTarget(self, action: #selector(descriptionArrow(_:)), forControlEvents: .TouchUpInside)
         
@@ -122,16 +126,26 @@ class EventDetailController: UIViewController {
     }
     
     func registerButton() -> UIButton {
-        let registerButtonView = UIButton(frame: CGRect(x: self.view.frame.width - 110, y: 20, width: 100, height: 40))
+        let registerButtonView = UIButton(frame: CGRect(x: self.view.frame.width - 130, y: 20, width: 120, height: 40))
         registerButtonView.backgroundColor = UIColor(red: 244 / 255, green: 109 / 255, blue: 30 / 255, alpha: 1)
         registerButtonView.layer.cornerRadius = 5.0
         registerButtonView.clipsToBounds = true
-        registerButtonView.addTarget(self, action: #selector(self.register(_:)), forControlEvents: .TouchUpInside)
+        
         
         let registerLabel = UILabel(frame: CGRect(x: 10, y: 0, width: registerButtonView.frame.width - 20, height: registerButtonView.frame.height))
         registerLabel.text = "REGISTER"
         registerLabel.font = UIFont(name: "Aviner Roman", size: 16)
         registerLabel.textColor = UIColor.whiteColor()
+        
+        if eventDetailJSON["IsRegistered"] {
+            registerButtonView.enabled = false
+            registerLabel.text = "REGISTERED"
+        } else {
+            registerButtonView.enabled = true
+            registerLabel.text = "REGISTER"
+            registerButtonView.addTarget(self, action: #selector(self.register(_:)), forControlEvents: .TouchUpInside)
+        }
+        
         registerButtonView.addSubview(registerLabel)
         return registerButtonView
     }
@@ -284,7 +298,11 @@ class EventDetailController: UIViewController {
     }
     
     func shareEvent(sender: UIButton) {
-        displayShareSheet(sender.titleForState(.Application)!)
+        let descriptionText = eventDetailJSON["Description"].stringValue
+        let decodedDescription = descriptionText.stringByReplacingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+        var shareString = "\(eventDetailJSON["Name"])\n\nEvent is all about:\n\(decodedDescription)"
+        shareString += "\nEvent date : \(eventDetailJSON["StartDate"])\nEvent time : \n\(eventDetailJSON["FromTime"])"
+        displayShareSheet(shareString)
     }
     
     func likeEvent(sender: UIButton) {

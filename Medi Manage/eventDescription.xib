@@ -30,7 +30,7 @@
                         <constraint firstAttribute="height" constant="24" id="ouR-AD-aMc"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.082352941176470587" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpR-tK-1cb">
@@ -56,7 +56,6 @@
             <constraints>
                 <constraint firstItem="Xk4-LT-rK5" firstAttribute="top" secondItem="xdF-pe-uBs" secondAttribute="top" constant="10" id="0wD-Sl-hCN"/>
                 <constraint firstAttribute="trailing" secondItem="bpR-tK-1cb" secondAttribute="trailing" constant="15" id="2wB-SP-QTK"/>
-                <constraint firstAttribute="bottom" secondItem="YGl-t2-JrO" secondAttribute="bottom" constant="10" id="7JJ-Bf-qIu"/>
                 <constraint firstItem="bpR-tK-1cb" firstAttribute="top" secondItem="Xk4-LT-rK5" secondAttribute="bottom" constant="20" id="K2p-8U-pB5"/>
                 <constraint firstItem="bpR-tK-1cb" firstAttribute="leading" secondItem="xdF-pe-uBs" secondAttribute="leading" constant="15" id="Qo5-62-blT"/>
                 <constraint firstAttribute="trailing" secondItem="al6-3n-red" secondAttribute="trailing" constant="15" id="Ut0-nD-Gbt"/>
@@ -65,13 +64,14 @@
                 <constraint firstItem="al6-3n-red" firstAttribute="top" secondItem="xdF-pe-uBs" secondAttribute="top" constant="12" id="fiu-z5-kWz"/>
                 <constraint firstItem="YGl-t2-JrO" firstAttribute="leading" secondItem="xdF-pe-uBs" secondAttribute="leading" constant="15" id="gXy-ke-NAF"/>
                 <constraint firstItem="YGl-t2-JrO" firstAttribute="top" secondItem="Xk4-LT-rK5" secondAttribute="bottom" constant="20" id="lag-gx-coj"/>
+                <constraint firstAttribute="bottom" secondItem="YGl-t2-JrO" secondAttribute="bottom" constant="10" id="wye-C6-yxo"/>
                 <constraint firstAttribute="trailing" secondItem="Xk4-LT-rK5" secondAttribute="trailing" constant="55" id="yDd-AT-tot"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="subviews">
-                    <exclude reference="bpR-tK-1cb"/>
+                    <exclude reference="YGl-t2-JrO"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="304.5" y="285"/>
