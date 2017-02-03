@@ -309,7 +309,8 @@ class EventDetailController: UIViewController {
         if likeType == "Unlike" {
             self.likeType = "Like"
             sender.setImage(UIImage(named: "wellness_like_filled_white"), forState: .Normal)
-            rest.likeEvent(eventId, type: likeType, completion: { request in
+            rest.likeEvent(eventId, type: "Unlike", completion: { request in
+                print("\(#line) | \(request)")
                 if !request["state"] {
                     self.likeType = "Unlike"
                     sender.setImage(UIImage(named: "wellness_like_filled_blue"), forState: .Normal)
@@ -318,7 +319,8 @@ class EventDetailController: UIViewController {
         } else if likeType == "Like" {
             self.likeType = "Unlike"
             sender.setImage(UIImage(named: "wellness_like_filled_blue"), forState: .Normal)
-            rest.likeEvent(eventId, type: likeType, completion: { request in
+            rest.likeEvent(eventId, type: "Like", completion: { request in
+                print("\(#line) | \(request)")
                 if !request["state"] {
                     self.likeType = "Like"
                     sender.setImage(UIImage(named: "wellness_like_filled_white"), forState: .Normal)

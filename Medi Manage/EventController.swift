@@ -72,13 +72,16 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         if (eventArr[indexPath.section]["EventStartDate"].string != nil) {
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-                singleEventView.eventDate.text = self.eventArr[indexPath.section]["EventStartDate"].string!
-                singleEventView.eventTitle.text = self.eventArr[indexPath.section]["EventName"].string!
-                singleEventView.eventDescription.text = self.eventArr[indexPath.section]["EventDesc"].string!
+                singleEventView.eventDate.text = self.eventArr[indexPath.section]["EventStartDate"].stringValue
+                singleEventView.eventTitle.text = self.eventArr[indexPath.section]["EventName"].stringValue
+                let eventDescription = self.eventArr[indexPath.section]["EventDesc"].stringValue
+                let decodeDescription = eventDescription.stringByReplacingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+                singleEventView.eventDescription.text = decodeDescription
+                singleEventView.eventDescriptionWebView.loadHTMLString(decodeDescription, baseURL: nil)
                 
                 if (self.eventArr[indexPath.section]["ImageURL"].string != nil) {
                     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-                        if let dataURL = NSURL(string: self.eventArr[indexPath.section]["ImageURL"].string!) {
+                        if let dataURL = NSURL(string: self.eventArr[indexPath.section]["ImageURL"].stringValue) {
                             do {
                                 dispatch_async(dispatch_get_main_queue(), {
                                     if let data = NSData(contentsOfURL: dataURL) {

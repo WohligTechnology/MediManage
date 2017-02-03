@@ -57,6 +57,10 @@ class TabBarController: UITabBarController {
 //                }
 //            }
 //        })
+        
+//        if let arrayOfTabBarItems = self.tabBar.items as! AnyObject as? NSArray,tabBarItem = arrayOfTabBarItems[7] as? UITabBarItem {
+//            tabBarItem.enabled = false
+//        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -13,6 +13,7 @@ class singleEvent: UIView {
     @IBOutlet weak var eventImage: UIImageView!
     @IBOutlet weak var eventTitle: UILabel!
     @IBOutlet weak var eventDescription: UILabel!
+    @IBOutlet weak var eventDescriptionWebView: UIWebView!
     @IBOutlet weak var eventDate: UILabel!
     
     override init(frame: CGRect) {
