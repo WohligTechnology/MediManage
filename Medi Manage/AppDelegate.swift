@@ -43,6 +43,8 @@ var activeClaim = 0
 var checkPreRe = 0
 var preAuthOne = 0
 var tabSelected = 0
+var dashboardItemH: CGFloat = 4
+var dashboardItemY: CGFloat = 2
 var oneJson: JSON = []
 var message: JSON = []
 
