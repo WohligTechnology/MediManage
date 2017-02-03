@@ -15,6 +15,7 @@ class TabBarController: UITabBarController {
     
     var enrollmentJSON: JSON!
     var clientId: String!
+    var hasWellness: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,10 @@ class TabBarController: UITabBarController {
             dispatch_async(dispatch_get_main_queue(), {
                 self.enrollmentJSON = request
                 self.clientId = request["result"][6].string
+                self.hasWellness = request["result"][4].string
+                
                 defaultToken.setObject(self.clientId, forKey: "clientId")
+                defaultToken.setObject(self.hasWellness, forKey: "hasWellness")
             })
         })
         
@@ -61,6 +65,15 @@ class TabBarController: UITabBarController {
 //        if let arrayOfTabBarItems = self.tabBar.items as! AnyObject as? NSArray,tabBarItem = arrayOfTabBarItems[7] as? UITabBarItem {
 //            tabBarItem.enabled = false
 //        }
+        
+        if let tabBarController = self.tabBarController {
+            let indexToRemove = 7
+            if indexToRemove < tabBarController.viewControllers?.count {
+                var viewControllers = tabBarController.viewControllers
+                viewControllers?.removeAtIndex(indexToRemove)
+                tabBarController.viewControllers = viewControllers
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
