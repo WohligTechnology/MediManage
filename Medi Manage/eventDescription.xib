@@ -16,6 +16,7 @@
                 <outlet property="arrowButton" destination="al6-3n-red" id="hNR-b9-TwD"/>
                 <outlet property="descriptionText" destination="bpR-tK-1cb" id="VZE-m3-J5L"/>
                 <outlet property="descriptionView" destination="xdF-pe-uBs" id="5j8-f9-w1Z"/>
+                <outlet property="descriptionWebView" destination="YGl-t2-JrO" id="sPi-Hg-RNt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -46,20 +47,33 @@
                     </constraints>
                     <state key="normal" image="triangle_blue_down"/>
                 </button>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YGl-t2-JrO">
+                    <rect key="frame" x="15" y="54" width="405" height="50"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                </webView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Xk4-LT-rK5" firstAttribute="top" secondItem="xdF-pe-uBs" secondAttribute="top" constant="10" id="0wD-Sl-hCN"/>
                 <constraint firstAttribute="trailing" secondItem="bpR-tK-1cb" secondAttribute="trailing" constant="15" id="2wB-SP-QTK"/>
+                <constraint firstAttribute="bottom" secondItem="YGl-t2-JrO" secondAttribute="bottom" constant="10" id="7JJ-Bf-qIu"/>
                 <constraint firstItem="bpR-tK-1cb" firstAttribute="top" secondItem="Xk4-LT-rK5" secondAttribute="bottom" constant="20" id="K2p-8U-pB5"/>
                 <constraint firstItem="bpR-tK-1cb" firstAttribute="leading" secondItem="xdF-pe-uBs" secondAttribute="leading" constant="15" id="Qo5-62-blT"/>
                 <constraint firstAttribute="trailing" secondItem="al6-3n-red" secondAttribute="trailing" constant="15" id="Ut0-nD-Gbt"/>
+                <constraint firstAttribute="trailing" secondItem="YGl-t2-JrO" secondAttribute="trailing" constant="15" id="YuG-IJ-rDc"/>
                 <constraint firstItem="Xk4-LT-rK5" firstAttribute="leading" secondItem="xdF-pe-uBs" secondAttribute="leading" constant="15" id="fQe-hf-ocS"/>
                 <constraint firstItem="al6-3n-red" firstAttribute="top" secondItem="xdF-pe-uBs" secondAttribute="top" constant="12" id="fiu-z5-kWz"/>
+                <constraint firstItem="YGl-t2-JrO" firstAttribute="leading" secondItem="xdF-pe-uBs" secondAttribute="leading" constant="15" id="gXy-ke-NAF"/>
+                <constraint firstItem="YGl-t2-JrO" firstAttribute="top" secondItem="Xk4-LT-rK5" secondAttribute="bottom" constant="20" id="lag-gx-coj"/>
                 <constraint firstAttribute="trailing" secondItem="Xk4-LT-rK5" secondAttribute="trailing" constant="55" id="yDd-AT-tot"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="bpR-tK-1cb"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="304.5" y="285"/>
         </view>
     </objects>
