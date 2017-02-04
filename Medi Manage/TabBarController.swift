@@ -51,14 +51,14 @@ class TabBarController: UITabBarController {
 //            tabBarItem.enabled = false
 //        }
         
-        if let tabBarController = self.tabBarController {
-            let indexToRemove = 7
-            if indexToRemove < tabBarController.viewControllers?.count {
-                var viewControllers = tabBarController.viewControllers
-                viewControllers?.removeAtIndex(indexToRemove)
-                tabBarController.viewControllers = viewControllers
-            }
-        }
+//        if let tabBarController = self.tabBarController {
+//            let indexToRemove = 7
+//            if indexToRemove < tabBarController.viewControllers?.count {
+//                var viewControllers = tabBarController.viewControllers
+//                viewControllers?.removeAtIndex(indexToRemove)
+//                tabBarController.viewControllers = viewControllers
+//            }
+//        }
     }
 
     override func didReceiveMemoryWarning() {
