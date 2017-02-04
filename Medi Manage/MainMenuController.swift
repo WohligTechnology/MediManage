@@ -39,17 +39,22 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
             
         })
         
-        self.view.bounds.origin.y = -45
-        self.view.frame.size.height = self.view.frame.size.height - 45
-        
         rest.EnrolledName({(request) in
             dispatch_async(dispatch_get_main_queue(), {
-                self.enrollmentJSON = request
-                self.clientId = request["result"][6].string
-                self.hasWellness = request["result"][4].string
+                self.view.bounds.origin.y = -45
+                self.view.frame.size.height = self.view.frame.size.height - 45
                 
-                defaultToken.setObject(self.clientId!, forKey: "clientId")
-                defaultToken.setObject(self.hasWellness!, forKey: "hasWellness")
+                self.enrollmentJSON = request
+                self.clientId = request["result"][6].stringValue
+                self.hasWellness = request["result"][4].stringValue
+                
+                if (self.clientId != nil) {
+                    defaultToken.setObject(self.clientId, forKey: "clientId")
+                }
+                
+                if (self.hasWellness != nil) {
+                    defaultToken.setObject(self.hasWellness, forKey: "hasWellness")
+                }
                 
                 let hasWellness = defaultToken.objectForKey("hasWellness")!
                 print("\(#line) | \(hasWellness)")
@@ -59,7 +64,7 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
                     dashboardItemY = 2
                     
                     // 7
-                    let wellness = homeMenus(frame: CGRectMake(0, self.view.frame.size.height - self.view.frame.size.height / 4, width, self.view.frame.size.height / 4))
+                    let wellness = homeMenus(frame: CGRectMake(0, self.view.frame.size.height - self.view.frame.size.height / dashboardItemH, width, self.view.frame.size.height / dashboardItemH))
                     wellness.homeMenuMainView.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 255/255)
                     wellness.menuImage.image = UIImage(named: "menu_seven")
                     wellness.menuTitle.text = "Wellness"

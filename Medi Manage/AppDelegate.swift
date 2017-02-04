@@ -24,6 +24,7 @@ let bounds = UIScreen.mainScreen().bounds
 let width = bounds.size.width
 let height = bounds.size.height
 let mainBlueColor = UIColor(red: 21/255, green: 177/255, blue: 230/255, alpha: 255/255) // #15b1e6
+let darkBlueColor = UIColor(red: 4/255, green: 116/255, blue: 156/255, alpha: 255/255) // #04749c
 let rest = RestApi()
 var categoryId : String = ""
 var pdfname : String = ""
