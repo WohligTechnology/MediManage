@@ -126,21 +126,30 @@ class EventDetailController: UIViewController {
     }
     
     func registerButton() -> UIButton {
-        let registerButtonView = UIButton(frame: CGRect(x: self.view.frame.width - 130, y: 20, width: 120, height: 40))
-        registerButtonView.backgroundColor = UIColor(red: 244 / 255, green: 109 / 255, blue: 30 / 255, alpha: 1)
-        registerButtonView.layer.cornerRadius = 5.0
-        registerButtonView.clipsToBounds = true
-        
-        
-        let registerLabel = UILabel(frame: CGRect(x: 10, y: 0, width: registerButtonView.frame.width - 20, height: registerButtonView.frame.height))
-        registerLabel.text = "REGISTER"
-        registerLabel.font = UIFont(name: "Aviner Roman", size: 16)
-        registerLabel.textColor = UIColor.whiteColor()
-        
+        var registerButtonView = UIButton()
+        var registerLabel = UILabel()
         if eventDetailJSON["IsRegistered"] {
+            registerButtonView = UIButton(frame: CGRect(x: self.view.frame.width - 130, y: 20, width: 120, height: 40))
+            registerButtonView.backgroundColor = UIColor(red: 244 / 255, green: 109 / 255, blue: 30 / 255, alpha: 1)
+            registerButtonView.layer.cornerRadius = 5.0
+            registerButtonView.clipsToBounds = true
+            
+            registerLabel = UILabel(frame: CGRect(x: 10, y: 0, width: registerButtonView.frame.width - 20, height: registerButtonView.frame.height))
+            registerLabel.font = UIFont(name: "Aviner Roman", size: 16)
+            registerLabel.textColor = UIColor.whiteColor()
+        
             registerButtonView.enabled = false
             registerLabel.text = "REGISTERED"
         } else {
+            registerButtonView = UIButton(frame: CGRect(x: self.view.frame.width - 110, y: 20, width: 100, height: 40))
+            registerButtonView.backgroundColor = UIColor(red: 244 / 255, green: 109 / 255, blue: 30 / 255, alpha: 1)
+            registerButtonView.layer.cornerRadius = 5.0
+            registerButtonView.clipsToBounds = true
+            
+            registerLabel = UILabel(frame: CGRect(x: 10, y: 0, width: registerButtonView.frame.width - 20, height: registerButtonView.frame.height))
+            registerLabel.font = UIFont(name: "Aviner Roman", size: 16)
+            registerLabel.textColor = UIColor.whiteColor()
+            
             registerButtonView.enabled = true
             registerLabel.text = "REGISTER"
             registerButtonView.addTarget(self, action: #selector(self.register(_:)), forControlEvents: .TouchUpInside)
