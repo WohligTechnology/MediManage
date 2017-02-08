@@ -51,6 +51,8 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
                     self.clientId = request["result"][6].stringValue
                     self.hasWellness = request["result"][4].stringValue
                     
+                    print("\(#line) | \(request)")
+                    
                     if (self.clientId != nil) {
                         defaultToken.setObject(self.clientId, forKey: "clientId")
                     }

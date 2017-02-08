@@ -74,10 +74,18 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
                 singleEventView.eventDate.text = self.eventArr[indexPath.section]["EventStartDate"].stringValue
                 singleEventView.eventTitle.text = self.eventArr[indexPath.section]["EventName"].stringValue
-                let eventDescription = self.eventArr[indexPath.section]["EventDesc"].stringValue
-                let decodeDescription = eventDescription.stringByReplacingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-                singleEventView.eventDescription.text = decodeDescription
-                singleEventView.eventDescriptionWebView.loadHTMLString(decodeDescription, baseURL: nil)
+                let eventDescription = self.eventArr[indexPath.section]["EventDesc"].stringValue.stringByRemovingPercentEncoding
+                
+                do {
+                    let decodeDescription = try NSMutableAttributedString(data: eventDescription!.dataUsingEncoding(NSUnicodeStringEncoding, allowLossyConversion: true)!, options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType], documentAttributes: nil)
+                    
+                    let decoded = decodeDescription.string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+                    
+                    let finalText = decoded.stringByReplacingOccurrencesOfString("\n", withString: "")
+                    
+                    singleEventView.eventDescription.text = finalText
+//                    singleEventView.eventDescriptionWebView.loadHTMLString(decodeDescription, baseURL: nil)
+                } catch {}
                 
                 if (self.eventArr[indexPath.section]["ImageURL"].string != nil) {
                     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {

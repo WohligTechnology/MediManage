@@ -111,13 +111,22 @@ class EventDetailController: UIViewController {
         descriptionView = eventDescription(frame: CGRect(x: 10, y: 20, width: self.view.frame.size.width - 20, height: 45))
         addShadow(descriptionView)
         
-        let decodedDescription = descriptionText.stringByReplacingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+        let descriptionText = descriptionText.stringByRemovingPercentEncoding
         
-        descriptionView.descriptionText.text = decodedDescription
-        descriptionView.descriptionText.alpha = 0
+        do {
+            let decodeDescription = try NSMutableAttributedString(data: descriptionText!.dataUsingEncoding(NSUnicodeStringEncoding, allowLossyConversion: true)!, options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType], documentAttributes: nil)
+            
+            let decoded = decodeDescription.string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+            
+            let finalText = decoded.stringByReplacingOccurrencesOfString("\n", withString: "")
+            
+            descriptionView.descriptionText.text = finalText
+            descriptionView.descriptionText.alpha = 0
+            //                    singleEventView.eventDescriptionWebView.loadHTMLString(decodeDescription, baseURL: nil)
+        } catch {}
         
-        descriptionView.descriptionWebView.loadHTMLString(decodedDescription, baseURL: nil)
-        descriptionView.descriptionWebView.alpha = 0
+//        descriptionView.descriptionWebView.loadHTMLString(decodedDescription, baseURL: nil)
+//        descriptionView.descriptionWebView.alpha = 0
         
         descriptionView.arrowButton.tag = 1
         descriptionView.arrowButton.addTarget(self, action: #selector(descriptionArrow(_:)), forControlEvents: .TouchUpInside)
@@ -307,11 +316,21 @@ class EventDetailController: UIViewController {
     }
     
     func shareEvent(sender: UIButton) {
-        let descriptionText = eventDetailJSON["Description"].stringValue
-        let decodedDescription = descriptionText.stringByReplacingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-        var shareString = "\(eventDetailJSON["Name"])\n\nEvent is all about:\n\(decodedDescription)"
-        shareString += "\nEvent date : \(eventDetailJSON["StartDate"])\nEvent time : \n\(eventDetailJSON["FromTime"])"
-        displayShareSheet(shareString)
+        let descriptionText = eventDetailJSON["Description"].stringValue.stringByRemovingPercentEncoding
+        
+        do {
+            let decodeDescription = try NSMutableAttributedString(data: descriptionText!.dataUsingEncoding(NSUnicodeStringEncoding, allowLossyConversion: true)!, options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType], documentAttributes: nil)
+            
+            let decoded = decodeDescription.string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+            
+            let finalText = decoded.stringByReplacingOccurrencesOfString("\n", withString: "")
+            
+            var shareString = "\(eventDetailJSON["Name"])\n\nEvent is all about:\n\(finalText)"
+            shareString += "\nEvent date : \(eventDetailJSON["StartDate"])\nEvent time : \n\(eventDetailJSON["FromTime"])"
+            
+            displayShareSheet(shareString)
+        } catch {}
+        
     }
     
     func likeEvent(sender: UIButton) {
