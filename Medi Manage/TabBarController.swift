@@ -47,12 +47,13 @@ class TabBarController: UITabBarController {
 //            }
 //        })
         
-//        if let arrayOfTabBarItems = self.tabBar.items as! AnyObject as? NSArray,tabBarItem = arrayOfTabBarItems[7] as? UITabBarItem {
+//        if let arrayOfTabBarItems = self.tabBar.items as! AnyObject as? NSArray, tabBarItem = arrayOfTabBarItems[2] as? UITabBarItem {
 //            tabBarItem.enabled = false
+//            print("\(#line) | \(arrayOfTabBarItems)")
 //        }
         
 //        if let tabBarController = self.tabBarController {
-//            let indexToRemove = 7
+//            let indexToRemove = 3
 //            if indexToRemove < tabBarController.viewControllers?.count {
 //                var viewControllers = tabBarController.viewControllers
 //                viewControllers?.removeAtIndex(indexToRemove)

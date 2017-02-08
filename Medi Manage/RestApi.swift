@@ -16,8 +16,8 @@ import SwiftHTTP
 
 
 
-let adminUrl = "https://corporate.medimanage.com/api/";
-//let adminUrl = "http://testcorp.medimanage.com/api/"
+//let adminUrl = "https://corporate.medimanage.com/api/";
+let adminUrl = "http://testcorp.medimanage.com/api/"
 let apiURL = adminUrl + "v1/";
 let defaultToken = NSUserDefaults.standardUserDefaults()
 
@@ -580,7 +580,7 @@ public class RestApi {
         let id = defaultToken.stringForKey("clientId")
         
         do {
-            let opt = try HTTP.GET(apiURL+"Wellness/Events/\(id)", parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            let opt = try HTTP.GET(apiURL+"Wellness/Events/\(id!)", parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
             opt.start { response in
                 print(response.error)
                 if let _ = response.error {

@@ -141,6 +141,18 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
                     connectTap.delegate = self
                     connect.addGestureRecognizer(connectTap)
                     
+//                    if let tabBarController = self.tabBarController {
+//                        let indexToRemove = 3
+//                        if indexToRemove < tabBarController.viewControllers?.count {
+//                            print(tabBarController.viewControllers?.count)
+//                            var viewControllers = tabBarController.viewControllers
+//                            viewControllers?.removeAtIndex(indexToRemove)
+//                            tabBarController.viewControllers = viewControllers
+//                            print(tabBarController.viewControllers?.count)
+//                            print("\(#line) | \(viewControllers)")
+//                        }
+//                    }
+                    
                 } else {
                     
                     let alertController = UIAlertController(title: "No Connection", message:
