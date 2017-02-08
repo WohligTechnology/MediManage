@@ -52,14 +52,14 @@ class TabBarController: UITabBarController {
 //            print("\(#line) | \(arrayOfTabBarItems)")
 //        }
         
-//        if let tabBarController = self.tabBarController {
-//            let indexToRemove = 3
-//            if indexToRemove < tabBarController.viewControllers?.count {
-//                var viewControllers = tabBarController.viewControllers
-//                viewControllers?.removeAtIndex(indexToRemove)
-//                tabBarController.viewControllers = viewControllers
-//            }
-//        }
+        let indexToRemove = 3
+        print(self.viewControllers?.count)
+        if indexToRemove < self.viewControllers?.count {
+            var viewControllers = self.viewControllers
+            viewControllers?.removeAtIndex(indexToRemove)
+            self.viewControllers = viewControllers
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

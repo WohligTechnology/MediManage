@@ -141,17 +141,22 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
                     connectTap.delegate = self
                     connect.addGestureRecognizer(connectTap)
                     
-//                    if let tabBarController = self.tabBarController {
-//                        let indexToRemove = 3
-//                        if indexToRemove < tabBarController.viewControllers?.count {
-//                            print(tabBarController.viewControllers?.count)
-//                            var viewControllers = tabBarController.viewControllers
-//                            viewControllers?.removeAtIndex(indexToRemove)
-//                            tabBarController.viewControllers = viewControllers
-//                            print(tabBarController.viewControllers?.count)
-//                            print("\(#line) | \(viewControllers)")
-//                        }
-//                    }
+                    if let tabBarController = self.tabBarController {
+                        let indexToRemove = 3
+                        if indexToRemove < tabBarController.viewControllers?.count {
+                            print(tabBarController.viewControllers?.count)
+                            var viewControllers = tabBarController.viewControllers
+                            viewControllers?.removeAtIndex(indexToRemove)
+                            tabBarController.viewControllers = viewControllers
+                            print(tabBarController.viewControllers?.count)
+                            print("\(#line) | \(viewControllers)")
+                            self.tabBarController?.viewControllers = viewControllers
+                            self.tabBarController?.reloadInputViews()
+                            self.tabBarController?.viewWillLayoutSubviews()
+                            print("\(#line) | \(self.tabBarController?.viewControllers?.count)")
+                            print("\(#line) | \(self.tabBarController?.tabBar.items!.count)")
+                        }
+                    }
                     
                 } else {
                     
@@ -167,6 +172,20 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         // Do any additional setup after loading the view.
     }
 
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if let tabBarController = self.tabBarController {
+            let indexToRemove = 3
+            
+            let tabBarControllerItems = self.tabBarController?.tabBar.items
+            
+            if let tabArray = tabBarControllerItems {
+                let tabBarItem1 = tabArray[0]
+                tabBarItem1.enabled = false
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -212,9 +231,9 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func wellnessTap(sender: UITapGestureRecognizer) {
-//        tabSelected = 7
-        let im: EventController = storyboard?.instantiateViewControllerWithIdentifier("eventController") as! EventController
-        self.navigationController?.pushViewController(im, animated: true)
+        tabSelected = 7
+        let im: TabBarController = storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
+        self.presentViewController(im, animated: true, completion: nil)
     }
 
     /*
