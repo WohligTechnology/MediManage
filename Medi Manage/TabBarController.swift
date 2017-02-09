@@ -51,14 +51,18 @@ class TabBarController: UITabBarController {
 //            tabBarItem.enabled = false
 //            print("\(#line) | \(arrayOfTabBarItems)")
 //        }
+        let hasWellness = defaultToken.objectForKey("hasWellness")
         
-        let indexToRemove = 3
-        print(self.viewControllers?.count)
-        if indexToRemove < self.viewControllers?.count {
-            var viewControllers = self.viewControllers
-            viewControllers?.removeAtIndex(indexToRemove)
-            self.viewControllers = viewControllers
+        if hasWellness != nil && hasWellness as! String != "True" {
+            let allVC = self.viewControllers
+            if allVC?.count > 7 {
+                print(self.viewControllers?.count)
+                var viewControllers = self.viewControllers
+                viewControllers?.removeLast()
+                self.viewControllers = viewControllers
+            }
         }
+
         
     }
 

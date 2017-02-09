@@ -271,6 +271,8 @@ extension UIViewController {
         // LOGOUT BUTTON
         let logoutActionButton: UIAlertAction = UIAlertAction(title: "Logout", style: .Destructive){ action -> Void in
             defaultToken.removeObjectForKey("access_token")
+            defaultToken.removeObjectForKey("userJSONTest")
+            defaultToken.removeObjectForKey("hasWellness")
             let passcodemodal = self.storyboard?.instantiateViewControllerWithIdentifier("loginc") as! LoginController
             
             self.presentViewController(passcodemodal, animated: true, completion: nil)

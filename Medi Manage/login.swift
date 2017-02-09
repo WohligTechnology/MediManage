@@ -116,7 +116,7 @@ class login: UIView, UITextFieldDelegate {
                             
                             //let vc = gLoginController.storyboard?.instantiateViewControllerWithIdentifier("EnrollmentMember") as! EnrollmentMembersController
                             let vc = gLoginController.storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
-                            
+                            vc.selectedIndex = 0
                             //  vc.RESULT = "Result"
                             gLoginController.presentViewController(vc, animated: true, completion: nil)
                             
