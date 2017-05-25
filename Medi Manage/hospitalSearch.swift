@@ -71,11 +71,13 @@ class hospitalSearch: UIView, UITextFieldDelegate {
         
         if self.yourLocation.text != "" || self.hospitalName.text != ""{
             if self.yourLocation.text == "" {
-                hospitalSearchText = self.hospitalName.text
+                
+                hospitalNameText = self.hospitalName.text
             }else if self.hospitalName.text == "" {
                 hospitalSearchText = self.yourLocation.text
             }else{
-                hospitalSearchText = self.yourLocation.text! + "%20" + self.hospitalName.text!
+                hospitalSearchText = self.yourLocation.text!
+                hospitalNameText = self.hospitalName.text!
 
             }
 //            hospitalSearchText = self.yourLocation.text! + "%20" + self.hospitalName.text!

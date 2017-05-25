@@ -511,11 +511,12 @@ public class RestApi {
         
     }
     
-    public func HospitalSearch(data : JSON ,completion:((JSON) -> Void))
+    public func HospitalSearch(data : JSON, completion:((JSON) -> Void))
     {
         var json = JSON(1)
         let token = defaultToken.stringForKey("access_token")
         let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
+        
         
         do {
             let opt = try HTTP.GET(apiURL+"Enrollments/DashboardDetails" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
@@ -542,14 +543,15 @@ public class RestApi {
         
     }
     
-    public func Hospital(data : String ,completion:((JSON) -> Void))
+    public func Hospital(location:String, hospital:String  ,completion:((JSON) -> Void))
     {
         var json = JSON(1)
         let token = defaultToken.stringForKey("access_token")
         let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
-        
+        let params = ["Location":location, "Hospital":hospital]
+        print("heyyaprintthisforme\(location)\(hospital)")
         do {
-            let opt = try HTTP.GET(apiURL+"Hospitals/Search/\(data)" , parameters: nil, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
+            let opt = try HTTP.POST(apiURL+"Hospitals/Search" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
             opt.start { response in
                 print(response.error)
                 if let _ = response.error {

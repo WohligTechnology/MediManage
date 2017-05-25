@@ -33,6 +33,7 @@ var forgotMobileNumber : String! = ""
 var forgotCountryCode : String! = ""
 var profilePassword : String! = ""
 var hospitalSearchText : String! = ""
+var hospitalNameText: String! = ""
 var profileState : String! = ""
 var OTPStatus = 0 // 1 : from profile 2: forgot passwordSendOtp
 var selectedIndex = 0
@@ -190,15 +191,15 @@ extension UIViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
     }
     
-    func checkSession() {
-        rest.Hospital("mumbai%20fortis", completion: {(json:JSON) ->() in
-            if json == 1{
-                let passcodemodal = self.storyboard?.instantiateViewControllerWithIdentifier("loginc") as! LoginController
-                
-                self.presentViewController(passcodemodal, animated: true, completion: nil)
-            }
-        })
-    }
+//    func checkSession() {
+//        rest.Hospital("mumbai%20fortis", completion: {(json:JSON) ->() in
+//            if json == 1{
+//                let passcodemodal = self.storyboard?.instantiateViewControllerWithIdentifier("loginc") as! LoginController
+//                
+//                self.presentViewController(passcodemodal, animated: true, completion: nil)
+//            }
+//        })
+//    }
     
     func redirectToHome() {
         let passcodemodal = self.storyboard?.instantiateViewControllerWithIdentifier("loginc") as! LoginController

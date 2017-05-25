@@ -17,6 +17,9 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet weak var searchBoxView: UIView!
     var hospitals : JSON = ""
     
+    @IBOutlet weak var searchName: UITextField!
+    @IBOutlet weak var hospitalView: UIView!
+    @IBOutlet weak var locationView: UIView!
     @IBOutlet weak var searchText: UITextField!
     @IBOutlet weak var searchTable: UITableView!
     @IBOutlet weak var hoscount: UILabel!
@@ -37,6 +40,7 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
         mainsubHeader.subHeaderTitle.text = "HOSPITAL SEARCH"
         self.view.addSubview(mainsubHeader)
         searchText.delegate = self
+        searchName.delegate = self
         
         locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -50,6 +54,7 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
         
         // add borders
         addBottomBorder(UIColor.blackColor(), linewidth: 0.5, myView: searchBoxView)
+//        addBottomBorder(UIColor.blackColor(), linewidth: 0.5, myView: hospitalView)
         loadTable()
     }
     
@@ -90,7 +95,7 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
     }
     
     func loadTable() {
-        rest.Hospital(hospitalSearchText, completion: {(json:JSON) -> () in
+        rest.Hospital(hospitalSearchText, hospital: hospitalNameText, completion: {(json:JSON) -> () in
             dispatch_async(dispatch_get_main_queue(),{
                 LoadingOverlay.shared.hideOverlayView()
 
@@ -119,6 +124,7 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         searchCalled()
         searchText.resignFirstResponder()
+        searchName.resignFirstResponder()
         return true
     }
     
@@ -154,10 +160,12 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
     }
     
     func searchCalled() {
-        if self.searchText.text == "" {
+        if self.searchText.text == "" || self.searchName.text == "" {
             Popups.SharedInstance.ShowPopup("Hospital Search", message: "Please Enter Location & Name of Hospital")
         }else{
             hospitalSearchText = self.searchText.text
+            hospitalNameText = self.searchName.text
+            
             LoadingOverlay.shared.showOverlay(self.view)
             loadTable()
         }
@@ -245,7 +253,8 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
         let border = CALayer()
         border.backgroundColor = color.CGColor
         //border.frame = CGRectMake(0, myView.frame.size.height - width, myView.frame.size.width, width)
-        border.frame = CGRectMake(5, myView.frame.size.height - linewidth + 2, width - 50, linewidth)
+        border.frame = CGRectMake(0, myView.frame.size.height - linewidth + 2, width - 150, linewidth)
+        
         myView.layer.addSublayer(border)
     }
     //    @IBAction func inboxCall(sender: AnyObject) {
