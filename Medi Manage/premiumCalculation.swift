@@ -43,6 +43,7 @@ class premiumCalculation: UIView {
     var Subtotal : Int64 = 0
     var Tax : Int64 = 0
     var TotalPremium : Int64 = 0
+    var enrollment: JSON!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -86,6 +87,8 @@ class premiumCalculation: UIView {
         rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
             dispatch_async(dispatch_get_main_queue(),{
                 print(json)
+                self.enrollment = json
+                print("showmeenroll\(self.enrollment)")
                 if json == 401 {
                     LoadingOverlay.shared.hideOverlayView()
                     gPremiumCalculationController.redirectToHome()
@@ -123,11 +126,11 @@ class premiumCalculation: UIView {
                     print(self.Tax)
                     print(self.TotalPremium)
                     
-                self.basicPremiumCost.text = String(self.BasicPremium)
-                self.topupPremiumCost.text = String(self.TopupPremium)
-                self.netPremiumCost.text = String(self.Subtotal)
-                self.serviceTaxCost.text = String(self.Tax)
-                self.totalPremiumCost.text = String(self.TotalPremium)
+               self.basicPremiumCost.text = self.enrollment["result"]["BasicPremium"].stringValue
+               self.topupPremiumCost.text = self.enrollment["result"]["TopupPremium"].stringValue
+                self.netPremiumCost.text = self.enrollment["result"]["TotalPremium"].stringValue
+                self.serviceTaxCost.text = self.enrollment["result"]["AdditionalPremium"].stringValue
+//                self.totalPremiumCost.text = String(self.TotalPremium)
                 }
                 })
         })
@@ -137,7 +140,7 @@ class premiumCalculation: UIView {
         addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: topupPremiumView)
         addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: netPremiumView)
         addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: serviceTaxView)
-        addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: totalPremiumView)
+//        addBottomBorder(UIColor.grayColor(), linewidth: 0.5, myView: totalPremiumView)
     }
 
     var terms = false

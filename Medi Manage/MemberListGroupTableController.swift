@@ -128,6 +128,7 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
     
     
     @IBAction func submitSumInsuredAndTopUp(sender: AnyObject) {
+        
         LoadingOverlay.shared.showOverlay(self.view)
         var SI : JSON = []
         var TU : JSON = []

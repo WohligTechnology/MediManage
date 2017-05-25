@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "786DF9F51CD214F300DDE769"
-               BuildableName = "mpowerplus.app"
+               BuildableName = "MediManage.app"
                BlueprintName = "mpowerplus"
                ReferencedContainer = "container:mpowerplus.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "786DF9F51CD214F300DDE769"
-            BuildableName = "mpowerplus.app"
+            BuildableName = "MediManage.app"
             BlueprintName = "mpowerplus"
             ReferencedContainer = "container:mpowerplus.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "786DF9F51CD214F300DDE769"
-            BuildableName = "mpowerplus.app"
+            BuildableName = "MediManage.app"
             BlueprintName = "mpowerplus"
             ReferencedContainer = "container:mpowerplus.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "786DF9F51CD214F300DDE769"
-            BuildableName = "mpowerplus.app"
+            BuildableName = "MediManage.app"
             BlueprintName = "mpowerplus"
             ReferencedContainer = "container:mpowerplus.xcodeproj">
          </BuildableReference>

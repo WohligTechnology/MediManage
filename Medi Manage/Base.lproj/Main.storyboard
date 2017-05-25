@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2kZ-Pe-jCf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2kZ-Pe-jCf">
     <dependencies>
         <deployment identifier="iOS"/>
         <development version="7000" identifier="xcode"/>
@@ -5464,12 +5464,12 @@ bSBlZ2VzdGFzLCB0ZWxsdXMgZmluaWJ1cyBtYXhpbXVzIGdyYXZpZGEuA
         <image name="wellness_white30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8ZQ-nc-jHt"/>
+        <segue reference="dUS-S7-jua"/>
         <segue reference="VsE-eo-VYT"/>
         <segue reference="taD-Mf-g28"/>
-        <segue reference="QCt-6c-YRM"/>
         <segue reference="wgK-eO-Wod"/>
-        <segue reference="s1I-qw-2n8"/>
+        <segue reference="QCt-6c-YRM"/>
         <segue reference="Oo4-D3-Nsi"/>
+        <segue reference="s1I-qw-2n8"/>
     </inferredMetricsTieBreakers>
 </document>
