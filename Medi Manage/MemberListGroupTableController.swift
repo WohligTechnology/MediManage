@@ -34,18 +34,22 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
         gMemberListGroupTableController = self
         
         navshow()
+        self.navigationItem.setHidesBackButton(true, animated:true);456
         gListTableView = ListTableView
         selectedViewController = false
 
         LoadingOverlay.shared.showOverlay(self.view)
         rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
             dispatch_async(dispatch_get_main_queue(),{
+                print("enrollmentplanmembers")
                 if json == 401 {
                     self.redirectToHome()
+                    print("enrollmentplanmembers")
                 }else{
                 print(json)
                 self.result = json["result"]
                 self.members = json["result"]["Groups"]
+                    print("enrollmentplanmembers")
                 self.memcount = self.members.count
                 cnt = self.members.count
                 self.ListTableView.reloadData()
@@ -149,15 +153,21 @@ class MemberListGroupTableController: UIViewController, UITableViewDelegate, UIT
         print(SI)
         rest.ChangeSI(SI, completion: {(json:JSON) -> ()in
             dispatch_sync(dispatch_get_main_queue(),{
+                
             if json == 401 {
                 self.redirectToHome()
             }else{
             rest.ChangeTU(TU, completion: {(json:JSON) -> ()in
                 dispatch_sync(dispatch_get_main_queue(),{
                 LoadingOverlay.shared.hideOverlayView()
-                if json["state"] {
+                    print("hellojson\(json)")
+                if json["state"].string == "true" {
                 self.performSegueWithIdentifier("toPremiumWay", sender: self)
-                }
+                }else{
+                    let alert = UIAlertController(title: "Enrollment Closed", message: json["error_message"].string, preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                    }
                 })
             })
         }

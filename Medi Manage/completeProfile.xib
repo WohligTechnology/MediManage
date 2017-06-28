@@ -1,20 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="NO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <development version="7000" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Lato-Bold.ttf">
+        <mutableArray key="Lato-Bold.ttf">
             <string>Lato-Bold</string>
-        </array>
-        <array key="Lato-Light.ttf">
+            <string>Lato-Bold</string>
+        </mutableArray>
+        <mutableArray key="Lato-Light.ttf">
             <string>Lato-Light</string>
-        </array>
-        <array key="Lato-Regular.ttf">
+            <string>Lato-Light</string>
+            <string>Lato-Light</string>
+            <string>Lato-Light</string>
+            <string>Lato-Light</string>
+        </mutableArray>
+        <mutableArray key="Lato-Regular.ttf">
             <string>Lato-Regular</string>
-        </array>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+        </mutableArray>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="completeProfile" customModule="MediManage" customModuleProvider="target">
@@ -84,31 +94,6 @@
                         <constraint firstAttribute="trailing" secondItem="Jkm-gu-iK7" secondAttribute="trailing" constant="7" id="qpM-VS-M2I"/>
                         <constraint firstItem="MPr-1j-QVc" firstAttribute="top" secondItem="ogq-na-L0V" secondAttribute="top" constant="7" id="r0J-Z4-6d9"/>
                         <constraint firstItem="MPr-1j-QVc" firstAttribute="leading" secondItem="ogq-na-L0V" secondAttribute="leading" constant="17" id="z7L-qt-icQ"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Byo-Ot-41E" userLabel="Employee Number">
-                    <rect key="frame" x="12" y="99" width="288" height="29"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6XK-BG-Wq3">
-                            <rect key="frame" x="178" y="7" width="102" height="16"/>
-                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="13"/>
-                            <color key="textColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employee Number:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pt4-nV-60y">
-                            <rect key="frame" x="8" y="7" width="101" height="15"/>
-                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
-                            <color key="textColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="29" id="6wD-KF-OHa"/>
-                        <constraint firstAttribute="trailing" secondItem="6XK-BG-Wq3" secondAttribute="trailing" constant="8" id="O1D-Br-jb4"/>
-                        <constraint firstItem="pt4-nV-60y" firstAttribute="leading" secondItem="Byo-Ot-41E" secondAttribute="leading" constant="8" id="bw8-BK-1lF"/>
-                        <constraint firstItem="pt4-nV-60y" firstAttribute="top" secondItem="Byo-Ot-41E" secondAttribute="top" constant="7" id="pKn-ng-uCx"/>
-                        <constraint firstItem="6XK-BG-Wq3" firstAttribute="top" secondItem="Byo-Ot-41E" secondAttribute="top" constant="7" id="x9y-He-J8e"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iyf-pN-pZR" userLabel="Date of Birth">
@@ -216,7 +201,6 @@
                 </textField>
                 <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fna-Fr-prR">
                     <rect key="frame" x="112" y="165" width="97" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
@@ -246,6 +230,31 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Byo-Ot-41E" userLabel="Employee Number">
+                    <rect key="frame" x="12" y="99" width="288" height="29"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6XK-BG-Wq3">
+                            <rect key="frame" x="178" y="7" width="102" height="16"/>
+                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="13"/>
+                            <color key="textColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employee Number:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pt4-nV-60y">
+                            <rect key="frame" x="8" y="7" width="101" height="15"/>
+                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                            <color key="textColor" red="0.95686274510000002" green="0.47450980390000003" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="29" id="6wD-KF-OHa"/>
+                        <constraint firstAttribute="trailing" secondItem="6XK-BG-Wq3" secondAttribute="trailing" constant="8" id="O1D-Br-jb4"/>
+                        <constraint firstItem="pt4-nV-60y" firstAttribute="leading" secondItem="Byo-Ot-41E" secondAttribute="leading" constant="8" id="bw8-BK-1lF"/>
+                        <constraint firstItem="pt4-nV-60y" firstAttribute="top" secondItem="Byo-Ot-41E" secondAttribute="top" constant="7" id="pKn-ng-uCx"/>
+                        <constraint firstItem="6XK-BG-Wq3" firstAttribute="top" secondItem="Byo-Ot-41E" secondAttribute="top" constant="7" id="x9y-He-J8e"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <gestureRecognizers/>

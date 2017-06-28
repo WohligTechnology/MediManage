@@ -31,19 +31,26 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
     var status = ["Married","Single"]
     var codes = ["91","92","93","94"]
     var userDetail : JSON = ""
-    
+    var otp = enterOTP()
     let maritalPickerView = UIPickerView()
     let codePickerView = UIPickerView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
+       
+    
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
         loadViewFromNib ()
+        
+        countryCodeCode.text = "India"
+        countryCode.text = "91"
     }
+    
     
     func addBottomBorder(color: UIColor, linewidth: CGFloat, myView: UIView) {
         let border = CALayer()
@@ -53,6 +60,7 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
         myView.layer.addSublayer(border)
     }
     
+    
     func loadViewFromNib() {
         let bundle = NSBundle(forClass: self.dynamicType)
         let nib = UINib(nibName: "completeProfile", bundle: bundle)
@@ -60,12 +68,13 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
         sortnewview.frame = bounds
         sortnewview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(sortnewview)
-        LoadingOverlay.shared.hideOverlayView()
-        
+//        LoadingOverlay.shared.hideOverlayView()
+//        LoadingOverlay.shared.showOverlay(self)
         let statusBar = UIView(frame: CGRectMake(0, 0, width, 20))
         //statusBar.backgroundColor = UIColor(red: 62/255, green: 62/255, blue: 62/255, alpha: 1)
         statusBar.backgroundColor = UIColor(red: 244/255, green: 121/255, blue: 32/255, alpha: 1)
         self.addSubview(statusBar)
+        
 //        LoadingOverlay.shared.showOverlay(gCompleteProfileController.view)
         
         mobileNumber.delegate = self
@@ -96,12 +105,25 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
             rest.GetProfile({(json:JSON) -> () in
                 dispatch_async(dispatch_get_main_queue(),{
                     print(json["result"])
-                    LoadingOverlay.shared.hideOverlayView()
+//                    LoadingOverlay.shared.hideOverlayView()
                     if json == 401 {
                         gCompleteProfileController.redirectToHome()
                     }else{
                         self.userDetail = json["result"]
-//                        self.userDetail["CountryCode"] = "91"
+//
+                        
+                        if self.userDetail["CountryCode"].string == "India"{
+                        self.userDetail["CountryCode"].string = self.countryCode.text
+                            let a = countryCodes[1].indexOf { $0 == self.userDetail["CountryCode"].stringValue }
+                            self.countryCodeCode.text = countryCodes[0][a!]
+                        }else{
+                            if self.userDetail["CountryCode"].stringValue != "" && self.userDetail["CountryCode"] != nil{
+                                let a = countryCodes[1].indexOf { $0 == self.userDetail["CountryCode"].stringValue }
+                                self.countryCodeCode.text = countryCodes[0][a!]
+                            }
+ 
+                        }
+                        
                         self.txtFullName.text = json["result"]["FullName"].stringValue
                         self.txtEmployeeNo.text = json["result"]["EmployeeNumber"].stringValue
                         let fullNameArr1 = json["result"]["DateOfBirth"].stringValue.characters.split{$0 == "T"}.map(String.init)
@@ -109,11 +131,7 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
                         self.mobileNumber.text = json["result"]["MobileNo"].stringValue
                         self.email.text = json["result"]["Email"].stringValue
                         self.maritalStatus.text = json["result"]["MaritalStatus"].stringValue
-                        if self.userDetail["CountryCode"].stringValue != "" && self.userDetail["CountryCode"] != nil{
-                            let a = countryCodes[1].indexOf { $0 == self.userDetail["CountryCode"].stringValue }
-                            self.countryCodeCode.text = countryCodes[0][a!]
-                        }
-                        if json["result"]["MaritalStatus"].stringValue == "Married"
+                                                if json["result"]["MaritalStatus"].stringValue == "Married"
                         {
                             self.maritalPickerView.selectRow(0, inComponent: 0, animated: true)
                         }else{
@@ -125,7 +143,7 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
         }else{
             print("in signup")
             
-            LoadingOverlay.shared.hideOverlayView()
+//            LoadingOverlay.shared.hideOverlayView()
             self.password.hidden = false
             self.userDetail = signUpUser
             self.txtFullName.text = signUpUser["FullName"].stringValue
@@ -154,8 +172,27 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
             editSave(true)
             break
         case "Edit":
+            
+            if profileState == "Submit"
+            {
+                self.countryCodeCode.userInteractionEnabled = true
+                self.countryCode.userInteractionEnabled = true
+                self.mobileNumber.userInteractionEnabled = true
+                self.maritalStatus.userInteractionEnabled = true
+                self.email.userInteractionEnabled = true
+
+
+            }else{
+                self.countryCodeCode.userInteractionEnabled = false
+                self.countryCode.userInteractionEnabled = false
+                self.mobileNumber.userInteractionEnabled = false
+                self.maritalStatus.userInteractionEnabled = false
+                self.email.userInteractionEnabled = false
+
+            }
+            
             self.profileButton.setTitle("Edit", forState: .Normal)
-            editSave(false)
+                        editSave(false)
             break
         default:
             break
@@ -286,7 +323,7 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
                                     action in
                                     //                                            gCompleteProfileController.dismissViewControllerAnimated(true, completion: nil)
                                     
-                                    let vc = gCompleteProfileController.storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
+                                    let vc = gCompleteProfileController.storyboard?.instantiateViewControllerWithIdentifier("mainMenuIdentifier") as! MainMenuController
                                     
                                     gCompleteProfileController.presentViewController(vc, animated: true, completion: nil)
                                 }))
@@ -298,7 +335,6 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
                     })
                 })
             }else{
-            
             print(self.userDetail)
             rest.registerUser(self.userDetail, completion: {(json:JSON) -> () in
                 dispatch_async(dispatch_get_main_queue(),{
@@ -309,7 +345,7 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
                         dispatch_async(dispatch_get_main_queue(),{
                             print("--------------Login------------------------")
                             print(json)
-                            LoadingOverlay.shared.hideOverlayView()
+//                            LoadingOverlay.shared.hideOverlayView()
                             let i = 1
                             if let error = json["error"].string
                             {
@@ -343,7 +379,7 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
                                             action in
 //                                            gCompleteProfileController.dismissViewControllerAnimated(true, completion: nil)
 
-                                            let vc = gCompleteProfileController.storyboard?.instantiateViewControllerWithIdentifier("tabbar") as! TabBarController
+                                            let vc = gCompleteProfileController.storyboard?.instantiateViewControllerWithIdentifier("mainMenuIdentifier") as! MainMenuController
                                             
                                             gCompleteProfileController.presentViewController(vc, animated: true, completion: nil)
                                         }))
@@ -366,6 +402,9 @@ class completeProfile: UIView, UIPickerViewDataSource, UIPickerViewDelegate, UIT
             //  LOGIN WITH ENTERED PASSWORD AND USER NAME
             
         }else{
+            
+            
+            
             let vc = gCompleteProfileController.storyboard?.instantiateViewControllerWithIdentifier("retrieveLogin") as! RetrieveLoginController
             
             gCompleteProfileController.presentViewController(vc, animated: true, completion: nil)

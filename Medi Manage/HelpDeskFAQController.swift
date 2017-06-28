@@ -151,9 +151,9 @@ class HelpDeskFAQController: UIViewController, UITableViewDelegate, UITableViewD
         do {
             let str = try NSMutableAttributedString(data: ans!.dataUsingEncoding(NSUnicodeStringEncoding, allowLossyConversion: true)!, options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType], documentAttributes: nil)
             str.addAttributes([NSForegroundColorAttributeName: UIColor.blackColor(), NSFontAttributeName: UIFont(name: "Lato-Regular", size: 12)!], range: NSRange(location: 0, length: str.length))
-            //cell.answerlbl.attributedText = str
+            cell.answer.attributedText = str
             //cell.answerlbl.hidden = true
-            cell.webView.loadHTMLString(String(str), baseURL: nil)
+//            cell.webView.loadHTMLString(String(str), baseURL: nil)
         } catch {
             print(error)
         }
@@ -171,6 +171,7 @@ class quecell: UITableViewCell {
     @IBOutlet weak var answerlbl: UILabel!
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var triangle: UIImageView!
+    @IBOutlet weak var answer: UITextView!
     
     class var expandedHeight: CGFloat { get { return 200} }
     class var defaultHeight: CGFloat { get { return 70 } }

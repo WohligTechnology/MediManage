@@ -409,7 +409,7 @@ let activeClaimTitle = []
         preAuthOne = indexPath.row
 //        performSegueWithIdentifier("activeClaims", sender: self)
         performSegueWithIdentifier("reimbursement", sender: indexPath.row)
-          }
+    }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "reimbursement" {
             let controller = segue.destinationViewController as! ReimbursementOneController

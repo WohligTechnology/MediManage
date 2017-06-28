@@ -19,6 +19,9 @@ class hospitalSearch: UIView, UITextFieldDelegate {
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewFromNib ()
+        hospitalSearchText.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        hospitalNameText.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -66,6 +69,8 @@ class hospitalSearch: UIView, UITextFieldDelegate {
         return true;
     }
 
+ 
+    
     
     @IBAction func hospitalResultCall(sender: AnyObject) {
         
@@ -81,11 +86,15 @@ class hospitalSearch: UIView, UITextFieldDelegate {
 
             }
 //            hospitalSearchText = self.yourLocation.text! + "%20" + self.hospitalName.text!
+        
             
-            gHospitalSearchController.performSegueWithIdentifier("hospitalSearchToHospitalResult", sender: nil)
+           gHospitalSearchController.performSegueWithIdentifier("hospitalSearchToHospitalResult", sender: nil)
+            
         }else{
             Popups.SharedInstance.ShowPopup("Hospital Search", message: "Mention Hospital Location OR` Name")
         }
+    
         
     }
+    
 }

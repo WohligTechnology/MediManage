@@ -75,8 +75,9 @@ class memberList: UIView ,UIActionSheetDelegate{
        
         rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
       //print(json)
-         self.json2 = json
-      
+        
+       self.json2 = json
+      print("enrollmentplanmembers")
         let insuredValue =  self.json2["result"]["Groups"][0]["SumInsuredList"][0]["SumInsuredValue"]
             print(insuredValue)
             self.tabwifeclicked()

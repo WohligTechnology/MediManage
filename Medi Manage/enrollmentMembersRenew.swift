@@ -144,6 +144,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                 rest.findEmployeeProfile("Enrollments/Details",completion: {(json:JSON) -> ()in
                     dispatch_sync(dispatch_get_main_queue()){
                         print("\(#file)\(#line)\(json)")
+                        print("enrollmentplanmemberskemcho\(json["result"]["PlanMembers"]["Allowed"].string)")
                         
                         // GOOGLE ANALYTICS
                         let tracker = GAI.sharedInstance().defaultTracker
@@ -182,6 +183,10 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                                 }
                             }
                         }
+                        
+                        
+                        
+                        
                         for x in 0..<self.memberjson.count{
                             if self.memberjson[x]["DateOfBirth"].stringValue != "" && self.memberjson[x]["DateOfBirth"].stringValue != "null"{
                                 var fullNameArr = self.memberjson[x]["DateOfBirth"].stringValue.characters.split{$0 == "T"}.map(String.init)
@@ -192,6 +197,18 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                                 self.memberjson[x]["DateOfRelation"].stringValue = fullNameArr[0]
                             }
                         }
+                        
+                        if self.wholeJson["PlanMembers"].count == 1{
+                           let vc = storyboard?.instantiateViewControllerWithIdentifier("premium") as! PremiumCalculationController
+                        gEnrollmentMembersController.navigationController?.pushViewController(vc, animated: true)
+                            
+//                            gEnrollmentMembersController.presentViewController(vc, animated: true, completion: nil)
+//                            gEnrollmentMembersController.performSegueWithIdentifier("premium", sender: nil)
+                        
+                        }else {
+
+                        
+                        
                         for x in 0..<self.wholeJson["PlanMembers"].count {
                             switch self.wholeJson["PlanMembers"][x]["Member"] {
                             case "C":
@@ -213,11 +230,13 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
                                 break
                             }
                             
+                            }
                         }
 //                        print(self.memberjson)
                         self.assignMembers()
                     }
-                    
+                
+                
                 })
 
             }
@@ -722,7 +741,7 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
     func assignText() {
         switch (self.memberjson[page]["RelationType"].stringValue) {
         case "Husband":
-            self.leftIcon.image = UIImage(named: "son_icon")
+            self.leftIcon.image = UIImage(named: "husband")
             self.leftDOM.hidden = false
             self.leftAddMore.hidden = true
             break

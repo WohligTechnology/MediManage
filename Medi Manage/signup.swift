@@ -21,17 +21,53 @@ class signup: UIView, UITextFieldDelegate {
     var datePickerView:UIDatePicker = UIDatePicker()
     var flag : Bool = false
     var count : Int = 0
+    let date = NSDate()
+    var calendar = NSCalendar.currentCalendar()
+    var currentYear: Int = 0
+    var year: [Int] = []
     
     
     @IBAction func openDate(sender: UITextField) {
         datePickerView.datePickerMode = UIDatePickerMode.Date
+//        datePickerView.minimumDate = date
+//        datePickerView.maximumDate = date
+//        datePickerView.maximumDate = NSCalendar.currentCalendar().dateByAddingUnit(.Year, value: 20, toDate: NSDate(), options: [])
         sender.inputView = datePickerView
         
         datePickerView.addTarget(self, action: #selector(self.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
     }
     func datePickerValueChanged(sender:UIDatePicker) {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "ddMMyyyy"
+         dateFormatter.dateFormat = "ddMMyyyy"
+
+//        let gregorian: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+//        let components : NSDateComponents = NSDateComponents()
+//        components.year = -21
+//        components.month = components.month - 1
+//        components.day = 1
+////        components.month = 0
+////        print("\(components.month)")
+////         print("\(components.year)")
+////        print("\(components.day)")
+//        let minDate: NSDate = gregorian.dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(rawValue: 0))!
+//        self.datePickerView.minimumDate = minDate
+//        components.year = 0
+//        components.month = components.month - 12
+//        components.day = 31
+////        components.month = components.month - 12
+//        let maxDate: NSDate = gregorian.dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(rawValue: 0))!
+//        self.datePickerView.maximumDate = maxDate
+        print("printdate\(currentYear)")
+//        for _ in 0..<20{
+//           year.append(currentYear)
+//            currentYear -= 1
+//        }
+//        datePickerView.maximumDate = NSCalendar.currentCalendar().dateByAddingUnit(.NSYearCalendarUnit, value: -20, toDate: date, options: [])
+//        dateFormatter.dateFormat = "EEEE, MMM d, yyyy"
+//        let dateFormat = "Monday,Jan 01,1997"
+//        let date = dateFormatter.dateFromString(dateFormat)
+//        
+//        datePickerView.date = date!
         dateDob = dateFormatter.stringFromDate(sender.date)
         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
         dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
@@ -152,6 +188,8 @@ class signup: UIView, UITextFieldDelegate {
                             
                             break
                         case "false" :
+                            
+                            
                             let error_msg : String = String(json["error_message"])
                             
                             

@@ -35,9 +35,14 @@ class MainMenuController: UIViewController, UIGestureRecognizerDelegate {
         if (userJSON == nil) {
             rest.isEnrolled({(json:JSON) ->() in
                 let data = json
-                if !data {
+                print("hellojson\(json)")
+                if data == true {
                     print("in if")
                     gMainMenuController.topendding()
+                }else {
+                    let vc = self.storyboard?.instantiateViewControllerWithIdentifier("memberList") as! MemberListGroupTableController
+                    self.navigationController?.pushViewController(vc, animated: true)
+
                 }
             })
             

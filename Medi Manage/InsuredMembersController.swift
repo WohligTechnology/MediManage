@@ -58,10 +58,12 @@ class InsuredMembersController: UIViewController {
         
         rest.findEmployeeProfile("Enrollments/DashboardDetails",completion: {(json:JSON) -> () in
             print(json)
+            print("enrollmentmemberskemcho")
             dispatch_async(dispatch_get_main_queue(), {
                 if json == 401 {
                     self.redirectToHome()
                 }else{
+                print("enrollmentmembers")
                 for x in 0..<json["result"]["Groups"].count {
                     let groupView = insuredMembersAll(frame: CGRect(x: 0, y: 0, width: widthGlo + 5 , height: 120))
                     self.verticalLayout.addSubview(groupView);

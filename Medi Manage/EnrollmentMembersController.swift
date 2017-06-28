@@ -27,10 +27,8 @@ class EnrollmentMembersController: UIViewController {
         super.viewDidLoad()
         gEnrollmentMembersController = self
         LoadingOverlay.shared.showOverlay(self.view)
-       
-        
         navshow()
-        
+        self.navigationItem.setHidesBackButton(true, animated:true);
     }
     
     override func viewWillAppear(animated: Bool) {

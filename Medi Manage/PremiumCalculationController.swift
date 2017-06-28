@@ -17,8 +17,9 @@ class PremiumCalculationController: UIViewController {
         gPremiumCalculationController = self
         selectedViewController = false
         LoadingOverlay.shared.showOverlay(self.view)
-
+       
         navshow()
+         self.navigationItem.setHidesBackButton(true, animated:true);
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(animated: Bool) {

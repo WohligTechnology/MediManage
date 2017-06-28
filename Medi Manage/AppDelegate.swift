@@ -34,6 +34,7 @@ var forgotCountryCode : String! = ""
 var profilePassword : String! = ""
 var hospitalSearchText : String! = ""
 var hospitalNameText: String! = ""
+
 var profileState : String! = ""
 var OTPStatus = 0 // 1 : from profile 2: forgot passwordSendOtp
 var selectedIndex = 0
@@ -180,6 +181,7 @@ extension UIViewController {
         let navigationLogo = UIImage(named: "logo_small")
         let navigationImageView = UIImageView(image: navigationLogo)
         self.navigationItem.titleView = navigationImageView
+        self.navigationItem.leftBarButtonItem = nil
         let infoImage = UIImage(named: "settings")
         let imgWidth = 25
         let imgHeight = 25
@@ -218,6 +220,8 @@ extension UIViewController {
         
         self.presentViewController(passcodemodal, animated: true, completion: nil)
     }
+    
+
     
     func callNumber(phoneNumber:String) {
         if let phoneCallURL:NSURL = NSURL(string: "tel://\(phoneNumber)") {

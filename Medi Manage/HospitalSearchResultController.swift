@@ -16,6 +16,7 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
     
     @IBOutlet weak var searchBoxView: UIView!
     var hospitals : JSON = ""
+    var hospitalSearch: JSON!
     
     @IBOutlet weak var searchName: UITextField!
     @IBOutlet weak var hospitalView: UIView!
@@ -29,7 +30,9 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
     var locationManager: CLLocationManager!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        hospitalSearchText.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        hospitalNameText.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+
         navshow()
         selectedViewController = false
         
@@ -41,6 +44,12 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
         self.view.addSubview(mainsubHeader)
         searchText.delegate = self
         searchName.delegate = self
+//        searchName.text = nil
+        
+        searchText.text = ""
+        
+        searchText.text = hospitalSearchText
+        searchName.text = hospitalNameText
         
         locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -53,9 +62,11 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
 //        searchTable.hidden
         
         // add borders
-        addBottomBorder(UIColor.blackColor(), linewidth: 0.5, myView: searchBoxView)
+//        addBottomBorder(UIColor.blackColor(), linewidth: 0.5, myView: searchBoxView)
 //        addBottomBorder(UIColor.blackColor(), linewidth: 0.5, myView: hospitalView)
         loadTable()
+      
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -90,16 +101,21 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
         
     }
     
+    
+    
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print(error)
     }
     
     func loadTable() {
-        rest.Hospital(hospitalSearchText, hospital: hospitalNameText, completion: {(json:JSON) -> () in
+        rest.Hospital(hospitalSearchText.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()), hospital: hospitalNameText.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()), completion: {(json:JSON) -> () in
             dispatch_async(dispatch_get_main_queue(),{
+                self.searchTable.reloadData()
                 LoadingOverlay.shared.hideOverlayView()
+                self.searchTable.reloadData()
 
                 print(json)
+                
                 if json == 401 {
                     self.redirectToHome()
                 }else if json == 1{
@@ -108,6 +124,14 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
                 }else{
                     self.hospitals = json["result"]["Results"]
                     self.hoscount.text = json["result"]["Count"].stringValue
+                    self.hospitalSearch = json["result"]["Results"]
+                    print("hospitalssearch\(self.hospitalSearch)")
+
+                   
+//                    self.searchText.text = self.hospitalSearch[0]["City"].stringValue
+                    print("hellohospi\(self.hospitalSearch)")
+
+                    
                     if json["result"]["Count"] == 0{
                         self.nodata.hidden = false
                         self.searchTable.hidden = true
@@ -116,9 +140,14 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
                         self.searchTable.hidden = false
                     }
                     self.searchTable.reloadData()
+                    
+                    
                 }
             })
         })
+        hospitalNameText = ""
+        hospitalSearchText = ""
+//        self.searchName.text = ""
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -127,6 +156,15 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
         searchName.resignFirstResponder()
         return true
     }
+//    
+//    func textFieldDidBeginEditing(textField: UITextField) {
+//        searchName.text = ""
+//       
+//    }
+//    
+//    func textFieldDidEndEditing(textField: UITextField) {
+//        searchName.text = ""
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -160,17 +198,26 @@ class HospitalSearchResultController: UIViewController, UITableViewDelegate, UIT
     }
     
     func searchCalled() {
-        if self.searchText.text == "" || self.searchName.text == "" {
+        if self.searchText.text == "" && self.searchName.text == ""{
             Popups.SharedInstance.ShowPopup("Hospital Search", message: "Please Enter Location & Name of Hospital")
-        }else{
+        }
+//        }else if self.searchText.text == "" || self.searchName.text != ""{
+//        
+//         Popups.SharedInstance.ShowPopup("Hospital Search", message: "Please Enter Location & Name of Hospital")
+//        }
+        
+        else{
             hospitalSearchText = self.searchText.text
             hospitalNameText = self.searchName.text
             
             LoadingOverlay.shared.showOverlay(self.view)
             loadTable()
+            
+            
         }
         
     }
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.hospitals.count

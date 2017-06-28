@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -1167,7 +1167,7 @@
 				TargetAttributes = {
 					786DF9F51CD214F300DDE769 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = YVWVDTRG4B;
+						DevelopmentTeam = GQCVF92R6N;
 					};
 					786DFA091CD214F300DDE769 = {
 						CreatedOnToolsVersion = 7.3;
@@ -1183,7 +1183,7 @@
 				};
 			};
 			buildConfigurationList = 786DF9F11CD214F300DDE769 /* Build configuration list for PBXProject "mpowerplus" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -1611,6 +1611,7 @@
 				CODE_SIGN_ENTITLEMENTS = MediManage.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = GQCVF92R6N;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1644,6 +1645,7 @@
 				CODE_SIGN_ENTITLEMENTS = MediManage.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = GQCVF92R6N;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

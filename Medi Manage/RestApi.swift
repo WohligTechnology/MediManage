@@ -549,6 +549,7 @@ public class RestApi {
         let token = defaultToken.stringForKey("access_token")
         let isLoginheader = ["Authorization":"Bearer \(token! as String)"]
         let params = ["Location":location, "Hospital":hospital]
+        hospital == ""
         print("heyyaprintthisforme\(location)\(hospital)")
         do {
             let opt = try HTTP.POST(apiURL+"Hospitals/Search" , parameters: params, requestSerializer: JSONParameterSerializer(), headers:isLoginheader)
