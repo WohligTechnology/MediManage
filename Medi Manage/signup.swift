@@ -38,6 +38,7 @@ class signup: UIView, UITextFieldDelegate {
     }
     func datePickerValueChanged(sender:UIDatePicker) {
         let dateFormatter = NSDateFormatter()
+        
          dateFormatter.dateFormat = "ddMMyyyy"
 
 //        let gregorian: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!

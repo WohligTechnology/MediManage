@@ -862,6 +862,62 @@ class enrollmentMembersRenew: UIView, UITextFieldDelegate{
         default: break
             
         }
+        
+        
+//        switch (self.memberjson[page+1]["RelationType"].stringValue) {
+//        case "Husband":
+//            self.rightIcon.image = UIImage(named: "son_icon")
+//            self.rightDOM.hidden = false
+//            self.rightAddMore.hidden = true
+//            break
+//        case "Wife":
+//            self.rightIcon.image = UIImage(named: "wife_icon")
+//            self.rightDOM.hidden = false
+//            self.rightAddMore.hidden = true
+//            break
+//        case "Son":
+//            self.rightIcon.image = UIImage(named: "son_icon")
+//            self.rightDOM.hidden = true
+//            self.rightAddMore.hidden = false
+//            break
+//        case "Daughter":
+//            self.rightIcon.image = UIImage(named: "daughter_icon")
+//            self.rightDOM.hidden = true
+//            self.rightAddMore.hidden = false
+//            break
+//        case "Mother":
+//            self.rightIcon.image = UIImage(named: "mother_icon")
+//            self.rightDOM.hidden = true
+//            self.rightAddMore.hidden = true
+//            break
+//        case "Father":
+//            self.rightIcon.image = UIImage(named: "father_icon")
+//            self.rightDOM.hidden = true
+//            self.rightAddMore.hidden = true
+//            break
+//        case "Mother in law":
+//            self.rightIcon.image = UIImage(named: "mother_icon")
+//            self.rightAddMore.hidden = true
+//            if self.memberjson[page+1]["DateOfRelation"].stringValue == "" {
+//                self.rightDOM.hidden = false
+//            }else{
+//                self.rightDOM.hidden = true
+//            }
+//            break
+//        case "Father in law":
+//            self.rightIcon.image = UIImage(named: "father_icon")
+//            self.rightAddMore.hidden = true
+//            if self.memberjson[page+1]["DateOfRelation"].stringValue == "" {
+//                self.rightDOM.hidden = false
+//            }else{
+//                self.rightDOM.hidden = true
+//            }
+//            break
+//        default: break
+//            
+//        }
+
+        
         if self.memberjson[page+1]["ActiveState"] {
             editRightMember(true)
             self.rightTick.hidden = false
